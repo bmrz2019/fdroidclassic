@@ -178,18 +178,20 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
             }
             switch (host) {
                 case "f-droid.org":
-                    if (path.startsWith("/repository/browse")) {
+                case "www.f-droid.org":
+                case "staging.f-droid.org":
+                    if (path.startsWith("/app/") || path.startsWith("/packages/")
+                            || path.matches("^/[a-z][a-z][a-zA-Z_-]*/packages/.*")) {
+                        // http://f-droid.org/app/packageName
+                        packageName = data.getLastPathSegment();
+                    } else if (path.startsWith("/repository/browse")) {
                         // http://f-droid.org/repository/browse?fdfilter=search+query
                         query = UriCompat.getQueryParameter(data, "fdfilter");
 
                         // http://f-droid.org/repository/browse?fdid=packageName
                         packageName = UriCompat.getQueryParameter(data, "fdid");
-                    } else if (path.startsWith("/app")) {
-                        // http://f-droid.org/app/packageName
-                        packageName = data.getLastPathSegment();
-                        if ("app".equals(packageName)) {
-                            packageName = null;
-                        }
+                    } else if ("/app".equals(data.getPath()) || "/packages".equals(data.getPath())) {
+                        packageName = null;
                     }
                     break;
                 case "details":
