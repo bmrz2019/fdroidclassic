@@ -341,7 +341,7 @@ public class IndexV1Updater extends IndexUpdater {
             contentValues.put(Schema.RepoTable.Cols.MIRRORS, Utils.serializeCommaSeparatedString(repo.mirrors));
         }
         repoPersister.commit(contentValues, repo.getId());
-        profiler.log("Persited to database.");
+        profiler.log("Persisted to database.");
     }
 
     private int getIntRepoValue(Map<String, Object> repoMap, String key) {
