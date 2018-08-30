@@ -1,41 +1,48 @@
-# F-Droid Client
+## F-Droid Classic
 
-[![build status](https://gitlab.com/fdroid/fdroidclient/badges/master/build.svg)](https://gitlab.com/fdroid/fdroidclient/builds)
-[![Translation status](https://hosted.weblate.org/widgets/f-droid/-/svg-badge.svg)](https://hosted.weblate.org/engage/f-droid/)
+This is an alternative F-Droid client which is based on the older UI of the official Client (pre 1.0).
+While I think that the new client UI looks pretty, it's also quite clunky in my opinion.
+Lots of information that was provided clearly in the old UI is now not avail;able or hidden at behind more taps or only available in different views.
 
-Client for [F-Droid](https://f-droid.org), the Free Software repository system
-for Android.
+This project is probably aimed more at the power user who values function over form. Or people which absolutely cannot stand the tile-based new UI.
+
+## Plan/Todo
+
+### What should go in
+
+* First of all will be index-v1 support.
+* Support for the additional features provided by the new index format.
+  * Screenshots
+  * Inline changelogs
+  * Localized metadata
+  * Feature graphics (maybe, very low priority)
+* Privileged Extension support (To be discussed how that will work exactly)
+* ...
+
+### What will be out
+
+* Swap, at least initially. I almost never use it and I don't know many people that do. There's still the official client if you need that functionality.
+* The tile based UI (at least until it becomes far more stable)
+* The old xml based index support will be dropped
+
 
 ## Building with Gradle
 
     ./gradlew assembleRelease
 
-## Direct download
-
-You can [download the application](https://f-droid.org/FDroid.apk) directly
-from our site or [browse it in the repo](https://f-droid.org/app/org.fdroid.fdroid).
-
-## Contributing
-
-See our [Contributing doc](CONTRIBUTING.md) for information on how to report
-issues, translate the app into your language or help with development.
-
-## IRC
-
-We are on `#fdroid` and `#fdroid-dev` on Freenode. We hold weekly dev meetings
-on `#fdroid-dev` on Tuesdays at 20h UTC, which usually last half an hour.
-
 ## FAQ
 
-* Why does F-Droid require "Unknown Sources" to install apps by default?
+* Why does F-Droid Classic require "Unknown Sources" to install apps by default?
 
 Because a regular Android app cannot act as a package manager on its
 own. To do so, it would require system privileges (see below), similar
 to what Google Play does.
 
-* Can I avoid enabling "Unknown Sources" by installing F-Droid as a
+* Can I avoid enabling "Unknown Sources" by installing F-Droid Classic as a
   privileged system app?
 
+
+TODO: See what to do about privext.
 This used to be the case, but no longer is. Now the [Privileged
 Extension](https://gitlab.com/fdroid/privileged-extension) is the one that should be placed in
 the system. It can be bundled with a ROM or installed via a zip, or
@@ -59,3 +66,12 @@ Other icons are from the
 [Material Design Icon set](https://github.com/google/material-design-icons)
 released under an
 [Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
+
+
+## Translation
+
+TODO:
+Everything can be translated.  See
+[Translation and Localization](https://f-droid.org/docs/Translation_and_Localization)
+for more info.
+[![translation status](https://hosted.weblate.org/widgets/f-droid/-/f-droid/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
