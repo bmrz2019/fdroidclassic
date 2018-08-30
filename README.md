@@ -25,6 +25,10 @@ This project is probably aimed more at the power user who values function over f
 * The tile based UI (at least until it becomes far more stable)
 * The old xml based index support will be dropped
 
+### Undecided
+
+* Support for older Android versions.
+
 
 ## Building with Gradle
 
