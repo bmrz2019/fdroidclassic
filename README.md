@@ -6,7 +6,7 @@ Lots of information that was provided clearly in the old UI is now not avail;abl
 
 This project is probably aimed more at the power user who values function over form. Or people which absolutely cannot stand the tile-based new UI.
 
-![Screenshot of the old UI](/screeenshots/screenshot.png "Screenshot")
+<img src="https://gitlab.com/Bubu/fdroidclassic/raw/master/screenshots/screenshot.png?inline=false"  width="400">
 
 ## Plan/Todo
 
