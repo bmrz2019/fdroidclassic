@@ -21,16 +21,12 @@ package org.fdroid.fdroid;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
-import android.net.Uri;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StrictMode;
@@ -38,15 +34,18 @@ import android.preference.PreferenceManager;
 import android.support.v4.util.LongSparseArray;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.Display;
+import android.view.WindowManager;
 
-import com.nostra13.universalimageloader.cache.disc.impl.LimitedAgeDiskCache;
-import com.nostra13.universalimageloader.cache.disc.naming.FileNameGenerator;
+import com.nostra13.universalimageloader.cache.disc.DiskCache;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
+import com.nostra13.universalimageloader.cache.disc.impl.ext.LruDiskCache;
+import com.nostra13.universalimageloader.core.DefaultConfigurationFactory;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.process.BitmapProcessor;
 
 import org.apache.commons.net.util.SubnetUtils;
-import org.fdroid.fdroid.Preferences.ChangeListener;
 import org.fdroid.fdroid.Preferences.Theme;
 import org.fdroid.fdroid.compat.PRNGFixes;
 import org.fdroid.fdroid.data.AppProvider;
@@ -54,15 +53,12 @@ import org.fdroid.fdroid.data.InstalledAppProviderService;
 import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.installer.InstallHistoryService;
-import org.fdroid.fdroid.net.IconDownloader;
+import org.fdroid.fdroid.net.ImageLoaderForUIL;
 
 import java.io.IOException;
-import java.net.URL;
-import java.net.URLStreamHandler;
-import java.net.URLStreamHandlerFactory;
-import java.security.Security;
-import java.util.List;
 import java.util.Locale;
+
+import javax.microedition.khronos.opengles.GL10;
 
 import info.guardianproject.netcipher.NetCipher;
 import info.guardianproject.netcipher.proxy.OrbotHelper;
@@ -241,23 +237,48 @@ public class FDroidApp extends Application {
 
         UpdateService.schedule(getApplicationContext());
 
+        // There are a couple things to pay attention to with this config: memory usage,
+        // especially on small devices; and, image processing vulns, since images are
+        // submitted via app's git repos, so anyone with commit privs there could submit
+        // exploits hidden in images.  Luckily, F-Droid doesn't need EXIF at all, and
+        // that is where the JPEG/PNG vulns have been. So it can be entirely stripped.
+        Display display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
+        int maxSize = GL10.GL_MAX_TEXTURE_SIZE; // see ImageScaleType.NONE_SAFE javadoc
+        int width = display.getWidth();
+        if (width > maxSize) {
+            maxSize = width;
+        }
+        int height = display.getHeight();
+        if (height > maxSize) {
+            maxSize = height;
+        }
+        DiskCache diskCache;
+        long available = Utils.getImageCacheDirAvailableMemory(this);
+        int percentageFree = Utils.getPercent(available, Utils.getImageCacheDirTotalMemory(this));
+        if (percentageFree > 5) {
+            diskCache = new UnlimitedDiskCache(Utils.getImageCacheDir(this));
+        } else {
+            Log.i(TAG, "Switching to LruDiskCache(" + available / 2L + ") to save disk space!");
+            try {
+                diskCache = new LruDiskCache(Utils.getImageCacheDir(this),
+                        DefaultConfigurationFactory.createFileNameGenerator(),
+                        available / 2L);
+            } catch (IOException e) {
+                diskCache = new UnlimitedDiskCache(Utils.getImageCacheDir(this));
+            }
+        }
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
-                .imageDownloader(new IconDownloader(getApplicationContext()))
-                .diskCache(new LimitedAgeDiskCache(
-                        Utils.getIconsCacheDir(this),
-                        null,
-                        new FileNameGenerator() {
-                            @Override
-                            public String generate(String imageUri) {
-                                return imageUri.substring(
-                                        imageUri.lastIndexOf('/') + 1);
-                            }
-                        },
-                        // 30 days in secs: 30*24*60*60 = 2592000
-                        2592000)
-                )
-                .threadPoolSize(4)
-                .threadPriority(Thread.NORM_PRIORITY - 2) // Default is NORM_PRIORITY - 1
+                .imageDownloader(new ImageLoaderForUIL(getApplicationContext()))
+                .defaultDisplayImageOptions(Utils.getDefaultDisplayImageOptionsBuilder().build())
+                .diskCache(diskCache)
+                .diskCacheExtraOptions(maxSize, maxSize, new BitmapProcessor() {
+                    @Override
+                    public Bitmap process(Bitmap bitmap) {
+                        // converting JPEGs to Bitmaps, then saving them removes EXIF metadata
+                        return bitmap;
+                    }
+                })
+                .threadPoolSize(getThreadPoolSize())
                 .build();
         ImageLoader.getInstance().init(config);
 
@@ -277,6 +298,24 @@ public class FDroidApp extends Application {
             }
             grantUriPermission(packageName, InstallHistoryService.LOG_URI, modeFlags);
         }
+    }
+
+    /**
+     * Return the number of threads Universal Image Loader should use, based on
+     * the total RAM in the device.  Devices with lots of RAM can do lots of
+     * parallel operations for fast icon loading.
+     */
+    @TargetApi(16)
+    private int getThreadPoolSize() {
+        if (Build.VERSION.SDK_INT >= 16) {
+            ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+            ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+            if (activityManager != null) {
+                activityManager.getMemoryInfo(memInfo);
+                return (int) Math.max(1, Math.min(16, memInfo.totalMem / 256 / 1024 / 1024));
+            }
+        }
+        return 2;
     }
 
     private static volatile LongSparseArray<String> lastWorkingMirrorArray = new LongSparseArray<>(1);

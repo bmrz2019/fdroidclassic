@@ -146,14 +146,6 @@ public class HttpDownloader extends Downloader {
         cacheTag = connection.getHeaderField(HEADER_FIELD_ETAG);
     }
 
-    public static boolean isSwapUrl(Uri uri) {
-        return isSwapUrl(uri.getHost(), uri.getPort());
-    }
-
-    public static boolean isSwapUrl(URL url) {
-        return isSwapUrl(url.getHost(), url.getPort());
-    }
-
     public static boolean isSwapUrl(String host, int port) {
         return port > 1023 // only root can use <= 1023, so never a swap repo
                 && host.matches("[0-9.]+") // host must be an IP address
@@ -162,17 +154,11 @@ public class HttpDownloader extends Downloader {
 
     private HttpURLConnection getConnection() throws SocketTimeoutException, IOException {
         HttpURLConnection connection;
-        if (isSwapUrl(sourceUrl)) {
-            // swap never works with a proxy, its unrouted IP on the same subnet
-            connection = (HttpURLConnection) sourceUrl.openConnection();
-            connection.setRequestProperty("Connection", "Close"); // avoid keep-alive
-        } else {
             if (queryString != null) {
                 connection = NetCipher.getHttpURLConnection(new URL(urlString + "?" + queryString));
             } else {
                 connection = NetCipher.getHttpURLConnection(sourceUrl);
             }
-        }
 
         connection.setRequestProperty("User-Agent", "F-Droid " + BuildConfig.VERSION_NAME);
         connection.setConnectTimeout(getTimeout());
