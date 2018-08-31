@@ -95,6 +95,11 @@
     <string name="malformed_repo_uri">Ignoring malformed repo URI: %s</string>
     <string name="repo_provider">Repository: %s</string>
 
+    <string name="repo_official_mirrors">Official mirrors</string>
+    <string name="repo_user_mirrors">User mirrors</string>
+    <string name="repo_exists_add_mirror">This is a copy of %1$s, add it as a mirror?</string>
+    <string name="repo_add_mirror">Add mirror</string>
+
     <string name="menu_update_repo">Update Repos</string>
     <string name="menu_manage">Repositories</string>
     <string name="menu_send_apk_bt">Share F-Droid by Bluetooth</string>

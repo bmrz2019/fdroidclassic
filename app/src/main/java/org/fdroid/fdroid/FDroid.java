@@ -308,17 +308,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
                 startActivityForResult(prefs, REQUEST_PREFS);
                 return true;
 
-            case R.id.action_bluetooth_apk:
-                /*
-                 * If Bluetooth has not been enabled/turned on, then enabling
-                 * device discoverability will automatically enable Bluetooth
-                 */
-                Intent discoverBt = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-                discoverBt.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 121);
-                startActivityForResult(discoverBt, REQUEST_ENABLE_BLUETOOTH);
-                // if this is successful, the Bluetooth transfer is started
-                return true;
-
             case R.id.action_about:
                 View view = LayoutInflater.from(this).inflate(R.layout.about, null);
 

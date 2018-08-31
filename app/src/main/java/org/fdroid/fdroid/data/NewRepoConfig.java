@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
-
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
 
@@ -21,6 +20,8 @@ public class NewRepoConfig {
     private String uriString;
     private String host;
     private int port = -1;
+    private String username;
+    private String password;
     private String fingerprint;
     private String bssid;
     private String ssid;
@@ -71,27 +72,33 @@ public class NewRepoConfig {
             uri = Uri.parse(uri.toString().toLowerCase(Locale.ENGLISH));
         }
 
-        String path = uri.getPath();
-        if (path == null || !(path.contains("/fdroid/archive") || path.contains("/fdroid/repo"))) {
-            isValidRepo = false;
-            return;
-        }
-
         // make scheme and host lowercase so they're readable in dialogs
         scheme = scheme.toLowerCase(Locale.ENGLISH);
         host = host.toLowerCase(Locale.ENGLISH);
-        fingerprint = uri.getQueryParameter("fingerprint");
-        bssid = uri.getQueryParameter("bssid");
-        ssid = uri.getQueryParameter("ssid");
 
-        if (!Arrays.asList("fdroidrepos", "fdroidrepo", "https", "http").contains(scheme)) {
+        if (uri.getPath() == null
+                || !Arrays.asList("https", "http", "fdroidrepos", "fdroidrepo").contains(scheme)) {
             isValidRepo = false;
             return;
         }
 
+        String userInfo = uri.getUserInfo();
+        if (userInfo != null) {
+            String[] userInfoTokens = userInfo.split(":");
+            if (userInfoTokens != null && userInfoTokens.length >= 2) {
+                username = userInfoTokens[0];
+                password = userInfoTokens[1];
+                for (int i = 2; i < userInfoTokens.length; i++) {
+                    password += ":" + userInfoTokens[i];
+                }
+            }
+        }
+
+        fingerprint = uri.getQueryParameter("fingerprint");
+        bssid = uri.getQueryParameter("bssid");
+        ssid = uri.getQueryParameter("ssid");
         uriString = sanitizeRepoUri(uri);
         isValidRepo = true;
-
     }
 
     public String getBssid() {
@@ -121,6 +128,14 @@ public class NewRepoConfig {
         return host;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     public String getFingerprint() {
         return fingerprint;
     }
@@ -133,13 +148,17 @@ public class NewRepoConfig {
         return errorMessage;
     }
 
-    /** Sanitize and format an incoming repo URI for function and readability */
+    /**
+     * Sanitize and format an incoming repo URI for function and readability
+     */
     public static String sanitizeRepoUri(Uri uri) {
         String scheme = uri.getScheme();
         String host = uri.getHost();
+        String userInfo = uri.getUserInfo();
         return uri.toString()
                 .replaceAll("\\?.*$", "") // remove the whole query
                 .replaceAll("/*$", "") // remove all trailing slashes
+                .replace(userInfo + "@", "") // remove user authentication
                 .replace(host, host.toLowerCase(Locale.ENGLISH))
                 .replace(scheme, scheme.toLowerCase(Locale.ENGLISH))
                 .replace("fdroidrepo", "http") // proper repo address
