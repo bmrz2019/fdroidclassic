@@ -16,7 +16,6 @@ import android.webkit.MimeTypeMap;
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.fdroid.fdroid.RepoXMLHandler;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.ApkTable.Cols;
 
@@ -25,6 +24,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 
+import java.util.regex.Pattern;
 /**
  * Represents a single package of an application. This represents one particular
  * package of a given application, for info about the app in general, see
@@ -449,12 +449,32 @@ public class Apk extends ValueObject implements Comparable<Apk>, Parcelable {
         }
     };
 
+    private static final Pattern OLD_FDROID_PERMISSION = Pattern.compile("[A-Z_]+");
+
+    /**
+     * It appears that the default Android permissions in android.Manifest.permissions
+     * are prefixed with "android.permission." and then the constant name.
+     * FDroid just includes the constant name in the apk list, so we prefix it
+     * with "android.permission."
+     *
+     * @see <a href="https://gitlab.com/fdroid/fdroidserver/blob/1afa8cfc/update.py#L91">
+     * More info into index - size, permissions, features, sdk version</a>
+     */
+    public static String fdroidToAndroidPermission(String permission) {
+        if (OLD_FDROID_PERMISSION.matcher(permission).matches()) {
+            return "android.permission." + permission;
+        }
+
+        return permission;
+    }
+
+
     private String[] convertToRequestedPermissions(String permissionsFromDb) {
         String[] array = Utils.parseCommaSeparatedString(permissionsFromDb);
         if (array != null) {
             HashSet<String> requestedPermissionsSet = new HashSet<>();
             for (String permission : array) {
-                requestedPermissionsSet.add(RepoXMLHandler.fdroidToAndroidPermission(permission));
+                requestedPermissionsSet.add(fdroidToAndroidPermission(permission));
             }
             return requestedPermissionsSet.toArray(new String[requestedPermissionsSet.size()]);
         }

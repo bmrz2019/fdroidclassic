@@ -9,7 +9,6 @@
     <string name="version">Version</string>
     <string name="by_author">by</string>
     <string name="delete">Delete</string>
-    <string name="enable_nfc_send">Enable NFC Send…</string>
     <string name="cache_downloaded">Keep cached apps</string>
     <string name="updates">Updates</string>
     <string name="unstable_updates">Unstable updates</string>
@@ -34,10 +33,6 @@
     <string name="system_installer_on">Use F-Droid Privileged Extension to install, update, and remove packages</string>
     <string name="uninstall_system">Update/Uninstall Privileged Extension</string>
     <string name="uninstall_system_summary">Open details screen of Privileged Extension to update/uninstall it</string>
-    <string name="local_repo_name">Name of your Local Repo</string>
-    <string name="local_repo_name_summary">The advertised title of your local repo: %s</string>
-    <string name="local_repo_https">Use Private Connection</string>
-    <string name="local_repo_https_on">Use encrypted HTTPS:// connection for local repo</string>
 
     <string name="login_title">Authentication required</string>
     <string name="login_name">Username</string>
@@ -88,9 +83,6 @@
     <string name="many_updates_available">%d updates are available.</string>
     <string name="fdroid_updates_available">F-Droid Updates Available</string>
     <string name="update_notification_more">+%1$d more…</string>
-    <string name="bluetooth_activity_not_found">No Bluetooth send method found, choose one!</string>
-    <string name="choose_bt_send">Choose Bluetooth send method</string>
-    <string name="send_via_bluetooth">Send via Bluetooth</string>
 
     <string name="repo_add_url">Repository address</string>
     <string name="repo_add_fingerprint">Fingerprint (optional)</string>
@@ -294,49 +286,9 @@
     <string name="system_uninstall_button">Uninstall</string>
     <string name="system_install_not_supported">Installation of F-Droid Privileged Extension is currently not supported on Android 5.1 or later.</string>
 
-    <string name="swap_nfc_title">Touch to swap</string>
-    <string name="swap_nfc_description">If your friend has F-Droid and NFC turned on touch your devices together.</string>
-    <string name="swap_join_same_wifi">Join the same Wi-Fi as your friend</string>
-    <string name="swap_join_same_wifi_desc">To swap using Wi-Fi, ensure you are on the same network. If you don\'t have access to the same network, one of you can create a Wi-Fi Hotspot.</string>
-    <string name="swap_join_this_hotspot">Help your friend join your hotspot</string>
-    <string name="swap">Swap apps</string>
-    <string name="swap_success">Swap success!</string>
-    <string name="swap_no_wifi_network">No network yet</string>
-    <string name="swap_active_hotspot">%1$s (your hotspot)</string>
-    <string name="swap_view_available_networks">Tap to open available networks</string>
-    <string name="swap_switch_to_wifi">Tap to switch to a Wi-Fi network</string>
     <string name="open_qr_code_scanner">Open QR Scanner</string>
-    <string name="swap_welcome">Welcome to F-Droid!</string>
-    <string name="swap_confirm_connect">Do you want to get apps from %1$s now?</string>
-    <string name="swap_dont_show_again">Don\'t show this again</string>
-    <string name="swap_scan_or_type_url">One person needs to scan the code, or type the URL of the other in a browser.</string>
-    <string name="swap_choose_apps">Choose Apps</string>
-    <string name="swap_scan_qr">Scan QR Code</string>
-    <string name="swap_people_nearby">People Nearby</string>
-    <string name="swap_scanning_for_peers">Searching for nearby people…</string>
-    <string name="swap_nearby">Nearby Swap</string>
-    <string name="swap_intro">Connect and trade apps with people near you.</string>
-    <string name="swap_visible_bluetooth">Visible via Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Setting up Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Not visible via Bluetooth</string>
-    <string name="swap_visible_wifi">Visible via Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Setting up Wi-Fi…</string>
-    <string name="swap_stopping_wifi">Stopping Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Not visible via Wi-Fi</string>
-    <string name="swap_wifi_device_name">Device Name</string>
-    <string name="swap_cant_find_peers">Can\'t find who you\'re looking for?</string>
-    <string name="swap_send_fdroid">Send F-Droid</string>
-    <string name="swap_no_peers_nearby">Could not find people nearby to swap with.</string>
-    <string name="swap_connecting">Connecting</string>
-    <string name="swap_confirm">Confirm swap</string>
-    <string name="swap_qr_isnt_for_swap">The QR code you scanned doesn\'t look like a swap code.</string>
-    <string name="bluetooth_unavailable">Bluetooth unavailable</string>
-    <string name="swap_cant_send_no_bluetooth">Cannot send F-Droid, because Bluetooth is unavailable on this device.</string>
-    <string name="loading">Loading…</string>
-    <string name="swap_connection_misc_error">An error occurred while connecting to device, we can\'t seem to swap with it.</string>
-    <string name="swap_not_enabled">Swapping not enabled</string>
-    <string name="swap_not_enabled_description">Before swapping, your device must be made visible.</string>
 
+    <string name="loading">Loading…</string>
     <string name="tap_to_install_format">Tap to install %s</string>
     <string name="tap_to_update_format">Tap to update %s</string>
     <string name="install_confirm">needs access to</string>

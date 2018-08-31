@@ -82,7 +82,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + RepoTable.Cols.VERSION + " integer not null default 0, "
             + RepoTable.Cols.LAST_ETAG + " text, "
             + RepoTable.Cols.LAST_UPDATED + " string,"
-            + RepoTable.Cols.IS_SWAP + " integer, boolean default 0,"
+            + RepoTable.Cols.IS_SWAP + " integer boolean default 0,"
             + RepoTable.Cols.USERNAME + " string, "
             + RepoTable.Cols.PASSWORD + " string,"
             + RepoTable.Cols.TIMESTAMP + " integer not null default 0, "
@@ -166,8 +166,8 @@ public class DBHelper extends SQLiteOpenHelper {
             + " ( "
             + AppPrefsTable.Cols.PACKAGE_NAME + " TEXT, "
             + AppPrefsTable.Cols.IGNORE_THIS_UPDATE + " INT NOT NULL, "
-            + AppPrefsTable.Cols.IGNORE_ALL_UPDATES + " INT, BOOLEAN NOT NULL, "
-            + AppPrefsTable.Cols.IGNORE_VULNERABILITIES + " INT, BOOLEAN NOT NULL "
+            + AppPrefsTable.Cols.IGNORE_ALL_UPDATES + " INT BOOLEAN NOT NULL, "
+            + AppPrefsTable.Cols.IGNORE_VULNERABILITIES + " INT BOOLEAN NOT NULL "
             + " );";
 
     private static final String CREATE_TABLE_CATEGORY = "CREATE TABLE " + Schema.CategoryTable.NAME
@@ -222,16 +222,6 @@ public class DBHelper extends SQLiteOpenHelper {
     DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DB_VERSION);
         this.context = context.getApplicationContext();
-    }
-
-    /**
-     * Only used for testing. Not quite sure how to mock a singleton variable like this.
-     */
-    public static void clearDbHelperSingleton() {
-        if (instance != null) {
-            instance.close();
-        }
-        instance = null;
     }
 
     static synchronized DBHelper getInstance(Context context) {

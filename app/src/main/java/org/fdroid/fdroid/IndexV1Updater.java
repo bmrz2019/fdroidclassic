@@ -104,13 +104,7 @@ public class IndexV1Updater extends RepoUpdater {
      * @throws RepoUpdater.UpdateException
      * @see org.fdroid.fdroid.net.DownloaderService#handleIntent(android.content.Intent)
      */
-    @Override
     public boolean update() throws RepoUpdater.UpdateException {
-
-        if (repo.isSwap) {
-            // swap repos do not support index-v1
-            return false;
-        }
         Downloader downloader = null;
         try {
             // read file name from file

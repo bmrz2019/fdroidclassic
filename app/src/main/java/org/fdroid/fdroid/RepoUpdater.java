@@ -99,8 +99,6 @@ public class RepoUpdater {
     @NonNull
     private final RepoPersister persister;
 
-    private final List<RepoPushRequest> repoPushRequestList = new ArrayList<>();
-
     /**
      * Updates an app repo as read out of the database into a {@link Repo} instance.
      *
@@ -144,100 +142,8 @@ public class RepoUpdater {
         return downloader;
     }
 
-    /**
-     * All repos are represented by a signed jar file, {@code index.jar}, which contains
-     * a single file, {@code index.xml}.  This takes the {@code index.jar}, verifies the
-     * signature, then returns the unzipped {@code index.xml}.
-     *
-     * @return whether this version of the repo index was found and processed
-     * @throws UpdateException All error states will come from here.
-     */
-    public boolean update() throws UpdateException {
-        final Downloader downloader = downloadIndex();
-        hasChanged = downloader.hasChanged();
-
-        if (hasChanged) {
-            // Don't worry about checking the status code for 200. If it was a
-            // successful download, then we will have a file ready to use:
-            cacheTag = downloader.getCacheTag();
-            processDownloadedFile(downloader.outputFile);
-        }
-        return true;
-    }
-
     private ContentValues repoDetailsToSave;
     private String signingCertFromIndexXml;
-
-    private RepoXMLHandler.IndexReceiver createIndexReceiver() {
-        return new RepoXMLHandler.IndexReceiver() {
-            @Override
-            public void receiveRepo(String name, String description, String signingCert, int maxAge,
-                                    int version, long timestamp, String icon, String[] mirrors) {
-                signingCertFromIndexXml = signingCert;
-                repoDetailsToSave = prepareRepoDetailsForSaving(name, description, maxAge, version,
-                        timestamp, icon, mirrors, cacheTag);
-            }
-
-            @Override
-            public void receiveApp(App app, List<Apk> packages) {
-                try {
-                    persister.saveToDb(app, packages);
-                } catch (UpdateException e) {
-                    throw new RuntimeException("Error while saving repo details to database.", e);
-                }
-            }
-
-            @Override
-            public void receiveRepoPushRequest(RepoPushRequest repoPushRequest) {
-                repoPushRequestList.add(repoPushRequest);
-            }
-        };
-    }
-
-    public void processDownloadedFile(File downloadedFile) throws UpdateException {
-        InputStream indexInputStream = null;
-        try {
-            if (downloadedFile == null || !downloadedFile.exists()) {
-                throw new UpdateException(downloadedFile + " does not exist!");
-            }
-
-            JarFile jarFile = new JarFile(downloadedFile, true);
-            JarEntry indexEntry = (JarEntry) jarFile.getEntry(RepoUpdater.DATA_FILE_NAME);
-            indexInputStream = new ProgressBufferedInputStream(jarFile.getInputStream(indexEntry),
-                    processIndexListener, repo.address, (int) indexEntry.getSize());
-
-            // Process the index...
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            factory.setNamespaceAware(true);
-            final SAXParser parser = factory.newSAXParser();
-            final XMLReader reader = parser.getXMLReader();
-            final RepoXMLHandler repoXMLHandler = new RepoXMLHandler(repo, createIndexReceiver());
-            reader.setContentHandler(repoXMLHandler);
-            reader.parse(new InputSource(indexInputStream));
-
-            long timestamp = repoDetailsToSave.getAsLong(RepoTable.Cols.TIMESTAMP);
-            if (timestamp < repo.timestamp) {
-                throw new UpdateException("index.jar is older that current index! "
-                        + timestamp + " < " + repo.timestamp);
-            }
-
-            signingCertFromJar = getSigningCertFromJar(indexEntry);
-
-            // JarEntry can only read certificates after the file represented by that JarEntry
-            // has been read completely, so verification cannot run until now...
-            assertSigningCertFromXmlCorrect();
-            commitToDb();
-        } catch (SAXException | ParserConfigurationException | IOException e) {
-            throw new UpdateException("Error parsing index", e);
-        } finally {
-            Utils.closeQuietly(indexInputStream);
-            if (downloadedFile != null) {
-                if (!downloadedFile.delete()) {
-                    Log.w(TAG, "Couldn't delete file: " + downloadedFile.getAbsolutePath());
-                }
-            }
-        }
-    }
 
     protected final ProgressListener downloadListener = new ProgressListener() {
         @Override
