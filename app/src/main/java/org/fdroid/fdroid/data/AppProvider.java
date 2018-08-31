@@ -473,7 +473,8 @@ public class AppProvider extends FDroidProvider {
     private static final int SEARCH_TEXT = INSTALLED + 1;
     private static final int SEARCH_TEXT_AND_CATEGORIES = SEARCH_TEXT + 1;
     private static final int RECENTLY_UPDATED = SEARCH_TEXT_AND_CATEGORIES + 1;
-    private static final int CATEGORY = RECENTLY_UPDATED + 1;
+    private static final int NEWLY_ADDED = RECENTLY_UPDATED + 1;
+    private static final int CATEGORY = NEWLY_ADDED + 1;
     private static final int CALC_SUGGESTED_APKS = CATEGORY + 1;
     private static final int REPO = CALC_SUGGESTED_APKS + 1;
     private static final int SEARCH_REPO = REPO + 1;
@@ -488,6 +489,7 @@ public class AppProvider extends FDroidProvider {
         MATCHER.addURI(getAuthority(), PATH_CALC_SUGGESTED_APKS + "/*", CALC_SUGGESTED_APKS);
         MATCHER.addURI(getAuthority(), PATH_RECENTLY_UPDATED, RECENTLY_UPDATED);
         MATCHER.addURI(getAuthority(), PATH_CATEGORY + "/*", CATEGORY);
+        MATCHER.addURI(getAuthority(), PATH_NEWLY_ADDED, NEWLY_ADDED);
         MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*/*", SEARCH_TEXT_AND_CATEGORIES);
         MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*", SEARCH_TEXT);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_REPO + "/*/*", SEARCH_REPO);
@@ -888,6 +890,13 @@ public class AppProvider extends FDroidProvider {
                 includeSwap = false;
                 break;
 
+            case NEWLY_ADDED:
+                sortOrder = getTableName() + "." + Cols.ADDED + " DESC";
+                selection = selection.add(queryNewlyAdded());
+                includeSwap = false;
+                break;
+
+
             case INSTALLED_WITH_KNOWN_VULNS:
                 selection = selection.add(queryInstalledWithKnownVulns());
                 includeSwap = false;
@@ -925,6 +934,13 @@ public class AppProvider extends FDroidProvider {
 
         return runQuery(uri, selection, projection, includeSwap, sortOrder, limit);
     }
+
+    private AppQuerySelection queryNewlyAdded() {
+        final String selection = getTableName() + "." + Cols.ADDED + " > ?";
+        final String[] args = {Utils.formatDate(Preferences.get().calcMaxHistory(), "")};
+        return new AppQuerySelection(selection, args);
+    }
+
 
     /**
      * Helper method used by both the genuine {@link AppProvider} and the temporary version used
