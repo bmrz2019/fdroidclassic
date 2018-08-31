@@ -1,19 +1,20 @@
 /*
-** Copyright 2007, The Android Open Source Project
-** Copyright 2015 Daniel Martí <mvdan@mvdan.cc>
-**
-** Licensed under the Apache License, Version 2.0 (the "License");
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
+ **
+ ** Copyright 2007, The Android Open Source Project
+ ** Copyright 2015 Daniel Martí <mvdan@mvdan.cc>
+ **
+ ** Licensed under the Apache License, Version 2.0 (the "License");
+ ** you may not use this file except in compliance with the License.
+ ** You may obtain a copy of the License at
+ **
+ **     http://www.apache.org/licenses/LICENSE-2.0
+ **
+ ** Unless required by applicable law or agreed to in writing, software
+ ** distributed under the License is distributed on an "AS IS" BASIS,
+ ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ** See the License for the specific language governing permissions and
+ ** limitations under the License.
+ */
 
 package org.fdroid.fdroid.privileged.views;
 
@@ -26,10 +27,12 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PermissionGroupInfo;
 import android.content.pm.PermissionInfo;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AlertDialog;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -41,7 +44,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.R;
 
 import java.text.Collator;
@@ -62,14 +65,20 @@ import java.util.Set;
  * extended information consisting of all groups and permissions.
  * To use this view define a LinearLayout or any ViewGroup and add this
  * view by instantiating AppSecurityPermissions and invoking getPermissionsView.
- * <p/>
+ * <p>
  * NOTES:
- * Based on AOSP core/java/android/widget/AppSecurityPermissions
- * latest included commit: a3f68ef2f6811cf72f1282214c0883db5a30901d
- * <p/>
- * To update this file:
- * - Open https://github.com/android/platform_frameworks_base/commits/master/core/java/android/widget/AppSecurityPermissions.java
- * - Start from latest included commit and include changes until the newest commit with care
+ * Based on AOSP {@code core/java/android/widget/AppSecurityPermissions.java},
+ * latest included commit: a3f68ef2f6811cf72f1282214c0883db5a30901d,
+ * Reviewed against {@code frameworks/base/core/java/android/widget/AppSecurityPermissions.java},
+ * from commit {@code android-8.1.0_r2}
+ * <p>
+ * To update this file, Start from latest included commit and include changes
+ * until the newest commit with care:
+ * <a href="http://github.com/android/platform_frameworks_base/blob/master/core/java/android/widget/AppSecurityPermissions">android/widget/AppSecurityPermissions.java</a>
+ * <p>
+ * This file has a different code style than the rest of fdroidclient because
+ * it is kept in sync with the file from AOSP.  Please maintain the original
+ * AOSP code style so it is easy to track changes.
  */
 public class AppSecurityPermissions {
 
@@ -89,8 +98,9 @@ public class AppSecurityPermissions {
 
     // PermissionGroupInfo implements Parcelable but its Parcel constructor is private and thus cannot be extended.
     @SuppressLint("ParcelCreator")
+    @SuppressWarnings("LineLength")
     static class MyPermissionGroupInfo extends PermissionGroupInfo {
-        CharSequence mLabel;
+        CharSequence label;
 
         final List<MyPermissionInfo> newPermissions = new ArrayList<>();
         final List<MyPermissionInfo> allPermissions = new ArrayList<>();
@@ -106,10 +116,17 @@ public class AppSecurityPermissions {
 
         @TargetApi(22)
         public Drawable loadGroupIcon(Context context, PackageManager pm) {
+            Drawable iconDrawable;
             if (icon != 0) {
-                return (Build.VERSION.SDK_INT < 22) ? loadIcon(pm) : loadUnbadgedIcon(pm);
+                iconDrawable = (Build.VERSION.SDK_INT < 22) ? loadIcon(pm) : loadUnbadgedIcon(pm);
+            } else {
+                iconDrawable = ContextCompat.getDrawable(context, R.drawable.ic_perm_device_info);
             }
-            return ContextCompat.getDrawable(context, R.drawable.ic_perm_device_info);
+
+            Preferences.Theme theme = Preferences.get().getTheme();
+            Drawable wrappedIconDrawable = DrawableCompat.wrap(iconDrawable).mutate();
+            DrawableCompat.setTint(wrappedIconDrawable, theme == Preferences.Theme.light ? Color.BLACK : Color.WHITE);
+            return wrappedIconDrawable;
         }
 
     }
@@ -173,6 +190,7 @@ public class AppSecurityPermissions {
             }
 
             permGrpIcon.setImageDrawable(icon);
+            permGrpIcon.setColorFilter(0xff757575);
             permNameView.setText(label);
             setOnClickListener(this);
         }
@@ -185,7 +203,7 @@ public class AppSecurityPermissions {
                 }
                 PackageManager pm = getContext().getPackageManager();
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setTitle(group.mLabel);
+                builder.setTitle(group.label);
                 if (perm.descriptionRes != 0) {
                     builder.setMessage(perm.loadDescription(pm));
                 } else {
@@ -397,8 +415,8 @@ public class AppSecurityPermissions {
         }
     }
 
-    private PermissionItemView getPermissionItemView(MyPermissionGroupInfo grp,
-                                                     MyPermissionInfo perm, boolean first, CharSequence newPermPrefix) {
+    private PermissionItemView getPermissionItemView(MyPermissionGroupInfo grp, MyPermissionInfo perm,
+                                                     boolean first, CharSequence newPermPrefix) {
         PermissionItemView permView = (PermissionItemView) inflater.inflate(
                 Build.VERSION.SDK_INT >= 17 &&
                         (perm.flags & PermissionInfo.FLAG_COSTS_MONEY) != 0
@@ -408,6 +426,7 @@ public class AppSecurityPermissions {
         return permView;
     }
 
+    @TargetApi(23)
     private boolean isDisplayablePermission(PermissionInfo pInfo, int existingReqFlags) {
         final int base = pInfo.protectionLevel & PermissionInfo.PROTECTION_MASK_BASE;
         final boolean isNormal = base == PermissionInfo.PROTECTION_NORMAL;
@@ -415,7 +434,7 @@ public class AppSecurityPermissions {
                 || ((pInfo.protectionLevel & PermissionInfo.PROTECTION_FLAG_PRE23) != 0);
 
         // Dangerous and normal permissions are always shown to the user
-        // this is matches the permission list in AppDetails
+        // this is matches the permission list in AppDetails2
         if (isNormal || isDangerous) {
             return true;
         }
@@ -431,22 +450,22 @@ public class AppSecurityPermissions {
 
     private static class PermissionGroupInfoComparator implements Comparator<MyPermissionGroupInfo> {
 
-        private final Collator sCollator = Collator.getInstance();
+        private final Collator collator = Collator.getInstance();
 
         public final int compare(MyPermissionGroupInfo a, MyPermissionGroupInfo b) {
-            return sCollator.compare(a.mLabel, b.mLabel);
+            return collator.compare(a.label, b.label);
         }
     }
 
     private static class PermissionInfoComparator implements Comparator<MyPermissionInfo> {
 
-        private final Collator sCollator = Collator.getInstance();
+        private final Collator collator = Collator.getInstance();
 
         PermissionInfoComparator() {
         }
 
         public final int compare(MyPermissionInfo a, MyPermissionInfo b) {
-            return sCollator.compare(a.label, b.label);
+            return collator.compare(a.label, b.label);
         }
     }
 
@@ -482,13 +501,13 @@ public class AppSecurityPermissions {
 
         for (MyPermissionGroupInfo pgrp : permGroups.values()) {
             if (pgrp.labelRes != 0 || pgrp.nonLocalizedLabel != null) {
-                pgrp.mLabel = pgrp.loadLabel(pm);
+                pgrp.label = pgrp.loadLabel(pm);
             } else {
                 try {
                     ApplicationInfo app = pm.getApplicationInfo(pgrp.packageName, 0);
-                    pgrp.mLabel = app.loadLabel(pm);
+                    pgrp.label = app.loadLabel(pm);
                 } catch (NameNotFoundException e) {
-                    pgrp.mLabel = pgrp.loadLabel(pm);
+                    pgrp.label = pgrp.loadLabel(pm);
                 }
             }
             permGroupsList.add(pgrp);

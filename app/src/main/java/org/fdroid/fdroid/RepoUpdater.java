@@ -1,7 +1,8 @@
 /*
+ * Copyright (C) 2018 Senecto Limited
  * Copyright (C) 2016 Blue Jay Wireless
  * Copyright (C) 2015-2016 Daniel Martí <mvdan@mvdan.cc>
- * Copyright (C) 2014-2016 Hans-Christoph Steiner <hans@eds.org>
+ * Copyright (C) 2014-2018 Hans-Christoph Steiner <hans@eds.org>
  * Copyright (C) 2014-2016 Peter Serwylo <peter@serwylo.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -26,12 +27,9 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
-
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.ApkProvider;
 import org.fdroid.fdroid.data.App;
@@ -49,23 +47,24 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.security.CodeSigner;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+// TODO move to org.fdroid.fdroid.updater
+// TODO reduce visibility of methods once in .updater package (.e.g tests need it public now)
 
 /**
  * Updates the local database with a repository's app/apk metadata and verifying
@@ -82,21 +81,18 @@ import javax.xml.parsers.SAXParserFactory;
  * very careful with the changes that you are making!
  */
 public class RepoUpdater {
-
     private static final String TAG = "RepoUpdater";
 
-    private final String indexUrl;
+    public static final String SIGNED_FILE_NAME = "index.jar";
+    public static final String DATA_FILE_NAME = "index.xml";
+
+    final String indexUrl;
 
     @NonNull
-    private final Context context;
+    final Context context;
     @NonNull
-    private final Repo repo;
-    private boolean hasChanged;
-
-    @Nullable
-    private ProgressListener downloadProgressListener;
-    private ProgressListener committingProgressListener;
-    private ProgressListener processXmlProgressListener;
+    final Repo repo;
+    boolean hasChanged;
     private String cacheTag;
     private X509Certificate signingCertFromJar;
 
@@ -114,25 +110,11 @@ public class RepoUpdater {
         this.context = context;
         this.repo = repo;
         this.persister = new RepoPersister(context, repo);
-
-        String url = repo.address + "/index.jar";
-        String versionName = Utils.getVersionName(context);
-        if (versionName != null) {
-            url += "?client_version=" + versionName;
-        }
-        this.indexUrl = url;
+        this.indexUrl = getIndexUrl(repo);
     }
 
-    public void setDownloadProgressListener(ProgressListener progressListener) {
-        this.downloadProgressListener = progressListener;
-    }
-
-    public void setProcessXmlProgressListener(ProgressListener progressListener) {
-        this.processXmlProgressListener = progressListener;
-    }
-
-    public void setCommittingProgressListener(ProgressListener progressListener) {
-        this.committingProgressListener = progressListener;
+    protected String getIndexUrl(@NonNull Repo repo) {
+        return repo.address + "/index.jar";
     }
 
     public boolean hasChanged() {
@@ -144,14 +126,8 @@ public class RepoUpdater {
         try {
             downloader = DownloaderFactory.create(context, indexUrl);
             downloader.setCacheTag(repo.lastetag);
-            downloader.setListener(downloadProgressListener);
+            downloader.setListener(downloadListener);
             downloader.download();
-
-            if (downloader.isCached()) {
-                // The index is unchanged since we last read it. We just mark
-                // everything that came from this repo as being updated.
-                Utils.debugLog(TAG, "Repo index for " + indexUrl + " is up to date (by etag)");
-            }
 
         } catch (IOException e) {
             if (downloader != null && downloader.outputFile != null) {
@@ -160,7 +136,7 @@ public class RepoUpdater {
                 }
             }
 
-            throw new UpdateException(repo, "Error getting index file", e);
+            throw new UpdateException("Error getting index file", e);
         } catch (InterruptedException e) {
             // ignored if canceled, the local database just won't be updated
             e.printStackTrace();
@@ -173,10 +149,10 @@ public class RepoUpdater {
      * a single file, {@code index.xml}.  This takes the {@code index.jar}, verifies the
      * signature, then returns the unzipped {@code index.xml}.
      *
+     * @return whether this version of the repo index was found and processed
      * @throws UpdateException All error states will come from here.
      */
-    public void update() throws UpdateException {
-
+    public boolean update() throws UpdateException {
         final Downloader downloader = downloadIndex();
         hasChanged = downloader.hasChanged();
 
@@ -185,8 +161,8 @@ public class RepoUpdater {
             // successful download, then we will have a file ready to use:
             cacheTag = downloader.getCacheTag();
             processDownloadedFile(downloader.outputFile);
-            processRepoPushRequests();
         }
+        return true;
     }
 
     private ContentValues repoDetailsToSave;
@@ -195,9 +171,11 @@ public class RepoUpdater {
     private RepoXMLHandler.IndexReceiver createIndexReceiver() {
         return new RepoXMLHandler.IndexReceiver() {
             @Override
-            public void receiveRepo(String name, String description, String signingCert, int maxAge, int version, long timestamp) {
+            public void receiveRepo(String name, String description, String signingCert, int maxAge,
+                                    int version, long timestamp, String icon, String[] mirrors) {
                 signingCertFromIndexXml = signingCert;
-                repoDetailsToSave = prepareRepoDetailsForSaving(name, description, maxAge, version, timestamp);
+                repoDetailsToSave = prepareRepoDetailsForSaving(name, description, maxAge, version,
+                        timestamp, icon, mirrors, cacheTag);
             }
 
             @Override
@@ -220,18 +198,13 @@ public class RepoUpdater {
         InputStream indexInputStream = null;
         try {
             if (downloadedFile == null || !downloadedFile.exists()) {
-                throw new UpdateException(repo, downloadedFile + " does not exist!");
+                throw new UpdateException(downloadedFile + " does not exist!");
             }
 
-            // Due to a bug in Android 5.0 Lollipop, the inclusion of spongycastle causes
-            // breakage when verifying the signature of the downloaded .jar. For more
-            // details, check out https://gitlab.com/fdroid/fdroidclient/issues/111.
-            FDroidApp.disableSpongyCastleOnLollipop();
-
             JarFile jarFile = new JarFile(downloadedFile, true);
-            JarEntry indexEntry = (JarEntry) jarFile.getEntry("index.xml");
+            JarEntry indexEntry = (JarEntry) jarFile.getEntry(RepoUpdater.DATA_FILE_NAME);
             indexInputStream = new ProgressBufferedInputStream(jarFile.getInputStream(indexEntry),
-                    processXmlProgressListener, new URL(repo.address), (int) indexEntry.getSize());
+                    processIndexListener, repo.address, (int) indexEntry.getSize());
 
             // Process the index...
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -244,7 +217,7 @@ public class RepoUpdater {
 
             long timestamp = repoDetailsToSave.getAsLong(RepoTable.Cols.TIMESTAMP);
             if (timestamp < repo.timestamp) {
-                throw new UpdateException(repo, "index.jar is older that current index! "
+                throw new UpdateException("index.jar is older that current index! "
                         + timestamp + " < " + repo.timestamp);
             }
 
@@ -255,9 +228,8 @@ public class RepoUpdater {
             assertSigningCertFromXmlCorrect();
             commitToDb();
         } catch (SAXException | ParserConfigurationException | IOException e) {
-            throw new UpdateException(repo, "Error parsing index", e);
+            throw new UpdateException("Error parsing index", e);
         } finally {
-            FDroidApp.enableSpongyCastleOnLollipop();
             Utils.closeQuietly(indexInputStream);
             if (downloadedFile != null) {
                 if (!downloadedFile.delete()) {
@@ -267,17 +239,32 @@ public class RepoUpdater {
         }
     }
 
+    protected final ProgressListener downloadListener = new ProgressListener() {
+        @Override
+        public void onProgress(String urlString, long bytesRead, long totalBytes) {
+            //UpdateService.reportDownloadProgress(context, RepoUpdater.this, bytesRead, totalBytes);
+        }
+    };
+
+    protected final ProgressListener processIndexListener = new ProgressListener() {
+        @Override
+        public void onProgress(String urlString, long bytesRead, long totalBytes) {
+            //UpdateService.reportProcessIndexProgress(context, RepoUpdater.this, bytesRead, totalBytes);
+        }
+    };
+
+    protected void notifyProcessingApps(int appsSaved, int totalApps) {
+        //UpdateService.reportProcessingAppsProgress(context, this, appsSaved, totalApps);
+    }
+
+    protected void notifyCommittingToDb() {
+        notifyProcessingApps(0, -1);
+    }
+
     private void commitToDb() throws UpdateException {
         Log.i(TAG, "Repo signature verified, saving app metadata to database.");
-        if (committingProgressListener != null) {
-            try {
-                //TODO this should be an event, not a progress listener
-                committingProgressListener.onProgress(new URL(indexUrl), 0, -1);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-        }
-        persister.commit(repoDetailsToSave);
+        notifyCommittingToDb();
+        persister.commit(repoDetailsToSave, repo.getId());
     }
 
     private void assertSigningCertFromXmlCorrect() throws SigningException {
@@ -292,9 +279,12 @@ public class RepoUpdater {
 
     /**
      * Update tracking data for the repo represented by this instance (index version, etag,
-     * description, human-readable name, etc.
+     * description, human-readable name, etc.  This is not reused in {@link IndexV1Updater}
+     * because its too tied up into the old parsing flow in this class.
      */
-    private ContentValues prepareRepoDetailsForSaving(String name, String description, int maxAge, int version, long timestamp) {
+    private ContentValues prepareRepoDetailsForSaving(String name, String description, int maxAge,
+                                                      int version, long timestamp, String icon,
+                                                      String[] mirrors, String cacheTag) {
         ContentValues values = new ContentValues();
 
         values.put(RepoTable.Cols.LAST_UPDATED, Utils.formatTime(new Date(), ""));
@@ -303,12 +293,12 @@ public class RepoUpdater {
             values.put(RepoTable.Cols.LAST_ETAG, cacheTag);
         }
 
-        if (version != -1 && version != repo.version) {
+        if (version != Repo.INT_UNSET_VALUE && version != repo.version) {
             Utils.debugLog(TAG, "Repo specified a new version: from " + repo.version + " to " + version);
             values.put(RepoTable.Cols.VERSION, version);
         }
 
-        if (maxAge != -1 && maxAge != repo.maxage) {
+        if (maxAge != Repo.INT_UNSET_VALUE && maxAge != repo.maxage) {
             Utils.debugLog(TAG, "Repo specified a new maximum age - updated");
             values.put(RepoTable.Cols.MAX_AGE, maxAge);
         }
@@ -329,28 +319,37 @@ public class RepoUpdater {
         // timestamp.
         values.put(RepoTable.Cols.TIMESTAMP, timestamp);
 
+        if (icon != null && !icon.equals(repo.icon)) {
+            values.put(RepoTable.Cols.ICON, icon);
+        }
+
+        if (mirrors != null && mirrors.length > 0 && !Arrays.equals(mirrors, repo.mirrors)) {
+            values.put(RepoTable.Cols.MIRRORS, Utils.serializeCommaSeparatedString(mirrors));
+        }
+
         return values;
     }
 
     public static class UpdateException extends Exception {
 
         private static final long serialVersionUID = -4492452418826132803L;
-        public final Repo repo;
 
-        public UpdateException(Repo repo, String message) {
+        public UpdateException(String message) {
             super(message);
-            this.repo = repo;
         }
 
-        public UpdateException(Repo repo, String message, Exception cause) {
+        public UpdateException(String message, Exception cause) {
             super(message, cause);
-            this.repo = repo;
         }
     }
 
     public static class SigningException extends UpdateException {
+        public SigningException(String message) {
+            super("Repository was not signed correctly: " + message);
+        }
+
         public SigningException(Repo repo, String message) {
-            super(repo, "Repository was not signed correctly: " + message);
+            super((repo == null ? "Repository" : repo.name) + " was not signed correctly: " + message);
         }
     }
 
@@ -359,18 +358,18 @@ public class RepoUpdater {
      * signing setups that would be valid for a regular jar.  This validates those
      * restrictions.
      */
-    private X509Certificate getSigningCertFromJar(JarEntry jarEntry) throws SigningException {
+    public static X509Certificate getSigningCertFromJar(JarEntry jarEntry) throws SigningException {
         final CodeSigner[] codeSigners = jarEntry.getCodeSigners();
         if (codeSigners == null || codeSigners.length == 0) {
-            throw new SigningException(repo, "No signature found in index");
+            throw new SigningException("No signature found in index");
         }
         /* we could in theory support more than 1, but as of now we do not */
         if (codeSigners.length > 1) {
-            throw new SigningException(repo, "index.jar must be signed by a single code signer!");
+            throw new SigningException("index.jar must be signed by a single code signer!");
         }
         List<? extends Certificate> certs = codeSigners[0].getSignerCertPath().getCertificates();
         if (certs.size() != 1) {
-            throw new SigningException(repo, "index.jar code signers must only have a single certificate!");
+            throw new SigningException("index.jar code signers must only have a single certificate!");
         }
         return (X509Certificate) certs.get(0);
     }
@@ -437,66 +436,5 @@ public class RepoUpdater {
             return; // we have a match!
         }
         throw new SigningException(repo, "Signing certificate does not match!");
-    }
-
-    /**
-     * Server index XML can include optional {@code install} and {@code uninstall}
-     * requests.  This processes those requests, figuring out whether the client
-     * should always accept, prompt the user, or ignore those requests on a
-     * per repo basis.
-     */
-    private void processRepoPushRequests() {
-        PackageManager pm = context.getPackageManager();
-
-        for (RepoPushRequest repoPushRequest : repoPushRequestList) {
-            String packageName = repoPushRequest.packageName;
-            PackageInfo packageInfo = null;
-            try {
-                packageInfo = pm.getPackageInfo(packageName, 0);
-            } catch (PackageManager.NameNotFoundException e) {
-                // ignored
-            }
-            if (RepoPushRequest.INSTALL.equals(repoPushRequest.request)) {
-                ContentResolver cr = context.getContentResolver();
-
-                // TODO: In the future, this needs to be able to specify which repository to get
-                // the package from. Better yet, we should be able to specify the hash of a package
-                // to install (especially when we move to using hashes more as identifiers than we
-                // do righ tnow).
-                App app = AppProvider.Helper.findHighestPriorityMetadata(cr, packageName);
-                if (app == null) {
-                    Utils.debugLog(TAG, packageName + " not in local database, ignoring request to"
-                            + repoPushRequest.request);
-                    continue;
-                }
-                int versionCode;
-                if (repoPushRequest.versionCode == null) {
-                    versionCode = app.suggestedVersionCode;
-                } else {
-                    versionCode = repoPushRequest.versionCode;
-                }
-                if (packageInfo != null && versionCode == packageInfo.versionCode) {
-                    Utils.debugLog(TAG, repoPushRequest + " already installed, ignoring");
-                } else {
-                    Apk apk = ApkProvider.Helper.findApkFromAnyRepo(context, packageName, versionCode);
-                    InstallManagerService.queue(context, app, apk);
-                }
-            } else if (RepoPushRequest.UNINSTALL.equals(repoPushRequest.request)) {
-                if (packageInfo == null) {
-                    Utils.debugLog(TAG, "ignoring request, not installed: " + repoPushRequest);
-                    continue;
-                }
-                if (repoPushRequest.versionCode == null
-                        || repoPushRequest.versionCode == packageInfo.versionCode) {
-                    Apk apk = ApkProvider.Helper.findApkFromAnyRepo(context, repoPushRequest.packageName,
-                            packageInfo.versionCode);
-                    InstallerService.uninstall(context, apk);
-                } else {
-                    Utils.debugLog(TAG, "ignoring request based on versionCode:" + repoPushRequest);
-                }
-            } else {
-                Utils.debugLog(TAG, "Unknown Repo Push Request: " + repoPushRequest.request);
-            }
-        }
     }
 }

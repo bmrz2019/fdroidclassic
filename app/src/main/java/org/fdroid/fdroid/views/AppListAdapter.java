@@ -107,7 +107,7 @@ public abstract class AppListAdapter extends CursorAdapter {
         };
 
         for (View v : views) {
-            v.setEnabled(app.compatible && !app.isFiltered());
+            v.setEnabled(app.compatible);
         }
     }
 
@@ -117,7 +117,7 @@ public abstract class AppListAdapter extends CursorAdapter {
             return null;
         }
 
-        if (!app.isInstalled()) {
+        if (!app.isInstalled(this.mContext)) {
             return app.getSuggestedVersionName();
         }
 

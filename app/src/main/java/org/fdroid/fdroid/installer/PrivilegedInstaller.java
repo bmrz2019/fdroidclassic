@@ -27,14 +27,12 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.support.annotation.NonNull;
 import android.util.Log;
-
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.R;
-import org.fdroid.fdroid.compat.PackageManagerCompat;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.privileged.IPrivilegedCallback;
 import org.fdroid.fdroid.privileged.IPrivilegedService;
@@ -57,20 +55,20 @@ import java.util.HashMap;
  * <p/>
  * This installer makes unattended installs/uninstalls possible.
  * Thus no PendingIntents are returned.
- * <p/>
- * Sources for Android 4.4 change:
- * https://groups.google.com/forum/#!msg/android-
- * security-discuss/r7uL_OEMU5c/LijNHvxeV80J
- * https://android.googlesource.com/platform
- * /frameworks/base/+/ccbf84f44c9e6a5ed3c08673614826bb237afc54
+ *
+ * @see <a href="https://groups.google.com/forum/#!msg/android-security-discuss/r7uL_OEMU5c/LijNHvxeV80J">
+ * Sources for Android 4.4 change</a>
+ * @see <a href="https://android.googlesource.com/platform/frameworks/base/+/ccbf84f44">
+ * Commit that restricted "signatureOrSystem" permissions</a>
  */
 public class PrivilegedInstaller extends Installer {
 
     private static final String TAG = "PrivilegedInstaller";
 
-    private static final String PRIVILEGED_EXTENSION_SERVICE_INTENT = "org.fdroid.fdroid.privileged.IPrivilegedService";
-    public static final String PRIVILEGED_EXTENSION_PACKAGE_NAME = "org.fdroid.fdroid.privileged";
-
+    private static final String PRIVILEGED_EXTENSION_SERVICE_INTENT
+            = "org.fdroid.fdroid.privileged.IPrivilegedService";
+    public static final String PRIVILEGED_EXTENSION_PACKAGE_NAME
+            = "org.fdroid.fdroid.privileged";
     public static final int IS_EXTENSION_INSTALLED_NO = 0;
     public static final int IS_EXTENSION_INSTALLED_YES = 1;
     public static final int IS_EXTENSION_INSTALLED_SIGNATURE_PROBLEM = 2;
@@ -258,7 +256,7 @@ public class PrivilegedInstaller extends Installer {
                         "device owner has marked the package as uninstallable.");
     }
 
-    public PrivilegedInstaller(Context context, Apk apk) {
+    public PrivilegedInstaller(Context context, @NonNull Apk apk) {
         super(context, apk);
     }
 
@@ -356,8 +354,6 @@ public class PrivilegedInstaller extends Installer {
 
     @Override
     protected void uninstallPackage() {
-        sendBroadcastUninstall(Installer.ACTION_UNINSTALL_STARTED);
-
         ServiceConnection mServiceConnection = new ServiceConnection() {
             public void onServiceConnected(ComponentName name, IBinder service) {
                 IPrivilegedService privService = IPrivilegedService.Stub.asInterface(service);
@@ -395,10 +391,6 @@ public class PrivilegedInstaller extends Installer {
             }
         };
 
-        /*
-         * Set installer to the privileged extension
-         */
-        PackageManagerCompat.setInstaller(context, context.getPackageManager(), apk.packageName);
         Intent serviceIntent = new Intent(PRIVILEGED_EXTENSION_SERVICE_INTENT);
         serviceIntent.setPackage(PRIVILEGED_EXTENSION_PACKAGE_NAME);
         context.getApplicationContext().bindService(serviceIntent, mServiceConnection,
@@ -408,10 +400,5 @@ public class PrivilegedInstaller extends Installer {
     @Override
     protected boolean isUnattended() {
         return true;
-    }
-
-    @Override
-    protected boolean supportsContentUri() {
-        return Build.VERSION.SDK_INT >= 24;
     }
 }

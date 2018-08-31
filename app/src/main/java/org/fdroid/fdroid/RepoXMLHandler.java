@@ -22,7 +22,6 @@ package org.fdroid.fdroid;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.App;
 import org.fdroid.fdroid.data.Repo;
@@ -59,6 +58,8 @@ public class RepoXMLHandler extends DefaultHandler {
     private long repoTimestamp;
     private String repoDescription;
     private String repoName;
+    private String repoIcon;
+    private final ArrayList<String> repoMirrors = new ArrayList<>();
 
     /**
      * Set of requested permissions per package/APK
@@ -73,7 +74,8 @@ public class RepoXMLHandler extends DefaultHandler {
     private final StringBuilder curchars = new StringBuilder();
 
     public interface IndexReceiver {
-        void receiveRepo(String name, String description, String signingCert, int maxage, int version, long timestamp);
+        void receiveRepo(String name, String description, String signingCert, int maxage, int version,
+                         long timestamp, String icon, String[] mirrors);
 
         void receiveApp(App app, List<Apk> packages);
 
@@ -126,15 +128,19 @@ public class RepoXMLHandler extends DefaultHandler {
                     if (currentApkHashType == null || "md5".equals(currentApkHashType)) {
                         if (curapk.hash == null) {
                             curapk.hash = str;
-                            curapk.hashType = "SHA-256";
+                            curapk.hashType = "sha256";
                         }
                     } else if ("sha256".equals(currentApkHashType)) {
                         curapk.hash = str;
-                        curapk.hashType = "SHA-256";
+                        curapk.hashType = "sha256";
                     }
                     break;
                 case ApkTable.Cols.SIGNATURE:
                     curapk.sig = str;
+                    // the first APK in the list provides the preferred signature
+                    if (curapp.preferredSigner == null) {
+                        curapp.preferredSigner = str;
+                    }
                     break;
                 case ApkTable.Cols.SOURCE_NAME:
                     curapk.srcname = str;
@@ -196,7 +202,7 @@ public class RepoXMLHandler extends DefaultHandler {
                     break;
                 case "desc":
                     // New-style description.
-                    curapp.description = str;
+                    curapp.description = App.formatDescription(str);
                     break;
                 case "summary":
                     curapp.summary = str;
@@ -205,34 +211,37 @@ public class RepoXMLHandler extends DefaultHandler {
                     curapp.license = str;
                     break;
                 case "author":
-                    curapp.author = str;
+                    curapp.authorName = str;
                     break;
                 case "email":
-                    curapp.email = str;
+                    curapp.authorEmail = str;
                     break;
                 case "source":
-                    curapp.sourceURL = str;
+                    curapp.sourceCode = str;
                     break;
                 case "changelog":
-                    curapp.changelogURL = str;
+                    curapp.changelog = str;
                     break;
                 case "donate":
-                    curapp.donateURL = str;
+                    curapp.donate = str;
                     break;
                 case "bitcoin":
-                    curapp.bitcoinAddr = str;
+                    curapp.bitcoin = str;
                     break;
                 case "litecoin":
-                    curapp.litecoinAddr = str;
+                    curapp.litecoin = str;
                     break;
                 case "flattr":
                     curapp.flattrID = str;
                     break;
+                case "liberapay":
+                    curapp.liberapayID = str;
+                    break;
                 case "web":
-                    curapp.webURL = str;
+                    curapp.webSite = str;
                     break;
                 case "tracker":
-                    curapp.trackerURL = str;
+                    curapp.issueTracker = str;
                     break;
                 case "added":
                     curapp.added = Utils.parseDate(str, null);
@@ -258,6 +267,8 @@ public class RepoXMLHandler extends DefaultHandler {
             }
         } else if ("description".equals(localName)) {
             repoDescription = cleanWhiteSpace(str);
+        } else if ("mirror".equals(localName)) {
+            repoMirrors.add(str);
         }
     }
 
@@ -312,7 +323,8 @@ public class RepoXMLHandler extends DefaultHandler {
     }
 
     private void onRepoParsed() {
-        receiver.receiveRepo(repoName, repoDescription, repoSigningCert, repoMaxAge, repoVersion, repoTimestamp);
+        receiver.receiveRepo(repoName, repoDescription, repoSigningCert, repoMaxAge, repoVersion,
+                repoTimestamp, repoIcon, repoMirrors.toArray(new String[repoMirrors.size()]));
     }
 
     private void onRepoPushRequestParsed(RepoPushRequest repoPushRequest) {
@@ -331,6 +343,7 @@ public class RepoXMLHandler extends DefaultHandler {
             repoName = cleanWhiteSpace(attributes.getValue("", "name"));
             repoDescription = cleanWhiteSpace(attributes.getValue("", "description"));
             repoTimestamp = parseLong(attributes.getValue("", "timestamp"), 0);
+            repoIcon = attributes.getValue("", "icon");
         } else if (RepoPushRequest.INSTALL.equals(localName)
                 || RepoPushRequest.UNINSTALL.equals(localName)) {
             if (repo.pushRequests == Repo.PUSH_REQUEST_ACCEPT_ALWAYS) {
@@ -352,7 +365,7 @@ public class RepoXMLHandler extends DefaultHandler {
         } else if ("package".equals(localName) && curapp != null && curapk == null) {
             curapk = new Apk();
             curapk.packageName = curapp.packageName;
-            curapk.repo = repo.getId();
+            curapk.repoId = repo.getId();
             currentApkHashType = null;
 
         } else if ("hash".equals(localName) && curapk != null) {
@@ -372,9 +385,6 @@ public class RepoXMLHandler extends DefaultHandler {
             } else {
                 removeRequestedPermission(attributes.getValue("name"));
             }
-        } else if ("uses-feature".equals(localName) && curapk != null) {
-            System.out.println("TODO startElement " + uri + " " + localName + " " + qName);
-            // TODO
         }
         curchars.setLength(0);
     }

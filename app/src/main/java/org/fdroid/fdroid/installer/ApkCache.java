@@ -20,13 +20,15 @@
 package org.fdroid.fdroid.installer;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.net.Uri;
-
 import com.nostra13.universalimageloader.utils.StorageUtils;
-
 import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.Hasher;
 import org.fdroid.fdroid.data.Apk;
+import org.fdroid.fdroid.data.App;
+import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.SanitizedFile;
 
 import java.io.File;
@@ -37,6 +39,19 @@ public class ApkCache {
     private static final String CACHE_DIR = "apks";
 
     /**
+     * Same as {@link #copyApkFromCacheToFiles(Context, File, Apk)}, except it does not need to
+     * verify the hash after copying. This is because we are copying from an installed apk, which
+     * other apps do not have permission to modify.
+     */
+    public static SanitizedFile copyInstalledApkToFiles(Context context, PackageInfo packageInfo)
+            throws IOException {
+        ApplicationInfo appInfo = packageInfo.applicationInfo;
+        CharSequence name = context.getPackageManager().getApplicationLabel(appInfo);
+        String apkFileName = name + "-" + packageInfo.versionName + ".apk";
+        return copyApkToFiles(context, new File(appInfo.publicSourceDir), apkFileName, false, null, null);
+    }
+
+    /**
      * Copy the APK to the safe location inside of the protected area
      * of the app to prevent attacks based on other apps swapping the file
      * out during the install process. Most likely, apkFile was just downloaded,
@@ -44,12 +59,37 @@ public class ApkCache {
      */
     public static SanitizedFile copyApkFromCacheToFiles(Context context, File apkFile, Apk expectedApk)
             throws IOException {
-        SanitizedFile sanitizedApkFile = SanitizedFile.knownSanitized(
-                File.createTempFile("install-", ".apk", context.getFilesDir()));
+        App app = AppProvider.Helper.findHighestPriorityMetadata(context.getContentResolver(),
+                expectedApk.packageName);
+        String name = app == null ? expectedApk.packageName : app.name;
+        String apkFileName = name + "-" + expectedApk.versionName + ".apk";
+        return copyApkToFiles(context, apkFile, apkFileName, true, expectedApk.hash, expectedApk.hashType);
+    }
+
+    /**
+     * Copy an APK from {@param apkFile} to our internal files directory for 20 minutes.
+     *
+     * @param verifyHash If the file was just downloaded, then you should mark this as true and
+     *                   request the file to be verified once it has finished copying. Otherwise,
+     *                   if the app was installed from part of the system where it can't be tampered
+     *                   with (e.g. installed apks on disk) then
+     */
+    private static SanitizedFile copyApkToFiles(Context context, File apkFile, String destinationName,
+                                                boolean verifyHash, String hash, String hashType)
+            throws IOException {
+        SanitizedFile sanitizedApkFile = new SanitizedFile(context.getFilesDir(), destinationName);
+
+        // Don't think this is necessary, but the docs for FileUtils#copyFile() are not clear
+        // on whether it overwrites destination files (pretty confident it does, as per the docs
+        // in FileUtils#copyFileToDirectory() - which delegates to copyFile()).
+        if (sanitizedApkFile.exists()) {
+            sanitizedApkFile.delete();
+        }
+
         FileUtils.copyFile(apkFile, sanitizedApkFile);
 
         // verify copied file's hash with expected hash from Apk class
-        if (!Hasher.isFileMatchingHash(sanitizedApkFile, expectedApk.hash, expectedApk.hashType)) {
+        if (verifyHash && !Hasher.isFileMatchingHash(sanitizedApkFile, hash, hashType)) {
             FileUtils.deleteQuietly(apkFile);
             throw new IOException(apkFile + " failed to verify!");
         }

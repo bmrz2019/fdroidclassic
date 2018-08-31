@@ -1,20 +1,20 @@
 /*
-**
-** Copyright 2007, The Android Open Source Project
-** Copyright 2015 Daniel Martí <mvdan@mvdan.cc>
-**
-** Licensed under the Apache License, Version 2.0 (the "License");
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
+ **
+ ** Copyright 2007, The Android Open Source Project
+ ** Copyright 2015 Daniel Martí <mvdan@mvdan.cc>
+ **
+ ** Licensed under the Apache License, Version 2.0 (the "License");
+ ** you may not use this file except in compliance with the License.
+ ** You may obtain a copy of the License at
+ **
+ **     http://www.apache.org/licenses/LICENSE-2.0
+ **
+ ** Unless required by applicable law or agreed to in writing, software
+ ** distributed under the License is distributed on an "AS IS" BASIS,
+ ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ** See the License for the specific language governing permissions and
+ ** limitations under the License.
+ */
 
 package org.fdroid.fdroid.privileged.views;
 
@@ -23,7 +23,6 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -36,13 +35,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
-
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.R;
+import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.ApkProvider;
 import org.fdroid.fdroid.data.App;
@@ -73,15 +69,6 @@ public class InstallConfirmActivity extends FragmentActivity implements OnCancel
 
     private App app;
 
-    private final DisplayImageOptions displayImageOptions = new DisplayImageOptions.Builder()
-            .cacheInMemory(true)
-            .cacheOnDisk(true)
-            .imageScaleType(ImageScaleType.NONE)
-            .showImageOnLoading(R.drawable.ic_repo_app_default)
-            .showImageForEmptyUri(R.drawable.ic_repo_app_default)
-            .bitmapConfig(Bitmap.Config.RGB_565)
-            .build();
-
     private void startInstallConfirm() {
         View appSnippet = findViewById(R.id.app_snippet);
         TextView appName = (TextView) appSnippet.findViewById(R.id.app_name);
@@ -89,8 +76,8 @@ public class InstallConfirmActivity extends FragmentActivity implements OnCancel
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 
         appName.setText(app.name);
-        ImageLoader.getInstance().displayImage(app.iconUrlLarge, appIcon,
-                displayImageOptions);
+        ImageLoader.getInstance().displayImage(app.iconUrl, appIcon,
+                Utils.getRepoAppDisplayImageOptions());
 
         tabHost.setup();
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -105,9 +92,9 @@ public class InstallConfirmActivity extends FragmentActivity implements OnCancel
         scrollView = null;
         okCanInstall = false;
         int msg = 0;
-        AppSecurityPermissions perms = new AppSecurityPermissions(this, appDiff.pkgInfo);
-        if (appDiff.installedAppInfo != null) {
-            msg = (appDiff.installedAppInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0
+        AppSecurityPermissions perms = new AppSecurityPermissions(this, appDiff.apkPackageInfo);
+        if (appDiff.installedApplicationInfo != null) {
+            msg = (appDiff.installedApplicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0
                     ? R.string.install_confirm_update_system
                     : R.string.install_confirm_update;
             scrollView = new CaffeinatedScrollView(this);
@@ -119,7 +106,8 @@ public class InstallConfirmActivity extends FragmentActivity implements OnCancel
                 scrollView.addView(perms.getPermissionsView(
                         AppSecurityPermissions.WHICH_NEW));
             } else {
-                throw new RuntimeException("This should not happen. No new permissions were found but InstallConfirmActivity has been started!");
+                throw new RuntimeException("This should not happen. No new permissions were found"
+                        + " but InstallConfirmActivity has been started!");
             }
             adapter.addTab(tabHost.newTabSpec(TAB_ID_NEW).setIndicator(
                     getText(R.string.newPerms)), scrollView);
@@ -143,10 +131,10 @@ public class InstallConfirmActivity extends FragmentActivity implements OnCancel
         }
 
         if (!permVisible) {
-            if (appDiff.installedAppInfo != null) {
+            if (appDiff.installedApplicationInfo != null) {
                 // This is an update to an application, but there are no
                 // permissions at all.
-                msg = (appDiff.installedAppInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0
+                msg = (appDiff.installedApplicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0
                         ? R.string.install_confirm_update_system_no_perms
                         : R.string.install_confirm_update_no_perms;
             } else {
@@ -186,14 +174,15 @@ public class InstallConfirmActivity extends FragmentActivity implements OnCancel
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        ((FDroidApp) getApplication()).applyDialogTheme(this);
+        ((FDroidApp) getApplication()).applyTheme(this);
 
         intent = getIntent();
         Uri uri = intent.getData();
         Apk apk = ApkProvider.Helper.findByUri(this, uri, Schema.ApkTable.Cols.ALL);
-        app = AppProvider.Helper.findSpecificApp(getContentResolver(), apk.packageName, apk.repo, Schema.AppMetadataTable.Cols.ALL);
+        app = AppProvider.Helper.findSpecificApp(getContentResolver(),
+                apk.packageName, apk.repoId, Schema.AppMetadataTable.Cols.ALL);
 
-        appDiff = new AppDiff(getPackageManager(), apk);
+        appDiff = new AppDiff(this, apk);
 
         setContentView(R.layout.install_start);
 

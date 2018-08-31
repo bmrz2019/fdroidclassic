@@ -42,7 +42,7 @@ public class InstalledAppProvider extends FDroidProvider {
                     cursor.moveToFirst();
                     while (!cursor.isAfterLast()) {
                         cachedInfo.put(
-                                cursor.getString(cursor.getColumnIndex(Cols.PACKAGE_NAME)),
+                                cursor.getString(cursor.getColumnIndex(Cols.Package.NAME)),
                                 cursor.getLong(cursor.getColumnIndex(Cols.LAST_UPDATE_TIME))
                         );
                         cursor.moveToNext();
@@ -137,7 +137,7 @@ public class InstalledAppProvider extends FDroidProvider {
     }
 
     private QuerySelection queryApp(String packageName) {
-        return new QuerySelection(Cols.PACKAGE_NAME + " = ?", new String[]{packageName});
+        return new QuerySelection(Cols.Package.NAME + " = ?", new String[]{packageName});
     }
 
     private QuerySelection querySearch(String query) {
@@ -197,7 +197,7 @@ public class InstalledAppProvider extends FDroidProvider {
 
         verifyVersionNameNotNull(values);
         db().replaceOrThrow(getTableName(), null, values);
-        return getAppUri(values.getAsString(Cols.PACKAGE_NAME));
+        return getAppUri(values.getAsString(Cols.Package.NAME));
     }
 
     /**

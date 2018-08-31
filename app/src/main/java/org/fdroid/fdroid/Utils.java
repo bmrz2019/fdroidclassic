@@ -19,24 +19,33 @@
 package org.fdroid.fdroid;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
+import android.os.StatFs;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.text.Editable;
 import android.text.Html;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
+import android.text.style.CharacterStyle;
+import android.text.style.TypefaceSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
-
+import android.util.TypedValue;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.utils.StorageUtils;
-
 import org.fdroid.fdroid.compat.FileCompat;
 import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.SanitizedFile;
@@ -50,7 +59,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -60,12 +68,14 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public final class Utils {
 
@@ -82,8 +92,11 @@ public final class Utils {
             new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss", Locale.ENGLISH);
 
     private static final String[] FRIENDLY_SIZE_FORMAT = {
-        "%.0f B", "%.0f KiB", "%.1f MiB", "%.2f GiB",
+            "%.0f B", "%.0f KiB", "%.1f MiB", "%.2f GiB",
     };
+
+    private static DisplayImageOptions.Builder defaultDisplayImageOptionsBuilder;
+    private static DisplayImageOptions repoAppDisplayImageOptions;
 
     public static final String FALLBACK_ICONS_DIR = "/icons/";
 
@@ -116,11 +129,43 @@ public final class Utils {
     }
 
     /**
-     * @return the directory where cached icons are stored
+     * @return the directory where cached icons/feature graphics/screenshots are stored
      */
-    public static File getIconsCacheDir(Context context) {
+    public static File getImageCacheDir(Context context) {
         File cacheDir = StorageUtils.getCacheDirectory(context.getApplicationContext(), true);
         return new File(cacheDir, "icons");
+    }
+
+    public static long getImageCacheDirAvailableMemory(Context context) {
+        File statDir = getImageCacheDir(context);
+        while (statDir != null && !statDir.exists()) {
+            statDir = statDir.getParentFile();
+        }
+        if (statDir == null) {
+            return 50 * 1024 * 1024; // just return a minimal amount
+        }
+        StatFs stat = new StatFs(statDir.getPath());
+        if (Build.VERSION.SDK_INT < 18) {
+            return (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
+        } else {
+            return stat.getAvailableBlocksLong() * stat.getBlockSizeLong();
+        }
+    }
+
+    public static long getImageCacheDirTotalMemory(Context context) {
+        File statDir = getImageCacheDir(context);
+        while (statDir != null && !statDir.exists()) {
+            statDir = statDir.getParentFile();
+        }
+        if (statDir == null) {
+            return 100 * 1024 * 1024; // just return a minimal amount
+        }
+        StatFs stat = new StatFs(statDir.getPath());
+        if (Build.VERSION.SDK_INT < 18) {
+            return (long) stat.getBlockCount() * (long) stat.getBlockSize();
+        } else {
+            return stat.getBlockCountLong() * stat.getBlockSizeLong();
+        }
     }
 
     public static void copy(InputStream input, OutputStream output) throws IOException {
@@ -196,31 +241,31 @@ public final class Utils {
     }
 
     private static final String[] ANDROID_VERSION_NAMES = {
-        "?",     // 0, undefined
-        "1.0",   // 1
-        "1.1",   // 2
-        "1.5",   // 3
-        "1.6",   // 4
-        "2.0",   // 5
-        "2.0.1", // 6
-        "2.1",   // 7
-        "2.2",   // 8
-        "2.3",   // 9
-        "2.3.3", // 10
-        "3.0",   // 11
-        "3.1",   // 12
-        "3.2",   // 13
-        "4.0",   // 14
-        "4.0.3", // 15
-        "4.1",   // 16
-        "4.2",   // 17
-        "4.3",   // 18
-        "4.4",   // 19
-        "4.4W",  // 20
-        "5.0",   // 21
-        "5.1",   // 22
-        "6.0",   // 23
-        "7.0",   // 24
+            "?",     // 0, undefined
+            "1.0",   // 1
+            "1.1",   // 2
+            "1.5",   // 3
+            "1.6",   // 4
+            "2.0",   // 5
+            "2.0.1", // 6
+            "2.1",   // 7
+            "2.2",   // 8
+            "2.3",   // 9
+            "2.3.3", // 10
+            "3.0",   // 11
+            "3.1",   // 12
+            "3.2",   // 13
+            "4.0",   // 14
+            "4.0.3", // 15
+            "4.1",   // 16
+            "4.2",   // 17
+            "4.3",   // 18
+            "4.4",   // 19
+            "4.4W",  // 20
+            "5.0",   // 21
+            "5.1",   // 22
+            "6.0",   // 23
+            "7.0",   // 24
     };
 
     public static String getAndroidVersionName(int sdkLevel) {
@@ -240,11 +285,11 @@ public final class Utils {
                 || fingerprint.matches(".*[^0-9a-fA-F].*")) { // its a hex string
             return context.getString(R.string.bad_fingerprint);
         }
-        String displayFP = fingerprint.substring(0, 2);
+        StringBuilder displayFP = new StringBuilder(fingerprint.substring(0, 2));
         for (int i = 2; i < fingerprint.length(); i = i + 2) {
-            displayFP += " " + fingerprint.substring(i, i + 2);
+            displayFP.append(" ").append(fingerprint.substring(i, i + 2));
         }
-        return displayFP;
+        return displayFP.toString();
     }
 
     @NonNull
@@ -317,7 +362,7 @@ public final class Utils {
         String ret = null;
         try {
             // keytool -list -v gives you the SHA-256 fingerprint
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            MessageDigest digest = MessageDigest.getInstance("sha256");
             digest.update(key);
             byte[] fingerprint = digest.digest();
             Formatter formatter = new Formatter(new StringBuilder());
@@ -330,6 +375,26 @@ public final class Utils {
             Log.w(TAG, "Unable to get certificate fingerprint", e);
         }
         return ret;
+    }
+
+    /**
+     * Get the fingerprint used to represent an APK signing key in F-Droid.
+     * This is a custom fingerprint algorithm that was kind of accidentally
+     * created, but is still in use.
+     */
+    public static String getPackageSig(PackageInfo info) {
+        if (info == null || info.signatures == null || info.signatures.length < 1) {
+            return "";
+        }
+        Signature sig = info.signatures[0];
+        String sigHash = "";
+        try {
+            Hasher hash = new Hasher("MD5", sig.toCharsString().getBytes());
+            sigHash = hash.getHash();
+        } catch (NoSuchAlgorithmException e) {
+            // ignore
+        }
+        return sigHash;
     }
 
     /**
@@ -362,15 +427,39 @@ public final class Utils {
         return new Locale(languageTag);
     }
 
-    public static DisplayImageOptions.Builder getImageLoadingOptions() {
-        return new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .imageScaleType(ImageScaleType.NONE)
-                .showImageOnLoading(R.drawable.ic_repo_app_default)
-                .showImageForEmptyUri(R.drawable.ic_repo_app_default)
-                .displayer(new FadeInBitmapDisplayer(200, true, true, false))
-                .bitmapConfig(Bitmap.Config.RGB_565);
+    /**
+     * Since there have been vulnerabilities in EXIF processing in Android, this
+     * disables all use of EXIF.
+     *
+     * @see <a href="https://securityaffairs.co/wordpress/51043/mobile-2/android-cve-2016-3862-flaw.html">CVE-2016-3862</a>
+     */
+    public static DisplayImageOptions.Builder getDefaultDisplayImageOptionsBuilder() {
+        if (defaultDisplayImageOptionsBuilder == null) {
+            defaultDisplayImageOptionsBuilder = new DisplayImageOptions.Builder()
+                    .cacheInMemory(true)
+                    .cacheOnDisk(true)
+                    .considerExifParams(false)
+                    .bitmapConfig(Bitmap.Config.RGB_565)
+                    .imageScaleType(ImageScaleType.EXACTLY);
+        }
+        return defaultDisplayImageOptionsBuilder;
+    }
+
+    /**
+     * Gets the {@link DisplayImageOptions} instance used to configure
+     * {@link com.nostra13.universalimageloader.core.ImageLoader} instances
+     * used to display app icons.  It lazy loads a reusable static instance.
+     */
+    public static DisplayImageOptions getRepoAppDisplayImageOptions() {
+        if (repoAppDisplayImageOptions == null) {
+            repoAppDisplayImageOptions = getDefaultDisplayImageOptionsBuilder()
+                    .showImageOnLoading(R.drawable.ic_repo_app_default)
+                    .showImageForEmptyUri(R.drawable.ic_repo_app_default)
+                    .showImageOnFail(R.drawable.ic_repo_app_default)
+                    .displayer(new FadeInBitmapDisplayer(200, true, true, false))
+                    .build();
+        }
+        return repoAppDisplayImageOptions;
     }
 
     // this is all new stuff being added
@@ -391,8 +480,18 @@ public final class Utils {
     /**
      * Get the checksum hash of the file {@code apk} using the algorithm in {@code algo}.
      * {@code apk} must exist on the filesystem and {@code algo} must be supported
-     * by this device, otherwise an {@link IllegalArgumentException} is thrown.
+     * by this device, otherwise an {@link IllegalArgumentException} is thrown.  This
+     * method must be very defensive about checking whether the file exists, since APKs
+     * can be uninstalled/deleted in background at any time, even if this is in the
+     * middle of running.
+     * <p>
+     * This also will run into filesystem corruption if the device is having trouble.
+     * So hide those so F-Droid does not pop up crash reports about that. As such this
+     * exception-message-parsing-and-throwing-a-new-ignorable-exception-hackery is
+     * probably warranted. See https://www.gitlab.com/fdroid/fdroidclient/issues/855
+     * for more detail.
      */
+    @Nullable
     public static String getBinaryHash(File apk, String algo) {
         FileInputStream fis = null;
         try {
@@ -400,7 +499,7 @@ public final class Utils {
             fis = new FileInputStream(apk);
             BufferedInputStream bis = new BufferedInputStream(fis);
 
-            byte[] dataBytes = new byte[524288];
+            byte[] dataBytes = new byte[8192];
             int nread;
             while ((nread = bis.read(dataBytes)) != -1) {
                 md.update(dataBytes, 0, nread);
@@ -409,26 +508,18 @@ public final class Utils {
             byte[] mdbytes = md.digest();
             return toHexString(mdbytes).toLowerCase(Locale.ENGLISH);
         } catch (IOException e) {
-            // The annoyance (potentially) caused by miscellaneous filesystem corruption results in
-            // F-Droid constantly popping up crash reports when F-Droid isn't even open. As such this
-            // exception-message-parsing-and-throwing-a-new-ignorable-exception-hackery is probably
-            // warranted. See https://www.gitlab.com/fdroid/fdroidclient/issues/855 for more detail.
-            if (e.getMessage().contains("read failed: EIO (I/O error)")) {
-                throw new PotentialFilesystemCorruptionException(e);
+            String message = e.getMessage();
+            if (message.contains("read failed: EIO (I/O error)")) {
+                Utils.debugLog(TAG, "potential filesystem corruption while accessing " + apk + ": " + message);
+            } else if (message.contains(" ENOENT ")) {
+                Utils.debugLog(TAG, apk + " vanished: " + message);
             }
-
-            throw new IllegalArgumentException(e);
         } catch (NoSuchAlgorithmException e) {
             throw new IllegalArgumentException(e);
         } finally {
             closeQuietly(fis);
         }
-    }
-
-    public static class PotentialFilesystemCorruptionException extends IllegalArgumentException {
-        public PotentialFilesystemCorruptionException(IOException e) {
-            super(e);
-        }
+        return null;
     }
 
     /**
@@ -436,11 +527,19 @@ public final class Utils {
      *
      * @param bytes an array of bytes.
      * @return the bytes represented as a string of hexadecimal digits.
+     * @see <a href="https://stackoverflow.com/a/9855338">source</a>
      */
-    private static String toHexString(byte[] bytes) {
-        BigInteger bi = new BigInteger(1, bytes);
-        return String.format("%0" + (bytes.length << 1) + "X", bi);
+    public static String toHexString(byte[] bytes) {
+        char[] hexChars = new char[bytes.length * 2];
+        for (int j = 0; j < bytes.length; j++) {
+            int v = bytes[j] & 0xFF;
+            hexChars[j * 2] = HEX_LOOKUP_ARRAY[v >>> 4];
+            hexChars[j * 2 + 1] = HEX_LOOKUP_ARRAY[v & 0x0F];
+        }
+        return new String(hexChars);
     }
+
+    private static final char[] HEX_LOOKUP_ARRAY = "0123456789ABCDEF".toCharArray();
 
     public static int parseInt(String str, int fallback) {
         if (str == null || str.length() == 0) {
@@ -501,8 +600,55 @@ public final class Utils {
         return formatDateFormat(TIME_FORMAT, date, fallback);
     }
 
-    // Need this to add the unimplemented support for ordered and unordered
-    // lists to Html.fromHtml().
+    /**
+     * Formats the app name using "sans-serif" and then appends the summary after a space with
+     * "sans-serif-light". Doesn't mandate any font sizes or any other styles, that is up to the
+     * {@link android.widget.TextView} which it ends up being displayed in.
+     */
+    public static CharSequence formatAppNameAndSummary(String appName, String summary) {
+        String toFormat = appName + ' ' + summary;
+        CharacterStyle normal = new TypefaceSpan("sans-serif");
+        CharacterStyle light = new TypefaceSpan("sans-serif-light");
+
+        SpannableStringBuilder sb = new SpannableStringBuilder(toFormat);
+        sb.setSpan(normal, 0, appName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        sb.setSpan(light, appName.length(), toFormat.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return sb;
+    }
+
+    /**
+     * Calculate the number of days since the given date.
+     */
+    public static int daysSince(@NonNull Date date) {
+        long msDiff = Calendar.getInstance().getTimeInMillis() - date.getTime();
+        return (int) TimeUnit.MILLISECONDS.toDays(msDiff);
+    }
+
+    public static String formatLastUpdated(@NonNull Resources res, @NonNull Date date) {
+        long msDiff = Calendar.getInstance().getTimeInMillis() - date.getTime();
+        long days = msDiff / DateUtils.DAY_IN_MILLIS;
+        long weeks = msDiff / (DateUtils.DAY_IN_MILLIS * 7);
+        long months = msDiff / (DateUtils.DAY_IN_MILLIS * 30);
+        long years = msDiff / (DateUtils.DAY_IN_MILLIS * 365);
+
+        if (days < 1) {
+            return res.getString(R.string.details_last_updated_today);
+        } else if (weeks < 1) {
+            return res.getQuantityString(R.plurals.details_last_update_days, (int) days, days);
+        } else if (months < 1) {
+            return res.getQuantityString(R.plurals.details_last_update_weeks, (int) weeks, weeks);
+        } else if (years < 1) {
+            return res.getQuantityString(R.plurals.details_last_update_months, (int) months, months);
+        } else {
+            return res.getQuantityString(R.plurals.details_last_update_years, (int) years, years);
+        }
+    }
+
+    /**
+     * Need this to add the unimplemented support for ordered and unordered
+     * lists to Html.fromHtml().
+     */
     public static class HtmlTagHandler implements Html.TagHandler {
         int listNum;
 
@@ -552,7 +698,12 @@ public final class Utils {
         }
     }
 
-    // Try to get the version name of the client. Return null on failure.
+    /**
+     * Try to get the {@link PackageInfo#versionName} of the
+     * client.
+     *
+     * @return null on failure
+     */
     public static String getVersionName(Context context) {
         String versionName = null;
         try {
@@ -562,6 +713,20 @@ public final class Utils {
             Log.e(TAG, "Could not get client version name", e);
         }
         return versionName;
+    }
+
+    /**
+     * Try to get the {@link PackageInfo} for the {@code packageName} provided.
+     *
+     * @return null on failure
+     */
+    public static PackageInfo getPackageInfo(Context context, String packageName) {
+        try {
+            return context.getPackageManager().getPackageInfo(packageName, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            debugLog(TAG, "Could not get PackageInfo: ", e);
+        }
+        return null;
     }
 
     /**
@@ -612,4 +777,70 @@ public final class Utils {
         return data;
     }
 
+    public static int dpToPx(int dp, Context ctx) {
+        Resources r = ctx.getResources();
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
+    }
+
+
+    public static DisplayImageOptions.Builder getImageLoadingOptions() {
+        return new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .imageScaleType(ImageScaleType.NONE)
+                .showImageOnLoading(R.drawable.ic_repo_app_default)
+                .showImageForEmptyUri(R.drawable.ic_repo_app_default)
+                .displayer(new FadeInBitmapDisplayer(200, true, true, false))
+                .bitmapConfig(Bitmap.Config.RGB_565);
+    }
+
+    public static class PotentialFilesystemCorruptionException extends IllegalArgumentException {
+        public PotentialFilesystemCorruptionException(IOException e) {
+            super(e);
+        }
+    }
+
+
+    /**
+     * Converts a {@code long} bytes value, like from {@link File#length()}, to
+     * an {@code int} value that is kilobytes, suitable for things like
+     * {@link android.widget.ProgressBar#setMax(int)} or
+     * {@link android.support.v4.app.NotificationCompat.Builder#setProgress(int, int, boolean)}
+     */
+    public static int bytesToKb(long bytes) {
+        return (int) (bytes / 1024);
+    }
+
+    /**
+     * Converts two {@code long} bytes values, like from {@link File#length()}, to
+     * an {@code int} value that is a percentage, suitable for things like
+     * {@link android.widget.ProgressBar#setMax(int)} or
+     * {@link android.support.v4.app.NotificationCompat.Builder#setProgress(int, int, boolean)}.
+     * {@code total} must never be zero!
+     */
+    public static int getPercent(long current, long total) {
+        return (int) ((100L * current + total / 2) / total);
+    }
+
+    @SuppressWarnings("unused")
+    public static class Profiler {
+        public final long startTime = System.currentTimeMillis();
+        public final String logTag;
+
+        public Profiler(String logTag) {
+            this.logTag = logTag;
+        }
+
+        public void log(String message) {
+            long duration = System.currentTimeMillis() - startTime;
+            Utils.debugLog(logTag, "[" + duration + "ms] " + message);
+        }
+    }
+    /**
+     * @return the directory where cached icons are stored
+     */
+    public static File getIconsCacheDir(Context context) {
+        File cacheDir = StorageUtils.getCacheDirectory(context.getApplicationContext(), true);
+        return new File(cacheDir, "icons");
+    }
 }

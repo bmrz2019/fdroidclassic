@@ -24,8 +24,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
-
+import android.support.annotation.NonNull;
 import org.fdroid.fdroid.data.Apk;
 
 /**
@@ -39,7 +38,7 @@ public class DefaultInstaller extends Installer {
 
     public static final String TAG = "DefaultInstaller";
 
-    DefaultInstaller(Context context, Apk apk) {
+    DefaultInstaller(Context context, @NonNull Apk apk) {
         super(context, apk);
     }
 
@@ -64,8 +63,6 @@ public class DefaultInstaller extends Installer {
 
     @Override
     protected void uninstallPackage() {
-        sendBroadcastUninstall(Installer.ACTION_UNINSTALL_STARTED);
-
         Intent uninstallIntent = new Intent(context, DefaultInstallerActivity.class);
         uninstallIntent.setAction(DefaultInstallerActivity.ACTION_UNINSTALL_PACKAGE);
         uninstallIntent.putExtra(Installer.EXTRA_APK, apk);
@@ -81,11 +78,5 @@ public class DefaultInstaller extends Installer {
     @Override
     protected boolean isUnattended() {
         return false;
-    }
-
-    @Override
-    protected boolean supportsContentUri() {
-        // Android N only supports content Uris
-        return Build.VERSION.SDK_INT >= 24;
     }
 }

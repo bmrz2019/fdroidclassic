@@ -4,7 +4,7 @@
     android:installLocation="auto">
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="14"
         android:targetSdkVersion="24"
         />
 
@@ -26,12 +26,6 @@
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
-    <uses-feature
-        android:name="android.hardware.nfc"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.bluetooth"
-        android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -39,12 +33,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.NFC" />
 
     <uses-permission android:name="org.fdroid.fdroid.privileged.USE_SERVICE" />
 
@@ -65,53 +56,53 @@
         >
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.AppProvider"
+            android:authorities="${applicationId}.data.AppProvider"
             android:name="org.fdroid.fdroid.data.AppProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.RepoProvider"
+            android:authorities="${applicationId}.data.RepoProvider"
             android:name="org.fdroid.fdroid.data.RepoProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.ApkProvider"
+            android:authorities="${applicationId}.data.ApkProvider"
             android:name="org.fdroid.fdroid.data.ApkProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.TempApkProvider"
+            android:authorities="${applicationId}.data.TempApkProvider"
             android:name="org.fdroid.fdroid.data.TempApkProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.TempAppProvider"
+            android:authorities="${applicationId}.data.TempAppProvider"
             android:name="org.fdroid.fdroid.data.TempAppProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.InstalledAppProvider"
+            android:authorities="${applicationId}.data.InstalledAppProvider"
             android:name="org.fdroid.fdroid.data.InstalledAppProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.AppPrefsProvider"
+            android:authorities="${applicationId}.data.AppPrefsProvider"
             android:name="org.fdroid.fdroid.data.AppPrefsProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.PackageProvider"
+            android:authorities="${applicationId}.data.PackageProvider"
             android:name="org.fdroid.fdroid.data.PackageProvider"
             android:exported="false"/>
 
         <provider
-            android:authorities="org.fdroid.fdroid.data.CategoryProvider"
+            android:authorities="${applicationId}.data.CategoryProvider"
             android:name="org.fdroid.fdroid.data.CategoryProvider"
             android:exported="false"/>
 
         <provider
             android:name="org.fdroid.fdroid.installer.ApkFileProvider"
-            android:authorities="org.fdroid.fdroid.installer.ApkFileProvider"
+            android:authorities="${applicationId}.installer.ApkFileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -120,7 +111,7 @@
         </provider>
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="org.fdroid.fdroid.installer"
+            android:authorities="${applicationId}.installer"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -263,20 +254,6 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
 
-            <!-- Handle NFC tags detected from outside our application -->
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <!--
-                URIs that come in via NFC have scheme/host normalized to all lower case
-                https://developer.android.com/reference/android/nfc/NfcAdapter.html#ACTION_NDEF_DISCOVERED
-                -->
-                <data android:scheme="fdroidrepo" />
-                <data android:scheme="fdroidrepos" />
-            </intent-filter>
-
             <!-- Repo URLs -->
 
             <!--
@@ -379,10 +356,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NfcNotEnabledActivity"
-            android:noHistory="true"
-            android:configChanges="layoutDirection|locale" />
-        <activity
             android:name=".views.RepoDetailsActivity"
             android:label="@string/repo_details"
             android:parentActivityName=".views.ManageReposActivity"
@@ -408,24 +381,6 @@
             android:label="@string/menu_settings"
             android:name=".PreferencesActivity"
             android:parentActivityName=".FDroid" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".FDroid" />
-        </activity>
-        <activity
-            android:name=".acra.CrashReportActivity"
-            android:theme="@style/AppThemeDark"
-            android:process=":error_report"
-            android:launchMode="singleInstance"
-            android:excludeFromRecents="true"
-            android:finishOnTaskLaunch="true" />
-        <activity
-            android:label="@string/swap"
-            android:name=".views.swap.SwapWorkflowActivity"
-            android:parentActivityName=".FDroid"
-            android:theme="@style/SwapTheme.Wizard"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".FDroid" />
@@ -467,11 +422,6 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.WifiStateChangeReceiver" >
-            <intent-filter>
-                <action android:name="android.net.wifi.STATE_CHANGE" />
-            </intent-filter>
-        </receiver>
 
         <service android:name=".UpdateService" />
         <service
@@ -483,16 +433,11 @@
         <service
             android:name=".CleanCacheService"
             android:exported="false" />
-        <service android:name=".net.WifiStateChangeService" />
-        <service android:name=".localrepo.SwapService" />
         <service
             android:name=".installer.InstallManagerService"
             android:exported="false" />
         <service
             android:name=".installer.InstallHistoryService"
-            android:exported="false" />
-        <service
-            android:name=".localrepo.CacheSwapAppsService"
             android:exported="false" />
         <service
             android:name=".data.InstalledAppProviderService"

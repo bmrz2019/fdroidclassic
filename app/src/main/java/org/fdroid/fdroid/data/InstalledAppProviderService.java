@@ -14,7 +14,6 @@ import android.os.Process;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
-import org.acra.ACRA;
 import org.fdroid.fdroid.Hasher;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.InstalledAppTable;
@@ -189,7 +188,6 @@ public class InstalledAppProviderService extends IntentService {
                         String msg = packageName + " sourceDir has no APKs: "
                                 + apk.getAbsolutePath();
                         Utils.debugLog(TAG, msg);
-                        ACRA.getErrorReporter().handleException(new IllegalArgumentException(msg), false);
                         return;
                     }
                     apk = files[0];
@@ -217,7 +215,6 @@ public class InstalledAppProviderService extends IntentService {
                         return;
                     } catch (IllegalArgumentException e) {
                         Utils.debugLog(TAG, e.getMessage());
-                        ACRA.getErrorReporter().handleException(e, false);
                         return;
                     }
                 }
@@ -262,7 +259,7 @@ public class InstalledAppProviderService extends IntentService {
     static void insertAppIntoDb(Context context, PackageInfo packageInfo, String hashType, String hash) {
         Uri uri = InstalledAppProvider.getContentUri();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(InstalledAppTable.Cols.PACKAGE_NAME, packageInfo.packageName);
+        contentValues.put(InstalledAppTable.Cols.Package.NAME, packageInfo.packageName);
         contentValues.put(InstalledAppTable.Cols.VERSION_CODE, packageInfo.versionCode);
         contentValues.put(InstalledAppTable.Cols.VERSION_NAME, packageInfo.versionName);
         contentValues.put(InstalledAppTable.Cols.APPLICATION_LABEL,

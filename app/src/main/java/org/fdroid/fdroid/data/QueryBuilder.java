@@ -14,6 +14,7 @@ abstract class QueryBuilder {
     private String selection;
     private String[] selectionArgs;
     private final List<OrderClause> orderBys = new ArrayList<>();
+    private int limit = 0;
 
     protected abstract String getRequiredTables();
 
@@ -46,7 +47,7 @@ abstract class QueryBuilder {
     }
 
     protected final void appendField(String field, String tableAlias,
-                             String fieldAlias) {
+                                     String fieldAlias) {
 
         StringBuilder fieldBuilder = new StringBuilder();
 
@@ -88,6 +89,10 @@ abstract class QueryBuilder {
         }
     }
 
+    public void addLimit(int limit) {
+        this.limit = limit;
+    }
+
     public String[] getArgs() {
         List<String> args = new ArrayList<>();
 
@@ -116,17 +121,17 @@ abstract class QueryBuilder {
 
     private void joinWithType(String type, String table, String alias, String condition) {
         tables.append(' ')
-            .append(type)
-            .append(" JOIN ")
-            .append(table);
+                .append(type)
+                .append(" JOIN ")
+                .append(table);
 
         if (alias != null) {
             tables.append(" AS ").append(alias);
         }
 
         tables.append(" ON (")
-            .append(condition)
-            .append(')');
+                .append(condition)
+                .append(')');
     }
 
     private String distinctSql() {
@@ -156,7 +161,12 @@ abstract class QueryBuilder {
         return tables.toString();
     }
 
+    private String limitSql() {
+        return limit > 0 ? " LIMIT " + limit : "";
+    }
+
     public String toString() {
-        return "SELECT " + distinctSql() + fieldsSql() + " FROM " + tablesSql() + whereSql() + groupBySql() + orderBySql();
+        return "SELECT " + distinctSql() + fieldsSql() + " FROM " + tablesSql()
+                + whereSql() + groupBySql() + orderBySql() + limitSql();
     }
 }

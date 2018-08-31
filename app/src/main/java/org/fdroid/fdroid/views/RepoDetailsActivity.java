@@ -15,7 +15,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -28,8 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.fdroid.fdroid.FDroidApp;
-import org.fdroid.fdroid.NfcHelper;
-import org.fdroid.fdroid.NfcNotEnabledActivity;
 import org.fdroid.fdroid.QrGenAsyncTask;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.UpdateService;
@@ -38,7 +36,7 @@ import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.Schema.RepoTable;
 
-public class RepoDetailsActivity extends ActionBarActivity {
+public class RepoDetailsActivity extends AppCompatActivity {
     private static final String TAG = "RepoDetailsActivity";
 
     public static final String ARG_REPO_ID = "repo_id";
@@ -114,17 +112,6 @@ public class RepoDetailsActivity extends ActionBarActivity {
         new QrGenAsyncTask(this, R.id.qr_code).execute(qrUriString);
     }
 
-    @TargetApi(14)
-    private void setNfc() {
-        if (NfcHelper.setPushMessage(this, Utils.getSharingUri(repo))) {
-            findViewById(android.R.id.content).post(new Runnable() {
-                @Override
-                public void run() {
-                    onNewIntent(getIntent());
-                }
-            });
-        }
-    }
 
     @Override
     public void onResume() {
@@ -142,8 +129,6 @@ public class RepoDetailsActivity extends ActionBarActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,
                 new IntentFilter(UpdateService.LOCAL_ACTION_STATUS));
 
-        // FDroid.java and AppDetails set different NFC actions, so reset here
-        setNfc();
         processIntent(getIntent());
     }
 
@@ -198,10 +183,6 @@ public class RepoDetailsActivity extends ActionBarActivity {
                 return true;
             case R.id.menu_delete:
                 promptForDelete();
-                return true;
-            case R.id.menu_enable_nfc:
-                Intent intent = new Intent(this, NfcNotEnabledActivity.class);
-                startActivity(intent);
                 return true;
         }
 

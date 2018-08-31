@@ -1,5 +1,8 @@
 package org.fdroid.fdroid.net;
 
+import android.net.Uri;
+import android.support.annotation.NonNull;
+
 import org.fdroid.fdroid.ProgressListener;
 import org.fdroid.fdroid.Utils;
 
@@ -8,7 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.URL;
+import java.net.ConnectException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -19,21 +22,28 @@ public abstract class Downloader {
     public static final String ACTION_STARTED = "org.fdroid.fdroid.net.Downloader.action.STARTED";
     public static final String ACTION_PROGRESS = "org.fdroid.fdroid.net.Downloader.action.PROGRESS";
     public static final String ACTION_INTERRUPTED = "org.fdroid.fdroid.net.Downloader.action.INTERRUPTED";
+    public static final String ACTION_CONNECTION_FAILED = "org.fdroid.fdroid.net.Downloader.action.CONNECTION_FAILED";
     public static final String ACTION_COMPLETE = "org.fdroid.fdroid.net.Downloader.action.COMPLETE";
 
     public static final String EXTRA_DOWNLOAD_PATH = "org.fdroid.fdroid.net.Downloader.extra.DOWNLOAD_PATH";
     public static final String EXTRA_BYTES_READ = "org.fdroid.fdroid.net.Downloader.extra.BYTES_READ";
     public static final String EXTRA_TOTAL_BYTES = "org.fdroid.fdroid.net.Downloader.extra.TOTAL_BYTES";
     public static final String EXTRA_ERROR_MESSAGE = "org.fdroid.fdroid.net.Downloader.extra.ERROR_MESSAGE";
+    public static final String EXTRA_REPO_ID = "org.fdroid.fdroid.net.Downloader.extra.ERROR_REPO_ID";
+    public static final String EXTRA_CANONICAL_URL = "org.fdroid.fdroid.net.Downloader.extra.ERROR_CANONICAL_URL";
+    public static final String EXTRA_MIRROR_URL = "org.fdroid.fdroid.net.Downloader.extra.ERROR_MIRROR_URL";
 
     private volatile boolean cancelled = false;
-    private volatile int bytesRead;
-    private volatile int totalBytes;
+    private volatile long bytesRead;
+    private volatile long totalBytes;
 
     public final File outputFile;
 
-    final URL sourceUrl;
+    final String urlString;
     String cacheTag;
+    boolean notFound;
+
+    private volatile int timeout = 10000;
 
     /**
      * For sending download progress, should only be called in {@link #progressTask}
@@ -44,8 +54,8 @@ public abstract class Downloader {
 
     protected abstract void close();
 
-    Downloader(URL url, File destFile) {
-        this.sourceUrl = url;
+    Downloader(Uri uri, File destFile) {
+        this.urlString = uri.toString();
         outputFile = destFile;
     }
 
@@ -55,6 +65,14 @@ public abstract class Downloader {
 
     public void setListener(ProgressListener listener) {
         this.downloaderProgressListener = listener;
+    }
+
+    public void setTimeout(int ms) {
+        timeout = ms;
+    }
+
+    public int getTimeout() {
+        return timeout;
     }
 
     /**
@@ -74,17 +92,18 @@ public abstract class Downloader {
         this.cacheTag = cacheTag;
     }
 
-    boolean wantToCheckCache() {
-        return cacheTag != null;
-    }
-
     public abstract boolean hasChanged();
 
-    protected abstract int totalDownloadSize();
+    protected abstract long totalDownloadSize();
 
-    public abstract void download() throws IOException, InterruptedException;
+    public abstract void download() throws ConnectException, IOException, InterruptedException;
 
-    public abstract boolean isCached();
+    /**
+     * @return whether the requested file was not found in the repo (e.g. HTTP 404 Not Found)
+     */
+    public boolean isNotFound() {
+        return notFound;
+    }
 
     void downloadFromStream(int bufferSize, boolean resumable) throws IOException, InterruptedException {
         Utils.debugLog(TAG, "Downloading from stream");
@@ -135,7 +154,8 @@ public abstract class Downloader {
      * keeping track of the number of bytes that have flowed through for the
      * progress counter.
      */
-    private void copyInputToOutputStream(InputStream input, int bufferSize, OutputStream output) throws IOException, InterruptedException {
+    private void copyInputToOutputStream(InputStream input, int bufferSize, OutputStream output)
+            throws IOException, InterruptedException {
         Timer timer = new Timer();
         try {
             bytesRead = 0;
@@ -183,7 +203,7 @@ public abstract class Downloader {
         @Override
         public void run() {
             if (downloaderProgressListener != null) {
-                downloaderProgressListener.onProgress(sourceUrl, bytesRead, totalBytes);
+                downloaderProgressListener.onProgress(urlString, bytesRead, totalBytes);
             }
         }
     };
@@ -225,12 +245,12 @@ public abstract class Downloader {
         }
 
         @Override
-        public int read(byte[] buffer) throws IOException {
+        public int read(@NonNull byte[] buffer) throws IOException {
             return toWrap.read(buffer);
         }
 
         @Override
-        public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
+        public int read(@NonNull byte[] buffer, int byteOffset, int byteCount) throws IOException {
             return toWrap.read(buffer, byteOffset, byteCount);
         }
 

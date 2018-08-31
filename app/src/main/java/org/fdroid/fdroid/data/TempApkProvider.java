@@ -5,14 +5,15 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 
 import org.fdroid.fdroid.data.Schema.ApkTable;
-
-import java.util.List;
+import org.fdroid.fdroid.data.Schema.ApkTable.Cols;
 
 /**
  * This class does all of its operations in a temporary sqlite table.
  */
+@SuppressWarnings("LineLength")
 public class TempApkProvider extends ApkProvider {
 
     private static final String PROVIDER_NAME = "TempApkProvider";
@@ -26,15 +27,19 @@ public class TempApkProvider extends ApkProvider {
     private static final UriMatcher MATCHER = new UriMatcher(-1);
 
     static {
-        MATCHER.addURI(getAuthority(), PATH_INIT, CODE_INIT);
+        MATCHER.addURI(getAuthority(), PATH_INIT + "/#", CODE_INIT);
         MATCHER.addURI(getAuthority(), PATH_APK_FROM_ANY_REPO + "/#/*", CODE_APK_FROM_ANY_REPO);
         MATCHER.addURI(getAuthority(), PATH_APK_FROM_REPO + "/#/#", CODE_APK_FROM_REPO);
-        MATCHER.addURI(getAuthority(), PATH_REPO_APK + "/#/*", CODE_REPO_APK);
     }
 
     @Override
     protected String getTableName() {
         return TABLE_TEMP_APK;
+    }
+
+    @Override
+    protected String getApkAntiFeatureJoinTableName() {
+        return TempAppProvider.TABLE_TEMP_APK_ANTI_FEATURE_JOIN;
     }
 
     @Override
@@ -50,24 +55,6 @@ public class TempApkProvider extends ApkProvider {
         return Uri.parse("content://" + getAuthority());
     }
 
-    public static Uri getApkUri(Apk apk) {
-        return getContentUri()
-                .buildUpon()
-                .appendPath(PATH_APK_FROM_REPO)
-                .appendPath(Long.toString(apk.appId))
-                .appendPath(Integer.toString(apk.versionCode))
-                .build();
-    }
-
-    public static Uri getApksUri(Repo repo, List<Apk> apks) {
-        return getContentUri()
-                .buildUpon()
-                .appendPath(PATH_REPO_APK)
-                .appendPath(Long.toString(repo.id))
-                .appendPath(buildApkString(apks))
-                .build();
-    }
-
     public static class Helper {
 
         /**
@@ -75,20 +62,23 @@ public class TempApkProvider extends ApkProvider {
          * table and populates it with all the data from the real apk provider table.
          *
          * This is package local because it must be invoked after
-         * {@link org.fdroid.fdroid.data.TempAppProvider.Helper#init(Context)}. Due to this
+         * {@link org.fdroid.fdroid.data.TempAppProvider.Helper#init(Context, long)}. Due to this
          * dependence, that method invokes this one itself, rather than leaving it to the
          * {@link RepoPersister}.
          */
-        static void init(Context context) {
-            Uri uri = Uri.withAppendedPath(getContentUri(), PATH_INIT);
+        static void init(Context context, long repoIdToUpdate) {
+            Uri uri = getContentUri().buildUpon()
+                    .appendPath(PATH_INIT)
+                    .appendPath(Long.toString(repoIdToUpdate))
+                    .build();
             context.getContentResolver().insert(uri, new ContentValues());
         }
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         if (MATCHER.match(uri) == CODE_INIT) {
-            initTable();
+            initTable(Long.parseLong(uri.getLastPathSegment()));
             return null;
         }
 
@@ -96,40 +86,38 @@ public class TempApkProvider extends ApkProvider {
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String where, String[] whereArgs) {
-        if (MATCHER.match(uri) != CODE_APK_FROM_REPO) {
-            throw new UnsupportedOperationException("Cannot update anything other than a single apk.");
-        }
-
-        return performUpdateUnchecked(uri, values, where, whereArgs);
+    public int update(@NonNull Uri uri, ContentValues values, String where, String[] whereArgs) {
+        throw new UnsupportedOperationException("Invalid URI for apk content provider: " + uri);
     }
 
     @Override
-    public int delete(Uri uri, String where, String[] whereArgs) {
-        if (MATCHER.match(uri) != CODE_REPO_APK) {
-            throw new UnsupportedOperationException("Invalid URI for apk content provider: " + uri);
-        }
-
-        List<String> pathSegments = uri.getPathSegments();
-        QuerySelection query = new QuerySelection(where, whereArgs)
-                .add(queryRepo(Long.parseLong(pathSegments.get(1)), false))
-                .add(queryApks(pathSegments.get(2), false));
-
-        int rowsAffected = db().delete(getTableName(), query.getSelection(), query.getArgs());
-        if (!isApplyingBatch()) {
-            getContext().getContentResolver().notifyChange(uri, null);
-        }
-        return rowsAffected;
-
+    public int delete(@NonNull Uri uri, String where, String[] whereArgs) {
+        throw new UnsupportedOperationException("Invalid URI for apk content provider: " + uri);
     }
 
-    private void initTable() {
+    private void initTable(long repoIdBeingUpdated) {
         final SQLiteDatabase db = db();
         final String memoryDbName = TempAppProvider.DB;
-        db.execSQL(DBHelper.CREATE_TABLE_APK.replaceFirst(Schema.ApkTable.NAME, memoryDbName + "." + getTableName()));
-        db.execSQL(TempAppProvider.copyData(Schema.ApkTable.Cols.ALL_COLS, Schema.ApkTable.NAME, memoryDbName + "." + getTableName()));
-        db.execSQL("CREATE INDEX IF NOT EXISTS " + memoryDbName + ".apk_vercode on " + getTableName() + " (" + ApkTable.Cols.VERSION_CODE + ");");
-        db.execSQL("CREATE INDEX IF NOT EXISTS " + memoryDbName + ".apk_compatible ON " + getTableName() + " (" + ApkTable.Cols.IS_COMPATIBLE + ");");
+        db.execSQL(DBHelper.CREATE_TABLE_APK.replaceFirst(ApkTable.NAME, memoryDbName + "." + getTableName()));
+        db.execSQL(DBHelper.CREATE_TABLE_APK_ANTI_FEATURE_JOIN.replaceFirst(Schema.ApkAntiFeatureJoinTable.NAME, memoryDbName + "." + getApkAntiFeatureJoinTableName()));
+
+        String where = ApkTable.NAME + "." + Cols.REPO_ID + " != ?";
+        String[] whereArgs = new String[]{Long.toString(repoIdBeingUpdated)};
+        db.execSQL(TempAppProvider.copyData(Cols.ALL_COLS, ApkTable.NAME, memoryDbName + "." + getTableName(), where), whereArgs);
+
+        String antiFeaturesWhere =
+                Schema.ApkAntiFeatureJoinTable.NAME + "." + Schema.ApkAntiFeatureJoinTable.Cols.APK_ID + " IN " +
+                        "(SELECT innerApk." + Cols.ROW_ID + " FROM " + ApkTable.NAME + " AS innerApk " +
+                        "WHERE innerApk." + Cols.REPO_ID + " != ?)";
+
+        db.execSQL(TempAppProvider.copyData(
+                Schema.ApkAntiFeatureJoinTable.Cols.ALL_COLS,
+                Schema.ApkAntiFeatureJoinTable.NAME,
+                memoryDbName + "." + getApkAntiFeatureJoinTableName(),
+                antiFeaturesWhere), whereArgs);
+
+        db.execSQL("CREATE INDEX IF NOT EXISTS " + memoryDbName + ".apk_appId on " + getTableName() + " (" + Cols.APP_ID + ");");
+        db.execSQL("CREATE INDEX IF NOT EXISTS " + memoryDbName + ".apk_compatible ON " + getTableName() + " (" + Cols.IS_COMPATIBLE + ");");
     }
 
 }

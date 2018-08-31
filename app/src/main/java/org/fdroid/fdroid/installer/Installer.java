@@ -24,12 +24,15 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.PatternMatcher;
+import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
-import android.util.Log;
-
+import org.fdroid.fdroid.BuildConfig;
+import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.ApkProvider;
 import org.fdroid.fdroid.privileged.views.AppDiff;
@@ -42,11 +45,14 @@ import java.io.IOException;
 /**
  * Handles the actual install process.  Subclasses implement the details.
  */
+@SuppressWarnings("LineLength")
 public abstract class Installer {
     private static final String TAG = "Installer";
 
     final Context context;
     final Apk apk;
+
+    public static final String AUTHORITY = BuildConfig.APPLICATION_ID + ".installer";
 
     public static final String ACTION_INSTALL_STARTED = "org.fdroid.fdroid.installer.Installer.action.INSTALL_STARTED";
     public static final String ACTION_INSTALL_COMPLETE = "org.fdroid.fdroid.installer.Installer.action.INSTALL_COMPLETE";
@@ -75,7 +81,7 @@ public abstract class Installer {
      * @param apk must be included so that all the phases of the install process
      *            can get all the data about the app, even after F-Droid was killed
      */
-    Installer(Context context, Apk apk) {
+    Installer(Context context, @NonNull Apk apk) {
         this.context = context;
         this.apk = apk;
     }
@@ -104,19 +110,23 @@ public abstract class Installer {
         return intent;
     }
 
+    /**
+     * Return if this installation process has any new permissions that the user
+     * should be aware of.  Starting in {@code android-23}, all new permissions
+     * are requested when they are used, and the permissions prompt at time of
+     * install is not used.  All permissions in a new install are considered new.
+     *
+     * @return the number of new permissions
+     */
     private int newPermissionCount() {
         boolean supportsRuntimePermissions = apk.targetSdkVersion >= 23;
         if (supportsRuntimePermissions) {
             return 0;
         }
 
-        AppDiff appDiff = new AppDiff(context.getPackageManager(), apk);
-        if (appDiff.pkgInfo == null) {
-            // could not get diff because we couldn't parse the package
-            throw new RuntimeException("cannot parse!");
-        }
-        AppSecurityPermissions perms = new AppSecurityPermissions(context, appDiff.pkgInfo);
-        if (appDiff.installedAppInfo != null) {
+        AppDiff appDiff = new AppDiff(context, apk);
+        AppSecurityPermissions perms = new AppSecurityPermissions(context, appDiff.apkPackageInfo);
+        if (appDiff.installedApplicationInfo != null) {
             // update to an existing app
             return perms.getPermissionCount(AppSecurityPermissions.WHICH_NEW);
         }
@@ -135,6 +145,18 @@ public abstract class Installer {
     public Intent getUninstallScreen() {
         if (!isUnattended()) {
             return null;
+        }
+
+        PackageManager pm = context.getPackageManager();
+        String installerPackageName = pm.getInstallerPackageName(apk.packageName);
+        if (Build.VERSION.SDK_INT >= 24 &&
+                ("com.android.packageinstaller".equals(installerPackageName)
+                        || "com.google.android.packageinstaller".equals(installerPackageName))) {
+            Utils.debugLog(TAG, "Falling back to default installer for uninstall");
+            Intent intent = new Intent(context, DefaultInstallerActivity.class);
+            intent.setAction(DefaultInstallerActivity.ACTION_UNINSTALL_PACKAGE);
+            intent.putExtra(Installer.EXTRA_APK, apk);
+            return intent;
         }
 
         Intent intent = new Intent(context, UninstallDialogActivity.class);
@@ -180,7 +202,16 @@ public abstract class Installer {
         sendBroadcastUninstall(action, pendingIntent, null);
     }
 
-    void sendBroadcastUninstall(String action, PendingIntent pendingIntent, String errorMessage) {
+    private void sendBroadcastUninstall(String action, PendingIntent pendingIntent, String errorMessage) {
+        sendBroadcastUninstall(context, apk, action, pendingIntent, errorMessage);
+    }
+
+    static void sendBroadcastUninstall(Context context, Apk apk, String action) {
+        sendBroadcastUninstall(context, apk, action, null, null);
+    }
+
+    private static void sendBroadcastUninstall(Context context, Apk apk, String action,
+                                               PendingIntent pendingIntent, String errorMessage) {
         Uri uri = Uri.fromParts("package", apk.packageName, null);
 
         Intent intent = new Intent(action);
@@ -221,45 +252,52 @@ public abstract class Installer {
     }
 
     /**
-     * Install apk
+     * Install apk given the URI that points to the local APK file, and the
+     * download URI to identify which session this belongs to.  This first
+     * moves the APK file to private directory for the installation process
+     * to read from.  Then the hash of the APK is checked against the
+     * {@link Apk} instance provided when this {@code Installer} object was
+     * instantiated.  The list of permissions in the APK file and the
+     * {@code Apk} instance are compared, if they do not match, then the user
+     * is prompted with the system installer dialog, which shows all the
+     * permissions that the APK is requesting.
      *
      * @param localApkUri points to the local copy of the APK to be installed
      * @param downloadUri serves as the unique ID for all actions related to the
      *                    installation of that specific APK
+     * @see InstallManagerService
+     * @see <a href="https://issuetracker.google.com/issues/37091886">ACTION_INSTALL_PACKAGE Fails For Any Possible Uri</a>
      */
     public void installPackage(Uri localApkUri, Uri downloadUri) {
+        Uri sanitizedUri;
+
+        try {
+            sanitizedUri = ApkFileProvider.getSafeUri(context, localApkUri, apk);
+        } catch (IOException e) {
+            Utils.debugLog(TAG, e.getMessage(), e);
+            sendBroadcastInstall(downloadUri, Installer.ACTION_INSTALL_INTERRUPTED, e.getMessage());
+            return;
+        }
+
         try {
             // verify that permissions of the apk file match the ones from the apk object
             ApkVerifier apkVerifier = new ApkVerifier(context, localApkUri, apk);
             apkVerifier.verifyApk();
         } catch (ApkVerifier.ApkVerificationException e) {
-            Log.e(TAG, e.getMessage(), e);
-            sendBroadcastInstall(downloadUri, Installer.ACTION_INSTALL_INTERRUPTED,
-                    e.getMessage());
+            Utils.debugLog(TAG, e.getMessage(), e);
+            sendBroadcastInstall(downloadUri, Installer.ACTION_INSTALL_INTERRUPTED, e.getMessage());
             return;
         } catch (ApkVerifier.ApkPermissionUnequalException e) {
             // if permissions of apk are not the ones listed in the repo
             // and an unattended installer is used, a wrong permission screen
             // has been shown, thus fallback to AOSP DefaultInstaller!
             if (isUnattended()) {
-                Log.e(TAG, e.getMessage(), e);
-                Log.e(TAG, "Falling back to AOSP DefaultInstaller!");
+                Utils.debugLog(TAG, e.getMessage(), e);
+                Utils.debugLog(TAG, "Falling back to AOSP DefaultInstaller!");
                 DefaultInstaller defaultInstaller = new DefaultInstaller(context, apk);
-                defaultInstaller.installPackageInternal(localApkUri, downloadUri);
+                defaultInstaller.installPackageInternal(sanitizedUri, downloadUri);
                 return;
             }
-        }
-
-        Uri sanitizedUri;
-        try {
-            // move apk file to private directory for installation and check hash
-            sanitizedUri = ApkFileProvider.getSafeUri(
-                    context, localApkUri, apk, supportsContentUri());
-        } catch (IOException e) {
-            Log.e(TAG, e.getMessage(), e);
-            sendBroadcastInstall(downloadUri, Installer.ACTION_INSTALL_INTERRUPTED,
-                    e.getMessage());
-            return;
         }
 
         installPackageInternal(sanitizedUri, downloadUri);
@@ -278,10 +316,4 @@ public abstract class Installer {
      * uninstall activities, without the system enforcing a user prompt.
      */
     protected abstract boolean isUnattended();
-
-    /**
-     * @return true if the Installer supports content Uris and not just file Uris
-     */
-    protected abstract boolean supportsContentUri();
-
 }

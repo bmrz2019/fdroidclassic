@@ -31,25 +31,35 @@ import android.os.PatternMatcher;
 import android.os.Process;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
-
+import android.util.Log;
 import org.fdroid.fdroid.ProgressListener;
+import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.SanitizedFile;
 import org.fdroid.fdroid.installer.ApkCache;
 
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLKeyException;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLProtocolException;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.net.ConnectException;
+import java.net.HttpRetryException;
+import java.net.NoRouteToHostException;
+import java.net.ProtocolException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 
 /**
  * DownloaderService is a service that handles asynchronous download requests
  * (expressed as {@link Intent}s) on demand.  Clients send download requests
- * through {@link #queue(Context, String)} calls.  The
+ * through {@link #queue(Context, String, long, String)} calls.  The
  * service is started as needed, it handles each {@code Intent} using a worker
  * thread, and stops itself when it runs out of work.  Requests can be canceled
  * using {@link #cancel(Context, String)}.  If this service is killed during
- * operation, it will receive the queued {@link #queue(Context, String)} and
- * {@link #cancel(Context, String)} requests again due to
+ * operation, it will receive the queued {@link #queue(Context, String, long, String)}
+ * and {@link #cancel(Context, String)} requests again due to
  * {@link Service#START_REDELIVER_INTENT}.  Bad requests will be ignored,
  * including on restart after killing via {@link Service#START_NOT_STICKY}.
  * <p>
@@ -85,6 +95,7 @@ public class DownloaderService extends Service {
     private static volatile ServiceHandler serviceHandler;
     private static volatile Downloader downloader;
     private LocalBroadcastManager localBroadcastManager;
+    private static volatile int timeout;
 
     private final class ServiceHandler extends Handler {
         ServiceHandler(Looper looper) {
@@ -130,13 +141,15 @@ public class DownloaderService extends Service {
             Utils.debugLog(TAG, "Cancelling download of " + uriString);
             Integer whatToRemove = uriString.hashCode();
             if (serviceHandler.hasMessages(whatToRemove)) {
-                Utils.debugLog(TAG, "Removing download with ID of " + whatToRemove + " from service handler, then sending interrupted event.");
+                Utils.debugLog(TAG, "Removing download with ID of " + whatToRemove
+                        + " from service handler, then sending interrupted event.");
                 serviceHandler.removeMessages(whatToRemove);
                 sendBroadcast(intent.getData(), Downloader.ACTION_INTERRUPTED);
             } else if (isActive(uriString)) {
                 downloader.cancelDownload();
             } else {
-                Utils.debugLog(TAG, "ACTION_CANCEL called on something not queued or running (expected to find message with ID of " + whatToRemove + " in queue).");
+                Utils.debugLog(TAG, "ACTION_CANCEL called on something not queued or running"
+                        + " (expected to find message with ID of " + whatToRemove + " in queue).");
             }
         } else if (ACTION_QUEUE.equals(intent.getAction())) {
             Message msg = serviceHandler.obtainMessage();
@@ -181,17 +194,20 @@ public class DownloaderService extends Service {
      *
      * @param intent The {@link Intent} passed via {@link
      *               android.content.Context#startService(Intent)}.
+     * @see org.fdroid.fdroid.IndexV1Updater#update()
      */
     private void handleIntent(Intent intent) {
         final Uri uri = intent.getData();
         final SanitizedFile localFile = ApkCache.getApkDownloadPath(this, uri);
-        sendBroadcast(uri, Downloader.ACTION_STARTED, localFile);
+        long repoId = intent.getLongExtra(Downloader.EXTRA_REPO_ID, 0);
+        String originalUrlString = intent.getStringExtra(Downloader.EXTRA_CANONICAL_URL);
+        sendBroadcast(uri, Downloader.ACTION_STARTED, localFile, repoId, originalUrlString);
 
         try {
             downloader = DownloaderFactory.create(this, uri, localFile);
             downloader.setListener(new ProgressListener() {
                 @Override
-                public void onProgress(URL sourceUrl, int bytesRead, int totalBytes) {
+                public void onProgress(String urlString, long bytesRead, long totalBytes) {
                     Intent intent = new Intent(Downloader.ACTION_PROGRESS);
                     intent.setData(uri);
                     intent.putExtra(Downloader.EXTRA_BYTES_READ, bytesRead);
@@ -199,14 +215,26 @@ public class DownloaderService extends Service {
                     localBroadcastManager.sendBroadcast(intent);
                 }
             });
+            downloader.setTimeout(timeout);
             downloader.download();
-            sendBroadcast(uri, Downloader.ACTION_COMPLETE, localFile);
+            if (downloader.isNotFound()) {
+                sendBroadcast(uri, Downloader.ACTION_INTERRUPTED, localFile, getString(R.string.download_404),
+                        repoId, originalUrlString);
+            } else {
+                sendBroadcast(uri, Downloader.ACTION_COMPLETE, localFile, repoId, originalUrlString);
+            }
         } catch (InterruptedException e) {
-            sendBroadcast(uri, Downloader.ACTION_INTERRUPTED, localFile);
+            sendBroadcast(uri, Downloader.ACTION_INTERRUPTED, localFile, repoId, originalUrlString);
+        } catch (ConnectException | HttpRetryException | NoRouteToHostException | SocketTimeoutException
+                | SSLHandshakeException | SSLKeyException | SSLPeerUnverifiedException | SSLProtocolException
+                | ProtocolException | UnknownHostException e) {
+            // if the above list of exceptions changes, also change it in IndexV1Updater.update()
+            Log.e(TAG, e.getLocalizedMessage());
+            sendBroadcast(uri, Downloader.ACTION_CONNECTION_FAILED, localFile, repoId, originalUrlString);
         } catch (IOException e) {
             e.printStackTrace();
             sendBroadcast(uri, Downloader.ACTION_INTERRUPTED, localFile,
-                    e.getLocalizedMessage());
+                    e.getLocalizedMessage(), repoId, originalUrlString);
         } finally {
             if (downloader != null) {
                 downloader.close();
@@ -219,50 +247,63 @@ public class DownloaderService extends Service {
         sendBroadcast(uri, action, null, null);
     }
 
-    private void sendBroadcast(Uri uri, String action, File file) {
-        sendBroadcast(uri, action, file, null);
+    private void sendBroadcast(Uri uri, String action, File file, long repoId, String originalUrlString) {
+        sendBroadcast(uri, action, file, null, repoId, originalUrlString);
     }
 
     private void sendBroadcast(Uri uri, String action, File file, String errorMessage) {
+        sendBroadcast(uri, action, file, errorMessage, 0, null);
+    }
+
+    private void sendBroadcast(Uri uri, String action, File file, String errorMessage, long repoId,
+                               String originalUrlString) {
         Intent intent = new Intent(action);
-        intent.setData(uri);
+        if (originalUrlString != null) {
+            intent.setData(Uri.parse(originalUrlString));
+        }
         if (file != null) {
             intent.putExtra(Downloader.EXTRA_DOWNLOAD_PATH, file.getAbsolutePath());
         }
         if (!TextUtils.isEmpty(errorMessage)) {
             intent.putExtra(Downloader.EXTRA_ERROR_MESSAGE, errorMessage);
         }
+        intent.putExtra(Downloader.EXTRA_REPO_ID, repoId);
+        intent.putExtra(Downloader.EXTRA_MIRROR_URL, uri.toString());
         localBroadcastManager.sendBroadcast(intent);
     }
 
     /**
      * Add a URL to the download queue.
-     * <p/>
+     * <p>
      * All notifications are sent as an {@link Intent} via local broadcasts to be received by
      *
-     * @param context   this app's {@link Context}
-     * @param urlString The URL to add to the download queue
+     * @param context         this app's {@link Context}
+     * @param mirrorUrlString The URL to add to the download queue
+     * @param repoId          the database ID number representing one repo
+     * @param urlString       the URL used as the unique ID throughout F-Droid
      * @see #cancel(Context, String)
      */
-    public static void queue(Context context, String urlString) {
-        if (TextUtils.isEmpty(urlString)) {
+    public static void queue(Context context, String mirrorUrlString, long repoId, String urlString) {
+        if (TextUtils.isEmpty(mirrorUrlString)) {
             return;
         }
-        Utils.debugLog(TAG, "Preparing " + urlString + " to go into the download queue");
+        Utils.debugLog(TAG, "Preparing " + mirrorUrlString + " to go into the download queue");
         Intent intent = new Intent(context, DownloaderService.class);
         intent.setAction(ACTION_QUEUE);
-        intent.setData(Uri.parse(urlString));
+        intent.setData(Uri.parse(mirrorUrlString));
+        intent.putExtra(Downloader.EXTRA_REPO_ID, repoId);
+        intent.putExtra(Downloader.EXTRA_CANONICAL_URL, urlString);
         context.startService(intent);
     }
 
     /**
      * Remove a URL to the download queue, even if it is currently downloading.
-     * <p/>
+     * <p>
      * All notifications are sent as an {@link Intent} via local broadcasts to be received by
      *
      * @param context   this app's {@link Context}
      * @param urlString The URL to remove from the download queue
-     * @see #queue(Context, String)
+     * @see #queue(Context, String, long, String)
      */
     public static void cancel(Context context, String urlString) {
         if (TextUtils.isEmpty(urlString)) {
@@ -294,7 +335,11 @@ public class DownloaderService extends Service {
      * Check if a URL is actively being downloaded.
      */
     private static boolean isActive(String urlString) {
-        return downloader != null && TextUtils.equals(urlString, downloader.sourceUrl.toString());
+        return downloader != null && TextUtils.equals(urlString, downloader.urlString);
+    }
+
+    public static void setTimeout(int ms) {
+        timeout = ms;
     }
 
     /**
@@ -309,6 +354,7 @@ public class DownloaderService extends Service {
         intentFilter.addAction(Downloader.ACTION_PROGRESS);
         intentFilter.addAction(Downloader.ACTION_COMPLETE);
         intentFilter.addAction(Downloader.ACTION_INTERRUPTED);
+        intentFilter.addAction(Downloader.ACTION_CONNECTION_FAILED);
         intentFilter.addDataScheme(uri.getScheme());
         intentFilter.addDataAuthority(uri.getHost(), String.valueOf(uri.getPort()));
         intentFilter.addDataPath(uri.getPath(), PatternMatcher.PATTERN_LITERAL);

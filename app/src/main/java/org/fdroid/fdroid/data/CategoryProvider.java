@@ -7,22 +7,50 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-
-import org.fdroid.fdroid.R;
+import org.fdroid.fdroid.data.Schema.AppMetadataTable;
 import org.fdroid.fdroid.data.Schema.CatJoinTable;
 import org.fdroid.fdroid.data.Schema.CategoryTable;
 import org.fdroid.fdroid.data.Schema.CategoryTable.Cols;
+import org.fdroid.fdroid.data.Schema.PackageTable;
+import org.fdroid.fdroid.R;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 import java.util.List;
+import java.util.Collections;
+import java.util.ArrayList;
 
 public class CategoryProvider extends FDroidProvider {
 
     public static final class Helper {
-        private Helper() { }
+        private Helper() {
+        }
+
+        /**
+         * During repo updates, each app needs to know the ID of each category it belongs to.
+         * This results in lots of database lookups, usually at least one for each app, sometimes more.
+         * To improve performance, this caches the association between categories and their database IDs.
+         *
+         * It can stay around for the entire F-Droid process, even across multiple repo updates, as we
+         * don't actually remove data from the categories table.
+         */
+        private static final Map<String, Long> KNOWN_CATEGORIES = new HashMap<>();
+
+        /**
+         * Used by tests to clear that the "Category -> ID" cache (used to prevent excessive disk reads).
+         */
+        static void clearCategoryIdCache() {
+            KNOWN_CATEGORIES.clear();
+        }
 
         public static long ensureExists(Context context, String category) {
+            // Check our in-memory cache to potentially prevent a trip to the database (and hence disk).
+            String lowerCaseCategory = category.toLowerCase(Locale.ENGLISH);
+            if (KNOWN_CATEGORIES.containsKey(lowerCaseCategory)) {
+                return KNOWN_CATEGORIES.get(lowerCaseCategory);
+            }
+
             long id = getCategoryId(context, category);
             if (id <= 0) {
                 ContentValues values = new ContentValues(1);
@@ -30,12 +58,16 @@ public class CategoryProvider extends FDroidProvider {
                 Uri uri = context.getContentResolver().insert(getContentUri(), values);
                 id = Long.parseLong(uri.getLastPathSegment());
             }
+
+            KNOWN_CATEGORIES.put(lowerCaseCategory, id);
+
             return id;
         }
 
-        public static long getCategoryId(Context context, String category) {
-            String[] projection = new String[] {Cols.ROW_ID};
-            Cursor cursor = context.getContentResolver().query(getCategoryUri(category), projection, null, null, null);
+        private static long getCategoryId(Context context, String category) {
+            String[] projection = new String[]{Cols.ROW_ID};
+            Cursor cursor = context.getContentResolver().query(getCategoryUri(category), projection,
+                    null, null, null);
             if (cursor == null) {
                 return 0;
             }
@@ -51,7 +83,6 @@ public class CategoryProvider extends FDroidProvider {
                 cursor.close();
             }
         }
-
         public static String getCategoryAll(Context context) {
             return context.getString(R.string.category_All);
         }
@@ -63,6 +94,7 @@ public class CategoryProvider extends FDroidProvider {
         public static String getCategoryRecentlyUpdated(Context context) {
             return context.getString(R.string.category_Recently_Updated);
         }
+
 
         public static List<String> categories(Context context) {
             final ContentResolver resolver = context.getContentResolver();
@@ -92,17 +124,14 @@ public class CategoryProvider extends FDroidProvider {
 
             return categories;
         }
+
     }
 
     private class Query extends QueryBuilder {
 
-        private boolean onlyCategoriesWithApps;
-
         @Override
         protected String getRequiredTables() {
-            String joinType = onlyCategoriesWithApps ? " JOIN " : " LEFT JOIN ";
-
-            return CategoryTable.NAME + joinType + CatJoinTable.NAME + " ON (" +
+            return CategoryTable.NAME + " LEFT JOIN " + CatJoinTable.NAME + " ON (" +
                     CatJoinTable.Cols.CATEGORY_ID + " = " + CategoryTable.NAME + "." + Cols.ROW_ID + ") ";
         }
 
@@ -116,8 +145,13 @@ public class CategoryProvider extends FDroidProvider {
             return CategoryTable.NAME + "." + Cols.ROW_ID;
         }
 
-        public void setOnlyCategoriesWithApps(boolean onlyCategoriesWithApps) {
-            this.onlyCategoriesWithApps = onlyCategoriesWithApps;
+        public void setOnlyCategoriesWithApps() {
+            // Make sure that metadata from the preferred repository is used to determine if
+            // there is an app present or not.
+            join(AppMetadataTable.NAME, "app", "app." + AppMetadataTable.Cols.ROW_ID
+                    + " = " + CatJoinTable.NAME + "." + CatJoinTable.Cols.APP_METADATA_ID);
+            join(PackageTable.NAME, "pkg", "pkg." + PackageTable.Cols.PREFERRED_METADATA
+                    + " = " + "app." + AppMetadataTable.Cols.ROW_ID);
         }
     }
 
@@ -134,7 +168,7 @@ public class CategoryProvider extends FDroidProvider {
         MATCHER.addURI(getAuthority(), PATH_ALL_CATEGORIES, CODE_LIST);
     }
 
-    private static Uri getContentUri() {
+    static Uri getContentUri() {
         return Uri.parse("content://" + getAuthority());
     }
 
@@ -185,7 +219,7 @@ public class CategoryProvider extends FDroidProvider {
     }
 
     protected QuerySelection querySingle(String categoryName) {
-        final String selection = getTableName() + "." + Cols.NAME + " = ?";
+        final String selection = getTableName() + "." + Cols.NAME + " = ? COLLATE NOCASE";
         final String[] args = {categoryName};
         return new QuerySelection(selection, args);
     }
@@ -197,7 +231,8 @@ public class CategoryProvider extends FDroidProvider {
     }
 
     @Override
-    public Cursor query(@NonNull Uri uri, String[] projection, String customSelection, String[] selectionArgs, String sortOrder) {
+    public Cursor query(@NonNull Uri uri, String[] projection,
+                        String customSelection, String[] selectionArgs, String sortOrder) {
         QuerySelection selection = new QuerySelection(customSelection, selectionArgs);
         boolean onlyCategoriesWithApps = false;
         switch (MATCHER.match(uri)) {
@@ -218,7 +253,10 @@ public class CategoryProvider extends FDroidProvider {
         query.addSelection(selection);
         query.addFields(projection);
         query.addOrderBy(sortOrder);
-        query.setOnlyCategoriesWithApps(onlyCategoriesWithApps);
+
+        if (onlyCategoriesWithApps) {
+            query.setOnlyCategoriesWithApps();
+        }
 
         Cursor cursor = LoggingQuery.query(db(), query.toString(), query.getArgs());
         cursor.setNotificationUri(getContext().getContentResolver(), uri);
@@ -239,7 +277,9 @@ public class CategoryProvider extends FDroidProvider {
     @Override
     public Uri insert(@NonNull Uri uri, ContentValues values) {
         long rowId = db().insertOrThrow(getTableName(), null, values);
-        getContext().getContentResolver().notifyChange(AppProvider.getCanUpdateUri(), null);
+        // Don't try and notify listeners here, because it will instead happen when the TempAppProvider
+        // is committed (when the AppProvider and ApkProviders notify their listeners). There is no
+        // other time where categories get added (at time of writing) so this should be okay.
         return getCategoryIdUri(rowId);
     }
 

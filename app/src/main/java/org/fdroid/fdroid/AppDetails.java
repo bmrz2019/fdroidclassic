@@ -23,7 +23,6 @@ package org.fdroid.fdroid;
 
 import android.app.Activity;
 import android.app.PendingIntent;
-import android.bluetooth.BluetoothAdapter;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -103,7 +102,6 @@ public class AppDetails extends AppCompatActivity {
 
     private static final String TAG = "AppDetails";
 
-    private static final int REQUEST_ENABLE_BLUETOOTH = 2;
     private static final int REQUEST_PERMISSION_DIALOG = 3;
     private static final int REQUEST_UNINSTALL_DIALOG = 4;
 
@@ -229,7 +227,7 @@ public class AppDetails extends AppCompatActivity {
             holder.status.setText(getInstalledStatus(apk));
 
             holder.repository.setText(getString(R.string.repo_provider,
-                    RepoProvider.Helper.findById(getContext(), apk.repo).getName()));
+                    RepoProvider.Helper.findById(getContext(), apk.repoId).getName()));
 
             if (apk.size > 0) {
                 holder.size.setText(Utils.getFriendlySize(apk.size));
@@ -313,7 +311,6 @@ public class AppDetails extends AppCompatActivity {
     private static final int IGNORETHIS         = Menu.FIRST + 3;
     private static final int LAUNCH             = Menu.FIRST + 4;
     private static final int SHARE              = Menu.FIRST + 5;
-    private static final int SEND_VIA_BLUETOOTH = Menu.FIRST + 6;
 
     private App app;
     private PackageManager packageManager;
@@ -435,7 +432,7 @@ public class AppDetails extends AppCompatActivity {
     @Override
     protected void onResume() {
         App newApp = AppProvider.Helper.findHighestPriorityMetadata(getContentResolver(), app.packageName);
-        if (newApp.isInstalled() != app.isInstalled()) {
+        if (newApp.isInstalled(context) != app.isInstalled(this.context)) {
             setApp(newApp);
         }
         super.onResume();
@@ -738,7 +735,7 @@ public class AppDetails extends AppCompatActivity {
                             MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
         }
 
-        if (app.isInstalled()) {
+        if (app.isInstalled(this.context)) {
             MenuItemCompat.setShowAsAction(menu.add(
                             Menu.NONE, UNINSTALL, 1, R.string.menu_uninstall)
                             .setIcon(R.drawable.ic_delete_white),
@@ -762,12 +759,6 @@ public class AppDetails extends AppCompatActivity {
                     .setIcon(R.drawable.ic_do_not_disturb_white)
                     .setCheckable(true)
                     .setChecked(app.getPrefs(context).ignoreThisUpdate >= app.suggestedVersionCode);
-        }
-
-        // Ignore on devices without Bluetooth
-        if (app.isInstalled() && fdroidApp.bluetoothAdapter != null) {
-            menu.add(Menu.NONE, SEND_VIA_BLUETOOTH, 3, R.string.send_via_bluetooth)
-                    .setIcon(R.drawable.ic_bluetooth_white);
         }
         return true;
     }
@@ -889,18 +880,6 @@ public class AppDetails extends AppCompatActivity {
                 }
                 item.setChecked(app.getPrefs(this).ignoreThisUpdate > 0);
                 return true;
-
-            case SEND_VIA_BLUETOOTH:
-                /*
-                 * If Bluetooth has not been enabled/turned on, then
-                 * enabling device discoverability will automatically enable Bluetooth
-                 */
-                Intent discoverBt = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-                discoverBt.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 121);
-                startActivityForResult(discoverBt, REQUEST_ENABLE_BLUETOOTH);
-                // if this is successful, the Bluetooth transfer is started
-                return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -1052,9 +1031,6 @@ public class AppDetails extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case REQUEST_ENABLE_BLUETOOTH:
-                fdroidApp.sendViaBluetooth(this, resultCode, app.packageName);
-                break;
             case REQUEST_PERMISSION_DIALOG:
                 if (resultCode == Activity.RESULT_OK) {
                     Uri uri = data.getData();
@@ -1172,29 +1148,29 @@ public class AppDetails extends AppCompatActivity {
                 App app = appDetails.getApp();
                 switch (v.getId()) {
                     case R.id.website:
-                        url = app.webURL;
+                        url = app.webSite;
                         break;
                     case R.id.email:
                         final String subject = Uri.encode(getString(R.string.app_details_subject, app.name));
-                        url = "mailto:" + app.email + "?subject=" + subject;
+                        url = "mailto:" + app.authorEmail + "?subject=" + subject;
                         break;
                     case R.id.source:
-                        url = app.sourceURL;
+                        url = app.sourceCode;
                         break;
                     case R.id.issues:
-                        url = app.trackerURL;
+                        url = app.issueTracker;
                         break;
                     case R.id.changelog:
-                        url = app.changelogURL;
+                        url = app.changelog;
                         break;
                     case R.id.donate:
-                        url = app.donateURL;
+                        url = app.donate;
                         break;
                     case R.id.bitcoin:
-                        url = "bitcoin:" + app.bitcoinAddr;
+                        url = "bitcoin:" + app.bitcoin;
                         break;
                     case R.id.litecoin:
-                        url = "litecoin:" + app.litecoinAddr;
+                        url = "litecoin:" + app.litecoin;
                         break;
                     case R.id.flattr:
                         url = "https://flattr.com/thing/" + app.flattrID;
@@ -1276,7 +1252,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Website button
             View tv = view.findViewById(R.id.website);
-            if (!TextUtils.isEmpty(app.webURL)) {
+            if (!TextUtils.isEmpty(app.webSite)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1284,7 +1260,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Email button
             tv = view.findViewById(R.id.email);
-            if (!TextUtils.isEmpty(app.email)) {
+            if (!TextUtils.isEmpty(app.authorEmail)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1292,7 +1268,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Source button
             tv = view.findViewById(R.id.source);
-            if (!TextUtils.isEmpty(app.sourceURL)) {
+            if (!TextUtils.isEmpty(app.sourceCode)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1300,7 +1276,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Issues button
             tv = view.findViewById(R.id.issues);
-            if (!TextUtils.isEmpty(app.trackerURL)) {
+            if (!TextUtils.isEmpty(app.issueTracker)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1308,7 +1284,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Changelog button
             tv = view.findViewById(R.id.changelog);
-            if (!TextUtils.isEmpty(app.changelogURL)) {
+            if (!TextUtils.isEmpty(app.changelog)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1316,7 +1292,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Donate button
             tv = view.findViewById(R.id.donate);
-            if (!TextUtils.isEmpty(app.donateURL)) {
+            if (!TextUtils.isEmpty(app.donate)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1324,7 +1300,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Bitcoin
             tv = view.findViewById(R.id.bitcoin);
-            if (!TextUtils.isEmpty(app.bitcoinAddr)) {
+            if (!TextUtils.isEmpty(app.bitcoin)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1332,7 +1308,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Litecoin
             tv = view.findViewById(R.id.litecoin);
-            if (!TextUtils.isEmpty(app.litecoinAddr)) {
+            if (!TextUtils.isEmpty(app.litecoin)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
@@ -1391,8 +1367,8 @@ public class AppDetails extends AppCompatActivity {
         }
 
         private void buildPermissionInfo() {
-            AppDiff appDiff = new AppDiff(appDetails.getPackageManager(), appDetails.getApks().getItem(0));
-            AppSecurityPermissions perms = new AppSecurityPermissions(appDetails, appDiff.pkgInfo);
+            AppDiff appDiff = new AppDiff(appDetails, appDetails.getApks().getItem(0));
+            AppSecurityPermissions perms = new AppSecurityPermissions(appDetails, appDiff.apkPackageInfo);
 
             final ViewGroup permList = (ViewGroup) llViewMorePermissions.findViewById(R.id.permission_list);
             permList.addView(perms.getPermissionsView(AppSecurityPermissions.WHICH_ALL));
@@ -1477,7 +1453,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Set the icon...
             ImageView iv = (ImageView) view.findViewById(R.id.icon);
-            ImageLoader.getInstance().displayImage(app.iconUrlLarge, iv,
+            ImageLoader.getInstance().displayImage(app.iconUrl, iv,
                     displayImageOptions);
 
             // Set the title
@@ -1620,22 +1596,20 @@ public class AppDetails extends AppCompatActivity {
             if (appDetails.activeDownloadUrlString != null) {
                 btMain.setText(R.string.downloading);
                 btMain.setEnabled(false);
-            } else if (!app.isInstalled() && app.suggestedVersionCode > 0 &&
+            } else if (!app.isInstalled(this.getContext()) && app.suggestedVersionCode > 0 &&
                     appDetails.adapter.getCount() > 0) {
                 // Check count > 0 due to incompatible apps resulting in an empty list.
                 // If App isn't installed
                 installed = false;
                 statusView.setText(R.string.details_notinstalled);
-                NfcHelper.disableAndroidBeam(appDetails);
                 // Set Install button and hide second button
                 btMain.setText(R.string.menu_install);
                 btMain.setOnClickListener(mOnClickListener);
                 btMain.setEnabled(true);
-            } else if (app.isInstalled()) {
+            } else if (app.isInstalled(this.getContext())) {
                 // If App is installed
                 installed = true;
                 statusView.setText(getString(R.string.details_installed, app.installedVersionName));
-                NfcHelper.setAndroidBeam(appDetails, app.packageName);
                 if (app.canAndWantToUpdate(appDetails)) {
                     updateWanted = true;
                     btMain.setText(R.string.menu_upgrade);
@@ -1651,8 +1625,8 @@ public class AppDetails extends AppCompatActivity {
                 btMain.setEnabled(true);
             }
             TextView author = (TextView) view.findViewById(R.id.author);
-            if (!TextUtils.isEmpty(app.author)) {
-                author.setText(getString(R.string.by_author) + " " + app.author);
+            if (!TextUtils.isEmpty(app.authorName)) {
+                author.setText(getString(R.string.by_author) + " " + app.authorName);
                 author.setVisibility(View.VISIBLE);
             }
             TextView currentVersion = (TextView) view.findViewById(R.id.current_version);

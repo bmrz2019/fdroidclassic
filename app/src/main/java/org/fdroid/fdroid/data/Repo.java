@@ -26,14 +26,32 @@ package org.fdroid.fdroid.data;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.text.TextUtils;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.RepoTable.Cols;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
+
+/**
+ * Represents a the descriptive info and metadata about a given repo, as provided
+ * by the repo index.  This also keeps track of the state of the repo.
+ * <p>
+ * <b>Do not rename these instance variables without careful consideration!</b>
+ * They are mapped to JSON field names, the {@code fdroidserver} internal variable
+ * names, and the {@code fdroiddata} YAML field names.  Only the instance variables
+ * decorated with {@code @JsonIgnore} are not directly mapped.
+ *
+ * @see <a href="https://gitlab.com/fdroid/fdroiddata">fdroiddata</a>
+ * @see <a href="https://gitlab.com/fdroid/fdroidserver">fdroidserver</a>
+ */
 public class Repo extends ValueObject {
 
     public static final int VERSION_DENSITY_SPECIFIC_ICONS = 11;
@@ -42,37 +60,71 @@ public class Repo extends ValueObject {
     public static final int PUSH_REQUEST_PROMPT = 1;
     public static final int PUSH_REQUEST_ACCEPT_ALWAYS = 2;
 
+    public static final int INT_UNSET_VALUE = -1;
+    // these are never set by the Apk/package index metadata
+    @JsonIgnore
     protected long id;
+    @JsonIgnore
+    public boolean inuse;
+    @JsonIgnore
+    public int priority;
+    @JsonIgnore
+    public Date lastUpdated;
+    @JsonIgnore
+    public boolean isSwap;
+    /**
+     * last etag we updated from, null forces update
+     */
+    @JsonIgnore
+    public String lastetag;
+    /**
+     * How to treat push requests included in this repo's index XML. This comes
+     * from {@code default_repo.xml} or perhaps user input.  It should never be
+     * settable from the server-side.
+     */
+    @JsonIgnore
+    public int pushRequests = PUSH_REQUEST_IGNORE;
 
     public String address;
     public String name;
     public String description;
-    /** index version, i.e. what fdroidserver built it - 0 if not specified */
+    public String icon;
+    /**
+     * index version, i.e. what fdroidserver built it - 0 if not specified
+     */
     public int version;
-    public boolean inuse;
-    public int priority;
-    /** The signing certificate, {@code null} for a newly added repo */
+    /**
+     * The signing certificate, {@code null} for a newly added repo
+     */
     public String signingCertificate;
     /**
      * The SHA1 fingerprint of {@link #signingCertificate}, set to {@code null} when a
      * newly added repo did not include fingerprint. It should never be an
-     * empty {@link String}, i.e. {@code ""} */
+     * empty {@link String}, i.e. {@code ""}
+     */
     public String fingerprint;
-    /** maximum age of index that will be accepted - 0 for any */
+    /**
+     * maximum age of index that will be accepted - 0 for any
+     */
     public int maxage;
-    /** last etag we updated from, null forces update */
-    public String lastetag;
-    public Date lastUpdated;
-    public boolean isSwap;
 
     public String username;
     public String password;
 
-    /** When the signed repo index was generated, used to protect against replay attacks */
+    /**
+     * When the signed repo index was generated, used to protect against replay attacks
+     */
     public long timestamp;
 
-    /** How to treat push requests included in this repo's index XML */
-    public int pushRequests = PUSH_REQUEST_IGNORE;
+    /**
+     * Official mirrors of this repo, considered automatically interchangeable
+     */
+    public String[] mirrors;
+
+    /**
+     * Mirrors added by the user, either by UI input or by attaching removeable storage
+     */
+    public String[] userMirrors;
 
     public Repo() {
     }
@@ -131,6 +183,15 @@ public class Repo extends ValueObject {
                 case Cols.TIMESTAMP:
                     timestamp = cursor.getLong(i);
                     break;
+                case Cols.ICON:
+                    icon = cursor.getString(i);
+                    break;
+                case Cols.MIRRORS:
+                    mirrors = Utils.parseCommaSeparatedString(cursor.getString(i));
+                    break;
+                case Cols.USER_MIRRORS:
+                    userMirrors = Utils.parseCommaSeparatedString(cursor.getString(i));
+                    break;
                 case Cols.PUSH_REQUESTS:
                     pushRequests = cursor.getInt(i);
                     break;
@@ -138,6 +199,9 @@ public class Repo extends ValueObject {
         }
     }
 
+    /**
+     * @return the database ID to find this repo in the database
+     */
     public long getId() {
         return id;
     }
@@ -257,8 +321,79 @@ public class Repo extends ValueObject {
             timestamp = toInt(values.getAsInteger(Cols.TIMESTAMP));
         }
 
+        if (values.containsKey(Cols.ICON)) {
+            icon = values.getAsString(Cols.ICON);
+        }
+
+        if (values.containsKey(Cols.MIRRORS)) {
+            mirrors = Utils.parseCommaSeparatedString(values.getAsString(Cols.MIRRORS));
+        }
+
+        if (values.containsKey(Cols.USER_MIRRORS)) {
+            userMirrors = Utils.parseCommaSeparatedString(values.getAsString(Cols.USER_MIRRORS));
+        }
+
         if (values.containsKey(Cols.PUSH_REQUESTS)) {
             pushRequests = toInt(values.getAsInteger(Cols.PUSH_REQUESTS));
         }
+    }
+
+    public boolean hasMirrors() {
+        return (mirrors != null && mirrors.length > 1)
+                || (userMirrors != null && userMirrors.length > 0);
+    }
+
+    public List<String> getMirrorList() {
+        final ArrayList<String> allMirrors = new ArrayList<String>();
+        if (userMirrors != null) {
+            allMirrors.addAll(Arrays.asList(userMirrors));
+        }
+        if (mirrors != null) {
+            allMirrors.addAll(Arrays.asList(mirrors));
+        }
+        return allMirrors;
+    }
+
+    /**
+     * Get the number of available mirrors, including the canonical repo.
+     */
+    public int getMirrorCount() {
+        int count = 0;
+        for (String m : getMirrorList()) {
+            if (!m.equals(address)) {
+                if (FDroidApp.isUsingTor()) {
+                    count++;
+                } else {
+                    if (!m.contains(".onion")) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+    public String getMirror(String lastWorkingMirror) {
+        if (TextUtils.isEmpty(lastWorkingMirror)) {
+            lastWorkingMirror = address;
+        }
+        List<String> shuffledMirrors = getMirrorList();
+        Collections.shuffle(shuffledMirrors);
+        if (shuffledMirrors.size() > 1) {
+            for (String m : shuffledMirrors) {
+                // Return a non default, and not last used mirror
+                if (!m.equals(address) && !m.equals(lastWorkingMirror)) {
+                    if (FDroidApp.isUsingTor()) {
+                        return m;
+                    } else {
+                        // Filter-out onion mirrors for non-tor connections
+                        if (!m.contains(".onion")) {
+                            return m;
+                        }
+                    }
+                }
+            }
+        }
+        return null; // In case we are out of mirrors.
     }
 }

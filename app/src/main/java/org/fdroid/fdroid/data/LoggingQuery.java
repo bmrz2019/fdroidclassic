@@ -1,6 +1,7 @@
 package org.fdroid.fdroid.data;
 
 import android.database.Cursor;
+import android.database.CursorWrapper;
 import android.database.sqlite.SQLiteDatabase;
 
 import org.fdroid.fdroid.BuildConfig;
@@ -19,7 +20,8 @@ import org.fdroid.fdroid.Utils;
  *       LEFT JOIN fdroid_apk ON (fdroid_apk.appId = fdroid_app.rowid)
  *       LEFT JOIN fdroid_repo ON (fdroid_apk.repo = fdroid_repo._id)
  *       LEFT JOIN fdroid_installedApp AS installed ON (installed.appId = fdroid_app.id)
- *       LEFT JOIN fdroid_apk AS suggestedApk ON (fdroid_app.suggestedVercode = suggestedApk.vercode AND fdroid_app.rowid = suggestedApk.appId)
+ *       LEFT JOIN fdroid_apk AS suggestedApk ON (fdroid_app.suggestedVercode = suggestedApk.vercode
+ *                                                AND fdroid_app.rowid = suggestedApk.appId)
  *     WHERE
  *       fdroid_repo.isSwap = 0 OR fdroid_repo.isSwap IS NULL
  *     GROUP BY fdroid_app.rowid
@@ -60,9 +62,56 @@ final class LoggingQuery {
             if (queryDuration >= SLOW_QUERY_DURATION) {
                 logSlowQuery(queryDuration);
             }
-            return cursor;
+
+            return new LogGetCountCursorWrapper(cursor);
         }
         return db.rawQuery(query, queryArgs);
+    }
+
+    /**
+     * Sometimes the query will not actually be run when invoking "query()".
+     * Under such circumstances, it falls to the {@link android.content.ContentProvider#query}
+     * method to manually invoke the {@link Cursor#getCount()} method to force query execution.
+     * It does so with a comment saying "Force query execution". When this happens, the call to
+     * query() takes 1ms, whereas the call go getCount() is the bit which takes time.
+     * As such, we will also track that method duration in order to potentially log slow queries.
+     */
+    private final class LogGetCountCursorWrapper extends CursorWrapper {
+        private LogGetCountCursorWrapper(Cursor cursor) {
+            super(cursor);
+        }
+
+        @Override
+        public int getCount() {
+            long startTime = System.currentTimeMillis();
+            int count = super.getCount();
+            long queryDuration = System.currentTimeMillis() - startTime;
+            if (queryDuration >= SLOW_QUERY_DURATION) {
+                logSlowQuery(queryDuration);
+            }
+            return count;
+        }
+    }
+
+    private void execSQLInternal() {
+        if (BuildConfig.DEBUG) {
+            long startTime = System.currentTimeMillis();
+            long queryDuration = System.currentTimeMillis() - startTime;
+            executeSQLInternal();
+            if (queryDuration >= SLOW_QUERY_DURATION) {
+                logSlowQuery(queryDuration);
+            }
+        } else {
+            executeSQLInternal();
+        }
+    }
+
+    private void executeSQLInternal() {
+        if (queryArgs == null || queryArgs.length == 0) {
+            db.execSQL(query);
+        } else {
+            db.execSQL(query, queryArgs);
+        }
     }
 
     /**
@@ -114,5 +163,9 @@ final class LoggingQuery {
 
     public static Cursor query(SQLiteDatabase db, String query, String[] queryBuilderArgs) {
         return new LoggingQuery(db, query, queryBuilderArgs).rawQuery();
+    }
+
+    public static void execSQL(SQLiteDatabase db, String sql, String[] queryArgs) {
+        new LoggingQuery(db, sql, queryArgs).execSQLInternal();
     }
 }

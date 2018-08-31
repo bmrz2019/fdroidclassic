@@ -54,8 +54,9 @@ public interface Schema {
 
             String IGNORE_ALL_UPDATES = "ignoreAllUpdates";
             String IGNORE_THIS_UPDATE = "ignoreThisUpdate";
+            String IGNORE_VULNERABILITIES = "ignoreVulnerabilities";
 
-            String[] ALL = {PACKAGE_NAME, IGNORE_ALL_UPDATES, IGNORE_THIS_UPDATE};
+            String[] ALL = {PACKAGE_NAME, IGNORE_ALL_UPDATES, IGNORE_THIS_UPDATE, IGNORE_VULNERABILITIES};
         }
     }
 
@@ -85,6 +86,8 @@ public interface Schema {
         String NAME = "fdroid_categoryAppMetadataJoin";
 
         interface Cols {
+            String ROW_ID = "rowid";
+
             /**
              * Foreign key to {@link AppMetadataTable}.
              * @see AppMetadataTable
@@ -100,7 +103,48 @@ public interface Schema {
             /**
              * @see AppMetadataTable.Cols#ALL_COLS
              */
-            String[] ALL_COLS = {APP_METADATA_ID, CATEGORY_ID};
+            String[] ALL_COLS = {ROW_ID, APP_METADATA_ID, CATEGORY_ID};
+        }
+    }
+
+    interface AntiFeatureTable {
+
+        String NAME = "fdroid_antiFeature";
+
+        interface Cols {
+            String ROW_ID = "rowid";
+            String NAME = "name";
+
+            String[] ALL = {ROW_ID, NAME};
+        }
+    }
+
+    /**
+     * An entry in this table signifies that an apk has a particular anti feature.
+     * @see AntiFeatureTable
+     * @see ApkTable
+     */
+    interface ApkAntiFeatureJoinTable {
+
+        String NAME = "fdroid_apkAntiFeatureJoin";
+
+        interface Cols {
+            /**
+             * Foreign key to {@link ApkTable}.
+             * @see ApkTable
+             */
+            String APK_ID = "apkId";
+
+            /**
+             * Foreign key to {@link AntiFeatureTable}.
+             * @see AntiFeatureTable
+             */
+            String ANTI_FEATURE_ID = "antiFeatureId";
+
+            /**
+             * @see AppMetadataTable.Cols#ALL_COLS
+             */
+            String[] ALL_COLS = {APK_ID, ANTI_FEATURE_ID};
         }
     }
 
@@ -123,17 +167,21 @@ public interface Schema {
             String SUMMARY = "summary";
             String ICON = "icon";
             String DESCRIPTION = "description";
+            String WHATSNEW = "whatsNew";
             String LICENSE = "license";
-            String AUTHOR = "author";
-            String EMAIL = "email";
-            String WEB_URL = "webURL";
-            String TRACKER_URL = "trackerURL";
-            String SOURCE_URL = "sourceURL";
-            String CHANGELOG_URL = "changelogURL";
-            String DONATE_URL = "donateURL";
-            String BITCOIN_ADDR = "bitcoinAddr";
-            String LITECOIN_ADDR = "litecoinAddr";
+            String AUTHOR_NAME = "author";
+            String AUTHOR_EMAIL = "email";
+            String WEBSITE = "webURL";
+            String ISSUE_TRACKER = "trackerURL";
+            String SOURCE_CODE = "sourceURL";
+            String VIDEO = "video";
+            String CHANGELOG = "changelogURL";
+            String DONATE = "donateURL";
+            String BITCOIN = "bitcoinAddr";
+            String LITECOIN = "litecoinAddr";
             String FLATTR_ID = "flattrID";
+            String LIBERAPAY_ID = "liberapayID";
+            String PREFERRED_SIGNER = "preferredSigner";
             String SUGGESTED_VERSION_CODE = "suggestedVercode";
             String UPSTREAM_VERSION_NAME = "upstreamVersion";
             String UPSTREAM_VERSION_CODE = "upstreamVercode";
@@ -142,7 +190,15 @@ public interface Schema {
             String ANTI_FEATURES = "antiFeatures";
             String REQUIREMENTS = "requirements";
             String ICON_URL = "iconUrl";
-            String ICON_URL_LARGE = "iconUrlLarge";
+            String FEATURE_GRAPHIC = "featureGraphic";
+            String PROMO_GRAPHIC = "promoGraphic";
+            String TV_BANNER = "tvBanner";
+            String PHONE_SCREENSHOTS = "phoneScreenshots";
+            String SEVEN_INCH_SCREENSHOTS = "sevenInchScreenshots";
+            String TEN_INCH_SCREENSHOTS = "tenInchScreenshots";
+            String TV_SCREENSHOTS = "tvScreenshots";
+            String WEAR_SCREENSHOTS = "wearScreenshots";
+            String IS_APK = "isApk";
 
             interface SuggestedApk {
                 String VERSION_NAME = "suggestedApkVersion";
@@ -176,11 +232,13 @@ public interface Schema {
              */
             String[] ALL_COLS = {
                     ROW_ID, PACKAGE_ID, REPO_ID, IS_COMPATIBLE, NAME, SUMMARY, ICON, DESCRIPTION,
-                    LICENSE, AUTHOR, EMAIL, WEB_URL, TRACKER_URL, SOURCE_URL,
-                    CHANGELOG_URL, DONATE_URL, BITCOIN_ADDR, LITECOIN_ADDR, FLATTR_ID,
+                    WHATSNEW, LICENSE, AUTHOR_NAME, AUTHOR_EMAIL, WEBSITE, ISSUE_TRACKER, SOURCE_CODE,
+                    VIDEO, CHANGELOG, DONATE, BITCOIN, LITECOIN, FLATTR_ID, LIBERAPAY_ID,
                     UPSTREAM_VERSION_NAME, UPSTREAM_VERSION_CODE, ADDED, LAST_UPDATED,
-                    ANTI_FEATURES, REQUIREMENTS, ICON_URL, ICON_URL_LARGE,
-                    SUGGESTED_VERSION_CODE,
+                    ANTI_FEATURES, REQUIREMENTS, ICON_URL,
+                    FEATURE_GRAPHIC, PROMO_GRAPHIC, TV_BANNER, PHONE_SCREENSHOTS,
+                    SEVEN_INCH_SCREENSHOTS, TEN_INCH_SCREENSHOTS, TV_SCREENSHOTS, WEAR_SCREENSHOTS,
+                    PREFERRED_SIGNER, SUGGESTED_VERSION_CODE, IS_APK,
             };
 
             /**
@@ -190,11 +248,13 @@ public interface Schema {
              */
             String[] ALL = {
                     _ID, ROW_ID, REPO_ID, IS_COMPATIBLE, NAME, SUMMARY, ICON, DESCRIPTION,
-                    LICENSE, AUTHOR, EMAIL, WEB_URL, TRACKER_URL, SOURCE_URL,
-                    CHANGELOG_URL, DONATE_URL, BITCOIN_ADDR, LITECOIN_ADDR, FLATTR_ID,
+                    WHATSNEW, LICENSE, AUTHOR_NAME, AUTHOR_EMAIL, WEBSITE, ISSUE_TRACKER, SOURCE_CODE,
+                    VIDEO, CHANGELOG, DONATE, BITCOIN, LITECOIN, FLATTR_ID, LIBERAPAY_ID,
                     UPSTREAM_VERSION_NAME, UPSTREAM_VERSION_CODE, ADDED, LAST_UPDATED,
-                    ANTI_FEATURES, REQUIREMENTS, ICON_URL, ICON_URL_LARGE,
-                    SUGGESTED_VERSION_CODE, SuggestedApk.VERSION_NAME,
+                    ANTI_FEATURES, REQUIREMENTS, ICON_URL,
+                    FEATURE_GRAPHIC, PROMO_GRAPHIC, TV_BANNER, PHONE_SCREENSHOTS,
+                    SEVEN_INCH_SCREENSHOTS, TEN_INCH_SCREENSHOTS, TV_SCREENSHOTS, WEAR_SCREENSHOTS,
+                    PREFERRED_SIGNER, SUGGESTED_VERSION_CODE, IS_APK, SuggestedApk.VERSION_NAME,
                     InstalledApp.VERSION_CODE, InstalledApp.VERSION_NAME,
                     InstalledApp.SIGNATURE, Package.PACKAGE_NAME,
             };
@@ -250,6 +310,10 @@ public interface Schema {
                 String PACKAGE_NAME = "package_packageName";
             }
 
+            interface AntiFeatures {
+                String ANTI_FEATURES   = "antiFeatures_commaSeparated";
+            }
+
             /**
              * @see AppMetadataTable.Cols#ALL_COLS
              */
@@ -270,6 +334,7 @@ public interface Schema {
                     OBB_MAIN_FILE, OBB_MAIN_FILE_SHA256, OBB_PATCH_FILE, OBB_PATCH_FILE_SHA256,
                     REQUESTED_PERMISSIONS, FEATURES, NATIVE_CODE, HASH_TYPE, ADDED_DATE,
                     IS_COMPATIBLE, Repo.VERSION, Repo.ADDRESS, INCOMPATIBLE_REASONS,
+                    AntiFeatures.ANTI_FEATURES,
             };
         }
     }
@@ -295,12 +360,15 @@ public interface Schema {
             String USERNAME     = "username";
             String PASSWORD     = "password";
             String TIMESTAMP    = "timestamp";
+            String ICON         = "icon";
+            String MIRRORS      = "mirrors";
+            String USER_MIRRORS = "userMirrors";
             String PUSH_REQUESTS = "pushRequests";
 
             String[] ALL = {
                     _ID, ADDRESS, NAME, DESCRIPTION, IN_USE, PRIORITY, SIGNING_CERT,
                     FINGERPRINT, MAX_AGE, LAST_UPDATED, LAST_ETAG, VERSION, IS_SWAP,
-                    USERNAME, PASSWORD, TIMESTAMP, PUSH_REQUESTS,
+                    USERNAME, PASSWORD, TIMESTAMP, ICON, MIRRORS, USER_MIRRORS, PUSH_REQUESTS,
             };
         }
     }
@@ -311,7 +379,7 @@ public interface Schema {
 
         interface Cols {
             String _ID = "rowid as _id"; // Required for CursorLoaders
-            String PACKAGE_NAME = "appId";
+            String PACKAGE_ID = "packageId";
             String VERSION_CODE = "versionCode";
             String VERSION_NAME = "versionName";
             String APPLICATION_LABEL = "applicationLabel";
@@ -320,8 +388,12 @@ public interface Schema {
             String HASH_TYPE = "hashType";
             String HASH = "hash";
 
+            interface Package {
+                String NAME = "packageName";
+            }
+
             String[] ALL = {
-                    _ID, PACKAGE_NAME, VERSION_CODE, VERSION_NAME, APPLICATION_LABEL,
+                    _ID, PACKAGE_ID, Package.NAME, VERSION_CODE, VERSION_NAME, APPLICATION_LABEL,
                     SIGNATURE, LAST_UPDATE_TIME, HASH_TYPE, HASH,
             };
         }

@@ -50,7 +50,6 @@ import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.NewRepoConfig;
 import org.fdroid.fdroid.views.AppListFragmentPagerAdapter;
 import org.fdroid.fdroid.views.ManageReposActivity;
-import org.fdroid.fdroid.views.swap.SwapWorkflowActivity;
 
 public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
@@ -135,8 +134,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
     protected void onResume() {
         super.onResume();
         FDroidApp.checkStartTor(this);
-        // AppDetails and RepoDetailsActivity set different NFC actions, so reset here
-        NfcHelper.setAndroidBeam(this, getApplication().getPackageName());
         checkForAddRepoIntent(getIntent());
     }
 
@@ -259,14 +256,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
             intent.putExtra(ADD_REPO_INTENT_HANDLED, true);
             NewRepoConfig parser = new NewRepoConfig(this, intent);
             if (parser.isValidRepo()) {
-                if (parser.isFromSwap()) {
-                    Intent confirmIntent = new Intent(this, SwapWorkflowActivity.class);
-                    confirmIntent.putExtra(SwapWorkflowActivity.EXTRA_CONFIRM, true);
-                    confirmIntent.setData(intent.getData());
-                    startActivityForResult(confirmIntent, REQUEST_SWAP);
-                } else {
-                    startActivity(new Intent(ACTION_ADD_REPO, intent.getData(), this, ManageReposActivity.class));
-                }
+                startActivity(new Intent(ACTION_ADD_REPO, intent.getData(), this, ManageReposActivity.class));
             } else if (parser.getErrorMessage() != null) {
                 Toast.makeText(this, parser.getErrorMessage(), Toast.LENGTH_LONG).show();
             }
@@ -282,12 +272,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
-        if (fdroidApp.bluetoothAdapter == null) {
-            // ignore on devices without Bluetooth
-            MenuItem btItem = menu.findItem(R.id.action_bluetooth_apk);
-            btItem.setVisible(false);
-        }
-
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchMenuItem = menu.findItem(R.id.action_search);
         searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
@@ -322,10 +306,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
             case R.id.action_settings:
                 Intent prefs = new Intent(getBaseContext(), PreferencesActivity.class);
                 startActivityForResult(prefs, REQUEST_PREFS);
-                return true;
-
-            case R.id.action_swap:
-                startActivity(new Intent(this, SwapWorkflowActivity.class));
                 return true;
 
             case R.id.action_bluetooth_apk:
@@ -380,9 +360,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
                     overridePendingTransition(0, 0);
                     startActivity(intent);
                 }
-                break;
-            case REQUEST_ENABLE_BLUETOOTH:
-                fdroidApp.sendViaBluetooth(this, resultCode, "org.fdroid.fdroid");
                 break;
         }
     }

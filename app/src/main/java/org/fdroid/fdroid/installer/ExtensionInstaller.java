@@ -94,9 +94,4 @@ public class ExtensionInstaller extends Installer {
     protected boolean isUnattended() {
         return false;
     }
-
-    @Override
-    protected boolean supportsContentUri() {
-        return false;
-    }
 }

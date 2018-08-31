@@ -21,9 +21,11 @@ package org.fdroid.fdroid.installer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.content.FileProvider;
-
+import org.fdroid.fdroid.BuildConfig;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.SanitizedFile;
 
@@ -31,48 +33,70 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * This class has helper methods for preparing apks for installation.
+ * Helper methods for preparing APKs and arbitrary files for installation,
+ * either locally or for sending via bluetooth.
  * <p/>
  * APK handling for installations:
- * 1. APKs are downloaded into a cache directory that is either created on SD card
+ * <ol>
+ * <li>APKs are downloaded into a cache directory that is either created on SD card
  * <i>"/Android/data/[app_package_name]/cache/apks"</i> (if card is mounted and app has
- * appropriate permission) or on device's file system depending incoming parameters.
- * 2. Before installation, the APK is copied into the private data directory of the F-Droid,
- * <i>"/data/data/[app_package_name]/files/install-$random.apk"</i>.
- * 3. The hash of the file is checked against the expected hash from the repository
- * 4. For Android < 7, a file Uri pointing to the File is returned, for Android >= 7,
- * a content Uri is returned using support lib's FileProvider.
+ * appropriate permission) or on device's file system depending incoming parameters</li>
+ * <li>Before installation, the APK is copied into the private data directory of the F-Droid,
+ * <i>"/data/data/[app_package_name]/files/install-$random.apk"</i></li>
+ * <li>The hash of the file is checked against the expected hash from the repository</li>
+ * <li>For {@link Build.VERSION_CODES#M < android-23}, a {@code file://} {@link Uri}
+ * pointing to the {@link File} is returned, for {@link Build.VERSION_CODES#M >= android-23},
+ * a {@code content://} {@code Uri} is returned using support lib's
+ * {@link FileProvider}</li>
+ * </ol>
  */
 public class ApkFileProvider extends FileProvider {
 
-    private static final String AUTHORITY = "org.fdroid.fdroid.installer.ApkFileProvider";
+    private static final String AUTHORITY = BuildConfig.APPLICATION_ID + ".installer.ApkFileProvider";
+
+    public static Uri getSafeUri(Context context, PackageInfo packageInfo) throws IOException {
+        SanitizedFile tempApkFile = ApkCache.copyInstalledApkToFiles(context, packageInfo);
+        return getSafeUri(context, tempApkFile, Build.VERSION.SDK_INT >= 23);
+    }
 
     /**
-     * Copies the APK into private data directory of F-Droid and returns a "file" or "content" Uri
-     * to be used for installation.
+     * Copies the APK into private data directory of F-Droid and returns a
+     * {@code file://} or {@code content://} URI to be used for the
+     * actual installation process.  Only APKs will ever use a {@code content://}
+     * URI, any other file will always use a {@code file://} URI since F-Droid
+     * itself handles their whole installation process.
      */
-    public static Uri getSafeUri(Context context, Uri localApkUri, Apk expectedApk, boolean useContentUri)
+    public static Uri getSafeUri(Context context, Uri localApkUri, Apk expectedApk)
             throws IOException {
         File apkFile = new File(localApkUri.getPath());
+        SanitizedFile tempApkFile = ApkCache.copyApkFromCacheToFiles(context, apkFile, expectedApk);
+        return getSafeUri(context, tempApkFile,
+                Build.VERSION.SDK_INT >= 24 && expectedApk.isApk());
 
-        SanitizedFile sanitizedApkFile =
-                ApkCache.copyApkFromCacheToFiles(context, apkFile, expectedApk);
+    }
 
+    /**
+     * Return a {@link Uri} for all install processes to install this package
+     * from.  This supports APKs and all other supported files.  It also
+     * supports all installation methods, e.g. default, privileged, etc.
+     * It can return either a {@code content://} or {@code file://} URI.
+     * <p>
+     * APKs need to be world readable, so that the Android system installer
+     * is able to read it.  Saving it into external storage to send it to the
+     * installer have access is insecure, because apps with permission to write
+     * to the external storage can overwrite the app between F-Droid asking for
+     * it to be installed and the installer actually installing it.
+     */
+    private static Uri getSafeUri(Context context, SanitizedFile tempFile, boolean useContentUri) {
         if (useContentUri) {
-            // return a content Uri using support libs FileProvider
-            Uri apkUri = getUriForFile(context, AUTHORITY, sanitizedApkFile);
-            context.grantUriPermission("org.fdroid.fdroid.privileged", apkUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            Uri apkUri = getUriForFile(context, AUTHORITY, tempFile);
+            context.grantUriPermission(PrivilegedInstaller.PRIVILEGED_EXTENSION_PACKAGE_NAME,
+                    apkUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
             return apkUri;
+        } else {
+            tempFile.setReadable(true, false);
+            return Uri.fromFile(tempFile);
         }
-
-        // Need the apk to be world readable, so that the installer is able to read it.
-        // Note that saving it into external storage for the purpose of letting the installer
-        // have access is insecure, because apps with permission to write to the external
-        // storage can overwrite the app between F-Droid asking for it to be installed and
-        // the installer actually installing it.
-        sanitizedApkFile.setReadable(true, false);
-
-        return Uri.fromFile(sanitizedApkFile);
     }
 
 }

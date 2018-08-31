@@ -7,8 +7,6 @@ import android.text.TextUtils;
 
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
-import org.fdroid.fdroid.localrepo.peers.WifiPeer;
-import org.fdroid.fdroid.views.swap.SwapWorkflowActivity;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -26,8 +24,6 @@ public class NewRepoConfig {
     private String fingerprint;
     private String bssid;
     private String ssid;
-    private boolean fromSwap;
-    private boolean preventFurtherSwaps;
 
     public NewRepoConfig(Context context, String uri) {
         init(context, uri != null ? Uri.parse(uri) : null);
@@ -35,7 +31,6 @@ public class NewRepoConfig {
 
     public NewRepoConfig(Context context, Intent intent) {
         init(context, intent.getData());
-        preventFurtherSwaps = intent.getBooleanExtra(SwapWorkflowActivity.EXTRA_PREVENT_FURTHER_SWAP_REQUESTS, false);
     }
 
     private void init(Context context, Uri incomingUri) {
@@ -88,7 +83,6 @@ public class NewRepoConfig {
         fingerprint = uri.getQueryParameter("fingerprint");
         bssid = uri.getQueryParameter("bssid");
         ssid = uri.getQueryParameter("ssid");
-        fromSwap = uri.getQueryParameter("swap") != null;
 
         if (!Arrays.asList("fdroidrepos", "fdroidrepo", "https", "http").contains(scheme)) {
             isValidRepo = false;
@@ -135,14 +129,6 @@ public class NewRepoConfig {
         return isValidRepo;
     }
 
-    public boolean isFromSwap() {
-        return fromSwap;
-    }
-
-    public boolean preventFurtherSwaps() {
-        return preventFurtherSwaps;
-    }
-
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -158,9 +144,5 @@ public class NewRepoConfig {
                 .replace(scheme, scheme.toLowerCase(Locale.ENGLISH))
                 .replace("fdroidrepo", "http") // proper repo address
                 .replace("/FDROID/REPO", "/fdroid/repo"); // for QR FDroid path
-    }
-
-    public WifiPeer toPeer() {
-        return new WifiPeer(this);
     }
 }
