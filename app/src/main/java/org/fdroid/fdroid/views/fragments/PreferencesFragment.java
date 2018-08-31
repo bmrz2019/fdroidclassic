@@ -5,12 +5,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.EditTextPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceCategory;
-import android.support.v4.preference.PreferenceFragment;
+import android.support.v7.preference.PreferenceFragmentCompat;
+import android.support.v7.preference.CheckBoxPreference;
+import android.support.v7.preference.EditTextPreference;
+import android.support.v7.preference.ListPreference;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
+
 import android.text.TextUtils;
 
 import org.fdroid.fdroid.AppDetails;
@@ -25,7 +26,7 @@ import org.fdroid.fdroid.installer.PrivilegedInstaller;
 import info.guardianproject.netcipher.NetCipher;
 import info.guardianproject.netcipher.proxy.OrbotHelper;
 
-public class PreferencesFragment extends PreferenceFragment
+public class PreferencesFragment extends PreferenceFragmentCompat
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String[] SUMMARIES_TO_UPDATE = {
@@ -56,7 +57,7 @@ public class PreferencesFragment extends PreferenceFragment
     private long currentKeepCacheTime;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreatePreferences(Bundle savedInstanceState, String s) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         useTorCheckPref = (CheckBoxPreference) findPreference(Preferences.PREF_USE_TOR);
@@ -157,7 +158,7 @@ public class PreferencesFragment extends PreferenceFragment
                 entrySummary(key);
                 if (changing
                         && currentKeepCacheTime != Preferences.get().getKeepCacheTime()) {
-                    CleanCacheService.schedule(getContext());
+                    CleanCacheService.schedule(getActivity());
                 }
                 break;
 
@@ -197,9 +198,9 @@ public class PreferencesFragment extends PreferenceFragment
             case Preferences.PREF_KEEP_INSTALL_HISTORY:
                 CheckBoxPreference p = (CheckBoxPreference) findPreference(key);
                 if (p.isChecked()) {
-                    InstallHistoryService.register(getContext());
+                    InstallHistoryService.register(getActivity());
                 } else {
-                    InstallHistoryService.unregister(getContext());
+                    InstallHistoryService.unregister(getActivity());
                 }
                 break;
         }
@@ -294,7 +295,7 @@ public class PreferencesFragment extends PreferenceFragment
             }
         });
 
-        if (PrivilegedInstaller.isDefault(getContext())) {
+        if (PrivilegedInstaller.isDefault(getActivity())) {
             updateAutoDownloadPref.setTitle(R.string.update_auto_install);
             updateAutoDownloadPref.setSummary(R.string.update_auto_install_summary);
         }

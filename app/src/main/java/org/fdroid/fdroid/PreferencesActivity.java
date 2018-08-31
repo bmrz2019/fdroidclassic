@@ -18,13 +18,11 @@
 
 package org.fdroid.fdroid;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 
 import org.fdroid.fdroid.views.fragments.PreferencesFragment;
 
@@ -40,15 +38,6 @@ public class PreferencesActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         if (fm.findFragmentById(android.R.id.content) == null) {
-            // Need to set a dummy view (which will get overridden by the fragment manager
-            // below) so that we can call setContentView(). This is a work around for
-            // a (bug?) thing in 3.0, 3.1 which requires setContentView to be invoked before
-            // the actionbar is played with:
-            // http://blog.perpetumdesign.com/2011/08/strange-case-of-dr-action-and-mr-bar.html
-            if (Build.VERSION.SDK_INT >= 11 && Build.VERSION.SDK_INT <= 13) {
-                setContentView(new LinearLayout(this));
-            }
-
             PreferencesFragment preferencesFragment = new PreferencesFragment();
             fm.beginTransaction()
                     .add(android.R.id.content, preferencesFragment)

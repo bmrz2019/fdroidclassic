@@ -135,4 +135,8 @@
     <style name="AppDetailsSubheaderText" parent="AppDetailsSubheaderTextBase" />
 
     <style name="AppThemeTransparent" parent="@android:style/Theme.NoDisplay" />
+    <style name="AppThemeLight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

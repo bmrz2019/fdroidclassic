@@ -341,6 +341,7 @@
             android:theme="@style/AppThemeTransparent" />
         <activity
             android:name=".views.ManageReposActivity"
+            android:theme="@style/AppThemeLight.NoActionBar">
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:parentActivityName=".FDroid"

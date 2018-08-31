@@ -21,6 +21,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'com.android.support:preference-v7:27.1.1'
 
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'com.google.zxing:core:3.3.3'
@@ -47,52 +48,6 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.8.7'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
 
-}
-
-if (!hasProperty('sourceDeps')) {
-
-    repositories {
-        // This is here until we sort out all dependencies from mavenCentral/jcenter. Once all of
-        // the dependencies below have been sorted out, this can be removed.
-        flatDir {
-            dirs 'libs/binaryDeps'
-        }
-    }
-
-    dependencies {
-
-        // Upstream doesn't have a binary on mavenCentral/jcenter yet:
-        // https://github.com/kolavar/android-support-v4-preferencefragment/issues/13
-        implementation (name: 'support-v4-preferencefragment-release', ext: 'aar')
-    }
-} else {
-
-    logger.info "Setting up *source* dependencies for F-Droid (because you passed in the -PsourceDeps argument to gradle while building)."
-
-    dependencies {
-        implementation(project(':extern:support-v4-preferencefragment')) {
-            exclude module: 'support-v4'
-        }
-    }
-
-    task binaryDeps(type: Copy, dependsOn: ':app:prepareReleaseDependencies') {
-
-        enabled = project.hasProperty('sourceDeps')
-        description = "Copies .jar and .aar files from subproject dependencies in extern/ to app/libs. Requires the sourceDeps property to be set (\"gradle -PsourceDeps binaryDeps\")"
-
-        from('../extern/') {
-            include 'support-v4-preferencefragment/build/outputs/aar/support-v4-preferencefragment-release.aar'
-        }
-
-        into 'libs/binaryDeps'
-        includeEmptyDirs false
-
-        eachFile { FileCopyDetails details ->
-            // Don't copy to a sub folder such as libs/binaryDeps/Project/build/outputs/aar/project.aar, but
-            // rather libs/binaryDeps/project.aar.
-            details.path = details.name
-        }
-    }
 }
 
 android {

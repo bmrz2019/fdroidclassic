@@ -326,14 +326,6 @@ public class ManageReposActivity extends AppCompatActivity
                                     prepareToCreateNewRepo(url, fp, username, password);
                                     break;
 
-                                case IS_SWAP:
-                                    Utils.debugLog(TAG, "Removing existing swap repo " + url
-                                            + " before adding new repo.");
-                                    Repo repo = RepoProvider.Helper.findByAddress(context, url);
-                                    RepoProvider.Helper.remove(context, repo.getId());
-                                    prepareToCreateNewRepo(url, fp, username, password);
-                                    break;
-
                                 case EXISTS_DISABLED:
                                 case EXISTS_UPGRADABLE_TO_SIGNED:
                                 case EXISTS_ADD_MIRROR:
@@ -430,9 +422,7 @@ public class ManageReposActivity extends AppCompatActivity
             if (repo == null) {
                 repoDoesntExist();
             } else {
-                if (repo.isSwap) {
-                    repoIsSwap(repo);
-                } else if (repo.fingerprint == null && fingerprint.length() > 0) {
+                if (repo.fingerprint == null && fingerprint.length() > 0) {
                     upgradingToSigned(repo);
                 } else if (repo.fingerprint != null && !repo.fingerprint.equalsIgnoreCase(fingerprint)) {
                     repoFingerprintDoesntMatch(repo);
@@ -451,10 +441,6 @@ public class ManageReposActivity extends AppCompatActivity
 
         private void repoDoesntExist() {
             updateUi(null, AddRepoState.DOESNT_EXIST, 0, false, R.string.repo_add_add, true);
-        }
-
-        private void repoIsSwap(Repo repo) {
-            updateUi(repo, AddRepoState.IS_SWAP, 0, false, R.string.repo_add_add, true);
         }
 
         /**
