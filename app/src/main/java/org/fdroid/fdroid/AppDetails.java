@@ -513,8 +513,8 @@ public class AppDetails extends AppCompatActivity {
                     break;
                 case Downloader.ACTION_PROGRESS:
                     if (headerFragment != null) {
-                        headerFragment.updateProgress(intent.getIntExtra(Downloader.EXTRA_BYTES_READ, -1),
-                                intent.getIntExtra(Downloader.EXTRA_TOTAL_BYTES, -1));
+                        headerFragment.updateProgress(intent.getLongExtra(Downloader.EXTRA_BYTES_READ, -1),
+                                intent.getLongExtra(Downloader.EXTRA_TOTAL_BYTES, -1));
                     }
                     break;
                 case Downloader.ACTION_COMPLETE:
