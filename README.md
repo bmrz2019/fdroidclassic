@@ -26,6 +26,7 @@ This project is probably aimed more at the power user who values function over f
 * Swap, at least initially. I almost never use it and I don't know many people that do. There's still the official client if you need that functionality.
 * The tile based UI (at least until it becomes far more stable)
 * The old xml based index support will be dropped
+* Repo push requests
 
 ### Undecided
 
