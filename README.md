@@ -27,7 +27,7 @@ This project is probably aimed more at the power user who values function over f
 * App auto install via repo push
 * The tile based UI (at least until it becomes far more stable)
 * The old xml based index support will be dropped
-* Support for older Android versions. Too hard to maintain :-/.
+* Support for very old version of Android (< 4.0). Too hard to maintain :-/.
 
 
 ## Building with Gradle
