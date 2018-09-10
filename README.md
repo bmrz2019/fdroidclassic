@@ -42,11 +42,16 @@ Because a regular Android app cannot act as a package manager on its
 own. To do so, it would require system privileges (see below), similar
 to what Google Play does.
 
+* What about privileged extension support?
+
+See here for some discussion about this: https://gitlab.com/fdroid/privileged-extension/issues/50
+Meanwhile you can get a privext that supports both official F-Droid client and F-Droid classic here:
+
+https://gitlab.com/Bubu/privileged-extension/-/jobs/96114583/artifacts/file/app/build/distributions/F-DroidPrivilegedExtension-0.2.8-3-gbffdd48-debug.zip
+
 * Can I avoid enabling "Unknown Sources" by installing F-Droid Classic as a
   privileged system app?
 
-
-TODO: See what to do about privext.
 This used to be the case, but no longer is. Now the [Privileged
 Extension](https://gitlab.com/fdroid/privileged-extension) is the one that should be placed in
 the system. It can be bundled with a ROM or installed via a zip, or
