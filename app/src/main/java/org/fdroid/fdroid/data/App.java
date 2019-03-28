@@ -1048,7 +1048,10 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 }
                 eventType = xml.nextToken();
             }
-        } catch (PackageManager.NameNotFoundException | IOException | XmlPullParserException e) {
+        } catch (PackageManager.NameNotFoundException
+                | IOException
+                | XmlPullParserException
+                | NumberFormatException e) {
             Log.e(TAG, "Could not get min/max sdk version", e);
         }
         if (targetSdkVersion < minSdkVersion) {
