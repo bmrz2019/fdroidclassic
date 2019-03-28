@@ -558,7 +558,8 @@ public final class Utils {
         try {
             format.setTimeZone(UTC);
             result = format.parse(str);
-        } catch (ParseException e) {
+        } catch (ArrayIndexOutOfBoundsException | NumberFormatException | ParseException e) {
+            e.printStackTrace();
             result = fallback;
         }
         return result;
