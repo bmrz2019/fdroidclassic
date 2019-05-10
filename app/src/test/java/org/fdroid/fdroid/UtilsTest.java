@@ -2,12 +2,16 @@
 package org.fdroid.fdroid;
 
 import android.content.Context;
-
+import org.fdroid.fdroid.views.AppDetailsRecyclerViewAdapter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
+
+import java.io.File;
+import java.util.Date;
+import java.util.TimeZone;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -15,9 +19,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-// TODO: Use sdk=24 when Robolectric supports this
-@Config(constants = BuildConfig.class, sdk = 23)
-@RunWith(RobolectricGradleTestRunner.class)
+@Config(constants = BuildConfig.class)
+@RunWith(RobolectricTestRunner.class)
+@SuppressWarnings("LineLength")
 public class UtilsTest {
 
     String fdroidFingerprint = "43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB";
@@ -49,6 +53,15 @@ public class UtilsTest {
     String fingerprintLongByOnePubkey = "308203c5308202ada00302010202047b7cf549300d06092a864886f70d01010b0500308192310b30090603550406130255533111300f060355040813084e657720596f726b3111300f060355040713084e657720596f726b311d301b060355040a131454686520477561726469616e2050726f6a656374311f301d060355040b1316477561726469616e20462d44726f6964204275696c64311d301b06035504031314677561726469616e70726f6a6563742e696e666f301e170d3132313032393130323530305a170d3430303331363130323530305a308192310b30090603550406130255533111300f060355040813084e657720596f726b3111300f060355040713084e657720596f726b311d301b060355040a131454686520477561726469616e2050726f6a656374311f301d060355040b1316477561726469616e20462d44726f6964204275696c64311d301b06035504031314677561726469616e70726f6a6563742e696e666f30820122300d06092a864886f70d01010105000382010f003082010a0282010100b7f1f635fa3fce1a8042aaa960c2dc557e4ad2c082e5787488cba587fd26207cf59507919fc4dcebda5c8c0959d14146d0445593aa6c29dc639570b71712451fd5c231b0c9f5f0bec380503a1c2a3bc00048bc5db682915afa54d1ecf67b45e1e05c0934b3037a33d3a565899131f27a72c03a5de93df17a2376cc3107f03ee9d124c474dfab30d4053e8f39f292e2dcb6cc131bce12a0c5fc307985195d256bf1d7a2703d67c14bf18ed6b772bb847370b20335810e337c064fef7e2795a524c664a853cd46accb8494f865164dabfb698fa8318236432758bc40d52db00d5ce07fe2210dc06cd95298b4f09e6c9b7b7af61c1d62ea43ea36a2331e7b2d4e250203010001a321301f301d0603551d0e0416041404d763e981cf3a295b94a790d8536a783097232b300d06092a864886f70d01010b05000382010100654e6484ff032c54fed1d96d3c8e731302be9dbd7bb4fe635f2dac05b69f3ecbb5acb7c9fe405e2a066567a8f5c2beb8b199b5a4d5bb1b435cf02df026d4fb4edd9d8849078f085b00950083052d57467d65c6eebd98f037cff9b148d621cf8819c4f7dc1459bf8fc5c7d76f901495a7caf35d1e5c106e1d50610c4920c3c1b50adcfbd4ad83ce7353cdea7d856bba0419c224f89a2f3ebc203d20eb6247711ad2b55fd4737936dc42ced7a047cbbd24012079204a2883b6d55d5d5b66d9fd82fb51fca9a5db5fad9af8564cb380ff30ae8263dbbf01b46e01313f53279673daa3f893380285646b244359203e7eecde94ae141b7dfa8e6499bb8e7e0b25ab85";
 
     @Test
+    public void trailingNewLines() {
+        CharSequence threeParagraphs = AppDetailsRecyclerViewAdapter.trimTrailingNewlines("Paragraph One\n\nParagraph Two\n\nParagraph Three\n\n");
+        assertEquals("Paragraph One\n\nParagraph Two\n\nParagraph Three", threeParagraphs);
+
+        CharSequence leadingAndExtraTrailing = AppDetailsRecyclerViewAdapter.trimTrailingNewlines("\n\n\nA\n\n\n");
+        assertEquals("\n\n\nA", leadingAndExtraTrailing);
+    }
+
+    @Test
     public void commaSeparatedStrings() {
         assertNull(Utils.parseCommaSeparatedString(null));
         assertNull(Utils.parseCommaSeparatedString(""));
@@ -66,9 +79,9 @@ public class UtilsTest {
         assertEquals("three", tripleValue[2]);
 
         assertNull(Utils.serializeCommaSeparatedString(null));
-        assertNull(Utils.serializeCommaSeparatedString(new String[] {}));
-        assertEquals("Single", Utils.serializeCommaSeparatedString(new String[] {"Single"}));
-        assertEquals("One,TWO,three", Utils.serializeCommaSeparatedString(new String[] {"One", "TWO", "three"}));
+        assertNull(Utils.serializeCommaSeparatedString(new String[]{}));
+        assertEquals("Single", Utils.serializeCommaSeparatedString(new String[]{"Single"}));
+        assertEquals("One,TWO,three", Utils.serializeCommaSeparatedString(new String[]{"One", "TWO", "three"}));
     }
 
     @Test
@@ -164,6 +177,42 @@ public class UtilsTest {
         }
     }
 
+    @Test
+    public void testGetBinaryHash() {
+        File f = TestUtils.copyResourceToTempFile("largeRepo.xml");
+        assertEquals("df1754aa4b56c86c06d7842dfd02064f0781c1f740f489d3fc158bb541c8d197",
+                Utils.getBinaryHash(f, "sha256"));
+        f = TestUtils.copyResourceToTempFile("masterKeyIndex.jar");
+        assertEquals("625d5aedcd0499fe04ebab81f3c7ae30c236cee653a914ffb587d890198f3aba",
+                Utils.getBinaryHash(f, "sha256"));
+        f = TestUtils.copyResourceToTempFile("index.fdroid.2016-10-30.jar");
+        assertEquals("c138b503c6475aa749585d0e3ad4dba3546b6d33ec485efd8ac8bd603d93fedb",
+                Utils.getBinaryHash(f, "sha256"));
+        f = TestUtils.copyResourceToTempFile("index.fdroid.2016-11-10.jar");
+        assertEquals("93bea45814fd8955cabb957e7a3f8790d6c568eaa16fa30425c2d26c60490bde",
+                Utils.getBinaryHash(f, "sha256"));
+    }
     // TODO write tests that work with a Certificate
 
+    @Test
+    public void testIndexDatesWithTimeZones() {
+        for (int h = 0; h < 12; h++) {
+            for (int m = 0; m < 60; m = m + 15) {
+                TimeZone.setDefault(TimeZone.getTimeZone(String.format("GMT+%d%02d", h, m)));
+
+                String timeString = "2017-11-27_20:13:24";
+                Date time = Utils.parseTime(timeString, null);
+                assertEquals("The String representation must match", timeString, Utils.formatTime(time, null));
+                assertEquals(timeString + " failed to parse", 1511813604000L, time.getTime());
+                assertEquals("time zones should match", -((h * 60) + m), time.getTimezoneOffset());
+
+                TimeZone.setDefault(TimeZone.getTimeZone(String.format("GMT+%d%02d", h, m)));
+                String dateString = "2017-11-27";
+                Date date = Utils.parseDate(dateString, null);
+                assertEquals("The String representation must match", dateString, Utils.formatDate(date, null));
+                assertEquals(dateString + " failed to parse", 1511740800000L, date.getTime());
+                assertEquals("time zones should match", -((h * 60) + m), date.getTimezoneOffset());
+            }
+        }
+    }
 }

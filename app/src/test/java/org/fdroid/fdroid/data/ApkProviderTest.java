@@ -4,37 +4,45 @@ import android.app.Application;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
-
 import org.fdroid.fdroid.Assert;
 import org.fdroid.fdroid.BuildConfig;
+import org.fdroid.fdroid.TestUtils;
+import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.ApkTable.Cols;
 import org.fdroid.fdroid.data.Schema.RepoTable;
 import org.fdroid.fdroid.mock.MockApk;
 import org.fdroid.fdroid.mock.MockRepo;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import static org.fdroid.fdroid.Assert.assertCantDelete;
 import static org.fdroid.fdroid.Assert.assertResultCount;
 import static org.fdroid.fdroid.Assert.insertApp;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
-// TODO: Use sdk=24 when Robolectric supports this
-@Config(constants = BuildConfig.class, application = Application.class, sdk = 23)
-@RunWith(RobolectricGradleTestRunner.class)
+@Config(constants = BuildConfig.class, application = Application.class)
+@RunWith(RobolectricTestRunner.class)
 public class ApkProviderTest extends FDroidProviderTest {
 
     private static final String[] PROJ = Cols.ALL;
+
+    @BeforeClass
+    public static void setRandomTimeZone() {
+        TimeZone.setDefault(TimeZone.getTimeZone(String.format("GMT-%d:%02d",
+                System.currentTimeMillis() % 12, System.currentTimeMillis() % 60)));
+        System.out.println("TIME ZONE for this test: " + TimeZone.getDefault());
+    }
 
     @Test
     public void testAppApks() {
@@ -69,7 +77,7 @@ public class ApkProviderTest extends FDroidProviderTest {
         Apk apk = new MockApk("org.fdroid.fdroid", 10);
 
         assertCantDelete(contentResolver, ApkProvider.getContentUri());
-        assertCantDelete(contentResolver, ApkProvider.getApkFromAnyRepoUri("org.fdroid.fdroid", 10));
+        assertCantDelete(contentResolver, ApkProvider.getApkFromAnyRepoUri("org.fdroid.fdroid", 10, null));
         assertCantDelete(contentResolver, ApkProvider.getApkFromAnyRepoUri(apk));
         assertCantDelete(contentResolver, Uri.withAppendedPath(ApkProvider.getContentUri(), "some-random-path"));
     }
@@ -155,7 +163,7 @@ public class ApkProviderTest extends FDroidProviderTest {
 
     @Test
     public void testCount() {
-        String[] projectionCount = new String[] {Cols._COUNT};
+        String[] projectionCount = new String[]{Cols._COUNT};
 
         for (int i = 0; i < 13; i++) {
             Assert.insertApk(context, "com.example", i);
@@ -236,70 +244,7 @@ public class ApkProviderTest extends FDroidProviderTest {
         assertEquals("Some features", apk.features[0]);
         assertEquals("com.example.com", apk.packageName);
         assertEquals(1, apk.versionCode);
-        assertEquals(10, apk.repo);
-    }
-
-    @Test
-    public void testKnownApks() {
-
-        App fdroid = Assert.ensureApp(context, "org.fdroid.fdroid");
-        for (int i = 0; i < 7; i++) {
-            Assert.insertApk(context, fdroid, i);
-        }
-
-        App exampleOrg = Assert.ensureApp(context, "org.example");
-        for (int i = 0; i < 9; i++) {
-            Assert.insertApk(context, exampleOrg, i);
-        }
-
-        App exampleCom = Assert.ensureApp(context, "com.example");
-        for (int i = 0; i < 3; i++) {
-            Assert.insertApk(context, exampleCom, i);
-        }
-
-        App thingo = Assert.ensureApp(context, "com.apk.thingo");
-        Assert.insertApk(context, thingo, 1);
-
-        Apk[] known = {
-            new MockApk(fdroid, 1),
-            new MockApk(fdroid, 3),
-            new MockApk(fdroid, 5),
-
-            new MockApk(exampleCom, 1),
-            new MockApk(exampleCom, 2),
-        };
-
-        Apk[] unknown = {
-            new MockApk(fdroid, 7),
-            new MockApk(fdroid, 9),
-            new MockApk(fdroid, 11),
-            new MockApk(fdroid, 13),
-
-            new MockApk(exampleCom, 3),
-            new MockApk(exampleCom, 4),
-            new MockApk(exampleCom, 5),
-
-            new MockApk(-10, 1),
-            new MockApk(-10, 2),
-        };
-
-        List<Apk> apksToCheck = new ArrayList<>(known.length + unknown.length);
-        Collections.addAll(apksToCheck, known);
-        Collections.addAll(apksToCheck, unknown);
-
-        String[] projection = {
-            Cols.Package.PACKAGE_NAME,
-            Cols.APP_ID,
-            Cols.VERSION_CODE,
-        };
-
-        List<Apk> knownApks = ApkProvider.Helper.knownApks(context, apksToCheck, projection);
-
-        assertResultCount(known.length, knownApks);
-
-        for (Apk knownApk : knownApks) {
-            assertContains(knownApks, knownApk);
-        }
+        assertEquals(10, apk.repoId);
     }
 
     @Test
@@ -339,6 +284,27 @@ public class ApkProviderTest extends FDroidProviderTest {
     }
 
     @Test
+    public void findApksForAppInSpecificRepo() {
+        Repo fdroidRepo = RepoProvider.Helper.findByAddress(context, "https://f-droid.org/repo");
+        Repo swapRepo = RepoProviderTest.insertRepo(context, "http://192.168.1.3/fdroid/repo", "", "22", "", true);
+
+        App officialFDroid = insertApp(context, "org.fdroid.fdroid", "F-Droid (Official)", fdroidRepo);
+        TestUtils.insertApk(context, officialFDroid, 4, TestUtils.FDROID_SIG);
+        TestUtils.insertApk(context, officialFDroid, 5, TestUtils.FDROID_SIG);
+
+        App debugSwapFDroid = insertApp(context, "org.fdroid.fdroid", "F-Droid (Debug)", swapRepo);
+        TestUtils.insertApk(context, debugSwapFDroid, 6, TestUtils.THIRD_PARTY_SIG);
+
+        List<Apk> foundOfficialApks = ApkProvider.Helper.findAppVersionsByRepo(context, officialFDroid, fdroidRepo);
+        assertEquals(2, foundOfficialApks.size());
+
+        List<Apk> debugSwapApks = ApkProvider.Helper.findAppVersionsByRepo(context, officialFDroid, swapRepo);
+        assertEquals(1, debugSwapApks.size());
+        assertEquals(debugSwapFDroid.getId(), debugSwapApks.get(0).appId);
+        assertEquals(6, debugSwapApks.get(0).versionCode);
+    }
+
+    @Test
     public void testUpdate() {
 
         Uri apkUri = Assert.insertApk(context, "com.example", 10);
@@ -354,14 +320,17 @@ public class ApkProviderTest extends FDroidProviderTest {
         assertEquals("com.example", apk.packageName);
         assertEquals(10, apk.versionCode);
 
+        assertNull(apk.antiFeatures);
         assertNull(apk.features);
         assertNull(apk.added);
         assertNull(apk.hashType);
 
-        apk.features = new String[] {"one", "two", "three" };
-        long dateTimestamp = System.currentTimeMillis();
-        apk.added = new Date(dateTimestamp);
+        apk.antiFeatures = new String[]{"KnownVuln", "Other anti feature"};
+        apk.features = new String[]{"one", "two", "three"};
         apk.hashType = "i'm a hash type";
+
+        Date testTime = Utils.parseDate(Utils.formatTime(new Date(System.currentTimeMillis()), null), null);
+        apk.added = testTime;
 
         ApkProvider.Helper.update(context, apk);
 
@@ -380,17 +349,12 @@ public class ApkProviderTest extends FDroidProviderTest {
         assertEquals("com.example", updatedApk.packageName);
         assertEquals(10, updatedApk.versionCode);
 
-        assertNotNull(updatedApk.features);
-        assertNotNull(updatedApk.added);
-        assertNotNull(updatedApk.hashType);
-
-        assertEquals(3, updatedApk.features.length);
-        assertEquals("one", updatedApk.features[0]);
-        assertEquals("two", updatedApk.features[1]);
-        assertEquals("three", updatedApk.features[2]);
-        assertEquals(new Date(dateTimestamp).getYear(), updatedApk.added.getYear());
-        assertEquals(new Date(dateTimestamp).getMonth(), updatedApk.added.getMonth());
-        assertEquals(new Date(dateTimestamp).getDay(), updatedApk.added.getDay());
+        assertArrayEquals(new String[]{"KnownVuln", "Other anti feature"}, updatedApk.antiFeatures);
+        assertArrayEquals(new String[]{"one", "two", "three"}, updatedApk.features);
+        assertEquals(testTime.getYear(), updatedApk.added.getYear());
+        assertEquals(testTime.getYear(), updatedApk.added.getYear());
+        assertEquals(testTime.getMonth(), updatedApk.added.getMonth());
+        assertEquals(testTime.getDay(), updatedApk.added.getDay());
         assertEquals("i'm a hash type", updatedApk.hashType);
     }
 
@@ -429,11 +393,11 @@ public class ApkProviderTest extends FDroidProviderTest {
         assertEquals("a hash type", apk.hashType);
 
         String[] projection = {
-            Cols.Package.PACKAGE_NAME,
-            Cols.HASH,
+                Cols.Package.PACKAGE_NAME,
+                Cols.HASH,
         };
 
-        Apk apkLessFields = ApkProvider.Helper.findApkFromAnyRepo(context, "com.example", 11, projection);
+        Apk apkLessFields = ApkProvider.Helper.findApkFromAnyRepo(context, "com.example", 11, null, projection);
 
         assertNotNull(apkLessFields);
 
@@ -482,7 +446,7 @@ public class ApkProviderTest extends FDroidProviderTest {
 
     protected void assertBelongsToRepo(Cursor apkCursor, long repoId) {
         for (Apk apk : ApkProvider.Helper.cursorToList(apkCursor)) {
-            assertEquals(repoId, apk.repo);
+            assertEquals(repoId, apk.repoId);
         }
     }
 
