@@ -1191,10 +1191,7 @@ public class AppDetails extends AppCompatActivity {
                     viewMorePermissions.setText(getString(R.string.less));
                 } else {
                     description.setMaxLines(MAX_LINES);
-                    if (Build.VERSION.SDK_INT > 10) {
-                        // ellipsizing doesn't work properly here on 2.X
-                        description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                    }
+                    description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
                     viewMorePermissions.setText(R.string.more);
                 }
                 viewAllDescription ^= true;
@@ -1215,10 +1212,7 @@ public class AppDetails extends AppCompatActivity {
                     // If description has more than five lines
                     if (description.getLineCount() > MAX_LINES) {
                         description.setMaxLines(MAX_LINES);
-                        if (Build.VERSION.SDK_INT > 10) {
-                            // ellipsizing doesn't work properly here on 2.X
-                            description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                        }
+                        description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
                         description.setOnClickListener(expanderDescription);
                         viewAllDescription = true;
 
@@ -1544,7 +1538,7 @@ public class AppDetails extends AppCompatActivity {
                 progressBar.setProgress((int) percent);
                 progressBar.setMax(100);
                 progressSize.setText(Utils.getFriendlySize(bytesDownloaded) + " / " + Utils.getFriendlySize(totalBytes));
-                progressPercent.setText(Long.toString(percent) + " %");
+                progressPercent.setText(percent + " %");
             }
         }
 
