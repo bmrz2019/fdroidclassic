@@ -54,7 +54,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     public static final String PREF_KEEP_INSTALL_HISTORY = "keepInstallHistory";
     public static final String PREF_EXPERT = "expert";
     public static final String PREF_PRIVILEGED_INSTALLER = "privilegedInstaller";
-    public static final String PREF_UNINSTALL_PRIVILEGED_APP = "uninstallPrivilegedApp";
     public static final String PREF_LANGUAGE = "language";
     public static final String PREF_USE_TOR = "useTor";
     public static final String PREF_ENABLE_PROXY = "enableProxy";
@@ -98,8 +97,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     private final List<ChangeListener> filterAppsRequiringRootListeners = new ArrayList<>();
     private final List<ChangeListener> filterAppsRequiringAntiFeaturesListeners = new ArrayList<>();
     private final List<ChangeListener> updateHistoryListeners = new ArrayList<>();
-    private final List<ChangeListener> localRepoNameListeners = new ArrayList<>();
-    private final List<ChangeListener> localRepoHttpsListeners = new ArrayList<>();
     private final List<ChangeListener> unstableUpdatesListeners = new ArrayList<>();
 
     private boolean isInitialized(String key) {
@@ -393,22 +390,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
 
     public void unregisterUpdateHistoryListener(ChangeListener listener) {
         updateHistoryListeners.remove(listener);
-    }
-
-    public void registerLocalRepoNameListeners(ChangeListener listener) {
-        localRepoNameListeners.add(listener);
-    }
-
-    public void unregisterLocalRepoNameListeners(ChangeListener listener) {
-        localRepoNameListeners.remove(listener);
-    }
-
-    public void registerLocalRepoHttpsListeners(ChangeListener listener) {
-        localRepoHttpsListeners.add(listener);
-    }
-
-    public void unregisterLocalRepoHttpsListeners(ChangeListener listener) {
-        localRepoHttpsListeners.remove(listener);
     }
 
     public interface ChangeListener {

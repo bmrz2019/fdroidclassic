@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/updates">
-        <com.geecko.QuickLyric.view.AppCompatListPreference android:title="@string/update_interval"
+        <ListPreference android:title="@string/update_interval"
             android:key="updateInterval"
             android:defaultValue="24"
             android:entries="@array/updateIntervalNames"
@@ -72,7 +72,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/other"
         android:key="pref_category_other">
-        <com.geecko.QuickLyric.view.AppCompatListPreference android:title="@string/cache_downloaded"
+        <ListPreference android:title="@string/cache_downloaded"
             android:key="keepCacheFor"
             android:defaultValue="86400000"
             android:entries="@array/keepCacheNames"
@@ -96,10 +96,6 @@
             android:defaultValue="false"
             android:key="privilegedInstaller"
             android:persistent="false"
-            android:dependency="expert" />
-        <Preference android:title="@string/uninstall_system"
-            android:summary="@string/uninstall_system_summary"
-            android:key="uninstallPrivilegedApp"
             android:dependency="expert" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -24,10 +24,7 @@ public class RepoAdapter extends CursorAdapter {
     private EnabledListener enabledListener;
 
     public static RepoAdapter create(Context context, Cursor cursor, int flags) {
-        if (Build.VERSION.SDK_INT >= 11) {
-            return new RepoAdapter(context, cursor, flags);
-        }
-        return new RepoAdapter(context, cursor);
+        return new RepoAdapter(context, cursor, flags);
     }
 
     private RepoAdapter(Context context, Cursor c, int flags) {

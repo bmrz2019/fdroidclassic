@@ -52,17 +52,14 @@ public class PreferencesFragment extends PreferenceFragmentCompat
     private CheckBoxPreference enableProxyCheckPref;
     private CheckBoxPreference useTorCheckPref;
     private Preference updateAutoDownloadPref;
-    private Preference updatePrivilegedExtensionPref;
     private long currentKeepCacheTime;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String s) {
-        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         useTorCheckPref = (CheckBoxPreference) findPreference(Preferences.PREF_USE_TOR);
         enableProxyCheckPref = (CheckBoxPreference) findPreference(Preferences.PREF_ENABLE_PROXY);
         updateAutoDownloadPref = findPreference(Preferences.PREF_AUTO_DOWNLOAD_INSTALL_UPDATES);
-        updatePrivilegedExtensionPref = findPreference(Preferences.PREF_UNINSTALL_PRIVILEGED_APP);
     }
 
     private void checkSummary(String key, int resId) {
@@ -225,28 +222,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat
         });
     }
 
-    private void initUpdatePrivilegedExtensionPreference() {
-        if (Build.VERSION.SDK_INT > 19) {
-            // this will never work on newer Android versions, so hide it
-            PreferenceCategory other = (PreferenceCategory) findPreference("pref_category_other");
-            other.removePreference(updatePrivilegedExtensionPref);
-            return;
-        }
-        updatePrivilegedExtensionPref.setPersistent(false);
-        updatePrivilegedExtensionPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                // Open details of F-Droid Privileged
-                Intent intent = new Intent(getActivity(), AppDetails.class);
-                intent.putExtra(AppDetails.EXTRA_APPID,
-                        PrivilegedInstaller.PRIVILEGED_EXTENSION_PACKAGE_NAME);
-                startActivity(intent);
-
-                return true;
-            }
-        });
-    }
 
     @Override
     public void onResume() {
@@ -261,7 +236,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat
         currentKeepCacheTime = Preferences.get().getKeepCacheTime();
 
         initPrivilegedInstallerPreference();
-        initUpdatePrivilegedExtensionPreference();
         // this pref's default is dynamically set based on whether Orbot is installed
         boolean useTor = Preferences.get().isTorEnabled();
         useTorCheckPref.setDefaultValue(useTor);
