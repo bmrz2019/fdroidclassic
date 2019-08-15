@@ -22,8 +22,6 @@
     <string name="update_history">Uppfæra feril</string>
     <string name="update_history_summ">Fjöldi daga sem forrit teljast nýleg: %s</string>
     <string name="system_installer">Forgangsviðbót</string>
-    <string name="local_repo_name">Heiti staðværa hugbúnaðarsafnsins þíns</string>
-    <string name="local_repo_https">Nota einkatengingu</string>
     <string name="login_title">Auðkenningar krafist</string>
     <string name="login_password">Lykilorð</string>
     <string name="repo_edit_credentials">Breyta lykilorði</string>
@@ -119,8 +117,6 @@
     <string name="show_incompat_versions">Ósamhæfðar útgáfur</string>
     <string name="rooted">Hunsa rót/root</string>
     <string name="ignoreTouch">Hunsa snertiskjá</string>
-    <string name="local_repo">Staðvært hugbúnaðarsafn</string>
-    <string name="local_repo_running">F-Droid er tilbúið í forritaskipti</string>
     <string name="deleting_repo">Eyði núgildandi hugbúnaðarsafni…</string>
     <string name="adding_apks_format">Bæti %s við í hugbúnaðarsafn…</string>
     <string name="icon">Táknmynd</string>
@@ -296,8 +292,6 @@
     <string name="system_installer_on">Nota forgangsviðbót F-Droid (privileged extension) til að setja upp, uppfæra og fjarlægja pakka</string>
     <string name="uninstall_system">Uppfæra/Fjarlægja forgangsviðbót</string>
     <string name="uninstall_system_summary">Opnaðu skjáinn með ítarupplýsingum um forgangsviðbótina til að uppfæra/fjarlægja hana</string>
-    <string name="local_repo_name_summary">Útsent heiti staðværa hugbúnaðarsafnsins þíns: %s</string>
-    <string name="local_repo_https_on">Nota dulritaða HTTPS:// tengingu fyrir staðvært hugbúnaðarsafn</string>
 
     <string name="repo_error_empty_username">Autt notandanafn, óbreyttar heimildir</string>
 
@@ -335,7 +329,6 @@
     <string name="hide_anti_feature_apps_on">Skyggja forrit sem krefjast neikvæðra eiginleika</string>
     <string name="ignoreTouch_on">Alltaf hafa með forrit sem krefjast snertiskjás</string>
 
-    <string name="touch_to_configure_local_repo">Snertu til að skoða nánari upplýsingar og til að gera öðrum kleift að býtta við þig á forritum.</string>
     <string name="writing_index_jar">Skrifa undirritaða atriðaskrá (index.jar)…</string>
     <string name="linking_apks">Tengi APK-pakka inn í hugbúnaðarsafn…</string>
     <string name="copying_icons">Afrita táknmyndir forrita inn í hugbúnaðarsafn…</string>

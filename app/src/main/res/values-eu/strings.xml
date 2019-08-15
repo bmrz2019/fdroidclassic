@@ -90,7 +90,6 @@
     <string name="system_installer_on">Erabili Pribilegiodun F-Droid Luzapena paketeak instalatu, eguneratu eta kentzeko</string>
     <string name="uninstall_system">Eguneratu/Desinstalatu Pribilegiodun Luzapena</string>
     <string name="uninstall_system_summary">Ireki Pribilegiodun Luzapenaren xehetasunen pantaila berau eguneratu edo desinstalatzeko</string>
-    <string name="local_repo_https">Erabili konexio pribatua</string>
     <string name="about_source">Iturburu kodea</string>
     <string name="app_incompatible">Bateraezina</string>
     <string name="app_inst_known_source">Instalatuta (%stik)</string>
@@ -114,10 +113,6 @@
     <string name="antinonfreedeplist">Aplikazio honek libreak ez diren beste aplikazio batzuk behar ditu</string>
     <string name="antiupstreamnonfreelist">Jatorrizko iturburu kodea ez da guztiz librea</string>
 
-    <string name="local_repo_name">Izendatu zure tokiko biltegia</string>
-    <string name="local_repo_name_summary">Zure tokiko biltegiak iragarritako izenburua: %s</string>
-    <string name="local_repo_https_on">Erabili zifratu gabeko HTTPS:// konexioa tokiko biltegiarentzat</string>
-
     <string name="tab_installed_apps">Instalatuta</string>
     <string name="repo_exists_add_fingerprint">Biltegi hau ezarrita dago jada, honek gako informazio berria gehituko du.</string>
     <string name="repo_exists_enable">Biltegi hau ezarrita dago jada, berretsi berrezarri nahi duzula.</string>
@@ -131,7 +126,6 @@
     <string name="show_incompat_versions_on">Bistaratu gailu honekin bateraezinak diren bertsioak</string>
     <string name="ignoreTouch_on">Beti gehitu ukipen-pantaila behar duten aplikazioak</string>
 
-    <string name="local_repo">Tokiko biltegia</string>
     <string name="deleting_repo">Uneko biltegia ezabatzen…</string>
     <string name="adding_apks_format">%s biltegira gehitzen…</string>
     <string name="icon">Ikonoa</string>
@@ -174,8 +168,6 @@
 
 
     <string name="rooted_on">Ez lainotu root baimena behar duten aplikazioak</string>
-    <string name="local_repo_running">F-Droid partekatzeko prest dago</string>
-    <string name="touch_to_configure_local_repo">Ukitu xehetasunak ikusteko eta besteek zure aplikazioak hartzea ahalbidetzeko.</string>
     <string name="proxy_host_summary">Konfiguratu zure proxyaren zerbitzaria (adib. 127.0.0.1)</string>
     <string name="proxy_port">Proxyaren ataka</string>
     <string name="proxy_port_summary">Konfiguratu zure proxyaren ataka zenbakia (adib. 8118)</string>

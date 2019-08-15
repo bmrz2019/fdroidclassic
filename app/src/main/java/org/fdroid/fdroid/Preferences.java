@@ -36,11 +36,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     private Preferences(Context context) {
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         preferences.registerOnSharedPreferenceChangeListener(this);
-        if (preferences.getString(PREF_LOCAL_REPO_NAME, null) == null) {
-            preferences.edit()
-                    .putString(PREF_LOCAL_REPO_NAME, getDefaultLocalRepoName())
-                    .apply();
-        }
     }
 
     public static final String PREF_UPD_INTERVAL = "updateInterval";
@@ -60,8 +55,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     public static final String PREF_EXPERT = "expert";
     public static final String PREF_PRIVILEGED_INSTALLER = "privilegedInstaller";
     public static final String PREF_UNINSTALL_PRIVILEGED_APP = "uninstallPrivilegedApp";
-    public static final String PREF_LOCAL_REPO_NAME = "localRepoName";
-    public static final String PREF_LOCAL_REPO_HTTPS = "localRepoHttps";
     public static final String PREF_LANGUAGE = "language";
     public static final String PREF_USE_TOR = "useTor";
     public static final String PREF_ENABLE_PROXY = "enableProxy";
@@ -74,11 +67,9 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     private static final boolean DEFAULT_HIDE_ANTI_FEATURE_APPS = false;
     private static final int DEFAULT_UPD_HISTORY = 14;
     private static final boolean DEFAULT_PRIVILEGED_INSTALLER = true;
-    //private static final boolean DEFAULT_LOCAL_REPO_BONJOUR = true;
     private static final long DEFAULT_KEEP_CACHE_TIME = TimeUnit.DAYS.toMillis(1);
     private static final boolean DEFAULT_UNSTABLE_UPDATES = false;
     private static final boolean DEFAULT_KEEP_INSTALL_HISTORY = false;
-    //private static final boolean DEFAULT_LOCAL_REPO_HTTPS = false;
     private static final boolean DEFAULT_INCOMP_VER = false;
     private static final boolean DEFAULT_EXPERT = false;
     private static final boolean DEFAULT_ENABLE_PROXY = false;
@@ -242,10 +233,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
                 .replaceAll(" ", "-");
     }
 
-    public String getLocalRepoName() {
-        return preferences.getString(PREF_LOCAL_REPO_NAME, getDefaultLocalRepoName());
-    }
-
     public boolean isUpdateNotificationEnabled() {
         return preferences.getBoolean(PREF_UPD_NOTIFY, true);
     }
@@ -389,16 +376,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
                 break;
             case PREF_UPD_HISTORY:
                 for (ChangeListener listener : updateHistoryListeners) {
-                    listener.onPreferenceChange();
-                }
-                break;
-            case PREF_LOCAL_REPO_NAME:
-                for (ChangeListener listener : localRepoNameListeners) {
-                    listener.onPreferenceChange();
-                }
-                break;
-            case PREF_LOCAL_REPO_HTTPS:
-                for (ChangeListener listener : localRepoHttpsListeners) {
                     listener.onPreferenceChange();
                 }
                 break;

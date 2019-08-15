@@ -82,9 +82,6 @@
     <string name="notify_on">Amosar unha notificación cando hai actualizacións dispoñibles</string>
     <string name="system_installer_on">Utiliza F-Droid Privileged Extension para instalar, actualizar e eleminar paquetes</string>
     <string name="uninstall_system">Actualizar/Desinstalar Privileged Extension</string>
-    <string name="local_repo_name">Nome do teu repositorio local</string>
-    <string name="local_repo_https">Utiliza unha conexión privada</string>
-    <string name="local_repo_https_on">Utilizar conexión cifrada HTTPS:// para o repositorio local</string>
 
     <string name="about_source">Fonte:</string>
     <string name="app_incompatible">Incompatibel</string>
@@ -125,9 +122,6 @@
     <string name="rooted_on">Non sombrear os aplicativos que requiran privilexios de root</string>
     <string name="ignoreTouch_on">Incluír sempre aplicativos que requiran pantalla táctil</string>
 
-    <string name="local_repo">Repositorio local</string>
-    <string name="local_repo_running">F-Droid está listo para o intercambio</string>
-    <string name="touch_to_configure_local_repo">Toca para ver detalles e permitir ós demáis o intercambio dos teus aplicativos.</string>
     <string name="deleting_repo">Eliminando o repositorio actual…</string>
     <string name="adding_apks_format">Engadindo %s ó repositorio…</string>
     <string name="linking_apks">Ligando APKs ó repositorio…</string>

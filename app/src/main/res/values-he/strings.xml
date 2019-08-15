@@ -20,10 +20,6 @@
     <string name="system_installer_on">השתמש בהרחבת F-Droid מועדפת כדי להתקין, לעדכן, ולהסיר חבילות</string>
     <string name="uninstall_system">בטל התקנת או עדכן הרחבה מועדפת</string>
     <string name="uninstall_system_summary">פתח מסך פרטים של הרחבה מועדפת כדי לעדכנה/לבטל התקנתה</string>
-    <string name="local_repo_name">שם המאגר המקומי שלך</string>
-    <string name="local_repo_name_summary">הכותרת המעודכנת של המאגר המקומי שלך: %s</string>
-    <string name="local_repo_https">השתמש בחיבור פרטי</string>
-    <string name="local_repo_https_on">השתמש בחיבור //:HTTPS עבור מאגר מקומי</string>
 
     <string name="app_details">פרטי אפליקציה</string>
     <string name="no_such_app">לא נמצאה אפליקציה.</string>
@@ -116,9 +112,6 @@
     <string name="category_Whats_New">מה חדש</string>
     <string name="category_Recently_Updated">עודכנו לאחרונה</string>
 
-    <string name="local_repo">מאגר מקומי</string>
-    <string name="local_repo_running">F-Droid הינו מוכן להחליף</string>
-    <string name="touch_to_configure_local_repo">גע כדי לצפות בפרטים ולהתיר לאחרים להחליף עם האפליקציות שלך.</string>
     <string name="deleting_repo">כעת מוחק מאגר נוכחי…</string>
     <string name="adding_apks_format">הוסף את %s למאגר…</string>
     <string name="writing_index_jar">כעת כותב קובץ אינדקס חתום (index.jar)…</string>

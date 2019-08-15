@@ -10,6 +10,7 @@
         <item name="android:textColorLink">@color/fdroid_green</item>
         <item name="alertDialogTheme">@style/AlertDialogThemeDark</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
     <style name="AppBaseThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -22,6 +23,7 @@
         <item name="alertDialogTheme">@style/AlertDialogThemeLight</item>
         <item name="android:textViewStyle">@style/TextViewStyle</item>
         <item name="toolbar_theme">@style/AppThemeLight.Toolbar</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
     <style name="AppThemeDark" parent="AppBaseThemeDark">
@@ -52,14 +54,12 @@
     <style name="MinWithDialogBaseThemeDark" parent="Theme.AppCompat.Dialog.MinWidth">
         <item name="colorAccent">@color/fdroid_green</item>
 
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="MinWithDialogBaseThemeLight" parent="Theme.AppCompat.Light.Dialog.MinWidth">
         <item name="colorAccent">@color/fdroid_green</item>
 
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
@@ -136,7 +136,6 @@
 
     <style name="AppThemeTransparent" parent="@android:style/Theme.NoDisplay" />
     <style name="AppThemeLight.NoActionBar">
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 </resources>

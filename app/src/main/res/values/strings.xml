@@ -154,9 +154,6 @@
     <string name="ignoreTouch">Ignore touchscreen</string>
     <string name="ignoreTouch_on">Always include apps that require touchscreen</string>
 
-    <string name="local_repo">Local Repo</string>
-    <string name="local_repo_running">F-Droid is ready to swap</string>
-    <string name="touch_to_configure_local_repo">Touch to view details and allow others to swap your apps.</string>
     <string name="deleting_repo">Deleting current repo…</string>
     <string name="adding_apks_format">Adding %s to repo…</string>
     <string name="writing_index_jar">Writing signed index file (index.jar)…</string>

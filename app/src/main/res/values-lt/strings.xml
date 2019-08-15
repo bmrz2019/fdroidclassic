@@ -10,8 +10,7 @@
   <string name="notify">Informuoti</string>
   <string name="notify_on">Pranešti, kai atsiras atnaujinimų</string>
   <string name="update_history">Naujumo nustatymai</string>
-  <string name="local_repo_name">Šio įrenginio saugyklos pavadinimas</string>
-  <string name="about_title">Apie F-Droid</string>
+    <string name="about_title">Apie F-Droid</string>
   <string name="about_site">Svetainė:</string>
   <string name="about_mail">El. paštas:</string>
   <string name="about_version">Versija:</string>

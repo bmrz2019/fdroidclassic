@@ -14,7 +14,6 @@
     <string name="automatic_scan_wifi">เฉพาะตอนมีสัญญาณ WiFi</string>
     <string name="update_auto_download">ดาวน์โหลดอัพเดตโดยอัตโนมัติ</string>
     <string name="update_history">ประวัติการอัพเดต</string>
-    <string name="local_repo_name">ชื่อที่ตั้งให้แหล่งโปรแกรมจากเครื่องคุณ</string>
     <string name="login_name">ชื่อผู้ใช้</string>
     <string name="login_password">รหัสผ่าน</string>
     <string name="repo_edit_credentials">เปลี่ยนรหัสผ่าน</string>
@@ -109,7 +108,6 @@
     <string name="show_incompat_versions_on">แสดงโปรแกรมที่เข้ากันไม่ได้กับเครื่องนี้ด้วย</string>
     <string name="rooted">แสดงโปรแกรมที่ต้องใช้รูท</string>
     <string name="rooted_on">ไม่ต้องแสดงโปรแกรมที่ใช้รูทเป็นสีเทา</string>
-    <string name="local_repo">แหล่งโปรแกรมจากในเครื่อง</string>
     <string name="deleting_repo">กำลังลบแหล่งโปรแกรมนี้…</string>
     <string name="adding_apks_format">กำลังเพิ่ม %s เข้าในแหล่งโปรแกรม…</string>
     <string name="icon">ไอคอน</string>
@@ -247,9 +245,6 @@
     <string name="notify">การแจ้งเตือนอัพเดต</string>
     <string name="notify_on">แสดงการแจ้งเตือนเมื่อมีอัพเดตให้ดาวน์โหลด</string>
     <string name="update_history_summ">ถือว่าโปรแกรมที่เพิ่งมีใน %s วัน เป็นโปรแกรมใหม่</string>
-    <string name="local_repo_name_summary">ฃื่อของแหล่งโปรแกรมในเครื่องที่แสดงสู่ภายนอก: %s</string>
-    <string name="local_repo_https">ใช้การเชื่อมต่อที่เป็นส่วนตัว</string>
-    <string name="local_repo_https_on">ใช้การเชื่อมต่อ HTTPS:// ที่เข้ารหัส กับแหล่งโปรแกรมจากในเครื่อง</string>
 
     <string name="login_title">ต้องใช้รหัสผ่าน</string>
     <string name="system_installer">ส่วนขยายเพื่อช่วยติดตั้ง</string>
@@ -341,8 +336,6 @@
     <string name="no_handler_app">คุณไม่มีโปรแกรมที่รองรับการใช้งาน %s</string>
     <string name="copying_icons">กำลังคัดลอกข้อมูลไอคอนลงไปในแหล่งโปรแกรม…</string>
     <string name="linking_apks">กำลังเชื่อมโยงไฟล์ APK ในแหล่งโปรแกรม…</string>
-    <string name="touch_to_configure_local_repo">แตะเพื่อดูรายละเอียดแหล่งโปรแกรม หรืออนุญาตให้ผู้อื่นดาวน์โหลดโปรแกรม</string>
-    <string name="local_repo_running">F-Droid พร้อมจะแบ่งบันโปรแกรมแล้ว</string>
     <string name="hide_anti_feature_apps_on">แสดงโปรแกรมที่มีฟังก์ชั่นไม่พึงประสงค์เป็นสีเทา</string>
     <string name="hide_anti_feature_apps">ให้โปรแกรมที่มีฟังก์ชั่นไม่พึงประสงค์เป็นสีเทา</string>
     <string name="malformed_repo_uri">กำลังข้ามแหล่งโปรแกรมที่มี URI ผิดรูป: %s</string>

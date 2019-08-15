@@ -15,11 +15,7 @@
   <string name="update_history">更新記錄</string>
   <string name="system_installer">系統權限套件</string>
   <string name="system_installer_on">使用系統權限套件安裝、更新及移除軟件包</string>
-  <string name="local_repo_name">您的本地倉庫名稱</string>
-  <string name="local_repo_name_summary">您本地倉庫對外公開的名稱：%s</string>
-  <string name="local_repo_https">使用私人連線</string>
-  <string name="local_repo_https_on">連接至本地倉庫時使用 HTTPS:// 加密連線</string>
-  <string name="app_details">應用程式詳細資料</string>
+    <string name="app_details">應用程式詳細資料</string>
   <string name="no_such_app">找不到這樣的應用程式。</string>
   <string name="about_title">關於 F-Droid</string>
   <string name="about_site">網站</string>
@@ -87,10 +83,7 @@
   <string name="category_All">所有</string>
   <string name="category_Whats_New">最新</string>
   <string name="category_Recently_Updated">最近更新</string>
-  <string name="local_repo">本地倉庫</string>
-  <string name="local_repo_running">F-Droid 隨時可以進行交換</string>
-  <string name="touch_to_configure_local_repo">觸碰以顯示詳細資料及允許其他人交換您的應用程式。</string>
-  <string name="deleting_repo">正在刪除此倉庫…</string>
+    <string name="deleting_repo">正在刪除此倉庫…</string>
   <string name="adding_apks_format">正在添加 %s 至倉庫…</string>
   <string name="copying_icons">正在複製應用程式圖示至倉庫…</string>
   <string name="icon">圖示</string>

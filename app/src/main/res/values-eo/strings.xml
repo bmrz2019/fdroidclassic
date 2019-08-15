@@ -71,8 +71,7 @@
   <string name="category_All">Ĉiuj</string>
   <string name="category_Whats_New">Novaĵoj</string>
   <string name="category_Recently_Updated">Ĵus ĝisdatigitaj</string>
-  <string name="local_repo">Loka deponejo</string>
-  <string name="deleting_repo">Forigado de la deponejo…</string>
+    <string name="deleting_repo">Forigado de la deponejo…</string>
   <string name="adding_apks_format">Aldonado de %s al la deponejo…</string>
   <string name="linking_apks">Ligado de APK al la deponejo…</string>
   <string name="copying_icons">Kopiado de aplikaĵ-emblemoj al la deponejo…</string>
@@ -126,10 +125,6 @@
     <string name="system_installer_on">Uzas privilegian F-Droid-aldonaĵon por instali, ĝisdatigi, kaj forigi pakaĵojn</string>
     <string name="uninstall_system">Ĝisdatigi/malinstali privilegian aldonaĵon</string>
     <string name="uninstall_system_summary">Malfermas detalan ekranon de Privilegia Aldonaĵo por ĝisdatigi/malinstali ĝin</string>
-    <string name="local_repo_name">Nomo de loka deponejo</string>
-    <string name="local_repo_name_summary">La anoncata nomo de via loka deponejo: %s</string>
-    <string name="local_repo_https">Uzi privatan konekton</string>
-    <string name="local_repo_https_on">Uzas ĉifritan HTTPS-konekton por loka deponejo</string>
 
     <string name="login_title">Aŭtentokontrolo nepra</string>
     <string name="login_name">Uzantnomo</string>
@@ -174,8 +169,6 @@
 
     <string name="antinonfreeassetslist">Ĉi tiu aplikaĵo enhavas neliberan enhavon</string>
 
-    <string name="local_repo_running">F-Droid estas preta por interŝanĝo</string>
-    <string name="touch_to_configure_local_repo">Tuŝu por rigardi detalojn kaj permesi aliajn interŝanĝi viajn aplikaĵojn.</string>
     <string name="writing_index_jar">Konservado de subskribita indeksa dosiero (index.jar)…</string>
     <string name="proxy">Prokurilo</string>
     <string name="enable_proxy_title">Aktivigi HTTP prokurilon</string>

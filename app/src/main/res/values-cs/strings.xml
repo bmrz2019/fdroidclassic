@@ -17,11 +17,7 @@
   <string name="update_history_summ">Počet dnů, po které je aplikace vedena jako nová nebo nedávná: %s</string>
   <string name="system_installer">Privilegovaná rozšíření</string>
   <string name="system_installer_on">Použít privilegovaná rozšíření F-Droid k instalování, aktualizaci a odebírání balíčků</string>
-  <string name="local_repo_name">Název místního repozitáře</string>
-  <string name="local_repo_name_summary">Oznamovaný název místního repozitáře: %s</string>
-  <string name="local_repo_https">Použít soukromé připojení</string>
-  <string name="local_repo_https_on">Použít šifrované HTTPS spojení pro místní repozitář</string>
-  <string name="app_details">Detaily aplikace</string>
+    <string name="app_details">Detaily aplikace</string>
   <string name="no_such_app">Žádná taková aplikace nebyla nalezena.</string>
   <string name="about_title">O aplikaci F-Droid</string>
   <string name="about_site">Webová stránka</string>
@@ -79,10 +75,7 @@
   <string name="category_All">Vše</string>
   <string name="category_Whats_New">Novinky</string>
   <string name="category_Recently_Updated">Nedávno aktualizované</string>
-  <string name="local_repo">Místní repozitář</string>
-  <string name="local_repo_running">F-Droid je připraven k výměně</string>
-  <string name="touch_to_configure_local_repo">Dotykem zobraz detaily a umožni ostatním  si přetáhnout tvé aplikace.</string>
-  <string name="deleting_repo">Odstraňuji místní repozitář…</string>
+    <string name="deleting_repo">Odstraňuji místní repozitář…</string>
   <string name="adding_apks_format">Přidávám %s do repozitáře…</string>
   <string name="writing_index_jar">Zapisuji podepsaný soubor s indexem (index.jar)…</string>
   <string name="linking_apks">Linkuji APK do repozitáře…</string>

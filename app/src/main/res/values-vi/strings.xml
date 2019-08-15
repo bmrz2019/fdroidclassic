@@ -19,10 +19,7 @@
   <string name="update_history_summ">Ứng dụng sẽ được xem là mới nếu được thêm hoặc cập nhật trong vòng %s ngày</string>
   <string name="system_installer">Phần mở rộng được cấp quyền</string>
   <string name="system_installer_on">Dùng phần mở rộng được cấp quyền của F-Droid để cài đặt, cập nhật và gỡ bỏ ứng dụng</string>
-  <string name="local_repo_name">Tên kho ứng dụng nội bộ</string>
-  <string name="local_repo_https">Dùng kết nối riêng tư</string>
-  <string name="local_repo_https_on">Dùng kết nối HTTPS:// mã hoá cho kho nội bộ</string>
-  <string name="app_details">Thông tin ứng dụng</string>
+    <string name="app_details">Thông tin ứng dụng</string>
   <string name="no_such_app">Không tìm thấy ứng dụng.</string>
   <string name="about_title">Giới thiệu về F-Droid</string>
   <string name="about_site">Trang web</string>
@@ -92,10 +89,7 @@
   <string name="category_All">Tất cả</string>
   <string name="category_Whats_New">Ứng dụng mới</string>
   <string name="category_Recently_Updated">Mới cập nhật</string>
-  <string name="local_repo">Kho nội bộ</string>
-  <string name="local_repo_running">F-Droid đã sẵn sàng để trao đổi</string>
-  <string name="touch_to_configure_local_repo">Chạm để xem danh sách và cho phép mọi người trao đổi ứng dụng với bạn.</string>
-  <string name="deleting_repo">Đang xoá kho hiện tại…</string>
+    <string name="deleting_repo">Đang xoá kho hiện tại…</string>
   <string name="adding_apks_format">Đang thêm %s vào kho…</string>
   <string name="copying_icons">Đang sao chép biểu tượng ứng dụng vào kho…</string>
   <string name="icon">Biểu tượng</string>
@@ -164,7 +158,6 @@
     <string name="links">Liên kết</string>
 
     <string name="back">Quay lại</string>
-    <string name="local_repo_name_summary">Tên kho phần mềm nội bộ của bạn: %s</string>
     <string name="about_source">Mã nguồn</string>
     <string name="app_incompatible">Không tương thích</string>
     <string name="tab_installed_apps">Đã cài đặt</string>

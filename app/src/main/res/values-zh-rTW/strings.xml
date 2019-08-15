@@ -20,9 +20,6 @@
     <string name="notify">更新通知</string>
     <string name="notify_on">當有軟體可以更新時秀出一個通知</string>
     <string name="update_history_summ">將 %s 天前冒出來的軟體視為新軟體</string>
-    <string name="local_repo_name">您的本地端應用軟體倉庫的名稱</string>
-    <string name="local_repo_name_summary">您本地端應用軟體倉庫對外宣傳的名稱：%s</string>
-    <string name="local_repo_https_on">使用 HTTPS:// 加密連線來存取當地的應用軟體倉庫</string>
 
     <string name="login_title">需要通過驗證</string>
     <string name="login_name">使用者名稱</string>
@@ -169,7 +166,6 @@
     <string name="menu_manage">儲存庫</string>
     <string name="menu_add_repo">新增儲存庫</string>
 
-    <string name="local_repo">本地儲存庫</string>
     <string name="deleting_repo">正在刪除目前的儲存庫…</string>
     <string name="adding_apks_format">正在加入 %s 到儲存庫…</string>
     <string name="copying_icons">正在複製應用程式圖示到儲存庫…</string>
@@ -248,7 +244,6 @@
     <string name="system_installer_on">使用 F-Droid 特權擴充以安裝、更新和移除套裝軟體</string>
     <string name="uninstall_system">更新/解除安裝特權擴充</string>
     <string name="uninstall_system_summary">開啟特權擴充的詳情畫面來更新/解除安裝</string>
-    <string name="local_repo_https">使用私密連線</string>
     <string name="repo_error_empty_username">空的使用者名稱，憑證未改變</string>
 
     <string name="update_notification_more">+%1$d 更多…</string>
@@ -259,8 +254,6 @@
 
     <string name="menu_email">E-Mail 作者</string>
     <string name="menu_issues">問題</string>
-    <string name="local_repo_running">F-Droid 已準備好交換</string>
-    <string name="touch_to_configure_local_repo">觸碰以便檢視詳細資料並允許其他去交換您的應用程式。</string>
     <string name="swap_nfc_title">觸碰以便交換</string>
     <string name="writing_index_jar">寫入已簽署的索引檔案中 (index.jar)…</string>
     <string name="linking_apks">正在連結 APK 到儲存庫裡…</string>

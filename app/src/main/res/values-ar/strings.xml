@@ -3,8 +3,7 @@
   <string name="version">الإصدار</string>
   <string name="delete">حذف</string>
   <string name="updates">التحديثات</string>
-  <string name="local_repo_name">إسم مستودعك المحلي</string>
-  <string name="app_details">تفاصيل التطبيق</string>
+    <string name="app_details">تفاصيل التطبيق</string>
   <string name="about_site">الموقع الإلكتروني</string>
   <string name="about_mail">البريد الإلكتروني</string>
   <string name="about_version">الإصدار</string>
@@ -40,8 +39,7 @@
   <string name="menu_donate">التبرع</string>
   <string name="category_All">الكل</string>
   <string name="category_Whats_New">مالجديد</string>
-  <string name="local_repo">مستودع محلي</string>
-  <string name="deleting_repo">يتم حذف المستودع الحالي…</string>
+    <string name="deleting_repo">يتم حذف المستودع الحالي…</string>
   <string name="next">التالي</string>
   <string name="skip">تخطي</string>
   <string name="theme">السمة</string>
@@ -90,9 +88,6 @@
     <string name="system_installer_on">استخدام اف-درويد مميز الملحقات لتثبيت وتحديث وإزالة الحزم</string>
     <string name="uninstall_system">تحديث / إلغاء مميز الملحقات</string>
     <string name="uninstall_system_summary">فتح تفاصيل شاشة الملحقات المميزة لتحديث / إلغاء للتثبيت</string>
-    <string name="local_repo_name_summary">عنوان المعلن لديك في المستودعات المحلية: %s</string>
-    <string name="local_repo_https">استخدام اتصال خاص</string>
-    <string name="local_repo_https_on">استخدام تشفير HTTPS: // المتصل بالمستودعات المحلية</string>
 
     <string name="login_title">يستلزم التوثيق</string>
     <string name="login_name">إسم المستخدم</string>
@@ -171,8 +166,6 @@
     <string name="ignoreTouch">تجاهل الشاشات التي تعمل باللمس</string>
     <string name="ignoreTouch_on">دائما ضم التطبيقات التي تتطلب شاشة تعمل باللمس</string>
 
-    <string name="local_repo_running">اف-درويد على استعداد التبديل</string>
-    <string name="touch_to_configure_local_repo">إستخدم اللمس لعرض تفاصيل والسماح للآخرين لمبادلة التطبيقات الخاصة بك.</string>
     <string name="adding_apks_format">إضافة %s إلى مستودع…</string>
     <string name="writing_index_jar">كتابة توقيع ملف الفهرس (index.jar) …</string>
     <string name="linking_apks">ربط ملفات APK التي في المستودعات…</string>

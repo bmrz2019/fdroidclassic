@@ -19,10 +19,7 @@
   <string name="update_history_summ">Счита за нови или скорошни приложенията от преди (дни): %s</string>
   <string name="system_installer">Инсталиране чрез системни разрешения</string>
   <string name="system_installer_on">Ползване на системни права за инсталиране, актуализиране и премахване на приложения</string>
-  <string name="local_repo_name">Име на локалното хранилище</string>
-  <string name="local_repo_name_summary">Обявява хранилището под името: %s</string>
-  <string name="local_repo_https_on">Ползва криптирана HTTPS:// връзка за комуникацията с локалното хранилище</string>
-  <string name="app_details">Детайли за приложението</string>
+    <string name="app_details">Детайли за приложението</string>
   <string name="no_such_app">Не е намерено такова приложение.</string>
   <string name="about_title">Относно F-Droid</string>
   <string name="about_site">Уебсайт</string>
@@ -89,8 +86,7 @@
   <string name="category_All">Всички</string>
   <string name="category_Whats_New">Какво ново</string>
   <string name="category_Recently_Updated">Обновени наскоро</string>
-  <string name="local_repo">Локално хранилище</string>
-  <string name="deleting_repo">Изтриване на хранилището…</string>
+    <string name="deleting_repo">Изтриване на хранилището…</string>
   <string name="adding_apks_format">Добавяне на %s към хранилището…</string>
   <string name="icon">Икона</string>
   <string name="next">Напред</string>
@@ -224,8 +220,6 @@
     <string name="swap_cant_send_no_bluetooth">Изпращането на F-Droid не е възможно защото липсва Bluetooth функционалност.</string>
     <string name="bluetooth_unavailable">Липсва Bluetooth</string>
     <string name="swap_nearby">Размяна с устройства наоколо</string>
-    <string name="local_repo_running">F-Droid e в готовност за размяна</string>
-    <string name="touch_to_configure_local_repo">Натиснете за детайли или да позволите размяна на приложение.</string>
     <string name="swap_nfc_title">Натиснете за размяна</string>
     <string name="swap_success">Успешна размяна!</string>
     <string name="swap_switch_to_wifi">Натиснете за смяна на Wi-Fi мрежата</string>
@@ -281,7 +275,6 @@
     <string name="perms_new_perm_prefix">"Ново: "</string>
     <string name="perms_description_app">Предоставено от %1$s.</string>
     <string name="by_author">от</string>
-    <string name="local_repo_https">Използване на засекретена връзка</string>
     <string name="login_title">Нужна е автентификация</string>
     <string name="login_name">Потребителско име</string>
     <string name="login_password">Парола</string>

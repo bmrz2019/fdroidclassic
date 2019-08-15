@@ -25,10 +25,6 @@
     <string name="system_installer_on">Utilizar a extensão privilegiada do F-Droid para instalar, atualizar e remover pacotes</string>
     <string name="uninstall_system">Atualizar/desinstalar extensão privilegiada</string>
     <string name="uninstall_system_summary">Abrir ecrã de detalhes da extensão privilegiada para a atualizar/desinstalar</string>
-    <string name="local_repo_name">Nome do seu repositório local</string>
-    <string name="local_repo_name_summary">O título anunciado do seu repositório local: %s</string>
-    <string name="local_repo_https">Utilizar ligação privada</string>
-    <string name="local_repo_https_on">Utilizar ligação HTTPS:// para o repositório local</string>
 
     <string name="app_details">Detalhes da aplicação</string>
     <string name="no_such_app">Aplicação não encontrada.</string>
@@ -129,9 +125,6 @@
     <string name="ignoreTouch">Ignorar ecrã de toque</string>
     <string name="ignoreTouch_on">Incluir aplicações que necessitem de toque no ecrã</string>
 
-    <string name="local_repo">Repositório local</string>
-    <string name="local_repo_running">F-Droid pronto para a troca</string>
-    <string name="touch_to_configure_local_repo">Toque para ver os detalhes e permitir a troca de aplicações.</string>
     <string name="deleting_repo">A apagar repositório local…</string>
     <string name="adding_apks_format">A adicionar %s ao repositório…</string>
     <string name="writing_index_jar">A escrever ficheiro de índice (index.jar)…</string>

@@ -19,11 +19,7 @@
   <string name="update_history_summ">ｱﾌﾟﾘｹｰｼｮﾝが新しいものだと判断する日数:%s日</string>
   <string name="system_installer">特権拡張</string>
   <string name="system_installer_on">F-Droid 特権拡張を使用してﾊﾟｯｹｰｼﾞのｲﾝｽﾄｰﾙ､更新､および削除をします｡</string>
-  <string name="local_repo_name">ﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘの名前</string>
-  <string name="local_repo_name_summary">公開するﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘの題名: %s</string>
-  <string name="local_repo_https">保護された接続を使用する</string>
-  <string name="local_repo_https_on">ﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘに暗号化されたHTTPS://接続を使用する</string>
-  <string name="app_details">ｱﾌﾟﾘ詳細</string>
+    <string name="app_details">ｱﾌﾟﾘ詳細</string>
   <string name="no_such_app">該当するｱﾌﾟﾘが見つかりません.</string>
   <string name="about_title">F-Droidについて</string>
   <string name="about_site">Webｻｲﾄ</string>
@@ -97,10 +93,7 @@
   <string name="category_All">全て</string>
   <string name="category_Whats_New">新着</string>
   <string name="category_Recently_Updated">最近の更新</string>
-  <string name="local_repo">ﾛｰｶﾙﾘﾎﾟｼﾞﾄﾘ</string>
-  <string name="local_repo_running">F-Droidは交換の準備ができました</string>
-  <string name="touch_to_configure_local_repo">ﾀｯﾁすると詳細を表示し､ｱﾌﾟﾘｹｰｼｮﾝの交換ができるようになります｡</string>
-  <string name="deleting_repo">現在のﾘﾎﾟｼﾞﾄﾘを削除中</string>
+    <string name="deleting_repo">現在のﾘﾎﾟｼﾞﾄﾘを削除中</string>
   <string name="adding_apks_format">ﾘﾎﾟｼﾞﾄﾘに %s を追加中</string>
   <string name="writing_index_jar">署名された索引ﾌｧｲﾙを書き込み中(index.jar)…</string>
   <string name="linking_apks">ﾘﾎﾟｼﾞﾄﾘにAPKを関連付けています…</string>

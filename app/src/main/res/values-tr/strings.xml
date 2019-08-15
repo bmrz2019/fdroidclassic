@@ -19,11 +19,7 @@
   <string name="update_history_summ">Uygulamaların yeni sayılacağı gün sayısı: %s</string>
   <string name="system_installer">Ayrıcalıklı Uzantı</string>
   <string name="system_installer_on">Paket kurmak, güncellemek ve kaldırmak için F-Droid Ayrıcalıklı Uzantıyı kullan</string>
-  <string name="local_repo_name">Yerel Deponun Adı</string>
-  <string name="local_repo_name_summary">Yerel deponun duyrulan adı: %s</string>
-  <string name="local_repo_https">Özel Bağlantı Kullan</string>
-  <string name="local_repo_https_on">Yerel depo için güvenli HTTPS:// bağlantı kullan</string>
-  <string name="app_details">Uygulama Detayları</string>
+    <string name="app_details">Uygulama Detayları</string>
   <string name="no_such_app">Böyle bir uygulama bulunamadı.</string>
   <string name="about_title">F-Droid Hakkında</string>
   <string name="about_site">Ağ sitesi</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Tümü</string>
   <string name="category_Whats_New">Yeni olanlar</string>
   <string name="category_Recently_Updated">Yakın geçmişte güncellenen</string>
-  <string name="local_repo">Yerel Depo</string>
-  <string name="local_repo_running">F-Droid değiş-tokuşa hazır</string>
-  <string name="touch_to_configure_local_repo">Detayları görmek için ve başkalarının uygulamalarınızı takas edebilmesi için dokunun.</string>
-  <string name="deleting_repo">Mevcut depo siliniyor…</string>
+    <string name="deleting_repo">Mevcut depo siliniyor…</string>
   <string name="adding_apks_format">%s depoya ekleniyor…</string>
   <string name="writing_index_jar">İmzalanmış endeks dosyası yazılıyor (index.jar)…</string>
   <string name="linking_apks">APK\'ler depo içine bağlanıyor…</string>

@@ -19,11 +19,7 @@
   <string name="update_history_summ">Anzahl in Tagen, an denen neue oder kürzlich geänderte Anwendungen angezeigt werden: %s</string>
   <string name="system_installer">Privilegierte Erweiterung</string>
   <string name="system_installer_on">Privilegierte F-Droid-Erweiterung verwenden, um Pakete zu installieren, zu aktualisieren und zu entfernen</string>
-  <string name="local_repo_name">Name Ihrer lokalen Paketquelle</string>
-  <string name="local_repo_name_summary">Der verwendete Titel Ihrer lokalen Paketquelle: %s</string>
-  <string name="local_repo_https">Gesicherte Verbindung verwenden</string>
-  <string name="local_repo_https_on">Verschlüsselte HTTPS://-Verbindung zur lokalen Paketquelle verwenden</string>
-  <string name="app_details">Anwendungsdetails</string>
+    <string name="app_details">Anwendungsdetails</string>
   <string name="no_such_app">Keine solche Anwendung gefunden.</string>
   <string name="about_title">Über F-Droid</string>
   <string name="about_site">Internetseite</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Alle</string>
   <string name="category_Whats_New">Was gibt es Neues</string>
   <string name="category_Recently_Updated">Kürzlich aktualisiert</string>
-  <string name="local_repo">Lokale Paketquelle</string>
-  <string name="local_repo_running">F-Droid ist bereit zum Tauschen</string>
-  <string name="touch_to_configure_local_repo">Berühren, um Details zu sehen und es anderen erlauben Ihre Anwendungen zu tauschen.</string>
-  <string name="deleting_repo">Aktuelle Paketquelle wird gelöscht …</string>
+    <string name="deleting_repo">Aktuelle Paketquelle wird gelöscht …</string>
   <string name="adding_apks_format">%s wird zur Paketquelle hinzugefügt …</string>
   <string name="writing_index_jar">Signierte Indexdatei (index.jar) wird geschrieben …</string>
   <string name="linking_apks">APKs werden mit der Paketquelle verknüpft …</string>

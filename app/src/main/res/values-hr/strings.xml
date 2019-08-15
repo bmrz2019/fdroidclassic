@@ -28,10 +28,6 @@
     <string name="system_installer_on">Koristite F-Droidovo povlašteno proširenje kako bi instalirali, ažurirali i uklonili pakete</string>
     <string name="uninstall_system">Ažuriraj/ukloni povlašteno proširenje</string>
     <string name="uninstall_system_summary">Otvori ekran sa detaljima o povlaštenom proširenju kako bi ga ažurirali/uklonili</string>
-    <string name="local_repo_name">Ime Vašeg lokalnog repozitorija</string>
-    <string name="local_repo_name_summary">Oglašeno ime Vašeg lokalnog repozitorija: %s</string>
-    <string name="local_repo_https">Koristi privatnu vezu</string>
-    <string name="local_repo_https_on">Koristi enkriptiranu HTTPS:// vezu za lokalni repozitorij</string>
 
     <string name="login_title">Zahtjevana autentikacija</string>
     <string name="login_name">Korisničko ime</string>
@@ -149,9 +145,6 @@
     <string name="ignoreTouch">Ignoriraj dodirni zaslon</string>
     <string name="ignoreTouch_on">Uvijek uključi aplikacije koje zahtjevaju dodirni zaslon</string>
 
-    <string name="local_repo">Lokalni repozitorij</string>
-    <string name="local_repo_running">F-Droid je spreman za razmjenu</string>
-    <string name="touch_to_configure_local_repo">Dodirnite za detalje i dopuštanje drugima da razmjenjuju Vaše aplikacije.</string>
     <string name="deleting_repo">Brišem trenutni repozitorij…</string>
     <string name="adding_apks_format">Dodajem %s u repozitorij…</string>
     <string name="writing_index_jar">Pišem potpisanu datoteku indeksa (index.jar)…</string>

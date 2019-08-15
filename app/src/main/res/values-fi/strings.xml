@@ -19,11 +19,7 @@
   <string name="update_history_summ">Päivien määrä, jolloin sovellus näytetään uutena: %s</string>
   <string name="system_installer">Privileged Extension</string>
   <string name="system_installer_on">Käytä F-Droid Privileged Extensionia asentamiseen, päivittämiseen ja pakettien poistamiseen</string>
-  <string name="local_repo_name">Paikallisen sovelluslähteesi nimi</string>
-  <string name="local_repo_name_summary">Paikallisen sovelluslähteesi mainostettava otsikko: %s</string>
-  <string name="local_repo_https">Käytä yksityisyhteyttä</string>
-  <string name="local_repo_https_on">Käytä salattua HTTPS:// -yhteyttä paikalliselle sovelluslähteelle</string>
-  <string name="app_details">Sovelluksen tiedot</string>
+    <string name="app_details">Sovelluksen tiedot</string>
   <string name="no_such_app">Sovellusta ei löytynyt.</string>
   <string name="about_title">Tietoa F-Droidista</string>
   <string name="about_site">Verkkosivu</string>
@@ -85,10 +81,7 @@
   <string name="category_All">Kaikki</string>
   <string name="category_Whats_New">Mikä on uutta</string>
   <string name="category_Recently_Updated">Viimeksi päivitetyt</string>
-  <string name="local_repo">Paikallinen sovelluslähde</string>
-  <string name="local_repo_running">F-Droid on valmis vaihtamaan</string>
-  <string name="touch_to_configure_local_repo">Kosketa nähdäksesi tiedot ja salliaksesi toisten vaihtaa sovelluksiasi.</string>
-  <string name="deleting_repo">Poistetaan nykyistä sovelluslähdettä…</string>
+    <string name="deleting_repo">Poistetaan nykyistä sovelluslähdettä…</string>
   <string name="adding_apks_format">Lisätään %s sovelluslähteeseen…</string>
   <string name="writing_index_jar">Kirjoitetaan allekirjoitettua hakemistotiedostoa (index.jar)…</string>
   <string name="linking_apks">Linkitetään APK -tiedostot sovelluslähteeseen…</string>

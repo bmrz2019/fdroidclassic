@@ -18,11 +18,7 @@
   <string name="update_history_summ">Les aplicacions es consideren noves o recents durant: %s dies</string>
   <string name="system_installer">Extensió Privilegiada</string>
   <string name="system_installer_on">Instal·la, actualitza i suprimeix paquets fent servir l\'extensió privilegiada de l\'F-Droid</string>
-  <string name="local_repo_name">Nom del vostre dipòsit local</string>
-  <string name="local_repo_name_summary">Títol per difondre el vostre dipòsit local: %s</string>
-  <string name="local_repo_https">Utilitza una connexió privada</string>
-  <string name="local_repo_https_on">Connexió encriptada (HTTPS://) per els dipòsits locals</string>
-  <string name="app_details">Detalls de l\'aplicació</string>
+    <string name="app_details">Detalls de l\'aplicació</string>
   <string name="no_such_app">No s\'ha trobat l\'aplicació.</string>
   <string name="about_title">Quant a l\'F-Droid</string>
   <string name="about_site">Pàgina web</string>
@@ -95,10 +91,7 @@
   <string name="category_All">Tot</string>
   <string name="category_Whats_New">Novetats</string>
   <string name="category_Recently_Updated">S\'ha actualitzat fa poc</string>
-  <string name="local_repo">Dipòsit local</string>
-  <string name="local_repo_running">F-Droid està a punt per a l\'intercanvi</string>
-  <string name="touch_to_configure_local_repo">Toqueu per veure més detalls i permetre l\'intercanvi d\'aplicacions.</string>
-  <string name="deleting_repo">S\'està esborrant el dipòsit actual…</string>
+    <string name="deleting_repo">S\'està esborrant el dipòsit actual…</string>
   <string name="adding_apks_format">Afegint %s al dipòsit…</string>
   <string name="writing_index_jar">S\'està escribint la llista d\'aplicacions (index.jar)…</string>
   <string name="linking_apks">S\'estan enllaçant paquets APK al dipòsit…</string>

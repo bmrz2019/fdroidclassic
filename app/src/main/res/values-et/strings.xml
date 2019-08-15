@@ -28,10 +28,6 @@
     <string name="system_installer_on">"Kasuta pakettide paigaldamiseks, värskendamiseks ja eemaldamiseks  F-Droidi priviligeeritud laiendust"</string>
     <string name="uninstall_system">Värskenda/eemalda priviligeeritud laiendus</string>
     <string name="uninstall_system_summary">Priviligeeritud laienduse värskendamiseks/eemaldamiseks ava detailne vaade</string>
-    <string name="local_repo_name">Kohaliku hoidla nimi</string>
-    <string name="local_repo_name_summary">Kohaliku hoidla reklaamitud nimi: %s</string>
-    <string name="local_repo_https">Kasuta privaatset ühendust</string>
-    <string name="local_repo_https_on">Kasuta kohaliku hoidlaga krüpteeritud HTTPS:// ühendust</string>
 
     <string name="login_title">Autentimine on nõutav</string>
     <string name="login_name">Kasutajanimi</string>
@@ -106,7 +102,6 @@
     <string name="menu_add_repo">Uus hoidla</string>
 
     <string name="antitracklist">See rakendus jälgib ja raporteerib su aktiivsusest</string>
-    <string name="local_repo">Kohalik hoidla</string>
     <string name="deleting_repo">Kustutatakse praegust hoidlat…</string>
     <string name="adding_apks_format">%s lisatakse hoidlasse…</string>
     <string name="linking_apks">APK faile lingitakse hoidlasse…</string>
@@ -180,8 +175,6 @@
     <string name="ignoreTouch">Ignoreeri puuteekraani</string>
     <string name="ignoreTouch_on">Alati kaasa puuteekraani vajavad rakendused</string>
 
-    <string name="local_repo_running">F-Droid on valmis vahetama</string>
-    <string name="touch_to_configure_local_repo">Üksikasjade vaatamiseks puuduta ja luba teistel vahetada su rakendusi.</string>
     <string name="writing_index_jar">Kirjutatakse signeeritud indeksi faili (index.jar)…</string>
     <string name="icon">Ikoon</string>
     <string name="next">Järgmine</string>

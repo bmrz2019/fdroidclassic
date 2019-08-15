@@ -12,11 +12,7 @@
   <string name="update_history_summ">Liczba dni, aby uznać aplikację za nową lub niedawną: %s</string>
   <string name="system_installer">Uprzywilejowany dodatek</string>
   <string name="system_installer_on">Używaj dodatku uprzywilejowanego FDroida by instalować, aktualizować i usuwać paczki</string>
-  <string name="local_repo_name">Nazwa lokalnego repozytorium</string>
-  <string name="local_repo_name_summary">Wyświetlana nazwa repozytorium lokalnego: %s</string>
-  <string name="local_repo_https">Użyj zabezpieczonego połączenia</string>
-  <string name="local_repo_https_on">Korzystaj z zabezpieczonego połączenia HTTPS</string>
-  <string name="app_details">Szczegóły aplikacji</string>
+    <string name="app_details">Szczegóły aplikacji</string>
   <string name="no_such_app">Nie znaleziono takiej aplikacji.</string>
   <string name="about_title">O F-Droid</string>
   <string name="about_site">Strona internetowa</string>
@@ -72,10 +68,7 @@
   <string name="category_All">Wszystkie</string>
   <string name="category_Whats_New">Co nowego</string>
   <string name="category_Recently_Updated">Ostatnio zaktualizowane</string>
-  <string name="local_repo">Repozytorium lokalne</string>
-  <string name="local_repo_running">F-Droid gotowy do wymiany</string>
-  <string name="touch_to_configure_local_repo">Dotknij, aby sprawdzić szczegóły i umożliwić wymianę aplikacji.</string>
-  <string name="deleting_repo">Usuwanie aktualnego repozytorium…</string>
+    <string name="deleting_repo">Usuwanie aktualnego repozytorium…</string>
   <string name="adding_apks_format">Dodawanie %s do repozytorium…</string>
   <string name="writing_index_jar">Zapisywanie podpisanego pliku pakietów (index.jar)…</string>
   <string name="linking_apks">Linkowanie APK do repozytorium…</string>

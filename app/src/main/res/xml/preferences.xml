@@ -49,11 +49,6 @@
             android:defaultValue="false"
             android:key="ignoreTouchscreen" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/local_repo">
-        <EditTextPreference
-            android:key="localRepoName"
-            android:title="@string/local_repo_name" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="@string/proxy" >
         <CheckBoxPreference
             android:key="useTor"

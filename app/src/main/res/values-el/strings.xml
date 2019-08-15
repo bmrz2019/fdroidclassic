@@ -122,10 +122,6 @@
     <string name="system_installer_on">Χρησιμοποιήστε την επέκταση του F-Droid με δικαιώματα συστήματος για να εγκαταστήσετε, ενημερώσετε και καταργήσετε πακέτα</string>
     <string name="uninstall_system">Ενημέρωση/απεγκατάσταση της επέκτασης με δικαιώματα συστήματος</string>
     <string name="uninstall_system_summary">Άνοιγμα οθόνης λεπτομερειών της Επέκτασης με δικαιώματα συστήματος για την ενημέρωση/απεγκατάστασή της</string>
-    <string name="local_repo_name">Όνομα του Αποθετηρίου σας</string>
-    <string name="local_repo_name_summary">Ο διαφημιζόμενος τίτλος του τοπικού αποθετηρίου σας: %s</string>
-    <string name="local_repo_https">Χρήση ιδιωτικής σύνδεσης</string>
-    <string name="local_repo_https_on">Χρήση κρυπτογραφημένης σύνδεσης HTTPS:// για το τοπικό αποθετήριο</string>
 
     <string name="about_source">Πηγαίος κώδικας:</string>
     <string name="app_incompatible">Μη συμβατό</string>
@@ -150,9 +146,6 @@
     <string name="menu_flattr">Flattr</string>
 
 
-    <string name="local_repo">Τοπικό αποθετήριο</string>
-    <string name="local_repo_running">Το F-Droid είναι έτοιμο να ανταλλάξει</string>
-    <string name="touch_to_configure_local_repo">Πατήστε για να δείτε λεπτομέρειες και να επιτρέψετε σε άλλους να ανταλλάξουν τις εφαρμογές σας.</string>
     <string name="deleting_repo">Διαγραφή τρέχων αποθετηρίου…</string>
     <string name="adding_apks_format">Προσθήκη %s στο αποθετήριο…</string>
     <string name="writing_index_jar">Εγγραφή υπογεγραμμένου αρχείου ευρετηρίου (index.jar)…</string>

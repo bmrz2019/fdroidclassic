@@ -19,11 +19,7 @@
   <string name="update_history_summ">Nombre de jours durant lesquels les applis sont considérées nouvelles ou récentes : %s</string>
   <string name="system_installer">Permissions étendues</string>
   <string name="system_installer_on">Utiliser F-Droid Privileged Extension pour installer, mettre à jour et supprimer des paquets</string>
-  <string name="local_repo_name">Nom de votre dépôt local</string>
-  <string name="local_repo_name_summary">Le nom public de votre dépôt local : %s</string>
-  <string name="local_repo_https">Utiliser une connexion privée</string>
-  <string name="local_repo_https_on">Utiliser une connexion chiffrée HTTPS pour le dépôt local</string>
-  <string name="app_details">Détails de l\'appli</string>
+    <string name="app_details">Détails de l\'appli</string>
   <string name="no_such_app">Aucune appli trouvée.</string>
   <string name="about_title">À propos de F-Droid</string>
   <string name="about_site">Site web</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Toutes</string>
   <string name="category_Whats_New">Nouveautés</string>
   <string name="category_Recently_Updated">Mises à jour récentes</string>
-  <string name="local_repo">Dépôt local</string>
-  <string name="local_repo_running">F-Droid est prêt à l\'échange</string>
-  <string name="touch_to_configure_local_repo">Appuyez pour voir les détails et autoriser d\'autres à échanger vos applis.</string>
-  <string name="deleting_repo">Supprimer le dépôt actuel…</string>
+    <string name="deleting_repo">Supprimer le dépôt actuel…</string>
   <string name="adding_apks_format">Ajout de %s au dépôt…</string>
   <string name="writing_index_jar">Écriture d\'un fichier d\'index signé (index.jar)…</string>
   <string name="linking_apks">Création de liens pour les APKs dans le dépôt…</string>

@@ -100,10 +100,6 @@ Engedélyeznie kell, hogy megtekinthesse az általa kínált appokat.</string>
     <string name="unstable_updates_summary">Frissítések ajánlása instabil verziókra</string>
     <string name="system_installer">Kiváltságos Kiterjesztés</string>
     <string name="system_installer_on">Az F-Droid Kiváltságos Kiterjesztésének használata csomagok telepítéséhez, frissítéséhez és eltávolításához</string>
-    <string name="local_repo_name">Helyi repo neve</string>
-    <string name="local_repo_name_summary">A helyi repód közzétett címe: %s</string>
-    <string name="local_repo_https">Biztonságos kapcsolat használata</string>
-    <string name="local_repo_https_on">Titkosított HTTPS:// kapcsolat használata a helyi repóhoz</string>
 
     <string name="login_title">Hitelesítés szükséges</string>
     <string name="login_name">Felhasználónév</string>
@@ -136,7 +132,6 @@ Engedélyeznie kell, hogy megtekinthesse az általa kínált appokat.</string>
     <string name="menu_send_apk_bt">F-Droid megosztása Bluetooth-on</string>
     <string name="menu_settings">Beállítások</string>
     <string name="menu_changelog">Változásnapló</string>
-    <string name="local_repo">Helyi repo</string>
     <string name="deleting_repo">Jelenlegi repo törlése…</string>
     <string name="adding_apks_format">%s hozzáadása a repóhoz…</string>
     <string name="icon">Ikon</string>

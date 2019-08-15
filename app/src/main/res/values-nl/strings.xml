@@ -19,11 +19,7 @@
   <string name="update_history_summ">Dagen om apps als nieuw/recent weer te geven: %s</string>
   <string name="system_installer">Extensie voor systeemrechten</string>
   <string name="system_installer_on">Gebruik de extensie voor systeemrechten om pakketten te installeren, updaten en verwijderen</string>
-  <string name="local_repo_name">Naam van collectie gedeelde apps</string>
-  <string name="local_repo_name_summary">De geadverteerde titel van jouw collectie gedeelde apps: %s</string>
-  <string name="local_repo_https">Gebruik beveiligde verbinding</string>
-  <string name="local_repo_https_on">Gebruik versleutelde HTTPS:// verbinding voor gedeelde apps</string>
-  <string name="app_details">App-details</string>
+    <string name="app_details">App-details</string>
   <string name="no_such_app">Geen dergelijke app gevonden.</string>
   <string name="about_title">Over F-Droid</string>
   <string name="about_site">Website</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Alles</string>
   <string name="category_Whats_New">Wat is nieuw</string>
   <string name="category_Recently_Updated">Recentelijk vernieuwd</string>
-  <string name="local_repo">Collectie gedeelde apps</string>
-  <string name="local_repo_running">F-Droid is klaar om apps te delen</string>
-  <string name="touch_to_configure_local_repo">Raak aan om details te bekijken en anderen gedeelde apps van jou te laten downloaden.</string>
-  <string name="deleting_repo">Bron verwijderen…</string>
+    <string name="deleting_repo">Bron verwijderen…</string>
   <string name="adding_apks_format">%s aan gedeelde app-collectie toevoegen…</string>
   <string name="writing_index_jar">Ondertekend indexbestand (index.jar) aan het schrijven…</string>
   <string name="linking_apks">APK\'s aan collectie toevoegen…</string>

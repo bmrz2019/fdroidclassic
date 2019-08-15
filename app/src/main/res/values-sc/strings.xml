@@ -19,11 +19,7 @@
   <string name="update_history_summ">Nùmeru de dies pro che cunsiderare sas aplicatzione noas o reghentes: %s</string>
   <string name="system_installer">Estensione cun permissos de sistema</string>
   <string name="system_installer_on">Imprea sos permissos de sistema pro installare, agiornare, e remòvere pachetos</string>
-  <string name="local_repo_name">Nùmene de su Depòsitu Locale tuo</string>
-  <string name="local_repo_name_summary">Su nùmene pùblicu de su depòsitu locale tuo: %s</string>
-  <string name="local_repo_https">Imprea una connessione privada</string>
-  <string name="local_repo_https_on">Imprea sa connessione criptada HTTPS:// pro sos depòsitu locale</string>
-  <string name="app_details">Minujas aplicatzione</string>
+    <string name="app_details">Minujas aplicatzione</string>
   <string name="no_such_app">Peruna aplicatzione currispondente.</string>
   <string name="about_title">Informatziones</string>
   <string name="about_site">Giassu/situ web</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Totu</string>
   <string name="category_Whats_New">Novidades</string>
   <string name="category_Recently_Updated">Agiornadas dae pagu</string>
-  <string name="local_repo">Depòsitu locale</string>
-  <string name="local_repo_running">F-Droid est prontu pro imbiare cun swap</string>
-  <string name="touch_to_configure_local_repo">Toca pro bìere sas minujas e permìtere a àteros de retzire sas aplicatziones tuas.</string>
-  <string name="deleting_repo">Burrende su depòsitu atuale…</string>
+    <string name="deleting_repo">Burrende su depòsitu atuale…</string>
   <string name="adding_apks_format">Annanghende %s a su depòsitu…</string>
   <string name="writing_index_jar">Iscriende su documentu de ìnditze firmadu (index.jar)…</string>
   <string name="linking_apks">Culleghende sos APK in su depòsitu…</string>

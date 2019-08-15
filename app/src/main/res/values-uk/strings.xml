@@ -110,9 +110,6 @@
 
     <string name="tap_to_install">Завантажено, натисніть аби встановити</string>
     <string name="uninstall_confirm">Бажаєте видалити цей додаток?</string>
-    <string name="local_repo_name">Назва вашого локального репозиторію</string>
-    <string name="local_repo_https">Використовувати приватне з\'єднання</string>
-    <string name="local_repo_https_on">Використовувати шифроване HTTP:// з\'єднання для локального репозиторію</string>
 
     <string name="overwrite">Перезаписати</string>
 
@@ -126,7 +123,6 @@
     <string name="rooted_on">Не підсвічувати сірим додатки, які потребують прав суперкористувача</string>
     <string name="ignoreTouch_on">Завжди включати додатки, які потребують сенсорного екрану</string>
 
-    <string name="local_repo">Локальний репозиторій</string>
     <string name="deleting_repo">Видалення поточного репозиторію…</string>
     <string name="adding_apks_format">Додавання «%s» до репозиторію…</string>
     <string name="next">Далі</string>
@@ -212,7 +208,6 @@
     <string name="install_confirm">потребує доступ до</string>
     <string name="perm_costs_money">Це може вам коштувати грошей</string>
     <string name="unstable_updates_summary">Пропонувати оновлення до нестабільних версій</string>
-    <string name="local_repo_name_summary">Ваш локальний репозиторії пропонується під назвою: %s</string>
     <string name="app_incompatible">Несумісний</string>
     <string name="bluetooth_activity_not_found">Жодного методу надсилання по Bluetooth не знайдено, оберіть один з них!</string>
     <string name="choose_bt_send">Оберіть метод надсилання через Bluetooth</string>
@@ -230,7 +225,6 @@
 
     <string name="show_incompat_versions">Не сумісні версії</string>
     <string name="show_incompat_versions_on">Показувати версії додатків, які не сумісні з пристроєм</string>
-    <string name="local_repo_running">F-Droid готовий до обміну</string>
     <string name="writing_index_jar">Запис підписаного файлу індексу (index.jar)…</string>
     <string name="linking_apks">Включення APK-файлів до репозиторію…</string>
     <string name="all_other_repos_fine">Всі інші репозиторії не містять помилок.</string>
@@ -326,7 +320,6 @@
     <string name="permissions">Привілеї</string>
     <string name="theme_night">Нічна</string>
 <string name="category_Connectivity">Зв\'язаність</string>
-    <string name="touch_to_configure_local_repo">Торкніться для перегляду подробиць та дозволити іншим обмінюватись вашими додатками.</string>
     <string name="login_title">Необхідна авторизація</string>
     <string name="login_name">Ім\'я користувача</string>
     <string name="login_password">Пароль</string>

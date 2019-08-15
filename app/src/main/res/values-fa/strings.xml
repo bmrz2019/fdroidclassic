@@ -84,10 +84,6 @@
     <string name="system_installer_on">استفاده از افزونهٔ ممتاز اف‌دروید برای نصب، به‌روز رسانی و حذف بسته‌ها</string>
     <string name="uninstall_system">به‌روز رسانی/حذف افزونهٔ ممتاز</string>
     <string name="uninstall_system_summary">گشودن صفحهٔ جزییات افزونهٔ ممتاز برای به‌روز رسانی/حذف آن</string>
-    <string name="local_repo_name">نام مخزن محلّی شما</string>
-    <string name="local_repo_name_summary">عنوان تبلغی مخزن محلّی شما: %s</string>
-    <string name="local_repo_https">استفاده از اتّصال خصوصی</string>
-    <string name="local_repo_https_on">استفاده از اتّصال رمز شدهٔ http برای مخزن محلّی</string>
 
     <string name="login_title">نیاز به تأیید هویت</string>
     <string name="login_name">نام کاربری</string>
@@ -145,9 +141,6 @@
     <string name="rooted_on">خاکستری نکردن کاره‌های نیازمند دسترسی ریشه</string>
     <string name="ignoreTouch_on">همواره شامل کاره‌هایی که نیازمند صفحه‌لمسی هستند</string>
 
-    <string name="local_repo">مخزن محلّی</string>
-    <string name="local_repo_running">اف‌دروید آمادهٔ تبادل است</string>
-    <string name="touch_to_configure_local_repo">برای دیدن جزییات و اجازه به دیگرات برای تبادل کاره‌هایتان، لمس کنید.</string>
     <string name="deleting_repo">در حال حذف مخزن جاری…</string>
     <string name="adding_apks_format">در حال افزودن %s به مخزن…</string>
     <string name="writing_index_jar">در حال نوشتن پروندهٔ شاخص امضا شده (index.jar)…</string>

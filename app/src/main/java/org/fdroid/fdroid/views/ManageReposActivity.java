@@ -39,12 +39,12 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -87,8 +87,6 @@ public class ManageReposActivity extends AppCompatActivity
         IS_SWAP
     }
 
-    private Toolbar toolbar;
-
     /**
      * True if activity started with an intent such as from QR code. False if
      * opened from, e.g. the main menu.
@@ -102,10 +100,6 @@ public class ManageReposActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.repo_list_activity);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final ListView repoList = (ListView) findViewById(R.id.list);
         repoAdapter = RepoAdapter.create(this, null, CursorAdapterCompat.FLAG_AUTO_REQUERY);
@@ -146,7 +140,8 @@ public class ManageReposActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        toolbar.inflateMenu(R.menu.manage_repos);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.manage_repos, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

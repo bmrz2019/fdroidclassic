@@ -39,7 +39,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat
         Preferences.PREF_INCOMP_VER,
         Preferences.PREF_THEME,
         Preferences.PREF_IGN_TOUCH,
-        Preferences.PREF_LOCAL_REPO_NAME,
         Preferences.PREF_LANGUAGE,
         Preferences.PREF_KEEP_CACHE_TIME,
         Preferences.PREF_EXPERT,
@@ -134,14 +133,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat
 
             case Preferences.PREF_IGN_TOUCH:
                 checkSummary(key, R.string.ignoreTouch_on);
-                break;
-
-            case Preferences.PREF_LOCAL_REPO_NAME:
-                textSummary(key, R.string.local_repo_name_summary);
-                break;
-
-            case Preferences.PREF_LOCAL_REPO_HTTPS:
-                checkSummary(key, R.string.local_repo_https_on);
                 break;
 
             case Preferences.PREF_LANGUAGE:

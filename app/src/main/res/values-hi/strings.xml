@@ -16,10 +16,6 @@
     <string name="notify_on">सूचित कर्रे जब नवीनतम उपलब्ध हो</string>
     <string name="update_history">अद्यतन इतिहास</string>
     <string name="update_history_summ">दिन जब तक एप्लिकेशन को नया या हाल का माने : %s</string>
-    <string name="local_repo_name">स्थानीय कोष का नाम</string>
-    <string name="local_repo_name_summary">विज्ञापित शीर्षक स्थानीय कोष का : %s</string>
-    <string name="local_repo_https">गुप्त संपर्क इस्तेमाल करे</string>
-    <string name="local_repo_https_on">HTTPS:// इस्तेमाल करे स्थानीय कोष से संपर्क के लिए</string>
 
     <string name="login_title">प्रमाणीकरण अपेक्षित</string>
     <string name="login_name">उपयोगकर्ता नाम</string>

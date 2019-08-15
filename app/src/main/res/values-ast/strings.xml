@@ -19,11 +19,7 @@
   <string name="update_history_summ">Díes pa considerar a les aplicaciones nueves o recientes: %s</string>
   <string name="system_installer">Estensión con privilexos</string>
   <string name="system_installer_on">Usa la estensión F-droid con privilexos pa instalar, anovar y desaniciar paquetes</string>
-  <string name="local_repo_name">Nome del to repositoriu llocal</string>
-  <string name="local_repo_name_summary">El títulu alvertíu del to repositoriu llocal: %s</string>
-  <string name="local_repo_https">Usar conexón privada</string>
-  <string name="local_repo_https_on">Usar conexón HTTPS:// cifrada pal to repositoriu llocal</string>
-  <string name="app_details">Detalles d\'aplicación</string>
+    <string name="app_details">Detalles d\'aplicación</string>
   <string name="no_such_app">Nun s\'alcontraron aplicaciones.</string>
   <string name="about_title">Tocante a F-Droid</string>
   <string name="about_site">Sitiu web</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Too</string>
   <string name="category_Whats_New">Qué hai nuevo</string>
   <string name="category_Recently_Updated">Anovao apocayá</string>
-  <string name="local_repo">Repositoriu llocal</string>
-  <string name="local_repo_running">F-Doid ta tresnáu pa intercambiar</string>
-  <string name="touch_to_configure_local_repo">Toca pa ver los detalles y permitir a otros intercambiar les tos aplicaciones.</string>
-  <string name="deleting_repo">Desaniciando\'l repositoriu actual…</string>
+    <string name="deleting_repo">Desaniciando\'l repositoriu actual…</string>
   <string name="adding_apks_format">Amestando %s al repositoriu…</string>
   <string name="writing_index_jar">Escribiendo\'l ficheru d\'índiz robláu (index.jar)…</string>
   <string name="linking_apks">Enllazando APKs nel repositoriu…</string>

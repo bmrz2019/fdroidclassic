@@ -89,8 +89,7 @@
   <string name="category_All">全部</string>
   <string name="category_Whats_New">新应用</string>
   <string name="category_Recently_Updated">最近更新</string>
-  <string name="local_repo">本地软件源</string>
-  <string name="deleting_repo">正在删除当前软件源…</string>
+    <string name="deleting_repo">正在删除当前软件源…</string>
   <string name="icon">图标</string>
   <string name="proxy">代理</string>
   <string name="enable_proxy_title">启用http代理</string>
@@ -144,10 +143,6 @@
     <string name="system_installer_on">使用F-Droid特权扩展来安装，更新以及卸载应用</string>
     <string name="uninstall_system">更新/卸载特权扩展</string>
     <string name="uninstall_system_summary">打开特权扩展的详情来更新/卸载它</string>
-    <string name="local_repo_name">本地软件源的名字</string>
-    <string name="local_repo_name_summary">本地软件源对外广播的标题: %s</string>
-    <string name="local_repo_https">使用加密链接</string>
-    <string name="local_repo_https_on">本地软件源使用加密的https://链接</string>
 
     <string name="login_title">需要验证</string>
     <string name="login_name">用户名</string>
@@ -180,8 +175,6 @@
     <string name="menu_flattr">Flattr</string>
 
 
-    <string name="local_repo_running">F-Droid已准备好交换应用</string>
-    <string name="touch_to_configure_local_repo">触摸可查看详细信息以及允许其他人与你交换应用程序。</string>
     <string name="adding_apks_format">正在添加 %s 到软件源…</string>
     <string name="writing_index_jar">正在写入已签名的索引文件（index.jar）…</string>
     <string name="linking_apks">正在链接APK到软件源……</string>

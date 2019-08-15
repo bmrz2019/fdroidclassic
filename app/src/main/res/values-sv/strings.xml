@@ -19,11 +19,7 @@
   <string name="update_history_summ">Antalet dagar som appar ska betraktas som nya eller färska: %s</string>
   <string name="system_installer">Privilgierat tilläggsprogram</string>
   <string name="system_installer_on">Använd F-Droid\'s priviligerade tilläggsprogram för att installera, uppdatera och ta bort paket</string>
-  <string name="local_repo_name">Namn på ditt lokala förråd</string>
-  <string name="local_repo_name_summary">Annonserade titeln på ditt lokala förråd: %s</string>
-  <string name="local_repo_https">Använd privat anslutning</string>
-  <string name="local_repo_https_on">Använd krypterad HTTPs://-anslutning för lokalt förråd</string>
-  <string name="app_details">Detaljer för app</string>
+    <string name="app_details">Detaljer för app</string>
   <string name="no_such_app">Hittade ingen sådan app.</string>
   <string name="about_title">Om F-Droid</string>
   <string name="about_site">Hemsida</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Alla</string>
   <string name="category_Whats_New">Nyheter</string>
   <string name="category_Recently_Updated">Nyss uppdaterade</string>
-  <string name="local_repo">Lokalt filförråd</string>
-  <string name="local_repo_running">F-Droid är redo att byta ut</string>
-  <string name="touch_to_configure_local_repo">Rör för att se detaljer och tillåta andra att byta appar med dig.</string>
-  <string name="deleting_repo">Tar bort aktuellt förråd…</string>
+    <string name="deleting_repo">Tar bort aktuellt förråd…</string>
   <string name="adding_apks_format">Lägger till %s till förråd…</string>
   <string name="writing_index_jar">Skriver signerad indexfil (index.jar)…</string>
   <string name="linking_apks">Länkar APK:er till förrådet…</string>

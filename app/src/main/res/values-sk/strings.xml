@@ -19,11 +19,7 @@
   <string name="update_history_summ">Počet dní, kedy sú aplikácie brané ako nové alebo nedávne: %s</string>
   <string name="system_installer">Ukladať balíky do vyr. pamäte</string>
   <string name="system_installer_on">Používať Oprávnené Rozšírenie F-Droidu na inštaláciu, aktualizácie a odstránenie balíkov</string>
-  <string name="local_repo_name">Meno miestneho repozitára</string>
-  <string name="local_repo_name_summary">Zverejnený názov miestneho repozitára: %s</string>
-  <string name="local_repo_https">Použiť bezpečné pripojenie</string>
-  <string name="local_repo_https_on">Použiť zašifrované HTTPS:// pripojenie pre miestny repozitár</string>
-  <string name="app_details">Detaily aplikácie</string>
+    <string name="app_details">Detaily aplikácie</string>
   <string name="no_such_app">Aplikácia sa nenašla.</string>
   <string name="about_title">O F-Droide</string>
   <string name="about_site">Webstránka</string>
@@ -94,10 +90,7 @@
   <string name="category_All">Všetky</string>
   <string name="category_Whats_New">Čo je nové</string>
   <string name="category_Recently_Updated">Nedávno aktualizované</string>
-  <string name="local_repo">Miestne repo</string>
-  <string name="local_repo_running">F-Droid je pripravený na výmenu</string>
-  <string name="touch_to_configure_local_repo">Ťuknite pre zobrazenie detailov a umožnite ostatným vymieňať vaše aplikácie.</string>
-  <string name="deleting_repo">Mažem súčasný repozitár…</string>
+    <string name="deleting_repo">Mažem súčasný repozitár…</string>
   <string name="adding_apks_format">Pridávam %s do repozitára…</string>
   <string name="writing_index_jar">Zapisujem podpísaný súbor indexu (index.jar)…</string>
   <string name="linking_apks">Linkujem APK do repozitára…</string>

@@ -20,7 +20,7 @@ repositories {
 dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'com.android.support:support-annotations:28.0.0'
     implementation 'com.android.support:preference-v7:27.1.1'
 
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
@@ -36,11 +36,11 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
-    testImplementation "org.robolectric:robolectric:3.8"
+    testImplementation "org.robolectric:robolectric:4.3"
 
-    testImplementation "org.mockito:mockito-core:2.21.0"
+    testImplementation "org.mockito:mockito-core:2.28.2"
 
-    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
 
@@ -70,11 +70,12 @@ android {
         compileOptions.encoding = "UTF-8"
 
         // Use Java 1.7, requires minSdk 8
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
+        minSdkVersion 21
         versionCode 1000
         applicationId "org.fdroid.classic"
         resValue "string", "applicationId", applicationId
@@ -130,72 +131,5 @@ android {
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/INDEX.LIST'
         exclude '.readme'
-    }
-}
-
-checkstyle {
-    toolVersion = '7.2'
-}
-
-task checkstyle(type: Checkstyle) {
-    configFile file("${project.rootDir}/config/checkstyle/checkstyle.xml")
-    source 'src/main/java', 'src/test/java', 'src/androidTest/java'
-    include '**/*.java'
-
-    classpath = files()
-}
-
-pmd {
-    toolVersion = '5.5.1'
-    consoleOutput = true
-}
-
-task pmdMain(type: Pmd) {
-    dependsOn 'assembleDebug'
-    ruleSetFiles = files("${project.rootDir}/config/pmd/rules.xml", "${project.rootDir}/config/pmd/rules-main.xml")
-    ruleSets = [] // otherwise defaults clash with the list in rules.xml
-    source 'src/main/java'
-    include '**/*.java'
-}
-
-task pmdTest(type: Pmd) {
-    dependsOn 'assembleDebug'
-    ruleSetFiles = files("${project.rootDir}/config/pmd/rules.xml", "${project.rootDir}/config/pmd/rules-test.xml")
-    ruleSets = [] // otherwise defaults clash with the list in rules.xml
-    source 'src/test/java', 'src/androidTest/java'
-    include '**/*.java'
-}
-
-task pmd(dependsOn: [pmdMain, pmdTest]) {}
-
-// This person took the example code below from another blogpost online, however
-// I lost the reference to it:
-// http://stackoverflow.com/questions/23297562/gradle-javadoc-and-android-documentation
-android.applicationVariants.all { variant ->
-
-    task("generate${variant.name}Javadoc", type: Javadoc) {
-        title = "$name $version API"
-        description "Generates Javadoc for F-Droid."
-        source = variant.javaCompile.source
-
-        def sdkDir
-        Properties properties = new Properties()
-        File localProps = project.rootProject.file('local.properties')
-        if (localProps.exists()) {
-            properties.load(localProps.newDataInputStream())
-            sdkDir = properties.getProperty('sdk.dir')
-        } else {
-            sdkDir = System.getenv('ANDROID_HOME')
-        }
-        if (!sdkDir) {
-            throw new ProjectConfigurationException("Cannot find android sdk. Make sure sdk.dir is defined in local.properties or the environment variable ANDROID_HOME is set.", null)
-        }
-
-        ext.androidJar = "${sdkDir}/platforms/${android.compileSdkVersion}/android.jar"
-        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
-        options.links("http://docs.oracle.com/javase/7/docs/api/");
-        options.links("http://d.android.com/reference/");
-        exclude '**/BuildConfig.java'
-        exclude '**/R.java'
     }
 }

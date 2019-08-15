@@ -19,10 +19,7 @@
   <string name="update_history_summ">Колико дана се програми сматрају новим или недавним: %s</string>
   <string name="system_installer">Повлашћено проширење</string>
   <string name="system_installer_on">Користи повлашћено проширење за уградњу, надоградњу и уклањање пакета</string>
-  <string name="local_repo_name">Назив месне ризнице</string>
-  <string name="local_repo_https">Користи сопствену везу</string>
-  <string name="local_repo_https_on">"Користи шифровану  везу ХТТПС://  за ову ризницу"</string>
-  <string name="app_details">Појединости апликације</string>
+    <string name="app_details">Појединости апликације</string>
   <string name="no_such_app">Нема таквог програма.</string>
   <string name="about_title">О Ф-дроиду</string>
   <string name="about_site">Мрежна страница</string>
@@ -96,10 +93,7 @@
   <string name="category_All">Све</string>
   <string name="category_Whats_New">Нове</string>
   <string name="category_Recently_Updated">Недавно надограђене</string>
-  <string name="local_repo">Локална ризница</string>
-  <string name="local_repo_running">Ф-дроид је спреман за размену</string>
-  <string name="touch_to_configure_local_repo">Додирните за приказ детаља и да дозволите другима да размењују ваше апликације.</string>
-  <string name="deleting_repo">Бришем тренутну ризницу…</string>
+    <string name="deleting_repo">Бришем тренутну ризницу…</string>
   <string name="adding_apks_format">Додајем %s у ризницу…</string>
   <string name="writing_index_jar">Уписујем потписани фајл садржаја (index.jar)…</string>
   <string name="linking_apks">Повезујем АПК фајлове са ризницом…</string>
@@ -244,7 +238,6 @@
     <string name="theme_light">Светла</string>
     <string name="theme_dark">Тамна</string>
 <string name="swap_scan_qr">Очитај бар-кôд</string>
-    <string name="local_repo_name_summary">Објављени назив месне ризнице: %s</string>
     <string name="install_error_unknown">Инсталација није успела услед непознате грешке</string>
     <string name="uninstall_error_unknown">Уклањање није успело услед непознате грешке</string>
     <string name="system_install_question">Желите ли да инсталирате повлашћено проширење Ф-дроида?</string>

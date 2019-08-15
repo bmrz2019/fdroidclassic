@@ -22,7 +22,6 @@
     <string name="notify_on">اگر تازہ کاری دستیاب ہیں تو اطلاع دیں</string>
     <string name="update_history">تازہ کاری کرنے کی ہسٹری</string>
     <string name="system_installer">پریولجڈ ایکس ٹینشن</string>
-    <string name="local_repo_name">اپنے مقامی ریپو کا نام</string>
     <string name="login_name">اسم صارف</string>
     <string name="login_password">پاس ورڈ</string>
     <string name="repo_edit_credentials">پاس ورڈ تبدیل کریں</string>

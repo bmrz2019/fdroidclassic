@@ -19,11 +19,7 @@
   <string name="update_history_summ">Días para considerar las aplicaciones nuevas o recientes: %s</string>
   <string name="system_installer">Extensión con permisos de sistema</string>
   <string name="system_installer_on">Utilizar la extensión de F-Droid con permisos de sistema al instalar, actualizar, y eliminar paquetes</string>
-  <string name="local_repo_name">Nombre de tu repo local</string>
-  <string name="local_repo_name_summary">El título que se publicita para el repo local: %s</string>
-  <string name="local_repo_https">Usar conexión privada</string>
-  <string name="local_repo_https_on">Utilizar conexión HTTPS:// cifrada para el repositorio local</string>
-  <string name="app_details">Detalles de la aplicación</string>
+    <string name="app_details">Detalles de la aplicación</string>
   <string name="no_such_app">No se encontró la aplicación.</string>
   <string name="about_title">Acerca de F-Droid</string>
   <string name="about_site">Sitio web</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Todas</string>
   <string name="category_Whats_New">Novedades</string>
   <string name="category_Recently_Updated">Recientemente actualizados</string>
-  <string name="local_repo">Repo local</string>
-  <string name="local_repo_running">F-Droid está preparado para intercambiar</string>
-  <string name="touch_to_configure_local_repo">Tocar para ver los detalles y permitir a otros intercambiar aplicaciones.</string>
-  <string name="deleting_repo">Borrando repositorio actual…</string>
+    <string name="deleting_repo">Borrando repositorio actual…</string>
   <string name="adding_apks_format">Agregando %s al repositorio…</string>
   <string name="writing_index_jar">Escribiendo archivo firmado de índice (index.jar)…</string>
   <string name="linking_apks">Enlazando APKs en el repositorio…</string>

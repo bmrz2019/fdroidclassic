@@ -19,11 +19,7 @@
   <string name="update_history_summ">Dager nytt innhold skal anses som ferskt: %s</string>
   <string name="system_installer">Priviligert tillegg</string>
   <string name="system_installer_on">Bruk priviligert tillegg til å installere, oppdatere, og fjerne programmer</string>
-  <string name="local_repo_name">Navn på lokal pakkebrønn</string>
-  <string name="local_repo_name_summary">Offentliggjort tittel for din lokale pakkebrønn: %s</string>
-  <string name="local_repo_https">Bruk privat tilkobling</string>
-  <string name="local_repo_https_on">Bruk sikret HTTP://-tilkobling for lokal pakkebrønn</string>
-  <string name="app_details">Programdetaljer</string>
+    <string name="app_details">Programdetaljer</string>
   <string name="no_such_app">Program ikke funnet.</string>
   <string name="about_title">Om F-Droid</string>
   <string name="about_site">Nettside</string>
@@ -97,10 +93,7 @@
   <string name="category_All">Alt</string>
   <string name="category_Whats_New">Det som er nytt</string>
   <string name="category_Recently_Updated">Nylig oppdatert</string>
-  <string name="local_repo">Lokal pakkebrønn</string>
-  <string name="local_repo_running">Sirkulering av programmer kan begynne</string>
-  <string name="touch_to_configure_local_repo">Trykk for å se detaljer og for å tillate andre å sirkulere de programmene du har.</string>
-  <string name="deleting_repo">Sletter gjeldende pakkebrønn…</string>
+    <string name="deleting_repo">Sletter gjeldende pakkebrønn…</string>
   <string name="adding_apks_format">Legger til %s til pakkebrønn…</string>
   <string name="writing_index_jar">Skriver signert indekseringsfil (index.jar)…</string>
   <string name="linking_apks">Lenker APK-er inn i pakkebrønn…</string>

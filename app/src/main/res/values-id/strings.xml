@@ -23,10 +23,6 @@
     <string name="system_installer_on">Gunakan F-Droid Privileged Extension untuk memasang, memperbarui, dan mencopot paket</string>
     <string name="uninstall_system">Perbarui/Copot Privileged Extension</string>
     <string name="uninstall_system_summary">Buka layar detail Privileged Extension untuk memperbarui/mencopotnya</string>
-    <string name="local_repo_name">Nama Repo Lokal Anda</string>
-    <string name="local_repo_name_summary">Judul repo lokal Anda yang disiarkan: %s</string>
-    <string name="local_repo_https">Gunakan Sambungan Privat</string>
-    <string name="local_repo_https_on">Gunakan sambungan HTTPS:// terenkripsi untuk repo lokal</string>
 
     <string name="app_details">Detail Apl</string>
     <string name="no_such_app">Aplikasi tersebut tidak ditemukan.</string>
@@ -127,7 +123,6 @@
     <string name="ignoreTouch">Abaikan layar sentuh</string>
     <string name="ignoreTouch_on">Selalu sertakan aplikasi yang membutuhkan layar sentuh</string>
 
-    <string name="local_repo">Repo Lokal</string>
     <string name="deleting_repo">Menghapus repo saat ini…</string>
     <string name="adding_apks_format">Menambahkan %s ke repo…</string>
     <string name="writing_index_jar">Menulis berkas indeks yang ditanda tangani (index.jar)…</string>
@@ -195,14 +190,12 @@ apl yang sebelumnya dipasang dari repositori ini akan tetap ada di perangkat And
 
     <string name="tab_installed_apps_count">Terpasang (%d)</string>
     <string name="tab_updates_count">Pembaruan (%d)</string>
-    <string name="local_repo_running">F--Droid siap untuk ditukar</string>
     <string name="system_installer">Ekstensi Istimewa</string>
     <string name="repo_provider">Repositori: %s</string>
 
     <string name="menu_email">Surel Penulis</string>
     <string name="antinonfreeassetslist">Apl ini mengandung aset tak-bebas</string>
 
-    <string name="touch_to_configure_local_repo">Ketuk untuk melihat rincian dan izinkan yang lainnya untuk bertukar app anda.</string>
     <string name="useTor">Gunakan Tor</string>
     <string name="useTorSummary">Paksa jalur unduhan lewat Tor untuk meningkatkan privasi</string>
     <string name="status_inserting_apps">Menyimpan rincian aplikasi</string>

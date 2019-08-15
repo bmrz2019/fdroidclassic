@@ -19,11 +19,7 @@
   <string name="update_history_summ">최신 앱이라고 간주할 날짜: %s</string>
   <string name="system_installer">권한 확장</string>
   <string name="system_installer_on">패키지의 설치, 업데이트, 제거를 위해 특별 권한 확장 사용</string>
-  <string name="local_repo_name">로컬 저장소의 이름</string>
-  <string name="local_repo_name_summary">로컬 저장소의 광고 제목: %s</string>
-  <string name="local_repo_https">비공개 연결 사용</string>
-  <string name="local_repo_https_on">로컬 저장소에 암호화된 HTTPS:// 연결을 사용</string>
-  <string name="app_details">앱 상세정보</string>
+    <string name="app_details">앱 상세정보</string>
   <string name="no_such_app">앱이 발견되지 않음.</string>
   <string name="about_title">F-Droid 대하여</string>
   <string name="about_site">웹사이트</string>
@@ -97,10 +93,7 @@
   <string name="category_All">전체</string>
   <string name="category_Whats_New">새로운 기능</string>
   <string name="category_Recently_Updated">최근 업데이트</string>
-  <string name="local_repo">로컬 저장소</string>
-  <string name="local_repo_running">F-Droid는 교환할 준비가 되었습니다</string>
-  <string name="touch_to_configure_local_repo">자세한 정보를 보고, 타인이 당신과 앱을 교환할 수 있도록 하려면 여기를 누르세요.</string>
-  <string name="deleting_repo">현재의 저장소 삭제중…</string>
+    <string name="deleting_repo">현재의 저장소 삭제중…</string>
   <string name="adding_apks_format">%s 을(를) 저장소에 추가하는 중…</string>
   <string name="writing_index_jar">서명된 색인 파일(index.jar) 작성 중…</string>
   <string name="linking_apks">APK 파일을 저장소에 연결하는 중…</string>

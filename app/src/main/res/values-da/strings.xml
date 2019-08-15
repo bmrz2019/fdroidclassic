@@ -25,10 +25,6 @@
     <string name="system_installer_on">Brug F-Droid Privilegeret Udvidelse til at installere, opdatere og fjerne pakker</string>
     <string name="uninstall_system">Opdater/Afinstaller Privilegeret Udvidelse</string>
     <string name="uninstall_system_summary">Åbn skærmen med detaljer om Privilegeret Udvidelse for at opdatere/afinstallere den</string>
-    <string name="local_repo_name">Dit Lokale Depots navn</string>
-    <string name="local_repo_name_summary">Dit lokale depots annoncerede titel: %s</string>
-    <string name="local_repo_https">Brug Privat Forbindelse</string>
-    <string name="local_repo_https_on">Brug krypteret HTTPS:// forbindelse til lokalt depot</string>
 
     <string name="login_title">Autentificering påkrævet</string>
     <string name="login_name">Brugernavn</string>
@@ -141,10 +137,7 @@
     <string name="ignoreTouch">Ignorer touchskærm</string>
     <string name="ignoreTouch_on">Inkluder altid programmer som kræver touchskærm</string>
 
-    <string name="local_repo">Lokalt Depot</string>
     <string name="rooted_on">Ekskluder ikke programmer som kræver root privilegier</string>
-    <string name="local_repo_running">F-Droid er klar til at udveksle</string>
-    <string name="touch_to_configure_local_repo">Rør for at se detaljer og tillade andre at udveksle dine programmer.</string>
     <string name="deleting_repo">Sletter aktuelle depot…</string>
     <string name="adding_apks_format">Tilføjer %s til depot…</string>
     <string name="writing_index_jar">Skriver signeret indeksfil (inden.jar)…</string>

@@ -1,31 +1,23 @@
 package org.fdroid.fdroid.views;
 
-import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
-import android.nfc.NdefMessage;
-import android.nfc.NfcAdapter;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.QrGenAsyncTask;
@@ -128,29 +120,12 @@ public class RepoDetailsActivity extends AppCompatActivity {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,
                 new IntentFilter(UpdateService.LOCAL_ACTION_STATUS));
-
-        processIntent(getIntent());
     }
 
     @Override
     public void onNewIntent(Intent i) {
         // onResume gets called after this to handle the intent
         setIntent(i);
-    }
-
-    private void processIntent(Intent i) {
-        if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(i.getAction())) {
-            Parcelable[] rawMsgs =
-                    i.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
-            NdefMessage msg = (NdefMessage) rawMsgs[0];
-            String url = new String(msg.getRecords()[0].getPayload());
-            Utils.debugLog(TAG, "Got this URL: " + url);
-            Toast.makeText(this, "Got this URL: " + url, Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            intent.setClass(this, ManageReposActivity.class);
-            startActivity(intent);
-            finish();
-        }
     }
 
     private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -187,34 +162,6 @@ public class RepoDetailsActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        if (Build.VERSION.SDK_INT >= 14) {
-            prepareNfcMenuItems(menu);
-        }
-        return true;
-    }
-
-    @TargetApi(16)
-    private void prepareNfcMenuItems(Menu menu) {
-        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        MenuItem menuItem = menu.findItem(R.id.menu_enable_nfc);
-
-        if (nfcAdapter == null) {
-            menuItem.setVisible(false);
-            return;
-        }
-
-        boolean needsEnableNfcMenuItem;
-        if (Build.VERSION.SDK_INT < 16) {
-            needsEnableNfcMenuItem = !nfcAdapter.isEnabled();
-        } else {
-            needsEnableNfcMenuItem = !nfcAdapter.isNdefPushEnabled();
-        }
-
-        menuItem.setVisible(needsEnableNfcMenuItem);
     }
 
     private void setupDescription(View parent, Repo repo) {

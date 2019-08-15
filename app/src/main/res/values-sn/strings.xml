@@ -23,10 +23,6 @@
     <string name="system_installer_on">Shandisa tambanudzo inechihesvuro yeF-Droid kuti uvakirire, unatse nekubvisa mapakeji</string>
     <string name="uninstall_system">Natsa/Bvisa chivakirirwa patambanudzo ane chihesvuro</string>
     <string name="uninstall_system_summary">Vhura chivhitivhiti chinezvizere chetambanudzo chine chihesvuro kuti uinatse/uibvise chivakirirwa</string>
-    <string name="local_repo_name">Zita repfimbi rakamanikwa</string>
-    <string name="local_repo_name_summary">Musoro wepfimbi yakamanikwa wakashambadzwa: %s</string>
-    <string name="local_repo_https">Shandisa chihako chepuraivheti</string>
-    <string name="local_repo_https_on">Shandisa chihako cheHTTPS:// chakakwedekerwa kuitira pfimbi yakamanikwa</string>
 
     <string name="login_title">Kukwedekwerwa kunodiwa</string>
     <string name="login_name">Zita remushandisi</string>
@@ -146,9 +142,6 @@
     <string name="ignoreTouch">Furatira chivhitivhiti chekubata</string>
     <string name="ignoreTouch_on">Gara wakasanganidza maApps anoda chivhitivhiti chekubata</string>
 
-    <string name="local_repo">Pfimbi yakamanikwa</string>
-    <string name="local_repo_running">F-Droid yakagadzirira kutsinhana</string>
-    <string name="touch_to_configure_local_repo">Bata kuti uwone zvizere nekubvumidza vamwe kuti vatsinhana maApps ako.</string>
     <string name="deleting_repo">Kudzima pfimbi yaiyezvino…</string>
     <string name="adding_apks_format">Kuwedzera %s kupfimbi…</string>
     <string name="writing_index_jar">Kunyora faira reindex rakasainiwa (index.jar)…</string>
