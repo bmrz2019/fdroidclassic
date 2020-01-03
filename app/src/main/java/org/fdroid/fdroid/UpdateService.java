@@ -30,7 +30,6 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
@@ -52,7 +51,6 @@ import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.installer.InstallManagerService;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,17 +145,6 @@ public class UpdateService extends IntentService {
                 .setOngoing(true)
                 .setCategory(NotificationCompat.CATEGORY_SERVICE)
                 .setContentTitle(getString(R.string.update_notification_title));
-
-        // Android docs are a little sketchy, however it seems that Gingerbread is the last
-        // sdk that made a content intent mandatory:
-        //
-        //   http://stackoverflow.com/a/20032920
-        //
-        if (Build.VERSION.SDK_INT <= 10) {
-            Intent pendingIntent = new Intent(this, FDroid.class);
-            pendingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            notificationBuilder.setContentIntent(PendingIntent.getActivity(this, 0, pendingIntent, PendingIntent.FLAG_UPDATE_CURRENT));
-        }
     }
 
     @Override
@@ -307,7 +294,7 @@ public class UpdateService extends IntentService {
         switch (networkType) {
             case ConnectivityManager.TYPE_ETHERNET:
             case ConnectivityManager.TYPE_WIFI:
-                if (Build.VERSION.SDK_INT >= 16 && cm.isActiveNetworkMetered()) {
+                if (cm.isActiveNetworkMetered()) {
                     return FLAG_NET_METERED;
                 } else {
                     return FLAG_NET_NO_LIMIT;
@@ -522,7 +509,7 @@ public class UpdateService extends IntentService {
     private void showAppUpdatesNotification(Cursor hasUpdates) {
         Utils.debugLog(TAG, "Notifying " + hasUpdates.getCount() + " updates.");
 
-        final int icon = Build.VERSION.SDK_INT >= 11 ? R.drawable.ic_stat_notify_updates : R.drawable.ic_launcher;
+        final int icon = R.drawable.ic_stat_notify_updates;
 
         final String contentText = hasUpdates.getCount() > 1
                 ? getString(R.string.many_updates_available, hasUpdates.getCount())
