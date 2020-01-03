@@ -42,7 +42,6 @@ import org.fdroid.fdroid.data.App;
 import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoPersister;
 import org.fdroid.fdroid.data.RepoProvider;
-import org.fdroid.fdroid.data.RepoPushRequest;
 import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.net.Downloader;
 import org.fdroid.fdroid.net.DownloaderFactory;
@@ -84,7 +83,7 @@ import java.util.jar.JarFile;
  * App/Apk classes, resulting in malicious servers being able to populate those
  * variables.
  */
-public class IndexV1Updater extends RepoUpdater {
+public class IndexV1Updater extends IndexUpdater {
     public static final String TAG = "IndexV1Updater";
 
     private static final String SIGNED_FILE_NAME = "index-v1.jar";
@@ -101,10 +100,10 @@ public class IndexV1Updater extends RepoUpdater {
 
     /**
      * @return whether this successfully found an index of this version
-     * @throws RepoUpdater.UpdateException
+     * @throws IndexUpdater.UpdateException
      * @see org.fdroid.fdroid.net.DownloaderService#handleIntent(android.content.Intent)
      */
-    public boolean update() throws RepoUpdater.UpdateException {
+    public boolean update() throws IndexUpdater.UpdateException {
         Downloader downloader = null;
         try {
             // read file name from file
@@ -161,7 +160,7 @@ public class IndexV1Updater extends RepoUpdater {
                     if (downloader != null) {
                         FileUtils.deleteQuietly(downloader.outputFile);
                     }
-                    throw new RepoUpdater.UpdateException("Error getting index file", e2);
+                    throw new IndexUpdater.UpdateException("Error getting index file", e2);
                 } catch (InterruptedException e2) {
                     // ignored if canceled, the local database just won't be updated
                 }
@@ -170,7 +169,7 @@ public class IndexV1Updater extends RepoUpdater {
             if (downloader != null) {
                 FileUtils.deleteQuietly(downloader.outputFile);
             }
-            throw new RepoUpdater.UpdateException("Error getting index file", e);
+            throw new IndexUpdater.UpdateException("Error getting index file", e);
         } catch (InterruptedException e) {
             // ignored if canceled, the local database just won't be updated
         }
@@ -179,7 +178,7 @@ public class IndexV1Updater extends RepoUpdater {
     }
 
     private void processDownloadedIndex(File outputFile, String cacheTag)
-            throws IOException, RepoUpdater.UpdateException {
+            throws IOException, IndexUpdater.UpdateException {
         JarFile jarFile = new JarFile(outputFile, true);
         JarEntry indexEntry = (JarEntry) jarFile.getEntry(DATA_FILE_NAME);
         InputStream indexInputStream = new ProgressBufferedInputStream(jarFile.getInputStream(indexEntry),
@@ -262,7 +261,7 @@ public class IndexV1Updater extends RepoUpdater {
         long timestamp = (Long) repoMap.get("timestamp") / 1000;
 
         if (repo.timestamp > timestamp) {
-            throw new RepoUpdater.UpdateException("index.jar is older that current index! "
+            throw new IndexUpdater.UpdateException("index.jar is older that current index! "
                     + timestamp + " < " + repo.timestamp);
         }
 
@@ -418,15 +417,15 @@ public class IndexV1Updater extends RepoUpdater {
      * This is also responsible for adding the {@link Repo} instance to the
      * database for the first time.
      * <p>
-     * This is the same as {@link RepoUpdater#verifyCerts(String, X509Certificate)},
-     * {@link RepoUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)}, and
-     * {@link RepoUpdater#assertSigningCertFromXmlCorrect()} except there is no
+     * This is the same as {@link IndexUpdater#verifyCerts(String, X509Certificate)},
+     * {@link IndexUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)}, and
+     * {@link IndexUpdater#assertSigningCertFromXmlCorrect()} except there is no
      * embedded copy of the signing certificate in the index data.
      *
      * @param rawCertFromJar the {@link X509Certificate} embedded in the downloaded jar
-     * @see RepoUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)
-     * @see RepoUpdater#verifyCerts(String, X509Certificate)
-     * @see RepoUpdater#assertSigningCertFromXmlCorrect()
+     * @see IndexUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)
+     * @see IndexUpdater#verifyCerts(String, X509Certificate)
+     * @see IndexUpdater#assertSigningCertFromXmlCorrect()
      */
     private void verifySigningCertificate(X509Certificate rawCertFromJar) throws SigningException {
         String certFromJar = Hasher.hex(rawCertFromJar);

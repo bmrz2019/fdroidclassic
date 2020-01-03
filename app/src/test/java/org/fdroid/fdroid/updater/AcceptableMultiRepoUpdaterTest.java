@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import org.fdroid.fdroid.BuildConfig;
-import org.fdroid.fdroid.RepoUpdater.UpdateException;
+import org.fdroid.fdroid.IndexUpdater.UpdateException;
 import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.Schema.RepoTable.Cols;

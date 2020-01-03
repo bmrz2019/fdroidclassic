@@ -6,7 +6,7 @@ import android.support.annotation.StringDef;
 import android.util.Log;
 
 import org.fdroid.fdroid.BuildConfig;
-import org.fdroid.fdroid.RepoUpdater;
+import org.fdroid.fdroid.IndexUpdater;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.ApkProvider;
 import org.fdroid.fdroid.data.App;
@@ -43,7 +43,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     /*
      *This test fails due to issue #568 (https://gitlab.com/fdroid/fdroidclient/issues/568).
     @Test
-    public void appsRemovedFromRepo() throws RepoUpdater.UpdateException {
+    public void appsRemovedFromRepo() throws IndexUpdater.UpdateException {
         assertEquals(0, AppProvider.Helper.all(context.getContentResolver()).size());
 
         updateMain();
@@ -55,7 +55,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
         assertEquals(2, ApkProvider.Helper.findByPackageName(context, "com.uberspot.a2048").size());
         assertEquals(1, ApkProvider.Helper.findByPackageName(context, "siir.es.adbWireless").size());
 
-        RepoUpdater updater = new RepoUpdater(context, RepoProvider.Helper.findByAddress(context, repo.address));
+        IndexUpdater updater = new IndexUpdater(context, RepoProvider.Helper.findByAddress(context, repo.address));
         updateRepo(updater, "multiRepo.conflicting.jar");
 
         assertEquals(2, AppProvider.Helper.all(context.getContentResolver()).size());
@@ -65,21 +65,21 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }*/
 
     @Test
-    public void mainRepo() throws RepoUpdater.UpdateException {
+    public void mainRepo() throws IndexUpdater.UpdateException {
         assertEmpty();
         updateMain();
         assertMainRepo();
     }
 
     @Test
-    public void archiveRepo() throws RepoUpdater.UpdateException {
+    public void archiveRepo() throws IndexUpdater.UpdateException {
         assertEmpty();
         updateArchive();
         assertMainArchiveRepoMetadata();
     }
 
     @Test
-    public void conflictingRepo() throws RepoUpdater.UpdateException {
+    public void conflictingRepo() throws IndexUpdater.UpdateException {
         assertEmpty();
         updateConflicting();
         assertConflictingRepo();
@@ -95,7 +95,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void metadataWithRepoPriority() throws RepoUpdater.UpdateException {
+    public void metadataWithRepoPriority() throws IndexUpdater.UpdateException {
         updateConflicting();
         updateMain();
         updateArchive();
@@ -151,7 +151,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void testCorrectConflictingThenMainThenArchive() throws RepoUpdater.UpdateException {
+    public void testCorrectConflictingThenMainThenArchive() throws IndexUpdater.UpdateException {
         assertEmpty();
 
         updateConflicting();
@@ -162,7 +162,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void testCorrectConflictingThenArchiveThenMain() throws RepoUpdater.UpdateException {
+    public void testCorrectConflictingThenArchiveThenMain() throws IndexUpdater.UpdateException {
         assertEmpty();
 
         updateConflicting();
@@ -173,7 +173,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void testCorrectArchiveThenMainThenConflicting() throws RepoUpdater.UpdateException {
+    public void testCorrectArchiveThenMainThenConflicting() throws IndexUpdater.UpdateException {
         assertEmpty();
 
         updateArchive();
@@ -184,7 +184,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void testCorrectArchiveThenConflictingThenMain() throws RepoUpdater.UpdateException {
+    public void testCorrectArchiveThenConflictingThenMain() throws IndexUpdater.UpdateException {
         assertEmpty();
 
         updateArchive();
@@ -195,7 +195,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void testCorrectMainThenArchiveThenConflicting() throws RepoUpdater.UpdateException {
+    public void testCorrectMainThenArchiveThenConflicting() throws IndexUpdater.UpdateException {
         assertEmpty();
 
         updateMain();
@@ -206,7 +206,7 @@ public class ProperMultiRepoUpdaterTest extends MultiRepoUpdaterTest {
     }
 
     @Test
-    public void testCorrectMainThenConflictingThenArchive() throws RepoUpdater.UpdateException {
+    public void testCorrectMainThenConflictingThenArchive() throws IndexUpdater.UpdateException {
         assertEmpty();
 
         updateMain();

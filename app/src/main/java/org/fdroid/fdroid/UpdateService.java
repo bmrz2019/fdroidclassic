@@ -402,7 +402,7 @@ public class UpdateService extends IntentService {
                     } else {
                         unchangedRepos++;
                     }
-                } catch (RepoUpdater.UpdateException e) {
+                } catch (IndexUpdater.UpdateException e) {
                     errorRepos++;
                     repoErrors.add(e.getMessage());
                     Log.e(TAG, "Error updating repository " + repo.address, e);

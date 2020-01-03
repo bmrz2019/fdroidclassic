@@ -6,9 +6,9 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
+import org.fdroid.fdroid.IndexUpdater;
 import org.fdroid.fdroid.Preferences;
-import org.fdroid.fdroid.RepoUpdater;
-import org.fdroid.fdroid.RepoUpdater.UpdateException;
+import org.fdroid.fdroid.IndexUpdater.UpdateException;
 import org.fdroid.fdroid.TestUtils;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.ApkProvider;
@@ -177,12 +177,12 @@ public abstract class MultiRepoUpdaterTest extends FDroidProviderTest {
         return RepoProvider.Helper.findByAddress(context, repo.address);
     }
 
-    protected RepoUpdater createUpdater(String name, String uri, Context context) {
-        return new RepoUpdater(context, createRepo(name, uri, context));
+    protected IndexUpdater createUpdater(String name, String uri, Context context) {
+        return new IndexUpdater(context, createRepo(name, uri, context));
     }
 
-    protected RepoUpdater createUpdater(String name, String uri, Context context, String signingCert) {
-        return new RepoUpdater(context, createRepo(name, uri, context, signingCert));
+    protected IndexUpdater createUpdater(String name, String uri, Context context, String signingCert) {
+        return new IndexUpdater(context, createRepo(name, uri, context, signingCert));
     }
 
     protected void updateConflicting() throws UpdateException {
@@ -197,7 +197,7 @@ public abstract class MultiRepoUpdaterTest extends FDroidProviderTest {
         updateRepo(createUpdater(REPO_ARCHIVE, REPO_ARCHIVE_URI, context), "multiRepo.archive.jar");
     }
 
-    protected void updateRepo(RepoUpdater updater, String indexJarPath) throws UpdateException {
+    protected void updateRepo(IndexUpdater updater, String indexJarPath) throws UpdateException {
         File indexJar = TestUtils.copyResourceToTempFile(indexJarPath);
         try {
             updater.processDownloadedFile(indexJar);
