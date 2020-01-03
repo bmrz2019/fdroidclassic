@@ -526,54 +526,59 @@ public class UpdateService extends IntentService {
 
         notificationManager.notify(NOTIFY_ID_UPDATES_AVAILABLE, builder.build());
     }
+    public static void reportDownloadProgress(Context context, IndexUpdater updater,
+                                              long bytesRead, long totalBytes) {
+        Utils.debugLog(TAG, "Downloading " + updater.indexUrl + "(" + bytesRead + "/" + totalBytes + ")");
+        String downloadedSizeFriendly = Utils.getFriendlySize(bytesRead);
+        int percent = -1;
+        if (totalBytes > 0) {
+            percent = Utils.getPercent(bytesRead, totalBytes);
+        }
+        String message;
+        if (totalBytes == -1) {
+            message = context.getString(R.string.status_download_unknown_size,
+                    updater.indexUrl, downloadedSizeFriendly);
+            percent = -1;
+        } else {
+            String totalSizeFriendly = Utils.getFriendlySize(totalBytes);
+            message = context.getString(R.string.status_download,
+                    updater.indexUrl, downloadedSizeFriendly, totalSizeFriendly, percent);
+        }
+        sendStatus(context, STATUS_INFO, message, percent);
+    }
+
+    public static void reportProcessIndexProgress(Context context, IndexUpdater updater,
+                                                  long bytesRead, long totalBytes) {
+        Utils.debugLog(TAG, "Processing " + updater.indexUrl + "(" + bytesRead + "/" + totalBytes + ")");
+        String downloadedSize = Utils.getFriendlySize(bytesRead);
+        String totalSize = Utils.getFriendlySize(totalBytes);
+        int percent = -1;
+        if (totalBytes > 0) {
+            percent = Utils.getPercent(bytesRead, totalBytes);
+        }
+        String message = context.getString(R.string.status_processing_xml_percent,
+                updater.indexUrl, downloadedSize, totalSize, percent);
+        sendStatus(context, STATUS_INFO, message, percent);
+    }
 
     /**
-     * Set up the various {@link ProgressListener}s needed to get feedback to the UI.
-     * Note: {@code ProgressListener}s do not need to be unregistered, they can just
-     * be set again for each download.
+     * If an updater is unable to know how many apps it has to process (i.e. it
+     * is streaming apps to the database or performing a large database query
+     * which touches all apps, but is unable to report progress), then it call
+     * this listener with `totalBytes = 0`. Doing so will result in a message of
+     * "Saving app details" sent to the user. If you know how many apps you have
+     * processed, then a message of "Saving app details (x/total)" is displayed.
      */
-//    private void setProgressListeners(RepoUpdater updater) {
-//        updater.setDownloadProgressListener(new ProgressListener() {
-//            @Override
-//            public void onProgress(URL sourceUrl, int bytesRead, int totalBytes) {
-//                Log.i(TAG, "downloadProgressReceiver " + sourceUrl);
-//                String downloadedSizeFriendly = Utils.getFriendlySize(bytesRead);
-//                int percent = -1;
-//                if (totalBytes > 0) {
-//                    percent = (int) ((double) bytesRead / totalBytes * 100);
-//                }
-//                String message;
-//                if (totalBytes == -1) {
-//                    message = getString(R.string.status_download_unknown_size, sourceUrl, downloadedSizeFriendly);
-//                    percent = -1;
-//                } else {
-//                    String totalSizeFriendly = Utils.getFriendlySize(totalBytes);
-//                    message = getString(R.string.status_download, sourceUrl, downloadedSizeFriendly, totalSizeFriendly, percent);
-//                }
-//                sendStatus(getApplicationContext(), STATUS_INFO, message, percent);
-//            }
-//        });
-//
-//        updater.setProcessXmlProgressListener(new ProgressListener() {
-//            @Override
-//            public void onProgress(URL sourceUrl, int bytesRead, int totalBytes) {
-//                String downloadedSize = Utils.getFriendlySize(bytesRead);
-//                String totalSize = Utils.getFriendlySize(totalBytes);
-//                int percent = -1;
-//                if (totalBytes > 0) {
-//                    percent = (int) ((double) bytesRead / totalBytes * 100);
-//                }
-//                String message = getString(R.string.status_processing_xml_percent, sourceUrl, downloadedSize, totalSize, percent);
-//                sendStatus(getApplicationContext(), STATUS_INFO, message, percent);
-//            }
-//        });
-//
-//        updater.setCommittingProgressListener(new ProgressListener() {
-//            @Override
-//            public void onProgress(URL sourceUrl, int bytesRead, int totalBytes) {
-//                String message = getString(R.string.status_inserting_apps);
-//                sendStatus(getApplicationContext(), STATUS_INFO, message);
-//            }
-//        });
-//    }
+    public static void reportProcessingAppsProgress(Context context, IndexUpdater updater,
+                                                    int appsSaved, int totalApps) {
+        Utils.debugLog(TAG, "Committing " + updater.indexUrl + "(" + appsSaved + "/" + totalApps + ")");
+        if (totalApps > 0) {
+            String message = context.getString(R.string.status_inserting_x_apps,
+                    appsSaved, totalApps, updater.indexUrl);
+            sendStatus(context, STATUS_INFO, message, Utils.getPercent(appsSaved, totalApps));
+        } else {
+            String message = context.getString(R.string.status_inserting_apps);
+            sendStatus(context, STATUS_INFO, message);
+        }
+    }
 }
