@@ -146,12 +146,6 @@ public class HttpDownloader extends Downloader {
         cacheTag = connection.getHeaderField(HEADER_FIELD_ETAG);
     }
 
-    public static boolean isSwapUrl(String host, int port) {
-        return port > 1023 // only root can use <= 1023, so never a swap repo
-                && host.matches("[0-9.]+") // host must be an IP address
-                && FDroidApp.subnetInfo.isInRange(host); // on the same subnet as we are
-    }
-
     private HttpURLConnection getConnection() throws SocketTimeoutException, IOException {
         HttpURLConnection connection;
             if (queryString != null) {

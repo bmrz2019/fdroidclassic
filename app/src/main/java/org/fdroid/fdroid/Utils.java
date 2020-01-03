@@ -307,23 +307,6 @@ public final class Utils {
         return b.build();
     }
 
-    public static Uri getSharingUri(Repo repo) {
-        if (TextUtils.isEmpty(repo.address)) {
-            return Uri.parse("http://wifi-not-enabled");
-        }
-        Uri localRepoUri = getLocalRepoUri(repo);
-        Uri.Builder b = localRepoUri.buildUpon();
-        b.scheme(localRepoUri.getScheme().replaceFirst("http", "fdroidrepo"));
-        b.appendQueryParameter("swap", "1");
-        if (!TextUtils.isEmpty(FDroidApp.bssid)) {
-            b.appendQueryParameter("bssid", FDroidApp.bssid);
-            if (!TextUtils.isEmpty(FDroidApp.ssid)) {
-                b.appendQueryParameter("ssid", FDroidApp.ssid);
-            }
-        }
-        return b.build();
-    }
-
     /**
      * Create a standard {@link PackageManager} {@link Uri} for pointing to an app.
      */

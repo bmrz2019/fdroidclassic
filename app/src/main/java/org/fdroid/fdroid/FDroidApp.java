@@ -45,7 +45,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.process.BitmapProcessor;
 
-import org.apache.commons.net.util.SubnetUtils;
 import org.fdroid.fdroid.Preferences.Theme;
 import org.fdroid.fdroid.compat.PRNGFixes;
 import org.fdroid.fdroid.data.AppProvider;
@@ -71,14 +70,6 @@ public class FDroidApp extends Application {
     public static final String SYSTEM_DIR_NAME = Environment.getRootDirectory().getAbsolutePath();
 
     private static Locale locale;
-
-    // for the local repo on this device, all static since there is only one
-    public static volatile int port;
-    public static volatile String ipAddressString;
-    public static volatile SubnetUtils.SubnetInfo subnetInfo;
-    public static volatile String ssid;
-    public static volatile String bssid;
-    public static volatile Repo repo = new Repo();
 
     private static Theme curTheme = Theme.light;
 
