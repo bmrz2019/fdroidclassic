@@ -50,6 +50,7 @@ import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.NewRepoConfig;
 import org.fdroid.fdroid.views.AppListFragmentPagerAdapter;
 import org.fdroid.fdroid.views.ManageReposActivity;
+import org.ligi.tracedroid.sending.TraceDroidEmailSender;
 
 public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
@@ -84,7 +85,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        TraceDroidEmailSender.sendStackTraces("bubu@bubu1.eu", this);
         fdroidApp = (FDroidApp) getApplication();
         fdroidApp.applyTheme(this);
 

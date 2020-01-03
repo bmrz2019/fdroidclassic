@@ -54,6 +54,7 @@ import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.installer.InstallHistoryService;
 import org.fdroid.fdroid.net.ImageLoaderForUIL;
+import org.ligi.tracedroid.TraceDroid;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -185,6 +186,7 @@ public class FDroidApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        TraceDroid.init(this);
         if (BuildConfig.DEBUG) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                     .detectAll()
