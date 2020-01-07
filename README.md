@@ -1,10 +1,10 @@
 ## F-Droid Classic
 
 This is an alternative F-Droid client which is based on the older UI of the official Client (pre 1.0).
-While I think that the new client UI looks pretty, it's also quite clunky.
-Lots of information that was provided clearly in the old UI is now not available or hidden at behind more taps or only available in different views.
+While I think that the new client UI looks pretty, it's sometimes quite clunky.
+Lots of information that was provided clearly in the old UI is now not available or hidden behind more taps now, or only available in different views.
 
-This project is probably aimed more at the power user who values function over form. Or people which absolutely cannot stand the tile-based new UI.
+This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.
 
 <img src="https://gitlab.com/Bubu/fdroidclassic/raw/master/screenshots/screenshot.png?inline=false"  width="400">
 
