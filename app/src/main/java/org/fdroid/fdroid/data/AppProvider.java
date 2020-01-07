@@ -465,7 +465,6 @@ public class AppProvider extends FDroidProvider {
     private static final String PATH_HIGHEST_PRIORITY = "highestPriority";
     private static final String PATH_CALC_PREFERRED_METADATA = "calcPreferredMetadata";
     private static final String PATH_CALC_SUGGESTED_APKS = "calcNonRepoDetailsFromIndex";
-    private static final String PATH_TOP_FROM_CATEGORY = "topFromCategory";
     private static final String PATH_INSTALLED_WITH_KNOWN_VULNS = "installedWithKnownVulns";
 
     private static final int CAN_UPDATE = CODE_SINGLE + 1;
@@ -501,7 +500,6 @@ public class AppProvider extends FDroidProvider {
         MATCHER.addURI(getAuthority(), PATH_HIGHEST_PRIORITY + "/*", HIGHEST_PRIORITY);
         MATCHER.addURI(getAuthority(), PATH_SPECIFIC_APP + "/#/*", CODE_SINGLE);
         MATCHER.addURI(getAuthority(), PATH_CALC_PREFERRED_METADATA, CALC_PREFERRED_METADATA);
-        MATCHER.addURI(getAuthority(), PATH_TOP_FROM_CATEGORY + "/#/*", TOP_FROM_CATEGORY);
         MATCHER.addURI(getAuthority(), PATH_INSTALLED_WITH_KNOWN_VULNS, INSTALLED_WITH_KNOWN_VULNS);
     }
 
@@ -532,14 +530,6 @@ public class AppProvider extends FDroidProvider {
     public static Uri getInstalledWithKnownVulnsUri() {
         return getContentUri().buildUpon()
                 .appendPath(PATH_INSTALLED_WITH_KNOWN_VULNS)
-                .build();
-    }
-
-    public static Uri getTopFromCategoryUri(String category, int limit) {
-        return getContentUri().buildUpon()
-                .appendPath(PATH_TOP_FROM_CATEGORY)
-                .appendPath(Integer.toString(limit))
-                .appendPath(category)
                 .build();
     }
 
