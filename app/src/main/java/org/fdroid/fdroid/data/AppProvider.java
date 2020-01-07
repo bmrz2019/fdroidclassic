@@ -478,6 +478,7 @@ public class AppProvider extends FDroidProvider {
     private static final int REPO = CALC_SUGGESTED_APKS + 1;
     private static final int SEARCH_REPO = REPO + 1;
     private static final int SEARCH_INSTALLED = SEARCH_REPO + 1;
+    private static final int SEARCH_CAN_UPDATE = SEARCH_INSTALLED + 1;
     private static final int HIGHEST_PRIORITY = SEARCH_INSTALLED + 1;
     private static final int CALC_PREFERRED_METADATA = HIGHEST_PRIORITY + 1;
     private static final int TOP_FROM_CATEGORY = CALC_PREFERRED_METADATA + 1;
@@ -493,6 +494,7 @@ public class AppProvider extends FDroidProvider {
         MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*/*", SEARCH_TEXT_AND_CATEGORIES);
         MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*", SEARCH_TEXT);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_INSTALLED + "/*", SEARCH_INSTALLED);
+        MATCHER.addURI(getAuthority(), PATH_SEARCH_CAN_UPDATE + "/*", SEARCH_CAN_UPDATE);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_REPO + "/*/*", SEARCH_REPO);
         MATCHER.addURI(getAuthority(), PATH_REPO + "/#", REPO);
         MATCHER.addURI(getAuthority(), PATH_CAN_UPDATE, CAN_UPDATE);
