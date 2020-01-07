@@ -20,7 +20,7 @@
             android:defaultValue="14"
             android:key="updateHistoryDays"
             android:maxLength="2"
-            android:numeric="integer"
+            android:inputType="number"
             android:title="@string/update_history" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/display">
