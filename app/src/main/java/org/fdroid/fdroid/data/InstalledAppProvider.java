@@ -311,7 +311,7 @@ public class InstalledAppProvider extends FDroidProvider {
      */
     @Override
     public int update(@NonNull Uri uri, ContentValues values, String where, String[] whereArgs) {
-        throw new UnsupportedOperationException("\"Update' not supported for installed appp provider."
+        throw new UnsupportedOperationException("\"Update' not supported for installed app provider."
                 + " Instead, you should insert, and it will overwrite the relevant rows if one exists.");
     }
 
