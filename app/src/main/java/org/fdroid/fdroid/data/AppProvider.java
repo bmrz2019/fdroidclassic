@@ -607,14 +607,6 @@ public class AppProvider extends FDroidProvider {
         return builder.build();
     }
 
-    public static Uri getSearchUri(Repo repo, String query) {
-        return getContentUri().buildUpon()
-                .appendPath(PATH_SEARCH_REPO)
-                .appendPath(String.valueOf(repo.id))
-                .appendPath(query)
-                .build();
-    }
-
     @Override
     protected String getTableName() {
         return AppMetadataTable.NAME;
