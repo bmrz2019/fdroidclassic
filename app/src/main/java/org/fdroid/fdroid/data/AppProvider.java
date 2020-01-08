@@ -479,7 +479,7 @@ public class AppProvider extends FDroidProvider {
     private static final int SEARCH_REPO = REPO + 1;
     private static final int SEARCH_INSTALLED = SEARCH_REPO + 1;
     private static final int SEARCH_CAN_UPDATE = SEARCH_INSTALLED + 1;
-    private static final int HIGHEST_PRIORITY = SEARCH_INSTALLED + 1;
+    private static final int HIGHEST_PRIORITY = SEARCH_CAN_UPDATE + 1;
     private static final int CALC_PREFERRED_METADATA = HIGHEST_PRIORITY + 1;
     private static final int TOP_FROM_CATEGORY = CALC_PREFERRED_METADATA + 1;
     private static final int INSTALLED_WITH_KNOWN_VULNS = TOP_FROM_CATEGORY + 1;
@@ -866,6 +866,11 @@ public class AppProvider extends FDroidProvider {
 
             case SEARCH_INSTALLED:
                 selection = querySearch(uri.getLastPathSegment()).add(queryInstalled());
+                includeSwap = false;
+                break;
+
+            case SEARCH_CAN_UPDATE:
+                selection = querySearch(uri.getLastPathSegment()).add(queryCanUpdate());
                 includeSwap = false;
                 break;
 
