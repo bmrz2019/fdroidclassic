@@ -1,5 +1,6 @@
 package org.fdroid.fdroid.data;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Context;
@@ -493,6 +494,26 @@ public class Apk extends ValueObject implements Comparable<Apk>, Parcelable {
         setRequestedPermissions(permissions, 23);
     }
 
+    /**
+     * Generate the set of requested permissions for the current Android version.
+     * <p>
+     * There are also a bunch of crazy rules where having one permission will imply
+     * another permission, for example:
+     * {@link Manifest.permission#WRITE_EXTERNAL_STORAGE} implies
+     * {@link Manifest.permission#READ_EXTERNAL_STORAGE}.
+     * Staring with API 29 / Android 10 / Q,
+     * Apps targetting API 28 or lower automatically get
+     * {@link Manifest.permission#ACCESS_BACKGROUND_LOCATION} when they ask for either of
+     * {@link Manifest.permission#ACCESS_COARSE_LOCATION} or
+     * {@link Manifest.permission#ACCESS_FINE_LOCATION}.
+     * Also,
+     * {@link Manifest.permission#ACCESS_FINE_LOCATION} implies
+     * {@link Manifest.permission#ACCESS_COARSE_LOCATION}.
+     * Many of these rules are for quite old Android versions,
+     * so they are not included here.
+     *
+     * @see Manifest.permission#READ_EXTERNAL_STORAGE
+     */
     private void setRequestedPermissions(Object[][] permissions, int minSdk) {
         HashSet<String> set = new HashSet<>();
         if (requestedPermissions != null) {
@@ -507,8 +528,22 @@ public class Apk extends ValueObject implements Comparable<Apk>, Parcelable {
                 set.add((String) versions[0]);
             }
         }
+        if (set.contains(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            set.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        }
+        if (targetSdkVersion <= 28) {
+            if (Build.VERSION.SDK_INT >= 29 && (set.contains(Manifest.permission.ACCESS_COARSE_LOCATION) ||
+                    set.contains(Manifest.permission.ACCESS_FINE_LOCATION))) {
+                // TODO: Change the below to Manifest.permission once we target SDK 29.
+                set.add("android.permission.ACCESS_BACKGROUND_LOCATION");
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 29 && set.contains(Manifest.permission.ACCESS_FINE_LOCATION)) {
+            set.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
         requestedPermissions = set.toArray(new String[set.size()]);
     }
+
 
     /**
      * Get the install path for a "non-apk" media file
