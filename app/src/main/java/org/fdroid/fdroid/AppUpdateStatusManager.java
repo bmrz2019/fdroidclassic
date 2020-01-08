@@ -131,8 +131,8 @@ public final class AppUpdateStatusManager {
          * also known as {@code urlString}.
          * @see org.fdroid.fdroid.installer.InstallManagerService
          */
-        public String getUniqueKey() {
-            return apk.getUrl();
+        public String getCanonicalUrl() {
+            return apk.getCanonicalUrl();
         }
 
         /**
@@ -263,7 +263,7 @@ public final class AppUpdateStatusManager {
         notifyChange(entry, isStatusUpdate);
 
         if (status == Status.Installed) {
-            InstallManagerService.removePendingInstall(context, entry.getUniqueKey());
+            InstallManagerService.removePendingInstall(context, entry.getCanonicalUrl());
         }
     }
 
@@ -271,11 +271,11 @@ public final class AppUpdateStatusManager {
         Utils.debugLog(LOGTAG, "Add APK " + apk.apkName + " with state " + status.name());
         AppUpdateStatus entry = createAppEntry(apk, status, intent);
         setEntryContentIntentIfEmpty(entry);
-        appMapping.put(entry.getUniqueKey(), entry);
+        appMapping.put(entry.getCanonicalUrl(), entry);
         notifyAdd(entry);
 
         if (status == Status.Installed) {
-            InstallManagerService.removePendingInstall(context, entry.getUniqueKey());
+            InstallManagerService.removePendingInstall(context, entry.getCanonicalUrl());
         }
     }
 
@@ -290,7 +290,7 @@ public final class AppUpdateStatusManager {
     private void notifyAdd(AppUpdateStatus entry) {
         if (!isBatchUpdating) {
             Intent broadcastIntent = new Intent(BROADCAST_APPSTATUS_ADDED);
-            broadcastIntent.putExtra(EXTRA_APK_URL, entry.getUniqueKey());
+            broadcastIntent.putExtra(EXTRA_APK_URL, entry.getCanonicalUrl());
             broadcastIntent.putExtra(EXTRA_STATUS, entry.copy());
             localBroadcastManager.sendBroadcast(broadcastIntent);
         }
@@ -299,7 +299,7 @@ public final class AppUpdateStatusManager {
     private void notifyChange(AppUpdateStatus entry, boolean isStatusUpdate) {
         if (!isBatchUpdating) {
             Intent broadcastIntent = new Intent(BROADCAST_APPSTATUS_CHANGED);
-            broadcastIntent.putExtra(EXTRA_APK_URL, entry.getUniqueKey());
+            broadcastIntent.putExtra(EXTRA_APK_URL, entry.getCanonicalUrl());
             broadcastIntent.putExtra(EXTRA_STATUS, entry.copy());
             broadcastIntent.putExtra(EXTRA_IS_STATUS_UPDATE, isStatusUpdate);
             localBroadcastManager.sendBroadcast(broadcastIntent);
@@ -309,7 +309,7 @@ public final class AppUpdateStatusManager {
     private void notifyRemove(AppUpdateStatus entry) {
         if (!isBatchUpdating) {
             Intent broadcastIntent = new Intent(BROADCAST_APPSTATUS_REMOVED);
-            broadcastIntent.putExtra(EXTRA_APK_URL, entry.getUniqueKey());
+            broadcastIntent.putExtra(EXTRA_APK_URL, entry.getCanonicalUrl());
             broadcastIntent.putExtra(EXTRA_STATUS, entry.copy());
             localBroadcastManager.sendBroadcast(broadcastIntent);
         }
@@ -320,7 +320,7 @@ public final class AppUpdateStatusManager {
             ContentResolver resolver = context.getContentResolver();
             App app = AppProvider.Helper.findSpecificApp(resolver, apk.packageName, apk.repoId);
             AppUpdateStatus ret = new AppUpdateStatus(app, apk, status, intent);
-            appMapping.put(apk.getUrl(), ret);
+            appMapping.put(apk.getCanonicalUrl(), ret);
             return ret;
         }
     }
@@ -346,7 +346,7 @@ public final class AppUpdateStatusManager {
         }
 
         synchronized (appMapping) {
-            AppUpdateStatus entry = appMapping.get(apk.getUrl());
+            AppUpdateStatus entry = appMapping.get(apk.getCanonicalUrl());
             if (entry != null) {
                 updateApkInternal(entry, status, pendingIntent);
             } else {
@@ -434,7 +434,7 @@ public final class AppUpdateStatusManager {
 
     public void setApkError(Apk apk, String errorText) {
         synchronized (appMapping) {
-            AppUpdateStatus entry = appMapping.get(apk.getUrl());
+            AppUpdateStatus entry = appMapping.get(apk.getCanonicalUrl());
             if (entry == null) {
                 entry = createAppEntry(apk, Status.InstallError, null);
             }
@@ -443,7 +443,7 @@ public final class AppUpdateStatusManager {
             entry.intent = getAppErrorIntent(entry);
             notifyChange(entry, false);
 
-            InstallManagerService.removePendingInstall(context, entry.getUniqueKey());
+            InstallManagerService.removePendingInstall(context, entry.getCanonicalUrl());
         }
     }
 

@@ -33,7 +33,6 @@ import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -944,7 +943,7 @@ public class AppDetails extends AppCompatActivity {
     }
 
     private void startInstall(Apk apk) {
-        activeDownloadUrlString = apk.getUrl();
+        activeDownloadUrlString = apk.getCanonicalUrl();
         registerDownloaderReceiver();
         InstallManagerService.queue(this, app, apk);
     }

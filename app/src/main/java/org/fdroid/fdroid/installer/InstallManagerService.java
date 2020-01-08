@@ -132,7 +132,7 @@ public class InstallManagerService extends Service {
                 String packageName = intent.getData().getSchemeSpecificPart();
                 for (AppUpdateStatusManager.AppUpdateStatus entry : appUpdateStatusManager.getAll()) {
                     if (TextUtils.equals(packageName, entry.app.packageName)) {
-                        String urlString = entry.getUniqueKey();
+                        String urlString = entry.getCanonicalUrl();
                         cancelNotification(urlString);
                         break;
                     }
@@ -459,7 +459,7 @@ public class InstallManagerService extends Service {
                         if (AppDetails.isAppVisible(apk.packageName)) {
                             cancelNotification(downloadUrl);
                         } else {
-                            notifyError(downloadUrl, appUpdateStatusManager.get(apk.getUrl()).app, errorMessage);
+                            notifyError(downloadUrl, appUpdateStatusManager.get(apk.getCanonicalUrl()).app, errorMessage);
                         }
                         localBroadcastManager.unregisterReceiver(this);
                         break;
@@ -498,7 +498,7 @@ public class InstallManagerService extends Service {
      * @param context this app's {@link Context}
      */
     public static void queue(Context context, App app, @NonNull Apk apk) {
-        String urlString = apk.getUrl();
+        String urlString = apk.getCanonicalUrl();
         AppUpdateStatusManager.getInstance(context).addApk(apk, AppUpdateStatusManager.Status.PendingInstall, null);
         putPendingInstall(context, urlString, apk.packageName);
         Utils.debugLog(TAG, "queue " + app.packageName + " " + apk.versionCode + " from " + urlString);
@@ -555,7 +555,7 @@ public class InstallManagerService extends Service {
     }
 
     private String getAppName(Apk apk) {
-        return appUpdateStatusManager.get(apk.getUrl()).app.name;
+        return appUpdateStatusManager.get(apk.getCanonicalUrl()).app.name;
     }
 
 
