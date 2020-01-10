@@ -150,12 +150,6 @@ public class AppProvider extends FDroidProvider {
             Uri uri = Uri.withAppendedPath(AppProvider.getContentUri(), PATH_CALC_PREFERRED_METADATA);
             context.getContentResolver().query(uri, null, null, null, null);
         }
-
-        public static List<App> findInstalledAppsWithKnownVulns(Context context) {
-            Uri uri = getInstalledWithKnownVulnsUri();
-            Cursor cursor = context.getContentResolver().query(uri, Cols.ALL, null, null, null);
-            return cursorToList(cursor);
-        }
     }
 
     /**

@@ -37,13 +37,6 @@ public class CategoryProvider extends FDroidProvider {
          */
         private static final Map<String, Long> KNOWN_CATEGORIES = new HashMap<>();
 
-        /**
-         * Used by tests to clear that the "Category -> ID" cache (used to prevent excessive disk reads).
-         */
-        static void clearCategoryIdCache() {
-            KNOWN_CATEGORIES.clear();
-        }
-
         public static long ensureExists(Context context, String category) {
             // Check our in-memory cache to potentially prevent a trip to the database (and hence disk).
             String lowerCaseCategory = category.toLowerCase(Locale.ENGLISH);

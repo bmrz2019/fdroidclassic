@@ -57,8 +57,6 @@ public class Repo extends ValueObject {
     public static final int VERSION_DENSITY_SPECIFIC_ICONS = 11;
 
     public static final int PUSH_REQUEST_IGNORE = 0;
-    public static final int PUSH_REQUEST_PROMPT = 1;
-    public static final int PUSH_REQUEST_ACCEPT_ALWAYS = 2;
 
     public static final int INT_UNSET_VALUE = -1;
     // these are never set by the Apk/package index metadata

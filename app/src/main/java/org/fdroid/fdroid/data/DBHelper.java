@@ -432,12 +432,6 @@ public class DBHelper extends SQLiteOpenHelper {
             case "ignore":
                 values.put(RepoTable.Cols.PUSH_REQUESTS, Repo.PUSH_REQUEST_IGNORE);
                 break;
-            case "prompt":
-                values.put(RepoTable.Cols.PUSH_REQUESTS, Repo.PUSH_REQUEST_PROMPT);
-                break;
-            case "always":
-                values.put(RepoTable.Cols.PUSH_REQUESTS, Repo.PUSH_REQUEST_ACCEPT_ALWAYS);
-                break;
             default:
                 throw new IllegalArgumentException(pushRequests + " is not a supported option!");
         }
