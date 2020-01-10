@@ -154,15 +154,15 @@ public class UpdateService extends IntentService {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(updateStatusReceiver);
     }
 
-    private static void sendStatus(Context context, int statusCode) {
+    public static void sendStatus(Context context, int statusCode) {
         sendStatus(context, statusCode, null, -1);
     }
 
-    private static void sendStatus(Context context, int statusCode, String message) {
+    public static void sendStatus(Context context, int statusCode, String message) {
         sendStatus(context, statusCode, message, -1);
     }
 
-    private static void sendStatus(Context context, int statusCode, String message, int progress) {
+    public static void sendStatus(Context context, int statusCode, String message, int progress) {
         Intent intent = new Intent(LOCAL_ACTION_STATUS);
         intent.putExtra(EXTRA_STATUS_CODE, statusCode);
         if (!TextUtils.isEmpty(message)) {
@@ -203,19 +203,19 @@ public class UpdateService extends IntentService {
                 case STATUS_INFO:
                     notificationBuilder.setContentText(message)
                             .setCategory(NotificationCompat.CATEGORY_SERVICE);
-                    if (progress != -1) {
+                    if (progress > -1) {
                         notificationBuilder.setProgress(100, progress, false);
                     } else {
                         notificationBuilder.setProgress(100, 0, true);
                     }
-                    notificationManager.notify(NOTIFY_ID_UPDATING, notificationBuilder.build());
+                    setNotification();
                     break;
                 case STATUS_ERROR_GLOBAL:
                     text = context.getString(R.string.global_error_updating_repos, message);
                     notificationBuilder.setContentText(text)
                             .setCategory(NotificationCompat.CATEGORY_ERROR)
                             .setSmallIcon(android.R.drawable.ic_dialog_alert);
-                    notificationManager.notify(NOTIFY_ID_UPDATING, notificationBuilder.build());
+                    setNotification();
                     Toast.makeText(context, text, Toast.LENGTH_LONG).show();
                     break;
                 case STATUS_ERROR_LOCAL:
@@ -233,7 +233,7 @@ public class UpdateService extends IntentService {
                     notificationBuilder.setContentText(text)
                             .setCategory(NotificationCompat.CATEGORY_ERROR)
                             .setSmallIcon(android.R.drawable.ic_dialog_info);
-                    notificationManager.notify(NOTIFY_ID_UPDATING, notificationBuilder.build());
+                    setNotification();
                     Toast.makeText(context, text, Toast.LENGTH_LONG).show();
                     break;
                 case STATUS_COMPLETE_WITH_CHANGES:
@@ -242,11 +242,17 @@ public class UpdateService extends IntentService {
                     text = context.getString(R.string.repos_unchanged);
                     notificationBuilder.setContentText(text)
                             .setCategory(NotificationCompat.CATEGORY_SERVICE);
-                    notificationManager.notify(NOTIFY_ID_UPDATING, notificationBuilder.build());
+                    setNotification();
                     break;
             }
         }
     };
+
+    private void setNotification() {
+        if (Preferences.get().isUpdateNotificationEnabled()) {
+            notificationManager.notify(NOTIFY_ID_UPDATING, notificationBuilder.build());
+        }
+    }
 
     /**
      * Check whether it is time to run the scheduled update.
