@@ -57,16 +57,12 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
     private static final String TAG = "FDroid";
 
     private static final int REQUEST_PREFS = 1;
-    private static final int REQUEST_ENABLE_BLUETOOTH = 2;
-    private static final int REQUEST_SWAP = 3;
 
     public static final String EXTRA_TAB_UPDATE = "extraTab";
 
     private static final String ACTION_ADD_REPO = "org.fdroid.fdroid.FDroid.ACTION_ADD_REPO";
 
     private static final String ADD_REPO_INTENT_HANDLED = "addRepoIntentHandled";
-
-    private FDroidApp fdroidApp;
 
     private SearchView searchView;
 
@@ -86,7 +82,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TraceDroidEmailSender.sendStackTraces("bubu@bubu1.eu", this);
-        fdroidApp = (FDroidApp) getApplication();
+        FDroidApp fdroidApp = (FDroidApp) getApplication();
         fdroidApp.applyTheme(this);
 
         super.onCreate(savedInstanceState);
