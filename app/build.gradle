@@ -51,7 +51,6 @@ dependencies {
 android {
     compileSdkVersion 28
 
-
     buildTypes {
         // use proguard on debug too since we have unknowingly broken
         // release builds before.
@@ -74,6 +73,7 @@ android {
 
     defaultConfig {
         minSdkVersion 21
+        targetSdkVersion 25
         versionCode 1000
         applicationId "org.fdroid.classic"
         resValue "string", "applicationId", applicationId
