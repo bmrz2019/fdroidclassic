@@ -286,9 +286,7 @@ public class FDroidApp extends Application {
         if (!TextUtils.equals(packageName, unset)) {
             int modeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION
                     | Intent.FLAG_GRANT_WRITE_URI_PERMISSION;
-            if (Build.VERSION.SDK_INT >= 19) {
-                modeFlags |= Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION;
-            }
+            modeFlags |= Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION;
             grantUriPermission(packageName, InstallHistoryService.LOG_URI, modeFlags);
         }
     }
@@ -300,13 +298,11 @@ public class FDroidApp extends Application {
      */
     @TargetApi(16)
     private int getThreadPoolSize() {
-        if (Build.VERSION.SDK_INT >= 16) {
-            ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-            ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-            if (activityManager != null) {
-                activityManager.getMemoryInfo(memInfo);
-                return (int) Math.max(1, Math.min(16, memInfo.totalMem / 256 / 1024 / 1024));
-            }
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+        if (activityManager != null) {
+            activityManager.getMemoryInfo(memInfo);
+            return (int) Math.max(1, Math.min(16, memInfo.totalMem / 256 / 1024 / 1024));
         }
         return 2;
     }
