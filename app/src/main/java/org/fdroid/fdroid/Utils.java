@@ -354,7 +354,7 @@ public final class Utils {
             }
             ret = formatter.toString();
             formatter.close();
-        } catch (Exception e) {
+        } catch (Throwable e) {
             Log.w(TAG, "Unable to get certificate fingerprint", e);
         }
         return ret;
