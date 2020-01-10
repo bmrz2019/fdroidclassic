@@ -27,7 +27,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import org.fdroid.fdroid.data.Repo;
-import org.fdroid.fdroid.data.RepoPersister;
 
 import java.security.CodeSigner;
 import java.security.cert.Certificate;
@@ -65,8 +64,6 @@ public class IndexUpdater {
     final Repo repo;
     boolean hasChanged;
 
-    @NonNull
-    private final RepoPersister persister;
 
     /**
      * Updates an app repo as read out of the database into a {@link Repo} instance.
@@ -76,7 +73,6 @@ public class IndexUpdater {
     public IndexUpdater(@NonNull Context context, @NonNull Repo repo) {
         this.context = context;
         this.repo = repo;
-        this.persister = new RepoPersister(context, repo);
         this.indexUrl = getIndexUrl(repo);
     }
 
@@ -84,11 +80,11 @@ public class IndexUpdater {
         return repo.address + "/index.jar";
     }
 
-    public boolean hasChanged() {
+    boolean hasChanged() {
         return hasChanged;
     }
 
-    protected final ProgressListener downloadListener = new ProgressListener() {
+    final ProgressListener downloadListener = new ProgressListener() {
         @Override
         public void onProgress(String urlString, long bytesRead, long totalBytes) {
             UpdateService.reportDownloadProgress(context, IndexUpdater.this, bytesRead, totalBytes);
@@ -102,11 +98,11 @@ public class IndexUpdater {
         }
     };
 
-    protected void notifyProcessingApps(int appsSaved, int totalApps) {
+    void notifyProcessingApps(int appsSaved, int totalApps) {
         UpdateService.reportProcessingAppsProgress(context, this, appsSaved, totalApps);
     }
 
-    protected void notifyCommittingToDb() {
+    void notifyCommittingToDb() {
         notifyProcessingApps(0, -1);
     }
 
@@ -125,11 +121,11 @@ public class IndexUpdater {
     }
 
     public static class SigningException extends UpdateException {
-        public SigningException(String message) {
+        SigningException(String message) {
             super("Repository was not signed correctly: " + message);
         }
 
-        public SigningException(Repo repo, String message) {
+        SigningException(Repo repo, String message) {
             super((repo == null ? "Repository" : repo.name) + " was not signed correctly: " + message);
         }
     }
@@ -139,7 +135,7 @@ public class IndexUpdater {
      * signing setups that would be valid for a regular jar.  This validates those
      * restrictions.
      */
-    public static X509Certificate getSigningCertFromJar(JarEntry jarEntry) throws SigningException {
+    static X509Certificate getSigningCertFromJar(JarEntry jarEntry) throws SigningException {
         final CodeSigner[] codeSigners = jarEntry.getCodeSigners();
         if (codeSigners == null || codeSigners.length == 0) {
             throw new SigningException("No signature found in index");
