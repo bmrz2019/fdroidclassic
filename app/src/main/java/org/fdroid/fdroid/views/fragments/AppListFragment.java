@@ -52,6 +52,7 @@ public abstract class AppListFragment extends ListFragment implements
             AppMetadataTable.Cols.SUGGESTED_VERSION_CODE,
             AppMetadataTable.Cols.REQUIREMENTS, // Needed for filtering apps that require root.
             AppMetadataTable.Cols.ANTI_FEATURES, // Needed for filtering apps that require anti-features.
+            AppMetadataTable.Cols.IS_APK, // If we don't have this checking if an app is installed is super expensive.
     };
 
     private static final String APP_SORT = AppMetadataTable.Cols.NAME;
