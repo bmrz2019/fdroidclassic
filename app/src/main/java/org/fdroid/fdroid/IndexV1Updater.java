@@ -346,7 +346,7 @@ public class IndexV1Updater extends IndexUpdater {
 
     private int getIntRepoValue(Map<String, Object> repoMap, String key) {
         Object value = repoMap.get(key);
-        if (value != null && value instanceof Integer) {
+        if (value instanceof Integer) {
             return (Integer) value;
         }
         return Repo.INT_UNSET_VALUE;
@@ -354,7 +354,7 @@ public class IndexV1Updater extends IndexUpdater {
 
     private String getStringRepoValue(Map<String, Object> repoMap, String key) {
         Object value = repoMap.get(key);
-        if (value != null && value instanceof String) {
+        if (value instanceof String) {
             return (String) value;
         }
         return null;
@@ -363,9 +363,9 @@ public class IndexV1Updater extends IndexUpdater {
     @SuppressWarnings("unchecked")
     private String[] getStringArrayRepoValue(Map<String, Object> repoMap, String key) {
         Object value = repoMap.get(key);
-        if (value != null && value instanceof ArrayList) {
+        if (value instanceof ArrayList) {
             ArrayList<String> list = (ArrayList<String>) value;
-            return list.toArray(new String[list.size()]);
+            return list.toArray(new String[0]);
         }
         return null;
     }
