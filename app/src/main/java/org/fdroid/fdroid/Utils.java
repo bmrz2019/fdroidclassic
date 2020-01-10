@@ -151,11 +151,7 @@ public final class Utils {
             return 50 * 1024 * 1024; // just return a minimal amount
         }
         StatFs stat = new StatFs(statDir.getPath());
-        if (Build.VERSION.SDK_INT < 18) {
-            return (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
-        } else {
-            return stat.getAvailableBlocksLong() * stat.getBlockSizeLong();
-        }
+        return stat.getAvailableBlocksLong() * stat.getBlockSizeLong();
     }
 
     public static long getImageCacheDirTotalMemory(Context context) {
@@ -167,11 +163,7 @@ public final class Utils {
             return 100 * 1024 * 1024; // just return a minimal amount
         }
         StatFs stat = new StatFs(statDir.getPath());
-        if (Build.VERSION.SDK_INT < 18) {
-            return (long) stat.getBlockCount() * (long) stat.getBlockSize();
-        } else {
-            return stat.getBlockCountLong() * stat.getBlockSizeLong();
-        }
+        return stat.getBlockCountLong() * stat.getBlockSizeLong();
     }
 
     public static void copy(InputStream input, OutputStream output) throws IOException {
@@ -272,6 +264,11 @@ public final class Utils {
             "5.1",   // 22
             "6.0",   // 23
             "7.0",   // 24
+            "7.1",   // 25
+            "8.0",   // 26
+            "8.1",   // 27
+            "9.0",   // 28
+            "10.0",  // 29
     };
 
     public static String getAndroidVersionName(int sdkLevel) {
@@ -296,21 +293,6 @@ public final class Utils {
             displayFP.append(" ").append(fingerprint.substring(i, i + 2));
         }
         return displayFP.toString();
-    }
-
-    @NonNull
-    public static Uri getLocalRepoUri(Repo repo) {
-        if (TextUtils.isEmpty(repo.address)) {
-            return Uri.parse("http://wifi-not-enabled");
-        }
-        Uri uri = Uri.parse(repo.address);
-        Uri.Builder b = uri.buildUpon();
-        if (!TextUtils.isEmpty(repo.fingerprint)) {
-            b.appendQueryParameter("fingerprint", repo.fingerprint);
-        }
-        String scheme = Preferences.get().isLocalRepoHttpsEnabled() ? "https" : "http";
-        b.scheme(scheme);
-        return b.build();
     }
 
     /**
@@ -605,23 +587,6 @@ public final class Utils {
     }
 
     /**
-     * Formats the app name using "sans-serif" and then appends the summary after a space with
-     * "sans-serif-light". Doesn't mandate any font sizes or any other styles, that is up to the
-     * {@link android.widget.TextView} which it ends up being displayed in.
-     */
-    public static CharSequence formatAppNameAndSummary(String appName, String summary) {
-        String toFormat = appName + ' ' + summary;
-        CharacterStyle normal = new TypefaceSpan("sans-serif");
-        CharacterStyle light = new TypefaceSpan("sans-serif-light");
-
-        SpannableStringBuilder sb = new SpannableStringBuilder(toFormat);
-        sb.setSpan(normal, 0, appName.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        sb.setSpan(light, appName.length(), toFormat.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        return sb;
-    }
-
-    /**
      * This is not strict validation of the package name, this is just to make
      * sure that the package name is not used as an attack vector, e.g. SQL
      * Injection.
@@ -636,33 +601,6 @@ public final class Utils {
         return safePackageNamePattern.matcher(packageName).matches();
     }
 
-    /**
-     * Calculate the number of days since the given date.
-     */
-    public static int daysSince(@NonNull Date date) {
-        long msDiff = Calendar.getInstance().getTimeInMillis() - date.getTime();
-        return (int) TimeUnit.MILLISECONDS.toDays(msDiff);
-    }
-
-    public static String formatLastUpdated(@NonNull Resources res, @NonNull Date date) {
-        long msDiff = Calendar.getInstance().getTimeInMillis() - date.getTime();
-        long days = msDiff / DateUtils.DAY_IN_MILLIS;
-        long weeks = msDiff / (DateUtils.DAY_IN_MILLIS * 7);
-        long months = msDiff / (DateUtils.DAY_IN_MILLIS * 30);
-        long years = msDiff / (DateUtils.DAY_IN_MILLIS * 365);
-
-        if (days < 1) {
-            return res.getString(R.string.details_last_updated_today);
-        } else if (weeks < 1) {
-            return res.getQuantityString(R.plurals.details_last_update_days, (int) days, days);
-        } else if (months < 1) {
-            return res.getQuantityString(R.plurals.details_last_update_weeks, (int) weeks, weeks);
-        } else if (years < 1) {
-            return res.getQuantityString(R.plurals.details_last_update_months, (int) months, months);
-        } else {
-            return res.getQuantityString(R.plurals.details_last_update_years, (int) years, years);
-        }
-    }
 
     /**
      * Need this to add the unimplemented support for ordered and unordered
@@ -812,13 +750,6 @@ public final class Utils {
                 .displayer(new FadeInBitmapDisplayer(200, true, true, false))
                 .bitmapConfig(Bitmap.Config.RGB_565);
     }
-
-    public static class PotentialFilesystemCorruptionException extends IllegalArgumentException {
-        public PotentialFilesystemCorruptionException(IOException e) {
-            super(e);
-        }
-    }
-
 
     /**
      * Converts a {@code long} bytes value, like from {@link File#length()}, to
