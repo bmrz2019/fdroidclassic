@@ -13,8 +13,10 @@ def getVersionName = { ->
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
     google()
+    jcenter()
+
 }
 
 dependencies {
