@@ -108,7 +108,6 @@ public class AppDetails extends AppCompatActivity {
     public static final String EXTRA_FROM = "from";
     public static final String EXTRA_HINT_SEARCHING = "searching";
 
-    private FDroidApp fdroidApp;
     private ApkListAdapter adapter;
 
     /**
@@ -358,7 +357,7 @@ public class AppDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        fdroidApp = (FDroidApp) getApplication();
+        FDroidApp fdroidApp = (FDroidApp) getApplication();
         fdroidApp.applyTheme(this);
 
         super.onCreate(savedInstanceState);
@@ -1383,6 +1382,12 @@ public class AppDetails extends AppCompatActivity {
                     return getString(R.string.antiupstreamnonfreelist);
                 case "NonFreeAssets":
                     return getString(R.string.antinonfreeassetslist);
+                case "DisabledAlgorithm":
+                    return getString(R.string.antidisabledalgorithmlist);
+                case "KnownVuln":
+                    return getString(R.string.antiknownvulnlist);
+                case "NoSourceSince":
+                    return getString(R.string.antinosourcesince);
                 default:
                     return af;
             }
