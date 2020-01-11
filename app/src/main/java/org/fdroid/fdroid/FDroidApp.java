@@ -98,10 +98,6 @@ public class FDroidApp extends Application {
         }
     }
 
-    public void applyDialogTheme(Activity activity) {
-        activity.setTheme(getCurDialogThemeResId());
-    }
-
     private static int getCurDialogThemeResId() {
         switch (curTheme) {
             case light:
