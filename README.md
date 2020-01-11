@@ -23,11 +23,14 @@ This project is probably aimed more at the power user who values function over f
 
 ### What will be out
 
-* Swap, at least initially. I almost never use it and I don't know many people that do. There's still the official client if you need that functionality.
+* Swap. I almost never use it and I don't know many people that do. There's still the official client if you need that functionality.
 * App auto install via repo push
-* The tile based UI (at least until it becomes far more stable)
+* The tile based UI
 * The old xml based index support will be dropped
-* Support for very old version of Android (< 4.0). Too hard to maintain :-/.
+* Support for very old version of Android (< 4.0).
+  * Currently minimum Android version is 4.4, supporting 4.0 would be possible with some effort, but I'm not sure that's worth it.
+  * Even on Android 4.4 we can't currently support TLSv1.2, which is bad.
+  * TLSv1.2 support on Android 4.4 is theoretically possible, but I'm not sure how much effort it would be.
 
 
 ## Building with Gradle
