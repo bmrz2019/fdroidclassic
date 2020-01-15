@@ -81,7 +81,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TraceDroidEmailSender.sendStackTraces("bubu@bubu1.eu", this);
+        TraceDroidEmailSender.sendStackTraces("fdroidclassic@bubu1.eu", this);
         FDroidApp fdroidApp = (FDroidApp) getApplication();
         fdroidApp.applyTheme(this);
 
