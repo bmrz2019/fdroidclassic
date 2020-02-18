@@ -6,6 +6,8 @@ Lots of information that was provided clearly in the old UI is now not available
 
 This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.
 
+Join the matrix room: [#fdroidclassic:bubu1.eu](https://riot.im/app/#/room/#fdroidclassic:bubu1.eu)
+
 <img src="https://gitlab.com/Bubu/fdroidclassic/raw/master/screenshots/screenshot.png?inline=false"  width="400">
 
 ## Plan/Todo
