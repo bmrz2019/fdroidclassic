@@ -76,7 +76,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1000
-        applicationId "eu.bubu1.droidclassic"
+        applicationId "eu.bubu1.fdroidclassic"
         resValue "string", "applicationId", applicationId
         versionName getVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
