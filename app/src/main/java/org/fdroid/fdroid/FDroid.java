@@ -106,13 +106,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
         Uri uri = AppProvider.getContentUri();
         getContentResolver().registerContentObserver(uri, true, new AppObserver());
-
-        // Re-enable once it can be disabled via a setting
-        // See https://gitlab.com/fdroid/fdroidclient/issues/435
-        //
-        // if (UpdateService.isNetworkAvailableForUpdate(this)) {
-        //     UpdateService.updateNow(this);
-        // }
     }
 
     private void performSearch(String query) {
