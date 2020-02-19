@@ -20,6 +20,8 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.fdroid.fdroid.AppDetails;
@@ -397,8 +399,10 @@ public class InstallManagerService extends Service {
                             DownloaderService.queue(context, FDroidApp.getMirror(mirrorUrlString, repoId), repoId, urlString);
                             DownloaderService.setTimeout(FDroidApp.getTimeout());
                         } catch (IOException e) {
+                            Toast.makeText(context,"Ran out of mirrors", Toast.LENGTH_SHORT).show();
                             appUpdateStatusManager.setDownloadError(urlString, intent.getStringExtra(Downloader.EXTRA_ERROR_MESSAGE));
                             localBroadcastManager.unregisterReceiver(this);
+                            cancelNotification(urlString);
                         }
                         break;
                     default:
@@ -555,7 +559,11 @@ public class InstallManagerService extends Service {
     }
 
     private String getAppName(Apk apk) {
-        return appUpdateStatusManager.get(apk.getCanonicalUrl()).app.name;
+        AppUpdateStatusManager.AppUpdateStatus appUpdateStatus =  appUpdateStatusManager.get(apk.getCanonicalUrl());
+        if (appUpdateStatus == null){
+            return null;
+        }
+            return appUpdateStatus.app.name;
     }
 
 

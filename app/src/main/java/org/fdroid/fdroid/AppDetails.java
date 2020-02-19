@@ -532,6 +532,10 @@ public class AppDetails extends AppCompatActivity {
                     }
                     cleanUpFinishedDownload();
                     break;
+                case  Downloader.ACTION_CONNECTION_FAILED:
+                    //TODO: This probably is weird when we actually use another mirror. We should use InstallManagerService here instead.
+                    cleanUpFinishedDownload();
+                    break;
                 default:
                     throw new RuntimeException("intent action not handled!");
             }

@@ -36,6 +36,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.cache.disc.DiskCache;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -173,6 +174,7 @@ public class FDroidApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         TraceDroid.init(this);
         if (BuildConfig.DEBUG) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
