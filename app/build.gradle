@@ -68,7 +68,6 @@ android {
     compileOptions {
         compileOptions.encoding = "UTF-8"
 
-        // Use Java 1.7, requires minSdk 8
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -77,7 +76,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1000
-        applicationId "org.fdroid.classic"
+        applicationId "eu.bubu1.droidclassic"
         resValue "string", "applicationId", applicationId
         versionName getVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
