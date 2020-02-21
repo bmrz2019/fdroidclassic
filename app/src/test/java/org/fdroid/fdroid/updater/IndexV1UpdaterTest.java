@@ -299,7 +299,7 @@ public class IndexV1UpdaterTest extends FDroidProviderTest {
                 "donate",
                 "featureGraphic",
                 "flattrID",
-                "icon",
+                "iconFromApk",
                 "iconUrl",
                 "issueTracker",
                 "lastUpdated",
