@@ -1455,7 +1455,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Set the icon...
             ImageView iv = (ImageView) view.findViewById(R.id.icon);
-            ImageLoader.getInstance().displayImage(app.iconUrl, iv,
+            ImageLoader.getInstance().displayImage(app.getIconUrl(iv.getContext()), iv,
                     displayImageOptions);
 
             // Set the title

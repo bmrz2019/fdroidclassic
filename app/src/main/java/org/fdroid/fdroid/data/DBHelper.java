@@ -215,7 +215,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + "primary key(" + ApkAntiFeatureJoinTable.Cols.APK_ID + ", " + ApkAntiFeatureJoinTable.Cols.ANTI_FEATURE_ID + ") "
             + " );";
 
-    protected static final int DB_VERSION = 79;
+    protected static final int DB_VERSION = 84;
 
     private final Context context;
 
@@ -277,6 +277,183 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         Utils.debugLog(TAG, "Upgrading database from v" + oldVersion + " v" + newVersion);
+
+        migrateRepoTable(db, oldVersion);
+
+        // The other tables are transient and can just be reset. Do this after
+        // the repo table changes though, because it also clears the lastetag
+        // fields which didn't always exist.
+        resetTransientPre42(db, oldVersion);
+
+        addNameAndDescriptionToRepo(db, oldVersion);
+        addFingerprintToRepo(db, oldVersion);
+        addMaxAgeToRepo(db, oldVersion);
+        addVersionToRepo(db, oldVersion);
+        addLastUpdatedToRepo(db, oldVersion);
+        renameRepoId(db, oldVersion);
+        populateRepoNames(db, oldVersion);
+        addIsSwapToRepo(db, oldVersion);
+        addChangelogToApp(db, oldVersion);
+        addCredentialsToRepo(db, oldVersion);
+        addAuthorToApp(db, oldVersion);
+        useMaxValueInMaxSdkVersion(db, oldVersion);
+        requireTimestampInRepos(db, oldVersion);
+        recreateInstalledAppTable(db, oldVersion);
+        addTargetSdkVersionToApk(db, oldVersion);
+        migrateAppPrimaryKeyToRowId(db, oldVersion);
+        removeApkPackageNameColumn(db, oldVersion);
+        addAppPrefsTable(db, oldVersion);
+        lowerCaseApkHashes(db, oldVersion);
+        supportRepoPushRequests(db, oldVersion);
+        migrateToPackageTable(db, oldVersion);
+        addObbFiles(db, oldVersion);
+        addCategoryTables(db, oldVersion);
+        addIndexV1Fields(db, oldVersion);
+        addIndexV1AppFields(db, oldVersion);
+        recalculatePreferredMetadata(db, oldVersion);
+        addWhatsNewAndVideo(db, oldVersion);
+        dropApkPrimaryKey(db, oldVersion);
+        addIntegerPrimaryKeyToInstalledApps(db, oldVersion);
+        addPreferredSignerToApp(db, oldVersion);
+        updatePreferredSignerIfEmpty(db, oldVersion);
+        addIsAppToApp(db, oldVersion);
+        addApkAntiFeatures(db, oldVersion);
+        addIgnoreVulnPref(db, oldVersion);
+        addLiberapayID(db, oldVersion);
+        addUserMirrorsFields(db, oldVersion);
+        removeNotNullFromVersionName(db, oldVersion);
+        addDisabledMirrorsFields(db, oldVersion);
+        addIsLocalized(db, oldVersion);
+        addTranslation(db, oldVersion);
+        switchRepoArchivePriorities(db, oldVersion);
+        deleteOldIconUrls(db, oldVersion);
+    }
+
+    private void deleteOldIconUrls(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 84) {
+            return;
+        }
+        Utils.debugLog(TAG, "Clearing iconUrl field to enable localized icons on next update");
+        db.execSQL("UPDATE " + AppMetadataTable.NAME + " SET " + AppMetadataTable.Cols.ICON_URL  + "= NULL");
+    }
+
+    private void switchRepoArchivePriorities(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 83) {
+            return;
+        }
+        Utils.debugLog(TAG, "Switching default repo and archive priority.");
+
+        db.execSQL("UPDATE " + RepoTable.NAME + " SET " + RepoTable.Cols.PRIORITY
+                + "= ( SELECT SUM(" + RepoTable.Cols.PRIORITY + ")" + " FROM " + RepoTable.NAME
+                + " WHERE " +  RepoTable.Cols.ADDRESS + " IN ( 'https://f-droid.org/repo', 'https://f-droid.org/archive')"
+                + ") - " + RepoTable.Cols.PRIORITY
+                + " WHERE " +  RepoTable.Cols.ADDRESS + " IN  ( 'https://f-droid.org/repo', 'https://f-droid.org/archive')"
+                + " AND 'TRUE' IN (SELECT CASE WHEN a." + RepoTable.Cols.PRIORITY + " = b."
+                + RepoTable.Cols.PRIORITY + "-1" + " THEN 'TRUE' ELSE 'FASLE' END"
+                + " FROM " + RepoTable.NAME + " AS a INNER JOIN " + RepoTable.NAME
+                + " AS b ON a." + RepoTable.Cols.ADDRESS + "= 'https://f-droid.org/repo'"
+                + " AND b." + RepoTable.Cols.ADDRESS + "= 'https://f-droid.org/archive'"
+                + ")"
+        );
+
+        db.execSQL("UPDATE " + RepoTable.NAME + " SET " + RepoTable.Cols.PRIORITY
+                + "= ( SELECT SUM(" + RepoTable.Cols.PRIORITY + ")" + " FROM " + RepoTable.NAME
+                + " WHERE " +  RepoTable.Cols.ADDRESS + " IN ( 'https://guardianproject.info/fdroid/repo', 'https://guardianproject.info/fdroid/archive')"
+                + ") - " + RepoTable.Cols.PRIORITY
+                + " WHERE " +  RepoTable.Cols.ADDRESS + " IN  ( 'https://guardianproject.info/fdroid/repo', 'https://guardianproject.info/fdroid/archive')"
+                + " AND 'TRUE' IN (SELECT CASE WHEN a." + RepoTable.Cols.PRIORITY + " = b."
+                + RepoTable.Cols.PRIORITY + "-1" + " THEN 'TRUE' ELSE 'FASLE' END"
+                + " FROM " + RepoTable.NAME + " AS a INNER JOIN " + RepoTable.NAME + " AS b ON a."
+                + RepoTable.Cols.ADDRESS + "= 'https://guardianproject.info/fdroid/repo'"
+                + " AND b." + RepoTable.Cols.ADDRESS + "= 'https://guardianproject.info/fdroid/archive'"
+                + ")"
+        );
+    }
+
+    private void addTranslation(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 82) {
+            return;
+        }
+        if (!columnExists(db, AppMetadataTable.NAME, AppMetadataTable.Cols.TRANSLATION)) {
+            Utils.debugLog(TAG, "Adding " + AppMetadataTable.Cols.TRANSLATION + " field to "
+                    + AppMetadataTable.NAME + " table in db.");
+            db.execSQL("alter table " + AppMetadataTable.NAME + " add column "
+                    + AppMetadataTable.Cols.TRANSLATION + " string;");
+        }
+    }
+
+    private void addIsLocalized(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 81) {
+            return;
+        }
+        if (!columnExists(db, AppMetadataTable.NAME, AppMetadataTable.Cols.IS_LOCALIZED)) {
+            Utils.debugLog(TAG, "Adding " + AppMetadataTable.Cols.IS_LOCALIZED + " field to "
+                    + AppMetadataTable.NAME + " table in db.");
+            db.execSQL("alter table " + AppMetadataTable.NAME + " add column "
+                    + AppMetadataTable.Cols.IS_LOCALIZED + " boolean;");
+        }
+    }
+
+    private void addDisabledMirrorsFields(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 80) {
+            return;
+        }
+        if (!columnExists(db, RepoTable.NAME, RepoTable.Cols.DISABLED_MIRRORS)) {
+            Utils.debugLog(TAG, "Adding " + RepoTable.Cols.DISABLED_MIRRORS + " field to " + RepoTable.NAME + " table in db.");
+            db.execSQL("alter table " + RepoTable.NAME + " add column " + RepoTable.Cols.DISABLED_MIRRORS + " string;");
+        }
+    }
+
+    private void removeNotNullFromVersionName(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 79) {
+            return;
+        }
+
+        Log.i(TAG, "Forcing repo refresh to remove NOT NULL from " + ApkTable.Cols.VERSION_NAME);
+        resetTransient(db);
+    }
+
+    private void addUserMirrorsFields(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 78) {
+            return;
+        }
+        if (!columnExists(db, RepoTable.NAME, RepoTable.Cols.USER_MIRRORS)) {
+            Utils.debugLog(TAG, "Adding " + RepoTable.Cols.USER_MIRRORS + " field to " + RepoTable.NAME + " table in db.");
+            db.execSQL("alter table " + RepoTable.NAME + " add column " + RepoTable.Cols.USER_MIRRORS + " string;");
+        }
+    }
+
+    private void addLiberapayID(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 77) {
+            return;
+        }
+
+        if (!columnExists(db, AppMetadataTable.NAME, AppMetadataTable.Cols.LIBERAPAY_ID)) {
+            Utils.debugLog(TAG, "Adding " + AppMetadataTable.Cols.LIBERAPAY_ID + " field to "
+                    + AppMetadataTable.NAME + " table in db.");
+            db.execSQL("alter table " + AppMetadataTable.NAME + " add column "
+                    + AppMetadataTable.Cols.LIBERAPAY_ID + " string;");
+        }
+    }
+
+    private void addIgnoreVulnPref(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 76) {
+            return;
+        }
+
+        if (!columnExists(db, AppPrefsTable.NAME, AppPrefsTable.Cols.IGNORE_VULNERABILITIES)) {
+            Utils.debugLog(TAG, "Adding " + AppPrefsTable.Cols.IGNORE_VULNERABILITIES + " field to " + AppPrefsTable.NAME + " table in db.");
+            db.execSQL("alter table " + AppPrefsTable.NAME + " add column " + AppPrefsTable.Cols.IGNORE_VULNERABILITIES + " boolean;");
+        }
+    }
+
+    private void addApkAntiFeatures(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 76) {
+            return;
+        }
+
+        Log.i(TAG, "Adding anti features on a per-apk basis.");
+        resetTransient(db);
     }
 
 
