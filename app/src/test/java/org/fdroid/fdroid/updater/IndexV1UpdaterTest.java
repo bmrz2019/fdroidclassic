@@ -27,6 +27,7 @@ import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.RepoPushRequest;
 import org.fdroid.fdroid.data.RepoXMLHandlerTest;
+import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.mock.RepoDetails;
 import org.junit.Before;
 import org.junit.Test;
@@ -132,6 +133,22 @@ public class IndexV1UpdaterTest extends FDroidProviderTest {
         InstalledAppTestUtils.install(context, "com.waze", 1019841, "v3.9.5.4", "362488e7be5ea0689b4e97d989ae1404",
                 "cbbdb8c5dafeccd7dd7b642dde0477d3489e18ac366e3c8473d5c07e5f735a95");
         assertEquals(1, AppProvider.Helper.findInstalledAppsWithKnownVulns(context).size());
+
+        Apk apk = ApkProvider.Helper.findApkFromAnyRepo(context, "io.proto.player", 1110);
+        assertNotNull("We should find this APK", apk);
+        assertEquals("io.proto.player-1.apk", apk.apkName);
+        HashSet<String> requestedPermissions = new HashSet<>(Arrays.asList(apk.requestedPermissions));
+        assertTrue(requestedPermissions.contains(android.Manifest.permission.READ_EXTERNAL_STORAGE));
+        assertTrue(requestedPermissions.contains(android.Manifest.permission.WRITE_EXTERNAL_STORAGE));
+        assertFalse(requestedPermissions.contains(android.Manifest.permission.READ_CALENDAR));
+        App app = AppProvider.Helper.findHighestPriorityMetadata(context.getContentResolver(),
+                "com.autonavi.minimap", new String[]{
+                        Schema.AppMetadataTable.Cols.ICON_URL,
+                        Schema.AppMetadataTable.Cols.ICON,
+                        Schema.AppMetadataTable.Cols.REPO_ID,
+                        Schema.AppMetadataTable.Cols.Package.PACKAGE_NAME});
+        assertEquals("localized icon takes precedence", TESTY_CANONICAL_URL + "/"
+                + app.packageName +  "/en-US/icon.png", app.getIconUrl(context));
     }
 
     @Test(expected = IndexUpdater.SigningException.class)
