@@ -419,7 +419,7 @@ public class IndexV1Updater extends IndexUpdater {
      * database for the first time.
      * <p>
      * This is the same as {@link IndexUpdater#verifyCerts(String, X509Certificate)},
-     * {@link IndexUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)}, and
+     * {@link IndexVUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)}, and
      * {@link IndexUpdater#assertSigningCertFromXmlCorrect()} except there is no
      * embedded copy of the signing certificate in the index data.
      *
