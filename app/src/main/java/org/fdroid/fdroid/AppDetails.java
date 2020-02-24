@@ -73,7 +73,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import org.fdroid.fdroid.data.Apk;
@@ -1455,8 +1454,7 @@ public class AppDetails extends AppCompatActivity {
 
             // Set the icon...
             ImageView iv = (ImageView) view.findViewById(R.id.icon);
-            ImageLoader.getInstance().displayImage(app.getIconUrl(iv.getContext()), iv,
-                    displayImageOptions);
+            Utils.setIconfromUrlOrPackage(app, iv);
 
             // Set the title
             TextView tv = (TextView) view.findViewById(R.id.title);

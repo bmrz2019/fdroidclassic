@@ -42,11 +42,15 @@ import android.text.style.TypefaceSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.widget.ImageView;
+
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import org.fdroid.fdroid.compat.FileCompat;
+import org.fdroid.fdroid.data.App;
 import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.SanitizedFile;
 import org.xml.sax.XMLReader;
@@ -431,6 +435,24 @@ public final class Utils {
                     .build();
         }
         return repoAppDisplayImageOptions;
+    }
+
+
+    public static void setIconfromUrlOrPackage(App app, ImageView iv) {
+        if (app.getIconUrl(iv.getContext()) == null) {
+            try {
+                iv.setImageDrawable(iv.getContext().getPackageManager().getApplicationIcon(app.packageName));
+            } catch (PackageManager.NameNotFoundException e) {
+                DisplayImageOptions options = Utils.getRepoAppDisplayImageOptions();
+                iv.setImageDrawable(options.shouldShowImageForEmptyUri()
+                        ? options.getImageForEmptyUri(FDroidApp.getInstance().getResources())
+                        : null);
+            }
+        }
+        else {
+            ImageLoader.getInstance().displayImage(app.getIconUrl(iv.getContext()), iv,
+                    Utils.getRepoAppDisplayImageOptions());
+        }
     }
 
     // this is all new stuff being added

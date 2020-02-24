@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
@@ -91,8 +90,7 @@ public abstract class AppListAdapter extends CursorAdapter {
         holder.name.setText(app.name);
         holder.summary.setText(app.summary);
 
-        ImageLoader.getInstance().displayImage(app.getIconUrl(holder.icon.getContext()), holder.icon,
-                displayImageOptions);
+        Utils.setIconfromUrlOrPackage(app, holder.icon);
 
         holder.status.setText(getVersionInfo(app));
         holder.license.setText(app.license);
