@@ -90,7 +90,7 @@ public abstract class AppListAdapter extends CursorAdapter {
         holder.name.setText(app.name);
         holder.summary.setText(app.summary);
 
-        Utils.setIconfromUrlOrPackage(app, holder.icon);
+        Utils.setIconFromRepoOrPM(app, holder.icon, holder.icon.getContext());
 
         holder.status.setText(getVersionInfo(app));
         holder.license.setText(app.license);
