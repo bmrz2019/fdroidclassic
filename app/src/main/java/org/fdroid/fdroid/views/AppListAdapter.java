@@ -118,14 +118,14 @@ public abstract class AppListAdapter extends CursorAdapter {
         }
 
         if (!app.isInstalled(this.mContext)) {
-            return app.getSuggestedVersionName();
+            return app.getAutoInstallVersionName();
         }
 
         final String installedVersionString = app.installedVersionName;
 
         if (app.canAndWantToUpdate(mContext) && showStatusUpdate()) {
             return String.format(upgradeFromTo,
-                    installedVersionString, app.getSuggestedVersionName());
+                    installedVersionString, app.getAutoInstallVersionName());
         }
 
         if (app.installedVersionCode > 0 && showStatusInstalled()) {
