@@ -100,8 +100,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
     public String preferredSigner;
     @JsonIgnore
     public boolean isApk;
-    @JsonIgnore
-    private boolean isLocalized = false;
 
     /**
      * This is primarily for the purpose of saving app metadata when parsing an index.xml file.
@@ -149,8 +147,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     public String sourceCode;
 
-    public String translation;
-
     public String video;
 
     public String changelog;
@@ -165,36 +161,27 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     public String liberapayID;
 
-    /**
-     * This matches {@code CurrentVersion} in build metadata files.
-     *
-     * @see <a href="https://f-droid.org/docs/Build_Metadata_Reference/#CurrentVersion">CurrentVersion</a>
-     */
-    public String suggestedVersionName;
+    public String upstreamVersionName;
 
     /**
-     * This matches {@code CurrentVersionCode} in build metadata files. Java
-     * inits {@code int}s to 0.  Since it is valid to have a negative Version
-     * Code, this is inited to {@link Integer#MIN_VALUE};
+     * The index-v1 metadata uses the term `suggestedVersionCode` but we need that
+     * value to end up in the `upstreamVersionCode` property here. These variables
+     * need to be renamed across the whole F-Droid ecosystem to make sense.
      *
-     * @see <a href="https://f-droid.org/docs/Build_Metadata_Reference/#CurrentVersionCode">CurrentVersionCode</a>
+     * @see <a href="https://gitlab.com/fdroid/fdroidclient/issues/1063">issue #1063</a>
      */
-    public int suggestedVersionCode = Integer.MIN_VALUE;
+    @JsonProperty("suggestedVersionCode")
+    public int upstreamVersionCode;
 
     /**
      * Unlike other public fields, this is only accessible via a getter, to
      * emphasise that setting it wont do anything. In order to change this,
-     * you need to change {@link #autoInstallVersionCode} to an APK which is
-     * in the {@link Schema.ApkTable} table.
+     * you need to change suggestedVersionCode to an apk which is in the
+     * apk table.
      */
-    private String autoInstallVersionName;
+    private String suggestedVersionName;
 
-    /**
-     * The version that will be automatically installed if the user does not
-     * choose a specific version.
-     * TODO this should probably be converted to init to {@link Integer#MIN_VALUE} like {@link #suggestedVersionCode}
-     */
-    public int autoInstallVersionCode;
+    public int suggestedVersionCode;
 
     public Date added;
     public Date lastUpdated;
@@ -288,9 +275,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 case Cols.SOURCE_CODE:
                     sourceCode = cursor.getString(i);
                     break;
-                case Cols.TRANSLATION:
-                    translation = cursor.getString(i);
-                    break;
                 case Cols.VIDEO:
                     video = cursor.getString(i);
                     break;
@@ -312,20 +296,20 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 case Cols.LIBERAPAY_ID:
                     liberapayID = cursor.getString(i);
                     break;
-                case Cols.AutoInstallApk.VERSION_NAME:
-                    autoInstallVersionName = cursor.getString(i);
+                case Cols.SuggestedApk.VERSION_NAME:
+                    suggestedVersionName = cursor.getString(i);
                     break;
                 case Cols.PREFERRED_SIGNER:
                     preferredSigner = cursor.getString(i);
                     break;
-                case Cols.AUTO_INSTALL_VERSION_CODE:
-                    autoInstallVersionCode = cursor.getInt(i);
-                    break;
                 case Cols.SUGGESTED_VERSION_CODE:
                     suggestedVersionCode = cursor.getInt(i);
                     break;
-                case Cols.SUGGESTED_VERSION_NAME:
-                    suggestedVersionName = cursor.getString(i);
+                case Cols.UPSTREAM_VERSION_CODE:
+                    upstreamVersionCode = cursor.getInt(i);
+                    break;
+                case Cols.UPSTREAM_VERSION_NAME:
+                    upstreamVersionName = cursor.getString(i);
                     break;
                 case Cols.ADDED:
                     added = Utils.parseDate(cursor.getString(i), null);
@@ -369,9 +353,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 case Cols.IS_APK:
                     isApk = cursor.getInt(i) == 1;
                     break;
-                case Cols.IS_LOCALIZED:
-                    isLocalized = cursor.getInt(i) == 1;
-                    break;
                 case Cols.InstalledApp.VERSION_CODE:
                     installedVersionCode = cursor.getInt(i);
                     break;
@@ -398,16 +379,13 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
      * exists.
      */
     @Nullable
-    public static App getInstance(Context context, PackageManager pm, InstalledApp installedApp, String packageName)
+    public static App getInstance(Context context, PackageManager pm, String packageName)
             throws CertificateEncodingException, IOException, PackageManager.NameNotFoundException {
         App app = new App();
         PackageInfo packageInfo = pm.getPackageInfo(packageName, PackageManager.GET_PERMISSIONS);
         SanitizedFile apkFile = SanitizedFile.knownSanitized(packageInfo.applicationInfo.publicSourceDir);
         app.installedApk = new Apk();
-        if (installedApp != null) {
-            app.installedApk.hashType = installedApp.getHashType();
-            app.installedApk.hash = installedApp.getHash();
-        } else if (apkFile.canRead()) {
+        if (apkFile.canRead()) {
             String hashType = "sha256";
             String hash = Utils.getBinaryHash(apkFile, hashType);
             if (TextUtils.isEmpty(hash)) {
@@ -494,10 +472,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
      */
     @JsonProperty("localized")
     private void setLocalized(Map<String, Map<String, Object>> localized) { // NOPMD
-        if (localized.size() > 1) {
-            isLocalized = true;
-        }
-
         Locale defaultLocale = Locale.getDefault();
         String languageTag = defaultLocale.getLanguage();
         String countryTag = defaultLocale.getCountry();
@@ -551,11 +525,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
             }
         }
 
-        String value = getLocalizedEntry(localized, localesToUse, "whatsNew");
-        if (!TextUtils.isEmpty(value)) {
-            whatsNew = value;
-        }
-        value = getLocalizedEntry(localized, localesToUse, "video");
+        whatsNew = getLocalizedEntry(localized, localesToUse, "whatsNew");
+        String value = getLocalizedEntry(localized, localesToUse, "video");
         if (!TextUtils.isEmpty(value)) {
             video = value.split("\n", 1)[0];
         }
@@ -908,36 +879,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         apk.sig = Utils.hashBytes(fdroidSig, "md5");
     }
 
-    /**
-     * Attempts to find the installed {@link Apk} from the database. If not found, will lookup the
-     * {@link InstalledAppProvider} to find the details of the installed app and use that to
-     * instantiate an {@link Apk} to be returned.
-     * <p>
-     * Cases where an {@link Apk} will not be found in the database and for which we fall back to
-     * the {@link InstalledAppProvider} include:
-     * <li>System apps which are provided by a repository, but for which the version code bundled
-     * with the system is not included in the repository.</li>
-     * <li>Regular apps from a repository, where the installed version is old enough that it is no
-     * longer available in the repository.</li>
-     */
-    @Nullable
-    public Apk getInstalledApk(Context context) {
-        try {
-            PackageInfo pi = context.getPackageManager().getPackageInfo(this.packageName, 0);
-            Apk apk = ApkProvider.Helper.findApkFromAnyRepo(context, pi.packageName, pi.versionCode);
-            if (apk == null) {
-                InstalledApp installedApp = InstalledAppProvider.Helper.findByPackageName(context, pi.packageName);
-                if (installedApp == null) {
-                    throw new IllegalStateException("No installed app found when trying to uninstall");
-                }
-                apk = new Apk(installedApp);
-            }
-            return apk;
-        } catch (PackageManager.NameNotFoundException e) {
-            return null;
-        }
-    }
-
     public boolean isValid() {
         if (TextUtils.isEmpty(this.name)
                 || TextUtils.isEmpty(this.packageName)) {
@@ -976,7 +917,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         values.put(Cols.WEBSITE, webSite);
         values.put(Cols.ISSUE_TRACKER, issueTracker);
         values.put(Cols.SOURCE_CODE, sourceCode);
-        values.put(Cols.TRANSLATION, translation);
         values.put(Cols.VIDEO, video);
         values.put(Cols.CHANGELOG, changelog);
         values.put(Cols.DONATE, donate);
@@ -987,9 +927,9 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         values.put(Cols.ADDED, Utils.formatDate(added, ""));
         values.put(Cols.LAST_UPDATED, Utils.formatDate(lastUpdated, ""));
         values.put(Cols.PREFERRED_SIGNER, preferredSigner);
-        values.put(Cols.AUTO_INSTALL_VERSION_CODE, autoInstallVersionCode);
-        values.put(Cols.SUGGESTED_VERSION_NAME, suggestedVersionName);
         values.put(Cols.SUGGESTED_VERSION_CODE, suggestedVersionCode);
+        values.put(Cols.UPSTREAM_VERSION_NAME, upstreamVersionName);
+        values.put(Cols.UPSTREAM_VERSION_CODE, upstreamVersionCode);
         values.put(Cols.ForWriting.Categories.CATEGORIES, Utils.serializeCommaSeparatedString(categories));
         values.put(Cols.ANTI_FEATURES, Utils.serializeCommaSeparatedString(antiFeatures));
         values.put(Cols.REQUIREMENTS, Utils.serializeCommaSeparatedString(requirements));
@@ -1003,7 +943,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         values.put(Cols.WEAR_SCREENSHOTS, Utils.serializeCommaSeparatedString(wearScreenshots));
         values.put(Cols.IS_COMPATIBLE, compatible ? 1 : 0);
         values.put(Cols.IS_APK, isApk ? 1 : 0);
-        values.put(Cols.IS_LOCALIZED, isLocalized ? 1 : 0);
 
         return values;
     }
@@ -1053,8 +992,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
      */
     public boolean hasUpdates() {
         boolean updates = false;
-        if (autoInstallVersionCode > 0) {
-            updates = installedVersionCode > 0 && installedVersionCode < autoInstallVersionCode;
+        if (suggestedVersionCode > 0) {
+            updates = installedVersionCode > 0 && installedVersionCode < suggestedVersionCode;
         }
         return updates;
     }
@@ -1073,7 +1012,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
     public boolean canAndWantToUpdate(Context context) {
         boolean canUpdate = hasUpdates();
         AppPrefs prefs = getPrefs(context);
-        boolean wantsUpdate = !prefs.ignoreAllUpdates && prefs.ignoreThisUpdate < autoInstallVersionCode;
+        boolean wantsUpdate = !prefs.ignoreAllUpdates && prefs.ignoreThisUpdate < suggestedVersionCode;
         return canUpdate && wantsUpdate && !isDisabledByAntiFeatures();
     }
 
@@ -1109,11 +1048,11 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
 
     /**
-     * @see App#autoInstallVersionName for why this uses a getter while other member variables are
+     * @see App#suggestedVersionName for why this uses a getter while other member variables are
      * publicly accessible.
      */
-    public String getAutoInstallVersionName() {
-        return autoInstallVersionName;
+    public String getSuggestedVersionName() {
+        return suggestedVersionName;
     }
 
     /**
@@ -1205,7 +1144,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         dest.writeString(this.webSite);
         dest.writeString(this.issueTracker);
         dest.writeString(this.sourceCode);
-        dest.writeString(this.translation);
         dest.writeString(this.video);
         dest.writeString(this.changelog);
         dest.writeString(this.donate);
@@ -1214,10 +1152,10 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         dest.writeString(this.flattrID);
         dest.writeString(this.liberapayID);
         dest.writeString(this.preferredSigner);
+        dest.writeString(this.upstreamVersionName);
+        dest.writeInt(this.upstreamVersionCode);
         dest.writeString(this.suggestedVersionName);
         dest.writeInt(this.suggestedVersionCode);
-        dest.writeString(this.autoInstallVersionName);
-        dest.writeInt(this.autoInstallVersionCode);
         dest.writeLong(this.added != null ? this.added.getTime() : -1);
         dest.writeLong(this.lastUpdated != null ? this.lastUpdated.getTime() : -1);
         dest.writeStringArray(this.categories);
@@ -1233,7 +1171,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         dest.writeStringArray(this.tvScreenshots);
         dest.writeStringArray(this.wearScreenshots);
         dest.writeByte(this.isApk ? (byte) 1 : (byte) 0);
-        dest.writeByte(this.isLocalized ? (byte) 1 : (byte) 0);
         dest.writeString(this.installedVersionName);
         dest.writeInt(this.installedVersionCode);
         dest.writeParcelable(this.installedApk, flags);
@@ -1256,7 +1193,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         this.webSite = in.readString();
         this.issueTracker = in.readString();
         this.sourceCode = in.readString();
-        this.translation = in.readString();
         this.video = in.readString();
         this.changelog = in.readString();
         this.donate = in.readString();
@@ -1265,10 +1201,10 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         this.flattrID = in.readString();
         this.liberapayID = in.readString();
         this.preferredSigner = in.readString();
+        this.upstreamVersionName = in.readString();
+        this.upstreamVersionCode = in.readInt();
         this.suggestedVersionName = in.readString();
         this.suggestedVersionCode = in.readInt();
-        this.autoInstallVersionName = in.readString();
-        this.autoInstallVersionCode = in.readInt();
         long tmpAdded = in.readLong();
         this.added = tmpAdded == -1 ? null : new Date(tmpAdded);
         long tmpLastUpdated = in.readLong();
@@ -1286,7 +1222,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         this.tvScreenshots = in.createStringArray();
         this.wearScreenshots = in.createStringArray();
         this.isApk = in.readByte() != 0;
-        this.isLocalized = in.readByte() != 0;
         this.installedVersionName = in.readString();
         this.installedVersionCode = in.readInt();
         this.installedApk = in.readParcelable(Apk.class.getClassLoader());
