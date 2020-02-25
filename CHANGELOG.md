@@ -1,3 +1,7 @@
+### 1.0-beta3 (?)
+
+* fix upgrade button sometimes not showing (#11)
+
 ### 1.0-beta2 (25.02.2020)
 
 * backport repository share option
