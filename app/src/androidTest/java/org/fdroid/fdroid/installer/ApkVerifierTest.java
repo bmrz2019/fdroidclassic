@@ -22,9 +22,9 @@ package org.fdroid.fdroid.installer;
 import android.app.Instrumentation;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.util.Log;
 
 import org.fdroid.fdroid.AssetUtils;

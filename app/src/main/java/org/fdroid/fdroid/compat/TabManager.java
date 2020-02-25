@@ -1,9 +1,9 @@
 package org.fdroid.fdroid.compat;
 
 import android.content.res.Configuration;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.ActionBar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;

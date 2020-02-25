@@ -26,19 +26,13 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.StatFs;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import android.text.Editable;
 import android.text.Html;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
-import android.text.style.CharacterStyle;
-import android.text.style.TypefaceSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -51,7 +45,6 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import org.fdroid.fdroid.compat.FileCompat;
 import org.fdroid.fdroid.data.App;
-import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.SanitizedFile;
 import org.xml.sax.XMLReader;
 
@@ -72,7 +65,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
 import java.util.HashMap;
@@ -80,7 +72,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 public final class Utils {
@@ -779,7 +770,7 @@ public final class Utils {
      * Converts a {@code long} bytes value, like from {@link File#length()}, to
      * an {@code int} value that is kilobytes, suitable for things like
      * {@link android.widget.ProgressBar#setMax(int)} or
-     * {@link android.support.v4.app.NotificationCompat.Builder#setProgress(int, int, boolean)}
+     * {@link androidx.core.app.NotificationCompat.Builder#setProgress(int, int, boolean)}
      */
     public static int bytesToKb(long bytes) {
         return (int) (bytes / 1024);
@@ -789,7 +780,7 @@ public final class Utils {
      * Converts two {@code long} bytes values, like from {@link File#length()}, to
      * an {@code int} value that is a percentage, suitable for things like
      * {@link android.widget.ProgressBar#setMax(int)} or
-     * {@link android.support.v4.app.NotificationCompat.Builder#setProgress(int, int, boolean)}.
+     * {@link androidx.core.app.NotificationCompat.Builder#setProgress(int, int, boolean)}.
      * {@code total} must never be zero!
      */
     public static int getPercent(long current, long total) {

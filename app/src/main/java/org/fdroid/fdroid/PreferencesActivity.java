@@ -19,9 +19,9 @@
 package org.fdroid.fdroid;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.core.app.NavUtils;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import org.fdroid.fdroid.views.fragments.PreferencesFragment;
