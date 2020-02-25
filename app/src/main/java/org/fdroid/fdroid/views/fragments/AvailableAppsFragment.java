@@ -60,12 +60,7 @@ public class AvailableAppsFragment extends AppListFragment implements
     protected AppListAdapter getAppListAdapter() {
         if (adapter == null) {
             final AppListAdapter a = AvailableAppListAdapter.create(getActivity(), null, CursorAdapterCompat.FLAG_AUTO_REQUERY);
-            Preferences.get().registerUpdateHistoryListener(new Preferences.ChangeListener() {
-                @Override
-                public void onPreferenceChange() {
-                    a.notifyDataSetChanged();
-                }
-            });
+            Preferences.get().registerUpdateHistoryListener(a::notifyDataSetChanged);
             adapter = a;
         }
         return adapter;
@@ -127,7 +122,7 @@ public class AvailableAppsFragment extends AppListFragment implements
         return translatedCategories;
     }
 
-    private Spinner setupCategorySpinner(Spinner spinner) {
+    private void setupCategorySpinner(Spinner spinner) {
 
         categorySpinner = spinner;
         categorySpinner.setId(R.id.category_spinner);
@@ -154,7 +149,6 @@ public class AvailableAppsFragment extends AppListFragment implements
                 setCurrentCategory(null);
             }
         });
-        return categorySpinner;
     }
 
     @Override
@@ -162,7 +156,7 @@ public class AvailableAppsFragment extends AppListFragment implements
         View view = inflater.inflate(R.layout.available_app_list, container, false);
 
         categoryWrapper = view.findViewById(R.id.category_wrapper);
-        setupCategorySpinner((Spinner) view.findViewById(R.id.category_spinner));
+        setupCategorySpinner(view.findViewById(R.id.category_spinner));
         defaultCategory = CategoryProvider.Helper.getCategoryWhatsNew(getActivity());
 
         return view;
