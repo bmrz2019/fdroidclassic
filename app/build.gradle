@@ -50,6 +50,8 @@ dependencies {
 
 }
 
+def applicationId = "eu.bubu1.fdroidclassic"
+
 android {
     compileSdkVersion 28
 
@@ -62,6 +64,12 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'src/androidTest/proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            resValue "string", "applicationId", applicationId + applicationIdSuffix
+            versionNameSuffix "-debug"
+            println 'buildTypes.debug defaultConfig.versionCode ' + defaultConfig.versionCode
         }
     }
 
@@ -76,7 +84,6 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1000
-        applicationId "eu.bubu1.fdroidclassic"
         resValue "string", "applicationId", applicationId
         versionName getVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
