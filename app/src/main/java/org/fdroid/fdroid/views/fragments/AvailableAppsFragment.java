@@ -23,7 +23,6 @@ import android.widget.Spinner;
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
-import org.fdroid.fdroid.compat.ArrayAdapterCompat;
 import org.fdroid.fdroid.compat.CursorAdapterCompat;
 import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.CategoryProvider;
@@ -102,7 +101,7 @@ public class AvailableAppsFragment extends AppListFragment implements
                 protected void onPostExecute(List<String> loadedCategories) {
                     adapter.clear();
                     categories = loadedCategories;
-                    ArrayAdapterCompat.addAll(adapter, translateCategories(activity, loadedCategories));
+                    adapter.addAll(translateCategories(activity, loadedCategories));
                 }
             }.execute();
         }
@@ -201,7 +200,7 @@ public class AvailableAppsFragment extends AppListFragment implements
     private void setCurrentCategory(String category) {
         currentCategory = category;
         Utils.debugLog(TAG, "Category '" + currentCategory + "' selected.");
-        getLoaderManager().restartLoader(0, null, this);
+        LoaderManager.getInstance(this).restartLoader(0, null, this);
     }
 
     @Override

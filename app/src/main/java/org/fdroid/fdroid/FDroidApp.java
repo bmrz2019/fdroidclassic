@@ -45,7 +45,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.process.BitmapProcessor;
 
 import org.fdroid.fdroid.Preferences.Theme;
-import org.fdroid.fdroid.compat.PRNGFixes;
 import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.InstalledAppProviderService;
 import org.fdroid.fdroid.data.Repo;
@@ -185,8 +184,6 @@ public class FDroidApp extends Application {
                     .build());
         }
         updateLanguage();
-
-        PRNGFixes.apply();
 
         Preferences.setup(this);
         curTheme = Preferences.get().getTheme();

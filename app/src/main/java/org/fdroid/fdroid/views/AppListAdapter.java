@@ -18,7 +18,6 @@ import org.fdroid.fdroid.data.App;
 public abstract class AppListAdapter extends CursorAdapter {
 
     private LayoutInflater mInflater;
-    private DisplayImageOptions displayImageOptions;
     private String upgradeFromTo;
 
     @SuppressWarnings("deprecation")
@@ -45,7 +44,6 @@ public abstract class AppListAdapter extends CursorAdapter {
     private void init(Context context) {
         mInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
-        displayImageOptions = Utils.getImageLoadingOptions().build();
         upgradeFromTo = context.getResources().getString(R.string.upgrade_from_to);
     }
 

@@ -7,18 +7,7 @@ import android.os.Build;
 public class CanUpdateAppListAdapter extends AppListAdapter {
 
     public static CanUpdateAppListAdapter create(Context context, Cursor cursor, int flags) {
-        if (Build.VERSION.SDK_INT >= 11) {
-            return new CanUpdateAppListAdapter(context, cursor, flags);
-        }
-        return new CanUpdateAppListAdapter(context, cursor);
-    }
-
-    private CanUpdateAppListAdapter(Context context, Cursor c) {
-        super(context, c);
-    }
-
-    public CanUpdateAppListAdapter(Context context, Cursor c, boolean autoRequery) {
-        super(context, c, autoRequery);
+        return new CanUpdateAppListAdapter(context, cursor, flags);
     }
 
     private CanUpdateAppListAdapter(Context context, Cursor c, int flags) {
