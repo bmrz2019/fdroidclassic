@@ -2,15 +2,10 @@ package org.fdroid.fdroid.views;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.core.app.NavUtils;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.Menu;
@@ -18,6 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.QrGenAsyncTask;
@@ -96,7 +96,7 @@ public class RepoDetailsActivity extends AppCompatActivity {
         };
         repo = RepoProvider.Helper.findById(this, repoId, projection);
 
-        TextView inputUrl = (TextView) findViewById(R.id.input_repo_url);
+        TextView inputUrl = findViewById(R.id.input_repo_url);
         inputUrl.setText(repo.address);
 
         Uri uri = Uri.parse(repo.address);
@@ -131,6 +131,7 @@ public class RepoDetailsActivity extends AppCompatActivity {
     @Override
     public void onNewIntent(Intent i) {
         // onResume gets called after this to handle the intent
+        super.onNewIntent(i);
         setIntent(i);
     }
 
@@ -193,8 +194,8 @@ public class RepoDetailsActivity extends AppCompatActivity {
 
     private void setupDescription(View parent, Repo repo) {
 
-        TextView descriptionLabel = (TextView) parent.findViewById(R.id.label_description);
-        TextView description = (TextView) parent.findViewById(R.id.text_description);
+        TextView descriptionLabel = parent.findViewById(R.id.label_description);
+        TextView description = parent.findViewById(R.id.text_description);
 
         if (TextUtils.isEmpty(repo.description)) {
             descriptionLabel.setVisibility(View.GONE);
@@ -208,8 +209,8 @@ public class RepoDetailsActivity extends AppCompatActivity {
     }
 
     private void setupRepoFingerprint(View parent, Repo repo) {
-        TextView repoFingerprintView = (TextView) parent.findViewById(R.id.text_repo_fingerprint);
-        TextView repoFingerprintDescView = (TextView) parent.findViewById(R.id.text_repo_fingerprint_description);
+        TextView repoFingerprintView = parent.findViewById(R.id.text_repo_fingerprint);
+        TextView repoFingerprintDescView = parent.findViewById(R.id.text_repo_fingerprint_description);
 
         String repoFingerprint;
 
@@ -230,9 +231,9 @@ public class RepoDetailsActivity extends AppCompatActivity {
 
     private void setupCredentials(View parent, Repo repo) {
 
-        TextView usernameLabel = (TextView) parent.findViewById(R.id.label_username);
-        TextView username = (TextView) parent.findViewById(R.id.text_username);
-        Button changePassword = (Button) parent.findViewById(R.id.button_edit_credentials);
+        TextView usernameLabel = parent.findViewById(R.id.label_username);
+        TextView username = parent.findViewById(R.id.text_username);
+        Button changePassword = parent.findViewById(R.id.button_edit_credentials);
 
         if (TextUtils.isEmpty(repo.username)) {
             usernameLabel.setVisibility(View.GONE);
@@ -266,9 +267,9 @@ public class RepoDetailsActivity extends AppCompatActivity {
         setMultipleViewVisibility(repoView, SHOW_IF_EXISTS, View.VISIBLE);
         setMultipleViewVisibility(repoView, HIDE_IF_EXISTS, View.GONE);
 
-        TextView name = (TextView) repoView.findViewById(R.id.text_repo_name);
-        TextView numApps = (TextView) repoView.findViewById(R.id.text_num_apps);
-        TextView lastUpdated = (TextView) repoView.findViewById(R.id.text_last_update);
+        TextView name = repoView.findViewById(R.id.text_repo_name);
+        TextView numApps = repoView.findViewById(R.id.text_num_apps);
+        TextView lastUpdated = repoView.findViewById(R.id.text_last_update);
 
         name.setText(repo.name);
 
@@ -296,19 +297,13 @@ public class RepoDetailsActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
             .setTitle(R.string.repo_confirm_delete_title)
             .setMessage(R.string.repo_confirm_delete_body)
-            .setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    RepoProvider.Helper.remove(getApplicationContext(), repoId);
-                    finish();
-                }
+            .setPositiveButton(R.string.delete, (dialog, which) -> {
+                RepoProvider.Helper.remove(getApplicationContext(), repoId);
+                finish();
             }).setNegativeButton(android.R.string.cancel,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Do nothing...
-                    }
+                (dialog, which) -> {
+                    // Do nothing...
                 }
-            ).show();
+        ).show();
     }
 }
