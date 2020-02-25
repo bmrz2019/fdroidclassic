@@ -62,6 +62,7 @@ public class RepoDetailsActivity extends AppCompatActivity {
     private Repo repo;
     private long repoId;
     private View repoView;
+    private String shareUrl;
 
     /**
      * Help function to make switching between two view states easier.
@@ -121,6 +122,11 @@ public class RepoDetailsActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,
                 new IntentFilter(UpdateService.LOCAL_ACTION_STATUS));
     }
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        prepareShareMenuItems(menu);
+        return true;
+    }
 
     @Override
     public void onNewIntent(Intent i) {
@@ -152,6 +158,7 @@ public class RepoDetailsActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
@@ -159,9 +166,29 @@ public class RepoDetailsActivity extends AppCompatActivity {
             case R.id.menu_delete:
                 promptForDelete();
                 return true;
+            case R.id.action_share:
+                intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, shareUrl);
+                startActivity(Intent.createChooser(intent,
+                        getResources().getString(R.string.share_repository)));
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void prepareShareMenuItems(Menu menu) {
+        if (!TextUtils.isEmpty(repo.address)) {
+            if (!TextUtils.isEmpty(repo.fingerprint)) {
+                shareUrl = Uri.parse(repo.address).buildUpon()
+                        .appendQueryParameter("fingerprint", repo.fingerprint).toString();
+            } else {
+                shareUrl = repo.address;
+            }
+            menu.findItem(R.id.action_share).setVisible(true);
+        } else {
+            menu.findItem(R.id.action_share).setVisible(false);
+        }
     }
 
     private void setupDescription(View parent, Repo repo) {
