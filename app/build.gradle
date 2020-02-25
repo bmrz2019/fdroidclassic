@@ -49,7 +49,7 @@ dependencies {
 
 }
 
-def applicationId = "eu.bubu1.fdroidclassic"
+def myApplicationId = "eu.bubu1.fdroidclassic"
 
 android {
     compileSdkVersion 28
@@ -66,7 +66,7 @@ android {
         }
         debug {
             applicationIdSuffix ".debug"
-            resValue "string", "applicationId", applicationId + applicationIdSuffix
+            resValue "string", "applicationId", myApplicationId + applicationIdSuffix
             versionNameSuffix "-debug"
             println 'buildTypes.debug defaultConfig.versionCode ' + defaultConfig.versionCode
         }
@@ -83,7 +83,8 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1001
-        resValue "string", "applicationId", applicationId
+        applicationId myApplicationId
+        resValue "string", "applicationId", myApplicationId
         versionName getVersionName()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
