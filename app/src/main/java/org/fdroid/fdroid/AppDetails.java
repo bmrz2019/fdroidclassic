@@ -26,6 +26,7 @@ import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -40,6 +41,7 @@ import androidx.fragment.app.ListFragment;
 import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.core.view.MenuItemCompat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
@@ -189,9 +191,8 @@ public class AppDetails extends AppCompatActivity {
             return getString(R.string.app_inst_known_source, installerLabel);
         }
 
-        @NonNull
         @Override
-        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
 
             java.text.DateFormat df = DateFormat.getDateFormat(context);
             final Apk apk = getItem(position);
@@ -728,20 +729,26 @@ public class AppDetails extends AppCompatActivity {
         }
 
         if (packageManager.getLaunchIntentForPackage(app.packageName) != null && app.canAndWantToUpdate(this)) {
-            menu.add(Menu.NONE, LAUNCH, 1, R.string.menu_launch)
-                    .setIcon(R.drawable.ic_play_arrow_white)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+            MenuItemCompat.setShowAsAction(menu.add(
+                            Menu.NONE, LAUNCH, 1, R.string.menu_launch)
+                            .setIcon(R.drawable.ic_play_arrow_white),
+                    MenuItemCompat.SHOW_AS_ACTION_IF_ROOM |
+                            MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
         }
 
         if (app.isInstalled(this.context)) {
-            menu.add(Menu.NONE, UNINSTALL, 1, R.string.menu_uninstall)
-                    .setIcon(R.drawable.ic_delete_white)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+            MenuItemCompat.setShowAsAction(menu.add(
+                            Menu.NONE, UNINSTALL, 1, R.string.menu_uninstall)
+                            .setIcon(R.drawable.ic_delete_white),
+                    MenuItemCompat.SHOW_AS_ACTION_IF_ROOM |
+                            MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
         }
 
-        menu.add(Menu.NONE, SHARE, 1, R.string.menu_share)
-                .setIcon(R.drawable.ic_share_white)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+        MenuItemCompat.setShowAsAction(menu.add(
+                        Menu.NONE, SHARE, 1, R.string.menu_share)
+                        .setIcon(R.drawable.ic_share_white),
+                MenuItemCompat.SHOW_AS_ACTION_IF_ROOM |
+                        MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
 
         menu.add(Menu.NONE, IGNOREALL, 2, R.string.menu_ignore_all)
                     .setIcon(R.drawable.ic_do_not_disturb_white)
@@ -888,9 +895,19 @@ public class AppDetails extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.installIncompatible);
             builder.setPositiveButton(R.string.yes,
-                    (dialog, whichButton) -> initiateInstall(apk));
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,
+                                int whichButton) {
+                            initiateInstall(apk);
+                        }
+                    });
             builder.setNegativeButton(R.string.no,
-                    (dialog, whichButton) -> {
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog,
+                                int whichButton) {
+                        }
                     });
             AlertDialog alert = builder.create();
             alert.show();
@@ -901,7 +918,12 @@ public class AppDetails extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.SignatureMismatch).setPositiveButton(
                     R.string.ok,
-                    (dialog, id) -> dialog.cancel());
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
             AlertDialog alert = builder.create();
             alert.show();
             return;
@@ -1109,7 +1131,7 @@ public class AppDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                TextView linksHeader = layoutLinks.findViewById(R.id.information);
+                TextView linksHeader = (TextView) layoutLinks.findViewById(R.id.information);
 
                 if (layoutLinksContent.getVisibility() == View.GONE) {
                     layoutLinksContent.setVisibility(View.VISIBLE);
@@ -1180,30 +1202,33 @@ public class AppDetails extends AppCompatActivity {
         private void setupView(final View view) {
             App app = appDetails.getApp();
             // Expandable description
-            final TextView description = view.findViewById(R.id.description);
+            final TextView description = (TextView) view.findViewById(R.id.description);
             final Spanned desc = Html.fromHtml(app.description, null, new Utils.HtmlTagHandler());
             description.setMovementMethod(SafeLinkMovementMethod.getInstance(getActivity()));
             description.setText(trimNewlines(desc));
             final View viewMoreDescription = view.findViewById(R.id.view_more_description);
-            description.post(() -> {
-                // If description has more than five lines
-                if (description.getLineCount() > MAX_LINES) {
-                    description.setMaxLines(MAX_LINES);
-                    description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                    description.setOnClickListener(expanderDescription);
-                    viewAllDescription = true;
+            description.post(new Runnable() {
+                @Override
+                public void run() {
+                    // If description has more than five lines
+                    if (description.getLineCount() > MAX_LINES) {
+                        description.setMaxLines(MAX_LINES);
+                        description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                        description.setOnClickListener(expanderDescription);
+                        viewAllDescription = true;
 
-                    llViewMoreDescription = view.findViewById(R.id.ll_description);
-                    llViewMoreDescription.setOnClickListener(expanderDescription);
+                        llViewMoreDescription = (LinearLayout) view.findViewById(R.id.ll_description);
+                        llViewMoreDescription.setOnClickListener(expanderDescription);
 
-                    viewMoreDescription.setOnClickListener(expanderDescription);
-                } else {
-                    viewMoreDescription.setVisibility(View.GONE);
+                        viewMoreDescription.setOnClickListener(expanderDescription);
+                    } else {
+                        viewMoreDescription.setVisibility(View.GONE);
+                    }
                 }
             });
 
             // App ID
-            final TextView packageNameView = view.findViewById(R.id.package_name);
+            final TextView packageNameView = (TextView) view.findViewById(R.id.package_name);
             if (prefs.expertMode()) {
                 packageNameView.setText(app.packageName);
             } else {
@@ -1211,13 +1236,13 @@ public class AppDetails extends AppCompatActivity {
             }
 
             // Summary
-            final TextView summaryView = view.findViewById(R.id.summary);
+            final TextView summaryView = (TextView) view.findViewById(R.id.summary);
             summaryView.setText(app.summary);
 
-            layoutLinks = view.findViewById(R.id.ll_information);
-            layoutLinksContent = layoutLinks.findViewById(R.id.ll_information_content);
+            layoutLinks = (ViewGroup) view.findViewById(R.id.ll_information);
+            layoutLinksContent = (ViewGroup) layoutLinks.findViewById(R.id.ll_information_content);
 
-            final TextView linksHeader = view.findViewById(R.id.information);
+            final TextView linksHeader = (TextView) view.findViewById(R.id.information);
             linksHeader.setOnClickListener(expanderLinks);
 
             // Website button
@@ -1302,8 +1327,8 @@ public class AppDetails extends AppCompatActivity {
             }
 
             // Expandable permissions
-            llViewMorePermissions = view.findViewById(R.id.ll_permissions);
-            final TextView permissionHeader = view.findViewById(R.id.permissions);
+            llViewMorePermissions = (LinearLayout) view.findViewById(R.id.ll_permissions);
+            final TextView permissionHeader = (TextView) view.findViewById(R.id.permissions);
 
             final boolean curApkCompatible = curApk != null && curApk.compatible;
             if (!appDetails.getApks().isEmpty() && (curApkCompatible || prefs.showIncompatibleVersions())) {
@@ -1316,7 +1341,7 @@ public class AppDetails extends AppCompatActivity {
             }
 
             // Anti features
-            final TextView antiFeaturesView = view.findViewById(R.id.antifeatures);
+            final TextView antiFeaturesView = (TextView) view.findViewById(R.id.antifeatures);
             if (app.antiFeatures != null) {
                 StringBuilder sb = new StringBuilder();
                 for (String af : app.antiFeatures) {
@@ -1340,7 +1365,7 @@ public class AppDetails extends AppCompatActivity {
             AppDiff appDiff = new AppDiff(appDetails, appDetails.getApks().getItem(0));
             AppSecurityPermissions perms = new AppSecurityPermissions(appDetails, appDiff.apkPackageInfo);
 
-            final ViewGroup permList = llViewMorePermissions.findViewById(R.id.permission_list);
+            final ViewGroup permList = (ViewGroup) llViewMorePermissions.findViewById(R.id.permission_list);
             permList.addView(perms.getPermissionsView(AppSecurityPermissions.WHICH_ALL));
         }
 
@@ -1378,7 +1403,7 @@ public class AppDetails extends AppCompatActivity {
             }
 
             App app = appDetails.getApp();
-            TextView signatureView = view.findViewById(R.id.signature);
+            TextView signatureView = (TextView) view.findViewById(R.id.signature);
             if (prefs.expertMode() && !TextUtils.isEmpty(app.installedSig)) {
                 signatureView.setVisibility(View.VISIBLE);
                 signatureView.setText("Signed: " + app.installedSig);
@@ -1419,27 +1444,27 @@ public class AppDetails extends AppCompatActivity {
         }
 
         @Override
-        public void onAttach(@NonNull Context context) {
-            super.onAttach(context);
-            appDetails = (AppDetails) context;
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
+            appDetails = (AppDetails) activity;
         }
 
         private void setupView(View view) {
             App app = appDetails.getApp();
 
             // Set the icon...
-            ImageView iv = view.findViewById(R.id.icon);
+            ImageView iv = (ImageView) view.findViewById(R.id.icon);
             Utils.setIconFromRepoOrPM(app, iv, iv.getContext());
 
             // Set the title
-            TextView tv = view.findViewById(R.id.title);
+            TextView tv = (TextView) view.findViewById(R.id.title);
             tv.setText(app.name);
 
-            btMain   = view.findViewById(R.id.btn_main);
-            progressBar     = view.findViewById(R.id.progress_bar);
-            progressSize    = view.findViewById(R.id.progress_size);
-            progressPercent = view.findViewById(R.id.progress_percentage);
-            cancelButton    = view.findViewById(R.id.cancel);
+            btMain   = (Button) view.findViewById(R.id.btn_main);
+            progressBar     = (ProgressBar) view.findViewById(R.id.progress_bar);
+            progressSize    = (TextView) view.findViewById(R.id.progress_size);
+            progressPercent = (TextView) view.findViewById(R.id.progress_percentage);
+            cancelButton    = (ImageButton) view.findViewById(R.id.cancel);
             progressBar.setIndeterminate(false);
             cancelButton.setOnClickListener(this);
 
@@ -1479,11 +1504,11 @@ public class AppDetails extends AppCompatActivity {
         /**
          * Displays empty, indeterminate progress bar and related views.
          */
-        void startProgress() {
+        public void startProgress() {
             startProgress(true);
         }
 
-        void startProgress(boolean allowCancel) {
+        public void startProgress(boolean allowCancel) {
             cancelButton.setVisibility(allowCancel ? View.VISIBLE : View.GONE);
             if (isAdded()) {
                 showIndeterminateProgress(getString(R.string.download_pending));
@@ -1501,7 +1526,7 @@ public class AppDetails extends AppCompatActivity {
         /**
          * Updates progress bar and captions to new values (in bytes).
          */
-        void updateProgress(long bytesDownloaded, long totalBytes) {
+        public void updateProgress(long bytesDownloaded, long totalBytes) {
             if (bytesDownloaded < 0 || totalBytes == 0) {
                 // Avoid division by zero and other weird values
                 return;
@@ -1536,7 +1561,7 @@ public class AppDetails extends AppCompatActivity {
         /**
          * Removes progress bar and related views, invokes {@link #updateViews()}.
          */
-        void removeProgress() {
+        public void removeProgress() {
             setProgressVisible(false);
             cancelButton.setVisibility(View.GONE);
             updateViews();
@@ -1555,11 +1580,11 @@ public class AppDetails extends AppCompatActivity {
             InstallManagerService.cancel(getContext(), appDetails.activeDownloadUrlString);
         }
 
-        void updateViews() {
+        public void updateViews() {
             updateViews(getView());
         }
 
-        void updateViews(View view) {
+        public void updateViews(View view) {
             if (view == null) {
                 Log.e(TAG, "AppDetailsHeaderFragment.updateViews(): view == null. Oops.");
                 return;
@@ -1652,13 +1677,13 @@ public class AppDetails extends AppCompatActivity {
         private FrameLayout headerView;
 
         @Override
-        public void onAttach(@NonNull Context context) {
-            super.onAttach(context);
-            appDetails = (AppDetails) context;
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
+            appDetails = (AppDetails) activity;
         }
 
         @Override
-        public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        public void onViewCreated(View view, Bundle savedInstanceState) {
             // A bit of a hack, but we can't add the header view in setupSummaryHeader(),
             // due to the fact it needs to happen before setListAdapter(). Also, seeing
             // as we may never add a summary header (i.e. in landscape), this is probably
@@ -1680,7 +1705,7 @@ public class AppDetails extends AppCompatActivity {
         }
 
         @Override
-        public void onListItemClick(ListView l, @NonNull View v, int position, long id) {
+        public void onListItemClick(ListView l, View v, int position, long id) {
             App app = appDetails.getApp();
             final Apk apk = appDetails.getApks().getItem(position - l.getHeaderViewsCount());
             if (app.installedVersionCode == apk.versionCode) {
@@ -1689,9 +1714,19 @@ public class AppDetails extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setMessage(R.string.installDowngrade);
                 builder.setPositiveButton(R.string.yes,
-                        (dialog, whichButton) -> appDetails.install(apk));
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                    int whichButton) {
+                                appDetails.install(apk);
+                            }
+                        });
                 builder.setNegativeButton(R.string.no,
-                        (dialog, whichButton) -> {
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                    int whichButton) {
+                            }
                         });
                 AlertDialog alert = builder.create();
                 alert.show();
@@ -1700,7 +1735,7 @@ public class AppDetails extends AppCompatActivity {
             }
         }
 
-        void removeSummaryHeader() {
+        public void removeSummaryHeader() {
             Fragment summary = getChildFragmentManager().findFragmentByTag(SUMMARY_TAG);
             if (summary != null) {
                 getChildFragmentManager().beginTransaction().remove(summary).commit();
@@ -1710,7 +1745,7 @@ public class AppDetails extends AppCompatActivity {
             }
         }
 
-        void setupSummaryHeader() {
+        public void setupSummaryHeader() {
             Fragment fragment = getChildFragmentManager().findFragmentByTag(SUMMARY_TAG);
             if (fragment != null) {
                 summaryFragment = (AppDetailsSummaryFragment) fragment;
