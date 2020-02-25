@@ -1,12 +1,22 @@
 ## F-Droid Classic
 
+Join the matrix room: [#fdroidclassic:bubu1.eu](https://matrix.to/#/#fdroidclassic:bubu1.eu)
+
+### Download
+
+Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1000.apk
+
+This comes with it's own F-Droid repository for updates pre-configured.
+
+Or add the repo to any other F-Droid client: https://bubu1.eu/fdroidclassic/fdroid/repo?fingerprint=5187CFD99F084FFAB2AD60D9D10B39203B89A46DD4862397FE1B1A4F3D46627A
+
+### Project description
+
 This is an alternative F-Droid client which is based on the older UI of the official Client (pre 1.0).
 While I think that the new client UI looks pretty, it's sometimes quite clunky.
 Lots of information that was provided clearly in the old UI is now not available or hidden behind more taps now, or only available in different views.
 
 This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.
-
-Join the matrix room: [#fdroidclassic:bubu1.eu](https://matrix.to/#/#fdroidclassic:bubu1.eu)
 
 <img src="https://gitlab.com/Bubu/fdroidclassic/raw/master/screenshots/screenshot.png?inline=false"  width="400">
 
