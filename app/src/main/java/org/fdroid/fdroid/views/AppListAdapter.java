@@ -20,8 +20,7 @@ public abstract class AppListAdapter extends CursorAdapter {
     private LayoutInflater mInflater;
     private String upgradeFromTo;
 
-    @SuppressWarnings("deprecation")
-    public AppListAdapter(Context context, Cursor c) {
+    AppListAdapter(Context context, Cursor c) {
         super(context, c);
         init(context);
     }
@@ -31,12 +30,12 @@ public abstract class AppListAdapter extends CursorAdapter {
         return mDataValid && super.isEmpty();
     }
 
-    public AppListAdapter(Context context, Cursor c, boolean autoRequery) {
+    AppListAdapter(Context context, Cursor c, boolean autoRequery) {
         super(context, c, autoRequery);
         init(context);
     }
 
-    public AppListAdapter(Context context, Cursor c, int flags) {
+    AppListAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
         init(context);
     }

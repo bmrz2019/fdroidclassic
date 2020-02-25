@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.fragment.app.ListFragment;
@@ -118,7 +120,7 @@ public abstract class AppListFragment extends ListFragment implements
         super.onResume();
 
         //Starts a new or restarts an existing Loader in this manager
-        getLoaderManager().initLoader(0, null, this);
+        LoaderManager.getInstance(this).initLoader(0, null, this);
     }
 
     @Override
@@ -141,7 +143,7 @@ public abstract class AppListFragment extends ListFragment implements
      * it automatically again, because the repos or internet connection may
      * be bad.
      */
-    private boolean updateEmptyRepos() {
+    private void updateEmptyRepos() {
         final String triedEmptyUpdate = "triedEmptyUpdate";
         SharedPreferences prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
         boolean hasTriedEmptyUpdate = prefs.getBoolean(triedEmptyUpdate, false);
@@ -149,10 +151,9 @@ public abstract class AppListFragment extends ListFragment implements
             Utils.debugLog(TAG, "Empty app list, and we haven't done an update yet. Forcing repo update.");
             prefs.edit().putBoolean(triedEmptyUpdate, true).apply();
             UpdateService.updateNow(getActivity());
-            return true;
+            return;
         }
         Utils.debugLog(TAG, "Empty app list, but it looks like we've had an update previously. Will not force repo update.");
-        return false;
     }
 
     @Override
@@ -168,8 +169,7 @@ public abstract class AppListFragment extends ListFragment implements
                 Pair<View, String> iconTransitionPair = Pair.create(view.findViewById(R.id.icon),
                         getString(R.string.transition_app_item_icon));
                 Bundle bundle = ActivityOptionsCompat
-                        .makeSceneTransitionAnimation(getActivity(),
-                                iconTransitionPair)
+                        .makeSceneTransitionAnimation(getActivity(), iconTransitionPair)
                         .toBundle();
                 startActivityForResult(intent, REQUEST_APPDETAILS, bundle);
             } else {
@@ -188,15 +188,16 @@ public abstract class AppListFragment extends ListFragment implements
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
         appAdapter.swapCursor(data);
     }
 
     @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
+    public void onLoaderReset(@NonNull Loader<Cursor> loader) {
         appAdapter.swapCursor(null);
     }
 
+    @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         Uri uri = updateSearchStatus() ? getDataUri(searchQuery) : getDataUri();
@@ -226,7 +227,7 @@ public abstract class AppListFragment extends ListFragment implements
         if (!TextUtils.equals(query, searchQuery)) {
             searchQuery = query;
             if (isAdded()) {
-                getLoaderManager().restartLoader(0, null, this);
+                LoaderManager.getInstance(this).restartLoader(0, null, this);
             }
         }
     }
