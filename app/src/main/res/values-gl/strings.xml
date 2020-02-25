@@ -282,12 +282,8 @@
     <string name="swap_not_visible_bluetooth">Non visible mediante Bluetooth</string>
     <string name="swap_not_visible_wifi">Non visible mediante Wi-Fi</string>
     <string name="swap_cant_find_peers">Non podes atopar a quen buscas?</string>
-    <string name="swap_no_peers_nearby">Non se atopou a ninguén cerca para intercambios.</string>
-    <string name="swap_qr_isnt_for_swap">O código QR que escaneaches non parece corresponder a un código de intercambio.</string>
     <string name="swap_cant_send_no_bluetooth">Non se pode enviar, porque o Bluetooth non está dispoñible neste dispositivo.</string>
-    <string name="swap_connection_misc_error">Ocurriu un erro durante a conexión co dispositivo, non se pode realizar o intercambio.</string>
     <string name="swap_not_enabled">Intercambio non dispoñible</string>
-    <string name="swap_not_enabled_description">Antes do intercambio, o teu dispositivo debe estar visible.</string>
 
     <string name="install_confirm">Desexas instalar este aplicativo? Terá acceso a:</string>
     <string name="install_confirm_update">Desexas instalar unha actualización de este aplicativo? Os teus datos existentes non se perderán. A actualización require acceso a:</string>

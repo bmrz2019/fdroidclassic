@@ -235,7 +235,6 @@
     <string name="swap_wifi_device_name">Heiti tækis</string>
     <string name="swap_cant_find_peers">Finnurðu ekki það sem þú leitar að?</string>
     <string name="swap_send_fdroid">Senda F-Droid</string>
-    <string name="swap_no_peers_nearby">Gat ekki fundið neinn í nágrenninu til að býtta við.</string>
     <string name="swap_connecting">Tengist</string>
     <string name="swap_confirm">Staðfesta býtti</string>
     <string name="bluetooth_unavailable">Bluetooth er ekki tiltækt</string>
@@ -286,7 +285,6 @@
 <string name="unstable_updates_summary">Stinga upp á uppfærslum í óstöðugar útgáfur</string>
     <string name="swap_join_same_wifi">Tengstu sama þráðlausa Wi-Fi netinu og vinur þinn</string>
     <string name="swap_intro">Tengstu fólki í nágrenninu og skipstu á forritum við það.</string>
-    <string name="swap_qr_isnt_for_swap">QR-kóðinn sem þú skannaðir lítur ekki út eins og býttikóði.</string>
     <string name="update_interval_zero">Engar sjálfvirkar uppfærslur forritalista</string>
     <string name="automatic_scan_wifi_on">Einungis uppfæra forritalista sjálfvirkt þegar tengst er þráðlausu Wi-Fi neti</string>
     <string name="system_installer_on">Nota forgangsviðbót F-Droid (privileged extension) til að setja upp, uppfæra og fjarlægja pakka</string>
@@ -368,10 +366,8 @@ Til hamingju! Öll forritin þín eru af nýjustu útgáfu (nema ef vera kynni a
     <string name="swap_join_this_hotspot">Hjálpaðu vini þínum að tengjast tengipunktinum þínum</string>
     <string name="swap_scan_or_type_url">Einn aðili þarf að skanna QR-kóðann, eða slá slóðina inn í vafra.</string>
     <string name="swap_cant_send_no_bluetooth">Get ekki sent F-Droid, því Bluetooth er ekki til taks á þessu tæki.</string>
-    <string name="swap_connection_misc_error">Villa kom upp við að tengjast við tækið, það lítur út fyrir að ekki sé hægt að nota það við býtti.</string>
-    <string name="swap_not_enabled_description">Áður en farið er í að býtta þarf að gera tækið þitt sýnilegt.</string>
 
-    <string name="install_confirm_update">Viltu setja inn uppfærslu á þessu forriti sem fyrir 
+    <string name="install_confirm_update">Viltu setja inn uppfærslu á þessu forriti sem fyrir
 hendi er? Fyrirliggjandi gögn sem þú átt tapast ekki. 
 Uppfærða forritið mun fá aðgang að:</string>
     <string name="install_confirm_update_system">Viltu setja inn uppfærslu á þessu innbyggða forriti? 

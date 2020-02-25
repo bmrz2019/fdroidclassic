@@ -284,17 +284,13 @@ tornar a habilitar el dipòsit per instal·lar aplicacions d\'aquest.</string>
     <string name="swap_wifi_device_name">Nom del dispositiu</string>
     <string name="swap_cant_find_peers">No trobeu a qui esteu buscant?</string>
     <string name="swap_send_fdroid">Envia l\'F-Droid</string>
-    <string name="swap_no_peers_nearby">No s\'ha trobat ningú a prop amb qui intercanviar.</string>
     <string name="swap_connecting">Connectant</string>
     <string name="swap_confirm">Confirmeu l\'intercanvi</string>
-    <string name="swap_qr_isnt_for_swap">El codi QR que heu escanejat no sembla un codi d\'intercanvi.</string>
     <string name="bluetooth_unavailable">El Bluetooth no està disponible</string>
     <string name="swap_cant_send_no_bluetooth">No s\'ha pogut enviar F-Droid perquè el Bluetooth no està disponible en aquest dispositiu.</string>
     <string name="loading">Carregant…</string>
     <string name="empty_available_app_list">Cap aplicació en aquesta categoria.\n\nProveu triant una altra categoria o actualitzeu els repositoris per obtenir una llista recent d\'aplicacions.</string>
-    <string name="swap_connection_misc_error">S\'ha produït un error al connectar-se al dispositiu. Sembla que no ens hi podem connectar.</string>
     <string name="swap_not_enabled">Intercanvi no activat</string>
-    <string name="swap_not_enabled_description">Abans d\'intercanviar heu de fer visible el dispositiu.</string>
 
     <string name="install_confirm">necessita accés a</string>
     <string name="install_confirm_update">Voleu instal·lar una actualització

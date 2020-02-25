@@ -194,7 +194,6 @@ Depes
 
     <string name="install_error_unknown">Installatzione faddida pro cajone de una faddina disconnota</string>
     <string name="uninstall_error_unknown">Disinstallatzione faddida pro cajone de una faddina disconnota</string>
-    <string name="swap_connection_misc_error">B\'est istada una faddina durante sa connessione a su dispositivu, non resessimus a cumpartzire sas aplicatziones.</string>
     <string name="unstable_updates">Agiornamentos instàbiles</string>
     <string name="unstable_updates_summary">Cussigia agiornamentos a versiones instàbiles</string>
     <string name="uninstall_system">Disinstalla s’estensione cun permissos de sistema</string>
@@ -244,15 +243,12 @@ Depes
     <string name="swap_wifi_device_name">Nùmene de su dispositivu</string>
     <string name="swap_cant_find_peers">Non ses resessende a agatare su chi chircas?</string>
     <string name="swap_send_fdroid">Imbia F-Droid</string>
-    <string name="swap_no_peers_nearby">No apo agatadu gente a curtzu pro cumpartzire.</string>
     <string name="swap_connecting">Connetende</string>
     <string name="swap_confirm">Cunfirma cumpartzidura</string>
-    <string name="swap_qr_isnt_for_swap">Su còdighe QR iscansidu non paret unu còdighe de cumpartzidura.</string>
     <string name="bluetooth_unavailable">Bluetooth non disponìbile</string>
     <string name="swap_cant_send_no_bluetooth">Impossìbile imbiare F-Droid, ca su Bluetooth no est disponìbile in custu dispositivu.</string>
     <string name="loading">Carrighende…</string>
     <string name="swap_not_enabled">Cumpartzidura non abilitada</string>
-    <string name="swap_not_enabled_description">In antis de cumpartzire, su dispositivu depet èssere postu visìbile.</string>
 
     <string name="install_confirm">at a tènnere atzessu a</string>
     <string name="install_confirm_update">Boles installare un’agiornamentu

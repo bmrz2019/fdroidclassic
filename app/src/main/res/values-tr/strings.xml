@@ -257,16 +257,12 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="swap_wifi_device_name">Aygıt İsmi</string>
     <string name="swap_cant_find_peers">Aradığınız kişiyi bulamadınız mı?</string>
     <string name="swap_send_fdroid">F-Droid\'i gönder</string>
-    <string name="swap_no_peers_nearby">Yakında takas yapılabilecek kimse bulunamadı.</string>
     <string name="swap_connecting">Bağlanıyor</string>
     <string name="swap_confirm">Takası teyit edin</string>
-    <string name="swap_qr_isnt_for_swap">Taradığınız QR kodu bir takas kodu gibi görünmüyor.</string>
     <string name="bluetooth_unavailable">Bluetooth mevcut değil</string>
     <string name="swap_cant_send_no_bluetooth">F-Droid gönderilemedi, çünkü Bluetooth bu aygıtta mevcut değil.</string>
     <string name="loading">Yükleniyor…</string>
-    <string name="swap_connection_misc_error">Aygıta bağlanılırken bir hata meydana geldi, onunla takas yapamayacağız gibi görünüyor.</string>
     <string name="swap_not_enabled">Takas etkinleştirilmemiş</string>
-    <string name="swap_not_enabled_description">Takas yapmadan önce aygıtınızın görünebilir olması gerekmektedir.</string>
 
     <string name="install_confirm">şunlara erişime gereksinir:</string>
     <string name="install_confirm_update">Bu mevcut uygulama için bir güncelleme kurmak istiyor musunuz? Mevcut verileriniz kaybolmayacaktır. Güncellenmiş uygulamanın şunlara erişimi olacaktır:</string>

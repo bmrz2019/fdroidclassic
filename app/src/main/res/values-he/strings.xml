@@ -266,14 +266,10 @@
     <string name="swap_cant_find_peers">אינך יכול למצוא את מי שאתה מחפש?</string>
     <string name="swap_send_fdroid">שלח F-Droid</string>
     <string name="swap_confirm">אמת הֶחְלֵף</string>
-    <string name="swap_qr_isnt_for_swap">קוד QR שסרקת לא נראה כמו קוד swap.</string>
     <string name="swap_cant_send_no_bluetooth">לא מסוגל לשלוח את F-Droid, בשל העובדה כי Bluetooth אינו זמין על מכשיר זה.</string>
     <string name="swap_not_enabled">הֶחְלֵף לא מאופשר</string>
-    <string name="swap_not_enabled_description">בטרם ביצוע הֶחְלֵף, על מכשירך להיות נראה.</string>
 
     <string name="swap_intro">חבר והחלף אפליקציות עם אנשים בקרבתך.</string>
-    <string name="swap_no_peers_nearby">לא היה ניתן למצוא אנשים בקרבת מקום כדי לבצע הֶחְלֵף עמם.</string>
-    <string name="swap_connection_misc_error">אירעה שגיאה במהלך התחברות להתקן, נראה כי אנחנו לא יכולים לבצע הֶחְלֵף עמו.</string>
     <string name="SignatureMismatch">הגרסה החדשה חתומה בעזרת מפתח שונה מזה הישן. כדי להתקין את הגרסה החדשה, יש להסיר את הישנה תחילה. נא לבצע פעולה זו ולנסות שוב. (לתשומת לבך ביטול התקנה יסיר כל מידע פנימי אשר מאוחסן על ידי היישומון)</string>
     <string name="repo_exists_add_fingerprint">מאגר זה כבר מותקן, זה יוסיף מידע מפתח חדש.</string>
     <string name="repo_exists_enable">מאגר זה כבר מותקן, אמת כי ברצונך לאפשרו שוב.</string>

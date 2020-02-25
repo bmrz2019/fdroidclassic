@@ -206,7 +206,6 @@
     <string name="swap_scanning_for_peers">Търсене на хора…</string>
     <string name="swap_no_wifi_network">Няма налична мрежа</string>
     <string name="swap_intro">Свързване и обмяна на приложения с други хора около вас.</string>
-    <string name="swap_no_peers_nearby">Наоколо не са открити хора с които да размените приложения.</string>
     <string name="swap_people_nearby">Хора наоколо</string>
     <string name="swap_visible_wifi">Видими сте чрез Wi-Fi</string>
     <string name="swap_not_visible_bluetooth">Не сте видими чрез Bluetooth</string>
@@ -214,7 +213,6 @@
     <string name="swap_not_visible_wifi">Не сте видими чрез Wi-Fi</string>
     <string name="swap_setting_up_wifi">Настройване на Wi-Fi…</string>
     <string name="swap_setting_up_bluetooth">Настройване на Bluetooth…</string>
-    <string name="swap_not_enabled_description">Преди да осъществите размяна вашето устройство трябва да бъде видимо.</string>
 
     <string name="swap_not_enabled">Забранена размяна</string>
     <string name="swap_cant_send_no_bluetooth">Изпращането на F-Droid не е възможно защото липсва Bluetooth функционалност.</string>
@@ -259,7 +257,6 @@
     <string name="system_install_warning">Отнема до 10 секунди.</string>
     <string name="swap_join_same_wifi_desc">За осъществяване на размяна чрез Wi-Fi е необходимо да сте в една мрежа. Ако нямате достъп до една и съща мрежа единият можете да създадете нова.</string>
     <string name="swap_confirm_connect">Желаете ли да получите приложения от %1$s?</string>
-    <string name="swap_qr_isnt_for_swap">Сканираният QR код не е код за размяна.</string>
     <string name="status_processing_xml_percent">Обработване на %2$s / %3$s (%4$d%%) от %1$s</string>
     <string name="theme_night">Нощна</string>
 <string name="repo_added">Хранилището %1$s е записано.</string>
@@ -267,7 +264,6 @@
     <string name="unsigned">Неподписано</string>
     <string name="system_install_button_install">Инсталиране</string>
     <string name="swap_confirm">Потвърдете размяната</string>
-    <string name="swap_connection_misc_error">Възникна грешка при свързването с устройството, размяната не може да се осъществи.</string>
     <string name="newPerms">Нови</string>
     <string name="uninstall_update_confirm">Желаете ли приложението да бъде заменено от фабричната му версия?</string>
     <string name="download_error">Свалянето се провали</string>

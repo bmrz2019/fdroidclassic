@@ -274,16 +274,12 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="swap_intro">Mit Leuten in der Nähe verbinden und Anwendungen tauschen.</string>
     <string name="swap_wifi_device_name">Gerätename</string>
     <string name="swap_cant_find_peers">Nicht den Gesuchten gefunden?</string>
-    <string name="swap_no_peers_nearby">Keine Leute in der Nähe zum Tauschen gefunden.</string>
     <string name="swap_confirm">Tausch bestätigen</string>
-    <string name="swap_qr_isnt_for_swap">Der QR-Code, den Sie eingelesen haben, sieht nicht wie ein Tauschcode aus.</string>
     <string name="swap_join_same_wifi_desc">Um über WLAN zu tauschen, müssen Sie sich im selben Netzwerk befinden. Wenn Sie keinen gemeinsamen Netzwerkzugang haben, kann einer von Ihnen einen WLAN-Hotspot einrichten.</string>
     <string name="swap_nearby">Tausch in der Nähe</string>
     <string name="swap_cant_send_no_bluetooth">F-Droid kann nicht gesendet werden, da Bluetooth auf diesem Gerät nicht verfügbar ist.</string>
     <string name="loading">Ladevorgang …</string>
-    <string name="swap_connection_misc_error">Fehler bei der Verbindungsaufnahme zum Zielgerät. Tausch ist nicht möglich.</string>
     <string name="swap_not_enabled">Tauschen ist nicht aktiviert</string>
-    <string name="swap_not_enabled_description">Vor dem Tausch muss Ihr Gerät sichtbar gemacht werden.</string>
 
     <string name="install_confirm">benötigt Zugriff auf</string>
     <string name="install_confirm_update">Wollen Sie eine Aktualisierung dieser bestehenden Anwendung installieren? Ihre bestehenden Daten gehen nicht verloren. Die aktualisierte Anwendung wird folgenden Zugriff erhalten:</string>

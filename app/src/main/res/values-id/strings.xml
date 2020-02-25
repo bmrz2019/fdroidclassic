@@ -303,16 +303,12 @@ butuh untuk mengaktifkan ulang repo ini untuk memasang apl darinya.</string>
     <string name="swap_wifi_device_name">Nama Perangkat</string>
     <string name="swap_cant_find_peers">Tidak dapat menemukan siapa yang anda cari?</string>
     <string name="swap_send_fdroid">Kirim F-Droid</string>
-    <string name="swap_no_peers_nearby">Tidak dapat menemukan orang terdekan untuk swap.</string>
     <string name="swap_connecting">Menyambung</string>
     <string name="swap_confirm">Konfirmasi swap</string>
-    <string name="swap_qr_isnt_for_swap">Kode QR yang kamu pindai tidak terlihat seperti kode swap.</string>
     <string name="bluetooth_unavailable">Bluetooth tidak tersedia</string>
     <string name="swap_cant_send_no_bluetooth">Tidak dapat mengirim F-Droid, karena Bluetooth tidak tersedia diperangkat ini.</string>
     <string name="loading">Memuat…</string>
-    <string name="swap_connection_misc_error">Galat terjadi ketika menyambungkan ke perangkat, kami sepertinya tidak dapat swap dengannya.</string>
     <string name="swap_not_enabled">Swap dinonaktifkan</string>
-    <string name="swap_not_enabled_description">Sebelum swap, perangkat anda harus dibuat terlihat.</string>
 
     <string name="install_confirm">butuh akses ke</string>
     <string name="install_confirm_update">Anda ingin memasang pembaruan 

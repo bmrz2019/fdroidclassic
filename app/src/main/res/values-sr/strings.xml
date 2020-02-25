@@ -242,14 +242,11 @@
     <string name="uninstall_error_unknown">Уклањање није успело услед непознате грешке</string>
     <string name="system_install_question">Желите ли да инсталирате повлашћено проширење Ф-дроида?</string>
     <string name="system_uninstall">Желите ли да уклоните повлашћено проширење Ф-дроида?</string>
-    <string name="swap_qr_isnt_for_swap">Бар-кôд који сте очитали не изгледа као кôд размене.</string>
     <string name="install_confirm">захтева приступ следећем</string>
     <string name="perm_costs_money">Ово може да вас кошта</string>
     <string name="uninstall_update_confirm">Желите ли да замените ову апликацију фабрички уграђеном?</string>
     <string name="uninstall_confirm">Желите ли да уклоните ову аликацију?</string>
     <string name="tap_to_install">Преузимање завршено, тапните за инсталацију</string>
-
-    <string name="swap_not_enabled_description">Пре размене, ваш уређај мора бити видљив.</string>
 
     <string name="swap_cant_send_no_bluetooth">Не могу да пошаљем Ф-дроида, блутут није доступан на овом уређају.</string>
     <string name="swap_visible_bluetooth">Видљив преко блутута</string>
@@ -269,7 +266,6 @@
     <string name="swap_cant_find_peers">Не можете да нађете кога тражите?</string>
     <string name="swap_nearby">Оближња размена</string>
     <string name="swap_intro">Повежите се са људима у близини и размењујте апликације.</string>
-    <string name="swap_no_peers_nearby">Нисам нашао никога у близини за размену.</string>
     <string name="download_error">Преузимање није успело</string>
 
     <string name="perms_description_app">Обезбеђује %1$s.</string>
@@ -295,7 +291,6 @@
     <string name="system_install_post_success_message">Повлашћено проширење Ф-дроида је успешно инсталирано. Оно омогућује Ф-дроиду да сам инсталира, надограђује и уклања програме.</string>
     <string name="system_install_post_fail_message">Инсталација повлашћеног проширења Ф-дроида није успела. Овај начин инсталације не подржавају све дистрибуције Андроида, посаветујте се са пратиоцем грешака Ф-дроида за више података.</string>
     <string name="menu_settings">Поставке</string>
-    <string name="swap_connection_misc_error">Десила се грешка приликом повезивања са уређајем, изгледа да не можемо размењивати са њим.</string>
     <string name="swap_join_same_wifi_desc">Да бисте размењивали преко бежичног морате бити на истој мрежи. Ако немате приступ истој мрежи, једно од вас може да направи бежичну врућу тачку.</string>
     <string name="login_title">Потребна је пријава</string>
     <string name="login_name">Корисничко име</string>

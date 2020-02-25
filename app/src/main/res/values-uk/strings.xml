@@ -281,7 +281,6 @@
     <string name="swap_scanning_for_peers">Пошук людей поблизу…</string>
     <string name="swap_nearby">Ближній обмін</string>
     <string name="swap_not_visible_bluetooth">Не видимий через Bluetooth</string>
-    <string name="swap_not_enabled_description">Перед обміном, ви повинні зробити пристрій видимим.</string>
 
     <string name="install_confirm_update">Бажаєте встановити оновлення
  на наявний додаток? Це не видалить ваші наявні дані.
@@ -304,11 +303,8 @@
     <string name="swap_scan_or_type_url">Один з вас повинен відреагувати код, чи ввести URL іншого в оглядачу.</string>
     <string name="swap_people_nearby">Люди поблизу</string>
     <string name="swap_cant_find_peers">Не можете знайти хто вас шукає?</string>
-    <string name="swap_no_peers_nearby">Не вдалося знайти людей поблизу для обміну.</string>
-    <string name="swap_qr_isnt_for_swap">QR-код, який ви просканувати, не містить коду для обміну.</string>
     <string name="repo_added">F-Droid ропозиторій %1$s збережено.</string>
     <string name="category_Theming">Графічні теми</string>
-    <string name="swap_connection_misc_error">Трапилася помилка під час доступу до пристрою, не можливо продовжити обмін з ним.</string>
     <string name="repo_details">Репозиторій</string>
     <string name="repo_url">Адреса</string>
     <string name="status_download_unknown_size">Завантаження\n%2$s з\n%1$s</string>

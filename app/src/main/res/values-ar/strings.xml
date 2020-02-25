@@ -288,16 +288,12 @@
     <string name="swap_wifi_device_name">اسم الجهاز</string>
     <string name="swap_cant_find_peers">لا يمكن العثور على من كنت تبحث عنه؟</string>
     <string name="swap_send_fdroid">إرسال اف-درويد</string>
-    <string name="swap_no_peers_nearby">لا يمكن العثور على شخص في مكان قريب للمبادلة معه.</string>
-    <string name="swap_connecting">يتم الاتصال</string>
+  <string name="swap_connecting">يتم الاتصال</string>
     <string name="swap_confirm">تأكيد المبادلة</string>
-    <string name="swap_qr_isnt_for_swap">رمز الاستجابة السريعة الذي تم التقاطه لا يبدو وكأنه رمز المبادلة.</string>
-    <string name="bluetooth_unavailable">البلوتوث غير متاح</string>
+  <string name="bluetooth_unavailable">البلوتوث غير متاح</string>
     <string name="swap_cant_send_no_bluetooth">لا يمكن إرسال اف-درويد، لأن البلوتوث غير متاح على هذا الجهاز.</string>
     <string name="loading">يتم التحميل…</string>
-    <string name="swap_connection_misc_error">حدث خطأ أثناء الاتصال بالجهاز، ولا يمكن أن يجري المبادلة معه.</string>
-    <string name="swap_not_enabled">المبادلة غير فعالة</string>
-    <string name="swap_not_enabled_description">قبل المبادلة، يجب أن يتم جهازك ظاهر.</string>
+  <string name="swap_not_enabled">المبادلة غير فعالة</string>
 
     <string name="tap_to_install_format">إختر لتثبيت %s</string>
     <string name="tap_to_update_format">إختر لتحديث %s</string>

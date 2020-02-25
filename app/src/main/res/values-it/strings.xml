@@ -222,17 +222,14 @@ non saranno rimossi. L\'app dopo l\'aggiornamento avrà accesso a:</string>
     <string name="swap_choose_apps">Scegli le app</string>
     <string name="swap_scan_qr">Scansiona il codice QR</string>
     <string name="swap_intro">Connettiti e scambia app con le persone vicine.</string>
-    <string name="swap_no_peers_nearby">Non sono state trovate persone nelle vicinanze con cui scambiare app.</string>
     <string name="interval_1w">Settimanalmente</string>
     <string name="interval_1d">Giornalmente</string>
     <string name="interval_never">Mai</string>
     <string name="uninstall_update_confirm">Vuoi sostituire questa app con la sua versione originale?</string>
     <string name="perm_costs_money">Questo potrebbe essere a pagamento</string>
     <string name="newPerms">Nuovo</string>
-    <string name="swap_not_enabled_description">Prima dello scambio, il tuo dispositivo deve essere visibile.</string>
 
     <string name="swap_confirm">Conferma lo scambio</string>
-    <string name="swap_qr_isnt_for_swap">Il codice QR che hai scansionato non sembra essere un codice di scambio.</string>
     <string name="theme_light">Chiaro</string>
     <string name="theme_dark">Scuro</string>
     <string name="theme_night">Notte</string>
@@ -317,7 +314,6 @@ Congratulazioni! Tutte le tue app sono aggiornate (o i tuoi repository non sono 
     <string name="swap_scan_or_type_url">Una persona deve scansionare il codice o inserire l\'URL dell\'altro in un browser.</string>
     <string name="swap_send_fdroid">Invia a F-Droid</string>
     <string name="swap_cant_send_no_bluetooth">Impossibile inviare F-Droid, perché il Bluetooth non è disponibile su questo dispositivo.</string>
-    <string name="swap_connection_misc_error">È avvenuto un errore durante la connessione al dispositivo, non sembra possibile effettuare lo scambio.</string>
     <string name="swap_not_enabled">Scambio non abilitato</string>
     <string name="install_confirm_update_no_perms">Vuoi installare una versione aggiornata
 di questa app? I dati presenti

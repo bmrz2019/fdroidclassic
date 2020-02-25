@@ -234,16 +234,12 @@ Gefeliciteerd! Al je apps zijn up-to-date
     <string name="swap_wifi_device_name">Apparaatnaam</string>
     <string name="swap_cant_find_peers">Kan je degene waar je naar zoekt niet vinden?</string>
     <string name="swap_send_fdroid">Verstuur F-Droid</string>
-    <string name="swap_no_peers_nearby">Kon geen mensen in de buurt vinden om mee te swappen.</string>
     <string name="swap_connecting">Verbinden</string>
     <string name="swap_confirm">Bevestig swap</string>
-    <string name="swap_qr_isnt_for_swap">De QR-code die je gescand hebt lijkt geen swap-code te zijn.</string>
     <string name="bluetooth_unavailable">Bluetooth niet beschikbaar</string>
     <string name="swap_cant_send_no_bluetooth">Kon F-Droid niet verzenden omdat Bluetooth niet beschikbaar is op dit apparaat.</string>
     <string name="loading">Laden…</string>
-    <string name="swap_connection_misc_error">Er trad een fout op bij het verbinden met het apparaat, dus het lijkt erop dat we er niet mee kunnen swappen.</string>
     <string name="swap_not_enabled">Swap niet ingeschakeld</string>
-    <string name="swap_not_enabled_description">Voordat we kunnen swappen, moet het apparaat zichtbaar gemaakt worden.</string>
 
     <string name="install_confirm">heeft toegang nodig tot</string>
     <string name="install_confirm_update">Wil je een update voor deze bestaande applicatie installeren? De bestaande gegevens zullen niet verloren gaan. De nieuwe versie van de applicatie zal toegang krijgen tot:</string>

@@ -285,12 +285,8 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
     <string name="swap_active_hotspot">%1$s (ditt mobiltrådløsnett)</string>
     <string name="swap_nearby">Sirkulering i umiddelbar nærhet</string>
     <string name="swap_intro">Koble til og utveksle programmer med folk i nærheten av deg.</string>
-    <string name="swap_no_peers_nearby">Fant ingen i nærheten å sirkulere med.</string>
     <string name="swap_confirm">Bekreft sirkulering</string>
-    <string name="swap_qr_isnt_for_swap">QR-koden du skannet later til ikke å være en sirkuleringskode.</string>
-    <string name="swap_connection_misc_error">En feil inntraff under tilkobling til enheten, klarer ikke å sirkulere med den.</string>
     <string name="swap_not_enabled">Sirkulering ikke påskrudd</string>
-    <string name="swap_not_enabled_description">Før sirkulering må din enhet være i synlig modus.</string>
 
     <string name="install_confirm_update">Ønsker du å installere en oppdatering
 til dette eksisterende programmet? Dataen du har vil ikke

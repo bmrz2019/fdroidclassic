@@ -97,16 +97,13 @@
     <string name="tap_to_install_format">%s को इनस्टॉल करने के लिए स्पर्श करे</string>
     <string name="tap_to_update_format">%s को अपडेट करने के लिए स्पर्श करे</string>
     <string name="install_confirm">क्या आप यह एप्लीकेशन इनस्टॉल करना चाहते हैं? ये पहुंच मिल जाएगी:</string>
-    <string name="swap_not_enabled_description">अदला-बदली से पहले, आपका यन्त्र दिखाई देना चाइये|</string>
 
     <string name="swap_not_enabled">अदला-बदली आसक्षम</string>
     <string name="loading">लोड हो रहा है…</string>
-    <string name="swap_connection_misc_error">यन्त्र को जोड़ने मैं एक समस्या आ गयी| यन्त्र से अदला-बदली नहीं हो सकती|</string>
     <string name="bluetooth_unavailable">ब्लूटूथ अनुपलब्ध</string>
     <string name="swap_cant_send_no_bluetooth">फ-द्रोइड नहीं भेज सकते, क्योंकि ब्लूटूथ इस यन्त्र पे उपलब्ध नहीं है|</string>
     <string name="swap_connecting">जुड़ रहा है</string>
     <string name="swap_confirm">अदला-बदली की पुष्टि करे</string>
-    <string name="swap_qr_isnt_for_swap">QR कोड जो अपने स्कैन किया है वह अदला-बदली का code नहीं है|</string>
     <string name="swap_intro">जुडें और एप्लीकेशन का लेन-देन करें आपके समीप लोगो से|</string>
     <string name="swap_visible_bluetooth">ब्लूटूथ के माध्यम से दिखाई दे</string>
     <string name="swap_setting_up_bluetooth">ब्लूटूथ की स्तःपना हो रही है…</string>
@@ -118,7 +115,6 @@
     <string name="swap_wifi_device_name">यन्त्र का नाम</string>
     <string name="swap_cant_find_peers">नहीं धुंद प् रहे जिसकी आप तलाश कर रहे है?</string>
     <string name="swap_send_fdroid">F-Droid भेजे</string>
-    <string name="swap_no_peers_nearby">अदला-बदली के लिए आस पास लोग नहीं धुंद पाए|</string>
     <string name="swap_join_this_hotspot">"हॉटस्पॉट  से जुडने मैं अपने दोस्त की सहयता करें"</string>
     <string name="swap">आपस की अदला-बदली</string>
     <string name="swap_success">अदला-बदली सफल!</string>

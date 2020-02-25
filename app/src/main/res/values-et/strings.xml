@@ -295,15 +295,12 @@
     <string name="swap_wifi_device_name">Seadme nimi</string>
     <string name="swap_cant_find_peers">Ei leia seda, keda otsid?</string>
     <string name="swap_send_fdroid">Saada F-Droid</string>
-    <string name="swap_no_peers_nearby">Ei leidnud lähedal inimesi, kellega vahetada.</string>
     <string name="swap_connecting">Ühenduse loomine</string>
     <string name="swap_confirm">Kinnita vahetus</string>
-    <string name="swap_qr_isnt_for_swap">Skannitud QR-kood ei paista olevat vahetamise kood.</string>
     <string name="bluetooth_unavailable">Bluetooth ei ole saadaval</string>
     <string name="swap_cant_send_no_bluetooth">F-Droidi ei saa saata, sest Bluetooth ei ole selles seadmes saadaval.</string>
     <string name="loading">Laadimine…</string>
     <string name="swap_not_enabled">Vahetamine ei ole lubatud</string>
-    <string name="swap_not_enabled_description">Enne vahetamist pead tegema seadme nähtavaks.</string>
 
     <string name="tap_to_install_format">Puuduta %s paigaldamiseks</string>
     <string name="install_confirm">vajab juurdepääsu</string>
@@ -349,7 +346,6 @@
     <string name="crash_dialog_comment_prompt">Sa saad lisada täiendavat informatsiooni ja kommentaare siia:</string>
 <string name="root_access_denied_body">Su Android seade ei ole kas lahti lukustatud või sa oled keelanud F-Droidile juurkasutaja õigused.</string>
     <string name="swap_join_same_wifi_desc">WiFi kaudu vahetamiseks peate olema samas võrgus. Kui sul puudub ligipääs samasse võrku, siis saab teist üks luua WiFi tööpunkti.</string>
-    <string name="swap_connection_misc_error">Seadmega ühendumine nurjus. Sellega vahetamine ei ole vist võimalik.</string>
     <string name="crash_dialog_text">Ootamatu viga põhjustas rakenduse krahhi.
  Kas sa soovid saata selle detailid e-mailiga, et probleem parandada?</string>
     </resources>

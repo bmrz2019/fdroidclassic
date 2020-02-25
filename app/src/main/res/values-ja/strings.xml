@@ -228,10 +228,8 @@
     <string name="swap_wifi_device_name">端末名</string>
     <string name="swap_cant_find_peers">探している人が見つかりませんか?</string>
     <string name="swap_send_fdroid">F-Droidを送信</string>
-    <string name="swap_no_peers_nearby">交換する近くの人が見つかりませんでした｡</string>
     <string name="swap_connecting">接続中</string>
     <string name="swap_confirm">交換の確認</string>
-    <string name="swap_qr_isnt_for_swap">読み取った QR ｺｰﾄﾞは交換ｺｰﾄﾞではないようです｡</string>
     <string name="bluetooth_unavailable">Bluetooth が利用できません</string>
     <string name="swap_cant_send_no_bluetooth">この端末でBluetoothが利用できないため､F-Droidを送信できません｡</string>
     <string name="loading">読み込み中…</string>
@@ -239,9 +237,7 @@
 
     <string name="downloading">ﾀﾞｳﾝﾛｰﾄﾞ中…</string>
 
-    <string name="swap_connection_misc_error">端末への接続中にｴﾗｰが発生しました｡交換できないようです｡</string>
     <string name="swap_not_enabled">交換は有効ではありません</string>
-    <string name="swap_not_enabled_description">交換する前に､お使いの端末が表示されている必要があります｡</string>
 
     <string name="install_confirm">必要なｱｸｾｽ許可</string>
     <string name="install_confirm_update">既存のｱﾌﾟﾘｹｰｼｮﾝに更新をｲﾝｽﾄｰﾙしますか?

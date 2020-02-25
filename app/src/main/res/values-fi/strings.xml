@@ -312,15 +312,11 @@ Onnittelut! Kaikki sovelluksesi ovat ajan tasalla (tai sovelluslähteesi ovat va
     <string name="swap_stopping_wifi">Pysäytetään WiFiä…</string>
     <string name="swap_not_visible_wifi">Ei nähtävissä Wi-Fin kautta</string>
     <string name="swap_cant_find_peers">Etkö löydä etsimääsi?</string>
-    <string name="swap_no_peers_nearby">Ei löytynyt lähellä olevia ihmisiä joiden kanssa vaihtaa.</string>
     <string name="swap_connecting">Yhdistetään</string>
     <string name="swap_confirm">Vahvista vaihto</string>
-    <string name="swap_qr_isnt_for_swap">Skannaamasi QR-koodi ei näytä vaihtamiseen tarkoitetulta koodilta.</string>
     <string name="bluetooth_unavailable">Bluetooth ei ole saatavilla</string>
     <string name="swap_cant_send_no_bluetooth">Ei voida lähettää F-Droidia, koska Bluetooth ei ole saatavilla tällä laitteella.</string>
-    <string name="swap_connection_misc_error">Tapahtui virhe yhdistettäessä laitteeseen, vaihtaminen ei onnistu.</string>
     <string name="swap_not_enabled">Vaihtaminen ei ole käytössä</string>
-    <string name="swap_not_enabled_description">Ennen vaihtamista, laitteesi täytyy tehdä näkyväksi.</string>
 
     <string name="tap_to_install_format">Napsauta asentaaksesi %s</string>
     <string name="tap_to_update_format">Napsauta päivittääksesi %s</string>

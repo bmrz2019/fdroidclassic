@@ -266,13 +266,10 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="swap_not_visible_wifi">Non visible via Wi-Fi</string>
     <string name="swap_wifi_device_name">Nom de l\'appareil</string>
     <string name="swap_send_fdroid">Envoyer F-Droid</string>
-    <string name="swap_no_peers_nearby">Impossible de trouver des personnes à proximité.</string>
     <string name="swap_connecting">Connexion</string>
     <string name="swap_confirm">Confirmez l\'échange</string>
-    <string name="swap_qr_isnt_for_swap">Le code QR que vous avez scanné ne ressemble pas à un code d\'échange.</string>
     <string name="bluetooth_unavailable">Bluetooth indisponible</string>
     <string name="swap_cant_send_no_bluetooth">Impossible d\'envoyer F-Droid : le Bluetooth n\'est pas disponible sur cet appareil.</string>
-    <string name="swap_not_enabled_description">Votre appareil doit être visible avant de pouvoir commencer l\'échange.</string>
 
     <string name="interval_1h">Toutes les heures</string>
     <string name="perms_description_app">Fourni par %1$s.</string>
@@ -303,7 +300,6 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="system_uninstall_button">Désinstaller</string>
 
     <string name="swap_cant_find_peers">Vous n\'arrivez pas à trouver ce que vous cherchez ?</string>
-    <string name="swap_connection_misc_error">Une erreur a eu lieu lors de la connexion à l\'appareil, il semblerait que nous ne puissions pas faire d\'échange avec.</string>
     <string name="swap_not_enabled">Échange désactivé</string>
     <string name="category_Time">Temps</string>
     <string name="more">Plus</string>

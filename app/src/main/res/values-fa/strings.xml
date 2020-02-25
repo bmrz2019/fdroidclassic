@@ -236,7 +236,6 @@
     <string name="swap_wifi_device_name">نام افزاره</string>
     <string name="swap_cant_find_peers">نمی‌توانید کسی که دنبالشید را پیدا کنید؟</string>
     <string name="swap_send_fdroid">ارسال اف‌دروید</string>
-    <string name="swap_no_peers_nearby">نمی‌توان افراد نزدیک را برای تبادل با آن‌ها پیدا کرد.</string>
     <string name="swap_connecting">در حال اتّصال</string>
     <string name="swap_confirm">تأیید تبادل</string>
     <string name="newPerms">جدید</string>
@@ -293,13 +292,10 @@
     <string name="system_uninstall">می‌خواهید افزونهٔ ممتاز اف‌دروید را حذف کنید؟</string>
     <string name="swap_nfc_description">اگر دوستتان اف‌دروید داشته و NFC اش روشن است، افزاره‌هایتان را با هم تماس بدهید.</string>
     <string name="swap_join_same_wifi_desc">برای تبادل با استفاده از وای‌فای، مطمئن شوید که روی شبکهٔ یک‌سانی هستید. اگر به شبکهٔ یک‌سان دسترسی ندارید، یکی از شما می‌تواند یک نقطهٔ داغ وای‌فای ایجاد کند.</string>
-    <string name="swap_qr_isnt_for_swap">رمز QR ای که پوییدید، شبیه یک رمز تبادل نیست.</string>
     <string name="bluetooth_unavailable">بلوتوث موجود نیست</string>
     <string name="swap_cant_send_no_bluetooth">نمی‌توان اف‌دروید را فرستاد، زیرا بلوتوث روی این افزاره موحود نیست.</string>
     <string name="loading">در حال بار کردن…</string>
-    <string name="swap_connection_misc_error">هنگام اتّصال به افزاره خطایی رخ داد. به نظر می‌رسد با این وضع نمی‌توانیم تبادل کنیم.</string>
     <string name="swap_not_enabled">تبادل فعّال نیست</string>
-    <string name="swap_not_enabled_description">پیش از تبادل، افزاره‌تان باید قابل مشاهده باشد.</string>
 
     <string name="install_confirm">نیاز به دسترسی به</string>
     <string name="install_confirm_update">می‌خواهید به‌روزرسانی‌ای برای این برنامه نصب کنید؟ داده‌های موجودتان از بین نخواهند رفت. برنامهٔ به‌روز شده دسترسی‌های زیر را خواهد داشت:</string>

@@ -321,16 +321,12 @@ Makorokoto! MaApps ako ose akanatswa (kana kuti pfimbi dzako hadzina kunatswa).<
     <string name="swap_wifi_device_name">Zita remuchina</string>
     <string name="swap_cant_find_peers">Hausi kuwona munhu wauri kutsvaga here?</string>
     <string name="swap_send_fdroid">Tumira F-Droid</string>
-    <string name="swap_no_peers_nearby">Hauna kuwana vanhu vari pedyo newe vekutsinhana.</string>
     <string name="swap_connecting">Kuhakira</string>
     <string name="swap_confirm">Tsinhira kutsinhana</string>
-    <string name="swap_qr_isnt_for_swap">Murau weQR wawanzvera hausi kuita kunge murau wekutsinhana.</string>
     <string name="bluetooth_unavailable">Bluetooth haipo</string>
     <string name="swap_cant_send_no_bluetooth">Hatisi kukwanisa kutumira F-Droid, nekuti Bluetooth haipo pamuchina uyu.</string>
     <string name="loading">Kuzadza…</string>
-    <string name="swap_connection_misc_error">Pane kanganiso yaitika pakuhakira kumuchina, hatisi kukwanisa kutsinhana nayo.</string>
     <string name="swap_not_enabled">Kutsinhana hakuna kubvumirwa</string>
-    <string name="swap_not_enabled_description">Tisati tatsinhana, muchina wako unofanirwa kuita kuti uwonekwe.</string>
 
     <string name="tap_to_install_format">Bata kuti uvakirire %s</string>
     <string name="tap_to_update_format">Bata kuti unatse %s</string>

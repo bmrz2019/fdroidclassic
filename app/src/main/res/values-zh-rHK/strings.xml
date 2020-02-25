@@ -233,16 +233,12 @@
 
     <string name="repo_exists_enable">此倉庫已經設置。請確認您要重新啟用此倉庫。</string>
     <string name="theme_night">深夜色系</string>
-<string name="swap_not_enabled_description">在交換之前，您的裝置必須可被其他裝置發現。</string>
 
     <string name="swap_not_enabled">沒有啟用交換功能</string>
-    <string name="swap_connection_misc_error">與裝置連接的時候發生錯誤，未能與它進行交換。</string>
     <string name="loading">正在載入…</string>
     <string name="swap_cant_send_no_bluetooth">未能傳送 F-Droid，因為此裝置沒有藍牙功能。</string>
     <string name="bluetooth_unavailable">藍牙不可用</string>
-    <string name="swap_qr_isnt_for_swap">您所掃描的 QR 碼不是一個交換碼。</string>
     <string name="swap_confirm">確定交換</string>
-    <string name="swap_no_peers_nearby">找不到附近的人來進行交換。</string>
     <string name="swap_cant_find_peers">找不到您想找的人?</string>
     <string name="swap_not_visible_wifi">在 Wi-Fi 上不可被偵測</string>
     <string name="swap_setting_up_wifi">正在設定 Wi-Fi…</string>

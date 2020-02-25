@@ -285,16 +285,12 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="swap_wifi_device_name">Aparata nomo</string>
     <string name="swap_cant_find_peers">Ĉu vi ne povas trovi kiun, tiun vi serĉas?</string>
     <string name="swap_send_fdroid">Sendi F-Droid</string>
-    <string name="swap_no_peers_nearby">Ne povas trovi homojn proksime por interŝanĝi.</string>
     <string name="swap_connecting">Konektado</string>
     <string name="swap_confirm">Konfirmi interŝanĝon</string>
-    <string name="swap_qr_isnt_for_swap">La skanita QR-kodo ne estas interŝanĝa kodo.</string>
     <string name="bluetooth_unavailable">Bludento ne disponebla</string>
     <string name="swap_cant_send_no_bluetooth">Ne povas sendi F-Droid-on, ĉar Bludento ne estas disponebla en via aparato.</string>
     <string name="loading">Prilaborado…</string>
-    <string name="swap_connection_misc_error">Eraro okazis dum konektado al aparato, verŝajne ne povas interŝanĝi kun ĝi.</string>
     <string name="swap_not_enabled">Interŝanĝo malaktiva</string>
-    <string name="swap_not_enabled_description">Antaŭ interŝanĝo via aparato devas esti videbla.</string>
 
     <string name="install_confirm">postulas aliron al</string>
     <string name="install_confirm_update">Ĉu vi volas instali ĝisdatigon al ĉi tiu aplikaĵo? Viaj nunaj datumoj ne foriĝos. La ĝisdatiga aplikaĵo povos aliri:</string>

@@ -278,16 +278,12 @@
     <string name="swap_wifi_device_name">Enhedsnavn</string>
     <string name="swap_cant_find_peers">Kan du ikke finde den du leder efter?</string>
     <string name="swap_send_fdroid">Send F-Droid</string>
-    <string name="swap_no_peers_nearby">Fandt ingen folk i nærheden at udveksle med.</string>
     <string name="swap_connecting">Forbinder</string>
     <string name="swap_confirm">Bekræft udveksling</string>
-    <string name="swap_qr_isnt_for_swap">Den QR-kode du skannede ligner ikke en udvekslingskode.</string>
     <string name="bluetooth_unavailable">Bluetooth utilgængelig</string>
     <string name="swap_cant_send_no_bluetooth">Kan ikke sende F-Droid fordi Bluetooth er utilgængeligt på denne enhed.</string>
     <string name="loading">Indlæser…</string>
-    <string name="swap_connection_misc_error">Der forekom en fejl under forbindelsen til enheden, det ser ud til at vi ikke kan udveksle med den.</string>
     <string name="swap_not_enabled">Udveksling ikke aktiveret</string>
-    <string name="swap_not_enabled_description">Inden udveksling skal din enhed gøres synlig.</string>
 
     <string name="install_confirm">kræver adgang til</string>
     <string name="install_confirm_update">Vil du installere en opdatering til dette eksisterende program? Dine eksisterende data vil ikke gå tabt. Det opdaterede program vil få adgang til:</string>
