@@ -2,8 +2,7 @@
 <resources>
   <string name="version">Versija</string>
   <string name="delete">Dzēst</string>
-  <string name="enable_nfc_send">Ieslēgt sūtīšanu caur NFC…</string>
-  <string name="cache_downloaded">Programmu kešs</string>
+    <string name="cache_downloaded">Programmu kešs</string>
   <string name="updates">Atjauninājumi</string>
   <string name="other">Cits</string>
   <string name="update_interval">Atjauninājumu intervāls</string>
@@ -39,10 +38,7 @@
   <string name="tab_updates">Atjauninājumi</string>
   <string name="one_update_available">1 atjauninājums pieejams.</string>
   <string name="many_updates_available">%d atjauninājumi pieejami.</string>
-  <string name="bluetooth_activity_not_found">Nav Bluetooth aktivitāšu, izvēlies vienu!</string>
-  <string name="choose_bt_send">Izvēlies Bluesūtīšanas metodi</string>
-  <string name="send_via_bluetooth">Bluesūtīt</string>
-  <string name="repo_add_url">Repozitorija adrese</string>
+    <string name="repo_add_url">Repozitorija adrese</string>
   <string name="repo_add_fingerprint">Nospiedums (opcionāli)</string>
   <string name="repo_exists_add_fingerprint">Repozitorijs jau iestatīts, šis pievienos jaunu atslēgas info.</string>
   <string name="repo_exists_enable">Repozitorijs jau iestatīts, apstiprini atkārtotu ieslēgšanu.</string>
@@ -51,8 +47,7 @@
   <string name="malformed_repo_uri">Ignorē nepareizu Repozitorija URI: %s</string>
   <string name="menu_update_repo">Atjauno Repozitorijus</string>
   <string name="menu_manage">Repozitoriji</string>
-  <string name="menu_send_apk_bt">Bluesūta F-Droid</string>
-  <string name="menu_about">Par</string>
+    <string name="menu_about">Par</string>
   <string name="menu_search">Meklēt</string>
   <string name="menu_add_repo">Jauns Repozitorijs</string>
   <string name="menu_launch">Palaist</string>

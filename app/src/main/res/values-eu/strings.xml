@@ -3,8 +3,7 @@
   <string name="SignatureMismatch">Bertsio berria zaharraren desberdina den gako batekin sinatuta dago. Bertsio berria instalatzeko, aurretik zaharra desinstalatu beharra dago.  Mesedez, egizu eta saiatu berriro. (Kontutan izan desinstalatzean aplikazioak gordetako barne datuak ezabatuko direla)</string>
   <string name="version">Bertsioa</string>
   <string name="delete">Ezabatu</string>
-  <string name="enable_nfc_send">Gaitu NFC bidez bidaltzea…</string>
-  <string name="cache_downloaded">Gorde aplikazioak cachean</string>
+    <string name="cache_downloaded">Gorde aplikazioak cachean</string>
   <string name="updates">Eguneraketak</string>
   <string name="automatic_scan_wifi">Wi-Fi bidez soilik</string>
   <string name="automatic_scan_wifi_on">Eguneratu aplikazioen zerrendak automatikoki Wi-Fi bezalako mugatu gabeko sareen bidez soilik</string>
@@ -99,13 +98,9 @@
 
     <string name="back">Atzera</string>
     <string name="update_notification_more">+%1$d gehiago…</string>
-    <string name="bluetooth_activity_not_found">Ez da aurkitu Bluetooth bidez bidaltzeko metodorik, aukeratu bat!</string>
-    <string name="choose_bt_send">Aukeratu Bluetooth bidez bidaltzeko metodoa</string>
-    <string name="send_via_bluetooth">Bidali Bluetooth bidez</string>
 
     <string name="repo_add_fingerprint">Hatz-marka (aukerazkoa)</string>
     <string name="bad_fingerprint">Hatz-marka okerra</string>
-    <string name="menu_send_apk_bt">Partekatu F-Droid Bluetooth bidez</string>
     <string name="menu_changelog">Aldaketa egunkaria</string>
     <string name="antitracklist">Aplikazio honek zure eginkizunen jarraipena egiten du eta berri ematen du</string>
     <string name="antinonfreeadlist">Aplikazio honen libreak ez diren gehigarriak bultzatzen ditu</string>
@@ -150,8 +145,6 @@
     <string name="allPerms">Guztiak</string>
     <string name="perms_new_perm_prefix">"Berria: "</string>
     <string name="loading">Kargatzen…</string>
-    <string name="swap_connecting">Konektatzen</string>
-    <string name="swap_wifi_device_name">Gailuaren izena</string>
     <string name="writing_index_jar">Sinatutako aurkibide fitxategia idazten (index.jar)…</string>
     <string name="linking_apks">APK fitxategiak biltegira lotzen…</string>
     <string name="copying_icons">Aplikazioen ikonoak biltegira kopiatzen…</string>
@@ -248,45 +241,12 @@ instalatu ahal izateko gaitu egin beharko duzu.</string>
     <string name="system_install_warning_lollipop">Honek gehienez 10s emango ditu eta ondoren gailua <b>berrabiarazi</b> egingo da.</string>
     <string name="system_uninstall_button">Desinstalatu</string>
 
-    <string name="swap_join_this_hotspot">Lagundu adiskideari zure Wi-Fi gunera konektatzen</string>
-    <string name="swap">Partekatu aplikazioak</string>
-    <string name="swap_success">Partekatzea arrakastatsua!</string>
-    <string name="swap_no_wifi_network">Ez dago sarerik oraindik</string>
-    <string name="swap_active_hotspot">%1$s (zure Wi-Fi gunea)</string>
-    <string name="swap_view_available_networks">Ukitu eskuragarri dauden sareak irekitzeko</string>
-    <string name="swap_switch_to_wifi">Ukitu Wi-Fi sare batetara aldatzeko</string>
     <string name="open_qr_code_scanner">Ireki QR eskanerra</string>
-    <string name="swap_welcome">Ongi etorri F-Droidera!</string>
-    <string name="swap_confirm_connect">%1$stik aplikazioak jaso nahi dituzu orain?</string>
-    <string name="swap_dont_show_again">Ez bistaratu hau berriro</string>
-    <string name="swap_scan_or_type_url">Pertsona batek bestearen kodea eskaneatu behar du, edo URL helbidea nabigatzailean sartu.</string>
-    <string name="swap_choose_apps">Hautatu aplikazioak</string>
-    <string name="swap_scan_qr">Eskaneatu QR kodea</string>
-    <string name="swap_people_nearby">Inguruko jendea</string>
-    <string name="swap_scanning_for_peers">Inguruko jendearen bila…</string>
-    <string name="swap_nearby">Ingurukoekin partekatu</string>
-    <string name="swap_intro">Konektatu eta trukatu aplikazioak inguruko jendearekin.</string>
-    <string name="swap_visible_bluetooth">Bluetooth bidez ikusgarri</string>
-    <string name="swap_setting_up_bluetooth">Bluetooth ezartzen…</string>
-    <string name="swap_not_visible_bluetooth">Bluetooth bidez ez ikusgarri</string>
-    <string name="swap_visible_wifi">Wi-Fi bidez ikusgarri</string>
-    <string name="swap_setting_up_wifi">Wi-Fi ezartzen…</string>
-    <string name="swap_not_visible_wifi">Wi-Fi bidez ez ikusgarri</string>
-    <string name="swap_cant_find_peers">Ezin duzu bilatzen ari zarena aurkitu?</string>
-    <string name="swap_send_fdroid">Bidali F-Droid</string>
-    <string name="swap_confirm">Berretsi trukea</string>
     <string name="system_install_post_success">Ongi instalatu da Pribilegiodun F-Droid Luzapena</string>
     <string name="system_install_post_fail">Huts egin du Pribilegiodun F-Droid Luzapena instalatzea</string>
     <string name="system_install_post_success_message">Pribilegiodun F-Droid Luzapena ongi instalatu da. Honek F-Droidek bere kabuz aplikazioak instalatu, eguneratu eta desinstalatzea ahalbidetzen du.</string>
     <string name="system_install_post_fail_message">Pribilegiodun F-Droid Luzapenaren instalazioak huts egin du. Instalazio metodoa ez dabil Android banaketa guztietan, Kontsultatu F-Droid Bug Trackerra informazio gehiagorako.</string>
     <string name="system_uninstall">Pribilegiodun F-Droid Luzapena desinstalatu nahi duzu?</string>
-    <string name="swap_nfc_title">Ukitu partekatzeko</string>
-    <string name="swap_nfc_description">Zure adiskideak F-Droid eta NFC piztuta baditu ukitu gailuak elkarrekin.</string>
-    <string name="swap_join_same_wifi">Batu zure adiskidearen Wi-Fi sare berera</string>
-    <string name="swap_join_same_wifi_desc">Wi-Fi bidez partekatzeko, egiaztatu biak sare berean zaudetela. Ez baduzue sare berera konektatzerik zuetako batek Wi-Fi gune bat sor dezake.</string>
-    <string name="bluetooth_unavailable">Bluetooth ez dago eskuragarri</string>
-    <string name="swap_cant_send_no_bluetooth">Ezin da F-Droid bidali, Bluetooth ez dagoelako erabilgarri gailu honetan.</string>
-    <string name="swap_not_enabled">Trukea ez dago gaituta</string>
 
     <string name="install_confirm">baimen hauek behar ditu</string>
     <string name="install_confirm_update">Aurretik dagoen aplikazio honen bertsio berriagoa 
@@ -338,7 +298,6 @@ Ez du baimen berezirik behar.</string>
     <string name="empty_search_available_app_list">Ez dago bat datorren aplikaziorik eskuragarri.</string>
     <string name="empty_search_can_update_app_list">Ez dago bat datorren aplikaziorik eguneratzeke.</string>
 
-    <string name="swap_stopping_wifi">Wi-Fia gelditzen…</string>
     <string name="tap_to_install_format">Sakatu %s instalatzeko</string>
     <string name="tap_to_update_format">Sakatu %s eguneratzeko</string>
     <string name="crash_dialog_title">F-droid kraskatu da</string>

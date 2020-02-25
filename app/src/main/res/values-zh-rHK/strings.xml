@@ -2,8 +2,7 @@
 <resources>
   <string name="version">版本</string>
   <string name="delete">刪除</string>
-  <string name="enable_nfc_send">啟用 NFC 傳送…</string>
-  <string name="cache_downloaded">保留快取中的程式</string>
+    <string name="cache_downloaded">保留快取中的程式</string>
   <string name="updates">更新</string>
   <string name="other">其他</string>
   <string name="update_interval">自動更新頻率</string>
@@ -40,15 +39,11 @@
   <string name="one_update_available">您有 1 個更新。</string>
   <string name="many_updates_available">您有 %d 個更新。</string>
   <string name="fdroid_updates_available">有尚未安裝的 F-Droid 更新</string>
-  <string name="bluetooth_activity_not_found">請選擇一個藍牙傳送的方式！</string>
-  <string name="choose_bt_send">選擇藍牙的傳送方式</string>
-  <string name="send_via_bluetooth">透過藍牙傳送</string>
-  <string name="repo_add_url">軟件倉庫網址</string>
+    <string name="repo_add_url">軟件倉庫網址</string>
   <string name="repo_add_fingerprint">指紋 (可選擇填寫)</string>
   <string name="menu_update_repo">更新倉庫</string>
   <string name="menu_manage">軟件倉庫</string>
-  <string name="menu_send_apk_bt">透過藍牙傳送 F-Droid</string>
-  <string name="menu_about">關於</string>
+    <string name="menu_about">關於</string>
   <string name="menu_search">搜尋</string>
   <string name="menu_add_repo">新增軟件倉庫</string>
   <string name="menu_launch">執行</string>
@@ -126,12 +121,8 @@
   <string name="requesting_root_access_body">要求 root 權限中…</string>
   <string name="root_access_denied_title">Root 權限被拒絕</string>
   <string name="system_install_denied_title">系統權限被拒絕</string>
-  <string name="swap">交換應用程式</string>
-  <string name="swap_no_wifi_network">沒有網絡連線</string>
-  <string name="open_qr_code_scanner">開啟 QR 碼掃描器</string>
-  <string name="swap_welcome">歡迎使用 F-Droid！</string>
-  <string name="swap_confirm_connect">你是否想從 %1$s 取得應用程式？</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">開啟 QR 碼掃描器</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">不穩定的更新</string>
     <string name="unstable_updates_summary">建議更新至不穩定的版本</string>
@@ -173,8 +164,6 @@
     <string name="system_install_uninstalling">卸載中…</string>
     <string name="system_uninstall_button">卸載</string>
 
-    <string name="swap_nfc_title">觸碰來交換</string>
-    <string name="swap_nfc_description">若您的朋友有 F-Droid，並開啟了 NFC 功能，請觸碰您們的裝置。</string>
     <string name="theme_dark">暗色系</string>
 <string name="theme_light">明亮色系</string>
     <string name="interval_2w">每兩星期</string>
@@ -194,14 +183,6 @@
     <string name="uninstall_confirm">您想卸載此應用程式嗎？</string>
     <string name="allPerms">所有</string>
     <string name="newPerms">新權限</string>
-    <string name="swap_connecting">正在連線</string>
-    <string name="swap_send_fdroid">傳送 F-Droid</string>
-    <string name="swap_wifi_device_name">裝置名稱</string>
-    <string name="swap_scan_qr">掃描 QR 碼</string>
-    <string name="swap_people_nearby">附近的人</string>
-    <string name="swap_scanning_for_peers">正在尋找附近的人…</string>
-    <string name="swap_choose_apps">選擇程式</string>
-    <string name="swap_dont_show_again">不要再顯示</string>
     <string name="installIncompatible">此軟件包與您的裝置並不相容，您確定要安裝嗎？</string>
     <string name="proxy">代理伺服器</string>
     <string name="enable_proxy_title">啟用 HTTP 代理伺服器</string>
@@ -234,24 +215,7 @@
     <string name="repo_exists_enable">此倉庫已經設置。請確認您要重新啟用此倉庫。</string>
     <string name="theme_night">深夜色系</string>
 
-    <string name="swap_not_enabled">沒有啟用交換功能</string>
     <string name="loading">正在載入…</string>
-    <string name="swap_cant_send_no_bluetooth">未能傳送 F-Droid，因為此裝置沒有藍牙功能。</string>
-    <string name="bluetooth_unavailable">藍牙不可用</string>
-    <string name="swap_confirm">確定交換</string>
-    <string name="swap_cant_find_peers">找不到您想找的人?</string>
-    <string name="swap_not_visible_wifi">在 Wi-Fi 上不可被偵測</string>
-    <string name="swap_setting_up_wifi">正在設定 Wi-Fi…</string>
-    <string name="swap_visible_wifi">在 Wi-Fi 上可被偵測</string>
-    <string name="swap_not_visible_bluetooth">在藍牙上不可被偵測</string>
-    <string name="swap_setting_up_bluetooth">正在設定藍牙…</string>
-    <string name="swap_visible_bluetooth">在藍牙上可被偵測</string>
-    <string name="swap_intro">與您附近的人交換應用程式。</string>
-    <string name="swap_nearby">近距交換</string>
-    <string name="swap_scan_or_type_url">其中一人需掃描 QR 碼或在瀏覽器中輸入另一人的網址。</string>
-    <string name="swap_switch_to_wifi">觸碰以換至一個 Wi-Fi 網絡</string>
-    <string name="swap_view_available_networks">觸碰以檢視可加入的網絡</string>
-    <string name="swap_success">交換成功！</string>
     <string name="menu_settings">設置</string>
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
@@ -287,10 +251,6 @@
     <string name="system_install_warning">安裝過程只需最多 10 秒鐘。</string>
     <string name="system_install_warning_lollipop">安裝過程只需最多 10 秒鐘，而裝置將會在安裝後<b>重新啟動</b>。</string>
     <string name="system_uninstall">您想卸載 F-Droid 系統權限套件嗎？</string>
-    <string name="swap_join_same_wifi">與您的朋友加入同一個 Wi-Fi 網絡</string>
-    <string name="swap_join_same_wifi_desc">若要透過 Wi-Fi 進行交換，請確保雙方都加入了同一個網絡。如果您不能加入同一個網絡，您可以建立一個 Wi-Fi 熱點。</string>
-    <string name="swap_join_this_hotspot">協助您的朋友加入您的熱點</string>
-    <string name="swap_active_hotspot">%1$s (您的熱點)</string>
     <string name="about_license">特許條款</string>
 
     <string name="tab_installed_apps_count">已安裝 (%d)</string>
@@ -331,7 +291,6 @@
 不可被驗證。您要小心使用
 來自未簽署的索引的應用程式。</string>
     <string name="useTor">使用 Tor</string>
-    <string name="swap_stopping_wifi">正在停止 Wi-Fi…</string>
     <string name="by_author">作者為</string>
     <string name="useTorSummary">要求下載流量經過 Tor ，以加強對私隱的保障</string>
     <string name="update_auto_download">自動下載更新</string>

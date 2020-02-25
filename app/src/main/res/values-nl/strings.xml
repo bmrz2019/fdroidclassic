@@ -5,8 +5,7 @@
   <string name="installDowngrade">Je probeert deze app te downgraden naar een oudere versie. Als je dit doet, functioneert de app mogelijk niet goed meer en kan je zelfs je gegevens verliezen. Wil je het alsnog proberen en de app downgraden?</string>
   <string name="version">Versie</string>
   <string name="delete">Verwijderen</string>
-  <string name="enable_nfc_send">Schakel versturen via NFC in…</string>
-  <string name="cache_downloaded">Bewaar tijdelijk opgeslagen apps</string>
+    <string name="cache_downloaded">Bewaar tijdelijk opgeslagen apps</string>
   <string name="updates">Updates</string>
   <string name="other">Overig</string>
   <string name="update_interval">Automatisch vernieuwingsinterval</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1 update beschikbaar.</string>
   <string name="many_updates_available">%d updates beschikbaar.</string>
   <string name="fdroid_updates_available">F-Droid-updates beschikbaar</string>
-  <string name="bluetooth_activity_not_found">Geen Bluetooth-verzendmethode gevonden, kies er een!</string>
-  <string name="choose_bt_send">Kies Bluetooth-verzendmethode</string>
-  <string name="send_via_bluetooth">Versturen via Bluetooth</string>
-  <string name="repo_add_url">Bronadres</string>
+    <string name="repo_add_url">Bronadres</string>
   <string name="repo_add_fingerprint">Vingerafdruk (optioneel)</string>
   <string name="repo_exists_add_fingerprint">Deze bron is al ingesteld. Nieuwe sleutelinformatie zal worden toegevoegd.</string>
   <string name="repo_exists_enable">Deze bron is al ingesteld. Bevestig dat je deze opnieuw wil inschakelen.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Misvormde bron-URI %s genegeerd</string>
   <string name="menu_update_repo">Bronnen bijwerken</string>
   <string name="menu_manage">Bronnen</string>
-  <string name="menu_send_apk_bt">F-Droid delen via Bluetooth</string>
-  <string name="menu_about">Over</string>
+    <string name="menu_about">Over</string>
   <string name="menu_search">Zoeken</string>
   <string name="menu_add_repo">Nieuwe bron</string>
   <string name="menu_launch">Uitvoeren</string>
@@ -161,14 +156,8 @@ Je moet deze bron weer inschakelen indien je er apps van wil installeren.</strin
   <string name="root_access_denied_body">Je Android-apparaat is niet geroot, of je hebt F-Droid geen root-toegang gegeven.</string>
   <string name="system_install_denied_title">F-Droid extensie voor systeemrechten is niet beschikbaar</string>
   <string name="system_install_denied_body">Deze optie is alleen beschikbaar als F-Droid als systeemapp geïnstalleerd is.</string>
-  <string name="swap_join_same_wifi">Verbind met hetzelfde Wi-Fi-netwerk als je vriend</string>
-  <string name="swap">Deel apps</string>
-  <string name="swap_no_wifi_network">Nog geen netwerkverbinding</string>
-  <string name="swap_view_available_networks">(Raak aan om een lijst van beschikbare netwerken te openen)</string>
-  <string name="open_qr_code_scanner">Open QR-codescanner</string>
-  <string name="swap_welcome">Welkom bij F-Droid!</string>
-  <string name="swap_confirm_connect">Wil je nu apps van %1$s ontvangen?</string>
-<string name="app_incompatible">Incompatibel</string>
+    <string name="open_qr_code_scanner">Open QR-codescanner</string>
+    <string name="app_incompatible">Incompatibel</string>
     <string name="links">Links</string>
 
     <string name="back">Terug</string>
@@ -199,14 +188,6 @@ Gefeliciteerd! Al je apps zijn up-to-date
     <string name="system_install_uninstalling">Verwijderen…</string>
     <string name="system_uninstall_button">Verwijderen</string>
 
-    <string name="swap_nfc_title">Raak aan om te swappen</string>
-    <string name="swap_nfc_description">Als je vriend F-Droid heeft geïnstalleerd en NFC is ingeschakeld, hou dan de apparaten tegen elkaar.</string>
-    <string name="swap_join_same_wifi_desc">Om via Wi-Fi te swappen moeten jullie beiden op hetzelfde netwerk zitten. Indien je geen toegang hebt tot hetzelfde netwerk kan iemand een Wi-Fi-hotspot aanmaken.</string>
-    <string name="swap_join_this_hotspot">Help je vriend jouw hotspot bij te treden</string>
-    <string name="swap_success">Swap succesvol!</string>
-    <string name="swap_active_hotspot">%1$s (jouw hotspot)</string>
-    <string name="swap_switch_to_wifi">Raak aan om naar een Wi-Fi-netwerk over te schakelen</string>
-    <string name="swap_dont_show_again">Toon dit niet opnieuw</string>
     <string name="app_name">F-Droid</string>
 
     <string name="about_source">Broncode</string>
@@ -218,28 +199,7 @@ Gefeliciteerd! Al je apps zijn up-to-date
     <string name="category_Time">Tijd</string>
     <string name="category_Writing">Schrijven</string>
 
-    <string name="swap_scan_or_type_url">Een iemand moet de code scannen, of de URL van de ander in een browser openen.</string>
-    <string name="swap_choose_apps">Kies apps</string>
-    <string name="swap_scan_qr">Scan QR-code</string>
-    <string name="swap_people_nearby">Personen nabij</string>
-    <string name="swap_scanning_for_peers">Zoeken naar personen in de buurt…</string>
-    <string name="swap_nearby">Swap nabij</string>
-    <string name="swap_intro">Verbind en deel apps met mensen in de buurt.</string>
-    <string name="swap_visible_bluetooth">Zichtbaar via Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Bluetooth inschakelen…</string>
-    <string name="swap_not_visible_bluetooth">Niet zichtbaar via Bluetooth</string>
-    <string name="swap_visible_wifi">Zichtbaar via Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Wi-Fi inschakelen…</string>
-    <string name="swap_not_visible_wifi">Niet zichtbaar via Wi-Fi</string>
-    <string name="swap_wifi_device_name">Apparaatnaam</string>
-    <string name="swap_cant_find_peers">Kan je degene waar je naar zoekt niet vinden?</string>
-    <string name="swap_send_fdroid">Verstuur F-Droid</string>
-    <string name="swap_connecting">Verbinden</string>
-    <string name="swap_confirm">Bevestig swap</string>
-    <string name="bluetooth_unavailable">Bluetooth niet beschikbaar</string>
-    <string name="swap_cant_send_no_bluetooth">Kon F-Droid niet verzenden omdat Bluetooth niet beschikbaar is op dit apparaat.</string>
     <string name="loading">Laden…</string>
-    <string name="swap_not_enabled">Swap niet ingeschakeld</string>
 
     <string name="install_confirm">heeft toegang nodig tot</string>
     <string name="install_confirm_update">Wil je een update voor deze bestaande applicatie installeren? De bestaande gegevens zullen niet verloren gaan. De nieuwe versie van de applicatie zal toegang krijgen tot:</string>
@@ -337,7 +297,6 @@ in de toekomst te helpen voorkomen?</string>
 
     <string name="useTor">Gebruik Tor</string>
     <string name="useTorSummary">Forceer downloadverkeer door Tor heen voor betere privacy</string>
-    <string name="swap_stopping_wifi">Wi-Fi stoppen…</string>
     <string name="update_auto_download">Download automatisch updates</string>
     <string name="update_auto_download_summary">Download de update in de achtergrond</string>
     <string name="tap_to_install_format">Raak aan om %s te installeren</string>

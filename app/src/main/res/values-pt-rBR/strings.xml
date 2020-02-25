@@ -5,8 +5,7 @@
   <string name="installDowngrade">Você está tentando desatualizar este aplicativo. Isso pode causar mal funcionamento e eventualmente perda de dados. Você quer tentar desatualizá-lo mesmo assim?</string>
   <string name="version">Versão</string>
   <string name="delete">Apagar</string>
-  <string name="enable_nfc_send">Habilitar envio NFC…</string>
-  <string name="cache_downloaded">Manter aplicativos em cache</string>
+    <string name="cache_downloaded">Manter aplicativos em cache</string>
   <string name="updates">Atualizações</string>
   <string name="other">Outros</string>
   <string name="update_interval">Intervalo de atualização automática</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1 atualização disponível.</string>
   <string name="many_updates_available">%d atualizações disponíveis.</string>
   <string name="fdroid_updates_available">Atualizações do F-Droid disponíveis</string>
-  <string name="bluetooth_activity_not_found">Nenhum método de envio por Bluetooth foi encontrado, escolha um!</string>
-  <string name="choose_bt_send">Escolher o método de envio Bluetooth</string>
-  <string name="send_via_bluetooth">Enviar por bluetooth</string>
-  <string name="repo_add_url">Endereço do repositório</string>
+    <string name="repo_add_url">Endereço do repositório</string>
   <string name="repo_add_fingerprint">Fingerprint (opcional)</string>
   <string name="repo_exists_add_fingerprint">Este repositório já está configurado, isto adicionará nova informação sobre a chave.</string>
   <string name="repo_exists_enable">Este repositório já está configurado, confirma que quer reativá-lo.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Ignorando URI de repositório mal formada: %s</string>
   <string name="menu_update_repo">Atualizar repositórios</string>
   <string name="menu_manage">Repositórios</string>
-  <string name="menu_send_apk_bt">Compartilhar F-Droid por Bluetooth</string>
-  <string name="menu_about">Sobre</string>
+    <string name="menu_about">Sobre</string>
   <string name="menu_search">Procurar</string>
   <string name="menu_add_repo">Novo repositório</string>
   <string name="menu_launch">Executar</string>
@@ -163,15 +158,8 @@ reativar este repositório para instalar aplicativos a partir dele.</string>
   <string name="root_access_denied_body">Ou o seu dispositivo Android não está \"rooteado\" ou você recusou o acesso root para o F-Droid.</string>
   <string name="system_install_denied_title">A extensão privilegiada do F-droid não está disponível</string>
   <string name="system_install_denied_body">Esta opção só está disponível quando a extensão privilegiada do F-Droid está instalada.</string>
-  <string name="swap_nfc_description">Caso seu(sua) amigo(a) tenha o F-Droid e NFC ligados, ponham os seus dispositivos juntos.</string>
-  <string name="swap_join_same_wifi">Juntar-se a mesma rede Wi-Fi do(a) seu(sua) amigo(a)</string>
-  <string name="swap">Permutar aplicativos</string>
-  <string name="swap_no_wifi_network">Nenhuma rede ainda</string>
-  <string name="swap_view_available_networks">Toque para abrir as redes disponíveis</string>
-  <string name="open_qr_code_scanner">Abrir o leitor de código QR</string>
-  <string name="swap_welcome">Bem-vindo ao F-Droid!</string>
-  <string name="swap_confirm_connect">Você quer obter aplicativos de %1$s agora?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Abrir o leitor de código QR</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="uninstall_system">Atualizar/desinstalar extensão privilegiada</string>
     <string name="uninstall_system_summary">Abrir tela de detalhes da extensão privilegiada para atualizá-la/desinstalá-la</string>
@@ -208,12 +196,6 @@ reativar este repositório para instalar aplicativos a partir dele.</string>
     <string name="system_uninstall">Você quer desinstalar a extensão privilegiada do F-Droid?</string>
     <string name="system_uninstall_button">Desinstalar</string>
 
-    <string name="swap_nfc_title">Toque para permutar</string>
-    <string name="swap_join_same_wifi_desc">Para permutar usando Wi-Fi, certifique-se de que você está na mesma rede. Caso você não tenha acesso à mesma rede, um de vocês pode criar um ponto de acesso Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Ajude seu amigo a se juntar ao seu ponto de acesso</string>
-    <string name="swap_success">Permuta com sucesso!</string>
-    <string name="swap_active_hotspot">%1$s (seu ponto de acesso)</string>
-    <string name="swap_switch_to_wifi">Toque para mudar para uma rede Wi-Fi</string>
     <string name="about_source">Código fonte</string>
     <string name="category_Connectivity">Conectividade</string>
     <string name="category_Graphics">Gráficos</string>
@@ -223,29 +205,7 @@ reativar este repositório para instalar aplicativos a partir dele.</string>
     <string name="category_Time">Tempo</string>
     <string name="category_Writing">Escrita</string>
 
-    <string name="swap_dont_show_again">Não mostrar isto novamente</string>
-    <string name="swap_scan_or_type_url">Uma pessoa precisa escanear o código ou digitar a URL de outro em um navegador.</string>
-    <string name="swap_choose_apps">Escolher os aplicativos</string>
-    <string name="swap_scan_qr">Escanear código QR</string>
-    <string name="swap_people_nearby">Pessoas próximas</string>
-    <string name="swap_scanning_for_peers">Procurando por pessoas próximas…</string>
-    <string name="swap_nearby">Permuta próxima</string>
-    <string name="swap_intro">Conectar e negociar aplicativos com pessoas próximas de você.</string>
-    <string name="swap_visible_bluetooth">Visível por Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Configurando Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Não visível por Bluetooth</string>
-    <string name="swap_visible_wifi">Visível por Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Configurando Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Não visível por Wi-Fi</string>
-    <string name="swap_wifi_device_name">Nome do dispositivo</string>
-    <string name="swap_cant_find_peers">Não consegue achar quem você está procurando?</string>
-    <string name="swap_send_fdroid">Enviar F-Droid</string>
-    <string name="swap_connecting">Conectando</string>
-    <string name="swap_confirm">Confirmar a permuta</string>
-    <string name="bluetooth_unavailable">Bluetooth não está disponível</string>
-    <string name="swap_cant_send_no_bluetooth">Não é possível enviar F-Droid, porque o Bluetooth não está disponível neste dispositivo.</string>
     <string name="loading">Carregando…</string>
-    <string name="swap_not_enabled">Permuta não habilitada</string>
 
     <string name="install_confirm">necessário acesso à</string>
     <string name="install_confirm_update">Você quer instalar uma atualização
@@ -332,7 +292,6 @@ com os detalhes para ajudar a corrigir o problema?</string>
     <string name="menu_email">Enviar mensagem para o autor</string>
     <string name="useTor">Usar o Tor</string>
     <string name="useTorSummary">Força tráfego de download através do Tor para maior privacidade</string>
-    <string name="swap_stopping_wifi">Parando o Wi-Fi…</string>
     <string name="repo_provider">Repositório: %s</string>
 
     <string name="update_auto_download">Baixar automaticamente as atualizações</string>

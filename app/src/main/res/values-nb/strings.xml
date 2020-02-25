@@ -5,8 +5,7 @@
   <string name="installDowngrade">Du prøver å nedgradere denne applikasjonen. Dette kan føre til at programmet henger, og du kan til og med miste dataene dine. Nedgradere uansett ?</string>
   <string name="version">Versjon</string>
   <string name="delete">Slett</string>
-  <string name="enable_nfc_send">Skru på NFC-sending…</string>
-  <string name="cache_downloaded">Behold mellomlagrede programmer</string>
+    <string name="cache_downloaded">Behold mellomlagrede programmer</string>
   <string name="updates">Oppdateringer</string>
   <string name="other">Andre</string>
   <string name="update_interval">Intervall for automatisk oppdatering</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1 oppdatering tilgjengelig.</string>
   <string name="many_updates_available">%d oppdateringer tilgjengelig.</string>
   <string name="fdroid_updates_available">F-Droid: Oppdateringer tilgjengelig</string>
-  <string name="bluetooth_activity_not_found">Ingen forsendelsesmåte for Blåtann funnet, velg en!</string>
-  <string name="choose_bt_send">Velg forsendelsesmåte for Blåtann</string>
-  <string name="send_via_bluetooth">Send via Blåtann</string>
-  <string name="repo_add_url">Pakkebrønnsadresse</string>
+    <string name="repo_add_url">Pakkebrønnsadresse</string>
   <string name="repo_add_fingerprint">Fingeravtrykk (valgfritt)</string>
   <string name="repo_exists_add_fingerprint">Dette registret er allerede satt opp, dette vil legge til ny informasjon om nøkler.</string>
   <string name="repo_exists_enable">Dette registret er allerede satt opp, bekreft at du vil skru det på igjen.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Ignorerer ugyldig pakkebrønnsadresse: %s</string>
   <string name="menu_update_repo">Oppdater pakkebrønnene</string>
   <string name="menu_manage">Pakkebrønner</string>
-  <string name="menu_send_apk_bt">Del F-Droid.apk via Blåtann</string>
-  <string name="menu_about">Om</string>
+    <string name="menu_about">Om</string>
   <string name="menu_search">Søk</string>
   <string name="menu_add_repo">Ny pakkebrønn</string>
   <string name="menu_launch">Kjør</string>
@@ -159,15 +154,8 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
   <string name="root_access_denied_body">Enten mangler din Android-enhet superbrukertilgang, eller så har du nektet F-droid root-tilgang.</string>
   <string name="system_install_denied_title">F-Droid priviligert tillegg er ikke tilgjengelig</string>
   <string name="system_install_denied_body">Dette valget er bare tilgjengelig når F-Droid er installert som priviligert tillegg.</string>
-  <string name="swap_nfc_description">Hvis din venn har F-Droid og NFC påslått, sammenfør enhetene.</string>
-  <string name="swap_join_same_wifi">Koble til samme Wi-Fi-nett som din venn</string>
-  <string name="swap">Sirkuler programvare</string>
-  <string name="swap_no_wifi_network">Mangler nettverk</string>
-  <string name="swap_view_available_networks">(Trykk for å vise tilgjengelige nettverk)</string>
-  <string name="open_qr_code_scanner">Åpne QR-kode-skanner</string>
-  <string name="swap_welcome">Velkommen til F-Droid!</string>
-  <string name="swap_confirm_connect">Ønsker du å hente pakker fra %1$s nå?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Åpne QR-kode-skanner</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="theme_dark">Mørkt</string>
 <string name="unstable_updates">Ustabile oppdateringer</string>
@@ -212,25 +200,6 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
     <string name="system_install_warning_lollipop">Dette kan ta opptil 10 sekunder, <b>omstart</b> vil igangsettes etterpå.</string>
     <string name="system_uninstall_button">Avinstaller</string>
 
-    <string name="swap_switch_to_wifi">Trykk for å bytte Wi-Fi-nettverk</string>
-    <string name="swap_dont_show_again">Ikke vis dette igjen</string>
-    <string name="swap_scan_or_type_url">Én person trenger å skanne koden, eller man skriver motpartens adresseopplysninger en nettleser.</string>
-    <string name="swap_choose_apps">Velg programmer</string>
-    <string name="swap_scan_qr">Skann QR-kode</string>
-    <string name="swap_people_nearby">Folk i nærheten</string>
-    <string name="swap_scanning_for_peers">Søker etter folk i nærheten…</string>
-    <string name="swap_visible_bluetooth">Synlig via Blåtann</string>
-    <string name="swap_setting_up_bluetooth">Setter opp Blåtann…</string>
-    <string name="swap_not_visible_bluetooth">Ikke synlig via Blåtann</string>
-    <string name="swap_visible_wifi">Synlig via Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Setter opp Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Ikke synlig via Wi-Fi</string>
-    <string name="swap_wifi_device_name">Enhetsnavn</string>
-    <string name="swap_cant_find_peers">Finner du ikke den du leter etter?</string>
-    <string name="swap_send_fdroid">Oversend F-Droid</string>
-    <string name="swap_connecting">Kobler til</string>
-    <string name="bluetooth_unavailable">Blåtann utilgjengelig</string>
-    <string name="swap_cant_send_no_bluetooth">Kan ikke sende F-Droid siden Blåtann ikke er tilgjengelig på denne enheten.</string>
     <string name="loading">Laster inn…</string>
     <string name="install_confirm">tilgang til</string>
     <string name="newPerms">Ny</string>
@@ -278,15 +247,6 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
     <string name="system_install_post_fail_message">Installasjon av F-droid som priviligert tillegg feilet. Installasjonsmetoden støttes ikke av alle Android-distribusjoner, henvend deg til feilrettingsoversikten for ytterligere informasjon.</string>
     <string name="system_install_question">Ønsker du å installere F-Droid som priviligert tillegg?</string>
     <string name="system_uninstall">Ønsker du å avinstallere F-Droid som priviligert tillegg?</string>
-    <string name="swap_nfc_title">Trykk for å sirkulere</string>
-    <string name="swap_join_same_wifi_desc">For å sirkulere ved bruk av Wi-Fi, forsikre deg om at dere er på samme nettverk. Hvis så ikke er tilfelle, kan du sette opp ditt eget mobiltrådløsnett.</string>
-    <string name="swap_join_this_hotspot">Hjelp en venn å ta del i ditt mobiltrådløsnett</string>
-    <string name="swap_success">Vellykket sirkulering!</string>
-    <string name="swap_active_hotspot">%1$s (ditt mobiltrådløsnett)</string>
-    <string name="swap_nearby">Sirkulering i umiddelbar nærhet</string>
-    <string name="swap_intro">Koble til og utveksle programmer med folk i nærheten av deg.</string>
-    <string name="swap_confirm">Bekreft sirkulering</string>
-    <string name="swap_not_enabled">Sirkulering ikke påskrudd</string>
 
     <string name="install_confirm_update">Ønsker du å installere en oppdatering
 til dette eksisterende programmet? Dataen du har vil ikke
@@ -329,7 +289,6 @@ i en e-post for å fikse problemet?</string>
 
     <string name="useTor">Bruk Tor</string>
     <string name="useTorSummary">Tving nedlasting av trafikk gjennom Tor for økt sikkerhet</string>
-    <string name="swap_stopping_wifi">Stopper Wi-Fi…</string>
     <string name="update_auto_download">Last ned oppdateringer automatisk</string>
     <string name="update_auto_download_summary">Last ned oppdateringsfilene i bakgrunnen</string>
     <string name="tap_to_install_format">Trykk for å installere %s</string>

@@ -5,8 +5,7 @@
   <string name="installDowngrade">Sie versuchen, eine vorherige Version einer bereits installierten Anwendung zu installieren. Dies kann zu Fehlverhalten der Anwendung und gegebenenfalls zu Datenverlust führen. Möchten Sie dennoch fortfahren?</string>
   <string name="version">Version</string>
   <string name="delete">Löschen</string>
-  <string name="enable_nfc_send">NFC-Transfer aktivieren …</string>
-  <string name="cache_downloaded">Zwischengespeicherte Apps behalten</string>
+    <string name="cache_downloaded">Zwischengespeicherte Apps behalten</string>
   <string name="updates">Aktualisierungen</string>
   <string name="other">Andere</string>
   <string name="update_interval">Automatisches Aktualisierungsintervall</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">Eine Aktualisierung ist verfügbar.</string>
   <string name="many_updates_available">%d Aktualisierungen sind verfügbar.</string>
   <string name="fdroid_updates_available">F-Droid: Aktualisierungen verfügbar</string>
-  <string name="bluetooth_activity_not_found">Keine Bluetooth-Sendemethode gefunden, bitte eine auswählen!</string>
-  <string name="choose_bt_send">Bluetooth-Sendemethode auswählen</string>
-  <string name="send_via_bluetooth">Über Bluetooth senden</string>
-  <string name="repo_add_url">Adresse der Paketquelle</string>
+    <string name="repo_add_url">Adresse der Paketquelle</string>
   <string name="repo_add_fingerprint">Fingerabdruck (optional)</string>
   <string name="repo_exists_add_fingerprint">Diese Paketquelle ist bereits eingerichtet, dieses wird neue Schlüsselinformationen hinzuzufügen.</string>
   <string name="repo_exists_enable">Diese Paketquelle ist bereits eingerichtet, bestätigen Sie, dass Sie diese wieder aktivieren möchten.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Fehlerhafte Paketquellenadresse wird übergangen: %s</string>
   <string name="menu_update_repo">Paketquellen aktualisieren</string>
   <string name="menu_manage">Paketquellen</string>
-  <string name="menu_send_apk_bt">F-Droid über Bluetooth teilen</string>
-  <string name="menu_about">Über</string>
+    <string name="menu_about">Über</string>
   <string name="menu_search">Suchen</string>
   <string name="menu_add_repo">Paketquelle hinzufügen</string>
   <string name="menu_launch">Starten</string>
@@ -163,15 +158,8 @@ um Anwendungen daraus installieren zu können.</string>
   <string name="root_access_denied_body">Entweder ist Ihr Android-Gerät nicht gerootet oder Sie haben den Root-Zugriff für F-Droid verweigert.</string>
   <string name="system_install_denied_title">F-Droid privilegierte Erweiterung ist nicht verfügbar</string>
   <string name="system_install_denied_body">Diese Option ist nur verfügbar, wenn F-Droid als System-App installiert wurde.</string>
-  <string name="swap_nfc_description">Wenn Ihr Freund F-Droid und NFC aktiviert hat, bitte die Geräte aneinander halten.</string>
-  <string name="swap_join_same_wifi">Bitte mit dem gleichen WLAN-Netzwerk wie Ihr Freund verbinden</string>
-  <string name="swap">Apps tauschen</string>
-  <string name="swap_no_wifi_network">Noch kein Netzwerk</string>
-  <string name="swap_view_available_networks">Antippen, um verfügbare Netzwerke zu öffnen</string>
-  <string name="open_qr_code_scanner">QR-Code-Scanner öffnen</string>
-  <string name="swap_welcome">Willkommen bei F-Droid!</string>
-  <string name="swap_confirm_connect">Möchten Sie jetzt Apps von %1$s erhalten?</string>
-<string name="about_source">Quelltext</string>
+    <string name="open_qr_code_scanner">QR-Code-Scanner öffnen</string>
+    <string name="about_source">Quelltext</string>
     <string name="app_incompatible">Inkompatibel</string>
     <string name="links">Verweise</string>
     <string name="back">Zurück</string>
@@ -202,7 +190,6 @@ um Anwendungen daraus installieren zu können.</string>
 
     <string name="system_uninstall_button">Deinstallieren</string>
 
-    <string name="bluetooth_unavailable">Bluetooth nicht verfügbar</string>
     <string name="newPerms">Neu</string>
     <string name="perms_new_perm_prefix">"Neu: "</string>
     <string name="interval_1h">Stündlich</string>
@@ -217,8 +204,6 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="empty_available_app_list">Keine Anwendungen in dieser Kategorie.\n\nBitte eine andere Kategorie versuchen oder die Paketquellen aktualisieren.</string>
     <string name="empty_can_update_app_list">Alle Anwendungen sind auf dem neuesten Stand.\n\nGlückwunsch! Alle Ihre Apps sind auf dem neuesten Stand (oder Ihre Paketquellen sind veraltet).</string>
 
-    <string name="swap_send_fdroid">F-Droid senden</string>
-    <string name="swap_connecting">Verbindungsaufbau</string>
     <string name="interval_never">Nie</string>
     <string name="interval_2w">Alle zwei Wochen</string>
 
@@ -248,38 +233,13 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="system_install_uninstalling">Wird deinstalliert …</string>
     <string name="system_install_warning">Das wird bis zu 10 Sekunden dauern.</string>
     <string name="system_install_warning_lollipop">Das wird bis zu 10 Sekunden dauern und das Gerät wird anschließend <b>neu gestartet</b>.</string>
-    <string name="swap_nfc_title">Berühren, um zu tauschen</string>
-    <string name="swap_join_this_hotspot">Ihrem Freund helfen, Ihrem Hotspot beizutreten</string>
-    <string name="swap_success">Tausch erfolgreich!</string>
-    <string name="swap_active_hotspot">%1$s (Ihr Hotspot)</string>
-    <string name="swap_switch_to_wifi">Berühren, um zu einem WLAN-Netzwerk zu wechseln</string>
-    <string name="swap_dont_show_again">Das nicht nochmal anzeigen</string>
-    <string name="swap_choose_apps">Anwendungen auswählen</string>
-    <string name="swap_scan_qr">QR-Code einlesen</string>
-    <string name="swap_people_nearby">Leute in der Nähe</string>
-    <string name="swap_scanning_for_peers">Nach Leuten in der Nähe wird gesucht …</string>
     <string name="wifi_ap">Hotspot</string>
 
     <string name="system_install_post_success_message">Privilegierte F-Droid-Erweiterung wurde erfolgreich installiert. Das erlaubt F-Droid, selbständig Anwendungen zu installieren, aktualisieren und zu entfernen.</string>
     <string name="system_install_post_fail_message">Die Installation der privilegierten F-Droid-Erweiterung ist fehlgeschlagen. Diese Installationsmethode wird nicht durch alle Android-Distributionen unterstützt, bitte in der F-Droid-Fehlerdatenbank für weitere Informationen nachsehen.</string>
     <string name="system_install_question">Möchten Sie die privilegierte F-Droid-Erweiterung installieren?</string>
     <string name="system_uninstall">Möchten Sie die privilegierte F-Droid-Erweiterung deinstallieren?</string>
-    <string name="swap_visible_bluetooth">Über Bluetooth sichtbar</string>
-    <string name="swap_setting_up_bluetooth">Bluetooth wird eingestellt …</string>
-    <string name="swap_not_visible_bluetooth">Über Bluetooth nicht sichtbar</string>
-    <string name="swap_visible_wifi">Über WLAN sichtbar</string>
-    <string name="swap_setting_up_wifi">WLAN wird eingestellt …</string>
-    <string name="swap_not_visible_wifi">Über WLAN nicht sichtbar</string>
-    <string name="swap_scan_or_type_url">Eine Person muss den Code scannen oder die Adresse der anderen in einen Browser eingeben.</string>
-    <string name="swap_intro">Mit Leuten in der Nähe verbinden und Anwendungen tauschen.</string>
-    <string name="swap_wifi_device_name">Gerätename</string>
-    <string name="swap_cant_find_peers">Nicht den Gesuchten gefunden?</string>
-    <string name="swap_confirm">Tausch bestätigen</string>
-    <string name="swap_join_same_wifi_desc">Um über WLAN zu tauschen, müssen Sie sich im selben Netzwerk befinden. Wenn Sie keinen gemeinsamen Netzwerkzugang haben, kann einer von Ihnen einen WLAN-Hotspot einrichten.</string>
-    <string name="swap_nearby">Tausch in der Nähe</string>
-    <string name="swap_cant_send_no_bluetooth">F-Droid kann nicht gesendet werden, da Bluetooth auf diesem Gerät nicht verfügbar ist.</string>
     <string name="loading">Ladevorgang …</string>
-    <string name="swap_not_enabled">Tauschen ist nicht aktiviert</string>
 
     <string name="install_confirm">benötigt Zugriff auf</string>
     <string name="install_confirm_update">Wollen Sie eine Aktualisierung dieser bestehenden Anwendung installieren? Ihre bestehenden Daten gehen nicht verloren. Die aktualisierte Anwendung wird folgenden Zugriff erhalten:</string>
@@ -323,7 +283,6 @@ um Anwendungen daraus installieren zu können.</string>
 
     <string name="useTor">Tor verwenden</string>
     <string name="useTorSummary">Herunterladen über Tor erzwingen; zur Erhöhung der Privatsphäre</string>
-    <string name="swap_stopping_wifi">WLAN wird angehalten …</string>
     <string name="update_auto_download">Aktualisierungen automatisch herunterladen</string>
     <string name="update_auto_download_summary">Die Aktualisierungsdateien im Hintergrund herunterladen</string>
     <string name="tap_to_install_format">%s installieren</string>

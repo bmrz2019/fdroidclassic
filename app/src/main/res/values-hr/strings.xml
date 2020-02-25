@@ -7,7 +7,6 @@
     <string name="version">Verzija</string>
     <string name="by_author">od</string>
     <string name="delete">Obriši</string>
-    <string name="enable_nfc_send">Omogući NFC slanje…</string>
     <string name="cache_downloaded">Zadrži privremene aplikacije</string>
     <string name="updates">Ažuriranja</string>
     <string name="unstable_updates">Nestabilna ažuriranja</string>
@@ -78,9 +77,6 @@
     <string name="many_updates_available">%d ažuriranja je dostupno.</string>
     <string name="fdroid_updates_available">Ažuriranja za F-Droid dostupna</string>
     <string name="update_notification_more">+%1$d više…</string>
-    <string name="bluetooth_activity_not_found">Nije pronađena metoda slanja preko Bluetootha, odaberite jednu!</string>
-    <string name="choose_bt_send">Odaberi metodu slanja preko Bluetootha</string>
-    <string name="send_via_bluetooth">Pošalji preko Bluetootha</string>
 
     <string name="repo_add_url">Adresa repozitorija</string>
     <string name="repo_add_fingerprint">Otisak prsta (opcionalno)</string>
@@ -95,7 +91,6 @@
 
     <string name="menu_update_repo">Ažuriraj repozitorije</string>
     <string name="menu_manage">Repozitoriji</string>
-    <string name="menu_send_apk_bt">Podjeli F-Droid preko Bluetootha</string>
     <string name="menu_settings">Postavke</string>
     <string name="menu_about">O aplikaciji</string>
     <string name="menu_search">Traži</string>
@@ -270,44 +265,8 @@ ponovno omogućiti repozitorij kako bi instalirali aplikacije iz njega.</string>
     <string name="system_uninstall_button">Ukloni</string>
     <string name="system_install_not_supported">Instalacija F-Droid privilegiranog proširenja trenutno nije podržana na Android 5.1 ili kasnijem.</string>
 
-    <string name="swap_nfc_title">Dodirnite za razmjenu</string>
-    <string name="swap_nfc_description">Ako Vaš prijatelj ima F-Droid i uključen NFC, dodirnite se uređajima.</string>
-    <string name="swap_join_same_wifi">Spoji se na istu Wi-Fi mrežu kao i prijatelj</string>
-    <string name="swap_join_same_wifi_desc">Kako bi razmjenjivali preko Wi-Fi mreže, utvrdite da ste na istoj mreži. Ako nemate pristup istoj mreži, jedan od Vas može napraviti Wi-Fi Hotspot.</string>
-    <string name="swap_join_this_hotspot">Pomozite prijatelju da se pridruži Vašem hotspotu</string>
-    <string name="swap">Razmjeni aplikacije</string>
-    <string name="swap_success">Razmjena uspjela!</string>
-    <string name="swap_no_wifi_network">Još nema mreže</string>
-    <string name="swap_active_hotspot">%1$s (Vaš hotspot)</string>
-    <string name="swap_view_available_networks">Dodirnite za otvaranje dostupnih mreža</string>
-    <string name="swap_switch_to_wifi">Dodirnite za prebacivanje na Wi-Fi mrežu</string>
     <string name="open_qr_code_scanner">Otvori QR skener</string>
-    <string name="swap_welcome">Dobrodošli u F-Droid!</string>
-    <string name="swap_confirm_connect">Želite li odmah dobaviti aplikacije iz %1$s?</string>
-    <string name="swap_dont_show_again">Ne prikazuj ovo opet</string>
-    <string name="swap_scan_or_type_url">Jedna osoba treba skenirati kod, ili upisati URL druge osobe u svoj preglednik.</string>
-    <string name="swap_choose_apps">Odaberi aplikacije</string>
-    <string name="swap_scan_qr">Skeniraj QR kod</string>
-    <string name="swap_people_nearby">Ljudi u blizini</string>
-    <string name="swap_scanning_for_peers">Tražim ljude u blizini…</string>
-    <string name="swap_nearby">Obližnja razmjena</string>
-    <string name="swap_intro">Spojite se i mjenjajte aplikacije s ljudima blizu Vas.</string>
-    <string name="swap_visible_bluetooth">Vidljiv preko Bluetootha</string>
-    <string name="swap_setting_up_bluetooth">Postavljam Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Nije vidljivo preko Bluetootha</string>
-    <string name="swap_visible_wifi">Vidljivo preko Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Postavljam Wi-Fi…</string>
-    <string name="swap_stopping_wifi">Zaustavljam Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Nije vidljivo preko Wi-Fi</string>
-    <string name="swap_wifi_device_name">Ime uređja</string>
-    <string name="swap_cant_find_peers">Ne možete naći koga tražite?</string>
-    <string name="swap_send_fdroid">Pošalji F-Droid</string>
-    <string name="swap_connecting">Spajanje</string>
-    <string name="swap_confirm">Potvrdi razmjenu</string>
-    <string name="bluetooth_unavailable">Bluetooth nedostupan</string>
-    <string name="swap_cant_send_no_bluetooth">Nije uspjelo slanje F-Droida, Bluetooth nije dostupan na ovom uređaju.</string>
     <string name="loading">Učitavanje…</string>
-    <string name="swap_not_enabled">Razmjena nije omogućena</string>
 
     <string name="tap_to_install_format">Dodirnite za instalaciju %s</string>
     <string name="tap_to_update_format">Dodirnite za ažuriranje %s</string>

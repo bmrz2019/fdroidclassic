@@ -5,8 +5,7 @@
   <string name="installDowngrade">您正在降级该应用程序。这样做可能会使该程序无法工作，甚至丢失您的数据。您仍然要尝试降级吗？</string>
   <string name="version">版本</string>
   <string name="delete">删除</string>
-  <string name="enable_nfc_send">启用NFC发送…</string>
-  <string name="cache_downloaded">保留应用安装包</string>
+    <string name="cache_downloaded">保留应用安装包</string>
   <string name="updates">升级</string>
   <string name="other">其它</string>
   <string name="update_interval">自动更新周期</string>
@@ -41,9 +40,7 @@
   <string name="one_update_available">有 1 个可用的更新。</string>
   <string name="many_updates_available">有 %d 个可用的更新。</string>
   <string name="fdroid_updates_available">可更新 F-Droid</string>
-  <string name="bluetooth_activity_not_found">未找到蓝牙发送方式，请选择一个!</string>
-  <string name="choose_bt_send">选择蓝牙发送方式</string>
-  <string name="repo_add_url">软件源地址</string>
+    <string name="repo_add_url">软件源地址</string>
   <string name="repo_add_fingerprint">指纹（可选）</string>
   <string name="repo_exists_add_fingerprint">此软件源已经设置，该操作将会添加新的密钥信息。</string>
   <string name="repo_exists_enable">此软件源已经设置，请确认您是否要重新启用它。</string>
@@ -52,8 +49,7 @@
   <string name="malformed_repo_uri">忽略异常格式的软件源URI：%s</string>
   <string name="menu_update_repo">更新软件库</string>
   <string name="menu_manage">管理软件源</string>
-  <string name="menu_send_apk_bt">用蓝牙分享F-Droid</string>
-  <string name="menu_about">关于</string>
+    <string name="menu_about">关于</string>
   <string name="menu_search">搜索</string>
   <string name="menu_add_repo">添加新软件源</string>
   <string name="menu_launch">运行</string>
@@ -135,8 +131,7 @@
   <string name="category_System">系统</string>
   <string name="requesting_root_access_body">正在请求root权限…</string>
   <string name="root_access_denied_title">root权限请求被拒绝</string>
-  <string name="swap_welcome">欢迎来到F-Droid！</string>
-<string name="app_name">F-Droid</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">不稳定更新</string>
     <string name="unstable_updates_summary">启用不稳定版本的更新</string>
@@ -164,7 +159,6 @@
     <string name="tab_installed_apps_count">已安装（%d）</string>
     <string name="tab_updates_count">可更新（%d）</string>
     <string name="update_notification_more">+%1$d 更多…</string>
-    <string name="send_via_bluetooth">用蓝牙发送</string>
 
     <string name="bad_fingerprint">指纹错误</string>
     <string name="invalid_url">无效的URL。</string>
@@ -233,42 +227,8 @@
     <string name="system_uninstall">确定要缷载F-Droid特权扩展？</string>
     <string name="system_uninstall_button">缷载</string>
 
-    <string name="swap_nfc_title">点击开始交换</string>
-    <string name="swap_nfc_description">如果您朋友的设备上有F-Droid及开启的NFC，把你们的设备贴在一起。</string>
-    <string name="swap_join_same_wifi">与你的朋友连上同一个Wi-Fi</string>
-    <string name="swap_join_same_wifi_desc">要通过Wi-Fi交换，确保你们在同一个网域中。如果你们没有接入同一个网域，你可以创建一个Wi-Fi热点。</string>
-    <string name="swap_join_this_hotspot">帮助你的朋友加入你的热点</string>
-    <string name="swap">交换应用程序</string>
-    <string name="swap_success">交换成功！</string>
-    <string name="swap_no_wifi_network">未连上网络</string>
-    <string name="swap_active_hotspot">%1$s (你的热点)</string>
-    <string name="swap_view_available_networks">点击打开可用的网络</string>
-    <string name="swap_switch_to_wifi">点击切换到Wi-Fi网络</string>
     <string name="open_qr_code_scanner">扫描二维码</string>
-    <string name="swap_confirm_connect">你想从 %1$s 获取应用程序吗？</string>
-    <string name="swap_dont_show_again">不再显示</string>
-    <string name="swap_scan_or_type_url">别人需要扫描该代码，或在浏览器输入其他的URL。</string>
-    <string name="swap_choose_apps">选择应用程序</string>
-    <string name="swap_scan_qr">扫描二维码</string>
-    <string name="swap_people_nearby">附近的人</string>
-    <string name="swap_scanning_for_peers">正在搜索附近的人…</string>
-    <string name="swap_nearby">附近交换</string>
-    <string name="swap_intro">与你附近的人连接并交换应用程序。</string>
-    <string name="swap_visible_bluetooth">蓝牙下可见</string>
-    <string name="swap_setting_up_bluetooth">正在设置蓝牙…</string>
-    <string name="swap_not_visible_bluetooth">蓝牙下不可见</string>
-    <string name="swap_visible_wifi">Wi-Fi下可见</string>
-    <string name="swap_setting_up_wifi">正在设置Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Wi-Fi下不可见</string>
-    <string name="swap_wifi_device_name">设备名称</string>
-    <string name="swap_cant_find_peers">找不到你要找的人？</string>
-    <string name="swap_send_fdroid">发送F-Droid</string>
-    <string name="swap_connecting">连接中</string>
-    <string name="swap_confirm">确认交换</string>
-    <string name="bluetooth_unavailable">蓝牙不可用</string>
-    <string name="swap_cant_send_no_bluetooth">不能发送F-Droid，因为该设备蓝牙不可用。</string>
     <string name="loading">加载中…</string>
-    <string name="swap_not_enabled">示启用交换功能</string>
 
     <string name="install_confirm">确定要安装这个应用吗？它将有以下权限</string>
     <string name="install_confirm_update">确定要为这个应用安装更新吗？你的已有数据会保留。更新后的应用程序将有下权限：</string>
@@ -316,7 +276,6 @@
 
     <string name="useTor">使用 Tor</string>
     <string name="useTorSummary">强制下载流量使用 Tor 以增强隐私保障</string>
-    <string name="swap_stopping_wifi">正在停止 Wi-Fi…</string>
     <string name="update_auto_download">自动下载更新</string>
     <string name="update_auto_download_summary">后台下载更新文件</string>
     <string name="tap_to_install_format">点按以安装 %s</string>

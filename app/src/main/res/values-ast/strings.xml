@@ -5,8 +5,7 @@
   <string name="installDowngrade">Tas tentando de baxar de versión esta aplicación. Eso quiciabes faiga que l\'aplicación furrule mal o incluso, pierdas los tos datos. ¿Quies tentalo y baxala de versión de toes toes?</string>
   <string name="version">Versión</string>
   <string name="delete">Desaniciar</string>
-  <string name="enable_nfc_send">Habilitar unviu per NFC…</string>
-  <string name="cache_downloaded">Caltener aplicaciones na caché</string>
+    <string name="cache_downloaded">Caltener aplicaciones na caché</string>
   <string name="updates">Anovamientos</string>
   <string name="other">Otru</string>
   <string name="update_interval">Intervalu automáticu d\'anovamientu</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">Ta disponible 1 anovamientu.</string>
   <string name="many_updates_available">Tán disponibles %d anovamientos.</string>
   <string name="fdroid_updates_available">Anovamientos de F-Droid disponibles</string>
-  <string name="bluetooth_activity_not_found">Nun s\'alcontró dal métodu d\'unviu pente Bluetooth, ¡escueyi ún!</string>
-  <string name="choose_bt_send">Escueyi\'l métodu d\'unvu pente Bluetooth</string>
-  <string name="send_via_bluetooth">Unviar pente Bluetooth</string>
-  <string name="repo_add_url">Direición del repositoriu</string>
+    <string name="repo_add_url">Direición del repositoriu</string>
   <string name="repo_add_fingerprint">Buelga (opcional)</string>
   <string name="repo_exists_add_fingerprint">Yá ta configuráu esti repositoriu, esto amestará la información de la clave nueva.</string>
   <string name="repo_exists_enable">Yá ta configuráu esti respositoriu, confirma que quies rehabilitalu.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Inorando l\'URI de repositoriu mal formáu: %s</string>
   <string name="menu_update_repo">Anovar repositorios</string>
   <string name="menu_manage">Repositorios</string>
-  <string name="menu_send_apk_bt">Compartir F-Droid per Bluetooth</string>
-  <string name="menu_about">Tocante a</string>
+    <string name="menu_about">Tocante a</string>
   <string name="menu_search">Guetar</string>
   <string name="menu_add_repo">Repostoriu nuevu</string>
   <string name="menu_launch">Executar</string>
@@ -159,15 +154,8 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
   <string name="root_access_denied_body">O\'l to preséu Android nun ta rootexáu o refuguesti l\'accesu root pa F-Droid.</string>
   <string name="system_install_denied_title">Nun ta disponible F-Droid privilexáu</string>
   <string name="system_install_denied_body">Esta opción ta namái disponible cuando s\'instale F-Droid como una aplicación del sistema.</string>
-  <string name="swap_nfc_description">Si\'l to collaciu tien F-Droid y NFC activáu, axuntái los vuesos preseos pela parte d\'atras.</string>
-  <string name="swap_join_same_wifi">Xúnite a la mesma Wi-Fi que\'l to collaciu</string>
-  <string name="swap">Intercambéu d\'aplicaciones</string>
-  <string name="swap_no_wifi_network">Entá nun hai rede</string>
-  <string name="swap_view_available_networks">(Calca p\'abrir les redes disponibles)</string>
-  <string name="open_qr_code_scanner">Abrir l\'escáner de códigos QR</string>
-  <string name="swap_welcome">¡Bienllegáu a F-Droid!</string>
-  <string name="swap_confirm_connect">¿Quies consiguir aplicaciones de %1$s agora?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Abrir l\'escáner de códigos QR</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="interval_12h">Cada 12 hores</string>
     <string name="interval_1d">Caldía</string>
@@ -182,19 +170,6 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
     <string name="uninstall_update_confirm">¿Quies trocar esta aplicación pola versión de fábrica?</string>
     <string name="perm_costs_money">Quiciabes esto te cueste perres</string>
     <string name="loading">Cargando…</string>
-    <string name="swap_cant_send_no_bluetooth">Nun pue unviase F-droid porque\'l Bluetooth nun ta disponible nesti preséu.</string>
-    <string name="swap_connecting">Coneutando</string>
-    <string name="swap_cant_find_peers">¿Nun pues alcontrar a quien tas guetando?</string>
-    <string name="swap_send_fdroid">Unviar F-droid</string>
-    <string name="bluetooth_unavailable">Bluetooth non disponible</string>
-    <string name="swap_confirm">Confirmar intercambéu</string>
-    <string name="swap_wifi_device_name">Nome del preséu</string>
-    <string name="swap_visible_bluetooth">Visible pente Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Configurando Bluetooth…</string>
-    <string name="swap_scanning_for_peers">Guetando xente averao…</string>
-    <string name="swap_dont_show_again">Nun amosar de nueves esto</string>
-    <string name="swap_switch_to_wifi">Calca pa camudar a una rede WiFi</string>
-    <string name="swap_success">¡Intercambéu esitosu!</string>
     <string name="theme_dark">Escuru</string>
 <string name="theme_light">Claru</string>
     <string name="uninstall_system">Anovar/Instalar estensión con privilexos</string>
@@ -238,20 +213,6 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
     <string name="system_uninstall">¿Quies desinstalar la estensión F-Droid con privilexos?</string>
     <string name="system_uninstall_button">Desinstalar</string>
 
-    <string name="swap_nfc_title">Toca pa intercambiar</string>
-    <string name="swap_join_same_wifi_desc">Pa intercambiar usando W-FI asegúrate que tais na mesma rede. Si nun tienéis accesu a la mesma rede, ún de vós pues crear una fastera Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Ayuda al to collaciu a coneutalu cola to fastera Wi-Fi</string>
-    <string name="swap_scan_or_type_url">Una persona precisa escaniar el códigu o escribir la URL nel restolador d\'otru.</string>
-    <string name="swap_choose_apps">Escoyer aplicaciones</string>
-    <string name="swap_scan_qr">Escaniar códigu QR</string>
-    <string name="swap_people_nearby">Xente averao</string>
-    <string name="swap_nearby">Intercambéu cercanu</string>
-    <string name="swap_intro">Coneuta y negocia aplicaciones cola xente averao a tigo.</string>
-    <string name="swap_not_visible_bluetooth">Nun ye visible pente Bluetooth</string>
-    <string name="swap_visible_wifi">Visible pente Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Configurando Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Nun ye visible pente Wi-Fi</string>
-
     <string name="install_confirm">precisa accesu a</string>
     <string name="install_confirm_update">¿Quies instalar un anovamientu pa esta aplicación?
 Nun va perdese datu dalu esistente.
@@ -273,12 +234,10 @@ L\'aplicación nun rique accesu especial dalu.</string>
     <string name="perms_description_app">Forníu por %1$s.</string>
     <string name="interval_1h">Cada hora</string>
     <string name="system_install_post_fail_message">Falló la instalación de la estensión F-Droid con privilexos. El métodu d\'instalación nun ta sofitáu por toles distribuciones Android, por favor consulta\'l rastrexador de fallos de F-Droid pa más información.</string>
-    <string name="swap_not_enabled">Intercambéu non habilitáu</string>
     <string name="status_processing_xml_percent">Procesando %2$s / %3$s (%4$d%%) de %1$s</string>
     <string name="unstable_updates_summary">Suxer l\'anovamientu a versiones inestables</string>
     <string name="wifi_ap">Fastera Wi-Fi</string>
 
-    <string name="swap_active_hotspot">%1$s (la to fastera Wi-Fi)</string>
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
     <string name="menu_flattr">Flattr</string>
@@ -327,7 +286,6 @@ corréu colos detalles p\'ayudar a iguar esti problema?</string>
     <string name="by_author">por</string>
     <string name="useTor">Usar Tor</string>
     <string name="useTorSummary">Forcia la descaga\'l tráficu pente Tor pa una privacidá aumentada</string>
-    <string name="swap_stopping_wifi">Parando Wi-Fi…</string>
     <string name="update_auto_download">Auto-baxar anovamientos</string>
     <string name="update_auto_download_summary">Baxa de fondu los anovamientos de ficheros</string>
     <string name="repo_provider">Repositoriu: %s</string>

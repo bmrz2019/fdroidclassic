@@ -3,8 +3,7 @@
   <string name="installIncompatible">Wygląda na to, że ta aplikacja nie jest kompatybilna z twoim urządzeniem. Zainstalować mimo to?</string>
   <string name="version">Wersja</string>
   <string name="delete">Usuń</string>
-  <string name="enable_nfc_send">Włącz przesył NFC…</string>
-  <string name="cache_downloaded">Zapisuj pobrane pliki aplikacji</string>
+    <string name="cache_downloaded">Zapisuj pobrane pliki aplikacji</string>
   <string name="updates">Aktualizacje</string>
   <string name="other">Inne</string>
   <string name="notify">Powiadomienia o aktualizacjach</string>
@@ -32,8 +31,7 @@
   <string name="tab_updates">Aktualizacje</string>
   <string name="one_update_available">Dostępne jest 1 uaktualnienie.</string>
   <string name="fdroid_updates_available">Uaktualnienie F-Droid jest dostępne</string>
-  <string name="send_via_bluetooth">Wyślij przez Bluetooth</string>
-  <string name="repo_add_url">Adres repozytorium</string>
+    <string name="repo_add_url">Adres repozytorium</string>
   <string name="repo_add_fingerprint">Podpis cyfrowy (opcjonalnie)</string>
   <string name="repo_delete_to_overwrite">Musisz najpierw usunąć to repozytorium zanim dodasz następne z innym kluczem.</string>
   <string name="malformed_repo_uri">Ignorowanie błędnego adresu (URI) repozytorium: %s</string>
@@ -120,15 +118,8 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
   <string name="root_access_denied_body">Urządzenie nie zostało zrootowane lub odmówiono uprawnień roota F-Droidowi.</string>
   <string name="system_install_denied_title">Odmówiono uprawnień systemowych</string>
   <string name="system_install_denied_body">Opcja dostępna tylko wtedy, gdy F-Droid został zainstalowany jako aplikacja systemowa.</string>
-  <string name="swap_nfc_description">Jeśli oba urządzenie mają F-Droida i NFC, możecie je zbliżyć do siebie.</string>
-  <string name="swap_join_same_wifi">Połącz się z tą samą siecią Wi-Fi</string>
-  <string name="swap">Wymień aplikacje</string>
-  <string name="swap_no_wifi_network">Brak sieci</string>
-  <string name="swap_view_available_networks">Dotknij i sprawdź dostępne sieci</string>
-  <string name="open_qr_code_scanner">Otwórz skaner QR</string>
-  <string name="swap_welcome">Witaj w F-Droid!</string>
-  <string name="swap_confirm_connect">Czy wymienić aplikacje z %1$s?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Otwórz skaner QR</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="SignatureMismatch">Nowa wersja jest podpisana cyfrowo z innym kluczem niż obecna wersja. Aby zainstalować nową wersję, obecna musi zostać najpierw odinstalowana (odinstalowanie aplikacji spowoduje usunięcie jej danych i ustawień)</string>
     <string name="installDowngrade">Próbujesz zainstalować starszą wersję tej aplikacji. Wykonanie tej operacji może powodować błędy w jej działaniu lub utratę danych. Czy chcesz kontynuować?</string>
@@ -149,15 +140,12 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="back">Powrót</string>
     <string name="many_updates_available">Liczba dostępnych aktualizacji: %d.</string>
     <string name="update_notification_more">+%1$d więcej…</string>
-    <string name="bluetooth_activity_not_found">Nie znaleziono metody do wysłania przez Bluetooth!</string>
-    <string name="choose_bt_send">Wybierz metodę wysłania przez Bluetooth</string>
     <string name="repo_exists_add_fingerprint">To repozytorium jest już dodane. Klucz zostanie zaktualizowany.</string>
     <string name="repo_exists_enable">To repozytorium jest już dodane, potwierdź czy chcesz je włączyć.</string>
     <string name="repo_exists_and_enabled">To repozytorium jest już dodane i jest włączone.</string>
     <string name="bad_fingerprint">Niepoprawny podpis cyfrowy</string>
     <string name="invalid_url">Niepoprawny URL.</string>
     <string name="menu_manage">Repozytoria</string>
-    <string name="menu_send_apk_bt">Prześlij FDroida przez Bluetooh</string>
     <string name="menu_ignore_all">Ignoruj przyszłe aktualizacje</string>
     <string name="menu_issues">Problemy</string>
     <string name="menu_changelog">Lista zmian</string>
@@ -198,12 +186,6 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="system_uninstall">Czy chcesz odinstalować Uprzywilejowany dodatek?</string>
     <string name="system_uninstall_button">Odinstaluj</string>
 
-    <string name="swap_nfc_title">Dotknij by dokonać wymiany</string>
-    <string name="swap_join_same_wifi_desc">By dokonać wymiany przez Wi-Fi musisz upewnić się, że oba urządzenia są w tej samej sieci. Jeśli nie macie dostępu do tej samej sieci, możesz utworzyć hotspota.</string>
-    <string name="swap_join_this_hotspot">Pomóż drugiemu urządzeniu dołączyć do tego samego hotspota</string>
-    <string name="swap_success">Wymiana powiodła się!</string>
-    <string name="swap_active_hotspot">%1$s (Twój hostpot)</string>
-    <string name="swap_switch_to_wifi">Dotknij by połączyć się z tą inną siecią Wi-Fi</string>
     <string name="update_interval_zero">Wyłącz automatyczne aktualizacje</string>
     <string name="about_source">Kod źródłowy</string>
     <string name="not_on_same_wifi">Twoje urządzenie nie jest w tej samej sieci Wi-Fi co lokalne repozytorium które zostało dodane! Spróbuj połączyć się z siecią %s</string>
@@ -215,29 +197,7 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="category_Time">Czas</string>
     <string name="category_Writing">Edycja tekstu</string>
 
-    <string name="swap_dont_show_again">Nie pokazuj więcej tego okna</string>
-    <string name="swap_scan_or_type_url">Jedno z urządzeń musi mieć zeskanowany kod lub wpisany do przeglądarki adres URL drugiego urządzenia.</string>
-    <string name="swap_choose_apps">Wybierz aplikacje</string>
-    <string name="swap_scan_qr">Skanuj kod QR</string>
-    <string name="swap_people_nearby">Ludzie w okolicy</string>
-    <string name="swap_scanning_for_peers">Wyszukiwanie ludzi w tej okolicy…</string>
-    <string name="swap_nearby">Wymiana z pobliskimi urządzeniami</string>
-    <string name="swap_intro">Połącz się i wymień się aplikacjami z pobliskimi urządzeniami.</string>
-    <string name="swap_visible_bluetooth">Widoczność przez Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Ustawiania Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Brak widoczności przez Bluetooth</string>
-    <string name="swap_visible_wifi">Widoczność przez Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Ustawianie Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Brak widoczności przez Wi-Fi</string>
-    <string name="swap_wifi_device_name">Nazwa urządzenia</string>
-    <string name="swap_cant_find_peers">Nie możesz znaleźć kogo szukasz?</string>
-    <string name="swap_send_fdroid">Wyślij F-Droida</string>
-    <string name="swap_connecting">Łączenie</string>
-    <string name="swap_confirm">Potwierdź wymianę</string>
-    <string name="bluetooth_unavailable">Bluetooth nie jest dostępny</string>
-    <string name="swap_cant_send_no_bluetooth">Nie udało się wysłać F-Droida ponieważ Bluetooth nie jest dostępny na Twoim urządzeniu.</string>
     <string name="loading">Ładowanie…</string>
-    <string name="swap_not_enabled">Wymiana nie jest włączona</string>
 
     <string name="install_confirm">wymaga dostępu do</string>
     <string name="install_confirm_update">Czy chcesz zaktualizować tą aplikację? Aktualizacja dostanie dostęp do:</string>
@@ -315,7 +275,6 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
 
     <string name="useTor">Użyj Tora</string>
     <string name="useTorSummary">Wymuś pobieranie przez Tora aby zwiększyć prywatność</string>
-    <string name="swap_stopping_wifi">Zatrzymywanie Wi-Fi…</string>
     <string name="repo_provider">Repozytorium: %s</string>
 
     <string name="update_auto_download">Pobierz aktualizacje automatycznie</string>

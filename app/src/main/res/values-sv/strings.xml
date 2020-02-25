@@ -5,8 +5,7 @@
   <string name="installDowngrade">Du försöker nedgradera detta program. Detta kan få det att fungera felaktigt eller till och med orsaka förlust av dina data. Vill du ändå försöka nedgradera?</string>
   <string name="version">Version</string>
   <string name="delete">Ta bort</string>
-  <string name="enable_nfc_send">Aktivera NFC-sändning…</string>
-  <string name="cache_downloaded">Behåll mellanlagrade appar</string>
+    <string name="cache_downloaded">Behåll mellanlagrade appar</string>
   <string name="updates">Uppdateringar</string>
   <string name="other">Andra</string>
   <string name="update_interval">Automatiskt uppdateringsintervall</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1 uppdatering finns tillgänglig.</string>
   <string name="many_updates_available">%d uppdateringar finns tillgängliga.</string>
   <string name="fdroid_updates_available">Uppdateringar för F-Droid tillgängliga</string>
-  <string name="bluetooth_activity_not_found">Ingen metod för att kunna skicka med Bluetooth kunde hittas, välj en!</string>
-  <string name="choose_bt_send">Välj en sändningsmetod för Bluetooth</string>
-  <string name="send_via_bluetooth">Skicka via Bluetooth</string>
-  <string name="repo_add_url">Förråd adress</string>
+    <string name="repo_add_url">Förråd adress</string>
   <string name="repo_add_fingerprint">Fingeravtryck (valfritt)</string>
   <string name="repo_exists_add_fingerprint">Denna repository är redan inställd, det här kommer att lägga till ny nyckelinformation.</string>
   <string name="repo_exists_enable">Denna repository är redan inställd, bekräfta att du vill återaktivera det.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Ignorerar felaktig URI för repository\'n: %s</string>
   <string name="menu_update_repo">Uppdatera filförråden</string>
   <string name="menu_manage">Filförråd</string>
-  <string name="menu_send_apk_bt">Dela F-Droid via Bluetooth</string>
-  <string name="menu_about">Om</string>
+    <string name="menu_about">Om</string>
   <string name="menu_search">Sök</string>
   <string name="menu_add_repo">Nytt filförråd</string>
   <string name="menu_launch">Kör</string>
@@ -163,14 +158,8 @@ Du kommer
   <string name="root_access_denied_body">Antingen är din Android-enhet inte rootad eller så har du nekat root-åtkomst för F-Droid.</string>
   <string name="system_install_denied_title">Systembehörigheter nekade</string>
   <string name="system_install_denied_body">Detta val är endast tillgängligt när F-Droid installerats som en system-app.</string>
-  <string name="swap_join_same_wifi">Använd samma WiFi som din vän</string>
-  <string name="swap">Byt appar</string>
-  <string name="swap_no_wifi_network">Inget nätverk ännu</string>
-  <string name="swap_view_available_networks">(Tryck för att öppna tillgängliga nätverk)</string>
-  <string name="open_qr_code_scanner">Öppna QR-kodsläsare</string>
-  <string name="swap_welcome">Välkommen till F-Droid!</string>
-  <string name="swap_confirm_connect">Vill du ta emot appar från %1$s nu?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Öppna QR-kodsläsare</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">Instabila uppdateringar</string>
     <string name="unstable_updates_summary">Föreslå uppdatering till instabil version</string>
@@ -260,36 +249,7 @@ Du kommer
     <string name="system_uninstall">Vill du avinstallera F-Droid privilegierade tillbyggnad?</string>
     <string name="system_uninstall_button">Avinstallera</string>
 
-    <string name="swap_nfc_title">Tryck här för att byta ut</string>
-    <string name="swap_nfc_description">Om din vän har F-Droid och NFC aktiverat lägg era enheterna samman.</string>
-    <string name="swap_join_same_wifi_desc">För att byta via WiFi, se till att du är på samma nätverk. Om du inte har tillgång till samma nätverk, kan en av er skapa en WiFi-hotspot.</string>
-    <string name="swap_join_this_hotspot">Hjälp din vän ansluta sig till din hotspot</string>
-    <string name="swap_success">Utbyta lyckades!</string>
-    <string name="swap_active_hotspot">%1$s (din hotspot)</string>
-    <string name="swap_switch_to_wifi">Tryck för att växla till ett WiFi-nätverk</string>
-    <string name="swap_dont_show_again">Visa inte detta igen</string>
-    <string name="swap_scan_or_type_url">En person behöver skanna koden, eller skriv in adressen för den andra i en webbläsare.</string>
-    <string name="swap_choose_apps">Välj appar</string>
-    <string name="swap_scan_qr">Skanna QR kod</string>
-    <string name="swap_people_nearby">Folk i närheten</string>
-    <string name="swap_scanning_for_peers">Söker efter folk i närheten…</string>
-    <string name="swap_intro">Anslut och byt program med människor nära dig.</string>
-    <string name="swap_visible_bluetooth">Synlig via Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Ställer in Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Inte synlig via Bluetooth</string>
-    <string name="swap_visible_wifi">Synlig via WiFi</string>
-    <string name="swap_setting_up_wifi">Ställer in WiFi…</string>
-    <string name="swap_stopping_wifi">Stoppar WiFi…</string>
-    <string name="swap_not_visible_wifi">Inte synlig via WiFi</string>
-    <string name="swap_wifi_device_name">Enhetsnamn</string>
-    <string name="swap_cant_find_peers">Det går inte att hitta den du söker?</string>
-    <string name="swap_send_fdroid">Skicka F-Droid</string>
-    <string name="swap_connecting">Ansluter</string>
-    <string name="swap_confirm">Bekräfta byte</string>
-    <string name="bluetooth_unavailable">Bluetooth inte tillgänglig</string>
-    <string name="swap_cant_send_no_bluetooth">Det går inte att skicka F-Droid, eftersom Bluetooth inte är tillgänglig på den här enheten.</string>
     <string name="loading">Laddar…</string>
-    <string name="swap_not_enabled">Utbyte inte aktiverat</string>
 
     <string name="install_confirm">behöver tillgång till</string>
     <string name="install_confirm_update">Vill du installera en uppdatering
@@ -333,7 +293,6 @@ Den kräver inte någon särskild tillgång.</string>
 tvingade programmet att avsluta. Vill du skicka detaljer med
 e-post för att hjälpa till att åtgärda problemet?</string>
     <string name="crash_dialog_comment_prompt">Du kan lägga till extra information och kommentarer här:</string>
-<string name="swap_nearby">Närliggande byte</string>
     <string name="update_auto_download">Ladda ner uppdateringar automatiskt</string>
     <string name="update_auto_download_summary">Ladda ner uppdateringsfilerna i bakgrunden</string>
     <string name="tap_to_install_format">Knacka för att installera %s</string>

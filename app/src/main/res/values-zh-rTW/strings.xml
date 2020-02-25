@@ -6,7 +6,6 @@
     <string name="installDowngrade">您正在嘗試降級此應用軟體。這樣做可能會讓該應用軟體不能正常運作，甚至可能會造成您重要資料的流失。您確定無論如何都要試著降級它嗎？</string>
     <string name="version">版本</string>
     <string name="delete">刪除</string>
-    <string name="enable_nfc_send">啟用 NFC 傳送功能……</string>
     <string name="cache_downloaded">保留快取應用程式</string>
     <string name="updates">更新</string>
     <string name="unstable_updates">非穩定版本的軟體更新</string>
@@ -64,7 +63,6 @@
     <string name="one_update_available">有 1 個軟體更新。</string>
     <string name="many_updates_available">有 %d 個軟體更新。</string>
     <string name="fdroid_updates_available">有可用的 F-Droid 更新</string>
-    <string name="send_via_bluetooth">透過藍牙傳送</string>
 
     <string name="repo_add_url">應用軟體儲存庫網址</string>
     <string name="repo_add_fingerprint">指紋（選填）</string>
@@ -73,10 +71,7 @@
     <string name="crash_dialog_comment_prompt">您可以在此加入額外的資料及評論：</string>
 <string name="overwrite">覆寫</string>
 
-    <string name="bluetooth_activity_not_found">未找到藍牙傳送方式，請選擇一個！</string>
-    <string name="choose_bt_send">選擇藍牙傳送方式</string>
     <string name="invalid_url">這不是有效的網址。</string>
-    <string name="menu_send_apk_bt">透過藍牙分享 F-Droid</string>
     <string name="menu_settings">設定</string>
     <string name="menu_about">關於</string>
     <string name="menu_search">搜尋</string>
@@ -159,9 +154,6 @@
     <string name="system_uninstall_button">解除安裝</string>
 
     <string name="open_qr_code_scanner">開啟 QR Code 掃描器</string>
-    <string name="swap_welcome">歡迎使用 F-Droid！</string>
-    <string name="swap_dont_show_again">不要再次顯示</string>
-    <string name="swap_scan_qr">掃描 QR Code</string>
     <string name="menu_update_repo">更新儲存庫</string>
     <string name="menu_manage">儲存庫</string>
     <string name="menu_add_repo">新增儲存庫</string>
@@ -220,23 +212,6 @@
     <string name="repo_url">網址</string>
     <string name="root_access_denied_title">Root 權限被拒絕</string>
     <string name="install_error_unknown">不明的錯誤導致安裝失敗</string>
-    <string name="swap_join_this_hotspot">幫助您的朋友加入您的熱點</string>
-    <string name="swap">交換應用程式</string>
-    <string name="swap_success">交換成功！</string>
-    <string name="swap_active_hotspot">%1$s (您的熱點)</string>
-    <string name="swap_choose_apps">選擇應用程式</string>
-    <string name="swap_people_nearby">附近的人</string>
-    <string name="swap_scanning_for_peers">正在搜尋附近的人…</string>
-    <string name="swap_setting_up_bluetooth">正在設定藍牙…</string>
-    <string name="swap_setting_up_wifi">正在設定 Wi-Fi…</string>
-    <string name="swap_stopping_wifi">正在停止 Wi-Fi…</string>
-    <string name="swap_wifi_device_name">裝置名稱</string>
-    <string name="swap_cant_find_peers">找不到您想找的人?</string>
-    <string name="swap_send_fdroid">傳送 F-Droid</string>
-    <string name="swap_confirm">確認交換</string>
-    <string name="bluetooth_unavailable">藍牙不可用</string>
-    <string name="swap_cant_send_no_bluetooth">無法傳送 F-Droid，因為此裝置沒有藍牙功能。</string>
-    <string name="swap_not_enabled">沒有啟用交換功能</string>
     <string name="uninstall_confirm">您想要解除安裝此應用程式嗎？</string>
     <string name="download_error">下載失敗</string>
 
@@ -253,7 +228,6 @@
 
     <string name="menu_email">E-Mail 作者</string>
     <string name="menu_issues">問題</string>
-    <string name="swap_nfc_title">觸碰以便交換</string>
     <string name="writing_index_jar">寫入已簽署的索引檔案中 (index.jar)…</string>
     <string name="linking_apks">正在連結 APK 到儲存庫裡…</string>
     <string name="next">下一步</string>
@@ -298,20 +272,6 @@
 
     <string name="system_install_warning">這需要 10 秒以上的時間。</string>
     <string name="system_install_warning_lollipop">這需要 10 秒以上的時間而且該裝置將在之後<b>重新開機</b>。</string>
-    <string name="swap_nfc_description">如果您的朋友有 F-Droid 並且已開啟NFC，那把你們的裝置相互貼近。</string>
-    <string name="swap_join_same_wifi">將您朋友加入相同的 Wi-Fi</string>
-    <string name="swap_no_wifi_network">尚沒有網路</string>
-    <string name="swap_view_available_networks">點擊打開可用的網路</string>
-    <string name="swap_switch_to_wifi">點擊以切換到一個 Wi-Fi 網路</string>
-    <string name="swap_confirm_connect">您現在想要從 %1$s 取得應用程式嗎？</string>
-    <string name="swap_nearby">近距交換</string>
-    <string name="swap_intro">與您附近的人連結並且交換應用程式。</string>
-    <string name="swap_scan_or_type_url">一個人要掃描 QR 碼或在瀏覽器鍵入另一個的網址。</string>
-    <string name="swap_visible_bluetooth">經由藍牙可看見</string>
-    <string name="swap_not_visible_bluetooth">經由藍牙不可看見</string>
-    <string name="swap_visible_wifi">經由 Wi-Fi 可看見</string>
-    <string name="swap_not_visible_wifi">經由 Wi-Fi 不可看見</string>
-    <string name="swap_connecting">連線</string>
     <string name="system_install_post_success_message">F-Droid 特權擴充已成功安裝。這允許 F-Droid 安裝、更新以及解除安裝其擁有的應用程式。</string>
     <string name="system_install_post_fail_message">F-Droid 特權擴充安裝失敗。此安裝方式並不支援所有發行的 Android 版本，請查閱 F-Droid 的 bug 追蹤以取得詳細資訊。</string>
     <string name="keep_forever">永遠</string>
@@ -347,7 +307,6 @@
     <string name="install_confirm_update_no_perms">您想要安裝更新到現有的應用程式嗎？您不會遺失現有的資料。它不需要任何特殊的存取權限。</string>
     <string name="install_confirm_update_system_no_perms">您想要安裝更新到內置的應用程式嗎？您不會遺失現有的資料。它不需要任何特殊的存取權限。</string>
     <string name="crash_dialog_text">出現意外的錯誤，迫使應用程式停止。您願意以電子郵件提供詳細資訊，以協助修復這個問題嗎？</string>
-    <string name="swap_join_same_wifi_desc">要使用 Wi-Fi 進行交換，確保雙方是在同個一網路上。如果您不能存取同個網絡，你們之中的一個，可以建立一個 Wi-Fi 熱點。</string>
     <string name="keep_install_history">保留安裝履歷</string>
     <string name="keep_install_history_summary">F-Droid 裡面的所有安裝和解除安裝存放在一個日誌中</string>
     <string name="update_auto_install">自動安裝更新</string>

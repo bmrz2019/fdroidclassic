@@ -6,7 +6,6 @@
     <string name="installDowngrade">Está a tentar desatualizar esta aplicação. Se o fizer pode perder os seus dados e provocar um funcionamento errático. Tem a certeza de que o deseja fazer?</string>
     <string name="version">Versão</string>
     <string name="delete">Apagar</string>
-    <string name="enable_nfc_send">Ativar o envio NFC…</string>
     <string name="cache_downloaded">Manter aplicações em cache</string>
     <string name="updates">Atualizações</string>
     <string name="unstable_updates">Atualizações instáveis</string>
@@ -63,9 +62,6 @@
     <string name="many_updates_available">%d atualizações disponíveis.</string>
     <string name="fdroid_updates_available">Atualizações F-Droid disponíveis</string>
     <string name="update_notification_more">+%1$d…</string>
-    <string name="bluetooth_activity_not_found">Nenhum método de envio Bluetooth encontrado. Escolha um!</string>
-    <string name="choose_bt_send">Escolha o método de envio Bluetooth</string>
-    <string name="send_via_bluetooth">Enviar por Bluetooth</string>
 
     <string name="repo_add_url">Endereço do repositório</string>
     <string name="repo_add_fingerprint">Identificação digital (opcional)</string>
@@ -79,7 +75,6 @@
 
     <string name="menu_update_repo">Atualizar repositórios</string>
     <string name="menu_manage">Repositórios</string>
-    <string name="menu_send_apk_bt">Partilhar F-Droid por Bluetooth</string>
     <string name="menu_about">Sobre</string>
     <string name="menu_search">Pesquisar</string>
     <string name="menu_add_repo">Novo repositório</string>
@@ -241,25 +236,7 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="system_uninstall">Deseja desinstalar a extensão privilegiada F-Droid?</string>
     <string name="system_uninstall_button">Desinstalar</string>
 
-    <string name="swap_nfc_title">Toque para trocar</string>
-    <string name="swap_nfc_description">Se o seu amigo(a) possui o F-Droid e o NFC ativo, juntem os vossos dispositivos.</string>
-    <string name="swap_join_same_wifi">Entre na mesma rede Wi-fi do seu amigo(a)</string>
-    <string name="swap_join_same_wifi_desc">Para trocar através de Wi-Fi, certifique-se que estão ambos na mesma rede. Se não estiverem na mesma rede, um de vós pode criar um \'hotspot\' Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Ajude o seu amigo a entrar no seu \'hotspot\'</string>
-    <string name="swap">Trocar aplicações</string>
-    <string name="swap_success">Troca efetuada!</string>
-    <string name="swap_no_wifi_network">Ainda sem rede</string>
-    <string name="swap_active_hotspot">%1$s (no seu \'hotspot\')</string>
-    <string name="swap_view_available_networks">Toque para abrir as redes disponíveis</string>
-    <string name="swap_switch_to_wifi">Toque para trocar para uma rede Wi-Fi</string>
     <string name="open_qr_code_scanner">Abrir leitor QR</string>
-    <string name="swap_welcome">Bem-vindo ao F-Droid!</string>
-    <string name="swap_dont_show_again">Não mostrar novamente</string>
-    <string name="swap_choose_apps">Escolher aplicações</string>
-    <string name="swap_wifi_device_name">Nome do dispositivo</string>
-    <string name="swap_cant_find_peers">Não encontra o que procura?</string>
-    <string name="swap_send_fdroid">Enviar F-Droid</string>
-    <string name="swap_connecting">A estabelecer ligação</string>
     <string name="loading">A carregar…</string>
     <string name="newPerms">Novas</string>
     <string name="allPerms">Todas</string>
@@ -278,23 +255,6 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
 
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Escuro</string>
-<string name="swap_confirm_connect">Deseja obter agora as aplicações de %1$s?</string>
-    <string name="swap_scan_or_type_url">Uma pessoa tem que digitalizar o código ou digitar o URL da outra no navegador web.</string>
-    <string name="swap_scan_qr">Digitalizar código QR</string>
-    <string name="swap_people_nearby">Vizinhança</string>
-    <string name="swap_scanning_for_peers">A pesquisar pessoas na vizinhança…</string>
-    <string name="swap_nearby">Troca na vizinhança</string>
-    <string name="swap_intro">Ligue-se e troque aplicações com pessoas na sua proximidade.</string>
-    <string name="swap_visible_bluetooth">Visível por Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">A configurar Bluetooh…</string>
-    <string name="swap_not_visible_bluetooth">Não visível por Bluetooth</string>
-    <string name="swap_visible_wifi">Visível por Wi-Fi</string>
-    <string name="swap_setting_up_wifi">A configurar Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Não visível por Wi-Fi</string>
-    <string name="swap_confirm">Confirmação de troca</string>
-    <string name="bluetooth_unavailable">Bluetooth não disponível</string>
-    <string name="swap_cant_send_no_bluetooth">Não pode enviar o F-Droid porque o Bluetooth não está ativo no dispositivo.</string>
-    <string name="swap_not_enabled">Troca não ativa</string>
 
     <string name="install_confirm">requer acesso a</string>
     <string name="more">Mais</string>
@@ -348,7 +308,6 @@ Gostaria de nos enviar um e-mail com os detalhes do erro?</string>
 
     <string name="useTor">Utilizar Tor</string>
     <string name="useTorSummary">Descarregar aplicações através da rede Tor para manter a privacidade</string>
-    <string name="swap_stopping_wifi">A parar Wi-Fi…</string>
     <string name="update_auto_download">Descarregar atualizações automaticamente</string>
     <string name="update_auto_download_summary">Descarregar ficheiros de atualização em segundo plano</string>
     <string name="tap_to_install_format">Toque para instalar %s</string>

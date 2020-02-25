@@ -6,7 +6,6 @@
     <string name="installDowngrade">Du forsøger at nedgradere dette program. Gøres dette vil programmet måske blive defekt og endda tabe dine data. Vil du alligevel forsøge at nedgradere programmet?</string>
     <string name="version">Version</string>
     <string name="delete">Slet</string>
-    <string name="enable_nfc_send">Aktiver NFC Send…</string>
     <string name="cache_downloaded">Behold cache-lagrede programmer</string>
     <string name="updates">Opdateringer</string>
     <string name="unstable_updates">Ustabile opdateringer</string>
@@ -75,9 +74,6 @@
     <string name="many_updates_available">%d opdateringer er tilgængelige.</string>
     <string name="fdroid_updates_available">F-Droid Opdateringer Tilgængelige</string>
     <string name="update_notification_more">+%1$d flere…</string>
-    <string name="bluetooth_activity_not_found">Ingen Bluetooth afsendelsesmetode fundet, vælg en!</string>
-    <string name="choose_bt_send">Vælg Bluetooth afsendelsesmetode</string>
-    <string name="send_via_bluetooth">Send over Bluetooth</string>
 
     <string name="repo_add_url">Depot adresse</string>
     <string name="repo_add_fingerprint">Fingeraftryk (valgfri)</string>
@@ -91,7 +87,6 @@
 
     <string name="menu_update_repo">Opdater Depoter</string>
     <string name="menu_manage">Depoter</string>
-    <string name="menu_send_apk_bt">Del F-Droid via Bluetooth</string>
     <string name="menu_settings">Indstillinger</string>
     <string name="menu_about">Om</string>
     <string name="menu_search">Søg</string>
@@ -247,43 +242,8 @@
     <string name="system_uninstall">Vil du afinstallere F-Droid Privilegeret Udvidelse?</string>
     <string name="system_uninstall_button">Afinstaller</string>
 
-    <string name="swap_nfc_title">Rør for at udveksle</string>
-    <string name="swap_nfc_description">Hvis din ven har F-Droid og NFC slået til, lad da jeres enheder røre hinanden.</string>
-    <string name="swap_join_same_wifi">Tilslut dig samme Wi-Fi som din ven</string>
-    <string name="swap_join_same_wifi_desc">For at bytte ved hjælp af Wi-Fi skal du sikre dig at I er på det samme netværk. Hvis I ikke har adgang til det samme netværk, kan en af jer oprette et Wi-Fi Hotspot.</string>
-    <string name="swap_join_this_hotspot">Hjælp din ven med at tilslutte sig dit hotspot</string>
-    <string name="swap">Byt programmer</string>
-    <string name="swap_success">Udveksling succesfuld!</string>
-    <string name="swap_no_wifi_network">Intet netværk endnu</string>
-    <string name="swap_active_hotspot">%1$s (dit hotspot)</string>
-    <string name="swap_view_available_networks">Rør for at åbne tilgængelige netværk</string>
-    <string name="swap_switch_to_wifi">Rør for at skifte til et Wi-Fi netværk</string>
     <string name="open_qr_code_scanner">Åbn QR Scanner</string>
-    <string name="swap_welcome">Velkommen til F-Droid!</string>
-    <string name="swap_confirm_connect">Vil du gerne modtage programmer fra %1$s nu?</string>
-    <string name="swap_dont_show_again">Vis ikke dette igen</string>
-    <string name="swap_scan_or_type_url">En person skal skanne koden, eller skrive den andens URL i en browser.</string>
-    <string name="swap_choose_apps">Vælg Programmer</string>
-    <string name="swap_scan_qr">Skan QR-kode</string>
-    <string name="swap_people_nearby">Folk i nærheden</string>
-    <string name="swap_scanning_for_peers">Leder efter fok i nærheden…</string>
-    <string name="swap_nearby">Nærliggende Udveksling</string>
-    <string name="swap_intro">Forbind til og byt programmer med folk i nærheden af dig.</string>
-    <string name="swap_visible_bluetooth">Synlig gennem Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Sætter Bluetooth op…</string>
-    <string name="swap_not_visible_bluetooth">Ikke synlig gennem Bluetooth</string>
-    <string name="swap_visible_wifi">Synlig gennem Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Sætter Wi-Fi op…</string>
-    <string name="swap_not_visible_wifi">Ikke synlig gennem Wi-Fi</string>
-    <string name="swap_wifi_device_name">Enhedsnavn</string>
-    <string name="swap_cant_find_peers">Kan du ikke finde den du leder efter?</string>
-    <string name="swap_send_fdroid">Send F-Droid</string>
-    <string name="swap_connecting">Forbinder</string>
-    <string name="swap_confirm">Bekræft udveksling</string>
-    <string name="bluetooth_unavailable">Bluetooth utilgængelig</string>
-    <string name="swap_cant_send_no_bluetooth">Kan ikke sende F-Droid fordi Bluetooth er utilgængeligt på denne enhed.</string>
     <string name="loading">Indlæser…</string>
-    <string name="swap_not_enabled">Udveksling ikke aktiveret</string>
 
     <string name="install_confirm">kræver adgang til</string>
     <string name="install_confirm_update">Vil du installere en opdatering til dette eksisterende program? Dine eksisterende data vil ikke gå tabt. Det opdaterede program vil få adgang til:</string>
@@ -332,7 +292,6 @@
     <string name="useTorSummary">Hent altid gennem Tor for forbedret privatliv</string>
     <string name="system_install_not_supported">Installation af F-Droid Priviligeret Udvidelse er i øjeblikket ikke understøttet på Android 5.1 eller senere.</string>
 
-    <string name="swap_stopping_wifi">Deaktiverer Wi-Fi…</string>
     <string name="tap_to_install_format">Berør for at installere %s</string>
     <string name="tap_to_update_format">Berør for at opdatere %s</string>
     <string name="download_pending">Venter på at kunne begynde hentning…</string>

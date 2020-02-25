@@ -30,11 +30,9 @@
   <string name="tab_updates">Atnaujinimai</string>
   <string name="one_update_available">Atsirado 1 atnaujinimas.</string>
   <string name="many_updates_available">Galite įdiegti %d atnaujinimus.</string>
-  <string name="send_via_bluetooth">Siųsti per Bluetooth</string>
   <string name="repo_add_url">Saugyklos adresas</string>
   <string name="menu_update_repo">Atnaujinti saugyklas</string>
   <string name="menu_manage">Saugyklos</string>
-  <string name="menu_send_apk_bt">Siųst FDroid.apk per Bluetooth…</string>
   <string name="menu_about">Apie</string>
   <string name="menu_search">Ieškoti</string>
   <string name="menu_add_repo">Nauja saugykla</string>
@@ -72,5 +70,4 @@
   <string name="repo_disabled_notification">\"%1$s\" pažymėta kaip nenaudotina. Jei norite įkelti programas iš šios saugyklos, turite pirma leisti tai savo nustatymuose.</string>
   <string name="requires_features">Reikalauja: %1$s</string>
   <string name="category_Science_Education">Mokslas ir mokymasis</string>
-  <string name="swap_welcome">Sveikiname, jūs naudojate F-Droid!</string>
 </resources>

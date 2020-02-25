@@ -3,7 +3,6 @@
 
     <string name="version">Vhezheni</string>
     <string name="delete">Dzima</string>
-    <string name="enable_nfc_send">Bvumidza NFC kuti itumire…</string>
     <string name="updates">Zvitsva zvakanatswa</string>
     <string name="keep_install_history">Chengeta makare ezvivakirira</string>
     <string name="keep_install_history_summary">Pfimbika rutarwa rwezvivakirira nezvivakirira zvakabviswa mukati meF-Droid</string>
@@ -73,9 +72,6 @@
     <string name="many_updates_available">Zvekunatsa %d zviripo.</string>
     <string name="fdroid_updates_available">Zvekunatsa F-Droid zviripo</string>
     <string name="update_notification_more">zvimwe +%1$d …</string>
-    <string name="bluetooth_activity_not_found">Hapana mutowo wekutumira neBluetooth wawanikwa, sarudza imwe chete!</string>
-    <string name="choose_bt_send">Sarudza mutowo weBluetooth wekutumira nawo</string>
-    <string name="send_via_bluetooth">Tumira kuburikira neBluetooth</string>
 
     <string name="repo_add_url">Kero yepfimbi</string>
     <string name="repo_add_fingerprint">Chidhindo chechigunwe (zvirikwauri)</string>
@@ -90,7 +86,6 @@
 
     <string name="menu_update_repo">Natsa pfimbi idzi</string>
     <string name="menu_manage">Pfimbi</string>
-    <string name="menu_send_apk_bt">Gova F-Droid kuburikidza neBluetooth</string>
     <string name="menu_settings">Gadziro</string>
     <string name="menu_about">Nezve</string>
     <string name="menu_search">Tsvaga</string>
@@ -289,44 +284,8 @@ Makorokoto! MaApps ako ose akanatswa (kana kuti pfimbi dzako hadzina kunatswa).<
     <string name="system_uninstall_button">Bvisa kuvakirira</string>
     <string name="system_install_not_supported">Kuvakirira uku kwetambanudzo dzchihesvuro hakutsigirwe parizvino paAndroid 5.1 zvichikwira.</string>
 
-    <string name="swap_nfc_description">Kana shamwari yako yakabatidza F-Droid neNFC ita kuti michina yenyu ibatane.</string>
-    <string name="swap_join_same_wifi">Hakira paWi-Fi imwe chete seshamwari yako</string>
-    <string name="swap_nfc_title">Bata kuti utsinhana</string>
-    <string name="swap_join_same_wifi_desc">Kuti utsinhana pamasaisai eWi-Fi, tanga mazvivimbisa kuti muripa masaisai mamwe chete. Kana usina hupindwa pamasaisai mamwe chete, mumwe wenyu anokwanisa kusika nzvimbo yake yemasaisai eWi-Fi.</string>
-    <string name="swap_join_this_hotspot">Batsira shamwari yako kupinda panzvimbo yako yemasaisai</string>
-    <string name="swap">Tsinhana maApps</string>
-    <string name="swap_success">Kutsinhana kwabudirira!</string>
-    <string name="swap_no_wifi_network">Hapana masaisai iyezvino</string>
-    <string name="swap_active_hotspot">%1$s (nzvimbo yako yemasaisai)</string>
-    <string name="swap_view_available_networks">Bata kuti uvhure masaisai aripo</string>
-    <string name="swap_switch_to_wifi">Bata kuti uchinje kuenda pane mamwe masaisai eWi-Fi</string>
     <string name="open_qr_code_scanner">Vhura Scanner yeQR</string>
-    <string name="swap_welcome">Titambire paF-Droid!</string>
-    <string name="swap_confirm_connect">Unoda kuwana maApps kubva pa %1$s izvozvi?</string>
-    <string name="swap_dont_show_again">Usaratidza izvi zve</string>
-    <string name="swap_scan_or_type_url">Munhu mumwe chete anoda kunzvera murau, kana kunyora URL yeimwe yacho mubrowser.</string>
-    <string name="swap_choose_apps">Sarudza maApps</string>
-    <string name="swap_scan_qr">Nzvera Murau weQR</string>
-    <string name="swap_people_nearby">Vanhu vari pedyo</string>
-    <string name="swap_scanning_for_peers">Kutsvaga vanhu vari pedyo…</string>
-    <string name="swap_nearby">Kutsinhana kuri pedyo</string>
-    <string name="swap_intro">Hakira nekuchinjana maApps nevanhu vari pedyo newe.</string>
-    <string name="swap_visible_bluetooth">Kuwoneka nenzira yeBluetooth</string>
-    <string name="swap_setting_up_bluetooth">Kugadzira Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Haisi kuwoneka nenzira yeBluetooth</string>
-    <string name="swap_visible_wifi">Kuwoneka nenzira yeWi-Fi</string>
-    <string name="swap_setting_up_wifi">Kugadzira Wi-Fi…</string>
-    <string name="swap_stopping_wifi">Kumisa Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Haisi kuwoneka nenzira yeWi-Fi</string>
-    <string name="swap_wifi_device_name">Zita remuchina</string>
-    <string name="swap_cant_find_peers">Hausi kuwona munhu wauri kutsvaga here?</string>
-    <string name="swap_send_fdroid">Tumira F-Droid</string>
-    <string name="swap_connecting">Kuhakira</string>
-    <string name="swap_confirm">Tsinhira kutsinhana</string>
-    <string name="bluetooth_unavailable">Bluetooth haipo</string>
-    <string name="swap_cant_send_no_bluetooth">Hatisi kukwanisa kutumira F-Droid, nekuti Bluetooth haipo pamuchina uyu.</string>
     <string name="loading">Kuzadza…</string>
-    <string name="swap_not_enabled">Kutsinhana hakuna kubvumirwa</string>
 
     <string name="tap_to_install_format">Bata kuti uvakirire %s</string>
     <string name="tap_to_update_format">Bata kuti unatse %s</string>

@@ -51,7 +51,6 @@
     <string name="app_name">F-Droid</string>
 
     <string name="by_author">de catre</string>
-    <string name="enable_nfc_send">Activeaza trimiterea prin NFC…</string>
     <string name="update_interval">Interval actualizari automate</string>
     <string name="automatic_scan_wifi">Doar prin Wi-Fi</string>
     <string name="unstable_updates">Actualizari instabile</string>
@@ -94,9 +93,6 @@
     <string name="tab_updates_count">Actualizari (%d)</string>
     <string name="fdroid_updates_available">Actualizari disponibile in F-Droid</string>
     <string name="update_notification_more">+%1$d mai mult…</string>
-    <string name="bluetooth_activity_not_found">Nu a fost gasita o metoda Bluetooth de a trimite, alegeti una!</string>
-    <string name="choose_bt_send">Alegeti metoda de a trimite prin Bluetooth</string>
-    <string name="send_via_bluetooth">Trimite prin Bluetooth</string>
 
     <string name="repo_add_url">Adresa depozit</string>
     <string name="repo_add_fingerprint">Amprenta (optionala)</string>
@@ -136,7 +132,6 @@
     <string name="menu_share">Trimite</string>
     <string name="menu_add_repo">Depozit nou</string>
 
-    <string name="menu_send_apk_bt">Trimite F-Droid prin Bluetooth</string>
     <string name="menu_update_repo">Actualizeaza depozite</string>
     <string name="malformed_repo_uri">Ignora adresa corupta URL a depozitului: %s</string>
 
@@ -215,38 +210,13 @@
     <string name="system_install_denied_title">Extensia privilegiata F-Droid nu este disponibila</string>
     <string name="system_install_installing_rebooting">Instalare si repornire dispozitiv…</string>
     <string name="system_install_warning">Aceasta poate dura pana la 10 secunde.</string>
-    <string name="swap_nfc_title">Atinge pentru schimb</string>
-    <string name="swap_join_this_hotspot">Ajuta-ti prietenul sa se conecteze la hotspot-ul tau</string>
     <string name="system_install_installing">Instalare…</string>
     <string name="system_install_uninstalling">Dezinstalare…</string>
     <string name="system_uninstall_button">Dezinstalare</string>
 
-    <string name="swap_join_same_wifi">Conecteaza la aceeasi retea Wi-Fi ca si prietenul tau</string>
-    <string name="swap">Schimb de aplicatii</string>
-    <string name="swap_active_hotspot">%1$s (hotspot-ul tau)</string>
     <string name="system_install_button_open">Deschide extensie</string>
-    <string name="swap_no_wifi_network">Nici o retea inca</string>
     <string name="system_install_button_install">Instalare</string>
-    <string name="swap_dont_show_again">Nu mai arata asta</string>
-    <string name="swap_people_nearby">Persoane in preajma</string>
-    <string name="swap_nearby">Schimb in preajma</string>
-    <string name="swap_setting_up_bluetooth">Configurare Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Nu este vizibil prin Bluetooth</string>
-    <string name="swap_wifi_device_name">Nume dispozitiv</string>
-    <string name="swap_confirm">Confirma schimb</string>
-    <string name="swap_success">Schimb realizat cu succes!</string>
-    <string name="swap_switch_to_wifi">Atinge pentru a trece la o retea Wi-Fi</string>
-    <string name="swap_confirm_connect">Vreti sa luati aplicatii din %1$s acum?</string>
-    <string name="swap_welcome">Bine ati venit la F-Droid!</string>
     <string name="open_qr_code_scanner">Deschide scaner QR</string>
-    <string name="swap_choose_apps">Selecteaza aplicatii</string>
-    <string name="swap_scan_qr">Scaneaza cod QR</string>
-    <string name="swap_scanning_for_peers">Cautare persoane in preajma…</string>
-    <string name="swap_visible_bluetooth">Vizibil prin Bluetooth</string>
-    <string name="swap_visible_wifi">Vizibil prin Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Configurare Wi-Fi…</string>
-    <string name="swap_connecting">Conectare</string>
-    <string name="swap_send_fdroid">Trimite F-Droid</string>
     <string name="theme_night">Noapte</string>
 
     <string name="crash_dialog_title">F-Droid s-a oprit</string>
@@ -272,8 +242,6 @@
     <string name="interval_1w">Saptamanal</string>
     <string name="interval_1d">Zilnic</string>
     <string name="interval_12h">La fiecare 12 ore</string>
-    <string name="swap_not_enabled">Schimbul nu este activat</string>
-    <string name="swap_not_visible_wifi">Nu este vizibil prin Wi-Fi</string>
     <string name="enable_proxy_summary">Configureaza proxy HTTP pentru toate conexiunile de retea</string>
     <string name="repos_unchanged">Toate depozitele sunt actualizate</string>
         <string name="loading">Se incarca…</string>
@@ -282,8 +250,6 @@
     <string name="adding_apks_format">Adaug %s la depozit…</string>
     <string name="useTor">Foloseste Tor</string>
     <string name="repo_details">Depozit</string>
-    <string name="swap_stopping_wifi">Oprire Wi-Fi…</string>
-    <string name="bluetooth_unavailable">Bluetooth indisponibil</string>
     <string name="repo_provider">Depozit: %s</string>
 
     <string name="update_auto_download">Descarca automat actualizarile</string>

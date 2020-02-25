@@ -4,7 +4,6 @@
     <string name="installDowngrade">הינך מנסה להנמיך את אפליקציה זו. פעולה שכזו עלולה לגרום לתפקוד לקוי ואף לאיבוד מידע. האם ברצונך לנסות להנמיך בכל מקרה?</string>
     <string name="version">גרסה</string>
     <string name="delete">מחק</string>
-    <string name="enable_nfc_send">אפשר NFC Send…</string>
     <string name="cache_downloaded">הטמן חבילות</string>
     <string name="updates">עדכונים</string>
     <string name="other">אחר</string>
@@ -54,9 +53,6 @@
     <string name="many_updates_available">%d עדכונים זמינים.</string>
     <string name="fdroid_updates_available">עדכוני F-Droid זמינים</string>
     <string name="update_notification_more">+%1$d עוד…</string>
-    <string name="bluetooth_activity_not_found">לא נמצאה שיטת שליחה של Bluetooth, בחר אחת!</string>
-    <string name="choose_bt_send">בחר שיטת שליחה של Bluetooth</string>
-    <string name="send_via_bluetooth">שלח דרך Bluetooth</string>
 
     <string name="repo_add_url">כתובת מאגר</string>
     <string name="repo_add_fingerprint">טביעת אצבע (רשות)</string>
@@ -67,7 +63,6 @@
 
     <string name="menu_update_repo">עדכן מאגרים</string>
     <string name="menu_manage">מאגרים</string>
-    <string name="menu_send_apk_bt">שתף את F-Droid בעזרת Bluetooth</string>
     <string name="menu_about">אודות</string>
     <string name="menu_search">חפש</string>
     <string name="menu_add_repo">מאגר חדש</string>
@@ -189,20 +184,7 @@
     <string name="system_uninstall">האם ברצונך לבטל את התקנת הרחבת F-Droid מועדף?</string>
     <string name="system_uninstall_button">בטל התקנה</string>
 
-    <string name="swap_nfc_description">אם לחברך יש F-Droid וגם NFC פועלים געו יחד במכשירים שלכם.</string>
-    <string name="swap_join_same_wifi">הצטרף לאותו Wi-Fi כמו חברך</string>
-    <string name="swap_join_this_hotspot">עזור לחברך להצטרף לנקודה חמה</string>
-    <string name="swap">החלף אפליקציות</string>
-    <string name="swap_success">הֶחְלֵף הצליח!</string>
-    <string name="swap_no_wifi_network">אין רשת עדיין</string>
-    <string name="swap_active_hotspot">%1$s (נקודה חמה)</string>
-    <string name="swap_view_available_networks">הקש כדי לפתוח רשתות זמינות</string>
-    <string name="swap_switch_to_wifi">הקש כדי להחליף לרשת Wi-Fi</string>
     <string name="open_qr_code_scanner">פתח סורק QR</string>
-    <string name="swap_welcome">ברוכים הבאים אל F-Droid!</string>
-    <string name="swap_confirm_connect">האם ברצונך לקבל אפליקציות מתוך %1$s כעת?</string>
-    <string name="swap_dont_show_again">אל תציג זאת שוב</string>
-    <string name="swap_scan_or_type_url">אדם אחד צריך לסרוק את הקוד, או להקליד URL של המחליף האחר לתוך דפדפן.</string>
 
     <string name="install_confirm">האם ברצונך להתקין את אפליקציה זו?
             זו תקבל גישה אל:</string>
@@ -231,19 +213,6 @@
     <string name="category_Time">זמן</string>
     <string name="category_Writing">כתיבה</string>
 
-    <string name="swap_choose_apps">בחר אפליקציות</string>
-    <string name="swap_scan_qr">סרוק קוד QR</string>
-    <string name="swap_people_nearby">אנשים בקרבת מקום</string>
-    <string name="swap_scanning_for_peers">כעת מחפש אחר אנשים בקרבת מקום…</string>
-    <string name="swap_visible_bluetooth">נראה דרך Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">כעת מעלה Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">לא נראה דרך Bluetooth</string>
-    <string name="swap_visible_wifi">נראה דרך Wi-Fi</string>
-    <string name="swap_setting_up_wifi">כעת מעלה Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">לא נראה דרך Wi-Fi</string>
-    <string name="swap_wifi_device_name">שם התקן</string>
-    <string name="swap_connecting">כעת מתחבר</string>
-    <string name="bluetooth_unavailable">‏Bluetooth לא זמין</string>
     <string name="loading">כעת טוען…</string>
     <string name="tap_to_install">הורדה הושלמה, הקש כדי להתקין</string>
 
@@ -261,15 +230,7 @@
     <string name="unstable_updates_summary">הצע עדכונים לגרסאות לא יציבות</string>
     <string name="about_source">קוד מקור</string>
     <string name="tab_installed_apps">מותקנות</string>
-    <string name="swap_nfc_title">גע כדי להחליף</string>
-    <string name="swap_nearby">הֶחְלֵף בקרבת מקום</string>
-    <string name="swap_cant_find_peers">אינך יכול למצוא את מי שאתה מחפש?</string>
-    <string name="swap_send_fdroid">שלח F-Droid</string>
-    <string name="swap_confirm">אמת הֶחְלֵף</string>
-    <string name="swap_cant_send_no_bluetooth">לא מסוגל לשלוח את F-Droid, בשל העובדה כי Bluetooth אינו זמין על מכשיר זה.</string>
-    <string name="swap_not_enabled">הֶחְלֵף לא מאופשר</string>
 
-    <string name="swap_intro">חבר והחלף אפליקציות עם אנשים בקרבתך.</string>
     <string name="SignatureMismatch">הגרסה החדשה חתומה בעזרת מפתח שונה מזה הישן. כדי להתקין את הגרסה החדשה, יש להסיר את הישנה תחילה. נא לבצע פעולה זו ולנסות שוב. (לתשומת לבך ביטול התקנה יסיר כל מידע פנימי אשר מאוחסן על ידי היישומון)</string>
     <string name="repo_exists_add_fingerprint">מאגר זה כבר מותקן, זה יוסיף מידע מפתח חדש.</string>
     <string name="repo_exists_enable">מאגר זה כבר מותקן, אמת כי ברצונך לאפשרו שוב.</string>
@@ -280,7 +241,6 @@
     <string name="repo_confirm_delete_body">מחיקת מאגר זה משמעה כי אפליקציות מתוכו לא יהיו זמינים עוד מתוך F-Droid.\n\nהערה: כל אפליקציות אשר הותקנו בעבר יישארו על המכשיר שלך.</string>
     <string name="repo_disabled_notification">נוטרל %1$s.\n\nעליך לאפשר שוב את מאגר זה כדי להתקין אפליקציות מתוכו.</string>
     <string name="not_on_same_wifi">המכשיר שלך אינו מצוי על גבי אותה רשת Wi-Fi כמו המאגר המקומי אשר הוספת עתה! נסה להצטרף לרשת זו: %s</string>
-    <string name="swap_join_same_wifi_desc">כדי לבצע הֶחְלֵף באמצעות Wi-Fi, וודא כי אתה נמצא על גבי אותה רשת. אם אין לך גישה לאותה הרשת, אחד מכם יכול ליצור Wi-Fi Hotspot.</string>
     <string name="install_confirm_update">האם ברצונך להתקין עדכון לאפליקציה קיימת זו? המידע הקיים שלך לא יאבד. האפליקציה המעודכנת תקבל גישה אל:</string>
     <string name="install_confirm_update_system">האם ברצונך להתקין עדכון לאפליקציה מובנית (קרי, built-in)? המידע הקיים שלך לא יאבד. האפליקציה המעודכנת תקבל גישה אל:</string>
     <string name="install_confirm_update_no_perms">האם ברצונך להתקין עדכון לאפליקציה קיימת זו? המידע הקיים שלך לא יאבד. זו לא מצריכה שום גישה מיוחדת.</string>
@@ -334,7 +294,6 @@
 
     <string name="useTor">שימוש ב־Tor</string>
     <string name="useTorSummary">אילוץ העברת תעבורת העבודה דרך Tor להגברת הפרטיות</string>
-    <string name="swap_stopping_wifi">חיבור הרשת האלחוטי מופסק…</string>
     <string name="update_auto_download">הורד עדכונים אוטומטית</string>
     <string name="update_auto_download_summary">הורד את קבצי העדכון בתוך הרקע</string>
     <string name="tap_to_install_format">הקש כדי להתקין %s</string>

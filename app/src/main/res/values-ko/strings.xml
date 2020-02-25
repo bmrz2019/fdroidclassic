@@ -5,8 +5,7 @@
   <string name="installDowngrade">이 응용 프로그램의 다운그레이드 하려고 합니다. 이전 버전을 설치할 경우, 응용 프로그램에 데이터가 손상되거나 오작동이 발생할 수 있습니다. 정말로 다운그레이드하시겠습니까?</string>
   <string name="version">버전</string>
   <string name="delete">삭제</string>
-  <string name="enable_nfc_send">NFC 전송 사용…</string>
-  <string name="cache_downloaded">임시 저장된 앱 보관</string>
+    <string name="cache_downloaded">임시 저장된 앱 보관</string>
   <string name="updates">업데이트</string>
   <string name="other">기타</string>
   <string name="update_interval">자동 업데이트 간격</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1개의 업데이트를 사용할 수 있습니다.</string>
   <string name="many_updates_available">%d개의 업데이트를 사용할 수 있습니다.</string>
   <string name="fdroid_updates_available">F-Droid 업데이트를 사용할 수 있습니다.</string>
-  <string name="bluetooth_activity_not_found">블루투스 전송 방법을 찾을 수 없습니다. 선택하세요!</string>
-  <string name="choose_bt_send">블루투스 전송 방법 선택</string>
-  <string name="send_via_bluetooth">블루투스를 통해 전송</string>
-  <string name="repo_add_url">저장소 주소</string>
+    <string name="repo_add_url">저장소 주소</string>
   <string name="repo_add_fingerprint">핑거프린트 (선택 가능)</string>
   <string name="repo_exists_add_fingerprint">저장소가 이미 설치되었으며, 키에 대한 새로운 정보를 추가할 것입니다.</string>
   <string name="repo_exists_enable">저장소가 이미 설치되었으며, 다시 사용할 것인지 확인하세요.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">잘못된 형식의 저장소 URI를 무시하는 중: %s</string>
   <string name="menu_update_repo">저장소 업데이트</string>
   <string name="menu_manage">저장소 관리</string>
-  <string name="menu_send_apk_bt">F-Droid를 블루투스로 전송</string>
-  <string name="menu_about">대하여</string>
+    <string name="menu_about">대하여</string>
   <string name="menu_search">검색</string>
   <string name="menu_add_repo">새로운 저장소</string>
   <string name="menu_launch">실행</string>
@@ -155,15 +150,8 @@
   <string name="root_access_denied_body">기기가 루팅되지 않았거나 F-Droid의 루트 권한 요청을 거부한 경우입니다.</string>
   <string name="system_install_denied_title">시스템 권한 거부됨</string>
   <string name="system_install_denied_body">이 옵션은 F-Droid가 시스템 앱으로 설치된 경우에만 사용 가능합니다.</string>
-  <string name="swap_nfc_description">만약 상대방이 F-Droid를 가지고 있고 NFC가 켜져 있다면 두 기기를 서로 맞대어 놓으세요.</string>
-  <string name="swap_join_same_wifi">같은 Wi-Fi 네트워크에 접속하세요</string>
-  <string name="swap">앱 교환</string>
-  <string name="swap_no_wifi_network">아직 네트워크 없음</string>
-  <string name="swap_view_available_networks">(사용 가능한 네트워크를 열기 위해 누르기)</string>
-  <string name="open_qr_code_scanner">QR 코드 스캐너 열기</string>
-  <string name="swap_welcome">F-Droid에 오신 것을 환영합니다!</string>
-  <string name="swap_confirm_connect">지금 %1$s(으)로부터 앱을 가져올까요?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">QR 코드 스캐너 열기</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">불안정 업데이트</string>
     <string name="unstable_updates_summary">불안정한 버전으로의 업데이트를 제안</string>
@@ -241,35 +229,7 @@
     <string name="system_uninstall">F-Droid 특별 권한 확장을 삭제할까요?</string>
     <string name="system_uninstall_button">삭제</string>
 
-    <string name="swap_nfc_title">눌러서 교환</string>
-    <string name="swap_join_same_wifi_desc">Wi-Fi를 사용해 교환하려면, 같은 네트워크에 있는지를 확인하세요. 만약 같은 네트워크에 접속할 수 없다면, 하나의 기기에서 Wi-Fi 핫스팟을 시작할 수도 있습니다.</string>
-    <string name="swap_join_this_hotspot">상대방이 당신의 핫스팟에 접속하도록 도와주기</string>
-    <string name="swap_success">교환 성공!</string>
-    <string name="swap_active_hotspot">%1$s (당신의 핫스팟)</string>
-    <string name="swap_switch_to_wifi">눌러서 Wi-Fi 네트워크로 전환</string>
-    <string name="swap_dont_show_again">더 이상 표시하지 않음</string>
-    <string name="swap_scan_or_type_url">한 명은 코드를 스캔하거나 상대방의 URL을 브라우저에 입력해야 합니다.</string>
-    <string name="swap_choose_apps">앱 선택</string>
-    <string name="swap_scan_qr">QR 코드 스캔</string>
-    <string name="swap_people_nearby">주위에 있는 사람</string>
-    <string name="swap_scanning_for_peers">주위에 있는 사람을 검색하는 중…</string>
-    <string name="swap_nearby">근접 교환</string>
-    <string name="swap_intro">주위에 있는 사람들과 연결하고 앱을 교환합니다.</string>
-    <string name="swap_visible_bluetooth">블루투스를 통해 보여짐</string>
-    <string name="swap_setting_up_bluetooth">블루투스 가동하는 중…</string>
-    <string name="swap_not_visible_bluetooth">블루투스를 통해 보여지지 않음</string>
-    <string name="swap_visible_wifi">Wi-Fi를 통해 보여짐</string>
-    <string name="swap_setting_up_wifi">Wi-Fi 가동하는 중…</string>
-    <string name="swap_not_visible_wifi">Wi-Fi를 통해 보여지지 않음</string>
-    <string name="swap_wifi_device_name">기기 이름</string>
-    <string name="swap_cant_find_peers">찾고 있는 사람을 찾을 수 없습니까?</string>
-    <string name="swap_send_fdroid">F-Droid 보내기</string>
-    <string name="swap_connecting">접속 중</string>
-    <string name="swap_confirm">교환 확인</string>
-    <string name="bluetooth_unavailable">블루투스 사용할 수 없음</string>
-    <string name="swap_cant_send_no_bluetooth">F-Droid를 보낼 수 없습니다. 이 기기에서 블루투스를 사용할 수 없습니다.</string>
     <string name="loading">불러오는 중…</string>
-    <string name="swap_not_enabled">교환 비활성화됨</string>
 
     <string name="install_confirm">다음에의 접근 권한이 필요합니다</string>
     <string name="install_confirm_update">기존의 앱을 업데이트 하시겠습니까? 기존의 데이터는 남아있을 것입니다. 업데이트된 앱은 다음에 접근할 수 있습니다:</string>
@@ -314,7 +274,6 @@
 
     <string name="system_install_not_supported">F-Droid 특별 권한 확장을 설치하려면 Android 5.1보다 높은 버전이 필요합니다.</string>
 
-    <string name="swap_stopping_wifi">Wi-Fi 중단하는 중…</string>
     <string name="tap_to_install_format">%s 설치하려면 터치하세요</string>
     <string name="tap_to_update_format">%s 업데이트하려면 터치하세요</string>
     <string name="download_pending">다운로드 시작을 기다리는 중…</string>

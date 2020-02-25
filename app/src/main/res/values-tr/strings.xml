@@ -5,8 +5,7 @@
   <string name="installDowngrade">Bu uygulamanın eski bir sürümüne dönmek üzeresiniz. Bu, uygulamanın yanlış çalışmasına ve hatta veri kaybına neden olabilir. Devam etmek istiyor musunuz?</string>
   <string name="version">Sürüm</string>
   <string name="delete">Sil</string>
-  <string name="enable_nfc_send">NFC göndermesini etkinleştir…</string>
-  <string name="cache_downloaded">Önbellekteki uygulamaları sakla</string>
+    <string name="cache_downloaded">Önbellekteki uygulamaları sakla</string>
   <string name="updates">Güncellemeler</string>
   <string name="other">Diğer</string>
   <string name="update_interval">Kendi kendine güncelleme aralığı</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1 güncelleme bulunmaktadır.</string>
   <string name="many_updates_available">%d güncelleme bulunmaktadır.</string>
   <string name="fdroid_updates_available">F-Droid güncellemeleri bulunmaktadır</string>
-  <string name="bluetooth_activity_not_found">Hiçbir Bluetooth gönderme yöntemi bulunamadı, birisini seçin!</string>
-  <string name="choose_bt_send">Bluetooth gönderme yöntemi seç</string>
-  <string name="send_via_bluetooth">Bluetooth ile Gönder</string>
-  <string name="repo_add_url">Depo adresi</string>
+    <string name="repo_add_url">Depo adresi</string>
   <string name="repo_add_fingerprint">Parmak izi (seçime dayalı)</string>
   <string name="repo_exists_add_fingerprint">Bu depo zaten ayarlanmıştır, bu yeni anahtar verisi ekleyecektir.</string>
   <string name="repo_exists_enable">Bu depo zaten ayarlanmıştır, tekrar etkinleştirmek istediğinizi teyit ediniz.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Yanlış yapılandırılmış depo URI\'si görmezden geliniyor: %s</string>
   <string name="menu_update_repo">Depoları güncelle</string>
   <string name="menu_manage">Depoları Yönet</string>
-  <string name="menu_send_apk_bt">FDroid\'i Bluetooth ile paylaş</string>
-  <string name="menu_about">Hakkında</string>
+    <string name="menu_about">Hakkında</string>
   <string name="menu_search">Arama</string>
   <string name="menu_add_repo">Yeni Depo</string>
   <string name="menu_launch">Çalıştır</string>
@@ -159,15 +154,8 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
   <string name="root_access_denied_body">Ya Android aygıtınız köklü değil ya da F-Droid için kök erişimini engellediniz.</string>
   <string name="system_install_denied_title">Sistem izinleri reddedildi</string>
   <string name="system_install_denied_body">Bu seçenek yalnızca F-Droid bir sistem uygulaması olarak kurulduğunda kullanılır.</string>
-  <string name="swap_nfc_description">Arkadaşınızda F-Droid ve etkinleştirilmiş NFC varsa aygıtlarınızı birbirine dokundurun.</string>
-  <string name="swap_join_same_wifi">Arkadaşınızla aynı kablosuz ağa katılın</string>
-  <string name="swap">Değiş-Tokuş uygulamalar</string>
-  <string name="swap_no_wifi_network">Henüz ağ yok</string>
-  <string name="swap_view_available_networks">Kullanılabilir ağları açmak için dokunun</string>
-  <string name="open_qr_code_scanner">QR Kod Tarayıcısını Aç</string>
-  <string name="swap_welcome">F-Droid\'e Hoş Geldin!</string>
-  <string name="swap_confirm_connect">%1$s konumundan şimdi uygulama almak istiyor musunuz?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">QR Kod Tarayıcısını Aç</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">Kararsız güncellemeler</string>
     <string name="unstable_updates_summary">Kararsız sürümlere güncellemeyi öner</string>
@@ -237,32 +225,7 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="system_install_warning_lollipop">Bu 10 saniye kadar bir süre alır ve ardından aygıt <b>yeniden başlatılacaktır</b>.</string>
     <string name="system_uninstall_button">Kaldır</string>
 
-    <string name="swap_nfc_title">Takas yapmak için dokunun</string>
-    <string name="swap_success">Takas başarılı oldu!</string>
-    <string name="swap_switch_to_wifi">Bir Wi-Fi ağına geçiş yapmak için dokunun</string>
-    <string name="swap_dont_show_again">Bunu bir daha gösterme</string>
-    <string name="swap_scan_or_type_url">Bir kişinin kodu taraması ya da diğerinin bağlantısını bir tarayıcıda girmesi gerekmektedir.</string>
-    <string name="swap_choose_apps">Uygulama Seç</string>
-    <string name="swap_scan_qr">QR Kodunu Tara</string>
-    <string name="swap_people_nearby">Yakındaki Kişiler</string>
-    <string name="swap_scanning_for_peers">Yakındaki kişiler aranıyor…</string>
-    <string name="swap_nearby">Yakında Takas</string>
-    <string name="swap_intro">Yakınınızdaki kişilere bağlanın ve onlarla uygulama takas edin.</string>
-    <string name="swap_visible_bluetooth">Bluetooth üzerinden görünür</string>
-    <string name="swap_setting_up_bluetooth">Bluetooth ayarlanıyor…</string>
-    <string name="swap_not_visible_bluetooth">Bluetooth üzerinden görünmez</string>
-    <string name="swap_visible_wifi">Wi-Fi üzerinden görünür</string>
-    <string name="swap_setting_up_wifi">Wi-Fi ayarlanıyor…</string>
-    <string name="swap_not_visible_wifi">Wi-Fi üzerinden görünmez</string>
-    <string name="swap_wifi_device_name">Aygıt İsmi</string>
-    <string name="swap_cant_find_peers">Aradığınız kişiyi bulamadınız mı?</string>
-    <string name="swap_send_fdroid">F-Droid\'i gönder</string>
-    <string name="swap_connecting">Bağlanıyor</string>
-    <string name="swap_confirm">Takası teyit edin</string>
-    <string name="bluetooth_unavailable">Bluetooth mevcut değil</string>
-    <string name="swap_cant_send_no_bluetooth">F-Droid gönderilemedi, çünkü Bluetooth bu aygıtta mevcut değil.</string>
     <string name="loading">Yükleniyor…</string>
-    <string name="swap_not_enabled">Takas etkinleştirilmemiş</string>
 
     <string name="install_confirm">şunlara erişime gereksinir:</string>
     <string name="install_confirm_update">Bu mevcut uygulama için bir güncelleme kurmak istiyor musunuz? Mevcut verileriniz kaybolmayacaktır. Güncellenmiş uygulamanın şunlara erişimi olacaktır:</string>
@@ -309,9 +272,6 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="system_install_post_fail_message">F-Droid Ayrıcalıklı Uzantı\'nın kurulması başarısız oldu. Kurulum yöntemi her Android dağıtımı tarafından desteklenmeyebilir, daha fazla bilgi için lütfen F-Droid hata izleyicisini okuyun.</string>
     <string name="system_install_question">F-Droid Ayrıcalıklı Uzantı\'yı kurmak istiyor musunuz?</string>
     <string name="system_uninstall">F-Droid Ayrıcalıklı Uzantı\'yı kaldırmak istiyor musunuz?</string>
-    <string name="swap_join_same_wifi_desc">Wi-Fi ile takas yapmak istiyorsanız, aynı ağda bulunduğunuzdan emin olun. Eğer aynı ağa erişiminiz yoksa, biriniz bir Wi-Fi erişim noktası oluşturabilir.</string>
-    <string name="swap_join_this_hotspot">Arkadaşınızın erişim noktanıza bağlanmasına yardım edin</string>
-    <string name="swap_active_hotspot">%1$s (erişim noktanız)</string>
     <string name="by_author">şu tarafından</string>
     <string name="menu_email">Geliştiriciye e-posta at</string>
     <string name="update_auto_download">Güncellemeleri kendiliğinden indir</string>
@@ -319,7 +279,6 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="repo_provider">Depo: %s</string>
 
     <string name="useTor">Tor\'u Kullan</string>
-    <string name="swap_stopping_wifi">Wi-Fi durduruluyor…</string>
     <string name="tap_to_install_format">%s yüklemek için tıkla</string>
     <string name="tap_to_update_format">%s güncellemek için tıkla</string>
     <string name="useTorSummary">arttırılmış güvenlik için download trafiğini Tor üzerinden zorla</string>

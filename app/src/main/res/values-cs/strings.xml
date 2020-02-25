@@ -5,8 +5,7 @@
   <string name="installDowngrade">Pokoušíte se instalovat starší verzi než je nyní nainstalována. To nemusí fungovat a může to vést i ke ztrátě dat. Opravdu chcete starší verzi nainstalovat?</string>
   <string name="version">Verze</string>
   <string name="delete">Smazat</string>
-  <string name="enable_nfc_send">Povolit posílání po NFC…</string>
-  <string name="updates">Aktualizace</string>
+    <string name="updates">Aktualizace</string>
   <string name="other">Ostatní</string>
   <string name="update_interval">Interval automatických aktualizací</string>
   <string name="automatic_scan_wifi">Pouze přes Wi-Fi</string>
@@ -40,13 +39,11 @@
   <string name="one_update_available">1 aktualizace je dostupná.</string>
   <string name="many_updates_available">%d aktualizací je dostupných.</string>
   <string name="fdroid_updates_available">Dostupné aktualizace F-Droid</string>
-  <string name="send_via_bluetooth">Poslat přes bluetooth</string>
-  <string name="repo_add_url">Adresa repositáře</string>
+    <string name="repo_add_url">Adresa repositáře</string>
   <string name="repo_add_fingerprint">Fingerprint (volitelné)</string>
   <string name="menu_update_repo">Aktualizovat repozitáře</string>
   <string name="menu_manage">Repozitáře</string>
-  <string name="menu_send_apk_bt">Poslat F-Droid přes Bluetooth</string>
-  <string name="menu_about">O aplikaci</string>
+    <string name="menu_about">O aplikaci</string>
   <string name="menu_search">Hledat</string>
   <string name="menu_add_repo">Nový repozitář</string>
   <string name="menu_launch">Spustit</string>
@@ -124,12 +121,7 @@
   <string name="root_access_denied_body">Buď toto Android zařízení není rootnuté, nebo jsi odepřel F-Droidu opránění roota.</string>
   <string name="system_install_denied_title">Systémová oprávnění odepřena</string>
   <string name="system_install_denied_body">Tato volba je dostupná pouze, pokud je F-Droid nainstalován jako systémová aplikace.</string>
-  <string name="swap_join_same_wifi">Připojte oba přístroje na stejnou Wi-Fi</string>
-  <string name="swap_no_wifi_network">Zatím žádná síť</string>
-  <string name="swap_view_available_networks">(Dotykem zobraz dostupné sítě)</string>
-  <string name="open_qr_code_scanner">Otevřít čtečku QR kódů</string>
-  <string name="swap_welcome">Vítejte v aplikaci F-Droid!</string>
-  <string name="swap_confirm_connect">Chceš nyní stáhnout aplikace z %1$s?</string>
+    <string name="open_qr_code_scanner">Otevřít čtečku QR kódů</string>
     <string name="uninstall_system">Aktualizovat/odinstalovat privilegovaná rozšíření</string>
     <string name="uninstall_system_summary">Otevřít obrazovku detailů privilegovaných rozšíření pro aktualizaci/deinstalaci</string>
     <string name="about_source">Zdrojový kód</string>
@@ -141,8 +133,6 @@
 
     <string name="back">Zpět</string>
     <string name="update_notification_more">+%1$d více…</string>
-    <string name="bluetooth_activity_not_found">Nerozpoznána žádná Bluetooth metoda přenosu, nějakou vyberte!</string>
-    <string name="choose_bt_send">Vyberte metodu přenosu Bluetooth</string>
     <string name="repo_exists_add_fingerprint">Tento repozitář je již nastaven, budou jen přidány nové klíče.</string>
     <string name="repo_exists_enable">Tento repozitář je již nastaven, potvrďte jeho znovupovolení.</string>
     <string name="repo_exists_and_enabled">Tento příchozí repozitář je již nastaven a povolen.</string>
@@ -225,31 +215,7 @@
     <string name="system_install_denied_signature">Podpis rozšíření je chybný! Nahlašte prosím chybu!</string>
     <string name="system_install_button_install">Instalovat</string>
     <string name="system_install_button_open">Spustit rozšíření</string>
-    <string name="swap_join_this_hotspot">Pomoz příteli s připojením k hotspotu</string>
-    <string name="swap">Vyměnit aplikace</string>
-    <string name="swap_success">Výměna úspěšná!</string>
-    <string name="swap_active_hotspot">%1$s (tvůj hotspot)</string>
-    <string name="swap_dont_show_again">Toto již nezobrazovat</string>
-    <string name="swap_choose_apps">Vybrat aplikace</string>
-    <string name="swap_scan_qr">Skenovat QR kód</string>
-    <string name="swap_people_nearby">Lidé v blízkosti</string>
-    <string name="swap_scanning_for_peers">Hledání lidí v blízkosti…</string>
-    <string name="swap_nearby">Lokální výměna</string>
-    <string name="swap_visible_bluetooth">Viditelné přes Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Nastavení Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Skryté přes Bluetooth</string>
-    <string name="swap_visible_wifi">Viditelné přes Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Nastavení Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Skryté přes Wi-Fi</string>
-    <string name="swap_wifi_device_name">Jméno přístroje</string>
-    <string name="swap_cant_find_peers">Nemůžete nalézt koho hledáte?</string>
-    <string name="swap_send_fdroid">Odeslat F-Droid</string>
-    <string name="swap_connecting">Připojování</string>
-    <string name="swap_confirm">Potvrdit výměnu</string>
-    <string name="bluetooth_unavailable">Bluetooth nedostupné</string>
-    <string name="swap_cant_send_no_bluetooth">F-Droid nelze odeslat, protože na tomto přístroji není Bluetooth dostupné.</string>
     <string name="loading">Načítání…</string>
-    <string name="swap_not_enabled">Výměna není povolena</string>
 
     <string name="install_confirm">vyžaduje přístup k</string>
     <string name="system_install_post_success">Oprávněné rozšíření F-Droidu úspěšně nainstalováno</string>
@@ -263,8 +229,6 @@
     <string name="system_uninstall">Chcete odinstalovat privilegované rozšíření F-Droid?</string>
     <string name="system_uninstall_button">Odinstalovat</string>
 
-    <string name="swap_nfc_title">Ťuknout pro výměnu</string>
-    <string name="swap_switch_to_wifi">Dotykem přepnout síť Wi-Fi</string>
     <string name="newPerms">Nová</string>
     <string name="allPerms">Všechna</string>
     <string name="perm_costs_money">Toto může stát peníze</string>
@@ -302,7 +266,6 @@
 
     <string name="system_install_post_success_message">Oprávněné rozšíření F-Droidu bylo úspěšně nainstalováno. Toto dovoluje F-Droidu instalovat, aktualizovat a odinstalovat aplikace samostatně.</string>
     <string name="system_install_post_fail_message">Instalace oprávněného rozšíření F-Droidu selhala. Tato instalační metoda není podporována všemi distribucemi Androidu. Pro více informací se podívejte na bug tracker F-Droidu.</string>
-    <string name="swap_nfc_description">Pokud má váš přítel F-Droid a zapnuté NFC, přibližte svá zařízení k sobě.</string>
     <string name="update_auto_download">Automaticky stahovat aktualizace</string>
     <string name="update_auto_download_summary">Stahovat soubory aktualizací v pozadí</string>
     <string name="repo_provider">Repozitář: %s</string>
@@ -311,10 +274,6 @@
     <string name="useTorSummary">Vynutit stahování přes Tor pro zvýšení bezpečnosti</string>
     <string name="system_install_not_supported">Instalace rozšíření oprávnění F-Droidu není momentálně podporována na Androidu 5.1 nebo pozdějším.</string>
 
-    <string name="swap_join_same_wifi_desc">Pro kopírování po Wi-Fi musí být oba na stejné síti. Pokud nemáte přístup ke stejné síti, může jeden z vás vytvořit vlastní Wi-Fi hotspot.</string>
-    <string name="swap_scan_or_type_url">Jeden z vás musí naskenovat kód, nebo přepsat URL toho druhého do prohlížeče.</string>
-    <string name="swap_intro">Propojte se a vyměňujte si aplikace s lidmi z okolí.</string>
-    <string name="swap_stopping_wifi">Odpojení Wi-Fi…</string>
     <string name="tap_to_install_format">Dotykem instalovat %s</string>
     <string name="tap_to_update_format">Dotykem aktualizovat %s</string>
     <string name="install_confirm_update">Chcete instalovat aktualizaci existující aplikace? Aktuální data budou ztracena. Aktualizovaná aplikace bude mít přístup k:</string>

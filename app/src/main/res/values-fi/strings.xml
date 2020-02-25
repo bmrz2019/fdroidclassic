@@ -5,8 +5,7 @@
   <string name="installDowngrade">Sovellusta päivitetään vanhempaan versioon. Sovellus voi toimia väärin tai kadottaa tietojasi. Haluatko päivittää vanhempaan versioon?</string>
   <string name="version">Versio</string>
   <string name="delete">Poista</string>
-  <string name="enable_nfc_send">Ota NFC-lähetys käyttöön…</string>
-  <string name="cache_downloaded">Säilytä ladatut sovellukset välimuistissa</string>
+    <string name="cache_downloaded">Säilytä ladatut sovellukset välimuistissa</string>
   <string name="updates">Päivitykset</string>
   <string name="other">Muu</string>
   <string name="update_interval">Automaattisen päivityksen tiheys</string>
@@ -43,10 +42,7 @@
   <string name="one_update_available">1 päivitys saatavilla.</string>
   <string name="many_updates_available">%d päivitystä saatavilla.</string>
   <string name="fdroid_updates_available">F-Droid: Päivityksiä saatavilla</string>
-  <string name="bluetooth_activity_not_found">Bluetooth -lähetystapaa ei löytynyt, valitse yksi!</string>
-  <string name="choose_bt_send">Valitse Bluetooth -lähetystapa</string>
-  <string name="send_via_bluetooth">Lähetä Bluetoothin kautta</string>
-  <string name="repo_add_url">Sovelluslähteen osoite</string>
+    <string name="repo_add_url">Sovelluslähteen osoite</string>
   <string name="repo_add_fingerprint">Sormenjälki (valinnainen)</string>
   <string name="menu_update_repo">Päivitä sovelluslähteet</string>
   <string name="menu_manage">Hallitse sovelluslähteitä</string>
@@ -122,15 +118,8 @@
   <string name="root_access_denied_body">Joko Android-laitettasi ei ole rootattu tai olet kieltänyt F-Droidin root-oikeuksiin pääsyn.</string>
   <string name="system_install_denied_title">F-Droid Privileged Extension ei ole saatavilla</string>
   <string name="system_install_denied_body">Tämä asetus on käytössä vain silloin, kun F-Droid Privileged Extension on asennettu.</string>
-  <string name="swap_nfc_description">Jos ystävälläsi on F-Droid asennettuna ja NFC päällä, koskettakaa laitteitanne yhteen.</string>
-  <string name="swap_join_same_wifi">Liity ystäväsi kanssa samaan Wi-Fi-verkkoon</string>
-  <string name="swap">Vaihda sovelluksia</string>
-  <string name="swap_no_wifi_network">Ei vielä verkkoa</string>
-  <string name="swap_view_available_networks">Napsauta avataksesi saatavilla olevat verkot</string>
-  <string name="open_qr_code_scanner">Avaa QR-koodilukija</string>
-  <string name="swap_welcome">Tervetuloa F-Droidiin!</string>
-  <string name="swap_confirm_connect">Haluatko saada sovellukset kohteesta %1$s nyt?</string>
-<string name="unstable_updates_summary">Ehdota päivityksiä epävakaisiin versioihin</string>
+    <string name="open_qr_code_scanner">Avaa QR-koodilukija</string>
+    <string name="unstable_updates_summary">Ehdota päivityksiä epävakaisiin versioihin</string>
     <string name="app_name">F-Droid</string>
 
     <string name="login_password">Salasana</string>
@@ -166,9 +155,6 @@
     <string name="uninstall_confirm">Haluatko poistaa tämän sovelluksen?</string>
     <string name="allPerms">Kaikki</string>
     <string name="newPerms">Uusi</string>
-    <string name="swap_send_fdroid">Lähetä F-Droid</string>
-    <string name="swap_wifi_device_name">Laitteen nimi</string>
-    <string name="swap_choose_apps">Valitse sovellukset</string>
     <string name="links">Linkit</string>
     <string name="more">Lisää</string>
     <string name="less">Vähemmän</string>
@@ -188,7 +174,6 @@
     <string name="repo_delete_to_overwrite">Sinun täytyy ensin poistaa tämä sovelluslähde, ennen kuin voit lisätä toisen eri avaimella.</string>
     <string name="bad_fingerprint">Huono sormenjälki</string>
     <string name="invalid_url">Tämä URL-osoite ei ole kelvollinen.</string>
-    <string name="menu_send_apk_bt">Jaa F-Droid Bluetoothilla</string>
     <string name="menu_settings">Asetukset</string>
     <string name="menu_email">Lähetä sähköpostia kehittäjälle</string>
     <string name="menu_changelog">Muutosloki</string>
@@ -242,9 +227,6 @@
     <string name="system_install_warning">Tämä voi kestää jopa 10 sekuntia.</string>
     <string name="system_install_warning_lollipop">Tämä voi kestää jopa 10 sekuntia ja laite tullaan <b>käynnistämään uudelleen</b> sen jälkeen.</string>
     <string name="system_uninstall_button">Poista</string>
-    <string name="swap_active_hotspot">%1$s (sinun hotspot)</string>
-    <string name="swap_dont_show_again">Älä näytä tätä uudelleen</string>
-    <string name="swap_scan_qr">Skannaa QR-koodi</string>
     <string name="loading">Ladataan…</string>
     <string name="keep_year">1 vuosi</string>
     <string name="keep_month">1 kuukausi</string>
@@ -294,29 +276,6 @@ Onnittelut! Kaikki sovelluksesi ovat ajan tasalla (tai sovelluslähteesi ovat va
     <string name="system_install_denied_signature">Laajennuksen allekirjoitus on väärä! Ole hyvä ja luo vikailmoitus!</string>
     <string name="system_install_button_open">Avaa laajennus</string>
     <string name="system_install_installing_rebooting">Asennetaan ja käynnistetään uudelleen…</string>
-    <string name="swap_nfc_title">Kosketa vaihtaaksesi</string>
-    <string name="swap_join_same_wifi_desc">Vaihtaaksesi sovelluksia Wi-Fin avulla, sinun tulee olla samassa verkossa. Jos sinulla ei ole pääsyä samaan verkkoon, voit luoda oman Wi-Fi-hotspotin.</string>
-    <string name="swap_join_this_hotspot">Auta ystävääsi liittymään hotspottiisi</string>
-    <string name="swap_success">Vaihto onnistui!</string>
-    <string name="swap_switch_to_wifi">Napsauta vaihtaaksesi Wi-Fi-verkkoa</string>
-    <string name="swap_scan_or_type_url">Henkilön tulee skannata koodi tai kirjoittaa toisen URL-osoite selaimeen.</string>
-    <string name="swap_people_nearby">Lähellä olevat ihmiset</string>
-    <string name="swap_scanning_for_peers">Etsitään lähellä olevia ihmisiä…</string>
-    <string name="swap_nearby">Lähellä vaihto</string>
-    <string name="swap_intro">Yhdistä ja vaihda sovelluksia lähellä olevien ihmisten kanssa.</string>
-    <string name="swap_visible_bluetooth">Nähtävissä Bluetoothin kautta</string>
-    <string name="swap_setting_up_bluetooth">Asetetaan Bluetoothia…</string>
-    <string name="swap_not_visible_bluetooth">Ei nähtävissä Bluetoothin kautta</string>
-    <string name="swap_visible_wifi">Nähtävissä Wi-Fin kautta</string>
-    <string name="swap_setting_up_wifi">Asetetaan Wi-Fiä…</string>
-    <string name="swap_stopping_wifi">Pysäytetään WiFiä…</string>
-    <string name="swap_not_visible_wifi">Ei nähtävissä Wi-Fin kautta</string>
-    <string name="swap_cant_find_peers">Etkö löydä etsimääsi?</string>
-    <string name="swap_connecting">Yhdistetään</string>
-    <string name="swap_confirm">Vahvista vaihto</string>
-    <string name="bluetooth_unavailable">Bluetooth ei ole saatavilla</string>
-    <string name="swap_cant_send_no_bluetooth">Ei voida lähettää F-Droidia, koska Bluetooth ei ole saatavilla tällä laitteella.</string>
-    <string name="swap_not_enabled">Vaihtaminen ei ole käytössä</string>
 
     <string name="tap_to_install_format">Napsauta asentaaksesi %s</string>
     <string name="tap_to_update_format">Napsauta päivittääksesi %s</string>

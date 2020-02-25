@@ -5,8 +5,7 @@
   <string name="installDowngrade">このｱﾌﾟﾘｹｰｼｮﾝをﾀﾞｳﾝｸﾞﾚｰﾄﾞしようとしています｡これにより不具合を発生させたりﾃﾞｰﾀを失ったりする場合があります｡それでもﾀﾞｳﾝｸﾞﾚｰﾄﾞを続行しますか?</string>
   <string name="version">ﾊﾞｰｼﾞｮﾝ</string>
   <string name="delete">削除</string>
-  <string name="enable_nfc_send">NFC 送信を有効…</string>
-  <string name="cache_downloaded">ｷｬｯｼｭしたｱﾌﾟﾘを残す</string>
+    <string name="cache_downloaded">ｷｬｯｼｭしたｱﾌﾟﾘを残す</string>
   <string name="updates">更新</string>
   <string name="other">その他</string>
   <string name="update_interval">自動更新間隔</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1個の更新があります。</string>
   <string name="many_updates_available">%d個の更新があります.</string>
   <string name="fdroid_updates_available">F-Droidの更新があります</string>
-  <string name="bluetooth_activity_not_found">Bluetoothの送信方法がありません､選択してください!</string>
-  <string name="choose_bt_send">Bluetoothの送信方法を選択してください</string>
-  <string name="send_via_bluetooth">Bluetooth経由で送信</string>
-  <string name="repo_add_url">ﾘﾎﾟｼﾞﾄﾘのｱﾄﾞﾚｽ</string>
+    <string name="repo_add_url">ﾘﾎﾟｼﾞﾄﾘのｱﾄﾞﾚｽ</string>
   <string name="repo_add_fingerprint">ﾌｨﾝｶﾞｰﾌﾟﾘﾝﾄ(ｵﾌﾟｼｮﾝ)</string>
   <string name="repo_exists_add_fingerprint">このﾘﾎﾟｼﾞﾄﾘはすでに設定されています｡新しい鍵の情報を追加します｡</string>
   <string name="repo_exists_enable">このﾘﾎﾟｼﾞﾄﾘはすでに設定されています｡再度有効にするか確認してください｡</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">不正な形式のﾘﾎﾟｼﾞﾄﾘURIを無視します: %s</string>
   <string name="menu_update_repo">ﾘﾎﾟｼﾞﾄﾘの更新</string>
   <string name="menu_manage">ﾘﾎﾟｼﾞﾄﾘ</string>
-  <string name="menu_send_apk_bt">BluetoothでFDroidを共有する</string>
-  <string name="menu_about">F-Droidについて</string>
+    <string name="menu_about">F-Droidについて</string>
   <string name="menu_search">検索</string>
   <string name="menu_add_repo">新しいﾘﾎﾟｼﾞﾄﾘ</string>
   <string name="menu_launch">実行</string>
@@ -160,15 +155,8 @@
   <string name="root_access_denied_body">この端末はroot化されていないか､F-Droidの管理者権限の要求が拒絶されました｡</string>
   <string name="system_install_denied_title">ｼｽﾃﾑｱｸｾｽ許可が拒絶されました</string>
   <string name="system_install_denied_body">この設定は､F-Droidがｼｽﾃﾑｱﾌﾟﾘとしてｲﾝｽﾄｰﾙされているときのみ有効です｡</string>
-  <string name="swap_nfc_description">友達がF-DroidとNFCを持っていれば､一緒にお使いのﾃﾞﾊﾞｲｽをﾀｯﾁしてください｡</string>
-  <string name="swap_join_same_wifi">友達として同じWi-Fiに参加</string>
-  <string name="swap">ｱﾌﾟﾘの交換</string>
-  <string name="swap_no_wifi_network">まだﾈｯﾄﾜｰｸがありません</string>
-  <string name="swap_view_available_networks">ﾀｯﾌﾟして有効なﾈｯﾄﾜｰｸを開く</string>
-  <string name="open_qr_code_scanner">QRｺｰﾄﾞｽｷｬﾅｰを開く</string>
-  <string name="swap_welcome">F-Droidへようこそ！</string>
-  <string name="swap_confirm_connect">今すぐ%1$sからｱﾌﾟﾘを取得しますか?</string>
-<string name="uninstall_system">特権拡張をｲﾝｽﾄｰﾙ又はｱﾝｲﾝｽﾄｰﾙ</string>
+    <string name="open_qr_code_scanner">QRｺｰﾄﾞｽｷｬﾅｰを開く</string>
+    <string name="uninstall_system">特権拡張をｲﾝｽﾄｰﾙ又はｱﾝｲﾝｽﾄｰﾙ</string>
     <string name="uninstall_system_summary">特権拡張の詳細画面を開い､ｱﾌﾟﾘをｲﾝｽﾄｰﾙ又はｱﾝｲﾝｽﾄｰﾙします｡</string>
     <string name="app_incompatible">非互換</string>
     <string name="links">ﾘﾝｸ</string>
@@ -187,9 +175,6 @@
     <string name="wifi_ap">ﾎｯﾄｽﾎﾟｯﾄ</string>
 
     <string name="empty_installed_app_list">ｱﾌﾟﾘがｲﾝｽﾄｰﾙされていません｡\n\n端末にｱﾌﾟﾘｹｰｼｮﾝはありますが､F-Droid からは利用できません。ﾘﾎﾟｼﾞﾄﾘを更新する必要があるか､ﾘﾎﾟｼﾞﾄﾘからｱﾌﾟﾘｹｰｼｮﾝが利用できない可能性があります｡</string>
-    <string name="swap_nfc_title">ﾀｯﾁして交換</string>
-    <string name="swap_join_same_wifi_desc">Wi-Fiを使用して交換するには､同じﾈｯﾄﾜｰｸ上に居るかを確認してください｡同じﾈｯﾄﾜｰｸにｱｸｾｽしていない場合は､Wi-Fiﾎｯﾄｽﾎﾟｯﾄを作成できます｡</string>
-    <string name="swap_join_this_hotspot">友達がﾎｯﾄｽﾎﾟｯﾄに参加するのを助ける</string>
     <string name="empty_available_app_list">この欄にｱﾌﾟﾘｹｰｼｮﾝはありません｡\n\n別の欄を選択するか､ﾘﾎﾟｼﾞﾄﾘを更新して新しいｱﾌﾟﾘｹｰｼｮﾝの一覧を取得してみてください｡</string>
     <string name="empty_can_update_app_list">全てのｱﾌﾟﾘｹｰｼｮﾝが最新の状態であるか､又はﾘﾎﾟｼﾞﾄﾘが更新されていません。</string>
 
@@ -206,38 +191,12 @@
     <string name="system_uninstall">F-Droidの特権拡張をｱﾝｲﾝｽﾄｰﾙしますか?</string>
     <string name="system_uninstall_button">ｱﾝｲﾝｽﾄｰﾙ</string>
 
-    <string name="swap_success">正常に交換しました｡</string>
-    <string name="swap_active_hotspot">%1$s (自分のﾎｯﾄｽﾎﾟｯﾄ)</string>
-    <string name="swap_switch_to_wifi">ﾀｯﾌﾟすると、Wi-Fi ﾈｯﾄﾜｰｸに切り替えます</string>
     <string name="app_name">F-Droid</string>
 
-    <string name="swap_dont_show_again">今後この案内を表示しない</string>
-    <string name="swap_scan_or_type_url">一人は､ｺｰﾄﾞを読み取るか､他のURLをﾌﾞﾗｳｻﾞｰに入力する必要があります｡</string>
-    <string name="swap_choose_apps">ｱﾌﾟﾘｹｰｼｮﾝを選択</string>
-    <string name="swap_scan_qr">QRｺｰﾄﾞを読み取る</string>
-    <string name="swap_people_nearby">近くの人</string>
-    <string name="swap_scanning_for_peers">近くの人を探しています…</string>
-    <string name="swap_nearby">近くと交換</string>
-    <string name="swap_intro">近くにいる人と接続してｱﾌﾟﾘｹｰｼｮﾝを交換します。</string>
-    <string name="swap_visible_bluetooth">Bluetooth 経由で表示</string>
-    <string name="swap_setting_up_bluetooth">Bluetooth の設定中…</string>
-    <string name="swap_not_visible_bluetooth">Bluetooth 経由で表示できません</string>
-    <string name="swap_visible_wifi">Wi-Fi 経由で表示</string>
-    <string name="swap_setting_up_wifi">Wi-Fi の設定中…</string>
-    <string name="swap_not_visible_wifi">Wi-Fi 経由で表示できません</string>
-    <string name="swap_wifi_device_name">端末名</string>
-    <string name="swap_cant_find_peers">探している人が見つかりませんか?</string>
-    <string name="swap_send_fdroid">F-Droidを送信</string>
-    <string name="swap_connecting">接続中</string>
-    <string name="swap_confirm">交換の確認</string>
-    <string name="bluetooth_unavailable">Bluetooth が利用できません</string>
-    <string name="swap_cant_send_no_bluetooth">この端末でBluetoothが利用できないため､F-Droidを送信できません｡</string>
     <string name="loading">読み込み中…</string>
     <string name="tap_to_install">ﾀﾞｳﾝﾛｰﾄﾞが完了しました｡ﾀｯﾌﾟするとｲﾝｽﾄｰﾙします｡</string>
 
     <string name="downloading">ﾀﾞｳﾝﾛｰﾄﾞ中…</string>
-
-    <string name="swap_not_enabled">交換は有効ではありません</string>
 
     <string name="install_confirm">必要なｱｸｾｽ許可</string>
     <string name="install_confirm_update">既存のｱﾌﾟﾘｹｰｼｮﾝに更新をｲﾝｽﾄｰﾙしますか?
@@ -324,7 +283,6 @@
     <string name="menu_email">ﾒｰﾙ作者</string>
     <string name="useTor">Tor を使用する</string>
     <string name="useTorSummary">強制的に Tor を通じたﾄﾗﾌｨｯｸでﾀﾞｳﾝﾛｰﾄﾞして、プライバシーを高めます</string>
-    <string name="swap_stopping_wifi">Wi-Fiの停止中…</string>
     <string name="repo_provider">ﾘﾎﾟｼﾞﾄﾘ: %s</string>
 
     <string name="update_auto_download">自動的に更新をﾀﾞｳﾝﾛｰﾄﾞ</string>

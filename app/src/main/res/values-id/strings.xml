@@ -5,7 +5,6 @@
     <string name="installDowngrade">Anda mencoba untuk memasang versi yang lebih rendah dari aplikasi ini. Tetap memasangnya mungkin dapat meyebabkan aplikasi tidak bekerja dengan baik. Apakah Anda tetap ingin memasang dan mencobanya?</string>
     <string name="version">Versi</string>
     <string name="delete">Hapus</string>
-    <string name="enable_nfc_send">Aktifkan Pengirimian NFC…</string>
     <string name="cache_downloaded">Simpan hasil unduhan</string>
     <string name="updates">Pembaruan</string>
     <string name="unstable_updates">Pembaruan tidak stabil</string>
@@ -62,9 +61,6 @@
     <string name="one_update_available">1 pembaruan tersedia.</string>
     <string name="many_updates_available">%d pembaruan tersedia.</string>
     <string name="fdroid_updates_available">Tersedia Pembaruan F-Droid</string>
-    <string name="bluetooth_activity_not_found">Metode pengiriman Bluetooth tidak ditemukan, pilih salah satu!</string>
-    <string name="choose_bt_send">Pilih metode pengiriman Bluetooth</string>
-    <string name="send_via_bluetooth">Kirim melalui Bluetooth</string>
 
     <string name="repo_add_url">Alamat repositori</string>
     <string name="repo_add_fingerprint">Sidik jari (opsional)</string>
@@ -78,7 +74,6 @@
 
     <string name="menu_update_repo">Perbarui Repo</string>
     <string name="menu_manage">Repositori</string>
-    <string name="menu_send_apk_bt">Bagi F-Droid melalui Bluetooth</string>
     <string name="menu_about">Tentang</string>
     <string name="menu_search">Cari</string>
     <string name="menu_add_repo">Repositori Baru</string>
@@ -271,44 +266,8 @@ butuh untuk mengaktifkan ulang repo ini untuk memasang apl darinya.</string>
     <string name="system_uninstall">Anda ingin mencopot pemasangan F-Droid Privileged Extension?</string>
     <string name="system_uninstall_button">Copot pemasangan</string>
 
-    <string name="swap_nfc_title">Ketuk untuk swap</string>
-    <string name="swap_nfc_description">Jika teman anda memiliki F-Droid dan NFC yang dihidupkan ketuk perangkat berbarengan.</string>
-    <string name="swap_join_same_wifi">Gabung ke Wi-Fi yang sama dengan temanmu</string>
-    <string name="swap_join_same_wifi_desc">Untuk swap menggunakan Wi-Fi, pastikan anda ada dijaringan yang sama. Jika anda tidak memiliki akses ke jaringan yang sama, satu diantara anda buatlah peranggitan Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Bantu teman anda bergabung ke hotspot anda</string>
-    <string name="swap">Swap app</string>
-    <string name="swap_success">Swap sukses!</string>
-    <string name="swap_no_wifi_network">Tidak ada jaringan</string>
-    <string name="swap_active_hotspot">%1$s (hotspot anda)</string>
-    <string name="swap_view_available_networks">Ketuk untuk melihat jaringan yang tersedia</string>
-    <string name="swap_switch_to_wifi">Ketuk untuk beralih ke jaringan Wi-Fi</string>
     <string name="open_qr_code_scanner">Buka Pemindai QR</string>
-    <string name="swap_welcome">Selamat datang di F-Droid!</string>
-    <string name="swap_confirm_connect">Apa anda ingin mendapatkan app dari %1$s sekarang?</string>
-    <string name="swap_dont_show_again">Jangan tampilkan ini lagi</string>
-    <string name="swap_scan_or_type_url">Satu orang butuh memindai kode, atau buka URL yang lain diperamban.</string>
-    <string name="swap_choose_apps">Pilih Aplikasi</string>
-    <string name="swap_scan_qr">Pindai Kode QR</string>
-    <string name="swap_people_nearby">Orang Terdekat</string>
-    <string name="swap_scanning_for_peers">Mencari orang terdekat…</string>
-    <string name="swap_nearby">Swap Terdekat</string>
-    <string name="swap_intro">Sambungkan dan pindahkan app dengan orang didekat anda.</string>
-    <string name="swap_visible_bluetooth">Terlihat melalui Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Mengatur Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Tidak terlihat melalui Bluetooth</string>
-    <string name="swap_visible_wifi">Terlihat melalui Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Mengatur Wi-Fi…</string>
-    <string name="swap_stopping_wifi">Memberhentikan Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Tidak terlihat melalui Wi-Fi</string>
-    <string name="swap_wifi_device_name">Nama Perangkat</string>
-    <string name="swap_cant_find_peers">Tidak dapat menemukan siapa yang anda cari?</string>
-    <string name="swap_send_fdroid">Kirim F-Droid</string>
-    <string name="swap_connecting">Menyambung</string>
-    <string name="swap_confirm">Konfirmasi swap</string>
-    <string name="bluetooth_unavailable">Bluetooth tidak tersedia</string>
-    <string name="swap_cant_send_no_bluetooth">Tidak dapat mengirim F-Droid, karena Bluetooth tidak tersedia diperangkat ini.</string>
     <string name="loading">Memuat…</string>
-    <string name="swap_not_enabled">Swap dinonaktifkan</string>
 
     <string name="install_confirm">butuh akses ke</string>
     <string name="install_confirm_update">Anda ingin memasang pembaruan 

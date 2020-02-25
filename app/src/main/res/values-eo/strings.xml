@@ -31,8 +31,7 @@
   <string name="one_update_available">1 ĝisdatigo estas disponebla.</string>
   <string name="many_updates_available">%d ĝisdatigoj estas disponeblaj.</string>
   <string name="fdroid_updates_available">F-Droidaj ĝisdatigoj disponeblaj</string>
-  <string name="send_via_bluetooth">Sendi per Bludento</string>
-  <string name="repo_add_url">Deponeja adreso</string>
+    <string name="repo_add_url">Deponeja adreso</string>
   <string name="menu_update_repo">Ĝisdatigi deponejojn</string>
   <string name="menu_manage">Deponejoj</string>
   <string name="menu_about">Pri</string>
@@ -103,11 +102,8 @@
   <string name="category_Science_Education">Scienco k edukado</string>
   <string name="category_Security">Sekureco</string>
   <string name="category_System">Sistemo</string>
-  <string name="swap_no_wifi_network">Ankoraŭ neniu reto</string>
-  <string name="swap_view_available_networks">Tuŝu por montri disponeblajn retojn</string>
-  <string name="open_qr_code_scanner">Malfermi QR-kodan skanilon</string>
-  <string name="swap_welcome">Bonvenon al F-Droid!</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Malfermi QR-kodan skanilon</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="installIncompatible">Ŝajnas ke ĉi tiu pakaĵo ne kongruas kun via aparato. Ĉu vi malgraŭe volas provi instali ĝin?</string>
     <string name="unstable_updates">Nestabilaj ĝisdatigoj</string>
@@ -115,7 +111,6 @@
     <string name="installDowngrade">Vi klopodas malpromocii ĉi tiun aplikaĵon. Fari tion eble malfunkciigos ĝin kaj eĉ perdigos viajn datumojn. Ĉu vi volas klopodi malpromocii ĝin ĉiaokaze?</string>
     <string name="SignatureMismatch">La nova versio estas subskribita per diferenca ŝlosilo. Por instali la novan version, la malnova devas esti malinstalita unue. Bonvolu fari tion kaj reprovi. (Rigardu ke malinstalado forigos ĉiujn internan datumon konservitan de la aplikaĵo)</string>
     <string name="by_author">de</string>
-    <string name="enable_nfc_send">Aktivigi sendadon tra NFC…</string>
     <string name="cache_downloaded">Kaŝmemorigi apk-dosierojn</string>
     <string name="unstable_updates_summary">Proponas ĝisdatigojn al nestabilaj versioj</string>
     <string name="update_interval_zero">Neniam aŭtomate ĝisdatigas listojn de aplikaĵoj</string>
@@ -147,8 +142,6 @@
     <string name="tab_installed_apps_count">Instalitaj (%d)</string>
     <string name="tab_updates_count">Ĝisdatigoj (%d)</string>
     <string name="update_notification_more">ankoraŭ +%1$d…</string>
-    <string name="bluetooth_activity_not_found">Neniu Bludenta metodo de sendo trovita, elektu iun!</string>
-    <string name="choose_bt_send">Elektu Bludentan metodon de sendo</string>
     <string name="repo_add_fingerprint">Fingrospuro (malnepra)</string>
     <string name="repo_exists_add_fingerprint">Ĉi tiu deponejo estas jam instalita, tio aldonos novan informon pri ŝlosilo.</string>
     <string name="repo_exists_enable">Ĉi tiu deponejo estas jam instalita, konfirmu ke vi volas reaktivigi ĝin.</string>
@@ -158,7 +151,6 @@
     <string name="invalid_url">Ĉi tio ne estas korekta URL.</string>
     <string name="malformed_repo_uri">Transsaltis malkorektan URI de deponejo: %s</string>
 
-    <string name="menu_send_apk_bt">Kunhavigi F-Droid per Bludento</string>
     <string name="menu_settings">Agordoj</string>
     <string name="menu_email">Aŭtora retpoŝtadreso</string>
     <string name="menu_changelog">Ŝanĝoprotokolo</string>
@@ -258,39 +250,7 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="system_uninstall">Ĉu vi certe volas malinstali privilegian F-Droid-aldonaĵon?</string>
     <string name="system_uninstall_button">Malinstali</string>
 
-    <string name="swap_nfc_title">Tuŝu por interŝanĝi</string>
-    <string name="swap_nfc_description">Se via kolego havas F-Droid kaj ŝaltitan NFC-on por tuŝi viajn aparatojn kune.</string>
-    <string name="swap_join_same_wifi">Konektu la saman sendatan reton kiel via kolego</string>
-    <string name="swap_join_same_wifi_desc">Por interŝanĝi per sendrata reto, certigu ke vi estas en la sama reto. Se vi ne havas aliron al la sama reto, unu de vi povas krei vifian retkaptejon.</string>
-    <string name="swap_join_this_hotspot">Helpi al via kolego aligi vian retkaptejon</string>
-    <string name="swap">Interŝanĝi aplikaĵojn</string>
-    <string name="swap_success">Interŝanĝo sukcesis!</string>
-    <string name="swap_active_hotspot">%1$s (via retkaptejo)</string>
-    <string name="swap_switch_to_wifi">Tuŝu por ŝanĝi al sendrata reto</string>
-    <string name="swap_confirm_connect">Ĉu vi volas elŝuti aplikaĵojn de %1$s nun?</string>
-    <string name="swap_dont_show_again">Ne montri ĉi tion denove</string>
-    <string name="swap_scan_or_type_url">Iu ajn devas skani kodon, aŭ entajpi URL-on de aliulo en la foliumilo.</string>
-    <string name="swap_choose_apps">Elekti aplikaĵojn</string>
-    <string name="swap_scan_qr">Skani QR-kodon</string>
-    <string name="swap_people_nearby">Homoj proksime</string>
-    <string name="swap_scanning_for_peers">Serĉado de proksimuloj…</string>
-    <string name="swap_nearby">Proksima Interŝanĝo</string>
-    <string name="swap_intro">Konekti kaj interŝanĝi aplikaĵojn kun proksimaj homoj.</string>
-    <string name="swap_visible_bluetooth">Videbla tra Bludento</string>
-    <string name="swap_setting_up_bluetooth">Agordado de Bludento…</string>
-    <string name="swap_not_visible_bluetooth">Nevidebla tra Bludento</string>
-    <string name="swap_visible_wifi">Videbla tra sendrata reto</string>
-    <string name="swap_setting_up_wifi">Agordado de sendrata reto…</string>
-    <string name="swap_not_visible_wifi">Nevidebla tra sendrata reto</string>
-    <string name="swap_wifi_device_name">Aparata nomo</string>
-    <string name="swap_cant_find_peers">Ĉu vi ne povas trovi kiun, tiun vi serĉas?</string>
-    <string name="swap_send_fdroid">Sendi F-Droid</string>
-    <string name="swap_connecting">Konektado</string>
-    <string name="swap_confirm">Konfirmi interŝanĝon</string>
-    <string name="bluetooth_unavailable">Bludento ne disponebla</string>
-    <string name="swap_cant_send_no_bluetooth">Ne povas sendi F-Droid-on, ĉar Bludento ne estas disponebla en via aparato.</string>
     <string name="loading">Prilaborado…</string>
-    <string name="swap_not_enabled">Interŝanĝo malaktiva</string>
 
     <string name="install_confirm">postulas aliron al</string>
     <string name="install_confirm_update">Ĉu vi volas instali ĝisdatigon al ĉi tiu aplikaĵo? Viaj nunaj datumoj ne foriĝos. La ĝisdatiga aplikaĵo povos aliri:</string>
@@ -326,7 +286,6 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="crash_dialog_comment_prompt">Vi povas aldoni ekstrajn informojn kaj komentojn ĉi tien:</string>
 <string name="useTor">Uzi Tor</string>
     <string name="useTorSummary">Devigas elŝuti per Tor-reto por plibonigi privatecon</string>
-    <string name="swap_stopping_wifi">Ĉesado de sendrata reto…</string>
     <string name="repo_provider">Deponejo: %s</string>
 
     <string name="update_auto_download">Aŭtomate elŝuti ĝisdatigojn</string>

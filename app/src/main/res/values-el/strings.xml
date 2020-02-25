@@ -5,8 +5,7 @@
   <string name="installDowngrade">Προσπαθείτε να υποβαθμίσετε αυτήν την εφαρμογή. Αν το κάνετε αυτό, μπορεί να προκληθούν προβλήματα στην εφαρμογή ή ακόμα και να χάσετε τα δεδομένα σας. Θέλετε να δοκιμάσετε να την υποβαθμίσετε ούτως ή άλλως;</string>
   <string name="version">Έκδοση</string>
   <string name="delete">Διαγραφή</string>
-  <string name="enable_nfc_send">Ενεργοποίηση Αποστολής NFC…</string>
-  <string name="cache_downloaded">Αποθήκευση πακέτων</string>
+    <string name="cache_downloaded">Αποθήκευση πακέτων</string>
   <string name="updates">Ενημερώσεις</string>
   <string name="other">Άλλα</string>
   <string name="update_interval">Συχνότητα ενημέρωσης</string>
@@ -40,9 +39,7 @@
   <string name="one_update_available">1 διαθέσιμη ενημερώση.</string>
   <string name="many_updates_available">%d διαθέσιμες ενημερώσεις.</string>
   <string name="fdroid_updates_available">Υπάρχουν ενημερώσεις του F-Droid</string>
-  <string name="bluetooth_activity_not_found">Καμία μέθοδος αποστολής με Bluetooth δεν βρέθηκε, επιλέξετε μία!</string>
-  <string name="choose_bt_send">Επιλέξτε τη μέθοδο αποστολής με Bluetooth</string>
-  <string name="repo_add_url">Διεύθυνση αποθετηρίου</string>
+    <string name="repo_add_url">Διεύθυνση αποθετηρίου</string>
   <string name="repo_add_fingerprint">Δακτυλικό αποτύπωμα (προαιρετικά)</string>
   <string name="repo_exists_add_fingerprint">Αυτό το αποθετήριο υπάρχει ήδη, αυτό θα προσθέσει νέο κλειδί.</string>
   <string name="repo_exists_enable">Αυτό το αποθετήριο υπάρχει ήδη, επιβεβαιώστε ότι θέλετε να το ενεργοποιήσετε ξανά.</string>
@@ -51,8 +48,7 @@
   <string name="malformed_repo_uri">Παράβλεψη αποθετηρίου με λανθασμένη διεύθυνση: %s</string>
   <string name="menu_update_repo">Ενημέρωση αποθετηρίων</string>
   <string name="menu_manage">Διαχείριση Αποθετηρίων</string>
-  <string name="menu_send_apk_bt">Στείλτε το F-Droid μέσω Bluetooth</string>
-  <string name="menu_about">Σχετικά</string>
+    <string name="menu_about">Σχετικά</string>
   <string name="menu_search">Αναζήτηση</string>
   <string name="menu_add_repo">Νέο Αποθετήριο</string>
   <string name="menu_launch">Εκτέλεση</string>
@@ -135,7 +131,6 @@
     <string name="back">Πίσω</string>
     <string name="tab_installed_apps">Εγκατεστημένο</string>
     <string name="update_notification_more">+%1$d περισσότερα…</string>
-    <string name="send_via_bluetooth">Αποστολή μέσω Bluetooth</string>
 
     <string name="bad_fingerprint">Λανθασμένο δακτυλικό αποτύπωμα</string>
     <string name="invalid_url">Αυτή δεν είναι έγκυρη διεύθυνση URL.</string>
@@ -229,38 +224,8 @@
     <string name="system_uninstall">Θέλετε να απεγκαταστήσετε την επέκταση του F-Droid με δικαιώματα συστήματος;</string>
     <string name="system_uninstall_button">Απεγκατάσταση</string>
 
-    <string name="swap_join_same_wifi">Γίνετε μέλος του ίδιου ασύρματου δικτύου με τον φίλο σας</string>
-    <string name="swap">Ανταλλαγή εφαρμογών</string>
-    <string name="swap_success">Ανταλλαγή επιτυχής!</string>
-    <string name="swap_no_wifi_network">Κανένα δίκτυο ακόμα</string>
-    <string name="swap_active_hotspot">%1$s (το σημείο πρόσβασής σας)</string>
-    <string name="swap_view_available_networks">Πατήστε για να ανοίξετε τα διαθέσιμα δίκτυα</string>
-    <string name="swap_switch_to_wifi">Πατήστε για να μεταβείτε σε ένα ασύρματο δίκτυο</string>
     <string name="open_qr_code_scanner">Ανοίξτε τον σαρωτή QR</string>
-    <string name="swap_welcome">Καλώς ήλθατε στο F-Droid!</string>
-    <string name="swap_confirm_connect">Θέλετε να πάρετε εφαρμογές από %1$s τώρα;</string>
-    <string name="swap_dont_show_again">Να μην εμφανιστεί ξανά</string>
-    <string name="swap_scan_or_type_url">Ένα άτομο πρέπει να σαρώσει τον κωδικό, ή να πληκτρολογήσει τη διεύθυνση URL του άλλου σε ένα πρόγραμμα περιήγησης.</string>
-    <string name="swap_choose_apps">Επιλέξτε εφαρμογές</string>
-    <string name="swap_scan_qr">Σάρωση κωδικού QR</string>
-    <string name="swap_people_nearby">Άτομα σε κοντινή απόσταση</string>
-    <string name="swap_scanning_for_peers">Αναζητώντας άτομα σε κοντινή απόσταση…</string>
-    <string name="swap_nearby">Κοντινή ανταλλαγή</string>
-    <string name="swap_visible_bluetooth">Ορατό μέσω Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Ρύθμιση Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Δεν είναι ορατό μέσω Bluetooth</string>
-    <string name="swap_visible_wifi">Ορατό μέσω ασύρματου δικτύου Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Ρύθμιση ασύρματου δικτύου Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Δεν είναι ορατό μέσω ασύρματου δικτύου Wi-Fi</string>
-    <string name="swap_wifi_device_name">Όνομα της συσκευής</string>
-    <string name="swap_cant_find_peers">Δεν βρήκατε αυτόν που αναζητάτε;</string>
-    <string name="swap_send_fdroid">Αποστολή του F-Droid</string>
-    <string name="swap_connecting">Σύνδεση</string>
-    <string name="swap_confirm">Επιβεβαίωση ανταλλαγής</string>
-    <string name="bluetooth_unavailable">Το Bluetooth δεν είναι διαθέσιμο</string>
-    <string name="swap_cant_send_no_bluetooth">Δεν μπορείτε να στείλετε το F-Droid επειδή το Bluetooth δεν είναι διαθέσιμο σε αυτήν τη συσκευή.</string>
     <string name="loading">Φόρτωση…</string>
-    <string name="swap_not_enabled">Η ανταλλαγή δεν είναι ενεργοποιημένη</string>
 
     <string name="install_confirm">Θέλετε να εγκαταστήσετε αυτήν την εφαρμογή; Θα έχει πρόσβαση σε:</string>
     <string name="install_confirm_update">Θέλετε να ενημερώσετε αυτήν την εφαρμογή; Τα υπάρχοντα δεδομένα δεν θα χαθούν. Η ενημερωμένη εφαρμογή θα έχει πρόσβαση σε:</string>
@@ -290,11 +255,6 @@
     <string name="theme_light">Φωτεινό</string>
     <string name="theme_dark">Σκοτεινό</string>
     <string name="theme_night">Νυχτερινό</string>
-<string name="swap_nfc_title">Αγγίξτε για να μοιραστείτε</string>
-    <string name="swap_nfc_description">Αν ο φίλος σας έχει ενεργοποιημένα το F-Droid και το NFC αγγίξτε μεταξύ τους τα τηλέφωνά σας.</string>
-    <string name="swap_join_same_wifi_desc">Για να ανταλλάξετε χρησιμοποιώντας Wi-Fi, βεβαιωθείτε ότι είσαστε στο ίδιο δίκτυο. Αν δεν έχετε πρόσβαση στο ίδιο δίκτυο, ένας από εσάς μπορεί να δημιουργήσει ένα σημείο πρόσβασης Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Βοηθήστε το φίλο σας να συνδεθεί στο σημείο πρόσβασής σας</string>
-    <string name="swap_intro">Συνδεθείτε και ανταλλάξτε εφαρμογές με τους ανθρώπους κοντά σας.</string>
     <string name="crash_dialog_comment_prompt">Μπορείτε να προσθέσετε περισσότερες πληροφορίες και σχόλια εδώ:</string>
 <string name="status_inserting_apps">Αποθήκευση λεπτομερειών εφαρμογής</string>
     <string name="about_license">Άδεια</string>

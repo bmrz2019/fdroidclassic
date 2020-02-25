@@ -5,8 +5,7 @@
   <string name="installDowngrade">Ses chirchende de torrare a una versione prus bècia de custa aplicatzione. Dias pòdere tènnere problemas e fintzas pèrdere sos datos tuos. Seguru ses de bòlere proare a lu fàghere?</string>
   <string name="version">Versione</string>
   <string name="delete">Burra</string>
-  <string name="enable_nfc_send">Abìlita imbiu NFC…</string>
-  <string name="cache_downloaded">Mantènne sas aplicatziones in sa cache</string>
+    <string name="cache_downloaded">Mantènne sas aplicatziones in sa cache</string>
   <string name="updates">Agiornamentos</string>
   <string name="other">Àteru</string>
   <string name="update_interval">Intervallu agiornamentu automàticu</string>
@@ -44,10 +43,7 @@
   <string name="one_update_available">1 agiornamentu est disponìbile.</string>
   <string name="many_updates_available">%d agiornamentos sunt disponìbiles.</string>
   <string name="fdroid_updates_available">Agiornamentos pro F-Droid disponìbiles</string>
-  <string name="bluetooth_activity_not_found">Perunu mètodu de imbiu Bluetooth agatadu, issèberane unu!</string>
-  <string name="choose_bt_send">Issèbera su mètodu de imbiu Bluetooth</string>
-  <string name="send_via_bluetooth">Imbia tràmite Bluetooth</string>
-  <string name="repo_add_url">Indiritzu depòsitu</string>
+    <string name="repo_add_url">Indiritzu depòsitu</string>
   <string name="repo_add_fingerprint">Arrastu/Imprenta (optzionale)</string>
   <string name="repo_exists_add_fingerprint">Custu depòsitu est giai cunfiguradu, custu at a annànghere un\'informatzione crae noa.</string>
   <string name="repo_exists_enable">Custu depòsitu est giai cunfiguradu, cunfirma s\'intentzione de lu bòlere torrare a abilitare.</string>
@@ -56,8 +52,7 @@
   <string name="malformed_repo_uri">Ignorende URI depòsitos malformados: %s</string>
   <string name="menu_update_repo">Agiorna sos depòsitos</string>
   <string name="menu_manage">Depòsitos</string>
-  <string name="menu_send_apk_bt">Cumpartzi F-Droid impreende su Bluetooth</string>
-  <string name="menu_about">Informatziones</string>
+    <string name="menu_about">Informatziones</string>
   <string name="menu_search">Chirca</string>
   <string name="menu_add_repo">Depòsitu nou</string>
   <string name="menu_launch">Allue</string>
@@ -163,15 +158,8 @@ Depes
   <string name="root_access_denied_body">Su dispositivu tuo non tenet sos permissos de root o non los as datu a F-droid.</string>
   <string name="system_install_denied_title">Permissos de sistema dennegados</string>
   <string name="system_install_denied_body">Custa optzione est disponìbile petzi cando F-Droid est installadu comente aplicatzione de sistema.</string>
-  <string name="swap_nfc_description">Si s\'amigu tuo tenet F-Droid e s’NFC allutos pone a cuntatu sos duos dispositivos.</string>
-  <string name="swap_join_same_wifi">Intra in sa matessi retza Wi-Fi de s\'amigu tuo</string>
-  <string name="swap">Imbia aplicatziones</string>
-  <string name="swap_no_wifi_network">Peruna retza disponìbile</string>
-  <string name="swap_view_available_networks">(Toca pro ammustrare sas retzas disponìbiles)</string>
-  <string name="open_qr_code_scanner">Aberi s\'iscansidore de còdighes QR</string>
-  <string name="swap_welcome">Benènnidu in F-Droid!</string>
-  <string name="swap_confirm_connect">Boles retzire como sas aplicatziones dae %1$s?</string>
-<string name="app_name">F-Droid</string>
+    <string name="open_qr_code_scanner">Aberi s\'iscansidore de còdighes QR</string>
+    <string name="app_name">F-Droid</string>
 
     <string name="app_incompatible">Non cumpatìbile</string>
     <string name="links">Ligàmenes</string>
@@ -220,35 +208,7 @@ Depes
     <string name="system_uninstall">Boles disinstallare s’estensione F-Droid cun permissos de sistema?</string>
     <string name="system_uninstall_button">Disinstalla</string>
 
-    <string name="swap_nfc_title">Toca pro cumpartzire</string>
-    <string name="swap_join_same_wifi_desc">Pro cumpartzire impreende su Wi-Fi, ista atentu a istare in sa matessi retza. Si non tenies atzessu a sa matessi retza, unu de bois podet creare unu puntu de atzessu Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Agiuda s’amigou tuo a intrare in su puntu de atzessu tuo</string>
-    <string name="swap_success">Cumpartzidura resissida!</string>
-    <string name="swap_active_hotspot">%1$s (puntu de atzessu tuo)</string>
-    <string name="swap_switch_to_wifi">Toca pro colare a una retza Wi-Fi</string>
-    <string name="swap_dont_show_again">Non mi l’ammustrare prus</string>
-    <string name="swap_scan_or_type_url">Una pessone tenet de iscarrigare su còdighe, o iscrìere s’URL de s\'àtera in unu navigadore.</string>
-    <string name="swap_choose_apps">Issèbera aplicatziones</string>
-    <string name="swap_scan_qr">Iscansi còdighe QR</string>
-    <string name="swap_people_nearby">Pessones a curtzu</string>
-    <string name="swap_scanning_for_peers">Chirchende pro pessones a curtzu…</string>
-    <string name="swap_nearby">Cumpartzidura a curtzu</string>
-    <string name="swap_intro">Connete·ti e cuncambia aplicatziones cun gente a curtzu de tie.</string>
-    <string name="swap_visible_bluetooth">Visìbile via Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Ammaniende su Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Non visìbile via Bluetooth</string>
-    <string name="swap_visible_wifi">Visìbile via Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Ammaniende su Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Non visìbile via Wi-Fi</string>
-    <string name="swap_wifi_device_name">Nùmene de su dispositivu</string>
-    <string name="swap_cant_find_peers">Non ses resessende a agatare su chi chircas?</string>
-    <string name="swap_send_fdroid">Imbia F-Droid</string>
-    <string name="swap_connecting">Connetende</string>
-    <string name="swap_confirm">Cunfirma cumpartzidura</string>
-    <string name="bluetooth_unavailable">Bluetooth non disponìbile</string>
-    <string name="swap_cant_send_no_bluetooth">Impossìbile imbiare F-Droid, ca su Bluetooth no est disponìbile in custu dispositivu.</string>
     <string name="loading">Carrighende…</string>
-    <string name="swap_not_enabled">Cumpartzidura non abilitada</string>
 
     <string name="install_confirm">at a tènnere atzessu a</string>
     <string name="install_confirm_update">Boles installare un’agiornamentu
@@ -332,7 +292,6 @@ Depes
     <string name="menu_email">Iscrie a s’autore</string>
     <string name="useTor">Imprea Tor</string>
     <string name="useTorSummary">Iscàrriga pro mèdiu de Tor pro una privadesa prus manna</string>
-    <string name="swap_stopping_wifi">Firmende su Wi-Fi…</string>
     <string name="repo_provider">Depòsitu: %s</string>
 
     <string name="update_auto_download">Iscàrriga automaticamente sos agiornamentos</string>

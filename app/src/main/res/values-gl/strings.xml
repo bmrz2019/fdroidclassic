@@ -75,7 +75,6 @@
 <string name="app_name">F-Droid</string>
 
     <string name="delete">Eliminar</string>
-    <string name="enable_nfc_send">Activar envío NFC…</string>
     <string name="unstable_updates">Actualizacións inestables</string>
     <string name="update_interval">Intervalo de actualización automática</string>
     <string name="automatic_scan_wifi_on">Actualizar automáticamente o listado de apps só mediante Wi-Fi</string>
@@ -99,9 +98,6 @@
 
     <string name="tab_installed_apps">Instalado</string>
     <string name="update_notification_more">+%1$d máis…</string>
-    <string name="bluetooth_activity_not_found">Non se atopou ningún método de transmisión Bluetooth, escolla un!</string>
-    <string name="choose_bt_send">Escolla o método de transmisión Bluetooth</string>
-    <string name="send_via_bluetooth">Enviar por Bluetooth</string>
 
     <string name="repo_add_fingerprint">Pegada dixital (opcional)</string>
     <string name="repo_delete_to_overwrite">Primeiro debes eliminar éste repositorio antes de poder engadir outro con diferente chave.</string>
@@ -109,7 +105,6 @@
     <string name="invalid_url">Ésta non é unha URL válida.</string>
     <string name="malformed_repo_uri">Ignorouse unha URL de repositorio mal formada: %s</string>
 
-    <string name="menu_send_apk_bt">Compartir F-Droid mediante Bluetooth</string>
     <string name="menu_changelog">Historial de cambios</string>
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
@@ -184,25 +179,7 @@
     <string name="system_uninstall">Desexas desinstalar F-Droid Privileged Extension?</string>
     <string name="system_uninstall_button">Desinstalar</string>
 
-    <string name="swap_nfc_title">Toca para intercambiar</string>
-    <string name="swap">Intercambiar aplicativos</string>
-    <string name="swap_success">Intercambio exitoso!</string>
-    <string name="swap_view_available_networks">Toca para abrir as redes dispoñíbles</string>
     <string name="open_qr_code_scanner">Abrir o lector QR</string>
-    <string name="swap_welcome">Benvido a F-Droid!</string>
-    <string name="swap_confirm_connect">Desexas obter aplicativos dende %1$s agora?</string>
-    <string name="swap_dont_show_again">Non amosar de novo</string>
-    <string name="swap_choose_apps">Escolle os aplicativos</string>
-    <string name="swap_scan_qr">Escanear código QR</string>
-    <string name="swap_visible_bluetooth">Visible mediante Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Configurando Bluetooth…</string>
-    <string name="swap_visible_wifi">Visible mediante Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Configurando Wi-Fi…</string>
-    <string name="swap_wifi_device_name">Nome do dispositivo</string>
-    <string name="swap_send_fdroid">Enviar F-Droid</string>
-    <string name="swap_connecting">Conectando</string>
-    <string name="swap_confirm">Confirma o intercambio</string>
-    <string name="bluetooth_unavailable">O Bluetooth non está dispoñible</string>
     <string name="loading">Cargando…</string>
     <string name="newPerms">Novo</string>
     <string name="allPerms">Todo</string>
@@ -267,23 +244,6 @@
     <string name="system_install_button_open">Abrir extensión</string>
     <string name="system_install_post_success">F-Droid Privileged Extension foi instalado correctamente</string>
     <string name="system_install_question">Desexas instalar F-Droid Privileged Extension?</string>
-    <string name="swap_nfc_description">Se o teu amigo ten F-Droid e o NFC activado, achegade os dispositivos.</string>
-    <string name="swap_join_same_wifi">Únete á mesma rede Wi-Fi que o teu amigo</string>
-    <string name="swap_join_same_wifi_desc">Para intercambiar mediante Wi-Fi, asegúrate de estar na mesma rede. Se non tes acceso á mesma rede, un de vos pode crear un punto de acceso Wi-Fi.</string>
-    <string name="swap_join_this_hotspot">Axuda ó teu amigo a unirte ao punto de acceso</string>
-    <string name="swap_no_wifi_network">Todavía non hai rede</string>
-    <string name="swap_active_hotspot">%1$s (o teu punto de acceso)</string>
-    <string name="swap_switch_to_wifi">Toca para cambiar a unha rede Wi-Fi</string>
-    <string name="swap_scan_or_type_url">Unha persoa necesita escanear o código, ou escribir a URL do outro no navegador.</string>
-    <string name="swap_people_nearby">Xente cerca</string>
-    <string name="swap_scanning_for_peers">Buscando xente cercana…</string>
-    <string name="swap_nearby">Intercambio cercano</string>
-    <string name="swap_intro">Conecta e intercambia aplicativos con xente do teu redor.</string>
-    <string name="swap_not_visible_bluetooth">Non visible mediante Bluetooth</string>
-    <string name="swap_not_visible_wifi">Non visible mediante Wi-Fi</string>
-    <string name="swap_cant_find_peers">Non podes atopar a quen buscas?</string>
-    <string name="swap_cant_send_no_bluetooth">Non se pode enviar, porque o Bluetooth non está dispoñible neste dispositivo.</string>
-    <string name="swap_not_enabled">Intercambio non dispoñible</string>
 
     <string name="install_confirm">Desexas instalar este aplicativo? Terá acceso a:</string>
     <string name="install_confirm_update">Desexas instalar unha actualización de este aplicativo? Os teus datos existentes non se perderán. A actualización require acceso a:</string>

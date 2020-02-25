@@ -29,9 +29,7 @@
   <string name="overwrite">جانویسی</string>
   <string name="tab_updates">به‌روز رسانی‌ها</string>
   <string name="fdroid_updates_available">به‌روزرسانی‌های اف‌دروید موجودند</string>
-  <string name="bluetooth_activity_not_found">هیچ روش ارسال با بلوتوثی پیدا نشد، یکی را برگزینید!</string>
-  <string name="choose_bt_send">گزینش روش ارسال بلوتوث</string>
-  <string name="repo_add_url">نشانی مخزن</string>
+    <string name="repo_add_url">نشانی مخزن</string>
   <string name="repo_add_fingerprint">اثر انگشت (اختیاری)</string>
   <string name="menu_update_repo">به‌روزرسانی مخزن‌ها</string>
   <string name="menu_manage">مخزن‌ها</string>
@@ -75,7 +73,6 @@
 
     <string name="SignatureMismatch">نگارش جدید با کلیدی متفاوت با قبلی امضا شده است. برای نصب نگارش جدید، باید نخست نگارش قدیمی را حذف کرد. لطفاً این کار را انجام داده و دوباره تلاش کنید. (به خاطر داشته باشید که حذف نصب، تمام داده‌های درونی ذخیره شدهٔ کاره را پاک می‌کند)</string>
     <string name="version">نگارش</string>
-    <string name="enable_nfc_send">فعّال کردن ارسال NFC…</string>
     <string name="unstable_updates">به‌روز رسانی‌های ناپایدار</string>
     <string name="unstable_updates_summary">پیشنهاد به‌روز رسانی به نگارش‌های ناپایدار</string>
     <string name="notify">آگهی‌های به‌روز رسانی</string>
@@ -113,13 +110,11 @@
     <string name="one_update_available">۱ به‌روز رسانی موجود است.</string>
     <string name="many_updates_available">%d به روز رسانی موجود است.</string>
     <string name="update_notification_more">+%1$d بیش‌تر…</string>
-    <string name="send_via_bluetooth">ارسال با بلوتوث</string>
 
     <string name="repo_exists_add_fingerprint">این مخزن از پیش برپا شده است. این کار، اظّلاعات کلید جدیدی را می‌افزاید.</string>
     <string name="repo_exists_enable">این مخزن از پیش برپا شده است. تأیید کنید که می‌خواهید دوباره فعّالش کنید.</string>
     <string name="bad_fingerprint">اثر انگشت بد</string>
     <string name="invalid_url">این یک نشانی اینترنتی معتیبر نیست.</string>
-    <string name="menu_send_apk_bt">هم‌رسانی اف‌دروید با بلوتوث</string>
     <string name="menu_settings">تنظیمات</string>
     <string name="menu_add_repo">مخزن جدید</string>
 
@@ -207,37 +202,7 @@
     <string name="root_access_denied_body">یا افزارهٔ اندرویدیتان روت شده نیست، یا درخواست ریشه برای اف‌دروید را رد کردید.</string>
     <string name="system_uninstall_button">حذف نصب</string>
 
-    <string name="swap_nfc_title">برای تبادل، لمس کنید</string>
-    <string name="swap_join_same_wifi">به همان وای‌فای دوستتان بپیوندید</string>
-    <string name="swap_join_this_hotspot">دوستتان را در پیوستن به نقطهٔ داغتان راهنمایی کنید</string>
-    <string name="swap">تبادل کاره‌ها</string>
-    <string name="swap_success">تبادل موفّقیت‌آمیز!</string>
-    <string name="swap_no_wifi_network">هنوز هیچ شبکه‌ای وجود ندارد</string>
-    <string name="swap_active_hotspot">%1$s (نقطهٔ داغتان)</string>
-    <string name="swap_view_available_networks">برای گشودن شبکه‌های موجود، ضربه بزنید</string>
-    <string name="swap_switch_to_wifi">برای تعویض به یک شبکهٔ وای‌فای، ضربه بزنید</string>
     <string name="open_qr_code_scanner">گشودن پویشگر QR</string>
-    <string name="swap_welcome">به اف‌دروید خوش آمدید!</string>
-    <string name="swap_confirm_connect">می‌خواهید اکنون کاره‌ها را از %1$s بگیرید؟</string>
-    <string name="swap_dont_show_again">دیگر این را نشان نده</string>
-    <string name="swap_scan_or_type_url">لازم است یک نفر رمز دیگری را پوییده، یا نشانی اینترنتیش را در مرورگری بنویسد.</string>
-    <string name="swap_choose_apps">گزینش کاره‌ها</string>
-    <string name="swap_scan_qr">پویش رمز QR</string>
-    <string name="swap_people_nearby">افراد نزدیک</string>
-    <string name="swap_scanning_for_peers">در حال جست‌وجو برای افراد نزدیک…</string>
-    <string name="swap_nearby">تبادل نزدیک</string>
-    <string name="swap_intro">اتّصال و مبادلهٔ کاره‌ها با افراد نزدیکتان.</string>
-    <string name="swap_visible_bluetooth">قابل مشاهده از طریق بلوتوث</string>
-    <string name="swap_setting_up_bluetooth">در حال برپا سازی بلوتوث…</string>
-    <string name="swap_not_visible_bluetooth">غیرقابل مشاهده از طریق بلوتوث</string>
-    <string name="swap_visible_wifi">قابل مشاهده از طریق وای‌فای</string>
-    <string name="swap_setting_up_wifi">در حال برپا سازی وای‌فای…</string>
-    <string name="swap_not_visible_wifi">غیرقابل مشاهده از طریق وای‌فای</string>
-    <string name="swap_wifi_device_name">نام افزاره</string>
-    <string name="swap_cant_find_peers">نمی‌توانید کسی که دنبالشید را پیدا کنید؟</string>
-    <string name="swap_send_fdroid">ارسال اف‌دروید</string>
-    <string name="swap_connecting">در حال اتّصال</string>
-    <string name="swap_confirm">تأیید تبادل</string>
     <string name="newPerms">جدید</string>
     <string name="allPerms">همه</string>
     <string name="perm_costs_money">ممکن است این کار برایتان خرج داشته باشد</string>
@@ -290,12 +255,7 @@
     <string name="system_install_warning">این کار بیش از ۱۰ ثانیه زمان می‌برد.</string>
     <string name="system_install_warning_lollipop">این کار بیش از ۱۰ ثانیه زمان برده و پس از آن، افزاره <b>راه‌اندازی مجدّد</b> خواهد شد.</string>
     <string name="system_uninstall">می‌خواهید افزونهٔ ممتاز اف‌دروید را حذف کنید؟</string>
-    <string name="swap_nfc_description">اگر دوستتان اف‌دروید داشته و NFC اش روشن است، افزاره‌هایتان را با هم تماس بدهید.</string>
-    <string name="swap_join_same_wifi_desc">برای تبادل با استفاده از وای‌فای، مطمئن شوید که روی شبکهٔ یک‌سانی هستید. اگر به شبکهٔ یک‌سان دسترسی ندارید، یکی از شما می‌تواند یک نقطهٔ داغ وای‌فای ایجاد کند.</string>
-    <string name="bluetooth_unavailable">بلوتوث موجود نیست</string>
-    <string name="swap_cant_send_no_bluetooth">نمی‌توان اف‌دروید را فرستاد، زیرا بلوتوث روی این افزاره موحود نیست.</string>
     <string name="loading">در حال بار کردن…</string>
-    <string name="swap_not_enabled">تبادل فعّال نیست</string>
 
     <string name="install_confirm">نیاز به دسترسی به</string>
     <string name="install_confirm_update">می‌خواهید به‌روزرسانی‌ای برای این برنامه نصب کنید؟ داده‌های موجودتان از بین نخواهند رفت. برنامهٔ به‌روز شده دسترسی‌های زیر را خواهد داشت:</string>
@@ -317,7 +277,6 @@
     <string name="crash_dialog_comment_prompt">در این‌جا می‌توانید اطّلاعات اضافی و نظرها را بیفزایید:</string>
 <string name="useTor">استفاده از تور</string>
     <string name="useTorSummary">اجبار ترافیک بارگیری به استفاده از تور برای محرمانگی بیش‌تر</string>
-    <string name="swap_stopping_wifi">در حال توقّف وای‌فای…</string>
     <string name="repo_provider">مخزن: %s</string>
 
     <string name="update_auto_download">بارگیری خودکار به‌روز رسانی‌ها</string>

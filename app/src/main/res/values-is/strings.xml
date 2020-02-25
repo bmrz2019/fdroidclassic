@@ -5,7 +5,6 @@
     <string name="by_author">frá</string>
     <string name="delete">Eyða</string>
     <string name="login_name">Notandanafn</string>
-    <string name="enable_nfc_send">Virkja NFC-sendingu…</string>
     <string name="cache_downloaded">Halda forritum sem eru í biðminni</string>
     <string name="updates">Uppfærslur</string>
     <string name="unstable_updates">Óstöðugar uppfærslur</string>
@@ -68,9 +67,6 @@
     <string name="many_updates_available">%d uppfærslur eru tiltækar.</string>
     <string name="fdroid_updates_available">Uppfærslur á F-Droid eru tiltækar</string>
     <string name="update_notification_more">+%1$d fleiri…</string>
-    <string name="bluetooth_activity_not_found">Engin aðferð til sendingar með Bluetooth fannst, veldu eina!</string>
-    <string name="choose_bt_send">Veldu aðferð til sendingar með Bluetooth</string>
-    <string name="send_via_bluetooth">Senda með Bluetooth</string>
 
     <string name="repo_add_url">Vistfang hugbúnaðarsafns</string>
     <string name="repo_add_fingerprint">Fingrafar (valkvætt)</string>
@@ -80,7 +76,6 @@
 
     <string name="menu_update_repo">Uppfæra hugbúnaðarsöfn</string>
     <string name="menu_manage">Hugbúnaðarsöfn</string>
-    <string name="menu_send_apk_bt">Deila F-Droid með Bluetooth</string>
     <string name="menu_settings">Stillingar</string>
     <string name="menu_about">Um hugbúnaðinn</string>
     <string name="menu_search">Leita</string>
@@ -209,37 +204,8 @@
     <string name="system_install_uninstalling">Tek út uppsetningu…</string>
     <string name="system_install_warning">Þetta tekur allt að 10 sekúndum.</string>
     <string name="system_uninstall_button">Fjarlægja</string>
-    <string name="swap_nfc_title">Snertu til að býtta</string>
-    <string name="swap">Skiptast á forritum</string>
-    <string name="swap_success">Býttin heppnuðust!</string>
-    <string name="swap_no_wifi_network">Engin netkerfi ennþá</string>
-    <string name="swap_active_hotspot">%1$s (tengipunkturinn þinn)</string>
-    <string name="swap_view_available_networks">Sláðu létt til að opna tiltæk net</string>
-    <string name="swap_switch_to_wifi">Sláðu létt til að tengjast þráðlausu Wi-Fi neti</string>
     <string name="open_qr_code_scanner">Opna skanna fyrir QR-kóða</string>
-    <string name="swap_welcome">Velkomin í F-Droid!</string>
-    <string name="swap_confirm_connect">Viltu ná í forrit frá %1$s núna?</string>
-    <string name="swap_dont_show_again">Ekki birta þetta aftur</string>
-    <string name="swap_choose_apps">Veldu forrit</string>
-    <string name="swap_scan_qr">Skanna QR-kóða</string>
-    <string name="swap_people_nearby">Fólk sem er nálægt</string>
-    <string name="swap_scanning_for_peers">Leita að fólki í nágrenninu…</string>
-    <string name="swap_nearby">Býtti í nágrenninu</string>
-    <string name="swap_visible_bluetooth">Sýnilegt með Bluetooth</string>
-    <string name="swap_setting_up_bluetooth">Set upp Bluetooth…</string>
-    <string name="swap_not_visible_bluetooth">Ekki sýnilegt með Bluetooth</string>
-    <string name="swap_visible_wifi">Sýnilegt með Wi-Fi</string>
-    <string name="swap_setting_up_wifi">Set upp Wi-Fi…</string>
-    <string name="swap_stopping_wifi">Stöðva Wi-Fi…</string>
-    <string name="swap_not_visible_wifi">Ekki sýnilegt með Wi-Fi</string>
-    <string name="swap_wifi_device_name">Heiti tækis</string>
-    <string name="swap_cant_find_peers">Finnurðu ekki það sem þú leitar að?</string>
-    <string name="swap_send_fdroid">Senda F-Droid</string>
-    <string name="swap_connecting">Tengist</string>
-    <string name="swap_confirm">Staðfesta býtti</string>
-    <string name="bluetooth_unavailable">Bluetooth er ekki tiltækt</string>
     <string name="loading">Hleð inn…</string>
-    <string name="swap_not_enabled">Forritabýtti eru óvirk</string>
     <string name="tap_to_install_format">Sláðu létt til að til að setja upp %s</string>
     <string name="tap_to_update_format">Sláðu létt til að uppfæra %s</string>
     <string name="install_confirm">þarf aðgang að</string>
@@ -283,8 +249,6 @@
     <string name="crash_dialog_title">F-Droid hrundi</string>
     <string name="crash_dialog_comment_prompt">Þú getur bætt hér við aukaupplýsingum og athugasemdum:</string>
 <string name="unstable_updates_summary">Stinga upp á uppfærslum í óstöðugar útgáfur</string>
-    <string name="swap_join_same_wifi">Tengstu sama þráðlausa Wi-Fi netinu og vinur þinn</string>
-    <string name="swap_intro">Tengstu fólki í nágrenninu og skipstu á forritum við það.</string>
     <string name="update_interval_zero">Engar sjálfvirkar uppfærslur forritalista</string>
     <string name="automatic_scan_wifi_on">Einungis uppfæra forritalista sjálfvirkt þegar tengst er þráðlausu Wi-Fi neti</string>
     <string name="system_installer_on">Nota forgangsviðbót F-Droid (privileged extension) til að setja upp, uppfæra og fjarlægja pakka</string>
@@ -361,11 +325,6 @@ Til hamingju! Öll forritin þín eru af nýjustu útgáfu (nema ef vera kynni a
     <string name="root_access_denied_body">Annað hvort er Android tækið þitt ekki með rótaraðgang (rooted) eða að þú hefur neitað F-Droid um rótarheimildir.</string>
     <string name="system_install_denied_signature">Undirritun viðbótarinnar er röng! Sendu endilega inn villuskýrslu!</string>
     <string name="system_install_warning_lollipop">Þetta tekur allt að 10 sekúndum og tækið verður <b>endurræst</b> í kjölfarið.</string>
-    <string name="swap_nfc_description">Ef vinur þinn er með F-Droid og kveikt á NFC, látið þá tækin ykkar snertast.</string>
-    <string name="swap_join_same_wifi_desc">Til að gera býtti í gegnum þráðlaust net, gakktu úr skugga um að þið séuð á sama netinu. Ef þið hafið ekki aðgang að sama neti, getur annar ykkar búið til þráðlausan Wi-Fi tengipunkt (hotspot).</string>
-    <string name="swap_join_this_hotspot">Hjálpaðu vini þínum að tengjast tengipunktinum þínum</string>
-    <string name="swap_scan_or_type_url">Einn aðili þarf að skanna QR-kóðann, eða slá slóðina inn í vafra.</string>
-    <string name="swap_cant_send_no_bluetooth">Get ekki sent F-Droid, því Bluetooth er ekki til taks á þessu tæki.</string>
 
     <string name="install_confirm_update">Viltu setja inn uppfærslu á þessu forriti sem fyrir
 hendi er? Fyrirliggjandi gögn sem þú átt tapast ekki. 

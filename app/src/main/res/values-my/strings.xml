@@ -5,7 +5,6 @@
     <string name="version">ဗားရွင္း</string>
     <string name="by_author">မွ</string>
     <string name="delete">ဖ်က္မည္</string>
-    <string name="enable_nfc_send">NFC မွပို႔ႏိုင္ေအာင္လုပ္ေဆာင္မည္…</string>
     <string name="cache_downloaded">Cached app မ်ားကိုထားမည္</string>
     <string name="updates">အသစ္မြမ္းမံမႈမ်ား</string>
     <string name="unstable_updates">မတည္ျငိမ္ေသာ အသစ္မြမ္းမံမႈမ်ား</string>
@@ -74,9 +73,6 @@
     <string name="many_updates_available">အသစ္မြမ္းမံမႈ %d ခုရရွိႏိုင္သည္.</string>
     <string name="fdroid_updates_available">F-Droid အသစ္မြမ္းမံမႈရရွိႏိုင္သည္</string>
     <string name="update_notification_more">+%1$d ေနာက္ထပ္..</string>
-    <string name="bluetooth_activity_not_found">ဘလူးသုဒ့္ႏွင့္ပို႔ရန္နည္းလမ္းရွာမေတြ႕ပါ။ တစ္ခုေရြးပါ!</string>
-    <string name="choose_bt_send">ဘလူးသုဒ့္ႏွင့္ပို႔ေသာနည္းလမ္းကိုေရြးမည္</string>
-    <string name="send_via_bluetooth">ဘလူးသုဒ့္မွတစ္ဆင့္ပို႔မည္</string>
 
     <string name="repo_add_url">Repository လိပ္စာ</string>
     <string name="repo_add_fingerprint">လက္ေဗြရာ(လိုအပ္မွသာ)</string>
@@ -91,7 +87,6 @@
 
     <string name="menu_update_repo">Repo မ်ားအသစ္မြမ္းမံမည္</string>
     <string name="menu_manage">Repository မ်ား</string>
-    <string name="menu_send_apk_bt">F-Droid ကို ဘလူးသုဒ့္မွတစ္ဆင့္ေဝမွ်မည္</string>
     <string name="menu_settings">ျပင္ဆင္ရန္</string>
     <string name="menu_about">အေၾကာင္း</string>
     <string name="menu_search">ရွာေဖြမည္</string>
@@ -216,23 +211,7 @@
     <string name="system_install_uninstalling">ျဖဳတ္ေနသည္</string>
     <string name="system_install_warning">၄င္းသည္ ၁၀ စကၠန္႔ေလာက္ၾကာသည္</string>
     <string name="system_uninstall_button">ျဖဳတ္ေနသည္</string>
-    <string name="swap_join_same_wifi">သင့္သူငယ္ခ်င္းႏွင့္တူညီေသာ ဝိုင္ဖိုင္ကိုခ်ိတ္မည္</string>
-    <string name="swap_no_wifi_network">ကြန္ရက္မရွိပါ</string>
     <string name="open_qr_code_scanner">က်ဴအာ စကန္နာကိုဖြင့္မည္</string>
-    <string name="swap_welcome">F-Droid မွၾကိဳဆိုပါသည္!</string>
-    <string name="swap_confirm_connect">%1$s မွ app မ်ားကိုယခုရယူခ်င္ပါသလား?</string>
-    <string name="swap_dont_show_again">ဒီဟာကိုေနာက္ထပ္မျပပါႏွင့္ေတာ့</string>
-    <string name="swap_choose_apps">App မ်ားေရြးမည္</string>
-    <string name="swap_scan_qr">က်ဴအာကုဒ္ကိုစကန္ဖတ္မည္</string>
-    <string name="swap_people_nearby">အနီးအနားရွိသူမ်ား</string>
-    <string name="swap_scanning_for_peers">အနီးအနားရွိသူမ်ားကိုရွာေနသည္…</string>
-    <string name="swap_visible_bluetooth">ဘလူးသုဒ္မွ ျမင္ႏိုင္ျခင္း</string>
-    <string name="swap_setting_up_bluetooth">ဘလူးသုဒ္ဖြင့္ေနသည္</string>
-    <string name="swap_wifi_device_name">ကိရိယာအမည္</string>
-    <string name="swap_cant_find_peers">သင္ရွာေနတာကိုမေတြ႕ဘူးလား?</string>
-    <string name="swap_send_fdroid">F-Droid ပို႔မည္</string>
-    <string name="swap_connecting">ခ်ိတ္ဆက္ေနသည္</string>
-    <string name="bluetooth_unavailable">ဘလူးသုဒ္မရရွိႏိုင္ပါ</string>
     <string name="loading">ဖြင့္ေနသည္</string>
     <string name="tap_to_install_format">%s ကိုသြင္းရန္ႏွိပ္ပါ</string>
     <string name="tap_to_update_format">%s ကိုအသစ္မြမ္းမံရန္ႏွိပ္ပါ</string>
