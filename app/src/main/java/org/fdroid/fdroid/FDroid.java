@@ -103,7 +103,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
         }
 
         Uri uri = AppProvider.getContentUri();
-        getContentResolver().registerContentObserver(uri, true, new AppObserver());
+        //getContentResolver().registerContentObserver(uri, true, new AppObserver());
     }
 
     private void performSearch(String query) {
