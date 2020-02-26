@@ -1,6 +1,13 @@
-### 1.0-beta3 (?)
+### 1.0-beta4 (?)
+
+* 
+
+### 1.0-beta3 (26.02.2020)
 
 * fix upgrade button sometimes not showing (#11)
+* fix repo update button not working in repo list
+* fix performance issues on startup/repo update (#19)
+  This disables the number of installed apps/number of updates updating for now.
 
 ### 1.0-beta2 (25.02.2020)
 
