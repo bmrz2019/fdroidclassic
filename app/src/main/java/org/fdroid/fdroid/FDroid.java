@@ -394,12 +394,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
-            FDroid.this.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    refreshUpdateTabLabel();
-                }
-            });
+            FDroid.this.runOnUiThread(FDroid.this::refreshUpdateTabLabel);
         }
 
         @Override

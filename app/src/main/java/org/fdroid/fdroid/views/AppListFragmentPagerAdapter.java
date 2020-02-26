@@ -34,8 +34,9 @@ public class AppListFragmentPagerAdapter extends FragmentPagerAdapter {
         this.parent = parent;
     }
 
+    @NonNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
         AppListFragment fragment = (AppListFragment) super.instantiateItem(container, position);
         fragment.updateSearchQuery(searchQuery);
         registeredFragments[position] = fragment;
@@ -43,7 +44,7 @@ public class AppListFragmentPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         registeredFragments[position] = null;
         super.destroyItem(container, position, object);
     }
@@ -82,6 +83,7 @@ public class AppListFragmentPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int i) {
         switch (i) {

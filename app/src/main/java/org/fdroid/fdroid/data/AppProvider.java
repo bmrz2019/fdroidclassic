@@ -133,7 +133,7 @@ public class AppProvider extends FDroidProvider {
             return app;
         }
 
-        public static void calcSuggestedApk(Context context, String packageName) {
+        static void calcSuggestedApk(Context context, String packageName) {
             Uri uri = Uri.withAppendedPath(calcSuggestedApksUri(), packageName);
             context.getContentResolver().update(uri, null, null, null);
         }
@@ -142,11 +142,11 @@ public class AppProvider extends FDroidProvider {
             context.getContentResolver().update(calcSuggestedApksUri(), null, null, null);
         }
 
-        public static List<App> findCanUpdate(Context context, String[] projection) {
+        static List<App> findCanUpdate(Context context, String[] projection) {
             return cursorToList(context.getContentResolver().query(AppProvider.getCanUpdateUri(), projection, null, null, null));
         }
 
-        public static void recalculatePreferredMetadata(Context context) {
+        static void recalculatePreferredMetadata(Context context) {
             Uri uri = Uri.withAppendedPath(AppProvider.getContentUri(), PATH_CALC_PREFERRED_METADATA);
             context.getContentResolver().query(uri, null, null, null, null);
         }
@@ -185,15 +185,15 @@ public class AppProvider extends FDroidProvider {
             super(selection, args);
         }
 
-        public boolean naturalJoinToInstalled() {
+        boolean naturalJoinToInstalled() {
             return naturalJoinToInstalled;
         }
 
-        public boolean naturalJoinToApks() {
+        boolean naturalJoinToApks() {
             return naturalJoinApks;
         }
 
-        public boolean naturalJoinAntiFeatures() {
+        boolean naturalJoinAntiFeatures() {
             return naturalJoinAntiFeatures;
         }
 
@@ -204,7 +204,7 @@ public class AppProvider extends FDroidProvider {
          * @return A reference to this object, to allow method chaining, for example
          * <code>return new AppQuerySelection(selection).requiresInstalledTable())</code>
          */
-        public AppQuerySelection requireNaturalInstalledTable() {
+        AppQuerySelection requireNaturalInstalledTable() {
             naturalJoinToInstalled = true;
             return this;
         }
@@ -215,21 +215,21 @@ public class AppProvider extends FDroidProvider {
          * See https://gitlab.com/fdroid/fdroidclient/issues/1143 for the investigation which identified these
          * performance implications.
          */
-        public AppQuerySelection requireNaturalJoinApks() {
+        AppQuerySelection requireNaturalJoinApks() {
             naturalJoinApks = true;
             return this;
         }
 
-        public AppQuerySelection requireNatrualJoinAntiFeatures() {
+        AppQuerySelection requireNatrualJoinAntiFeatures() {
             naturalJoinAntiFeatures = true;
             return this;
         }
 
-        public boolean leftJoinToPrefs() {
+        boolean leftJoinToPrefs() {
             return leftJoinPrefs;
         }
 
-        public AppQuerySelection requireLeftJoinPrefs() {
+        AppQuerySelection requireLeftJoinPrefs() {
             leftJoinPrefs = true;
             return this;
         }
@@ -289,7 +289,7 @@ public class AppProvider extends FDroidProvider {
             return countFieldAppended ? null : getTableName() + "." + Cols.ROW_ID;
         }
 
-        public void addSelection(AppQuerySelection selection) {
+        void addSelection(AppQuerySelection selection) {
             super.addSelection(selection);
             if (selection.naturalJoinToInstalled()) {
                 naturalJoinToInstalledTable();
@@ -307,7 +307,7 @@ public class AppProvider extends FDroidProvider {
 
         // TODO: What if the selection requires a natural join, but we first get a left join
         // because something causes leftJoin to be caused first? Maybe throw an exception?
-        public void naturalJoinToInstalledTable() {
+        void naturalJoinToInstalledTable() {
             if (!requiresInstalledTable) {
                 join(
                         InstalledAppTable.NAME,
@@ -317,7 +317,7 @@ public class AppProvider extends FDroidProvider {
             }
         }
 
-        public void naturalJoinToApkTable() {
+        void naturalJoinToApkTable() {
             if (!requiresApkTable) {
                 join(
                         getApkTableName(),
@@ -328,7 +328,7 @@ public class AppProvider extends FDroidProvider {
             }
         }
 
-        public void leftJoinToPrefs() {
+        void leftJoinToPrefs() {
             if (!requiresLeftJoinToPrefs) {
                 leftJoin(
                         AppPrefsTable.NAME,
@@ -338,7 +338,7 @@ public class AppProvider extends FDroidProvider {
             }
         }
 
-        public void leftJoinToInstalledTable() {
+        void leftJoinToInstalledTable() {
             if (!requiresInstalledTable) {
                 leftJoin(
                         InstalledAppTable.NAME,
@@ -348,7 +348,7 @@ public class AppProvider extends FDroidProvider {
             }
         }
 
-        public void naturalJoinAntiFeatures() {
+        void naturalJoinAntiFeatures() {
             if (!requiresAntiFeatures) {
                 join(
                         getApkAntiFeatureJoinTableName(),
