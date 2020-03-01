@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.IBinder;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -463,7 +464,10 @@ public class InstallManagerService extends Service {
                         if (AppDetails.isAppVisible(apk.packageName)) {
                             cancelNotification(downloadUrl);
                         } else {
-                            notifyError(downloadUrl, appUpdateStatusManager.get(apk.getCanonicalUrl()).app, errorMessage);
+                            AppUpdateStatusManager.AppUpdateStatus aus = appUpdateStatusManager.get(apk.getCanonicalUrl());
+                            if(aus != null) {
+                                notifyError(downloadUrl, aus.app, errorMessage);
+                            }
                         }
                         localBroadcastManager.unregisterReceiver(this);
                         break;
@@ -658,7 +662,7 @@ public class InstallManagerService extends Service {
         notificationManager.cancel(urlString.hashCode());
     }
 
-    private void notifyError(String urlString, App app, String text) {
+    private void notifyError(@NonNull String urlString, @Nullable App app, String text) {
         int downloadUrlId = urlString.hashCode();
 
         String name;
