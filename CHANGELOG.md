@@ -1,6 +1,10 @@
-### 1.0-beta4 (?)
+### 1.0-beta5 (?)
 
-* 
+*
+
+### 1.0-beta4 (6.03.2020)
+
+* fix a crash that was somtimes happening when updating apps
 
 ### 1.0-beta3 (26.02.2020)
 
