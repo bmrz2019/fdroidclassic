@@ -4,7 +4,7 @@ Join the matrix room: [#fdroidclassic:bubu1.eu](https://matrix.to/#/#fdroidclass
 
 ### Download
 
-Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1000.apk
+Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1003.apk
 
 This comes with it's own F-Droid repository for updates pre-configured.
 
