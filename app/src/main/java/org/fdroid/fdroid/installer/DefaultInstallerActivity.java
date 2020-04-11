@@ -91,16 +91,7 @@ public class DefaultInstallerActivity extends FragmentActivity {
         // works only when being installed as system-app
         // https://code.google.com/p/android/issues/detail?id=42253
 
-        if (Build.VERSION.SDK_INT < 14) {
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.setDataAndType(uri, "application/vnd.android.package-archive");
-        } else if (Build.VERSION.SDK_INT < 16) {
-            intent.setAction(Intent.ACTION_INSTALL_PACKAGE);
-            intent.setData(uri);
-            intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-            intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
-            intent.putExtra(Intent.EXTRA_ALLOW_REPLACE, true);
-        } else if (Build.VERSION.SDK_INT < 24) {
+        if (Build.VERSION.SDK_INT < 24) {
             intent.setAction(Intent.ACTION_INSTALL_PACKAGE);
             intent.setData(uri);
             intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
@@ -140,12 +131,8 @@ public class DefaultInstallerActivity extends FragmentActivity {
         Intent intent = new Intent();
         intent.setData(uri);
 
-        if (Build.VERSION.SDK_INT < 14) {
-            intent.setAction(Intent.ACTION_DELETE);
-        } else {
-            intent.setAction(Intent.ACTION_UNINSTALL_PACKAGE);
-            intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-        }
+        intent.setAction(Intent.ACTION_UNINSTALL_PACKAGE);
+        intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
 
         try {
             startActivityForResult(intent, REQUEST_CODE_UNINSTALL);
@@ -161,16 +148,6 @@ public class DefaultInstallerActivity extends FragmentActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case REQUEST_CODE_INSTALL:
-                /**
-                 * resultCode is always 0 on Android < 4.0. See
-                 * com.android.packageinstaller.PackageInstallerActivity: setResult is
-                 * never executed on Androids < 4.0
-                 */
-                if (Build.VERSION.SDK_INT < 14) {
-                    installer.sendBroadcastInstall(downloadUri, Installer.ACTION_INSTALL_COMPLETE);
-                    break;
-                }
-
                 switch (resultCode) {
                     case Activity.RESULT_OK:
                         installer.sendBroadcastInstall(downloadUri,
@@ -191,12 +168,6 @@ public class DefaultInstallerActivity extends FragmentActivity {
 
                 break;
             case REQUEST_CODE_UNINSTALL:
-                // resultCode is always 0 on Android < 4.0.
-                if (Build.VERSION.SDK_INT < 14) {
-                    installer.sendBroadcastUninstall(Installer.ACTION_UNINSTALL_COMPLETE);
-                    break;
-                }
-
                 switch (resultCode) {
                     case Activity.RESULT_OK:
                         installer.sendBroadcastUninstall(Installer.ACTION_UNINSTALL_COMPLETE);
