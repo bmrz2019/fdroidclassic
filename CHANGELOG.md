@@ -1,8 +1,12 @@
-### 1.0-beta5 (?)
+### 1.0-beta6 (?)
 
 *
 
-### 1.0-beta4 (6.03.2020)
+### 1.0-beta5 (11.04.2020)
+
+* fix  using too much storage space (#24)
+
+### 1.0-beta4 (06.03.2020)
 
 * fix a crash that was somtimes happening when updating apps
 
