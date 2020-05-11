@@ -10,6 +10,8 @@ This comes with it's own F-Droid repository for updates pre-configured.
 
 Or add the repo to any other F-Droid client: https://bubu1.eu/fdroidclassic/fdroid/repo?fingerprint=5187CFD99F084FFAB2AD60D9D10B39203B89A46DD4862397FE1B1A4F3D46627A
 
+<img src="screenshots/repo-qr.png" width="400">
+
 ### Project description
 
 This is an alternative F-Droid client which is based on the older UI of the official Client (pre 1.0).
@@ -18,7 +20,7 @@ Lots of information that was provided clearly in the old UI is now not available
 
 This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.
 
-<img src="https://gitlab.com/Bubu/fdroidclassic/raw/master/screenshots/screenshot.png?inline=false"  width="400">
+<img src="screenshots/screenshot.png" width="400">
 
 ## Plan/Todo
 
