@@ -224,7 +224,7 @@ public class AppDetails extends AppCompatActivity {
             if (!Preferences.get().expertMode()) {
                 holder.versionCode.setVisibility(View.GONE);
             } else {
-                holder.versionCode.setText("(" + apk.versionCode + ")");
+                holder.versionCode.setText(String.format("(%s)",apk.versionCode));
             }
             holder.status.setText(getInstalledStatus(apk));
 
