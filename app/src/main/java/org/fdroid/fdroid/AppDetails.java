@@ -117,6 +117,7 @@ public class AppDetails extends AppCompatActivity {
     private static String visiblePackageName;
 
     private static class ViewHolder {
+        TextView versionCode;
         TextView version;
         TextView status;
         TextView repository;
@@ -201,15 +202,16 @@ public class AppDetails extends AppCompatActivity {
                 convertView = mInflater.inflate(R.layout.apklistitem, parent, false);
 
                 holder = new ViewHolder();
-                holder.version = (TextView) convertView.findViewById(R.id.version);
-                holder.status = (TextView) convertView.findViewById(R.id.status);
-                holder.repository = (TextView) convertView.findViewById(R.id.repository);
-                holder.size = (TextView) convertView.findViewById(R.id.size);
-                holder.api = (TextView) convertView.findViewById(R.id.api);
-                holder.incompatibleReasons = (TextView) convertView.findViewById(R.id.incompatible_reasons);
-                holder.buildtype = (TextView) convertView.findViewById(R.id.buildtype);
-                holder.added = (TextView) convertView.findViewById(R.id.added);
-                holder.nativecode = (TextView) convertView.findViewById(R.id.nativecode);
+                holder.version = convertView.findViewById(R.id.version);
+                holder.versionCode = convertView.findViewById(R.id.versionCode);
+                holder.status = convertView.findViewById(R.id.status);
+                holder.repository = convertView.findViewById(R.id.repository);
+                holder.size = convertView.findViewById(R.id.size);
+                holder.api = convertView.findViewById(R.id.api);
+                holder.incompatibleReasons = convertView.findViewById(R.id.incompatible_reasons);
+                holder.buildtype = convertView.findViewById(R.id.buildtype);
+                holder.added = convertView.findViewById(R.id.added);
+                holder.nativecode = convertView.findViewById(R.id.nativecode);
 
                 convertView.setTag(holder);
             } else {
@@ -219,7 +221,11 @@ public class AppDetails extends AppCompatActivity {
             holder.version.setText(getString(R.string.version)
                     + " " + apk.versionName
                     + (apk.versionCode == app.suggestedVersionCode ? "  ☆" : ""));
-
+            if (!Preferences.get().expertMode()) {
+                holder.versionCode.setVisibility(View.GONE);
+            } else {
+                holder.versionCode.setText("(" + apk.versionCode + ")");
+            }
             holder.status.setText(getInstalledStatus(apk));
 
             holder.repository.setText(getString(R.string.repo_provider,
