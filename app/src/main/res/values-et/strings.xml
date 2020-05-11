@@ -5,7 +5,7 @@
     <string name="installIncompatible">Tundub, et see pakett ei ühildu su seadmega. Kas sa soovid ikkagi proovida selle paigaldamist?</string>
     <string name="installDowngrade">Sa proovid võtta kasutusele programmi varasemat versiooni. Sedasi võib programm töötada valesti või isegi kustutada su andmeid. Kas sa soovid ikkagi proovida varasema versiooni kasutamist?</string>
     <string name="version">Versioon</string>
-    <string name="by_author">autoritelt</string>
+    <string name="by_author_format">autoritelt %s</string>
     <string name="delete">Kustuta</string>
     <string name="cache_downloaded">Jäta alles puhverdatud paketid</string>
     <string name="updates">Värskendused</string>

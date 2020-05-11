@@ -172,7 +172,7 @@
         <string name="all_other_repos_fine">Dzimwe pfimbi dzose hadzina kusika kanganiso.</string>
         <string name="global_error_updating_repos">Kanganiso pakunatsa: %s</string>
     <string name="warning_no_internet">Hatisi kukwanisa kunatsa, unechokwadi kuti wakahakira padandemutande here?</string>
-    <string name="by_author">na</string>
+    <string name="by_author_format">na %s</string>
     <string name="installIncompatible">Zvirikuratidza sekunge pakeji inoiyi haiwirirane nemuchina wako. Urikuda kuyedza nekuvakirira zvakangodaro here?</string>
     <string name="installDowngrade">Urikuyedza kudzikisira application inoiyi. Kuita sekudaro kunokwanisa kuita kuti itadze kushanda nekurasa data rako zvekare. Urikuda kuyedza nekudzikisira zvakangodaro here?</string>
     <string name="cache_downloaded">Chengeta maApps ari cached</string>

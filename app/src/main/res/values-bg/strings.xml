@@ -233,7 +233,7 @@
 
     <string name="perms_new_perm_prefix">"Ново: "</string>
     <string name="perms_description_app">Предоставено от %1$s.</string>
-    <string name="by_author">от</string>
+    <string name="by_author_format">от %s</string>
     <string name="login_title">Нужна е автентификация</string>
     <string name="login_name">Потребителско име</string>
     <string name="login_password">Парола</string>

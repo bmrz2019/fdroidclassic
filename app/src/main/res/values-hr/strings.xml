@@ -5,7 +5,7 @@
     <string name="installIncompatible">Čini se da ovaj paket nije kompatibilan s Vašim uređajem. Želite li ga svejedno pokušati instalirati?</string>
     <string name="installDowngrade">Pokušavate unazaditi aplikaciju na prošlu verziju. Ukoliko to napravite, aplikacija može prestati raditi ili čak izgubiti Vaše podatke. Želite li ju svejedno unazaditi?</string>
     <string name="version">Verzija</string>
-    <string name="by_author">od</string>
+    <string name="by_author_format">od %s</string>
     <string name="delete">Obriši</string>
     <string name="cache_downloaded">Zadrži privremene aplikacije</string>
     <string name="updates">Ažuriranja</string>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="by_author">द्वारा</string>
+<resources>
     <string name="delete">नष्ट करे</string>
     <string name="version">संस्करण</string>
     <string name="updates">नवीनतम बनाये</string>

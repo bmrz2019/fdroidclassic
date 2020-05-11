@@ -50,7 +50,7 @@
     <string name="SignatureMismatch">Noua versiune este semnata cu o cheie diferita fata de versiunea veche. Pentru a putea instala noua versiune, cea veche trebuie intai dezinstalata. Va rugam sa faceti asta si sa reincercati. (Tineti minte ca procesul de dezinstalare a aplicatiei o sa stearga datele interne stocate ale acesteia)</string>
     <string name="app_name">F-Droid</string>
 
-    <string name="by_author">de catre</string>
+    <string name="by_author_format">de catre %s</string>
     <string name="update_interval">Interval actualizari automate</string>
     <string name="automatic_scan_wifi">Doar prin Wi-Fi</string>
     <string name="unstable_updates">Actualizari instabile</string>

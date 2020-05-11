@@ -258,7 +258,7 @@
     <string name="tab_installed_apps_count">Đã cài đặt (%d)</string>
     <string name="tab_updates_count">Cập nhật (%d)</string>
     <string name="status_inserting_apps">Đang lưu thông tin ứng dụng</string>
-    <string name="by_author">bởi</string>
+    <string name="by_author_format">bởi %s</string>
     <string name="menu_email">E-mail tác giả</string>
     <string name="useTor">Sử dụng Tor</string>
     <string name="useTorSummary">Tải xuống thông qua Tor để tăng tính riêng tư</string>

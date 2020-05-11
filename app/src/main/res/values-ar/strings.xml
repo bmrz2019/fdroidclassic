@@ -65,7 +65,6 @@
     <string name="installIncompatible">يبدو أن هذه الحزمة غير متوافقة مع جهازك. هل ترغب في محاولة لتثبيتها على أي حال؟</string>
     <string name="menu_email">إرسال رسالة للمؤلف</string>
     <string name="installDowngrade">بهذا الخيار سيتم تراجع التطبيق. القيام بذلك قد يحصل عليه خلل اوحتى فقدان البيانات الخاصة بك. هل ترغب في محاولة لتخفيض التطبيق على أي حال؟</string>
-    <string name="by_author">بواسطة</string>
   <string name="cache_downloaded">إبقاء التطبيقات المخزنة مؤقتا</string>
     <string name="unstable_updates">تحديثات غير مستقرة</string>
     <string name="unstable_updates_summary">اقتراح تحديثات للإصدارات الغير المستقرة</string>

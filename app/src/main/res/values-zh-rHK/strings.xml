@@ -291,7 +291,6 @@
 不可被驗證。您要小心使用
 來自未簽署的索引的應用程式。</string>
     <string name="useTor">使用 Tor</string>
-    <string name="by_author">作者為</string>
     <string name="useTorSummary">要求下載流量經過 Tor ，以加強對私隱的保障</string>
     <string name="update_auto_download">自動下載更新</string>
     <string name="update_auto_download_summary">在背後下載更新檔案</string>

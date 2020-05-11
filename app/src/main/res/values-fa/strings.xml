@@ -264,7 +264,6 @@
     <string name="install_confirm_update_system_no_perms">می‌خواهید به‌روزرسانی‌ای برای این برنامهٔ داخلی نصب کنید؟ داده‌های موجودتان از بین نخواهند رفت. نیاز به هیچ دسترسی خاصّی ندارد.</string>
     <string name="uninstall_update_confirm">مایلید این نرم‌افزار را جایگزین نسخه کارخانه کنید؟</string>
     <string name="uninstall_confirm">می‌خواهید این نرم‌افزار را حذف کنید؟</string>
-    <string name="by_author">توسّط</string>
     <string name="menu_email">رایانامه به نویسنده</string>
     <string name="antinonfreeassetslist">این کاره شامل ابزارهای غیرآزاد است</string>
 

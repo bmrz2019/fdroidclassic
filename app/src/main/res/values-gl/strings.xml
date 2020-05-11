@@ -257,5 +257,5 @@
     <string name="writing_index_jar">Escribindo índice firmado para o ficheiro (index.jar)…</string>
     <string name="system_install_post_success_message">F-Droid Privileged Extension instalouse correctamente. Esto permite á F-Droid instalar, actualizar e desinstalar aplicativos pola súa conta.</string>
     <string name="system_install_post_fail_message">A instalación de F-Droid Privileged Extension fallou. O método de instalación non está dispoñible para todas as distribucións Android, por favor, consulta o seguimento de erros de F-Droid para máis información.</string>
-    <string name="by_author">por</string>
+    <string name="by_author_format">por %s</string>
     </resources>

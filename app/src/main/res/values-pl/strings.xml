@@ -262,7 +262,7 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="tab_installed_apps_count">Zainstalowane (%d)</string>
     <string name="tab_updates_count">Aktualizacje (%d)</string>
     <string name="status_inserting_apps">Zapisywanie danych aplikacji</string>
-    <string name="by_author">od</string>
+    <string name="by_author_format">od %s</string>
     <string name="menu_email">E-mail do autora</string>
     <string name="antinonfreeassetslist">Ta aplikacja zawiera niewolną zawartość</string>
 

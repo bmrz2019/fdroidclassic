@@ -2,7 +2,7 @@
 <resources><string name="app_name">F-Droid</string>
 
     <string name="version">Útgáfa</string>
-    <string name="by_author">frá</string>
+    <string name="by_author_format">frá %s</string>
     <string name="delete">Eyða</string>
     <string name="login_name">Notandanafn</string>
     <string name="cache_downloaded">Halda forritum sem eru í biðminni</string>

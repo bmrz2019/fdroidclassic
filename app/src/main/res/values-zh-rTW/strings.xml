@@ -186,7 +186,6 @@
     <string name="repo_exists_add_fingerprint">此儲存庫已經設定，此動作將會加入新的金鑰資訊。</string>
     <string name="repo_delete_to_overwrite">在加入含有不同金鑰的儲存庫前，您需要先刪除此儲存庫。</string>
     <string name="repo_fingerprint">金鑰指紋 (SHA-256)</string>
-    <string name="by_author">由</string>
     <string name="system_installer">特權擴充</string>
     <string name="category_Navigation">導航</string>
     <string name="category_Connectivity">連線傳輸</string>
