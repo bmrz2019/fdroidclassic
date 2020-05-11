@@ -1383,7 +1383,7 @@ public class AppDetails extends AppCompatActivity {
             }
         }
 
-        public void updateViews(View view) {
+        void updateViews(View view) {
             if (view == null) {
                 Log.e(TAG, "AppDetailsSummaryFragment.updateViews(): view == null. Oops.");
                 return;
@@ -1577,7 +1577,7 @@ public class AppDetails extends AppCompatActivity {
                 return;
             }
             App app = appDetails.getApp();
-            TextView statusView = (TextView) view.findViewById(R.id.status);
+            TextView statusView = view.findViewById(R.id.status);
             btMain.setVisibility(View.VISIBLE);
 
             if (appDetails.activeDownloadUrlString != null) {
@@ -1604,21 +1604,24 @@ public class AppDetails extends AppCompatActivity {
                     updateWanted = false;
                     if (appDetails.packageManager.getLaunchIntentForPackage(app.packageName) != null) {
                         btMain.setText(R.string.menu_launch);
-                    } else {
+                    } else if (app.isUninstallable(getContext())) {
                         btMain.setText(R.string.menu_uninstall);
+                    }
+                    else {
+                        btMain.setVisibility(View.GONE);
                     }
                 }
                 btMain.setOnClickListener(mOnClickListener);
                 btMain.setEnabled(true);
             }
-            TextView author = (TextView) view.findViewById(R.id.author);
+            TextView author = view.findViewById(R.id.author);
             if (!TextUtils.isEmpty(app.authorName)) {
-                author.setText(getString(R.string.by_author) + " " + app.authorName);
+                author.setText(getString(R.string.by_author_format, app.authorName));
                 author.setVisibility(View.VISIBLE);
             }
-            TextView currentVersion = (TextView) view.findViewById(R.id.current_version);
+            TextView currentVersion = view.findViewById(R.id.current_version);
             if (!appDetails.getApks().isEmpty()) {
-                currentVersion.setText(appDetails.getApks().getItem(0).versionName + " (" + app.license + ")");
+                currentVersion.setText(String.format("%s (%s)", appDetails.getApks().getItem(0).versionName, app.license));
             } else {
                 currentVersion.setVisibility(View.GONE);
                 btMain.setVisibility(View.GONE);
