@@ -1643,7 +1643,7 @@ public class AppDetails extends AppCompatActivity {
                     if (activity.packageManager.getLaunchIntentForPackage(app.packageName) != null) {
                         // If "launchable", launch
                         activity.launchApk(app.packageName);
-                    } else {
+                    } else if (app.isUninstallable(getContext())){
                         activity.uninstallApk();
                     }
                 } else if (app.suggestedVersionCode > 0) {
