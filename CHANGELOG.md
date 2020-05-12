@@ -5,7 +5,8 @@
 ### 1.0-beta6 (12.05.2020)
 
 * Display app version codes in expert mode (#22)
-*
+* Don't show uninstall button for apps that aren't uninstallable (i.e. system apps)
+* Some code cleanup and fixes around format string usage. Fixes uninstall error message and makes other messages better translatable.
 
 ### 1.0-beta5 (11.04.2020)
 
