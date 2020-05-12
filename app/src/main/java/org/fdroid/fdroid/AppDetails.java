@@ -1393,7 +1393,7 @@ public class AppDetails extends AppCompatActivity {
             TextView signatureView = view.findViewById(R.id.signature);
             if (prefs.expertMode() && !TextUtils.isEmpty(app.installedSig)) {
                 signatureView.setVisibility(View.VISIBLE);
-                signatureView.setText("Signed: " + app.installedSig);
+                signatureView.setText(getString(R.string.signed, app.installedSig));
             } else {
                 signatureView.setVisibility(View.GONE);
             }
@@ -1410,7 +1410,7 @@ public class AppDetails extends AppCompatActivity {
         private ImageButton cancelButton;
         final DisplayImageOptions displayImageOptions;
         public static boolean installed;
-        public static boolean updateWanted;
+        static boolean updateWanted;
 
         public AppDetailsHeaderFragment() {
             displayImageOptions = new DisplayImageOptions.Builder()
@@ -1530,7 +1530,7 @@ public class AppDetails extends AppCompatActivity {
                 progressBar.setIndeterminate(false);
                 progressBar.setProgress((int) percent);
                 progressBar.setMax(100);
-                progressSize.setText(Utils.getFriendlySize(bytesDownloaded) + " / " + Utils.getFriendlySize(totalBytes));
+                progressSize.setText(String.format("%s / %s",Utils.getFriendlySize(bytesDownloaded), Utils.getFriendlySize(totalBytes)));
                 progressPercent.setText(percent + " %");
             }
         }

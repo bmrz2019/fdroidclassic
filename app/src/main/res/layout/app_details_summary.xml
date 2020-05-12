@@ -62,7 +62,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/description"
@@ -112,15 +113,14 @@ Changelog" />
         android:layout_height="wrap_content"
         android:clickable="true"
         android:orientation="vertical"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="UnusedAttribute"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/information"
             style="@style/AppDetailsSubheaderText"
             android:text="@string/links"
-            android:drawableRight="@drawable/ic_expand_more_grey600"
             android:drawableEnd="@drawable/ic_expand_more_grey600"
-            android:drawableLeft="@drawable/ic_website"
             android:drawableStart="@drawable/ic_website" />
 
         <LinearLayout
@@ -128,70 +128,60 @@ Changelog" />
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="@dimen/layout_horizontal_margin"
             android:layout_marginStart="@dimen/layout_horizontal_margin"
             android:visibility="gone">
 
             <TextView
                 android:id="@+id/source"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_source_code"
                 android:drawableStart="@drawable/ic_source_code"
                 android:text="@string/menu_source" />
 
             <TextView
                 android:id="@+id/issues"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_issues"
                 android:drawableStart="@drawable/ic_issues"
                 android:text="@string/menu_issues" />
 
             <TextView
                 android:id="@+id/changelog"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_changelog"
                 android:drawableStart="@drawable/ic_changelog"
                 android:text="@string/menu_changelog" />
 
             <TextView
                 android:id="@+id/website"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_website"
                 android:drawableStart="@drawable/ic_website"
                 android:text="@string/menu_website" />
 
             <TextView
                 android:id="@+id/email"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_email"
                 android:drawableStart="@drawable/ic_email"
                 android:text="@string/menu_email" />
 
             <TextView
                 android:id="@+id/donate"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_donate"
                 android:drawableStart="@drawable/ic_donate"
                 android:text="@string/menu_donate" />
 
             <TextView
                 android:id="@+id/bitcoin"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_bitcoin"
                 android:drawableStart="@drawable/ic_bitcoin"
                 android:text="@string/menu_bitcoin" />
 
             <TextView
                 android:id="@+id/litecoin"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_litecoin"
                 android:drawableStart="@drawable/ic_litecoin"
                 android:text="@string/menu_litecoin" />
 
             <TextView
                 android:id="@+id/flattr"
                 style="@style/AppDetailsLink"
-                android:drawableLeft="@drawable/ic_flattr"
                 android:drawableStart="@drawable/ic_flattr"
                 android:text="@string/menu_flattr" />
 
@@ -205,15 +195,14 @@ Changelog" />
         android:clickable="true"
         android:orientation="vertical"
         android:layout_marginBottom="8dp"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="UnusedAttribute"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/permissions"
             style="@style/AppDetailsSubheaderText"
             android:text="@string/permissions"
-            android:drawableLeft="@drawable/ic_lock_24dp_grey600"
             android:drawableStart="@drawable/ic_lock_24dp_grey600"
-            android:drawableRight="@drawable/ic_expand_more_grey600"
             android:drawableEnd="@drawable/ic_expand_more_grey600" />
 
         <LinearLayout
@@ -225,7 +214,6 @@ Changelog" />
             android:textSize="14sp"
             android:visibility="gone"
             android:paddingEnd="4dp"
-            android:paddingRight="4dp"
             tools:ignore="RtlSymmetry" />
 
     </LinearLayout>

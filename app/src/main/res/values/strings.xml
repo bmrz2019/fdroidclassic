@@ -372,5 +372,6 @@
     <string name="download_404">The requested file was not found.</string>
     <string name="share_repository">Share Repository</string>
     <string name="by_author_format">by %s</string>
+    <string name="signed">Signed: %s</string>
 
 </resources>
