@@ -745,7 +745,7 @@ public class AppDetails extends AppCompatActivity {
                     .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
         }
 
-        if (app.isInstalled(this.context)) {
+        if (app.isInstalled(this.context) && app.isUninstallable(this.context)) {
             menu.add(Menu.NONE, UNINSTALL, 1, R.string.menu_uninstall)
                     .setIcon(R.drawable.ic_delete_white)
                     .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
