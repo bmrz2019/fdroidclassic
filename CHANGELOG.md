@@ -1,5 +1,10 @@
-### 1.0-beta6 (?)
+### 1.0-beta7 (?)
 
+*
+
+### 1.0-beta6 (12.05.2020)
+
+* Display app version codes in expert mode (#22)
 *
 
 ### 1.0-beta5 (11.04.2020)
