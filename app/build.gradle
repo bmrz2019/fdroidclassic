@@ -82,7 +82,7 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 25
-        versionCode 1005
+        versionCode 1006
         applicationId myApplicationId
         resValue "string", "applicationId", myApplicationId
         versionName getVersionName()
