@@ -81,6 +81,7 @@ import org.fdroid.fdroid.data.AppPrefsProvider;
 import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.InstalledApp;
 import org.fdroid.fdroid.data.InstalledAppProvider;
+import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.installer.InstallManagerService;
@@ -227,9 +228,12 @@ public class AppDetails extends AppCompatActivity {
                 holder.versionCode.setText(String.format("(%s)",apk.versionCode));
             }
             holder.status.setText(getInstalledStatus(apk));
-
-            holder.repository.setText(getString(R.string.repo_provider,
-                    RepoProvider.Helper.findById(getContext(), apk.repoId).getName()));
+            Repo repo = RepoProvider.Helper.findById(context, apk.repoId);
+            if (repo != null) {
+                holder.repository.setText(String.format(context.getString(R.string.repo_provider), repo.getName()));
+            } else {
+                holder.repository.setText(String.format(context.getString(R.string.repo_provider), "-"));
+            }
 
             if (apk.size > 0) {
                 holder.size.setText(Utils.getFriendlySize(apk.size));
