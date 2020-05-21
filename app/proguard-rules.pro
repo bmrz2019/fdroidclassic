@@ -14,13 +14,6 @@
 # ch.boye.httpclientandroidlib.** classes are also unneeded
 -dontwarn info.guardianproject.netcipher.client.**
 
-# These libraries are known to break if minification is enabled on them. They
-# use reflection to instantiate classes, for example. If the keep flags are
-# removed, proguard will strip classes which are required, which may result in
-# crashes.
--keep class kellinwood.security.zipsigner.** {*;}
--keep class org.spongycastle.** {*;}
-
 # This keeps class members used for SystemInstaller IPC.
 #   Reference: https://gitlab.com/fdroid/fdroidclient/issues/79
 -keepclassmembers class * implements android.os.IInterface {

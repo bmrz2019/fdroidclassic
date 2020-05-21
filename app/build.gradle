@@ -50,19 +50,22 @@ dependencies {
 }
 
 def myApplicationId = "eu.bubu1.fdroidclassic"
+def privilegedExtensionApplicationId = '"org.fdroid.fdroid.privileged.do"'
+
 
 android {
     compileSdkVersion 28
 
     buildTypes {
-        // use proguard on debug too since we have unknowingly broken
-        // release builds before.
-        all {
+        release {
             minifyEnabled true
-            useProguard true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'src/androidTest/proguard-rules.pro'
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+        all {
+            buildConfigField "String", "PRIVILEGED_EXTENSION_PACKAGE_NAME", privilegedExtensionApplicationId
         }
         debug {
             applicationIdSuffix ".debug"
