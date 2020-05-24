@@ -85,6 +85,7 @@ import org.fdroid.fdroid.privileged.views.AppDiff;
 import org.fdroid.fdroid.privileged.views.AppSecurityPermissions;
 
 import java.util.List;
+import java.util.Locale;
 
 public class AppDetails extends AppCompatActivity {
 
@@ -991,6 +992,7 @@ public class AppDetails extends AppCompatActivity {
             }
         };
         private ViewGroup layoutLinks;
+        private TextView whatsNewView;
 
         public AppDetailsSummaryFragment() {
             prefs = Preferences.get();
@@ -1116,6 +1118,7 @@ public class AppDetails extends AppCompatActivity {
             App app = appDetails.getApp();
             // Expandable description
             description = view.findViewById(R.id.description);
+            whatsNewView = view.findViewById(R.id.whats_new);
             viewMoreButton = view.findViewById(R.id.view_more_description);
             permissionHeader = view.findViewById(R.id.permissions);
             permissionListView = view.findViewById(R.id.permission_list);
@@ -1148,6 +1151,21 @@ public class AppDetails extends AppCompatActivity {
                 packageNameView.setText(app.packageName);
             } else {
                 packageNameView.setVisibility(View.GONE);
+            }
+
+            //WhatsNew
+            if (TextUtils.isEmpty(app.whatsNew)) {
+                whatsNewView.setVisibility(View.GONE);
+            } else {
+                Locale locale = getResources().getConfiguration().locale;
+
+                StringBuilder sbWhatsNew = new StringBuilder();
+                sbWhatsNew.append(whatsNewView.getContext().getString(R.string.details_new_in_version,
+                        app.getSuggestedVersionName()).toUpperCase(locale));
+                sbWhatsNew.append("\n\n");
+                sbWhatsNew.append(trimNewlines(app.whatsNew));
+                whatsNewView.setText(sbWhatsNew);
+                whatsNewView.setVisibility(View.VISIBLE);
             }
 
             // Summary

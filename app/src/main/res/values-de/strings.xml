@@ -68,6 +68,7 @@
   <string name="menu_donate">Spenden</string>
   <string name="details_installed">Version %s installiert</string>
   <string name="details_notinstalled">Nicht Installiert</string>
+  <string name="details_new_in_version">Neu in Version %s</string>
   <string name="antiadslist">Diese Anwendung enthält Werbung</string>
   <string name="antitracklist">Diese Anwendung verfolgt und versendet Ihre Aktivitäten</string>
   <string name="antinonfreeadlist">Diese Anwendung bewirbt nicht freie Erweiterungen</string>
