@@ -29,6 +29,7 @@
     android:paddingTop="4dp">
 
     <TextView
+        android:textIsSelectable="true"
         android:id="@+id/summary"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -36,13 +37,16 @@
         tools:text="Application manager" />
 
     <TextView
+        android:textIsSelectable="true"
         android:id="@+id/package_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="12sp"
+        android:textStyle="italic"
         tools:text="org.fdroid.fdroid" />
 
     <TextView
+        android:textIsSelectable="true"
         android:id="@+id/signature"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -67,35 +71,35 @@
 
         <TextView
             android:id="@+id/description"
+            android:autoLink="web|email"
+            android:textIsSelectable="true"
+            android:scrollbars="none"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8sp"
             android:singleLine="false"
             android:textSize="13sp"
             tools:text="Connects to F-Droid compatible repositories. The default repo is hosted at f-droid.org, which contains only bona fide FOSS.
-
+\n\n
 Android is open in the sense that you are free to install apks from anywhere you wish, but there are many good reasons for using a client/repository setup:
-
-    * Be notified when updates are available
-    * Keep track of older and beta versions
-    * Filter apps that aren't compatible with the device
-    * Find apps via categories and searchable descriptions
-    * Access associated urls for donations, source code etc.
-    * Stay safe by checking repo index signatures and apk hashes
-
+\n\n
+    * Be notified when updates are available\n
+    * Keep track of older and beta versions\n
+    * Filter apps that aren't compatible with the device\n
+    * Find apps via categories and searchable descriptions\n
+    * Access associated urls for donations, source code etc.\n
+    * Stay safe by checking repo index signatures and apk hashes\n
+\n
 Changelog" />
 
         <TextView
             android:id="@+id/view_more_description"
+            style="@style/DetailsMoreButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:text="@string/more"
-            android:textAllCaps="true"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
-            android:textColor="?android:textColorSecondary"
-            tools:ignore="UnusedAttribute" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="@string/more" />
 
     </LinearLayout>
 
@@ -113,7 +117,6 @@ Changelog" />
         android:layout_height="wrap_content"
         android:clickable="true"
         android:orientation="vertical"
-        tools:ignore="UnusedAttribute"
         android:focusable="true">
 
         <TextView
@@ -195,7 +198,6 @@ Changelog" />
         android:clickable="true"
         android:orientation="vertical"
         android:layout_marginBottom="8dp"
-        tools:ignore="UnusedAttribute"
         android:focusable="true">
 
         <TextView

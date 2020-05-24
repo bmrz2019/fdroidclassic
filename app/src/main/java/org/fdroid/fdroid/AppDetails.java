@@ -23,11 +23,9 @@ package org.fdroid.fdroid;
 
 import android.app.Activity;
 import android.app.PendingIntent;
-import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.ContentObserver;
 import android.graphics.Bitmap;
@@ -44,18 +42,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Layout;
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -64,7 +56,6 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -79,7 +70,6 @@ import org.fdroid.fdroid.data.App;
 import org.fdroid.fdroid.data.AppPrefs;
 import org.fdroid.fdroid.data.AppPrefsProvider;
 import org.fdroid.fdroid.data.AppProvider;
-import org.fdroid.fdroid.data.InstalledApp;
 import org.fdroid.fdroid.data.InstalledAppProvider;
 import org.fdroid.fdroid.data.Repo;
 import org.fdroid.fdroid.data.RepoProvider;
@@ -784,62 +774,6 @@ public class AppDetails extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private static final class SafeLinkMovementMethod extends LinkMovementMethod {
-
-        private static SafeLinkMovementMethod instance;
-
-        private final Context ctx;
-
-        private SafeLinkMovementMethod(Context ctx) {
-            this.ctx = ctx;
-        }
-
-        public static SafeLinkMovementMethod getInstance(Context ctx) {
-            if (instance == null) {
-                instance = new SafeLinkMovementMethod(ctx);
-            }
-            return instance;
-        }
-
-        private static CharSequence getLink(TextView widget, Spannable buffer,
-                MotionEvent event) {
-            int x = (int) event.getX();
-            int y = (int) event.getY();
-            x -= widget.getTotalPaddingLeft();
-            y -= widget.getTotalPaddingTop();
-            x += widget.getScrollX();
-            y += widget.getScrollY();
-
-            Layout layout = widget.getLayout();
-            final int line = layout.getLineForVertical(y);
-            final int off = layout.getOffsetForHorizontal(line, x);
-            final ClickableSpan[] links = buffer.getSpans(off, off, ClickableSpan.class);
-
-            if (links.length > 0) {
-                final ClickableSpan link = links[0];
-                final Spanned s = (Spanned) widget.getText();
-                return s.subSequence(s.getSpanStart(link), s.getSpanEnd(link));
-            }
-            return "null";
-        }
-
-        @Override
-        public boolean onTouchEvent(@NonNull TextView widget, @NonNull Spannable buffer,
-                @NonNull MotionEvent event) {
-            try {
-                return super.onTouchEvent(widget, buffer, event);
-            } catch (ActivityNotFoundException ex) {
-                Selection.removeSelection(buffer);
-                final CharSequence link = getLink(widget, buffer, event);
-                Toast.makeText(ctx,
-                        ctx.getString(R.string.no_handler_app, link),
-                        Toast.LENGTH_LONG).show();
-                return true;
-            }
-        }
-
-    }
-
     private void navigateUp() {
         NavUtils.navigateUpFromSameTask(this);
     }
@@ -945,42 +879,6 @@ public class AppDetails extends AppCompatActivity {
     }
 
     /**
-     * Attempts to find the installed {@link Apk} from the database. If not found, will lookup the
-     * {@link InstalledAppProvider} to find the details of the installed app and use that to
-     * instantiate an {@link Apk} to be returned.
-     *
-     * Cases where an {@link Apk} will not be found in the database and for which we fall back to
-     * the {@link InstalledAppProvider} include:
-     *  + System apps which are provided by a repository, but for which the version code bundled
-     *    with the system is not included in the repository.
-     *  + Regular apps from a repository, where the installed version is old enough that it is no
-     *    longer available in the repository.
-     *
-     * @throws IllegalStateException If neither the {@link PackageManager} or the
-     * {@link InstalledAppProvider} can't find a reference to the installed apk.
-     */
-    @NonNull
-    private Apk getInstalledApk() {
-        try {
-            PackageInfo pi = packageManager.getPackageInfo(app.packageName, 0);
-
-            Apk apk = ApkProvider.Helper.findApkFromAnyRepo(this, pi.packageName, pi.versionCode);
-            if (apk == null) {
-                InstalledApp installedApp = InstalledAppProvider.Helper.findByPackageName(context, pi.packageName);
-                if (installedApp == null) {
-                    throw new IllegalStateException("No installed app found when trying to uninstall");
-                }
-
-                apk = new Apk(installedApp);
-            }
-            return apk;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-            throw new IllegalStateException("Couldn't find installed apk for " + app.packageName, e);
-        }
-    }
-
-    /**
      * Uninstall the app from the current screen.  Since there are many ways
      * to uninstall an app, including from Google Play, {@code adb uninstall},
      * or Settings -> Apps, this method cannot ever be sure that the app isn't
@@ -1040,6 +938,7 @@ public class AppDetails extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case REQUEST_PERMISSION_DIALOG:
                 if (resultCode == Activity.RESULT_OK) {
@@ -1070,13 +969,15 @@ public class AppDetails extends AppCompatActivity {
         private AppDetails appDetails;
         private static final int MAX_LINES = 5;
         private static boolean viewAllDescription;
-        private static LinearLayout llViewMoreDescription;
-        private static LinearLayout llViewMorePermissions;
+        private TextView description;
+        private TextView viewMoreButton;
+        private ViewGroup permissionListView;
+        private TextView permissionHeader;
+        private CharSequence descriptionText;
+        private CharSequence shortDescriptionText;
         private final View.OnClickListener expanderPermissions = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final View permissionListView = llViewMorePermissions.findViewById(R.id.permission_list);
-                final TextView permissionHeader = (TextView) llViewMorePermissions.findViewById(R.id.permissions);
 
                 if (permissionListView.getVisibility() == View.GONE) {
                     permissionListView.setVisibility(View.VISIBLE);
@@ -1094,13 +995,13 @@ public class AppDetails extends AppCompatActivity {
         }
 
         @Override
-        public void onAttach(Activity activity) {
+        public void onAttach(@NonNull Context activity) {
             super.onAttach(activity);
             appDetails = (AppDetails) activity;
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             super.onCreateView(inflater, container, savedInstanceState);
             View summaryView = inflater.inflate(R.layout.app_details_summary, container, false);
             setupView(summaryView);
@@ -1194,15 +1095,16 @@ public class AppDetails extends AppCompatActivity {
 
         private final View.OnClickListener expanderDescription = new View.OnClickListener() {
             public void onClick(View v) {
-                final TextView description = (TextView) llViewMoreDescription.findViewById(R.id.description);
-                final TextView viewMorePermissions = (TextView) llViewMoreDescription.findViewById(R.id.view_more_description);
                 if (viewAllDescription) {
                     description.setMaxLines(Integer.MAX_VALUE);
-                    viewMorePermissions.setText(getString(R.string.less));
+                    description.setText(descriptionText);
+                    viewMoreButton.setText(getString(R.string.less));
                 } else {
                     description.setMaxLines(MAX_LINES);
                     description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                    viewMorePermissions.setText(R.string.more);
+                    viewMoreButton.setText(R.string.more);
+                    //Workaround for weird scroll behaviour :-/
+                    description.setText(shortDescriptionText);
                 }
                 viewAllDescription ^= true;
             }
@@ -1211,25 +1113,30 @@ public class AppDetails extends AppCompatActivity {
         private void setupView(final View view) {
             App app = appDetails.getApp();
             // Expandable description
-            final TextView description = view.findViewById(R.id.description);
-            final Spanned desc = Html.fromHtml(app.description, null, new Utils.HtmlTagHandler());
-            description.setMovementMethod(SafeLinkMovementMethod.getInstance(getActivity()));
-            description.setText(trimNewlines(desc));
-            final View viewMoreDescription = view.findViewById(R.id.view_more_description);
+            description = view.findViewById(R.id.description);
+            viewMoreButton = view.findViewById(R.id.view_more_description);
+            permissionHeader = view.findViewById(R.id.permissions);
+            permissionListView = view.findViewById(R.id.permission_list);
+            descriptionText = trimNewlines(Html.fromHtml(app.description, null, new Utils.HtmlTagHandler()));
+            description.setText(descriptionText);
+            // If description has more than five lines
+            description.setMaxLines(MAX_LINES);
+            description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            viewAllDescription = true;
+            viewMoreButton.setOnClickListener(expanderDescription);
             description.post(() -> {
-                // If description has more than five lines
-                if (description.getLineCount() > MAX_LINES) {
-                    description.setMaxLines(MAX_LINES);
-                    description.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-                    description.setOnClickListener(expanderDescription);
-                    viewAllDescription = true;
-
-                    llViewMoreDescription = view.findViewById(R.id.ll_description);
-                    llViewMoreDescription.setOnClickListener(expanderDescription);
-
-                    viewMoreDescription.setOnClickListener(expanderDescription);
+                if(description.getLineCount()<= MAX_LINES){
+                    viewMoreButton.setVisibility(View.GONE);
                 } else {
-                    viewMoreDescription.setVisibility(View.GONE);
+                    Layout layout = description.getLayout();
+                    int start = layout.getLineStart(0);
+                    int height = description.getHeight();
+                    int endLine = layout.getLineForVertical(height);
+                    int end = layout.getLineEnd(endLine - 1);
+                    shortDescriptionText = trimNewlines(description.getText().subSequence(start, end));
+                    Log.d(TAG, "setupView: " + shortDescriptionText);
+                    description.setText(shortDescriptionText);
+                    viewMoreButton.setVisibility(View.VISIBLE);
                 }
             });
 
@@ -1333,9 +1240,6 @@ public class AppDetails extends AppCompatActivity {
             }
 
             // Expandable permissions
-            llViewMorePermissions = view.findViewById(R.id.ll_permissions);
-            final TextView permissionHeader = view.findViewById(R.id.permissions);
-
             final boolean curApkCompatible = curApk != null && curApk.compatible;
             if (!appDetails.getApks().isEmpty() && (curApkCompatible || prefs.showIncompatibleVersions())) {
                 // build and set the string once
@@ -1371,8 +1275,7 @@ public class AppDetails extends AppCompatActivity {
             AppDiff appDiff = new AppDiff(appDetails, appDetails.getApks().getItem(0));
             AppSecurityPermissions perms = new AppSecurityPermissions(appDetails, appDiff.apkPackageInfo);
 
-            final ViewGroup permList = llViewMorePermissions.findViewById(R.id.permission_list);
-            permList.addView(perms.getPermissionsView(AppSecurityPermissions.WHICH_ALL));
+            permissionListView.addView(perms.getPermissionsView(AppSecurityPermissions.WHICH_ALL));
         }
 
         private String descAntiFeature(String af) {
