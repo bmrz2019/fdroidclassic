@@ -32,14 +32,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
-import androidx.core.app.NavUtils;
-import androidx.core.content.ContextCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Layout;
 import android.text.TextUtils;
@@ -60,6 +52,15 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -215,7 +216,7 @@ public class AppDetails extends AppCompatActivity {
             if (!Preferences.get().expertMode()) {
                 holder.versionCode.setVisibility(View.GONE);
             } else {
-                holder.versionCode.setText(String.format("(%s)",apk.versionCode));
+                holder.versionCode.setText(String.format("(%s)", apk.versionCode));
             }
             holder.status.setText(getInstalledStatus(apk));
             Repo repo = RepoProvider.Helper.findById(context, apk.repoId);
@@ -236,16 +237,16 @@ public class AppDetails extends AppCompatActivity {
                 holder.api.setVisibility(View.GONE);
             } else if (apk.minSdkVersion > 0 && apk.maxSdkVersion < Apk.SDK_VERSION_MAX_VALUE) {
                 holder.api.setText(getString(R.string.minsdk_up_to_maxsdk,
-                            Utils.getAndroidVersionName(apk.minSdkVersion),
-                            Utils.getAndroidVersionName(apk.maxSdkVersion)));
+                        Utils.getAndroidVersionName(apk.minSdkVersion),
+                        Utils.getAndroidVersionName(apk.maxSdkVersion)));
                 holder.api.setVisibility(View.VISIBLE);
             } else if (apk.minSdkVersion > 0) {
                 holder.api.setText(getString(R.string.minsdk_or_later,
-                            Utils.getAndroidVersionName(apk.minSdkVersion)));
+                        Utils.getAndroidVersionName(apk.minSdkVersion)));
                 holder.api.setVisibility(View.VISIBLE);
             } else if (apk.maxSdkVersion > 0) {
                 holder.api.setText(getString(R.string.up_to_maxsdk,
-                            Utils.getAndroidVersionName(apk.maxSdkVersion)));
+                        Utils.getAndroidVersionName(apk.maxSdkVersion)));
                 holder.api.setVisibility(View.VISIBLE);
             }
 
@@ -257,7 +258,7 @@ public class AppDetails extends AppCompatActivity {
 
             if (apk.added != null) {
                 holder.added.setText(getString(R.string.added_on,
-                            df.format(apk.added)));
+                        df.format(apk.added)));
                 holder.added.setVisibility(View.VISIBLE);
             } else {
                 holder.added.setVisibility(View.GONE);
@@ -273,8 +274,8 @@ public class AppDetails extends AppCompatActivity {
             if (apk.incompatibleReasons != null) {
                 holder.incompatibleReasons.setText(
                         getResources().getString(
-                            R.string.requires_features,
-                            TextUtils.join(", ", apk.incompatibleReasons)));
+                                R.string.requires_features,
+                                TextUtils.join(", ", apk.incompatibleReasons)));
                 holder.incompatibleReasons.setVisibility(View.VISIBLE);
             } else {
                 holder.incompatibleReasons.setVisibility(View.GONE);
@@ -282,15 +283,15 @@ public class AppDetails extends AppCompatActivity {
 
             // Disable it all if it isn't compatible...
             final View[] views = {
-                convertView,
-                holder.version,
-                holder.status,
-                holder.repository,
-                holder.size,
-                holder.api,
-                holder.buildtype,
-                holder.added,
-                holder.nativecode,
+                    convertView,
+                    holder.version,
+                    holder.status,
+                    holder.repository,
+                    holder.size,
+                    holder.api,
+                    holder.buildtype,
+                    holder.added,
+                    holder.nativecode,
             };
 
             for (final View v : views) {
@@ -301,12 +302,12 @@ public class AppDetails extends AppCompatActivity {
         }
     }
 
-    private static final int INSTALL            = Menu.FIRST;
-    private static final int UNINSTALL          = Menu.FIRST + 1;
-    private static final int IGNOREALL          = Menu.FIRST + 2;
-    private static final int IGNORETHIS         = Menu.FIRST + 3;
-    private static final int LAUNCH             = Menu.FIRST + 4;
-    private static final int SHARE              = Menu.FIRST + 5;
+    private static final int INSTALL = Menu.FIRST;
+    private static final int UNINSTALL = Menu.FIRST + 1;
+    private static final int IGNOREALL = Menu.FIRST + 2;
+    private static final int IGNORETHIS = Menu.FIRST + 3;
+    private static final int LAUNCH = Menu.FIRST + 4;
+    private static final int SHARE = Menu.FIRST + 5;
 
     private App app;
     private PackageManager packageManager;
@@ -339,6 +340,7 @@ public class AppDetails extends AppCompatActivity {
 
     /**
      * Attempt to extract the packageName from the intent which launched this activity.
+     *
      * @return May return null, if we couldn't find the packageName. This should
      * never happen as AppDetails is only to be called by the FDroid activity
      * and not externally.
@@ -473,9 +475,9 @@ public class AppDetails extends AppCompatActivity {
         visiblePackageName = null;
         // save the active URL for this app in case we come back
         getPreferences(MODE_PRIVATE)
-            .edit()
-            .putString(getPackageNameFromIntent(getIntent()), activeDownloadUrlString)
-            .apply();
+                .edit()
+                .putString(getPackageNameFromIntent(getIntent()), activeDownloadUrlString)
+                .apply();
         if (app != null && !app.getPrefs(this).equals(startingPrefs)) {
             Utils.debugLog(TAG, "Updating 'ignore updates', as it has changed since we started the activity...");
             AppPrefsProvider.Helper.update(this, app, app.getPrefs(this));
@@ -530,7 +532,7 @@ public class AppDetails extends AppCompatActivity {
                     }
                     cleanUpFinishedDownload();
                     break;
-                case  Downloader.ACTION_CONNECTION_FAILED:
+                case Downloader.ACTION_CONNECTION_FAILED:
                     //TODO: This probably is weird when we actually use another mirror. We should use InstallManagerService here instead.
                     cleanUpFinishedDownload();
                     break;
@@ -750,9 +752,9 @@ public class AppDetails extends AppCompatActivity {
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 
         menu.add(Menu.NONE, IGNOREALL, 2, R.string.menu_ignore_all)
-                    .setIcon(R.drawable.ic_do_not_disturb_white)
-                    .setCheckable(true)
-                    .setChecked(app.getPrefs(context).ignoreAllUpdates);
+                .setIcon(R.drawable.ic_do_not_disturb_white)
+                .setCheckable(true)
+                .setChecked(app.getPrefs(context).ignoreAllUpdates);
 
         if (app.hasUpdates()) {
             menu.add(Menu.NONE, IGNORETHIS, 2, R.string.menu_ignore_this)
@@ -1125,7 +1127,7 @@ public class AppDetails extends AppCompatActivity {
             viewAllDescription = true;
             viewMoreButton.setOnClickListener(expanderDescription);
             description.post(() -> {
-                if(description.getLineCount()<= MAX_LINES){
+                if (description.getLineCount() <= MAX_LINES) {
                     viewMoreButton.setVisibility(View.GONE);
                 } else {
                     Layout layout = description.getLayout();
@@ -1336,13 +1338,13 @@ public class AppDetails extends AppCompatActivity {
 
         public AppDetailsHeaderFragment() {
             displayImageOptions = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .imageScaleType(ImageScaleType.NONE)
-                .showImageOnLoading(R.drawable.ic_repo_app_default)
-                .showImageForEmptyUri(R.drawable.ic_repo_app_default)
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .build();
+                    .cacheInMemory(true)
+                    .cacheOnDisk(true)
+                    .imageScaleType(ImageScaleType.NONE)
+                    .showImageOnLoading(R.drawable.ic_repo_app_default)
+                    .showImageForEmptyUri(R.drawable.ic_repo_app_default)
+                    .bitmapConfig(Bitmap.Config.RGB_565)
+                    .build();
         }
 
         @Override
@@ -1369,11 +1371,11 @@ public class AppDetails extends AppCompatActivity {
             TextView tv = view.findViewById(R.id.title);
             tv.setText(app.name);
 
-            btMain   = view.findViewById(R.id.btn_main);
-            progressBar     = view.findViewById(R.id.progress_bar);
-            progressSize    = view.findViewById(R.id.progress_size);
+            btMain = view.findViewById(R.id.btn_main);
+            progressBar = view.findViewById(R.id.progress_bar);
+            progressSize = view.findViewById(R.id.progress_size);
             progressPercent = view.findViewById(R.id.progress_percentage);
-            cancelButton    = view.findViewById(R.id.cancel);
+            cancelButton = view.findViewById(R.id.cancel);
             progressBar.setIndeterminate(false);
             cancelButton.setOnClickListener(this);
 
@@ -1391,7 +1393,7 @@ public class AppDetails extends AppCompatActivity {
          * After resuming the fragment, decide whether or not we need to show the progress bar.
          * Also, put an appropriate message depending on whether or not the download is active or
          * just queued.
-         *
+         * <p>
          * NOTE: this can't be done in the `updateViews` method as it currently stands. The reason
          * is because that method gets called all the time, for all sorts of reasons. The progress
          * bar is updated with actual progress values in response to async broadcasts. If we always
@@ -1452,7 +1454,7 @@ public class AppDetails extends AppCompatActivity {
                 progressBar.setIndeterminate(false);
                 progressBar.setProgress((int) percent);
                 progressBar.setMax(100);
-                progressSize.setText(String.format("%s / %s",Utils.getFriendlySize(bytesDownloaded), Utils.getFriendlySize(totalBytes)));
+                progressSize.setText(String.format("%s / %s", Utils.getFriendlySize(bytesDownloaded), Utils.getFriendlySize(totalBytes)));
                 progressPercent.setText(percent + " %");
             }
         }
@@ -1528,8 +1530,7 @@ public class AppDetails extends AppCompatActivity {
                         btMain.setText(R.string.menu_launch);
                     } else if (app.isUninstallable(getContext())) {
                         btMain.setText(R.string.menu_uninstall);
-                    }
-                    else {
+                    } else {
                         btMain.setVisibility(View.GONE);
                     }
                 }
@@ -1565,7 +1566,7 @@ public class AppDetails extends AppCompatActivity {
                     if (activity.packageManager.getLaunchIntentForPackage(app.packageName) != null) {
                         // If "launchable", launch
                         activity.launchApk(app.packageName);
-                    } else if (app.isUninstallable(getContext())){
+                    } else if (app.isUninstallable(getContext())) {
                         activity.uninstallApk();
                     }
                 } else if (app.suggestedVersionCode > 0) {
