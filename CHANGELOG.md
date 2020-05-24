@@ -1,3 +1,7 @@
+### 1.0-beta8 (?)
+
+* 
+
 ### 1.0-beta7 (24.05.2020)
 
 * Fix a bug where removing a repository without disabling it first would get the app in an inconsistent state.(#29)
