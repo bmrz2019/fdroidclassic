@@ -23,6 +23,8 @@ package org.fdroid.fdroid.installer;
 import android.content.Context;
 import android.text.TextUtils;
 
+import androidx.annotation.NonNull;
+
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Apk;
 
@@ -32,25 +34,24 @@ public class InstallerFactory {
 
     /**
      * Returns an instance of an appropriate installer.
-     * Either DefaultInstaller, PrivilegedInstaller, or in the special
-     * case to install the "F-Droid Privileged Extension" ExtensionInstaller.
+     * Either DefaultInstaller, PrivilegedInstaller, or FileInstaller
      *
      * @param context current {@link Context}
      * @param apk     to be installed, always required.
      * @return instance of an Installer
      */
-    public static Installer create(Context context, Apk apk) {
-        if (apk == null || TextUtils.isEmpty(apk.packageName)) {
+    public static Installer create(Context context, @NonNull Apk apk) {
+        if (TextUtils.isEmpty(apk.packageName)) {
             throw new IllegalArgumentException("Apk.packageName must not be empty: " + apk);
         }
 
         Installer installer;
-        if (PrivilegedInstaller.isDefault(context)) {
+        if (!apk.isApk()) {
+            Utils.debugLog(TAG, "Using FileInstaller for non-apk file");
+            installer = new FileInstaller(context, apk);
+        } else if (PrivilegedInstaller.isDefault(context)) {
             Utils.debugLog(TAG, "privileged extension correctly installed -> PrivilegedInstaller");
             installer = new PrivilegedInstaller(context, apk);
-        } else if (apk.packageName.equals(PrivilegedInstaller.PRIVILEGED_EXTENSION_PACKAGE_NAME)) {
-            // special case for installing "Privileged Extension" with root
-            installer = new ExtensionInstaller(context, apk);
         } else {
             installer = new DefaultInstaller(context, apk);
         }

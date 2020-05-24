@@ -90,7 +90,7 @@ public class ApkFileProvider extends FileProvider {
     private static Uri getSafeUri(Context context, SanitizedFile tempFile, boolean useContentUri) {
         if (useContentUri) {
             Uri apkUri = getUriForFile(context, AUTHORITY, tempFile);
-            context.grantUriPermission(PrivilegedInstaller.PRIVILEGED_EXTENSION_PACKAGE_NAME,
+            context.grantUriPermission(PrivilegedInstaller.getPrivilegedExtensionPackageName(context),
                     apkUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
             return apkUri;
         } else {

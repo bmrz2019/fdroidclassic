@@ -50,7 +50,9 @@ dependencies {
 }
 
 def myApplicationId = "eu.bubu1.fdroidclassic"
-def privilegedExtensionApplicationId = '"org.fdroid.fdroid.privileged.do"'
+def privilegedExtensionApplicationId = '"eu.bubu1.privext"'
+def privilegedExtensionApplicationIdFallback1 = '"org.fdroid.fdroid.privileged.do"'
+def privilegedExtensionApplicationIdFallback2 = '"org.fdroid.fdroid.privileged.root"'
 
 
 android {
@@ -66,6 +68,8 @@ android {
         }
         all {
             buildConfigField "String", "PRIVILEGED_EXTENSION_PACKAGE_NAME", privilegedExtensionApplicationId
+            buildConfigField "String", "PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK1", privilegedExtensionApplicationIdFallback1
+            buildConfigField "String", "PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK2", privilegedExtensionApplicationIdFallback2
         }
         debug {
             applicationIdSuffix ".debug"

@@ -69,7 +69,6 @@ public class PrivilegedInstaller extends Installer {
 
     private static final String PRIVILEGED_EXTENSION_SERVICE_INTENT
             = "org.fdroid.fdroid.privileged.IPrivilegedService";
-    public static final String PRIVILEGED_EXTENSION_PACKAGE_NAME = BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME;
     public static final int IS_EXTENSION_INSTALLED_NO = 0;
     public static final int IS_EXTENSION_INSTALLED_YES = 1;
     public static final int IS_EXTENSION_INSTALLED_SIGNATURE_PROBLEM = 2;
@@ -257,18 +256,46 @@ public class PrivilegedInstaller extends Installer {
                         "device owner has marked the package as uninstallable.");
     }
 
-    public PrivilegedInstaller(Context context, @NonNull Apk apk) {
+    PrivilegedInstaller(Context context, @NonNull Apk apk) {
         super(context, apk);
     }
 
-    public static boolean isExtensionInstalled(Context context) {
+    public static String getPrivilegedExtensionPackageName(Context context) {
         PackageManager pm = context.getPackageManager();
+        String found = null;
         try {
-            pm.getPackageInfo(PRIVILEGED_EXTENSION_PACKAGE_NAME, PackageManager.GET_ACTIVITIES);
-            return pm.getApplicationInfo(PRIVILEGED_EXTENSION_PACKAGE_NAME, 0).enabled;
+            pm.getPackageInfo(BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME, PackageManager.GET_ACTIVITIES);
+            if (pm.getApplicationInfo(BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME, 0).enabled){
+                found = BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME;
+            }
         } catch (PackageManager.NameNotFoundException e) {
-            return false;
+            //do nothing
         }
+        if (found == null){
+            try {
+                pm.getPackageInfo(BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK1, PackageManager.GET_ACTIVITIES);
+                if (pm.getApplicationInfo(BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK1, 0).enabled){
+                    found = BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK1;
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                //do nothing
+            }
+        }
+        if (found == null){
+            try {
+                pm.getPackageInfo(BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK2, PackageManager.GET_ACTIVITIES);
+                if (pm.getApplicationInfo(BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK2, 0).enabled){
+                    found = BuildConfig.PRIVILEGED_EXTENSION_PACKAGE_NAME_FALLBACK2;
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                //do nothing
+            }
+        }
+        return found;
+    }
+
+    public static boolean isExtensionInstalled(Context context) {
+        return getPrivilegedExtensionPackageName(context) != null;
     }
 
     public static int isExtensionInstalledCorrectly(Context context) {
@@ -285,7 +312,7 @@ public class PrivilegedInstaller extends Installer {
             }
         };
         Intent serviceIntent = new Intent(PRIVILEGED_EXTENSION_SERVICE_INTENT);
-        serviceIntent.setPackage(PRIVILEGED_EXTENSION_PACKAGE_NAME);
+        serviceIntent.setPackage(getPrivilegedExtensionPackageName(context));
 
         // try to connect to check for signature
         try {
@@ -348,7 +375,7 @@ public class PrivilegedInstaller extends Installer {
         };
 
         Intent serviceIntent = new Intent(PRIVILEGED_EXTENSION_SERVICE_INTENT);
-        serviceIntent.setPackage(PRIVILEGED_EXTENSION_PACKAGE_NAME);
+        serviceIntent.setPackage(getPrivilegedExtensionPackageName(context));
         context.getApplicationContext().bindService(serviceIntent, mServiceConnection,
                 Context.BIND_AUTO_CREATE);
     }
@@ -393,7 +420,7 @@ public class PrivilegedInstaller extends Installer {
         };
 
         Intent serviceIntent = new Intent(PRIVILEGED_EXTENSION_SERVICE_INTENT);
-        serviceIntent.setPackage(PRIVILEGED_EXTENSION_PACKAGE_NAME);
+        serviceIntent.setPackage(getPrivilegedExtensionPackageName(context));
         context.getApplicationContext().bindService(serviceIntent, mServiceConnection,
                 Context.BIND_AUTO_CREATE);
     }

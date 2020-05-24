@@ -31,7 +31,7 @@ public class PackageManagerCompat {
     public static void setInstaller(Context context, PackageManager mPm, String packageName) {
         try {
             if (Build.VERSION.SDK_INT >= 24 && PrivilegedInstaller.isDefault(context)) {
-                mPm.setInstallerPackageName(packageName, PrivilegedInstaller.PRIVILEGED_EXTENSION_PACKAGE_NAME);
+                mPm.setInstallerPackageName(packageName, PrivilegedInstaller.getPrivilegedExtensionPackageName(context));
             } else {
                 mPm.setInstallerPackageName(packageName, BuildConfig.APPLICATION_ID);
             }

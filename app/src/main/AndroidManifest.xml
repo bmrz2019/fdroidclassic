@@ -374,10 +374,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".FDroid" />
         </activity>
-        <!-- Note: AppThemeTransparent, this activity shows dialogs only -->
-        <activity
-            android:name=".privileged.install.InstallExtensionDialogActivity"
-            android:theme="@style/AppThemeTransparent" />
         <activity android:name=".data.ObbUrlActivity"
             android:theme="@android:style/Theme.NoDisplay" />
         <receiver
@@ -438,6 +434,7 @@
             android:name=".data.InstalledAppProviderService"
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="false" />
+        <activity android:name=".installer.FileInstallerActivity" android:theme="@style/AppThemeTransparent"/>
     </application>
 
 </manifest>
