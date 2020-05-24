@@ -1,6 +1,10 @@
-### 1.0-beta7 (?)
+### 1.0-beta7 (24.05.2020)
 
-*
+* Fix a bug where removing a repository without disabling it first would get the app in an inconsistent state.(#29)
+* Switch from proguard to d8 for optimizing the apk. This should hopefully not cause any user visible changes.
+* Add FileInstaller for installing non-apk files
+* Add a list of supported privileged extension packageids. Still need figure out a release process for these.
+* Fix a crash when uninstalling an app. (#25)
 
 ### 1.0-beta6 (12.05.2020)
 

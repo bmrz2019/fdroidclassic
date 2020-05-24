@@ -4,7 +4,7 @@ Join the matrix room: [#fdroidclassic:bubu1.eu](https://matrix.to/#/#fdroidclass
 
 ### Download
 
-Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1003.apk
+Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1006.apk
 
 This comes with it's own F-Droid repository for updates pre-configured.
 
@@ -22,20 +22,23 @@ This project is probably aimed more at the power user who values function over f
 
 <img src="screenshots/screenshot.png" width="400">
 
-## Plan/Todo
+## Status
 
-### What should go in
+### What works
 
-* First of all will be index-v1 support.
+* index-v1 support.
+* Privileged Extension support (in progress, need to release the extensions somewhere)
+
+### Todo
+
 * Support for the additional features provided by the new index format.
   * Screenshots
   * Inline changelogs
   * Localized metadata
   * Feature graphics (maybe, very low priority)
-* Privileged Extension support (To be discussed how that will work exactly)
 * ...
 
-### What will be out
+### Currently considered out of scope
 
 * Swap. I almost never use it and I don't know many people that do. There's still the official client if you need that functionality.
 * App auto install via repo push
@@ -44,7 +47,8 @@ This project is probably aimed more at the power user who values function over f
 * Support for very old version of Android (< 4.0).
   * Currently minimum Android version is 4.4, supporting 4.0 would be possible with some effort, but I'm not sure that's worth it.
   * Even on Android 4.4 we can't currently support TLSv1.2, which is bad.
-  * TLSv1.2 support on Android 4.4 is theoretically possible, but I'm not sure how much effort it would be.
+  * TLSv1.2 support on Android 4.4 is theoretically possible, but without using googles magic it's a lot of effort for very little benefit.
+  * There's some recent discussion around this here: https://forum.f-droid.org/t/lack-of-tls-1-2-breaking-apps-in-older-androids/9823
 
 
 ## Building with Gradle
@@ -61,18 +65,15 @@ to what Google Play does.
 
 * What about privileged extension support?
 
+Currently being worked on. There will be a separate privileged extension for Classic. There might be an extension which supports multiple clients in the future though.
+
 See here for some discussion about this: https://gitlab.com/fdroid/privileged-extension/issues/50
-Meanwhile you can get a privext that supports both official F-Droid client and F-Droid classic here:
 
-https://gitlab.com/Bubu/privileged-extension/-/jobs/96114583/artifacts/file/app/build/distributions/F-DroidPrivilegedExtension-0.2.8-3-gbffdd48-debug.zip
-
-* Can I avoid enabling "Unknown Sources" by installing F-Droid Classic as a
-  privileged system app?
+* Can I avoid enabling "Unknown Sources" by installing F-Droid Classic as a  privileged system app?
 
 This used to be the case, but no longer is. Now the [Privileged
 Extension](https://gitlab.com/fdroid/privileged-extension) is the one that should be placed in
-the system. It can be bundled with a ROM or installed via a zip, or
-alternatively F-Droid can install it as a system app using root.
+the system. It can be bundled with a ROM or installed via a zip.
 
 ## License
 
@@ -96,7 +97,7 @@ released under an
 
 ## Translation
 
-TODO:
+TODO!
 Everything can be translated.  See
 [Translation and Localization](https://f-droid.org/docs/Translation_and_Localization)
 for more info.
