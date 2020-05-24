@@ -24,7 +24,9 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Build;
+
 import androidx.core.content.FileProvider;
+
 import org.fdroid.fdroid.BuildConfig;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.SanitizedFile;
@@ -90,8 +92,10 @@ public class ApkFileProvider extends FileProvider {
     private static Uri getSafeUri(Context context, SanitizedFile tempFile, boolean useContentUri) {
         if (useContentUri) {
             Uri apkUri = getUriForFile(context, AUTHORITY, tempFile);
-            context.grantUriPermission(PrivilegedInstaller.getPrivilegedExtensionPackageName(context),
-                    apkUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            if (PrivilegedInstaller.isDefault(context)) {
+                context.grantUriPermission(PrivilegedInstaller.getPrivilegedExtensionPackageName(context),
+                        apkUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            }
             return apkUri;
         } else {
             tempFile.setReadable(true, false);
