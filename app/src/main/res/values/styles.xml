@@ -5,6 +5,7 @@
         <!-- backward-compatibility theme options go here -->
         <item name="detailPanel">@drawable/details_panel_donate_background_dark</item>
         <item name="colorPrimary">@color/fdroid_blue_dark</item>
+        <item name="colorPrimaryLight">@color/fdroid_blue</item>
         <item name="colorPrimaryDark">@color/fdroid_blue_darkest</item>
         <item name="colorAccent">@color/fdroid_green</item>
         <item name="android:textColorLink">@color/fdroid_green</item>
@@ -17,6 +18,7 @@
         <!-- backward-compatibility theme options go here -->
         <item name="detailPanel">@drawable/details_panel_donate_background_light</item>
         <item name="colorPrimary">@color/fdroid_blue</item>
+        <item name="colorPrimaryLight">@color/fdroid_blue_dark</item>
         <item name="colorPrimaryDark">@color/fdroid_blue_dark</item>
         <item name="colorAccent">@color/fdroid_green</item>
         <item name="android:textColorLink">@color/fdroid_green</item>
@@ -38,6 +40,7 @@
         <!-- customizations that are not API-level specific go here. -->
         <item name="detailPanel">@drawable/details_panel_donate_background_night</item>
         <item name="colorPrimary">@color/fdroid_night</item>
+        <item name="colorPrimaryLight">@color/fdroid_night_light</item>
         <item name="colorPrimaryDark">@color/fdroid_night_dark</item>
         <item name="android:windowBackground">@android:color/black</item>
     </style>

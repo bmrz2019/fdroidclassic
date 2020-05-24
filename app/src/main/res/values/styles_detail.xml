@@ -14,11 +14,16 @@
 
     <style name="DetailsButtonStyle" parent="DetailsButtonStyleBase"/>
 
+    <style name="DetailsPrimaryButtonStyle" parent="DetailsButtonStyle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/button_primary_background_selector</item>
+    </style>
+
     <style name="DetailsMoreButtonStyle" parent="DetailsButtonStyle">
         <item name="android:padding">8dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/fdroid_blue</item>
+        <item name="android:textColor">?attr/colorPrimaryLight</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
 

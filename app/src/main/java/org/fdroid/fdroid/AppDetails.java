@@ -1525,6 +1525,7 @@ public class AppDetails extends AppCompatActivity {
             if (appDetails.activeDownloadUrlString != null) {
                 btMain.setText(R.string.downloading);
                 btMain.setEnabled(false);
+                btMain.setVisibility(View.GONE);
             } else if (!app.isInstalled(this.getContext()) && app.suggestedVersionCode > 0 &&
                     appDetails.adapter.getCount() > 0) {
                 // Check count > 0 due to incompatible apps resulting in an empty list.
@@ -1535,6 +1536,7 @@ public class AppDetails extends AppCompatActivity {
                 btMain.setText(R.string.menu_install);
                 btMain.setOnClickListener(mOnClickListener);
                 btMain.setEnabled(true);
+                btMain.setVisibility(View.VISIBLE);
             } else if (app.isInstalled(this.getContext())) {
                 // If App is installed
                 installed = true;
@@ -1554,6 +1556,7 @@ public class AppDetails extends AppCompatActivity {
                 }
                 btMain.setOnClickListener(mOnClickListener);
                 btMain.setEnabled(true);
+                btMain.setVisibility(View.VISIBLE);
             }
             TextView author = view.findViewById(R.id.author);
             if (!TextUtils.isEmpty(app.authorName)) {

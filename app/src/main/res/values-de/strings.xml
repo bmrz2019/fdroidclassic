@@ -257,7 +257,7 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="perms_description_app">Bereitgestellt von %1$s.</string>
     <string name="downloading">Wird heruntergeladen …</string>
 
-    <string name="theme_night">Nacht</string>
+    <string name="theme_night">Schwarz</string>
 <string name="login_title">Legitimierung erforderlich</string>
     <string name="login_name">Benutzername</string>
     <string name="login_password">Passwort</string>
