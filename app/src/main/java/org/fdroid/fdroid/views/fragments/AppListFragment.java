@@ -165,16 +165,7 @@ public abstract class AppListFragment extends ListFragment implements
             Intent intent = getAppDetailsIntent();
             intent.putExtra(AppDetails.EXTRA_APPID, app.packageName);
             intent.putExtra(AppDetails.EXTRA_FROM, getFromTitle());
-            if (Build.VERSION.SDK_INT >= 21) {
-                Pair<View, String> iconTransitionPair = Pair.create(view.findViewById(R.id.icon),
-                        getString(R.string.transition_app_item_icon));
-                Bundle bundle = ActivityOptionsCompat
-                        .makeSceneTransitionAnimation(getActivity(), iconTransitionPair)
-                        .toBundle();
-                startActivityForResult(intent, REQUEST_APPDETAILS, bundle);
-            } else {
-                startActivityForResult(intent, REQUEST_APPDETAILS);
-            }
+            startActivityForResult(intent, REQUEST_APPDETAILS);
         }
     }
 
