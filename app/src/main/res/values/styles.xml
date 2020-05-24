@@ -39,6 +39,7 @@
         <item name="detailPanel">@drawable/details_panel_donate_background_night</item>
         <item name="colorPrimary">@color/fdroid_night</item>
         <item name="colorPrimaryDark">@color/fdroid_night_dark</item>
+        <item name="android:windowBackground">@android:color/black</item>
     </style>
 
     <style name="AlertDialogBaseThemeDark" parent="Theme.AppCompat.Dialog.Alert" />
