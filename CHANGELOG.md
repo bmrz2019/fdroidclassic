@@ -5,6 +5,7 @@
 ### 1.0-beta8 (24.05.2020)
 
 * fix crash on install when no privext is installed (introduced in beta7)
+* Remove buggy appicon transition
 
 ### 1.0-beta7 (24.05.2020)
 
