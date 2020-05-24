@@ -1,6 +1,9 @@
 ### 1.0-beta9 (?)
 
-* 
+* lot's of improvements to AppDetails view. (658078058106ea868c7f90f675214ff120b6af3d for details)
+* add whatsnew section
+* Night Theme will now actually have a black background
+* use the new F-Droid button style
 
 ### 1.0-beta8 (24.05.2020)
 
