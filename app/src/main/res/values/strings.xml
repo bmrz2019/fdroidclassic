@@ -376,5 +376,6 @@
     <string name="signed">Signed: %s</string>
     <string name="app_permission_storage">F-Droid needs the storage permission to install this to storage. Please allow it on the next screen to proceed with installation.</string>
     <string name="app_installed_media">File installed to %s</string>
+    <string name="download_all_updates">Update all</string>
 
 </resources>

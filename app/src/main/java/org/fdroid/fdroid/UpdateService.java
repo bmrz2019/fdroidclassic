@@ -403,7 +403,7 @@ public class UpdateService extends IntentService {
 
                 // now that downloading the index is done, start downloading updates
                 if (changes && fdroidPrefs.isAutoDownloadEnabled()) {
-                    autoDownloadUpdates();
+                    autoDownloadUpdates(this);
                 }
             }
 
@@ -495,20 +495,26 @@ public class UpdateService extends IntentService {
         return inboxStyle;
     }
 
-    private void autoDownloadUpdates() {
-        Cursor cursor = getContentResolver().query(
-                AppProvider.getCanUpdateUri(),
-                Schema.AppMetadataTable.Cols.ALL,
-                null, null, null);
-        if (cursor != null) {
-            cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); i++) {
-                App app = new App(cursor);
-                Apk apk = ApkProvider.Helper.findApkFromAnyRepo(this, app.packageName, app.suggestedVersionCode);
-                InstallManagerService.queue(this, app, apk);
-                cursor.moveToNext();
+    /**
+     * Queues all apps needing update.  If this app itself (e.g. F-Droid) needs
+     * to be updated, it is queued last.
+     */
+    public static void autoDownloadUpdates(Context context) {
+        List<App> canUpdate = AppProvider.Helper.findCanUpdate(context, Schema.AppMetadataTable.Cols.ALL);
+        String packageName = context.getPackageName();
+        App updateLastApp = null;
+        Apk updateLastApk = null;
+        for (App app : canUpdate) {
+            if (TextUtils.equals(packageName, app.packageName)) {
+                updateLastApp = app;
+                updateLastApk = ApkProvider.Helper.findSuggestedApk(context, app);
+                continue;
             }
-            cursor.close();
+            Apk apk = ApkProvider.Helper.findSuggestedApk(context, app);
+            InstallManagerService.queue(context, app, apk);
+        }
+        if (updateLastApp != null && updateLastApk != null) {
+            InstallManagerService.queue(context, updateLastApp, updateLastApk);
         }
     }
 

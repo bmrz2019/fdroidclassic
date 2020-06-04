@@ -289,6 +289,10 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
                 UpdateService.updateNow(this);
                 return true;
 
+            case R.id.action_update_all:
+                UpdateService.autoDownloadUpdates(this);
+                return true;
+
             case R.id.action_manage_repos:
                 startActivity(new Intent(this, ManageReposActivity.class));
                 return true;

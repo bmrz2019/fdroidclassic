@@ -14,6 +14,10 @@
         android:title="@string/menu_update_repo"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/action_update_all"
+        android:title="@string/download_all_updates"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/action_manage_repos"
         android:icon="@drawable/ic_toc_white"
         android:title="@string/menu_manage"

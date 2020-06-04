@@ -142,7 +142,7 @@ public class AppProvider extends FDroidProvider {
             context.getContentResolver().update(calcSuggestedApksUri(), null, null, null);
         }
 
-        static List<App> findCanUpdate(Context context, String[] projection) {
+        public static List<App> findCanUpdate(Context context, String[] projection) {
             return cursorToList(context.getContentResolver().query(AppProvider.getCanUpdateUri(), projection, null, null, null));
         }
 
