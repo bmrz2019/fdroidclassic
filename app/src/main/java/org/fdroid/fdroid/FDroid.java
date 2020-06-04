@@ -299,22 +299,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
                 return true;
 
             case R.id.action_about:
-                View view = LayoutInflater.from(this).inflate(R.layout.about, null);
-
-                String versionName = Utils.getVersionName(this);
-                if (versionName != null) {
-                    ((TextView) view.findViewById(R.id.version)).setText(versionName);
-                }
-
-                AlertDialog alrt = new AlertDialog.Builder(this).setView(view).create();
-                alrt.setTitle(R.string.about_title);
-                alrt.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.ok),
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                            }
-                        });
-                alrt.show();
+                startActivity(new Intent(this, AboutActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);

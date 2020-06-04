@@ -57,13 +57,19 @@
 
     <style name="MinWithDialogBaseThemeDark" parent="Theme.AppCompat.Dialog.MinWidth">
         <item name="colorAccent">@color/fdroid_green</item>
+        <item name="colorPrimary">@color/fdroid_blue_dark</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="MinWithDialogBaseThemeNight" parent="Theme.AppCompat.Dialog.MinWidth">
+        <item name="colorAccent">@color/fdroid_green</item>
+        <item name="colorPrimary">@color/fdroid_night</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="MinWithDialogBaseThemeLight" parent="Theme.AppCompat.Light.Dialog.MinWidth">
         <item name="colorAccent">@color/fdroid_green</item>
-
+        <item name="colorPrimary">@color/fdroid_blue</item>
         <item name="windowNoTitle">true</item>
     </style>
 

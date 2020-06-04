@@ -12,6 +12,14 @@
         android:orientation="vertical">
 
         <TextView
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+        <TextView
             android:text="@string/about_version"
             style="@style/CaptionText" />
         <TextView
@@ -19,13 +27,6 @@
             android:text="@string/unknown"
             style="@style/BodyText" />
 
-        <TextView
-            android:text="@string/about_site"
-            style="@style/CaptionText" />
-        <TextView
-            android:text="@string/site_link"
-            android:autoLink="web"
-            style="@style/BodyText" />
 
         <TextView
             android:text="@string/about_mail"
@@ -49,6 +50,25 @@
         <TextView
             android:text="@string/license_gplv3_later"
             style="@style/BodyText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="16dp"
+            android:clipToPadding="false">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:minWidth="100dp"
+                android:layout_height="wrap_content"
+                style="@style/DetailsPrimaryButtonStyle"
+                android:id="@+id/ok_button"
+                android:text="@string/ok" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
