@@ -4,10 +4,12 @@
 
 ### 1.0-beta10 (04.06.2020)
 
-* slightly prettier About dialog
-* theme changes apply instantly and not only on back button.
-* add an "Update all" button to the menu, this might still be a bit buggy.
-* the download cancel button is now visible in night mode. It's also slightly bigger and has a ripple effect now.
+* Slightly prettier About dialog
+* Theme changes apply instantly and not only on back button.
+* Add an "Update all" button to the menu, this might still be a bit buggy.
+* The download cancel button is now visible in night mode. It's also slightly bigger and has a ripple effect now.
+* Fix crash on phone boot
+* Don't autoverify intent filters (https://developer.android.com/training/app-links/verify-site-associations), we're fine with an app choser dialouge.
 
 ### 1.0-beta9 (24.05.2020)
 
