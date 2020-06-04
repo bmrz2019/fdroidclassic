@@ -1,10 +1,15 @@
-### 1.0-beta10 (?)
+### 1.0-beta11 (04.06.2020)
+
+*
+
+### 1.0-beta10 (04.06.2020)
 
 * slightly prettier About dialog
 * theme changes apply instantly and not only on back button.
 * add an "Update all" button to the menu, this might still be a bit buggy.
+* the download cancel button is now visible in night mode. It's also slightly bigger and has a ripple effect now.
 
-### 1.0-beta9 (24..05.2020)
+### 1.0-beta9 (24.05.2020)
 
 * lot's of improvements to AppDetails view. (658078058106ea868c7f90f675214ff120b6af3d for details)
 * add whatsnew section
