@@ -307,7 +307,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+        super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case REQUEST_PREFS:
                 // The automatic update settings may have changed, so reschedule (or
@@ -329,7 +329,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
     }
 
     private void createViews() {
-        viewPager = (ViewPager) findViewById(R.id.main_pager);
+        viewPager = findViewById(R.id.main_pager);
         adapter = new AppListFragmentPagerAdapter(this);
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
