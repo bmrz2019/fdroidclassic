@@ -1,4 +1,10 @@
-### 1.0-beta9 (?)
+### 1.0-beta10 (?)
+
+* slightly prettier About dialog
+* theme changes apply instantly and not only on back button.
+* add an "Update all" button to the menu, this might still be a bit buggy.
+
+### 1.0-beta9 (24..05.2020)
 
 * lot's of improvements to AppDetails view. (658078058106ea868c7f90f675214ff120b6af3d for details)
 * add whatsnew section
