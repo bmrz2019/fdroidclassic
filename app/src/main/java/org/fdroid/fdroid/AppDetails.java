@@ -1381,8 +1381,13 @@ public class AppDetails extends AppCompatActivity {
             ImageView iv = view.findViewById(R.id.icon);
             Utils.setIconFromRepoOrPM(app, iv, iv.getContext());
             iv.setOnLongClickListener(v -> {
-                appDetails.openAppInfo();
-                return true;
+                if (app.isInstalled(getContext())) {
+                    appDetails.openAppInfo();
+                    return true;
+                }
+                else {
+                    return false;
+                }
             });
 
             // Set the title
