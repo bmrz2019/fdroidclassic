@@ -32,6 +32,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.text.Html;
 import android.text.Layout;
 import android.text.TextUtils;
@@ -302,13 +303,6 @@ public class AppDetails extends AppCompatActivity {
             return convertView;
         }
     }
-
-    private static final int INSTALL = Menu.FIRST;
-    private static final int UNINSTALL = Menu.FIRST + 1;
-    private static final int IGNOREALL = Menu.FIRST + 2;
-    private static final int IGNORETHIS = Menu.FIRST + 3;
-    private static final int LAUNCH = Menu.FIRST + 4;
-    private static final int SHARE = Menu.FIRST + 5;
 
     private App app;
     private PackageManager packageManager;
@@ -728,44 +722,6 @@ public class AppDetails extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        menu.clear();
-        if (app == null) {
-            return true;
-        }
-
-        if (packageManager.getLaunchIntentForPackage(app.packageName) != null && app.canAndWantToUpdate(this)) {
-            menu.add(Menu.NONE, LAUNCH, 1, R.string.menu_launch)
-                    .setIcon(R.drawable.ic_play_arrow_white)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-        }
-
-        if (app.isInstalled(this.context) && app.isUninstallable(this.context)) {
-            menu.add(Menu.NONE, UNINSTALL, 1, R.string.menu_uninstall)
-                    .setIcon(R.drawable.ic_delete_white)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-        }
-
-        menu.add(Menu.NONE, SHARE, 1, R.string.menu_share)
-                .setIcon(R.drawable.ic_share_white)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-
-        menu.add(Menu.NONE, IGNOREALL, 2, R.string.menu_ignore_all)
-                .setIcon(R.drawable.ic_do_not_disturb_white)
-                .setCheckable(true)
-                .setChecked(app.getPrefs(context).ignoreAllUpdates);
-
-        if (app.hasUpdates()) {
-            menu.add(Menu.NONE, IGNORETHIS, 2, R.string.menu_ignore_this)
-                    .setIcon(R.drawable.ic_do_not_disturb_white)
-                    .setCheckable(true)
-                    .setChecked(app.getPrefs(context).ignoreThisUpdate >= app.suggestedVersionCode);
-        }
-        return true;
-    }
-
     private void tryOpenUri(String s) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
         if (intent.resolveActivity(packageManager) == null) {
@@ -782,6 +738,44 @@ public class AppDetails extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.appdetails, menu);
+
+        // Launch/Run button; Don't show when the main button say "Run"
+        if (packageManager.getLaunchIntentForPackage(app.packageName) != null
+                && app.canAndWantToUpdate(this))
+            menu.findItem(R.id.action_launch).setVisible(true);
+        else
+            menu.findItem(R.id.action_launch).setVisible(false);
+
+        // Uninstall button
+        if (app.isInstalled(this.context) && app.isUninstallable(this.context))
+            menu.findItem(R.id.action_uninstall).setVisible(true);
+        else
+            menu.findItem(R.id.action_uninstall).setVisible(false);
+
+        // AppInfo button
+        if (app.isInstalled(this.context))
+            menu.findItem(R.id.action_appsettings).setVisible(true);
+        else
+            menu.findItem(R.id.action_appsettings).setVisible(false);
+
+        //IgnoreAllUpdates button
+        menu.findItem(R.id.action_ignore_all_updates)
+                .setChecked(app.getPrefs(context).ignoreAllUpdates);
+
+        //IgnoreThisUpdate button
+        MenuItem item = menu.findItem(R.id.action_ignore_this_updates);
+        item.setChecked(app.getPrefs(context).ignoreThisUpdate >= app.suggestedVersionCode);
+        if (app.hasUpdates())
+           item.setVisible(true);
+        else
+            item.setVisible(false);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
@@ -794,32 +788,30 @@ public class AppDetails extends AppCompatActivity {
                 }
                 return true;
 
-            case LAUNCH:
+            case R.id.action_launch:
                 launchApk(app.packageName);
                 return true;
 
-            case SHARE:
+            case R.id.action_share:
                 shareApp(app);
                 return true;
 
-            case INSTALL:
-                // Note that this handles updating as well as installing.
-                if (app.suggestedVersionCode > 0) {
-                    final Apk apkToInstall = ApkProvider.Helper.findApkFromAnyRepo(this, app.packageName, app.suggestedVersionCode);
-                    install(apkToInstall);
-                }
-                return true;
-
-            case UNINSTALL:
+            case R.id.action_uninstall:
                 uninstallApk();
                 return true;
 
-            case IGNOREALL:
+            case R.id.action_appsettings:
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        Uri.fromParts("package", app.packageName, null));
+                startActivity(intent);
+                return true;
+
+            case R.id.action_ignore_all_updates:
                 app.getPrefs(this).ignoreAllUpdates ^= true;
                 item.setChecked(app.getPrefs(this).ignoreAllUpdates);
                 return true;
 
-            case IGNORETHIS:
+            case R.id.action_ignore_this_updates:
                 if (app.getPrefs(this).ignoreThisUpdate >= app.suggestedVersionCode) {
                     app.getPrefs(this).ignoreThisUpdate = 0;
                 } else {
