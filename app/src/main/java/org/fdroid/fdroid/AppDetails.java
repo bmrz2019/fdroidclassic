@@ -801,9 +801,7 @@ public class AppDetails extends AppCompatActivity {
                 return true;
 
             case R.id.action_appsettings:
-                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                        Uri.fromParts("package", app.packageName, null));
-                startActivity(intent);
+                openAppInfo();
                 return true;
 
             case R.id.action_ignore_all_updates:
@@ -821,6 +819,12 @@ public class AppDetails extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openAppInfo() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.fromParts("package", app.packageName, null));
+        startActivity(intent);
     }
 
     // Install the version of this app denoted by 'app.curApk'.
@@ -1376,6 +1380,10 @@ public class AppDetails extends AppCompatActivity {
             // Set the icon...
             ImageView iv = view.findViewById(R.id.icon);
             Utils.setIconFromRepoOrPM(app, iv, iv.getContext());
+            iv.setOnLongClickListener(v -> {
+                appDetails.openAppInfo();
+                return true;
+            });
 
             // Set the title
             TextView tv = view.findViewById(R.id.title);
