@@ -28,15 +28,15 @@ This project is probably aimed more at the power user who values function over f
 
 * index-v1 support.
 * Privileged Extension support (in progress, need to release the extensions somewhere)
+* Inline changelogs
+* Localized metadata
 
 ### Todo
 
 * Support for the additional features provided by the new index format.
   * Screenshots
-  * Inline changelogs
-  * Localized metadata
-  * Feature graphics (maybe, very low priority)
-* ...
+* proper mirror support. They are currently not completely broken, but I'm not actually sure if mirrors are really used right now.
+
 
 ### Currently considered out of scope
 
