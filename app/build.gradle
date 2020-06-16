@@ -30,7 +30,6 @@ dependencies {
     implementation 'eu.chainfire:libsuperuser:1.0.0.201602271131'
     implementation 'info.guardianproject.netcipher:netcipher:2.1.0'
     implementation 'commons-io:commons-io:2.6'
-    implementation 'io.reactivex:rxjava:1.3.6'
     implementation 'com.github.ligi.tracedroid:lib:3.0'
     implementation 'com.github.ligi.tracedroid:supportemail:3.0'
 
