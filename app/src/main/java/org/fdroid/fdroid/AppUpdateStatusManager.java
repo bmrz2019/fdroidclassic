@@ -24,8 +24,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Manages the state of APKs that are being installed or that have updates available.
@@ -76,10 +74,6 @@ public final class AppUpdateStatusManager {
 
     public static final String EXTRA_REASON_FOR_CHANGE = "reason";
 
-    public static final String REASON_READY_TO_INSTALL = "readytoinstall";
-    public static final String REASON_UPDATES_AVAILABLE = "updatesavailable";
-    public static final String REASON_CLEAR_ALL_UPDATES = "clearallupdates";
-    public static final String REASON_CLEAR_ALL_INSTALLED = "clearallinstalled";
     public static final String REASON_REPO_DISABLED = "repodisabled";
 
     /**
@@ -138,6 +132,7 @@ public final class AppUpdateStatusManager {
         /**
          * Dumps some information about the status for debugging purposes.
          */
+        @NonNull
         public String toString() {
             return app.packageName + " [Status: " + status
                     + ", Progress: " + progressCurrent + " / " + progressMax + ']';
@@ -325,14 +320,6 @@ public final class AppUpdateStatusManager {
         }
     }
 
-    public void addApks(List<Apk> apksToUpdate, Status status) {
-        startBatchUpdates();
-        for (Apk apk : apksToUpdate) {
-            addApk(apk, status, null);
-        }
-        endBatchUpdates(status);
-    }
-
     /**
      * Add an Apk to the AppUpdateStatusManager manager (or update it if we already know about it).
      *
@@ -395,16 +382,6 @@ public final class AppUpdateStatusManager {
         }
     }
 
-    public void refreshApk(String key) {
-        synchronized (appMapping) {
-            AppUpdateStatus entry = appMapping.get(key);
-            if (entry != null) {
-                Utils.debugLog(LOGTAG, "Refresh APK " + entry.apk.apkName);
-                notifyChange(entry, true);
-            }
-        }
-    }
-
     public void updateApkProgress(String key, long max, long current) {
         synchronized (appMapping) {
             AppUpdateStatus entry = appMapping.get(key);
@@ -446,53 +423,6 @@ public final class AppUpdateStatusManager {
             InstallManagerService.removePendingInstall(context, entry.getCanonicalUrl());
         }
     }
-
-    private void startBatchUpdates() {
-        synchronized (appMapping) {
-            isBatchUpdating = true;
-        }
-    }
-
-    private void endBatchUpdates(Status status) {
-        synchronized (appMapping) {
-            isBatchUpdating = false;
-
-            String reason = null;
-            if (status == Status.ReadyToInstall) {
-                reason = REASON_READY_TO_INSTALL;
-            } else if (status == Status.UpdateAvailable) {
-                reason = REASON_UPDATES_AVAILABLE;
-            }
-            notifyChange(reason);
-        }
-    }
-
-    @SuppressWarnings("LineLength")
-    void clearAllUpdates() {
-        synchronized (appMapping) {
-            for (Iterator<Map.Entry<String, AppUpdateStatus>> it = appMapping.entrySet().iterator(); it.hasNext(); ) { // NOCHECKSTYLE EmptyForIteratorPad
-                Map.Entry<String, AppUpdateStatus> entry = it.next();
-                if (entry.getValue().status != Status.Installed) {
-                    it.remove();
-                }
-            }
-            notifyChange(REASON_CLEAR_ALL_UPDATES);
-        }
-    }
-
-    @SuppressWarnings("LineLength")
-    void clearAllInstalled() {
-        synchronized (appMapping) {
-            for (Iterator<Map.Entry<String, AppUpdateStatus>> it = appMapping.entrySet().iterator(); it.hasNext(); ) { // NOCHECKSTYLE EmptyForIteratorPad
-                Map.Entry<String, AppUpdateStatus> entry = it.next();
-                if (entry.getValue().status == Status.Installed) {
-                    it.remove();
-                }
-            }
-            notifyChange(REASON_CLEAR_ALL_INSTALLED);
-        }
-    }
-
     /**
      * If the {@link PendingIntent} aimed at {@link Notification.Builder#setContentIntent(PendingIntent)}
      * is not set, then create a default one.  The goal is to link the notification
