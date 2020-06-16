@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -142,6 +144,7 @@ public class AppPrefsProvider extends FDroidProvider {
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         db().insertOrThrow(getTableName(), null, values);
+        Log.d(TAG, "insert: notifying " + AppProvider.getCanUpdateUri());
         getContext().getContentResolver().notifyChange(AppProvider.getCanUpdateUri(), null);
         return getAppUri(values.getAsString(Cols.PACKAGE_NAME));
     }
@@ -154,6 +157,7 @@ public class AppPrefsProvider extends FDroidProvider {
 
         QuerySelection query = new QuerySelection(where, whereArgs).add(querySingle(uri.getLastPathSegment()));
         int count = db().update(getTableName(), values, query.getSelection(), query.getArgs());
+        Log.d(TAG, "update: notifying " + AppProvider.getCanUpdateUri());
         getContext().getContentResolver().notifyChange(AppProvider.getCanUpdateUri(), null);
         return count;
     }

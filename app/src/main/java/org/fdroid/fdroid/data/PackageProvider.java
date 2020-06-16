@@ -5,11 +5,13 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 
 import org.fdroid.fdroid.data.Schema.PackageTable;
 import org.fdroid.fdroid.data.Schema.PackageTable.Cols;
 
 public class PackageProvider extends FDroidProvider {
+    private static final String TAG = "PackageProvider";
 
     public static final class Helper {
         private Helper() { }
@@ -155,6 +157,7 @@ public class PackageProvider extends FDroidProvider {
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         long rowId = db().insertOrThrow(getTableName(), null, values);
+        Log.d(TAG, "insert: notifying "  + AppProvider.getCanUpdateUri());
         getContext().getContentResolver().notifyChange(AppProvider.getCanUpdateUri(), null);
         return getPackageIdUri(rowId);
     }

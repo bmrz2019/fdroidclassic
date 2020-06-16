@@ -36,6 +36,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -86,7 +87,6 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fdroid);
         createViews();
-
         getTabManager().createTabs();
 
         // Start a search by just typing
@@ -383,6 +383,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
+            Log.d(TAG, "onChange: We got notified of a change!");
             FDroid.this.runOnUiThread(FDroid.this::refreshUpdateTabLabel);
         }
 

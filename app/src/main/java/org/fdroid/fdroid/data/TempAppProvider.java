@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
+
 import org.fdroid.fdroid.data.Schema.ApkTable;
 import org.fdroid.fdroid.data.Schema.AppMetadataTable;
 import org.fdroid.fdroid.data.Schema.AppMetadataTable.Cols;
@@ -22,6 +24,8 @@ import java.util.List;
  */
 @SuppressWarnings("LineLength")
 public class TempAppProvider extends AppProvider {
+
+    private static final String TAG = "TempAppProvider";
 
     /**
      * The name of the in memory database used for updating.
@@ -248,7 +252,7 @@ public class TempAppProvider extends AppProvider {
                     getAntiFeatureRepoWhere(tempAntiFeatureJoin)), repoArgs);
 
             db.setTransactionSuccessful();
-
+            Log.d(TAG, "delete: notifying" + ApkProvider.getContentUri() + ", " + AppProvider.getContentUri() + ", " + CategoryProvider.getContentUri());
             getContext().getContentResolver().notifyChange(AppProvider.getContentUri(), null);
             getContext().getContentResolver().notifyChange(ApkProvider.getContentUri(), null);
             getContext().getContentResolver().notifyChange(CategoryProvider.getContentUri(), null);

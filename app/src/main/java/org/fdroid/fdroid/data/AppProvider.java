@@ -6,10 +6,13 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import android.text.TextUtils;
 import android.util.Log;
+
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.ApkAntiFeatureJoinTable;
@@ -32,17 +35,17 @@ import java.util.Set;
 /**
  * Each app has a bunch of metadata that it associates with a package name (such as org.fdroid.fdroid).
  * Multiple repositories can host the same package, and provide different metadata for that app.
- *
+ * <p>
  * As such, it is usually the case that you are interested in an {@link App} which has its metadata
  * provided by "the repo with the best priority", rather than "specific repo X". This is important
  * when asking for an apk, whereby the preferable way is likely using:
- *
- *  * {@link AppProvider.Helper#findHighestPriorityMetadata(ContentResolver, String)}
- *
+ * <p>
+ * * {@link AppProvider.Helper#findHighestPriorityMetadata(ContentResolver, String)}
+ * <p>
  * rather than:
- *
- *  * {@link AppProvider.Helper#findSpecificApp(ContentResolver, String, long, String[])}
- *
+ * <p>
+ * * {@link AppProvider.Helper#findSpecificApp(ContentResolver, String, long, String[])}
+ * <p>
  * The same can be said of retrieving a list of {@link App} objects, where the metadata for each app
  * in the result set should be populated from the repository with the best priority.
  */
@@ -53,7 +56,8 @@ public class AppProvider extends FDroidProvider {
 
     public static final class Helper {
 
-        private Helper() { }
+        private Helper() {
+        }
 
         public static int count(Context context, Uri uri) {
             final String[] projection = {Cols._COUNT};
@@ -201,6 +205,7 @@ public class AppProvider extends FDroidProvider {
          * Tells the query selection that it will need to join onto the installed apps table
          * when used. This should be called when your query makes use of fields from that table
          * (for example, list all installed, or list those which can be updated).
+         *
          * @return A reference to this object, to allow method chaining, for example
          * <code>return new AppQuerySelection(selection).requiresInstalledTable())</code>
          */
@@ -269,10 +274,10 @@ public class AppProvider extends FDroidProvider {
 
         @Override
         protected String getRequiredTables() {
-            final String pkg  = PackageTable.NAME;
-            final String app  = getTableName();
+            final String pkg = PackageTable.NAME;
+            final String app = getTableName();
             final String repo = RepoTable.NAME;
-            final String cat  = CategoryTable.NAME;
+            final String cat = CategoryTable.NAME;
             final String catJoin = getCatJoinTableName();
 
             return pkg +
@@ -968,11 +973,12 @@ public class AppProvider extends FDroidProvider {
         final String app = getTableName();
         String query = "DELETE FROM " + catJoin + " WHERE " + CatJoinTable.Cols.APP_METADATA_ID + " IN " +
                 "(SELECT " + Cols.ROW_ID + " FROM " + app + " WHERE " + app + "." + Cols.REPO_ID + " = ?)";
-        db().execSQL(query, new String[] {String.valueOf(repoId)});
+        db().execSQL(query, new String[]{String.valueOf(repoId)});
 
         AppQuerySelection selection = new AppQuerySelection(where, whereArgs).add(queryRepo(repoId));
         int result = db().delete(getTableName(), selection.getSelection(), selection.getArgs());
 
+        Log.d(TAG, "delete: notifying" + ApkProvider.getContentUri() + ", " + AppProvider.getContentUri() + ", " + CategoryProvider.getContentUri());
         getContext().getContentResolver().notifyChange(ApkProvider.getContentUri(), null);
         getContext().getContentResolver().notifyChange(AppProvider.getContentUri(), null);
         getContext().getContentResolver().notifyChange(CategoryProvider.getContentUri(), null);
@@ -1007,6 +1013,7 @@ public class AppProvider extends FDroidProvider {
 
         long appMetadataId = db().insertOrThrow(getTableName(), null, values);
         if (!isApplyingBatch()) {
+            Log.d(TAG, "insert: Notifying " + uri);
             getContext().getContentResolver().notifyChange(uri, null);
         }
 
@@ -1018,7 +1025,7 @@ public class AppProvider extends FDroidProvider {
     }
 
     protected void ensureCategories(String[] categories, long appMetadataId) {
-        db().delete(getCatJoinTableName(), CatJoinTable.Cols.APP_METADATA_ID + " = ?", new String[] {Long.toString(appMetadataId)});
+        db().delete(getCatJoinTableName(), CatJoinTable.Cols.APP_METADATA_ID + " = ?", new String[]{Long.toString(appMetadataId)});
         if (categories != null) {
             Set<String> categoriesSet = new HashSet<>();
             for (String categoryName : categories) {
@@ -1066,16 +1073,16 @@ public class AppProvider extends FDroidProvider {
     /**
      * If the repo hasn't changed, then there are many things which we shouldn't waste time updating
      * (compared to {@link AppProvider#updateAllAppDetails()}:
-     *
+     * <p>
      * + The "preferred metadata", as that is calculated based on repo with highest priority, and
-     *   only takes into account the package name, not specific versions, when figuring this out.
-     *
+     * only takes into account the package name, not specific versions, when figuring this out.
+     * <p>
      * + Compatible flags. These were calculated earlier, whether or not an app was suggested or not.
-     *
+     * <p>
      * + Icon URLs. While technically these do change when the suggested version changes, it is not
-     *   important enough to spend a significant amount of time to calculate. In the future maybe,
-     *   but that effort should instead go into implementing an intent service.
-     *
+     * important enough to spend a significant amount of time to calculate. In the future maybe,
+     * but that effort should instead go into implementing an intent service.
+     * <p>
      * In the future, this problem of taking a long time should be fixed by implementing an
      * {@link android.app.IntentService} as described in https://gitlab.com/fdroid/fdroidclient/issues/520.
      */
@@ -1193,7 +1200,7 @@ public class AppProvider extends FDroidProvider {
     /**
      * We set each app's suggested version to the latest available that is
      * compatible, or the latest available if none are compatible.
-     *
+     * <p>
      * If the suggested version is null, it means that we could not figure it
      * out from the upstream vercode. In such a case, fall back to the simpler
      * algorithm as if upstreamVercode was 0.
