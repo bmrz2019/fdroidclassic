@@ -67,7 +67,7 @@ android {
     }
 
     compileOptions {
-        compileOptions.encoding = "UTF-8"
+        encoding = "UTF-8"
 
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -81,7 +81,6 @@ android {
         applicationId myApplicationId
         resValue "string", "applicationId", myApplicationId
         versionName getVersionName()
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     testOptions {
@@ -98,16 +97,6 @@ android {
         }
     }
 
-    sourceSets {
-        test {
-            java.srcDirs += "$projectDir/src/testShared/java"
-        }
-
-        androidTest {
-            java.srcDirs += "$projectDir/src/testShared/java"
-        }
-    }
-
     lintOptions {
         checkReleaseBuilds false
         abortOnError true
@@ -118,9 +107,6 @@ android {
 
         // Our translations are crowd-sourced
         disable 'MissingTranslation'
-
-        // to make CI fail on errors until this is fixed https://github.com/rtyley/spongycastle/issues/7
-        warning 'InvalidPackage'
 
         error 'AppCompatMethod', 'NestedScrolling', 'StringFormatCount', 'UnsafeProtectedBroadcastReceiver'
     }
