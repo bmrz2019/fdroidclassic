@@ -1,6 +1,8 @@
 ### 1.0-beta11 (?)
 
-*
+* Fix a crash when attempting to change the password for a password protected repo
+* Add an option to open the system app-info settings page for installed apps from F-Droid classic. Either use the menu entry or long-press the app-icon
+* Lots of internal code cleanup and dependency upgrades
 
 ### 1.0-beta10 (04.06.2020)
 
@@ -13,7 +15,7 @@
 
 ### 1.0-beta9 (24.05.2020)
 
-* lot's of improvements to AppDetails view. (658078058106ea868c7f90f675214ff120b6af3d for details)
+* lots of improvements to AppDetails view. (658078058106ea868c7f90f675214ff120b6af3d for details)
 * add whatsnew section
 * Night Theme will now actually have a black background
 * use the new F-Droid button style
