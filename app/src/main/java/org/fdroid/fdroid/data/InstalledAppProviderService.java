@@ -162,13 +162,7 @@ public class InstalledAppProviderService extends JobIntentService {
     public static File getPathToInstalledApk(PackageInfo packageInfo) {
         File apk = new File(packageInfo.applicationInfo.publicSourceDir);
         if (apk.isDirectory()) {
-            FilenameFilter filter = new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.endsWith(".apk");
-                }
-            };
-            File[] files = apk.listFiles(filter);
+            File[] files = apk.listFiles((dir, name) -> name.endsWith(".apk"));
             if (files == null) {
                 String msg = packageInfo.packageName + " sourceDir has no APKs: " + apk.getAbsolutePath();
                 Utils.debugLog(TAG, msg);
