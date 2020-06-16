@@ -27,32 +27,16 @@ public class QrGenAsyncTask extends AsyncTask<String, Void, Void> {
         this.viewId = viewId;
     }
 
-    /*
-     * The method for getting screen dimens changed, so this uses both the
-     * deprecated one and the 13+ one, and supports all Android versions.
-     */
-    @SuppressWarnings("deprecation")
-    @TargetApi(13)
     @Override
     protected Void doInBackground(String... s) {
         String qrData = s[0];
         Display display = activity.getWindowManager().getDefaultDisplay();
         Point outSize = new Point();
         int x, y, qrCodeDimension;
-        /* lame, got to use both the new and old APIs here */
-        if (Build.VERSION.SDK_INT >= 13) {
-            display.getSize(outSize);
-            x = outSize.x;
-            y = outSize.y;
-        } else {
-            x = display.getWidth();
-            y = display.getHeight();
-        }
-        if (x < y) {
-            qrCodeDimension = x;
-        } else {
-            qrCodeDimension = y;
-        }
+        display.getSize(outSize);
+        x = outSize.x;
+        y = outSize.y;
+        qrCodeDimension = Math.min(x, y);
         Utils.debugLog(TAG, "generating QRCode Bitmap of " + qrCodeDimension + "x" + qrCodeDimension);
         QRCodeEncoder qrCodeEncoder = new QRCodeEncoder(qrData, null,
                 Contents.Type.TEXT, BarcodeFormat.QR_CODE.toString(), qrCodeDimension);

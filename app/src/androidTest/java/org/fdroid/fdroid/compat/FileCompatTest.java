@@ -56,12 +56,6 @@ public class FileCompatTest {
     }
 
     @Test
-    public void testSymlinkRuntime() {
-        FileCompat.symlinkRuntime(sourceFile, destFile);
-        assertTrue(destFile.getAbsolutePath() + " should exist after symlinking", destFile.exists());
-    }
-
-    @Test
     public void testSymlinkLibcore() {
         assumeTrue(Build.VERSION.SDK_INT >= 19);
         FileCompat.symlinkLibcore(sourceFile, destFile);

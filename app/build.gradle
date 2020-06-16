@@ -86,6 +86,7 @@ android {
 
     defaultConfig {
         minSdkVersion 19
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 25
         versionCode 1011
         applicationId myApplicationId

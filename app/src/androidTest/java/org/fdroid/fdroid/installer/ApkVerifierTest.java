@@ -33,7 +33,6 @@ import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.compat.FileCompatTest;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.Repo;
-import org.fdroid.fdroid.mock.RepoDetails;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

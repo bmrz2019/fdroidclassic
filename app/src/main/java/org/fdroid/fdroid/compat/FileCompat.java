@@ -26,10 +26,8 @@ public class FileCompat {
 
         if (Build.VERSION.SDK_INT >= 21) {
             symlinkOs(source, dest);
-        } else if (Build.VERSION.SDK_INT >= 15) {
-            symlinkLibcore(source, dest);
         } else {
-            symlinkRuntime(source, dest);
+            symlinkLibcore(source, dest);
         }
 
         return dest.exists();
@@ -56,24 +54,6 @@ public class FileCompat {
     @TargetApi(21)
     static void symlinkOs(SanitizedFile source, SanitizedFile dest) {
         new Symlink21().symlink(source, dest);
-    }
-
-    static void symlinkRuntime(SanitizedFile source, SanitizedFile dest) {
-        String[] commands = {
-            FDroidApp.SYSTEM_DIR_NAME + "/bin/ln",
-            "-s",
-            source.getAbsolutePath(),
-            dest.getAbsolutePath(),
-        };
-        try {
-            Utils.debugLog(TAG, "Executing command: " + commands[0] + " " + commands[1]
-                    + " " + commands[2] + " " + commands[3]);
-            Process proc = Runtime.getRuntime().exec(commands);
-            Utils.consumeStream(proc.getInputStream());
-            Utils.consumeStream(proc.getErrorStream());
-        } catch (IOException e) {
-            // Do nothing
-        }
     }
 
     static void symlinkLibcore(SanitizedFile source, SanitizedFile dest) {

@@ -7,9 +7,7 @@
         android:id="@+id/repoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="?attr/listPreferredItemPaddingLeft"
         android:paddingStart="?attr/listPreferredItemPaddingLeft"
-        android:paddingRight="?attr/listPreferredItemPaddingRight"
         android:paddingEnd="?attr/listPreferredItemPaddingRight"
         android:orientation="vertical">
 
@@ -95,7 +93,8 @@
             android:src="@drawable/swap_qr_example"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="16dp"/>
+            android:paddingTop="16dp"
+            android:contentDescription="@string/qr_code" />
 
     </LinearLayout>
 

@@ -1,7 +1,9 @@
 package org.fdroid.fdroid.views;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
@@ -12,7 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +33,6 @@ import org.fdroid.fdroid.data.RepoProvider;
 import org.fdroid.fdroid.data.Schema.RepoTable;
 
 public class RepoDetailsActivity extends AppCompatActivity {
-    private static final String TAG = "RepoDetailsActivity";
 
     public static final String ARG_REPO_ID = "repo_id";
 
@@ -38,26 +41,26 @@ public class RepoDetailsActivity extends AppCompatActivity {
      * all of this info, otherwise they will be hidden.
      */
     private static final int[] SHOW_IF_EXISTS = {
-        R.id.label_repo_name,
-        R.id.text_repo_name,
-        R.id.text_description,
-        R.id.label_num_apps,
-        R.id.text_num_apps,
-        R.id.label_last_update,
-        R.id.text_last_update,
-        R.id.label_username,
-        R.id.text_username,
-        R.id.button_edit_credentials,
-        R.id.label_repo_fingerprint,
-        R.id.text_repo_fingerprint,
-        R.id.text_repo_fingerprint_description,
+            R.id.label_repo_name,
+            R.id.text_repo_name,
+            R.id.text_description,
+            R.id.label_num_apps,
+            R.id.text_num_apps,
+            R.id.label_last_update,
+            R.id.text_last_update,
+            R.id.label_username,
+            R.id.text_username,
+            R.id.button_edit_credentials,
+            R.id.label_repo_fingerprint,
+            R.id.text_repo_fingerprint,
+            R.id.text_repo_fingerprint_description,
     };
     /**
      * If the repo has <em>not</em> been updated yet, then we only show
      * these, otherwise they are hidden.
      */
     private static final int[] HIDE_IF_EXISTS = {
-        R.id.text_not_yet_updated,
+            R.id.text_not_yet_updated,
     };
     private Repo repo;
     private long repoId;
@@ -122,6 +125,7 @@ public class RepoDetailsActivity extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver,
                 new IntentFilter(UpdateService.LOCAL_ACTION_STATUS));
     }
+
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         prepareShareMenuItems(menu);
@@ -295,15 +299,58 @@ public class RepoDetailsActivity extends AppCompatActivity {
 
     private void promptForDelete() {
         new AlertDialog.Builder(this)
-            .setTitle(R.string.repo_confirm_delete_title)
-            .setMessage(R.string.repo_confirm_delete_body)
-            .setPositiveButton(R.string.delete, (dialog, which) -> {
-                RepoProvider.Helper.remove(getApplicationContext(), repoId);
-                finish();
-            }).setNegativeButton(android.R.string.cancel,
+                .setTitle(R.string.repo_confirm_delete_title)
+                .setMessage(R.string.repo_confirm_delete_body)
+                .setPositiveButton(R.string.delete, (dialog, which) -> {
+                    RepoProvider.Helper.remove(getApplicationContext(), repoId);
+                    finish();
+                }).setNegativeButton(android.R.string.cancel,
                 (dialog, which) -> {
                     // Do nothing...
                 }
         ).show();
+    }
+
+    public void showChangePasswordDialog(final View parentView) {
+        final View view = getLayoutInflater().inflate(R.layout.login, null);
+        final AlertDialog credentialsDialog = new AlertDialog.Builder(this).setView(view).create();
+        final EditText nameInput = view.findViewById(R.id.edit_name);
+        final EditText passwordInput = view.findViewById(R.id.edit_password);
+
+        nameInput.setText(repo.username);
+        passwordInput.requestFocus();
+
+        credentialsDialog.setTitle(R.string.repo_edit_credentials);
+        credentialsDialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+                getString(R.string.cancel),
+                (dialog, which) -> dialog.dismiss());
+
+        credentialsDialog.setButton(DialogInterface.BUTTON_POSITIVE,
+                getString(R.string.ok),
+                (dialog, which) -> {
+
+                    final String name = nameInput.getText().toString();
+                    final String password = passwordInput.getText().toString();
+
+                    if (!TextUtils.isEmpty(name)) {
+
+                        final ContentValues values = new ContentValues(2);
+                        values.put(RepoTable.Cols.USERNAME, name);
+                        values.put(RepoTable.Cols.PASSWORD, password);
+
+                        RepoProvider.Helper.update(RepoDetailsActivity.this, repo, values);
+
+                        updateRepoView();
+
+                        dialog.dismiss();
+
+                    } else {
+
+                        Toast.makeText(RepoDetailsActivity.this, R.string.repo_error_empty_username,
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        credentialsDialog.show();
     }
 }

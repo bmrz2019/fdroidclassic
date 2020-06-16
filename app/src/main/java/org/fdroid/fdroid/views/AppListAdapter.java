@@ -1,5 +1,6 @@
 package org.fdroid.fdroid.views;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import androidx.cursoradapter.widget.CursorAdapter;
@@ -8,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
@@ -20,19 +19,10 @@ public abstract class AppListAdapter extends CursorAdapter {
     private LayoutInflater mInflater;
     private String upgradeFromTo;
 
-    AppListAdapter(Context context, Cursor c) {
-        super(context, c);
-        init(context);
-    }
-
+    @SuppressLint("RestrictedApi")
     @Override
     public boolean isEmpty() {
         return mDataValid && super.isEmpty();
-    }
-
-    AppListAdapter(Context context, Cursor c, boolean autoRequery) {
-        super(context, c, autoRequery);
-        init(context);
     }
 
     AppListAdapter(Context context, Cursor c, int flags) {
@@ -63,11 +53,11 @@ public abstract class AppListAdapter extends CursorAdapter {
         View view = mInflater.inflate(R.layout.applistitem, parent, false);
 
         ViewHolder holder = new ViewHolder();
-        holder.name = (TextView) view.findViewById(R.id.name);
-        holder.summary = (TextView) view.findViewById(R.id.summary);
-        holder.status = (TextView) view.findViewById(R.id.status);
-        holder.license = (TextView) view.findViewById(R.id.license);
-        holder.icon = (ImageView) view.findViewById(R.id.icon);
+        holder.name = view.findViewById(R.id.name);
+        holder.summary = view.findViewById(R.id.summary);
+        holder.status = view.findViewById(R.id.status);
+        holder.license = view.findViewById(R.id.license);
+        holder.icon = view.findViewById(R.id.icon);
         view.setTag(holder);
 
         setupView(view, cursor, holder);
@@ -89,7 +79,7 @@ public abstract class AppListAdapter extends CursorAdapter {
 
         Utils.setIconFromRepoOrPM(app, holder.icon, holder.icon.getContext());
 
-        holder.status.setText(getVersionInfo(app));
+        holder.status.setText(getVersionInfo(holder.status.getContext(), app));
         holder.license.setText(app.license);
 
         // Disable it all if it isn't compatible...
@@ -106,19 +96,19 @@ public abstract class AppListAdapter extends CursorAdapter {
         }
     }
 
-    private String getVersionInfo(App app) {
+    private String getVersionInfo(Context context, App app) {
 
         if (app.suggestedVersionCode <= 0) {
             return null;
         }
 
-        if (!app.isInstalled(this.mContext)) {
+        if (!app.isInstalled(context)) {
             return app.getSuggestedVersionName();
         }
 
         final String installedVersionString = app.installedVersionName;
 
-        if (app.canAndWantToUpdate(mContext) && showStatusUpdate()) {
+        if (app.canAndWantToUpdate(context) && showStatusUpdate()) {
             return String.format(upgradeFromTo,
                     installedVersionString, app.getSuggestedVersionName());
         }
