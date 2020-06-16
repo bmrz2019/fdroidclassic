@@ -88,12 +88,6 @@
   <string name="category_All">Все</string>
   <string name="category_Whats_New">Новинки</string>
   <string name="category_Recently_Updated">Недавно обновлённые</string>
-    <string name="deleting_repo">Удаление текущего репозитория…</string>
-  <string name="adding_apks_format">Добавление %s в репозиторий…</string>
-  <string name="writing_index_jar">Запись подписанного файла индекса (index.jar)…</string>
-  <string name="linking_apks">Включение APK-файлов в репозиторий…</string>
-  <string name="copying_icons">Копирование иконок приложений в репозиторий…</string>
-  <string name="icon">Иконка</string>
   <string name="next">Далее</string>
   <string name="skip">Пропустить</string>
   <string name="proxy">Прокси</string>
@@ -144,9 +138,6 @@
   <string name="category_Science_Education">Наука и образование</string>
   <string name="category_Security">Безопасность</string>
   <string name="category_System">Системные</string>
-  <string name="requesting_root_access_body">Запрос root доступа…</string>
-  <string name="root_access_denied_title">Отказано в root доступе</string>
-  <string name="root_access_denied_body">Либо у вашего устройства нет root доступа, либо вы отклонили запрос от F-Droid.</string>
   <string name="system_install_denied_title">Запрос на системные привилегии отклонён</string>
   <string name="system_install_denied_body">Данная опция доступна только если F-Droid установлен как системное приложение.</string>
     <string name="open_qr_code_scanner">Открыть сканер QR-кода</string>
@@ -165,7 +156,6 @@
 <string name="unstable_updates">Нестабильные обновления</string>
     <string name="unstable_updates_summary">Предлагать обновления до нестабильных версий</string>
     <string name="pref_language">Язык</string>
-    <string name="wifi">Wi-Fi</string>
     <string name="category_Graphics">Графика</string>
     <string name="category_Money">Деньги</string>
     <string name="category_Sports_Health">Спорт и здоровье</string>
@@ -189,8 +179,6 @@
     <string name="permissions">Разрешения</string>
     <string name="menu_settings">Настройки</string>
     <string name="app_incompatible">Несовместимо</string>
-    <string name="uninstall_system">Обновить/Удалить Привилегированное расширение</string>
-    <string name="uninstall_system_summary">Открыть окно деталей Привилегированного расширения для изменения/удаления</string>
     <string name="more">Детали</string>
     <string name="less">Меньше</string>
 
@@ -221,7 +209,6 @@
     <string name="repo_error_empty_username">Не задано имя пользователя, учётные данные не изменены</string>
 
     <string name="repo_searching_address">Поиск репозитория F-Droid на\n%1$s</string>
-    <string name="wifi_ap">Точка доступа</string>
 
     <string name="category_Theming">Темы</string>
     <string name="system_install_denied_signature">Неправильная подпись расширения! Пожалуйста, отправьте сообщение об ошибке!</string>

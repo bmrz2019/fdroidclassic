@@ -25,8 +25,6 @@
     <string name="update_history_summ">Dana koliko se aplikacije smatraju novima: %s</string>
     <string name="system_installer">Povlašteno proširenje</string>
     <string name="system_installer_on">Koristite F-Droidovo povlašteno proširenje kako bi instalirali, ažurirali i uklonili pakete</string>
-    <string name="uninstall_system">Ažuriraj/ukloni povlašteno proširenje</string>
-    <string name="uninstall_system_summary">Otvori ekran sa detaljima o povlaštenom proširenju kako bi ga ažurirali/uklonili</string>
 
     <string name="login_title">Zahtjevana autentikacija</string>
     <string name="login_name">Korisničko ime</string>
@@ -140,12 +138,6 @@
     <string name="ignoreTouch">Ignoriraj dodirni zaslon</string>
     <string name="ignoreTouch_on">Uvijek uključi aplikacije koje zahtjevaju dodirni zaslon</string>
 
-    <string name="deleting_repo">Brišem trenutni repozitorij…</string>
-    <string name="adding_apks_format">Dodajem %s u repozitorij…</string>
-    <string name="writing_index_jar">Pišem potpisanu datoteku indeksa (index.jar)…</string>
-    <string name="linking_apks">Povezujem APK-ove u repozitorij…</string>
-    <string name="copying_icons">Kopiram ikone aplikacija u repozitorij…</string>
-    <string name="icon">Ikona</string>
     <string name="next">Sljedeće</string>
     <string name="skip">Preskoči</string>
 
@@ -209,8 +201,6 @@ ponovno omogućiti repozitorij kako bi instalirali aplikacije iz njega.</string>
     <string name="pref_language_default">Zadani jezik sustava</string>
 
     <string name="app_icon">Ikona aplikacije</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_All">Sve</string>
     <string name="category_Whats_New">Novo</string>
@@ -240,9 +230,6 @@ ponovno omogućiti repozitorij kako bi instalirali aplikacije iz njega.</string>
     <string name="empty_search_available_app_list">Nema dostupnih odgovarajućih aplikacija.</string>
     <string name="empty_search_can_update_app_list">Nema odgovarajućih aplikacija za ažuriranje.</string>
 
-    <string name="requesting_root_access_body">Zahtjevam root pristup…</string>
-    <string name="root_access_denied_title">Root pristup odbijen</string>
-    <string name="root_access_denied_body">Ili Vaš Android uređaj nije rootan ili niste dali root pristup F-Droidu.</string>
     <string name="install_error_unknown">Nije uspjelo instaliranje zbog nepoznate greške</string>
     <string name="uninstall_error_unknown">Nije uspjelo instaliranje zbog nepoznate greške</string>
     <string name="system_install_denied_title">F-Droid povlašteno proširenje nije dostupno</string>

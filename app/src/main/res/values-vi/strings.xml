@@ -84,10 +84,6 @@
   <string name="category_All">Tất cả</string>
   <string name="category_Whats_New">Ứng dụng mới</string>
   <string name="category_Recently_Updated">Mới cập nhật</string>
-    <string name="deleting_repo">Đang xoá kho hiện tại…</string>
-  <string name="adding_apks_format">Đang thêm %s vào kho…</string>
-  <string name="copying_icons">Đang sao chép biểu tượng ứng dụng vào kho…</string>
-  <string name="icon">Biểu tượng</string>
   <string name="next">Tiếp</string>
   <string name="skip">Bỏ qua</string>
   <string name="proxy">Proxy</string>
@@ -131,9 +127,6 @@
   <string name="category_Science_Education">Khoa học &amp; giáo dục</string>
   <string name="category_Security">Bảo mật</string>
   <string name="category_System">Hệ thống</string>
-  <string name="requesting_root_access_body">Đang yêu cầu quyền root…</string>
-  <string name="root_access_denied_title">Bị từ chối quyền root</string>
-  <string name="root_access_denied_body">Thiết bị của bạn chưa được root hoặc bạn đã từ chối quyền root của F-Droid.</string>
   <string name="system_install_denied_title">Bị từ chối quyền hệ thống</string>
   <string name="system_install_denied_body">Chỉ có tuỳ chọn này khi F-Droid được cài làm ứng dụng hệ thống.</string>
     <string name="open_qr_code_scanner">Mở trình quét mã QR</string>
@@ -141,8 +134,6 @@
 
     <string name="unstable_updates">Cập nhật bản không ổn định</string>
     <string name="unstable_updates_summary">Thông báo cập nhật đối với các phiên bản chưa hoàn thiện</string>
-    <string name="uninstall_system">Cập nhật / Gỡ bỏ phần mở rộng F-Droid được cấp quyền</string>
-    <string name="uninstall_system_summary">Mở phần thông tin về phần mở rộng được cấp quyền để gỡ bỏ nó</string>
     <string name="links">Liên kết</string>
 
     <string name="back">Quay lại</string>
@@ -157,8 +148,6 @@
     <string name="menu_flattr">Flattr</string>
 
 
-    <string name="writing_index_jar">Đang ghi tập tin mục lục có chữ kí (index.jar)…</string>
-    <string name="linking_apks">Đang kết nối các tập tin APK vào kho…</string>
     <string name="enable_proxy_summary">Thiết lập proxy HTTP cho tất cả các yêu cầu nối mạng</string>
     <string name="proxy_host">Máy chủ Proxy</string>
     <string name="proxy_host_summary">Thiết lập tên máy chủ proxy của bạn (ví dụ 127.0.0.1)</string>
@@ -170,8 +159,6 @@
     <string name="pref_language">Ngôn ngữ</string>
     <string name="pref_language_default">Mặc định</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Điểm truy cập</string>
 
     <string name="category_Connectivity">Kết nối</string>
     <string name="category_Graphics">Đồ hoạ</string>

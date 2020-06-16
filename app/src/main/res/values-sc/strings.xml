@@ -88,12 +88,6 @@
   <string name="category_All">Totu</string>
   <string name="category_Whats_New">Novidades</string>
   <string name="category_Recently_Updated">Agiornadas dae pagu</string>
-    <string name="deleting_repo">Burrende su depòsitu atuale…</string>
-  <string name="adding_apks_format">Annanghende %s a su depòsitu…</string>
-  <string name="writing_index_jar">Iscriende su documentu de ìnditze firmadu (index.jar)…</string>
-  <string name="linking_apks">Culleghende sos APK in su depòsitu…</string>
-  <string name="copying_icons">Copiende sas iconas de sas aplicatziones in su depòsitu…</string>
-  <string name="icon">Icona</string>
   <string name="next">Imbeniente</string>
   <string name="skip">Brinca</string>
   <string name="proxy">Proxy</string>
@@ -153,9 +147,6 @@ Depes
   <string name="category_Science_Education">Iscièntzia e educatzione</string>
   <string name="category_Security">Seguràntzia</string>
   <string name="category_System">Sistema</string>
-  <string name="requesting_root_access_body">Pedinde s\'atzessu root…</string>
-  <string name="root_access_denied_title">Atzessu root dennegadu</string>
-  <string name="root_access_denied_body">Su dispositivu tuo non tenet sos permissos de root o non los as datu a F-droid.</string>
   <string name="system_install_denied_title">Permissos de sistema dennegados</string>
   <string name="system_install_denied_body">Custa optzione est disponìbile petzi cando F-Droid est installadu comente aplicatzione de sistema.</string>
     <string name="open_qr_code_scanner">Aberi s\'iscansidore de còdighes QR</string>
@@ -173,8 +164,6 @@ Depes
     <string name="pref_language">Limba</string>
     <string name="pref_language_default">Predefinida de sistema</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Puntu de atzessu (Hotspot)</string>
 
     <string name="empty_installed_app_list">Peruna aplicatzione installada.\n\nBi sunt aplicatziones in su dispositivu tuo, ma non sunt disponìbiles dae F-Droid. Custu podet nàrrere chi tenes bisòngiu de agiornare sos depòsitos tuos, o chi a beru sas aplicatziones tuas non bi sunt intre sas disponìbiles.</string>
     <string name="empty_available_app_list">Peruna aplicatzione in custa categoria.\n\nProa a ischertare una categoria diferente o a agiornare sos depòsitos tuos pro tènnere una lista noa de aplicatziones.</string>
@@ -184,8 +173,6 @@ Depes
     <string name="uninstall_error_unknown">Disinstallatzione faddida pro cajone de una faddina disconnota</string>
     <string name="unstable_updates">Agiornamentos instàbiles</string>
     <string name="unstable_updates_summary">Cussigia agiornamentos a versiones instàbiles</string>
-    <string name="uninstall_system">Disinstalla s’estensione cun permissos de sistema</string>
-    <string name="uninstall_system_summary">Aberi s’ischermada de sas minujas de s’estensione \"F-Droid cun permissos de sistema\" pro l’agiornare/disinstallare</string>
     <string name="about_source">Còdighe mitza</string>
     <string name="tab_installed_apps">Installadas</string>
     <string name="bad_fingerprint">Imprenta/arrastu isballiada</string>

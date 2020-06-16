@@ -88,12 +88,6 @@
   <string name="category_All">全て</string>
   <string name="category_Whats_New">新着</string>
   <string name="category_Recently_Updated">最近の更新</string>
-    <string name="deleting_repo">現在のﾘﾎﾟｼﾞﾄﾘを削除中</string>
-  <string name="adding_apks_format">ﾘﾎﾟｼﾞﾄﾘに %s を追加中</string>
-  <string name="writing_index_jar">署名された索引ﾌｧｲﾙを書き込み中(index.jar)…</string>
-  <string name="linking_apks">ﾘﾎﾟｼﾞﾄﾘにAPKを関連付けています…</string>
-  <string name="copying_icons">ﾘﾎﾟｼﾞﾄﾘにｱﾌﾟﾘｹｰｼｮﾝのｱｲｺﾝを複製中…</string>
-  <string name="icon">ｱｲｺﾝ</string>
   <string name="next">次へ</string>
   <string name="skip">飛ばす</string>
   <string name="proxy">ﾌﾟﾛｷｼｰ</string>
@@ -150,14 +144,9 @@
   <string name="category_Science_Education">科学と教育</string>
   <string name="category_Security">ｾｷｭﾘﾃｨ</string>
   <string name="category_System">ｼｽﾃﾑ</string>
-  <string name="requesting_root_access_body">管理者権限の要求中…</string>
-  <string name="root_access_denied_title">管理者権限での接続が拒絶されました｡</string>
-  <string name="root_access_denied_body">この端末はroot化されていないか､F-Droidの管理者権限の要求が拒絶されました｡</string>
   <string name="system_install_denied_title">ｼｽﾃﾑｱｸｾｽ許可が拒絶されました</string>
   <string name="system_install_denied_body">この設定は､F-Droidがｼｽﾃﾑｱﾌﾟﾘとしてｲﾝｽﾄｰﾙされているときのみ有効です｡</string>
     <string name="open_qr_code_scanner">QRｺｰﾄﾞｽｷｬﾅｰを開く</string>
-    <string name="uninstall_system">特権拡張をｲﾝｽﾄｰﾙ又はｱﾝｲﾝｽﾄｰﾙ</string>
-    <string name="uninstall_system_summary">特権拡張の詳細画面を開い､ｱﾌﾟﾘをｲﾝｽﾄｰﾙ又はｱﾝｲﾝｽﾄｰﾙします｡</string>
     <string name="app_incompatible">非互換</string>
     <string name="links">ﾘﾝｸ</string>
 
@@ -171,8 +160,6 @@
     <string name="pref_language">言語</string>
     <string name="pref_language_default">(日本語)</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">ﾎｯﾄｽﾎﾟｯﾄ</string>
 
     <string name="empty_installed_app_list">ｱﾌﾟﾘがｲﾝｽﾄｰﾙされていません｡\n\n端末にｱﾌﾟﾘｹｰｼｮﾝはありますが､F-Droid からは利用できません。ﾘﾎﾟｼﾞﾄﾘを更新する必要があるか､ﾘﾎﾟｼﾞﾄﾘからｱﾌﾟﾘｹｰｼｮﾝが利用できない可能性があります｡</string>
     <string name="empty_available_app_list">この欄にｱﾌﾟﾘｹｰｼｮﾝはありません｡\n\n別の欄を選択するか､ﾘﾎﾟｼﾞﾄﾘを更新して新しいｱﾌﾟﾘｹｰｼｮﾝの一覧を取得してみてください｡</string>

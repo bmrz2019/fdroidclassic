@@ -116,8 +116,6 @@
     <string name="unstable_updates_summary">Πρόταση ενημερώσεων σε ασταθείς εκδόσεις</string>
     <string name="system_installer">Επέκταση με δικαιώματα συστήματος</string>
     <string name="system_installer_on">Χρησιμοποιήστε την επέκταση του F-Droid με δικαιώματα συστήματος για να εγκαταστήσετε, ενημερώσετε και καταργήσετε πακέτα</string>
-    <string name="uninstall_system">Ενημέρωση/απεγκατάσταση της επέκτασης με δικαιώματα συστήματος</string>
-    <string name="uninstall_system_summary">Άνοιγμα οθόνης λεπτομερειών της Επέκτασης με δικαιώματα συστήματος για την ενημέρωση/απεγκατάστασή της</string>
 
     <string name="about_source">Πηγαίος κώδικας:</string>
     <string name="app_incompatible">Μη συμβατό</string>
@@ -141,12 +139,6 @@
     <string name="menu_flattr">Flattr</string>
 
 
-    <string name="deleting_repo">Διαγραφή τρέχων αποθετηρίου…</string>
-    <string name="adding_apks_format">Προσθήκη %s στο αποθετήριο…</string>
-    <string name="writing_index_jar">Εγγραφή υπογεγραμμένου αρχείου ευρετηρίου (index.jar)…</string>
-    <string name="linking_apks">Σύνδεση αρχείων APK στο αποθετήριο…</string>
-    <string name="copying_icons">Αντιγραφή εικονιδίων των εφαρμογών στο αποθετήριο…</string>
-    <string name="icon">Εικονίδιο</string>
     <string name="next">Επόμενο</string>
     <string name="skip">Παράβλεψη</string>
 
@@ -175,8 +167,6 @@
     <string name="pref_language_default">Προεπιλογή συστήματος</string>
 
     <string name="app_icon">Εικονίδιο εφαρμογής</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Σημείο πρόσβασης</string>
 
     <string name="category_Connectivity">Συνδεσιμότητα</string>
     <string name="category_Development">Ανάπτυξη</string>
@@ -200,9 +190,6 @@
     <string name="empty_available_app_list">Δεν υπάρχουν εφαρμογές σε αυτή την κατηγορία.\n\nΠροσπαθήστε να επιλέξετε μια διαφορετική κατηγορία ή να ενημερώσετε τα αποθετήριά σας για να πάρετε μια νέα λίστα των εφαρμογών.</string>
     <string name="empty_can_update_app_list">Όλες οι εφαρμογές είναι ενημερωμένες.\n\nΣυγχαρητήρια! Όλες οι εφαρμογές σας είναι ενημερωμένες (ή τα αποθετήριά σας είναι παρωχημένα).</string>
 
-    <string name="requesting_root_access_body">Αίτηση πρόσβασης υπερχρήστη…</string>
-    <string name="root_access_denied_title">Άρνηση πρόσβασης υπερχρήστη</string>
-    <string name="root_access_denied_body">Είτε η συσκευή σας Android δε έχει ενεργοποιημένο υπερχρήστη ή έχετε αρνηθεί την πρόσβαση υπερχρήστη για το F-Droid.</string>
     <string name="install_error_unknown">Απέτυχε η εγκατάσταση λόγω άγνωστου προβλήματος</string>
     <string name="uninstall_error_unknown">Αποτυχία απεγκατάστασης λόγω άγνωστου σφάλματος</string>
     <string name="system_install_denied_title">Η επέκταση του F-Droid με δικαιώματα συστήματος δεν είναι διαθέσιμη</string>

@@ -25,8 +25,6 @@
     <string name="update_history_summ">Päevade arv, mille jooksul kuvatakse rakendust uuena: %s</string>
     <string name="system_installer">Priviligeeritud laiendus</string>
     <string name="system_installer_on">"Kasuta pakettide paigaldamiseks, värskendamiseks ja eemaldamiseks  F-Droidi priviligeeritud laiendust"</string>
-    <string name="uninstall_system">Värskenda/eemalda priviligeeritud laiendus</string>
-    <string name="uninstall_system_summary">Priviligeeritud laienduse värskendamiseks/eemaldamiseks ava detailne vaade</string>
 
     <string name="login_title">Autentimine on nõutav</string>
     <string name="login_name">Kasutajanimi</string>
@@ -98,10 +96,6 @@
     <string name="menu_add_repo">Uus hoidla</string>
 
     <string name="antitracklist">See rakendus jälgib ja raporteerib su aktiivsusest</string>
-    <string name="deleting_repo">Kustutatakse praegust hoidlat…</string>
-    <string name="adding_apks_format">%s lisatakse hoidlasse…</string>
-    <string name="linking_apks">APK faile lingitakse hoidlasse…</string>
-    <string name="copying_icons">Rakenduste ikoone kopeeritakse hoidlasse…</string>
     <string name="update_notification_title">Hoidlaid värskendatakse</string>
     <string name="repos_unchanged">Kõik hoidlad on kaasajastaud</string>
         <string name="all_other_repos_fine">Kõik ülejäänud hoidlad vigu ei põhjustanud.</string>
@@ -170,8 +164,6 @@
     <string name="ignoreTouch">Ignoreeri puuteekraani</string>
     <string name="ignoreTouch_on">Alati kaasa puuteekraani vajavad rakendused</string>
 
-    <string name="writing_index_jar">Kirjutatakse signeeritud indeksi faili (index.jar)…</string>
-    <string name="icon">Ikoon</string>
     <string name="next">Järgmine</string>
     <string name="skip">Jäta vahele</string>
 
@@ -212,8 +204,6 @@
     <string name="pref_language_default">Süsteemi vaikesäte</string>
 
     <string name="app_icon">Rakenduse ikoon</string>
-    <string name="wifi">WiFi</string>
-    <string name="wifi_ap">Tööpunkt</string>
 
     <string name="category_All">Kõik</string>
     <string name="category_Whats_New">Mis on uut</string>
@@ -237,8 +227,6 @@
 
     <string name="empty_search_installed_app_list">Puuduvad vastavad paigaldatud rakendused.</string>
     <string name="empty_search_available_app_list">Sobivaid rakendusi ei ole.</string>
-    <string name="requesting_root_access_body">Soovitakse juurkasutaja õiguseid…</string>
-    <string name="root_access_denied_title">Juurkasutajana ligipääs keelatud</string>
     <string name="install_error_unknown">Paigaldamine nurjus tundmatu vea tõttu</string>
     <string name="uninstall_error_unknown">Eemaldamine nurjus tundmatu vea tõttu</string>
     <string name="system_install_denied_title">F-Droidi priviligeeritud laiendus ei ole saadaval</string>
@@ -304,7 +292,6 @@
 
     <string name="crash_dialog_title">F-Droidi tabas krahh</string>
     <string name="crash_dialog_comment_prompt">Sa saad lisada täiendavat informatsiooni ja kommentaare siia:</string>
-<string name="root_access_denied_body">Su Android seade ei ole kas lahti lukustatud või sa oled keelanud F-Droidile juurkasutaja õigused.</string>
     <string name="crash_dialog_text">Ootamatu viga põhjustas rakenduse krahhi.
  Kas sa soovid saata selle detailid e-mailiga, et probleem parandada?</string>
     </resources>

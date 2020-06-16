@@ -88,12 +88,6 @@
   <string name="category_All">Alt</string>
   <string name="category_Whats_New">Det som er nytt</string>
   <string name="category_Recently_Updated">Nylig oppdatert</string>
-    <string name="deleting_repo">Sletter gjeldende pakkebrønn…</string>
-  <string name="adding_apks_format">Legger til %s til pakkebrønn…</string>
-  <string name="writing_index_jar">Skriver signert indekseringsfil (index.jar)…</string>
-  <string name="linking_apks">Lenker APK-er inn i pakkebrønn…</string>
-  <string name="copying_icons">Kopierer program-miniatyrbilder til pakkebrønnen…</string>
-  <string name="icon">Miniatyrbilde</string>
   <string name="next">Neste</string>
   <string name="skip">Hopp over</string>
   <string name="proxy">Mellomtjener</string>
@@ -149,9 +143,6 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
   <string name="category_Science_Education">Vitenskap &amp; utdanning</string>
   <string name="category_Security">Sikkerhet</string>
   <string name="category_System">System</string>
-  <string name="requesting_root_access_body">Etterspør root-tilgang…</string>
-  <string name="root_access_denied_title">Root-tilgang nektet</string>
-  <string name="root_access_denied_body">Enten mangler din Android-enhet superbrukertilgang, eller så har du nektet F-droid root-tilgang.</string>
   <string name="system_install_denied_title">F-Droid priviligert tillegg er ikke tilgjengelig</string>
   <string name="system_install_denied_body">Dette valget er bare tilgjengelig når F-Droid er installert som priviligert tillegg.</string>
     <string name="open_qr_code_scanner">Åpne QR-kode-skanner</string>
@@ -182,7 +173,6 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
     <string name="pref_language">Språk</string>
     <string name="pref_language_default">Systemforvalg</string>
 
-    <string name="wifi">Wi-Fi</string>
     <string name="category_Graphics">Grafikk</string>
     <string name="category_Money">Penger</string>
     <string name="category_Sports_Health">Idrett og helse</string>
@@ -223,15 +213,12 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
     <string name="interval_2w">Hver andre uke</string>
 
     <string name="theme_light">Lyst</string>
-    <string name="uninstall_system">Oppdater/avinstaller priviligert tillegg</string>
-    <string name="uninstall_system_summary">Åpne detaljvisning av priviligert tillegg for å oppdatere/avinstallere det</string>
     <string name="more">Mer</string>
     <string name="less">Mindre</string>
 
     <string name="menu_settings">Innstillinger</string>
     <string name="status_download_unknown_size">Laster ned\n%2$s fra\n%1$s</string>
     <string name="permissions">Rettigheter</string>
-    <string name="wifi_ap">Felles trådløstilknytning</string>
 
     <string name="category_Connectivity">Tilkobling</string>
     <string name="category_Theming">Kostymering</string>

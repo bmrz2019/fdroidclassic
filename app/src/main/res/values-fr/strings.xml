@@ -89,12 +89,6 @@
   <string name="category_All">Toutes</string>
   <string name="category_Whats_New">Nouveautés</string>
   <string name="category_Recently_Updated">Mises à jour récentes</string>
-    <string name="deleting_repo">Supprimer le dépôt actuel…</string>
-  <string name="adding_apks_format">Ajout de %s au dépôt…</string>
-  <string name="writing_index_jar">Écriture d\'un fichier d\'index signé (index.jar)…</string>
-  <string name="linking_apks">Création de liens pour les APKs dans le dépôt…</string>
-  <string name="copying_icons">Copie des icônes des applis dans le dépôt…</string>
-  <string name="icon">Icône</string>
   <string name="next">Suivant</string>
   <string name="skip">Ignorer</string>
   <string name="proxy">Proxy</string>
@@ -152,9 +146,6 @@ réactiver ce dépôt pour installer les applis qu\'il contient.</string>
   <string name="category_Science_Education">Science &amp; Éducation</string>
   <string name="category_Security">Sécurité</string>
   <string name="category_System">Système</string>
-  <string name="requesting_root_access_body">Demande d\'accès aux privilèges root…</string>
-  <string name="root_access_denied_title">Privilèges root refusés</string>
-  <string name="root_access_denied_body">Soit vous n\'avez pas accès aux privilèges root sur ce système Android, soit vous les avez refusés à F-Droid.</string>
   <string name="system_install_denied_title">F-Droid Privileged Extension n\'est pas disponible</string>
   <string name="system_install_denied_body">Cette option est disponible uniquement quand l\'appli F-Droid Privileged Extension est installée.</string>
     <string name="open_qr_code_scanner">Ouvrir le scanner de code QR</string>
@@ -162,7 +153,6 @@ réactiver ce dépôt pour installer les applis qu\'il contient.</string>
 
     <string name="unstable_updates">Mises à jour instables</string>
     <string name="unstable_updates_summary">Proposer les mises à jour de versions instables</string>
-    <string name="uninstall_system">Mettre à jour/désinstaller l\'appli F-Droid Privileged Extension</string>
     <string name="about_source">Code source</string>
     <string name="app_incompatible">Incompatible</string>
     <string name="links">Liens</string>
@@ -176,8 +166,6 @@ réactiver ce dépôt pour installer les applis qu\'il contient.</string>
     <string name="pref_language">Langue</string>
     <string name="pref_language_default">Langue du système</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Point d\'accès</string>
 
     <string name="category_Connectivity">Connectivité</string>
     <string name="category_Sports_Health">Sport &amp; Santé</string>
@@ -236,7 +224,6 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
 
     <string name="interval_1h">Toutes les heures</string>
     <string name="perms_description_app">Fourni par %1$s.</string>
-    <string name="uninstall_system_summary">Ouvrir l\'écran des détails de l\'appli F-Droid Privileged Extension pour la mettre à jour/la désinstaller</string>
     <string name="update_notification_more">%1$d de plus…</string>
     <string name="status_download_unknown_size">Téléchargement de
 \n%2$s depuis

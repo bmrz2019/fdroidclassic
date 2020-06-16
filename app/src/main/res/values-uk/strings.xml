@@ -57,8 +57,6 @@
     <string name="update_history_summ">Скільки днів вважати програму новою чи нещодавньою: %s</string>
     <string name="system_installer">Привілейоване розширення</string>
     <string name="system_installer_on">Використовувати привілейоване розширення F-Droid для встановлення, оновлення та видалення пакетів</string>
-    <string name="uninstall_system">Оновити/Видалити привілейоване розширення F-Droid</string>
-    <string name="uninstall_system_summary">Відкрити подробиці, що до привілейованого розширення F-Droid для його оновлення чи видалення</string>
     <string name="theme_dark">Темна</string>
 <string name="theme_light">Світла</string>
     <string name="interval_4h">Кожні 4 години</string>
@@ -121,8 +119,6 @@
     <string name="rooted_on">Не підсвічувати сірим додатки, які потребують прав суперкористувача</string>
     <string name="ignoreTouch_on">Завжди включати додатки, які потребують сенсорного екрану</string>
 
-    <string name="deleting_repo">Видалення поточного репозиторію…</string>
-    <string name="adding_apks_format">Додавання «%s» до репозиторію…</string>
     <string name="next">Далі</string>
     <string name="enable_proxy_title">Використовувати HTTP проксі</string>
     <string name="enable_proxy_summary">Налаштувати HTTP проксі для всіх мережевих запитів</string>
@@ -149,7 +145,6 @@
     <string name="pref_language_default">Типова для системи</string>
 
     <string name="app_icon">Піктограма додатку</string>
-    <string name="wifi">Wi-Fi</string>
     <string name="category_Games">Ігри</string>
     <string name="category_Graphics">Графіка</string>
     <string name="category_Internet">Інтернет</string>
@@ -176,8 +171,6 @@
     <string name="allPerms">Всі</string>
     <string name="repo_add_fingerprint">Відбиток (опція)</string>
     <string name="antiadslist">Цей додаток містить рекламні пропозиції</string>
-    <string name="copying_icons">Копіювання піктограми додатку до репозиторію…</string>
-    <string name="icon">Піктограма</string>
     <string name="no_permissions">Не потребує дозволів.</string>
     <string name="requires_features">Залежності: %1$s</string>
     <string name="empty_available_app_list">Відсутні додатки в даній категорії.\n\nСпробуйте обрати іншу категорію, або оновити Ваші репозиторії, аби отримати свіжий перелік додатків.</string>
@@ -204,8 +197,6 @@
 
     <string name="show_incompat_versions">Не сумісні версії</string>
     <string name="show_incompat_versions_on">Показувати версії додатків, які не сумісні з пристроєм</string>
-    <string name="writing_index_jar">Запис підписаного файлу індексу (index.jar)…</string>
-    <string name="linking_apks">Включення APK-файлів до репозиторію…</string>
     <string name="all_other_repos_fine">Всі інші репозиторії не містять помилок.</string>
         <string name="no_handler_app">Ви не маєте додатку для обробки «%s».</string>
     <string name="repo_num_apps">Кількість додатків</string>
@@ -229,9 +220,6 @@
     <string name="minsdk_up_to_maxsdk">%1$s до %2$s</string>
     <string name="not_on_same_wifi">Ваш пристрій не в тій самій Wi-Fi мережі, що й локальний репозиторій, який щойно додали! Спробуйте приєднатися до цієї мережі: %s</string>
     <string name="category_Development">Розробка</string>
-    <string name="requesting_root_access_body">Запит root доступу…</string>
-    <string name="root_access_denied_title">У root доступі відмовлено</string>
-    <string name="root_access_denied_body">Або ваш пристрій не має root доступу, або ж ви відхилили запит від F-Droid.</string>
     <string name="system_install_denied_title">Привілейоване розширення F-Droid не доступне</string>
     <string name="system_install_denied_body">Цей параметр активний, якщо встановлено привілейоване розширення F-Droid.</string>
     <string name="system_install_denied_signature">Підпис розширення не сходиться! Будь ласка, повідомте про помилку!</string>
@@ -239,7 +227,6 @@
     <string name="system_install_post_fail">Виникла посилка під час встановлення привілейованого розширення F-Droid</string>
     <string name="system_install_question">Бажаєте встановити привілейоване розширення F-Droid?</string>
     <string name="system_uninstall">Бажаєте видалити привілейоване розширення F-Droid?</string>
-    <string name="wifi_ap">Точка доступу</string>
 
     <string name="category_Writing">Редагування</string>
 

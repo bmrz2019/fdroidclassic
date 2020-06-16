@@ -17,8 +17,6 @@
     <string name="update_history_summ">ימים כדי להחשיב אפליקציות כחדשות או אחרונות: %s</string>
     <string name="system_installer">הרחבה מועדפת</string>
     <string name="system_installer_on">השתמש בהרחבת F-Droid מועדפת כדי להתקין, לעדכן, ולהסיר חבילות</string>
-    <string name="uninstall_system">בטל התקנת או עדכן הרחבה מועדפת</string>
-    <string name="uninstall_system_summary">פתח מסך פרטים של הרחבה מועדפת כדי לעדכנה/לבטל התקנתה</string>
 
     <string name="app_details">פרטי אפליקציה</string>
     <string name="no_such_app">לא נמצאה אפליקציה.</string>
@@ -107,12 +105,6 @@
     <string name="category_Whats_New">מה חדש</string>
     <string name="category_Recently_Updated">עודכנו לאחרונה</string>
 
-    <string name="deleting_repo">כעת מוחק מאגר נוכחי…</string>
-    <string name="adding_apks_format">הוסף את %s למאגר…</string>
-    <string name="writing_index_jar">כעת כותב קובץ אינדקס חתום (index.jar)…</string>
-    <string name="linking_apks">כעת מקשר APK לתוך המאגר…</string>
-    <string name="copying_icons">כעת מעתיק סמלי אפליקציה לתוך המאגר…</string>
-    <string name="icon">סמל</string>
     <string name="next">הלאה</string>
     <string name="skip">דלג</string>
     <string name="proxy">פרוקסי</string>
@@ -166,9 +158,6 @@
     <string name="empty_available_app_list">אין אפליקציות בתוך קטגוריה זו.\n\nנסה לבחור קטגוריה אחרת או לעדכן את המאגרים שלך כדי להשיג רשימה רעננה של אפליקציות.</string>
     <string name="empty_can_update_app_list">כל האפליקציות מעודכנות.\n\nברכותינו! כל האפליקציות שלך הינן מעודכנות (או שהמאגרים שלך אינם מעודכנים).</string>
 
-    <string name="requesting_root_access_body">כעת מבקש גישת שורש…</string>
-    <string name="root_access_denied_title">גישת שורש נאסרה</string>
-    <string name="root_access_denied_body">או שמכשיר Android אינו מושרש או שאסרת גישת שורש עבור F-Droid.</string>
     <string name="install_error_unknown">נכשל להתקין בשל שגיאה לא מוכרת</string>
     <string name="uninstall_error_unknown">נכשל לבטל התקנה בשל שגיאה לא מוכרת</string>
     <string name="system_install_denied_title">הרשאות מערכת נאסרו</string>
@@ -202,8 +191,6 @@
     <string name="app_incompatible">לא תואמת</string>
     <string name="back">אחורה</string>
     <string name="repo_searching_address">כעת מחפש מאגר F-Droid אצל\n%1$s</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">נקודה חמה</string>
 
     <string name="category_Connectivity">קישוריות</string>
     <string name="category_Graphics">גרפיקה</string>

@@ -37,7 +37,6 @@
   <string name="menu_donate">التبرع</string>
   <string name="category_All">الكل</string>
   <string name="category_Whats_New">مالجديد</string>
-    <string name="deleting_repo">يتم حذف المستودع الحالي…</string>
   <string name="next">التالي</string>
   <string name="skip">تخطي</string>
   <string name="theme">السمة</string>
@@ -82,8 +81,6 @@
     <string name="update_history_summ">أيام للنظر في تطبيقات جديدة أو الأخيرة: %s</string>
     <string name="system_installer">ملحقات متميزة</string>
     <string name="system_installer_on">استخدام اف-درويد مميز الملحقات لتثبيت وتحديث وإزالة الحزم</string>
-    <string name="uninstall_system">تحديث / إلغاء مميز الملحقات</string>
-    <string name="uninstall_system_summary">فتح تفاصيل شاشة الملحقات المميزة لتحديث / إلغاء للتثبيت</string>
 
     <string name="login_title">يستلزم التوثيق</string>
     <string name="login_name">إسم المستخدم</string>
@@ -160,11 +157,6 @@
     <string name="ignoreTouch">تجاهل الشاشات التي تعمل باللمس</string>
     <string name="ignoreTouch_on">دائما ضم التطبيقات التي تتطلب شاشة تعمل باللمس</string>
 
-    <string name="adding_apks_format">إضافة %s إلى مستودع…</string>
-    <string name="writing_index_jar">كتابة توقيع ملف الفهرس (index.jar) …</string>
-    <string name="linking_apks">ربط ملفات APK التي في المستودعات…</string>
-    <string name="copying_icons">نسخ ايقونات التطبيق في المستودعات …</string>
-    <string name="icon">ايقونة</string>
     <string name="useTor">إستخدام التور (Tor)</string>
     <string name="useTorSummary">إجبار حركة التحميل من خلال تور لزيادة الخصوصية</string>
     <string name="proxy">خدمة الوكيل (البروكسي)</string>
@@ -205,8 +197,6 @@
     <string name="pref_language">لغات</string>
     <string name="pref_language_default">النظام الافتراضي</string>
 
-    <string name="wifi">شبكة لاسلكية (واي-فاي)</string>
-    <string name="wifi_ap">نقاط الإنترنت</string>
 
     <string name="category_Recently_Updated">تم تحديثه مؤخرا</string>
     <string name="category_Connectivity">الاتصال</string>
@@ -225,9 +215,6 @@
     <string name="empty_search_available_app_list">لا توجد تطبيقات مطابقة متوفرة.</string>
     <string name="empty_search_can_update_app_list">لا توجد تطبيقات مطابقة للتحديث.</string>
 
-    <string name="requesting_root_access_body">طلب وصول الى النواة…</string>
-    <string name="root_access_denied_title">لا يمكن الوصول الى النواة</string>
-    <string name="root_access_denied_body">إما جهاز الأندرويد الخاص بك ليس ممدد النواة أو كنت قد رفضت وصول الى النواة لاف-درويد.</string>
     <string name="install_error_unknown">فشل في التثبيت بسبب خطأ غير معروف</string>
     <string name="uninstall_error_unknown">فشل إلغاء التثبيت نتيجة لخطأ غير معروف</string>
     <string name="system_install_denied_title">اف-درويد مميز التمديد غير متوفر</string>

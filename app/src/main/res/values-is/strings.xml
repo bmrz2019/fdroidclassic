@@ -112,9 +112,6 @@
     <string name="show_incompat_versions">Ósamhæfðar útgáfur</string>
     <string name="rooted">Hunsa rót/root</string>
     <string name="ignoreTouch">Hunsa snertiskjá</string>
-    <string name="deleting_repo">Eyði núgildandi hugbúnaðarsafni…</string>
-    <string name="adding_apks_format">Bæti %s við í hugbúnaðarsafn…</string>
-    <string name="icon">Táknmynd</string>
     <string name="next">Næsta</string>
     <string name="skip">Sleppa</string>
 
@@ -165,8 +162,6 @@
     <string name="pref_language_default">Sjálfgefið í kerfinu</string>
 
     <string name="app_icon">Forritstákn</string>
-    <string name="wifi">Þráðlaust Wi-Fi net</string>
-    <string name="wifi_ap">Tengipunktur (hotspot)</string>
 
     <string name="category_All">Allt</string>
     <string name="category_Whats_New">Nýtt á döfinni</string>
@@ -193,8 +188,6 @@
     <string name="empty_search_available_app_list">Engin samsvarandi forrit tiltæk.</string>
     <string name="empty_search_can_update_app_list">Engin samsvarandi forrit fundust fyrir uppfærslu.</string>
 
-    <string name="requesting_root_access_body">Bið um rótaraðgang…</string>
-    <string name="root_access_denied_title">Rótaraðgangi var hafnað</string>
     <string name="install_error_unknown">Mistókst að setja inn vegna óþekktrar villu</string>
     <string name="uninstall_error_unknown">Mistókst að fjarlægja vegna óþekktrar villu</string>
     <string name="system_install_button_install">Setja inn</string>
@@ -252,8 +245,6 @@
     <string name="update_interval_zero">Engar sjálfvirkar uppfærslur forritalista</string>
     <string name="automatic_scan_wifi_on">Einungis uppfæra forritalista sjálfvirkt þegar tengst er þráðlausu Wi-Fi neti</string>
     <string name="system_installer_on">Nota forgangsviðbót F-Droid (privileged extension) til að setja upp, uppfæra og fjarlægja pakka</string>
-    <string name="uninstall_system">Uppfæra/Fjarlægja forgangsviðbót</string>
-    <string name="uninstall_system_summary">Opnaðu skjáinn með ítarupplýsingum um forgangsviðbótina til að uppfæra/fjarlægja hana</string>
 
     <string name="repo_error_empty_username">Autt notandanafn, óbreyttar heimildir</string>
 
@@ -291,9 +282,6 @@
     <string name="hide_anti_feature_apps_on">Skyggja forrit sem krefjast neikvæðra eiginleika</string>
     <string name="ignoreTouch_on">Alltaf hafa með forrit sem krefjast snertiskjás</string>
 
-    <string name="writing_index_jar">Skrifa undirritaða atriðaskrá (index.jar)…</string>
-    <string name="linking_apks">Tengi APK-pakka inn í hugbúnaðarsafn…</string>
-    <string name="copying_icons">Afrita táknmyndir forrita inn í hugbúnaðarsafn…</string>
     <string name="enable_proxy_summary">Stilla HTTP-milliþjón fyrir allar beiðnir á neti</string>
     <string name="proxy_host_summary">Settu inn vélarheiti milliþjónsins þíns (t.d. 127.0.0.1)</string>
     <string name="proxy_port_summary">Settu inn númerið á gátt milliþjónsins þíns (t.d. 8118)</string>
@@ -322,7 +310,6 @@ Prófaðu að velja annan flokk eða að uppfæra hugbúnaðarsöfnin þín til 
     <string name="empty_can_update_app_list">Öll forrit eru af nýjustu útgáfu.
 
 Til hamingju! Öll forritin þín eru af nýjustu útgáfu (nema ef vera kynni að upplýsingar um hugbúnaðarsöfn séu úreltar).</string>
-    <string name="root_access_denied_body">Annað hvort er Android tækið þitt ekki með rótaraðgang (rooted) eða að þú hefur neitað F-Droid um rótarheimildir.</string>
     <string name="system_install_denied_signature">Undirritun viðbótarinnar er röng! Sendu endilega inn villuskýrslu!</string>
     <string name="system_install_warning_lollipop">Þetta tekur allt að 10 sekúndum og tækið verður <b>endurræst</b> í kjölfarið.</string>
 

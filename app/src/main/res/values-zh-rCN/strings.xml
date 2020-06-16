@@ -85,8 +85,6 @@
   <string name="category_All">全部</string>
   <string name="category_Whats_New">新应用</string>
   <string name="category_Recently_Updated">最近更新</string>
-    <string name="deleting_repo">正在删除当前软件源…</string>
-  <string name="icon">图标</string>
   <string name="proxy">代理</string>
   <string name="enable_proxy_title">启用http代理</string>
   <string name="enable_proxy_summary">为所有的网络请求启用http代理</string>
@@ -129,15 +127,11 @@
   <string name="category_Science_Education">科学和教育</string>
   <string name="category_Security">安全</string>
   <string name="category_System">系统</string>
-  <string name="requesting_root_access_body">正在请求root权限…</string>
-  <string name="root_access_denied_title">root权限请求被拒绝</string>
     <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">不稳定更新</string>
     <string name="unstable_updates_summary">启用不稳定版本的更新</string>
     <string name="system_installer_on">使用F-Droid特权扩展来安装，更新以及卸载应用</string>
-    <string name="uninstall_system">更新/卸载特权扩展</string>
-    <string name="uninstall_system_summary">打开特权扩展的详情来更新/卸载它</string>
 
     <string name="login_title">需要验证</string>
     <string name="login_name">用户名</string>
@@ -169,10 +163,6 @@
     <string name="menu_flattr">Flattr</string>
 
 
-    <string name="adding_apks_format">正在添加 %s 到软件源…</string>
-    <string name="writing_index_jar">正在写入已签名的索引文件（index.jar）…</string>
-    <string name="linking_apks">正在链接APK到软件源……</string>
-    <string name="copying_icons">正在复制应用程序图标到软件源…</string>
     <string name="next">下一个</string>
     <string name="skip">跳过</string>
 
@@ -190,8 +180,6 @@
     <string name="pref_language">语言</string>
     <string name="pref_language_default">系统默认</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Wi-Fi热点</string>
 
     <string name="category_Connectivity">连接</string>
     <string name="category_Graphics">图像</string>
@@ -205,7 +193,6 @@
     <string name="empty_available_app_list">该目录中未找到任何应用程序。\n\n试试其它目录或者更新软件库获取最新的应用列表。</string>
     <string name="empty_can_update_app_list">所有软件已更新。\n\n好棒！你的应用都是最新的（或者你该更新软件库了）。</string>
 
-    <string name="root_access_denied_body">你的设备未root，或者你拒绝了root请求。</string>
     <string name="install_error_unknown">由于未知原因导致安装失败</string>
     <string name="uninstall_error_unknown">由于未知原因导致缷载失败</string>
     <string name="system_install_denied_title">F-Droid特权扩展不可用</string>

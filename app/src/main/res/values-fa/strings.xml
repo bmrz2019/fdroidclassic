@@ -79,8 +79,6 @@
     <string name="update_history_summ">روزهایی که کاره جدید یا اخیر محسوب شود: %s</string>
     <string name="system_installer">افزونهٔ ممتاز</string>
     <string name="system_installer_on">استفاده از افزونهٔ ممتاز اف‌دروید برای نصب، به‌روز رسانی و حذف بسته‌ها</string>
-    <string name="uninstall_system">به‌روز رسانی/حذف افزونهٔ ممتاز</string>
-    <string name="uninstall_system_summary">گشودن صفحهٔ جزییات افزونهٔ ممتاز برای به‌روز رسانی/حذف آن</string>
 
     <string name="login_title">نیاز به تأیید هویت</string>
     <string name="login_name">نام کاربری</string>
@@ -136,12 +134,6 @@
     <string name="rooted_on">خاکستری نکردن کاره‌های نیازمند دسترسی ریشه</string>
     <string name="ignoreTouch_on">همواره شامل کاره‌هایی که نیازمند صفحه‌لمسی هستند</string>
 
-    <string name="deleting_repo">در حال حذف مخزن جاری…</string>
-    <string name="adding_apks_format">در حال افزودن %s به مخزن…</string>
-    <string name="writing_index_jar">در حال نوشتن پروندهٔ شاخص امضا شده (index.jar)…</string>
-    <string name="icon">نقشک</string>
-    <string name="linking_apks">در حال پیوند دادن apkها در مخزن…</string>
-    <string name="copying_icons">در حال رونوشت نقشک کاره‌ها در مخزن…</string>
     <string name="next">بعدی</string>
     <string name="skip">پرش</string>
 
@@ -172,8 +164,6 @@
     <string name="pref_language_default">پیش‌گزیدهٔ سامانه</string>
 
     <string name="app_icon">نقشک کاره</string>
-    <string name="wifi">وای‌فای</string>
-    <string name="wifi_ap">نقطهٔ داغ</string>
 
     <string name="category_Whats_New">تازه‌ها</string>
     <string name="category_Recently_Updated">به‌روز رسانی‌های اخیر</string>
@@ -195,11 +185,8 @@
     <string name="category_Time">زمان</string>
     <string name="category_Writing">نوشتن</string>
 
-    <string name="requesting_root_access_body">در حال درخواست دسترسی ریشه…</string>
     <string name="empty_can_update_app_list">تمام کاره‌ها به‌روز هستند.\n\nتبریک! تمام کاره‌هایتان به‌روز هستند (یا مخزن‌هایتان منقضی شده‌اند).</string>
 
-    <string name="root_access_denied_title">دسترسی ریشه داده نشد</string>
-    <string name="root_access_denied_body">یا افزارهٔ اندرویدیتان روت شده نیست، یا درخواست ریشه برای اف‌دروید را رد کردید.</string>
     <string name="system_uninstall_button">حذف نصب</string>
 
     <string name="open_qr_code_scanner">گشودن پویشگر QR</string>

@@ -77,12 +77,6 @@
   <string name="category_All">Kaikki</string>
   <string name="category_Whats_New">Mikä on uutta</string>
   <string name="category_Recently_Updated">Viimeksi päivitetyt</string>
-    <string name="deleting_repo">Poistetaan nykyistä sovelluslähdettä…</string>
-  <string name="adding_apks_format">Lisätään %s sovelluslähteeseen…</string>
-  <string name="writing_index_jar">Kirjoitetaan allekirjoitettua hakemistotiedostoa (index.jar)…</string>
-  <string name="linking_apks">Linkitetään APK -tiedostot sovelluslähteeseen…</string>
-  <string name="copying_icons">Kopioidaan kuvakkeita sovelluslähteeseen…</string>
-  <string name="icon">Kuvake</string>
   <string name="next">Seuraava</string>
   <string name="skip">Ohita</string>
   <string name="proxy">Välityspalvelin</string>
@@ -113,9 +107,6 @@
   <string name="category_Science_Education">Tiede &amp; koulutus</string>
   <string name="category_Security">Tietoturva</string>
   <string name="category_System">Järjestelmä</string>
-  <string name="requesting_root_access_body">Pyydetään root-oikeuksia…</string>
-  <string name="root_access_denied_title">Root-oikeudet kielletty</string>
-  <string name="root_access_denied_body">Joko Android-laitettasi ei ole rootattu tai olet kieltänyt F-Droidin root-oikeuksiin pääsyn.</string>
   <string name="system_install_denied_title">F-Droid Privileged Extension ei ole saatavilla</string>
   <string name="system_install_denied_body">Tämä asetus on käytössä vain silloin, kun F-Droid Privileged Extension on asennettu.</string>
     <string name="open_qr_code_scanner">Avaa QR-koodilukija</string>
@@ -165,8 +156,6 @@
     <string name="update_notification_more">+%1$d lisää…</string>
     <string name="update_auto_download">Lataa päivitykset automaattisesti</string>
     <string name="update_auto_download_summary">Lataa päivitykset taustalla</string>
-    <string name="uninstall_system">Päivitä/Poista Privileged Extension</string>
-    <string name="uninstall_system_summary">Avaa Privileged Extensionin asetussivu päivittääksesi tai poistaaksesi sen</string>
     <string name="repo_error_empty_username">Käyttäjätunnus tyhjä, käyttäjätietoja ei tallennettu</string>
 
     <string name="repo_exists_enable">Tämä sovelluslähde on jo asennettu, vahvista että haluat ottaa sen käyttöön uudelleen.</string>
@@ -212,8 +201,6 @@
     <string name="pref_language">Kieli</string>
     <string name="pref_language_default">Järjestelmän oletus</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_Money">Raha</string>
     <string name="category_Sports_Health">Urheilu &amp; terveys</string>

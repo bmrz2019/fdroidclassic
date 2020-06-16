@@ -48,7 +48,6 @@
 
     <string name="details_installed">Versioni %s i instaluar</string>
     <string name="details_notinstalled">Jo i instaluar</string>
-    <string name="icon">Ikona</string>
     <string name="skip">Tejkalo</string>
 
     <string name="status_download">Duke shkarkuar\n%2$s / %3$s (%4$d%%) nga\n%1$s</string>
@@ -63,8 +62,6 @@
     <string name="repo_last_update">Përditësimi i fundit</string>
     <string name="repo_name">Emri</string>
     <string name="pref_language">Gjuha</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_Recently_Updated">Të përditësuar së fundmi</string>
     <string name="category_Games">Lojra</string>

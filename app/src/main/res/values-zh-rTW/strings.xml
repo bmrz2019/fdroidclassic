@@ -116,7 +116,6 @@
     <string name="ignoreTouch">忽略觸控螢幕</string>
     <string name="ignoreTouch_on">永遠包含需要觸控螢幕的應用程式</string>
 
-    <string name="icon">圖示</string>
     <string name="skip">略過</string>
 
     <string name="proxy">代理伺服器</string>
@@ -130,8 +129,6 @@
     <string name="pref_language_default">系統預設</string>
 
     <string name="app_icon">應用程式圖示</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">熱點</string>
 
     <string name="category_All">全部</string>
     <string name="category_Whats_New">最新</string>
@@ -158,9 +155,6 @@
     <string name="menu_manage">儲存庫</string>
     <string name="menu_add_repo">新增儲存庫</string>
 
-    <string name="deleting_repo">正在刪除目前的儲存庫…</string>
-    <string name="adding_apks_format">正在加入 %s 到儲存庫…</string>
-    <string name="copying_icons">正在複製應用程式圖示到儲存庫…</string>
     <string name="update_notification_title">正在更新儲存庫</string>
     <string name="repos_unchanged">所有儲存庫已更新至最新的版本</string>
         <string name="all_other_repos_fine">所有其它儲存庫都沒有出現錯誤。</string>
@@ -209,14 +203,11 @@
     <string name="status_inserting_apps">正在儲存應用程式的詳細資料</string>
     <string name="unsigned">未簽署</string>
     <string name="repo_url">網址</string>
-    <string name="root_access_denied_title">Root 權限被拒絕</string>
     <string name="install_error_unknown">不明的錯誤導致安裝失敗</string>
     <string name="uninstall_confirm">您想要解除安裝此應用程式嗎？</string>
     <string name="download_error">下載失敗</string>
 
     <string name="system_installer_on">使用 F-Droid 特權擴充以安裝、更新和移除套裝軟體</string>
-    <string name="uninstall_system">更新/解除安裝特權擴充</string>
-    <string name="uninstall_system_summary">開啟特權擴充的詳情畫面來更新/解除安裝</string>
     <string name="repo_error_empty_username">空的使用者名稱，憑證未改變</string>
 
     <string name="update_notification_more">+%1$d 更多…</string>
@@ -227,8 +218,6 @@
 
     <string name="menu_email">E-Mail 作者</string>
     <string name="menu_issues">問題</string>
-    <string name="writing_index_jar">寫入已簽署的索引檔案中 (index.jar)…</string>
-    <string name="linking_apks">正在連結 APK 到儲存庫裡…</string>
     <string name="next">下一步</string>
     <string name="useTor">使用 Tor</string>
     <string name="useTorSummary">為了增強隱私保護，強制下載流量通過 Tor</string>
@@ -254,10 +243,8 @@
     <string name="empty_search_available_app_list">沒有相符合的應用程式可用。</string>
     <string name="empty_search_can_update_app_list">沒有相符合的應用程式更新。</string>
 
-    <string name="requesting_root_access_body">正在要求 root 權限…</string>
     <string name="empty_installed_app_list">未安裝應用程式。\n\nF-Droid 並無您裝置上可用的應用程式。這可能是因為您需要更新您的儲存庫，或是儲存庫真的沒有您可用的應用程式。</string>
     <string name="empty_available_app_list">此類別沒有應用程式。\n\n試著選擇不同的類別或是更新您的儲存庫來取得應用程式最新的清單。</string>
-    <string name="root_access_denied_body">或許您的 Android 裝置還未取得 root 又或您已拒絕 F-Droid 存取 root。</string>
     <string name="system_install_denied_title">F-Droid 特權擴充無法利用</string>
     <string name="system_install_denied_body">此選項只能用在已有安裝 F-Droid 的特權擴充。</string>
     <string name="system_install_denied_signature">該擴充簽署錯誤！請建立一份錯誤報告！</string>

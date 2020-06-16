@@ -22,8 +22,6 @@
     <string name="update_history_summ">Dias para considerar aplicações como novas ou recentes: %s</string>
     <string name="system_installer">Extensão privilegiada</string>
     <string name="system_installer_on">Utilizar a extensão privilegiada do F-Droid para instalar, atualizar e remover pacotes</string>
-    <string name="uninstall_system">Atualizar/desinstalar extensão privilegiada</string>
-    <string name="uninstall_system_summary">Abrir ecrã de detalhes da extensão privilegiada para a atualizar/desinstalar</string>
 
     <string name="app_details">Detalhes da aplicação</string>
     <string name="no_such_app">Aplicação não encontrada.</string>
@@ -120,12 +118,6 @@
     <string name="ignoreTouch">Ignorar ecrã de toque</string>
     <string name="ignoreTouch_on">Incluir aplicações que necessitem de toque no ecrã</string>
 
-    <string name="deleting_repo">A apagar repositório local…</string>
-    <string name="adding_apks_format">A adicionar %s ao repositório…</string>
-    <string name="writing_index_jar">A escrever ficheiro de índice (index.jar)…</string>
-    <string name="linking_apks">A associar as APK com o repositório…</string>
-    <string name="copying_icons">A copiar ícones para o repositório…</string>
-    <string name="icon">Ícone</string>
     <string name="next">Seguinte</string>
     <string name="skip">Ignorar</string>
 
@@ -184,8 +176,6 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="pref_language_default">Definições do sistema</string>
 
     <string name="app_icon">Ícone da aplicação</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_All">Todas</string>
     <string name="category_Whats_New">Novidades</string>
@@ -212,9 +202,6 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="empty_available_app_list">Não existem aplicações nesta categoria.\n\nSelecione uma categoria diferente ou atualize os repositórios para obter a lista de aplicações.</string>
     <string name="empty_can_update_app_list">Todas as aplicações estão atualizadas.\n\nParabéns! Todas as aplicações estão atualizadas (ou os repositórios não o estão).</string>
 
-    <string name="requesting_root_access_body">A solicitar acesso \'root\'…</string>
-    <string name="root_access_denied_title">Acesso \'root\' recusado</string>
-    <string name="root_access_denied_body">O dispositivo Android não está \'rooted\' ou você recusou o acesso \'root\' solicitado pelo F-Droid.</string>
     <string name="install_error_unknown">Falha de instalação devido a um erro desconhecido</string>
     <string name="uninstall_error_unknown">Falha ao desinstalar devido a um erro desconhecido</string>
     <string name="system_install_denied_title">A extensão privilegiada do F-Droid não está disponível</string>

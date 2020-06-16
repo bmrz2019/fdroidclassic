@@ -88,12 +88,6 @@
   <string name="category_All">Све</string>
   <string name="category_Whats_New">Нове</string>
   <string name="category_Recently_Updated">Недавно надограђене</string>
-    <string name="deleting_repo">Бришем тренутну ризницу…</string>
-  <string name="adding_apks_format">Додајем %s у ризницу…</string>
-  <string name="writing_index_jar">Уписујем потписани фајл садржаја (index.jar)…</string>
-  <string name="linking_apks">Повезујем АПК фајлове са ризницом…</string>
-  <string name="copying_icons">Копирам иконе апликација у ризницу…</string>
-  <string name="icon">Икона</string>
   <string name="next">Следеће</string>
   <string name="skip">Прескочи</string>
   <string name="proxy">Прокси</string>
@@ -152,9 +146,6 @@
   <string name="category_Science_Education">Наука и образовање</string>
   <string name="category_Security">Безбедност</string>
   <string name="category_System">Систем</string>
-  <string name="requesting_root_access_body">Захтевам корени приступ…</string>
-  <string name="root_access_denied_title">Корени приступ је одбијен</string>
-  <string name="root_access_denied_body">Или ваш Андроид уређај нема корени приступ или сте Ф-дроиду одбили корени приступ.</string>
   <string name="system_install_denied_title">Повлашћено проширење за Ф-дроид није доступно</string>
   <string name="system_install_denied_body">Ова могућност је доступна само када је инсталирано повлашћено проширење за Ф-дроид.</string>
     <string name="open_qr_code_scanner">Отвори читач бар-кôда</string>
@@ -162,8 +153,6 @@
 
     <string name="unstable_updates">Надоградње нестабилних</string>
     <string name="unstable_updates_summary">Предлагање надоградњи на нестабилна издања</string>
-    <string name="uninstall_system">Надогради/уклони повлашћено проширење</string>
-    <string name="uninstall_system_summary">Отвара појединости повлашћеног проширења ради надоградње/уклањања</string>
     <string name="about_source">Изворни кôд</string>
     <string name="app_incompatible">Неодговарајуће</string>
     <string name="links">Везе</string>
@@ -179,8 +168,6 @@
     <string name="pref_language">Језик</string>
     <string name="pref_language_default">Системски подразумеван</string>
 
-    <string name="wifi">Бежични</string>
-    <string name="wifi_ap">Врућа тачка</string>
 
     <string name="category_Connectivity">Повезивање</string>
     <string name="category_Graphics">Графика</string>

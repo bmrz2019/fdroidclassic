@@ -66,12 +66,6 @@
   <string name="category_All">Wszystkie</string>
   <string name="category_Whats_New">Co nowego</string>
   <string name="category_Recently_Updated">Ostatnio zaktualizowane</string>
-    <string name="deleting_repo">Usuwanie aktualnego repozytorium…</string>
-  <string name="adding_apks_format">Dodawanie %s do repozytorium…</string>
-  <string name="writing_index_jar">Zapisywanie podpisanego pliku pakietów (index.jar)…</string>
-  <string name="linking_apks">Linkowanie APK do repozytorium…</string>
-  <string name="copying_icons">Kopiowanie ikon aplikacji do repozytorium…</string>
-  <string name="icon">Ikona</string>
   <string name="next">Dalej</string>
   <string name="skip">Pomiń</string>
   <string name="proxy">Proxy</string>
@@ -113,9 +107,6 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
   <string name="category_Science_Education">Nauka i edukacja</string>
   <string name="category_Security">Bezpieczeństwo</string>
   <string name="category_System">System</string>
-  <string name="requesting_root_access_body">Żądanie uprawnień roota…</string>
-  <string name="root_access_denied_title">Odmówiono uprawnień roota</string>
-  <string name="root_access_denied_body">Urządzenie nie zostało zrootowane lub odmówiono uprawnień roota F-Droidowi.</string>
   <string name="system_install_denied_title">Odmówiono uprawnień systemowych</string>
   <string name="system_install_denied_body">Opcja dostępna tylko wtedy, gdy F-Droid został zainstalowany jako aplikacja systemowa.</string>
     <string name="open_qr_code_scanner">Otwórz skaner QR</string>
@@ -127,8 +118,6 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="automatic_scan_wifi">Aktualizuj tylko przez Wi-Fi</string>
     <string name="automatic_scan_wifi_on">Aktualizuj listę aplikacji tylko przez nietaryfowe połączenia, np. Wi-Fi</string>
     <string name="notify_on">Wyświetlaj powiadomienie gdy znalezione zostaną nowe aktualizacje</string>
-    <string name="uninstall_system">Aktualizuj/Odinstaluj Uprzywilejowany dodatek F-Droida</string>
-    <string name="uninstall_system_summary">Pokaż szczegóły Uprzywilejowanego dodatku</string>
     <string name="about_mail">Email</string>
     <string name="app_incompatible">Niekompatybilne</string>
     <string name="app_installed">Zainstalowane</string>
@@ -167,8 +156,6 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="pref_language">Język aplikacji</string>
     <string name="pref_language_default">Domyślny systemowy</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">HotSpot</string>
 
     <string name="empty_installed_app_list">Brak zainstalowanych aplikacji.\n\nMasz na swoim urządzeniu aplikacje, ale nie zostały one zainstalowane przez F-Droida. Być może musisz zaktualizować swoje repozytoria.</string>
     <string name="empty_available_app_list">Brak aplikacji w tej kategorii.\n\nSpróbuj wybrać inną kategorię lub zaktualizować swoje repozytoria.</string>

@@ -88,12 +88,6 @@
   <string name="category_All">Todos</string>
   <string name="category_Whats_New">O que há de novo</string>
   <string name="category_Recently_Updated">Recentemente atualizado</string>
-    <string name="deleting_repo">Apagando o repositório atual…</string>
-  <string name="adding_apks_format">Adicionando %s ao repositório…</string>
-  <string name="writing_index_jar">Escrevendo arquivo de índice assinado (index.jar)…</string>
-  <string name="linking_apks">Vinculando APKs no repositório…</string>
-  <string name="copying_icons">Copiando ícones de aplicativos no repositório…</string>
-  <string name="icon">Ícone</string>
   <string name="next">Próximo</string>
   <string name="skip">Pular</string>
   <string name="proxy">Proxy</string>
@@ -153,16 +147,11 @@ reativar este repositório para instalar aplicativos a partir dele.</string>
   <string name="category_Science_Education">Ciência e Educação</string>
   <string name="category_Security">Segurança</string>
   <string name="category_System">Sistema</string>
-  <string name="requesting_root_access_body">Solicitando acesso root…</string>
-  <string name="root_access_denied_title">Acesso root negado</string>
-  <string name="root_access_denied_body">Ou o seu dispositivo Android não está \"rooteado\" ou você recusou o acesso root para o F-Droid.</string>
   <string name="system_install_denied_title">A extensão privilegiada do F-droid não está disponível</string>
   <string name="system_install_denied_body">Esta opção só está disponível quando a extensão privilegiada do F-Droid está instalada.</string>
     <string name="open_qr_code_scanner">Abrir o leitor de código QR</string>
     <string name="app_name">F-Droid</string>
 
-    <string name="uninstall_system">Atualizar/desinstalar extensão privilegiada</string>
-    <string name="uninstall_system_summary">Abrir tela de detalhes da extensão privilegiada para atualizá-la/desinstalá-la</string>
     <string name="app_incompatible">Incompatível</string>
     <string name="links">Links</string>
 
@@ -176,8 +165,6 @@ reativar este repositório para instalar aplicativos a partir dele.</string>
     <string name="pref_language">Idioma</string>
     <string name="pref_language_default">Padrão do sistema</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Ponto de acesso</string>
 
     <string name="empty_installed_app_list">Nenhum aplicativo instalado.\n\nExistem aplicativos no seu dispositivo, mas eles não estão disponíveis pelo F-Droid. Isso pode ser porque você precisa atualizar seus repositórios, ou os repositórios realmente não têm os seus aplicativos disponíveis.</string>
     <string name="empty_available_app_list">Nenhum aplicativo nesta categoria.\n\nTente selecionar uma categoria diferente ou atualizar seus repositórios para obter uma nova lista de aplicativos.</string>

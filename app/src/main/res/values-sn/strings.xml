@@ -20,8 +20,6 @@
     <string name="update_history_summ">Mazuva ekufunga nezve ma apps matsva kana amanje: %s</string>
     <string name="system_installer">Tambanudzo dzine chihesvuro</string>
     <string name="system_installer_on">Shandisa tambanudzo inechihesvuro yeF-Droid kuti uvakirire, unatse nekubvisa mapakeji</string>
-    <string name="uninstall_system">Natsa/Bvisa chivakirirwa patambanudzo ane chihesvuro</string>
-    <string name="uninstall_system_summary">Vhura chivhitivhiti chinezvizere chetambanudzo chine chihesvuro kuti uinatse/uibvise chivakirirwa</string>
 
     <string name="login_title">Kukwedekwerwa kunodiwa</string>
     <string name="login_name">Zita remushandisi</string>
@@ -137,12 +135,6 @@
     <string name="ignoreTouch">Furatira chivhitivhiti chekubata</string>
     <string name="ignoreTouch_on">Gara wakasanganidza maApps anoda chivhitivhiti chekubata</string>
 
-    <string name="deleting_repo">Kudzima pfimbi yaiyezvino…</string>
-    <string name="adding_apks_format">Kuwedzera %s kupfimbi…</string>
-    <string name="writing_index_jar">Kunyora faira reindex rakasainiwa (index.jar)…</string>
-    <string name="linking_apks">Kukochekera maAPKs kupinda mupfimbi yacho…</string>
-    <string name="copying_icons">Kukopa maicons eApp kupinda mupfimbi yacho…</string>
-    <string name="icon">Icon</string>
     <string name="next">Zvinotevera</string>
     <string name="skip">Darika</string>
 
@@ -222,8 +214,6 @@ kubvumidza pfimbi iyi zvakare kuti uvakirire kubva kwairi.</string>
     <string name="pref_language_default">Sistemu ine hurongwa hwakarepo</string>
 
     <string name="app_icon">Icon yeApp</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_All">Zvose</string>
     <string name="category_Whats_New">Ndezvipi zvitsva</string>
@@ -259,9 +249,6 @@ Makorokoto! MaApps ako ose akanatswa (kana kuti pfimbi dzako hadzina kunatswa).<
     <string name="empty_search_available_app_list">Hapana maApps akatevedzera aripo.</string>
     <string name="empty_search_can_update_app_list">Hapana maApps akatevedzera ekunatsa.</string>
 
-    <string name="requesting_root_access_body">Kukumbira hupindwa pamudzi…</string>
-    <string name="root_access_denied_title">Hupindwa pamudzi kwanyimwa</string>
-    <string name="root_access_denied_body">Muchina wako weAndroid hauna kuenda pamudzi kana kuti wanyima hupindwa pamudzi kuF-Droid.</string>
     <string name="install_error_unknown">Tatadza kuvakirira nenhau yekanganiso isingazivikanwe</string>
     <string name="uninstall_error_unknown">Tatadza kubvisa kuvakirira nenhau yekanganiso isirikuzivikanwe</string>
     <string name="system_install_denied_title">Tambanudzo ine chihesvuro yeF-Droid haipo</string>

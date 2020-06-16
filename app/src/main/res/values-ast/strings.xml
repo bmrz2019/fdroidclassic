@@ -88,12 +88,6 @@
   <string name="category_All">Too</string>
   <string name="category_Whats_New">Qué hai nuevo</string>
   <string name="category_Recently_Updated">Anovao apocayá</string>
-    <string name="deleting_repo">Desaniciando\'l repositoriu actual…</string>
-  <string name="adding_apks_format">Amestando %s al repositoriu…</string>
-  <string name="writing_index_jar">Escribiendo\'l ficheru d\'índiz robláu (index.jar)…</string>
-  <string name="linking_apks">Enllazando APKs nel repositoriu…</string>
-  <string name="copying_icons">Copiando iconos d\'aplicaciones al repositoriu…</string>
-  <string name="icon">Iconu</string>
   <string name="next">Siguiente</string>
   <string name="skip">Saltar</string>
   <string name="proxy">Proxy</string>
@@ -149,9 +143,6 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
   <string name="category_Science_Education">Ciencia y educación</string>
   <string name="category_Security">Seguranza</string>
   <string name="category_System">Sistema</string>
-  <string name="requesting_root_access_body">Solicitando l\'accesu root…</string>
-  <string name="root_access_denied_title">Refugóse l\'accesu root</string>
-  <string name="root_access_denied_body">O\'l to preséu Android nun ta rootexáu o refuguesti l\'accesu root pa F-Droid.</string>
   <string name="system_install_denied_title">Nun ta disponible F-Droid privilexáu</string>
   <string name="system_install_denied_body">Esta opción ta namái disponible cuando s\'instale F-Droid como una aplicación del sistema.</string>
     <string name="open_qr_code_scanner">Abrir l\'escáner de códigos QR</string>
@@ -172,8 +163,6 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
     <string name="loading">Cargando…</string>
     <string name="theme_dark">Escuru</string>
 <string name="theme_light">Claru</string>
-    <string name="uninstall_system">Anovar/Instalar estensión con privilexos</string>
-    <string name="uninstall_system_summary">Abre la pantalla de detalles de la estensión con privilexos p\'anovala/desinstalala</string>
     <string name="about_source">Códigu fonte</string>
     <string name="app_incompatible">Incompatible</string>
     <string name="links">Enllaces</string>
@@ -188,7 +177,6 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
     <string name="pref_language">Llingua</string>
     <string name="pref_language_default">Por defeutu del sistema</string>
 
-    <string name="wifi">Wi-Fi</string>
     <string name="category_Connectivity">Coneutividá</string>
     <string name="category_Graphics">Gráficos</string>
     <string name="category_Money">Dineru</string>
@@ -236,7 +224,6 @@ L\'aplicación nun rique accesu especial dalu.</string>
     <string name="system_install_post_fail_message">Falló la instalación de la estensión F-Droid con privilexos. El métodu d\'instalación nun ta sofitáu por toles distribuciones Android, por favor consulta\'l rastrexador de fallos de F-Droid pa más información.</string>
     <string name="status_processing_xml_percent">Procesando %2$s / %3$s (%4$d%%) de %1$s</string>
     <string name="unstable_updates_summary">Suxer l\'anovamientu a versiones inestables</string>
-    <string name="wifi_ap">Fastera Wi-Fi</string>
 
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>

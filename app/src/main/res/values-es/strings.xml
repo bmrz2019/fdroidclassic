@@ -88,12 +88,6 @@
   <string name="category_All">Todas</string>
   <string name="category_Whats_New">Novedades</string>
   <string name="category_Recently_Updated">Recientemente actualizados</string>
-    <string name="deleting_repo">Borrando repositorio actual…</string>
-  <string name="adding_apks_format">Agregando %s al repositorio…</string>
-  <string name="writing_index_jar">Escribiendo archivo firmado de índice (index.jar)…</string>
-  <string name="linking_apks">Enlazando APKs en el repositorio…</string>
-  <string name="copying_icons">Copiando iconos de aplicaciones en el repositorio…</string>
-  <string name="icon">Icono</string>
   <string name="next">Siguiente</string>
   <string name="skip">Saltar</string>
   <string name="proxy">Proxy</string>
@@ -150,9 +144,6 @@ Para ver las aplicaciones que ofrece tienes que activarlo.</string>
   <string name="category_Science_Education">Ciencia y educación</string>
   <string name="category_Security">Seguridad</string>
   <string name="category_System">Sistema</string>
-  <string name="requesting_root_access_body">Solicitando acceso «root»…</string>
-  <string name="root_access_denied_title">Acceso «root» denegado</string>
-  <string name="root_access_denied_body">El dispositivo Android no está «rooteado» o se ha denegado el acceso «root» para F-Droid.</string>
   <string name="system_install_denied_title">La extensión de F-Droid con permisos de sistema no está disponible</string>
   <string name="system_install_denied_body">"Esta opción sólo está disponible cuando la extensión de  F-Droid con permisos de sistema está instalada."</string>
     <string name="open_qr_code_scanner">Abrir el escáner de códigos QR</string>
@@ -164,8 +155,6 @@ Para ver las aplicaciones que ofrece tienes que activarlo.</string>
 
     <string name="back">Volver</string>
     <string name="update_notification_more">+%1$d más…</string>
-    <string name="uninstall_system">Actualiza/Desinstala la extensión con permisos de sistema</string>
-    <string name="uninstall_system_summary">Abre la pantalla de detalles de la extensión con permisos de sistema para actualizarla/desinstalarla</string>
     <string name="bad_fingerprint">Huella digital incorrecta</string>
     <string name="invalid_url">No es una URL válida.</string>
     <string name="menu_changelog">Historial de cambios</string>
@@ -174,8 +163,6 @@ Para ver las aplicaciones que ofrece tienes que activarlo.</string>
     <string name="pref_language">Idioma</string>
     <string name="pref_language_default">Predeterminado del sistema</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Punto de acceso</string>
 
     <string name="category_Connectivity">Conectividad</string>
     <string name="category_Graphics">Gráficos</string>

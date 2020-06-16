@@ -89,12 +89,6 @@
   <string name="category_All">Alle</string>
   <string name="category_Whats_New">Was gibt es Neues</string>
   <string name="category_Recently_Updated">Kürzlich aktualisiert</string>
-    <string name="deleting_repo">Aktuelle Paketquelle wird gelöscht …</string>
-  <string name="adding_apks_format">%s wird zur Paketquelle hinzugefügt …</string>
-  <string name="writing_index_jar">Signierte Indexdatei (index.jar) wird geschrieben …</string>
-  <string name="linking_apks">APKs werden mit der Paketquelle verknüpft …</string>
-  <string name="copying_icons">Anwendungssymbole werden in die Paketquelle kopiert …</string>
-  <string name="icon">Symbol</string>
   <string name="next">Weiter</string>
   <string name="skip">Überspringen</string>
   <string name="proxy">Vermittlungsserver</string>
@@ -154,9 +148,6 @@ um Anwendungen daraus installieren zu können.</string>
   <string name="category_Science_Education">Wissenschaft &amp; Bildung</string>
   <string name="category_Security">Sicherheit</string>
   <string name="category_System">System</string>
-  <string name="requesting_root_access_body">Root-Zugriff wird angefordert …</string>
-  <string name="root_access_denied_title">Root-Zugriff verweigert</string>
-  <string name="root_access_denied_body">Entweder ist Ihr Android-Gerät nicht gerootet oder Sie haben den Root-Zugriff für F-Droid verweigert.</string>
   <string name="system_install_denied_title">F-Droid privilegierte Erweiterung ist nicht verfügbar</string>
   <string name="system_install_denied_body">Diese Option ist nur verfügbar, wenn F-Droid als System-App installiert wurde.</string>
     <string name="open_qr_code_scanner">QR-Code-Scanner öffnen</string>
@@ -171,7 +162,6 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="pref_language">Sprache</string>
     <string name="pref_language_default">Systemstandard</string>
 
-    <string name="wifi">WLAN</string>
     <string name="category_Graphics">Grafik</string>
     <string name="category_Money">Geld</string>
     <string name="category_Time">Zeit</string>
@@ -210,8 +200,6 @@ um Anwendungen daraus installieren zu können.</string>
 
     <string name="theme_light">Hell</string>
     <string name="theme_dark">Dunkel</string>
-    <string name="uninstall_system">Privilegierte Erweiterung aktualisieren oder deinstallieren</string>
-    <string name="uninstall_system_summary">Detailansicht öffnen, um die privilegierte Erweiterung zu aktualisieren oder deinstallieren</string>
     <string name="menu_settings">Einstellungen</string>
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
@@ -234,7 +222,6 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="system_install_uninstalling">Wird deinstalliert …</string>
     <string name="system_install_warning">Das wird bis zu 10 Sekunden dauern.</string>
     <string name="system_install_warning_lollipop">Das wird bis zu 10 Sekunden dauern und das Gerät wird anschließend <b>neu gestartet</b>.</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="system_install_post_success_message">Privilegierte F-Droid-Erweiterung wurde erfolgreich installiert. Das erlaubt F-Droid, selbständig Anwendungen zu installieren, aktualisieren und zu entfernen.</string>
     <string name="system_install_post_fail_message">Die Installation der privilegierten F-Droid-Erweiterung ist fehlgeschlagen. Diese Installationsmethode wird nicht durch alle Android-Distributionen unterstützt, bitte in der F-Droid-Fehlerdatenbank für weitere Informationen nachsehen.</string>

@@ -20,8 +20,6 @@
     <string name="update_history">Riwayat pembaruan</string>
     <string name="update_history_summ">Jumlah hari sebuah aplikasi dianggap baru atau mutakhir: %s</string>
     <string name="system_installer_on">Gunakan F-Droid Privileged Extension untuk memasang, memperbarui, dan mencopot paket</string>
-    <string name="uninstall_system">Perbarui/Copot Privileged Extension</string>
-    <string name="uninstall_system_summary">Buka layar detail Privileged Extension untuk memperbarui/mencopotnya</string>
 
     <string name="app_details">Detail Apl</string>
     <string name="no_such_app">Aplikasi tersebut tidak ditemukan.</string>
@@ -118,12 +116,6 @@
     <string name="ignoreTouch">Abaikan layar sentuh</string>
     <string name="ignoreTouch_on">Selalu sertakan aplikasi yang membutuhkan layar sentuh</string>
 
-    <string name="deleting_repo">Menghapus repo saat ini…</string>
-    <string name="adding_apks_format">Menambahkan %s ke repo…</string>
-    <string name="writing_index_jar">Menulis berkas indeks yang ditanda tangani (index.jar)…</string>
-    <string name="linking_apks">Menautkan APK ke dalam repo…</string>
-    <string name="copying_icons">Menyalin ikon aplikasi ke dalam repo…</string>
-    <string name="icon">Ikon</string>
     <string name="next">Selanjutnya</string>
     <string name="skip">Lewati</string>
 
@@ -211,8 +203,6 @@ butuh untuk mengaktifkan ulang repo ini untuk memasang apl darinya.</string>
     <string name="pref_language_default">Baku Sistem</string>
 
     <string name="app_icon">Ikon app</string>
-    <string name="wifi">Wifi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_All">Semua</string>
     <string name="category_Whats_New">Apa yang Baru</string>
@@ -242,9 +232,6 @@ butuh untuk mengaktifkan ulang repo ini untuk memasang apl darinya.</string>
     <string name="empty_search_available_app_list">Tidak ada aplikasi sesuai yang tersedia.</string>
     <string name="empty_search_can_update_app_list">Tidak ada aplikasi sesuai untuk pembaruan.</string>
 
-    <string name="requesting_root_access_body">Meminta akses root…</string>
-    <string name="root_access_denied_title">Akses root ditolak</string>
-    <string name="root_access_denied_body">Mungkin perangkat Android anda yang belum diroot atau anda telah menolak akses root untuk F-Droid.</string>
     <string name="install_error_unknown">Gagal memasang karena galat yang tidak diketahui</string>
     <string name="uninstall_error_unknown">Gagal mencopot pemasangan karena galat yang tidak diketahui</string>
     <string name="system_install_denied_title">Ekstensi Istimewa F-Droid tidak tersedia</string>

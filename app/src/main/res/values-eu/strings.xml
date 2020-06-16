@@ -87,8 +87,6 @@
     <string name="update_history_summ">Aplikazioak berritzat edo oraintsukotzat hartzeko egunak: %s</string>
     <string name="system_installer">Pribilegiodun Luzapena</string>
     <string name="system_installer_on">Erabili Pribilegiodun F-Droid Luzapena paketeak instalatu, eguneratu eta kentzeko</string>
-    <string name="uninstall_system">Eguneratu/Desinstalatu Pribilegiodun Luzapena</string>
-    <string name="uninstall_system_summary">Ireki Pribilegiodun Luzapenaren xehetasunen pantaila berau eguneratu edo desinstalatzeko</string>
     <string name="about_source">Iturburu kodea</string>
     <string name="app_incompatible">Bateraezina</string>
     <string name="app_inst_known_source">Instalatuta (%stik)</string>
@@ -121,9 +119,6 @@
     <string name="show_incompat_versions_on">Bistaratu gailu honekin bateraezinak diren bertsioak</string>
     <string name="ignoreTouch_on">Beti gehitu ukipen-pantaila behar duten aplikazioak</string>
 
-    <string name="deleting_repo">Uneko biltegia ezabatzen…</string>
-    <string name="adding_apks_format">%s biltegira gehitzen…</string>
-    <string name="icon">Ikonoa</string>
     <string name="next">Hurrengoa</string>
     <string name="skip">Saltatu</string>
 
@@ -145,9 +140,6 @@
     <string name="allPerms">Guztiak</string>
     <string name="perms_new_perm_prefix">"Berria: "</string>
     <string name="loading">Kargatzen…</string>
-    <string name="writing_index_jar">Sinatutako aurkibide fitxategia idazten (index.jar)…</string>
-    <string name="linking_apks">APK fitxategiak biltegira lotzen…</string>
-    <string name="copying_icons">Aplikazioen ikonoak biltegira kopiatzen…</string>
     <string name="proxy_host">Proxy ostalaria</string>
     <string name="enable_proxy_summary">Konfiguratu HTTP Proxya sare eskari guztientzat</string>
     <string name="update_notification_title">Biltegiak eguneratzen</string>
@@ -195,8 +187,6 @@ instalatu ahal izateko gaitu egin beharko duzu.</string>
     <string name="pref_language_default">Sistemaren lehenetsia</string>
 
     <string name="app_icon">Aplikazioaren ikonoa</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Wi-Fi gunea</string>
 
     <string name="category_Connectivity">Sareak</string>
     <string name="category_Development">Garapena</string>
@@ -222,9 +212,6 @@ instalatu ahal izateko gaitu egin beharko duzu.</string>
     <string name="empty_available_app_list">Ez dago aplikaziorik kategoria honetan.\n\nSaiatu beste kategoria bat aukeratzen edo eguneratu zure biltegiak aplikazioen zerrenda eguneratu bat jasotzeko.</string>
     <string name="empty_can_update_app_list">Aplikazio guztiak egunean.\n\nZorionak! Zure aplikazio guztiak egunean daude (edo zure biltegiak zaharkituta daude).</string>
 
-    <string name="requesting_root_access_body">Root baimena eskatzen…</string>
-    <string name="root_access_denied_title">Root baimena ukatu da</string>
-    <string name="root_access_denied_body">Bietako bat, zure Android gailuan ez dago root baimena eskuratzea edo zuk ukatu diozu F-Droid aplikazioari root baimena.</string>
     <string name="install_error_unknown">Instalazioak huts egin du errore ezezagun bat dela eta</string>
     <string name="uninstall_error_unknown">Ezin izan da desinstalatu errore ezezagun bat dela eta</string>
     <string name="system_install_denied_title">Pribilegiodun F-Droid Luzapena ez dago eskuragarri</string>

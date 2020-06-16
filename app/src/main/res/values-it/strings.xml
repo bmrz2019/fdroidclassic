@@ -86,12 +86,6 @@
   <string name="category_All">Tutte</string>
   <string name="category_Whats_New">Novità</string>
   <string name="category_Recently_Updated">Aggiornate di recente</string>
-    <string name="deleting_repo">Cancellazione dell\'attuale repo…</string>
-  <string name="adding_apks_format">Aggiunta di %s al repo…</string>
-  <string name="writing_index_jar">Scrittura del file di indice firmato (index.jar)…</string>
-  <string name="linking_apks">Collegamento degli APK al repo…</string>
-  <string name="copying_icons">Copia delle icone delle app nel repo…</string>
-  <string name="icon">Icona</string>
   <string name="next">Prossimo</string>
   <string name="skip">Salta</string>
   <string name="proxy">Proxy</string>
@@ -150,9 +144,6 @@ abilitare nuovamente questo repository per installare le app contenute.</string>
   <string name="category_Science_Education">Scienza ed educazione</string>
   <string name="category_Security">Sicurezza</string>
   <string name="category_System">Sistema</string>
-  <string name="requesting_root_access_body">Richiesta dei permessi di root…</string>
-  <string name="root_access_denied_title">Accesso root negato</string>
-  <string name="root_access_denied_body">Il tuo telefono non ha i permessi di root oppure li hai negati a F-Droid.</string>
   <string name="system_install_denied_title">Estensione privilegiata di F-Droid non disponibile</string>
   <string name="system_install_denied_body">Questa opzione è disponibile solo quando F-Droid è installato come app di sistema.</string>
     <string name="open_qr_code_scanner">Apri lo scanner per codici QR</string>
@@ -206,8 +197,6 @@ non saranno rimossi. L\'app dopo l\'aggiornamento avrà accesso a:</string>
     <string name="theme_night">Notte</string>
 <string name="permissions">Permessi</string>
     <string name="unstable_updates_summary">Suggerisci aggiornamenti a versioni non stabili</string>
-    <string name="uninstall_system">Aggiorna/disinstalla l\'estensione privilegiata</string>
-    <string name="uninstall_system_summary">Apri la schermata dell\'estensione privilegiata per aggiornarla o disinstallarla</string>
     <string name="login_title">Autenticazione richiesta</string>
     <string name="login_name">Nome utente</string>
     <string name="login_password">Password</string>
@@ -236,8 +225,6 @@ non saranno rimossi. L\'app dopo l\'aggiornamento avrà accesso a:</string>
     <string name="pref_language">Lingua</string>
     <string name="pref_language_default">Predefinita di sistema</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_Connectivity">Connettività</string>
     <string name="category_Graphics">Grafica</string>

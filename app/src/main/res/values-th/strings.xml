@@ -104,9 +104,6 @@
     <string name="show_incompat_versions_on">แสดงโปรแกรมที่เข้ากันไม่ได้กับเครื่องนี้ด้วย</string>
     <string name="rooted">แสดงโปรแกรมที่ต้องใช้รูท</string>
     <string name="rooted_on">ไม่ต้องแสดงโปรแกรมที่ใช้รูทเป็นสีเทา</string>
-    <string name="deleting_repo">กำลังลบแหล่งโปรแกรมนี้…</string>
-    <string name="adding_apks_format">กำลังเพิ่ม %s เข้าในแหล่งโปรแกรม…</string>
-    <string name="icon">ไอคอน</string>
     <string name="next">ต่อไป</string>
     <string name="skip">ข้าม</string>
 
@@ -161,8 +158,6 @@
     <string name="category_Time">เวลาและวันที่</string>
     <string name="category_Writing">การเขียน</string>
 
-    <string name="requesting_root_access_body">กำลังขอใช้สิทธิ์ผู้ดูแลระบบ…</string>
-    <string name="root_access_denied_title">การขอสิทธิ์ผู้ดูแลระบบถูกปฏิเสธ</string>
     <string name="system_install_button_install">ติดตั้ง</string>
     <string name="system_install_installing">กำลังทำการติดตั้ง…</string>
     <string name="system_install_uninstalling">กำลังถอนการติดตั้ง…</string>
@@ -229,7 +224,6 @@
     <string name="login_title">ต้องใช้รหัสผ่าน</string>
     <string name="system_installer">ส่วนขยายเพื่อช่วยติดตั้ง</string>
     <string name="system_installer_on">ใช้ส่วนขยายช่วยติดตั้งของ F-Droid เพื่อจัดการติดตั้ง, อัพเดต, และถอนการติดตั้งโปรแกรม</string>
-    <string name="uninstall_system">อัพเดต/ถอนส่วนขยายช่วยติดตั้ง</string>
     <string name="repo_error_empty_username">ชื่อผู้ใช้ว่างเปล่า, จะไม่มีการเปลี่ยนข้อมูลรหัสผ่านใดๆ ทั้งสิ้น</string>
 
     <string name="added_on">เพิ่มมาเมื่อ %s</string>
@@ -239,7 +233,6 @@
 
     <string name="one_update_available">1 โปรแกรมมีอัพเดต</string>
     <string name="many_updates_available">%d โปรแกรมมีอัพเดต</string>
-    <string name="uninstall_system_summary">แสดงรายละเอียดสถานะส่วนขยายช่วยติดตั้ง และ/หรือทำการอัพเดต/ถอนการติดตั้งส่วนขยายนี้</string>
     <string name="downloading_apk">กำลังดาวน์โหลด %1$s</string>
     <string name="category_All">ทั้งหมด</string>
     <string name="ignoreTouch">ไม่ต้องสนใจชนิดหน้าจอ</string>
@@ -255,7 +248,6 @@
     <string name="status_processing_xml_percent">กำลังประมวลผลข้อมูล %2$s / %3$s (%4$d%%) จาก %1$s</string>
     <string name="requires_features">ต้องใช้: %1$s</string>
     <string name="app_icon">ไอคอนโปรแกรม</string>
-    <string name="wifi">Wi-Fi</string>
     <string name="empty_search_installed_app_list">ไม่มีโปรแกรมที่ติดตั้งอยู่ตรงตามที่ค้นหา</string>
     <string name="empty_search_available_app_list">ไม่พบโปรแกรมตามที่ค้นหา</string>
     <string name="empty_search_can_update_app_list">ไม่พบโปรแกรมมีอัพเดตตามที่ค้นหา</string>
@@ -281,7 +273,6 @@
     <string name="empty_available_app_list">ไม่มีโปรแกรมในหมวดนี้
 
 ลองเลือกดูโปรแกรมหมวดอื่น หรือทำการอัพเดตข้อมูลรายการโปรแกรมเผื่อจะมีโปรแกรมใหม่</string>
-    <string name="wifi_ap">เครื่องส่ง WiFi</string>
 
     <string name="minsdk_up_to_maxsdk">%1$s ถึง %2$s</string>
     <string name="repo_searching_address">กำลังค้นหาแหล่งโปรแกรม F-Droid ที่
@@ -290,8 +281,6 @@
     <string name="unverified">ตรวจสอบไม่ได้</string>
     <string name="unsigned">ไม่มีลายเซ็นดิจิตอล</string>
     <string name="no_handler_app">คุณไม่มีโปรแกรมที่รองรับการใช้งาน %s</string>
-    <string name="copying_icons">กำลังคัดลอกข้อมูลไอคอนลงไปในแหล่งโปรแกรม…</string>
-    <string name="linking_apks">กำลังเชื่อมโยงไฟล์ APK ในแหล่งโปรแกรม…</string>
     <string name="hide_anti_feature_apps_on">แสดงโปรแกรมที่มีฟังก์ชั่นไม่พึงประสงค์เป็นสีเทา</string>
     <string name="hide_anti_feature_apps">ให้โปรแกรมที่มีฟังก์ชั่นไม่พึงประสงค์เป็นสีเทา</string>
     <string name="malformed_repo_uri">กำลังข้ามแหล่งโปรแกรมที่มี URI ผิดรูป: %s</string>
@@ -299,7 +288,6 @@
     <string name="update_auto_install">ติดตั้งโปรแกรมที่อัพเดต โดยอัดโนมัติ</string>
     <string name="keep_install_history">เก็บประวัติการติดตั้ง</string>
     <string name="keep_install_history_summary">เก็บประวัติการติดตั้งและการถอนโปรแกรมต่างๆ ทั้งหมดใน F-Droid</string>
-    <string name="writing_index_jar">กำลังบันทึกไฟล์ดรรชนีพร้อมลายเซ็นดิจิตอล (index.jar)…</string>
     <string name="all_other_repos_fine">แหล่งโปรแกรมอื่นๆ ไม่ได้มีข้อผิดพลาด</string>
         <string name="warning_no_internet">อัพเดตไม่สำเร็จ, ตรวจดูอีกทีว่าคุณต่ออินเตอร์เน็ตอยู่หรือไม่</string>
     <string name="system_install_post_success_message">ส่วนขยายช่วยติดตั้งของ F-Droid ติดตั้งเสร็จสิ้น, ตอนนี้ F-Droid จะสามารถติดตั้ง/อัพเกรด/ถอนการติดตั้งโปรแกรมต่างๆ ได้ด้วยตัวเองแล้ว</string>
@@ -308,7 +296,6 @@
     <string name="system_install_denied_signature">ลายเซ็นที่ประทับอยู่บนส่วนขยายช่วยติดตั้งนั้นไม่ถูกต้อง, หากเป็นไปได้ กรุณาแจ้งปัญหานี้ไปที่ทีมพัฒนาของ F-Droid ด้วย</string>
     <string name="system_install_denied_body">ตัวเลือกนี้ใช้ได้เฉพาตอนที่ส่วนขยายช่วยติดตั้งของ F-Droid ติดตั้งอยู่เท่านั้น</string>
     <string name="system_install_denied_title">การเรียกใช้ส่วนขยายช่วยติดตั้งของ F-Droid ล้มเหลว</string>
-    <string name="root_access_denied_body">เกิดข้อผิดพลาดเนื่องจากเครื่องของคุณไม่มีรูท หรือคุณปฏิเสธการให้สิทธิ์ผู้ดูแลระบบกับ F-Droid</string>
     <string name="empty_installed_app_list">ไม่มีโปรแกรมที่ติดตั้งอยู่
 
 โปรแกรมที่คุณติดตั้งอยู่ในเครื่อง ไม่มีโปรแกรมไหนเลยที่มาจาก F-Droid, อาจจะเป็นเพราะว่าคุณไม่ได้อัพเดตข้อมูลแหล่งโปรแกรม หรือโปรแกรมที่คุณใช้อยู่ไม่ได้มีอยู่ในรายการของแหล่งโปรแกรมที่คุณตั้งไว้</string>

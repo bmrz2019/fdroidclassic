@@ -22,8 +22,6 @@
     <string name="update_history_summ">Dage hvor programmer opfattes som nye eller nylige: %s</string>
     <string name="system_installer">Privilegeret Udvidelse</string>
     <string name="system_installer_on">Brug F-Droid Privilegeret Udvidelse til at installere, opdatere og fjerne pakker</string>
-    <string name="uninstall_system">Opdater/Afinstaller Privilegeret Udvidelse</string>
-    <string name="uninstall_system_summary">Åbn skærmen med detaljer om Privilegeret Udvidelse for at opdatere/afinstallere den</string>
 
     <string name="login_title">Autentificering påkrævet</string>
     <string name="login_name">Brugernavn</string>
@@ -133,11 +131,6 @@
     <string name="ignoreTouch_on">Inkluder altid programmer som kræver touchskærm</string>
 
     <string name="rooted_on">Ekskluder ikke programmer som kræver root privilegier</string>
-    <string name="deleting_repo">Sletter aktuelle depot…</string>
-    <string name="adding_apks_format">Tilføjer %s til depot…</string>
-    <string name="writing_index_jar">Skriver signeret indeksfil (inden.jar)…</string>
-    <string name="copying_icons">Kopierer programikoner ind i depotet…</string>
-    <string name="icon">Ikon</string>
     <string name="next">Næste</string>
     <string name="skip">Spring over</string>
 
@@ -189,8 +182,6 @@
     <string name="pref_language_default">Systemstandard</string>
 
     <string name="app_icon">Programikon</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_All">Alle</string>
     <string name="category_Whats_New">Hvad er Nyt</string>
@@ -217,11 +208,7 @@
     <string name="empty_available_app_list">Ingen programmer i denne kategori.\n\nPrøv at vælge en anden kategori eller at opdatere dine depoter for at få en frisk liste over programmer.</string>
     <string name="empty_can_update_app_list">Alle programmer er opdateret.\n\nTillykke! Alle dine programmer er opdaterede (eller dine depoter er uddaterede).</string>
 
-    <string name="requesting_root_access_body">Anmoder om root-adgang…</string>
-    <string name="root_access_denied_title">Root-adgang nægtet</string>
-    <string name="root_access_denied_body">Enten er din Android-enhed ikke rooted eller også har du nægtet F-Droid root-adgang.</string>
     <string name="install_error_unknown">Kunne ikke installere på grund af en ukendt fejl</string>
-    <string name="linking_apks">Kobler APK\'er sammen med depotet…</string>
     <string name="uninstall_error_unknown">Afinstallation mislykkedes grundet en ukendt fejl</string>
     <string name="system_install_denied_title">F-Droid Privilegeret Udvidelse er ikke tilgængelig</string>
     <string name="system_install_denied_body">Denne valgmulighed er kun tilgængelig når F-Droid Privilegeret Udvidelse er installeret.</string>

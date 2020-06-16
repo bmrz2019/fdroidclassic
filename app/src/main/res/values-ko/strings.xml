@@ -88,12 +88,6 @@
   <string name="category_All">전체</string>
   <string name="category_Whats_New">새로운 기능</string>
   <string name="category_Recently_Updated">최근 업데이트</string>
-    <string name="deleting_repo">현재의 저장소 삭제중…</string>
-  <string name="adding_apks_format">%s 을(를) 저장소에 추가하는 중…</string>
-  <string name="writing_index_jar">서명된 색인 파일(index.jar) 작성 중…</string>
-  <string name="linking_apks">APK 파일을 저장소에 연결하는 중…</string>
-  <string name="copying_icons">앱 아이콘을 저장소에 복사하는 중…</string>
-  <string name="icon">아이콘</string>
   <string name="next">다음</string>
   <string name="skip">건너뛰기</string>
   <string name="proxy">프록시</string>
@@ -145,9 +139,6 @@
   <string name="category_Science_Education">과학 및 교육</string>
   <string name="category_Security">보안</string>
   <string name="category_System">시스템</string>
-  <string name="requesting_root_access_body">루트 권한 요청하는 중…</string>
-  <string name="root_access_denied_title">루트 권한 거부됨</string>
-  <string name="root_access_denied_body">기기가 루팅되지 않았거나 F-Droid의 루트 권한 요청을 거부한 경우입니다.</string>
   <string name="system_install_denied_title">시스템 권한 거부됨</string>
   <string name="system_install_denied_body">이 옵션은 F-Droid가 시스템 앱으로 설치된 경우에만 사용 가능합니다.</string>
     <string name="open_qr_code_scanner">QR 코드 스캐너 열기</string>
@@ -155,8 +146,6 @@
 
     <string name="unstable_updates">불안정 업데이트</string>
     <string name="unstable_updates_summary">불안정한 버전으로의 업데이트를 제안</string>
-    <string name="uninstall_system">특별 권한 확장 업데이트/삭제</string>
-    <string name="uninstall_system_summary">특별 권한 확장을 업데이트하거나 삭제하기 위해 자세한 사항 열기</string>
     <string name="login_title">인증이 필요합니다</string>
     <string name="login_name">사용자 이름</string>
     <string name="login_password">암호</string>
@@ -195,8 +184,6 @@
     <string name="pref_language">언어</string>
     <string name="pref_language_default">시스템 기본값</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">핫스팟</string>
 
     <string name="category_Connectivity">접속성</string>
     <string name="category_Graphics">그래픽</string>

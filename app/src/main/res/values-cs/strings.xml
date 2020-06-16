@@ -72,12 +72,6 @@
   <string name="category_All">Vše</string>
   <string name="category_Whats_New">Novinky</string>
   <string name="category_Recently_Updated">Nedávno aktualizované</string>
-    <string name="deleting_repo">Odstraňuji místní repozitář…</string>
-  <string name="adding_apks_format">Přidávám %s do repozitáře…</string>
-  <string name="writing_index_jar">Zapisuji podepsaný soubor s indexem (index.jar)…</string>
-  <string name="linking_apks">Linkuji APK do repozitáře…</string>
-  <string name="copying_icons">Kopíruji ikony aplikací do repozitáře…</string>
-  <string name="icon">Ikona</string>
   <string name="next">Další</string>
   <string name="skip">Přeskočit</string>
   <string name="proxy">Proxy</string>
@@ -116,14 +110,9 @@
   <string name="category_Science_Education">Věda &amp; vzdělání</string>
   <string name="category_Security">Bezpečnost</string>
   <string name="category_System">Systém</string>
-  <string name="requesting_root_access_body">Získávám root oprávnění…</string>
-  <string name="root_access_denied_title">Root přístup odepřen</string>
-  <string name="root_access_denied_body">Buď toto Android zařízení není rootnuté, nebo jsi odepřel F-Droidu opránění roota.</string>
   <string name="system_install_denied_title">Systémová oprávnění odepřena</string>
   <string name="system_install_denied_body">Tato volba je dostupná pouze, pokud je F-Droid nainstalován jako systémová aplikace.</string>
     <string name="open_qr_code_scanner">Otevřít čtečku QR kódů</string>
-    <string name="uninstall_system">Aktualizovat/odinstalovat privilegovaná rozšíření</string>
-    <string name="uninstall_system_summary">Otevřít obrazovku detailů privilegovaných rozšíření pro aktualizaci/deinstalaci</string>
     <string name="about_source">Zdrojový kód</string>
     <string name="app_incompatible">Nekompatibilní</string>
     <string name="app_inst_known_source">Nainstalováno (z %s)</string>
@@ -195,8 +184,6 @@
     <string name="pref_language">Jazyk</string>
     <string name="pref_language_default">Systémové výchozí</string>
 
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_Connectivity">Připojení</string>
     <string name="category_Graphics">Grafika</string>

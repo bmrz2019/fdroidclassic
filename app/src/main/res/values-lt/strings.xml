@@ -53,7 +53,6 @@
   <string name="category_All">Rodyti visas</string>
   <string name="category_Whats_New">Naujienos</string>
   <string name="category_Recently_Updated">Neseniai atnaujinta</string>
-  <string name="deleting_repo">Šalinama pasirinkta saugykla…</string>
   <string name="next">Toliau</string>
   <string name="status_connecting_to_repo">Jungiamasi prie
 %1$s</string>

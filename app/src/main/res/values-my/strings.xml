@@ -130,10 +130,6 @@
     <string name="ignoreTouch">ထိေတြ႕စခရင္ လ်စ္လွဴရႈမည္</string>
     <string name="ignoreTouch_on">ထိေတြ႕စခရင္လိုေသာ app မ်ားပါဝင္လ်က္အျမဲတမ္း</string>
 
-    <string name="adding_apks_format">%s ကို repot ထဲေပါင္းထည့္ေနပါသည္</string>
-    <string name="linking_apks">APK မ်ားကို repo ႏွင့္ခ်ိတ္ေနပါသည္…</string>
-    <string name="copying_icons">App အိုင္ကြန္းကို repo ထဲသို႔ကူးေနပါသည္.…</string>
-    <string name="icon">အိုင္ကြန္း</string>
     <string name="next">ေနာက္</string>
     <string name="skip">ေက်ာ္မည္</string>
 
@@ -166,7 +162,6 @@
     <string name="repo_confirm_delete_title">Repository ကိုဖ်က္မလား?</string>
     <string name="app_name">F-Droid</string>
 
-    <string name="deleting_repo">ယခုလက္ရွိ ရီပိုကိုဖ်က္ေနသည္.…</string>
     <string name="all_other_repos_fine">တျခားရီပိုအားလံုးသည္ ခ်ိဳ႕ယြင္းခ်က္မ်ားမရွိပါ.</string>
         <string name="global_error_updating_repos">အသစ္မြမ္းမံစဥ္ခ်ိဳ႕ယြင္းခ်က္ - %s</string>
     <string name="minsdk_or_later">%s သို႔မဟုတ္ ေနာက္မွ</string>
@@ -177,8 +172,6 @@
     <string name="pref_language_default">စနစ္မူလအတိုင္း</string>
 
     <string name="app_icon">App အိုင္ကြန္း</string>
-    <string name="wifi">ဝိုင္ဖိုင္</string>
-    <string name="wifi_ap">ေဟာ့ဒ့္စေပါ့ဒ္</string>
 
     <string name="category_All">အားလံုး</string>
     <string name="category_Whats_New">ဘာေတြအသစ္ပါသလဲ</string>
@@ -201,8 +194,6 @@
     <string name="category_Time">အခ်ိန္</string>
     <string name="category_Writing">ေရးသားျခင္း</string>
 
-    <string name="requesting_root_access_body">Root ရယူျခင္းေတာင္းဆိုေနသည္…</string>
-    <string name="root_access_denied_title">Root ရယူမႈျငင္းဆိုခ့ဲသည္</string>
     <string name="system_install_button_install">သြင္းမည္</string>
     <string name="system_install_button_open">Extension ဖြင့္မည္</string>
     <string name="system_install_installing">သြင္းေနသည္…</string>

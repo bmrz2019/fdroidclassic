@@ -88,12 +88,6 @@
   <string name="category_All">Tot</string>
   <string name="category_Whats_New">Novetats</string>
   <string name="category_Recently_Updated">S\'ha actualitzat fa poc</string>
-    <string name="deleting_repo">S\'està esborrant el dipòsit actual…</string>
-  <string name="adding_apks_format">Afegint %s al dipòsit…</string>
-  <string name="writing_index_jar">S\'està escribint la llista d\'aplicacions (index.jar)…</string>
-  <string name="linking_apks">S\'estan enllaçant paquets APK al dipòsit…</string>
-  <string name="copying_icons">Copiant les icones de les aplicacions al dipòsit…</string>
-  <string name="icon">Icona</string>
   <string name="next">Següent</string>
   <string name="skip">Omet</string>
   <string name="proxy">Proxy</string>
@@ -153,9 +147,6 @@ tornar a habilitar el dipòsit per instal·lar aplicacions d\'aquest.</string>
   <string name="category_Science_Education">Ciència i educació</string>
   <string name="category_Security">Seguretat</string>
   <string name="category_System">Sistema</string>
-  <string name="requesting_root_access_body">S\'estan demanant privilegis d\'administrador…</string>
-  <string name="root_access_denied_title">Accés com a administrador rebutjat</string>
-  <string name="root_access_denied_body">Aquest dispositiu Android no permet actuar com a administrador o bé no heu donat privilegis d\'administrador a l\'F-Droid.</string>
   <string name="system_install_denied_body">Només disponible quan l\'Extensió Privilegiada d\'F-Droid està instal·lada.</string>
     <string name="open_qr_code_scanner">Obre l\'escàner de codis QR</string>
     <string name="app_name">F-Droid</string>
@@ -167,7 +158,6 @@ tornar a habilitar el dipòsit per instal·lar aplicacions d\'aquest.</string>
     <string name="back">Torna</string>
     <string name="update_notification_more">+%1$d més…</string>
     <string name="pref_language">Idioma</string>
-    <string name="wifi">Wi-Fi</string>
     <string name="category_Graphics">Gràfics</string>
     <string name="category_Money">Diners</string>
     <string name="category_Sports_Health">Esports i Salut</string>
@@ -194,8 +184,6 @@ tornar a habilitar el dipòsit per instal·lar aplicacions d\'aquest.</string>
     <string name="permissions">Permisos</string>
     <string name="system_install_button_install">Instal·la</string>
     <string name="unstable_updates_summary">Suggereix actualitzacions a versions inestables</string>
-    <string name="uninstall_system">Actualitza/Elimina l\'extensió privilegiada</string>
-    <string name="uninstall_system_summary">Obre la pantalla de detalls de l\'Extensió Privilegiada per actualitzar-la o eliminar-la</string>
     <string name="bad_fingerprint">Empremta digital incorrecta</string>
     <string name="invalid_url">L\'adreça URL és invàlida.</string>
     <string name="menu_settings">Configuració</string>
@@ -206,7 +194,6 @@ tornar a habilitar el dipòsit per instal·lar aplicacions d\'aquest.</string>
     <string name="repo_url">Adreça</string>
     <string name="pref_language_default">Predeterminat del sistema</string>
 
-    <string name="wifi_ap">Punt d\'accés</string>
 
     <string name="interval_never">Mai</string>
     <string name="interval_1h">Cada hora</string>

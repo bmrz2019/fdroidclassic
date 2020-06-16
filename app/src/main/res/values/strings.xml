@@ -30,8 +30,6 @@
     <string name="update_history_summ">Days to consider apps new or recent: %s</string>
     <string name="system_installer">Privileged Extension</string>
     <string name="system_installer_on">Use F-Droid Privileged Extension to install, update, and remove packages</string>
-    <string name="uninstall_system">Update/Uninstall Privileged Extension</string>
-    <string name="uninstall_system_summary">Open details screen of Privileged Extension to update/uninstall it</string>
 
     <string name="login_title">Authentication required</string>
     <string name="login_name">Username</string>
@@ -157,12 +155,6 @@
     <string name="ignoreTouch">Ignore touchscreen</string>
     <string name="ignoreTouch_on">Always include apps that require touchscreen</string>
 
-    <string name="deleting_repo">Deleting current repo…</string>
-    <string name="adding_apks_format">Adding %s to repo…</string>
-    <string name="writing_index_jar">Writing signed index file (index.jar)…</string>
-    <string name="linking_apks">Linking APKs into the repo…</string>
-    <string name="copying_icons">Copying app icons into the repo…</string>
-    <string name="icon">Icon</string>
     <string name="next">Next</string>
     <string name="skip">Skip</string>
 
@@ -236,8 +228,6 @@
     <string name="pref_language_default">System Default</string>
 
     <string name="app_icon">App icon</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="wifi_ap">Hotspot</string>
 
     <string name="category_All">All</string>
     <string name="category_Whats_New">What\'s New</string>
@@ -267,9 +257,6 @@
     <string name="empty_search_available_app_list">No matching applications available.</string>
     <string name="empty_search_can_update_app_list">No matching applications for update.</string>
 
-    <string name="requesting_root_access_body">Requesting root access…</string>
-    <string name="root_access_denied_title">Root access denied</string>
-    <string name="root_access_denied_body">Either your Android device is not rooted or you have denied root access for F-Droid.</string>
     <string name="install_error_unknown">Failed to install due to an unknown error</string>
     <string name="uninstall_error_unknown">Failed to uninstall due to an unknown error</string>
     <string name="system_install_denied_title">F-Droid Privileged Extension is not available</string>

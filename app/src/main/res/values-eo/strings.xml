@@ -70,11 +70,6 @@
   <string name="category_All">Ĉiuj</string>
   <string name="category_Whats_New">Novaĵoj</string>
   <string name="category_Recently_Updated">Ĵus ĝisdatigitaj</string>
-    <string name="deleting_repo">Forigado de la deponejo…</string>
-  <string name="adding_apks_format">Aldonado de %s al la deponejo…</string>
-  <string name="linking_apks">Ligado de APK al la deponejo…</string>
-  <string name="copying_icons">Kopiado de aplikaĵ-emblemoj al la deponejo…</string>
-  <string name="icon">Piktogramo</string>
   <string name="next">Sekvi</string>
   <string name="skip">Preterpasi</string>
   <string name="no_permissions">Neniu permeso estas uzata.</string>
@@ -118,8 +113,6 @@
     <string name="update_history_summ">Traktas aplikaĵojn kiel novaj aŭ ĵus-ĝisdatigaj por: %s tagoj</string>
     <string name="system_installer">Privilegia aldonaĵo</string>
     <string name="system_installer_on">Uzas privilegian F-Droid-aldonaĵon por instali, ĝisdatigi, kaj forigi pakaĵojn</string>
-    <string name="uninstall_system">Ĝisdatigi/malinstali privilegian aldonaĵon</string>
-    <string name="uninstall_system_summary">Malfermas detalan ekranon de Privilegia Aldonaĵo por ĝisdatigi/malinstali ĝin</string>
 
     <string name="login_title">Aŭtentokontrolo nepra</string>
     <string name="login_name">Uzantnomo</string>
@@ -161,7 +154,6 @@
 
     <string name="antinonfreeassetslist">Ĉi tiu aplikaĵo enhavas neliberan enhavon</string>
 
-    <string name="writing_index_jar">Konservado de subskribita indeksa dosiero (index.jar)…</string>
     <string name="proxy">Prokurilo</string>
     <string name="enable_proxy_title">Aktivigi HTTP prokurilon</string>
     <string name="enable_proxy_summary">Uzas HTTP prokurilon por ĉiuj retkonektoj</string>
@@ -204,8 +196,6 @@ Vi devos reaktivigi ĉi tiun deponejon por instali aplikaĵojn el ĝi.</string>
     <string name="pref_language">Lingvo</string>
     <string name="pref_language_default">Sistema apriora</string>
 
-    <string name="wifi">Sendrata reto</string>
-    <string name="wifi_ap">Retkaptejo</string>
 
     <string name="category_Connectivity">Konekteco</string>
     <string name="category_Graphics">Grafiko</string>
@@ -226,9 +216,6 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="empty_search_available_app_list">Neniuj kongruaj aplikaĵoj disponeblaj.</string>
     <string name="empty_search_can_update_app_list">Neniuj kongruaj aplikaĵoj por ĝisdatigi.</string>
 
-    <string name="requesting_root_access_body">Petado pri ĉefuzanta aliro…</string>
-    <string name="root_access_denied_title">Ĉefuzanta aliro malpermesita</string>
-    <string name="root_access_denied_body">Aŭ via Androida aparato ne havas ĉefuzantan aliron, aŭ vi malpermesis ĉefuzantan aliron al F-Droid.</string>
     <string name="install_error_unknown">Malsukcesis instali pro nekonata eraro</string>
     <string name="uninstall_error_unknown">Malsukcesis malinstali pro nekonata eraro</string>
     <string name="system_install_denied_title">Privilegia F-Droid-aldonaĵo ne disponebla</string>
