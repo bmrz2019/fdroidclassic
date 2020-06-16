@@ -113,8 +113,8 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
             return;
         }
 
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
-        MenuItemCompat.expandActionView(searchMenuItem);
+        SearchView searchView = (SearchView) searchMenuItem.getActionView();
+        searchMenuItem.expandActionView();
         searchView.setQuery(query, true);
     }
 
