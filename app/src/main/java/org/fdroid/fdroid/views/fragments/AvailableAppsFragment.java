@@ -178,7 +178,7 @@ public class AvailableAppsFragment extends AppListFragment implements
 
     @Override
     protected Uri getDataUri(String query) {
-        return AppProvider.getSearchUri(query, null);
+        return AppProvider.getSearchUri(query);
     }
 
     @Override

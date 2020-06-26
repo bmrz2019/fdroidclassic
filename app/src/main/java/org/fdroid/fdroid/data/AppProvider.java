@@ -468,8 +468,7 @@ public class AppProvider extends FDroidProvider {
     private static final int CAN_UPDATE = CODE_SINGLE + 1;
     private static final int INSTALLED = CAN_UPDATE + 1;
     private static final int SEARCH_TEXT = INSTALLED + 1;
-    private static final int SEARCH_TEXT_AND_CATEGORIES = SEARCH_TEXT + 1;
-    private static final int RECENTLY_UPDATED = SEARCH_TEXT_AND_CATEGORIES + 1;
+    private static final int RECENTLY_UPDATED = SEARCH_TEXT + 1;
     private static final int NEWLY_ADDED = RECENTLY_UPDATED + 1;
     private static final int CATEGORY = NEWLY_ADDED + 1;
     private static final int CALC_SUGGESTED_APKS = CATEGORY + 1;
@@ -487,7 +486,6 @@ public class AppProvider extends FDroidProvider {
         MATCHER.addURI(getAuthority(), PATH_RECENTLY_UPDATED, RECENTLY_UPDATED);
         MATCHER.addURI(getAuthority(), PATH_CATEGORY + "/*", CATEGORY);
         MATCHER.addURI(getAuthority(), PATH_NEWLY_ADDED, NEWLY_ADDED);
-        MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*/*", SEARCH_TEXT_AND_CATEGORIES);
         MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*", SEARCH_TEXT);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_INSTALLED + "/*", SEARCH_INSTALLED);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_CAN_UPDATE + "/*", SEARCH_CAN_UPDATE);
@@ -583,22 +581,14 @@ public class AppProvider extends FDroidProvider {
     }
 
 
-    public static Uri getSearchUri(String query, @Nullable String category) {
-        if (TextUtils.isEmpty(query) && TextUtils.isEmpty(category)) {
+    public static Uri getSearchUri(String query) {
+        if (TextUtils.isEmpty(query)) {
             // Return all the things for an empty search.
             return getContentUri();
-        } else if (TextUtils.isEmpty(query)) {
-            return getCategoryUri(category);
         }
-
         Uri.Builder builder = getContentUri().buildUpon()
                 .appendPath(PATH_SEARCH)
                 .appendPath(query);
-
-        if (!TextUtils.isEmpty(category)) {
-            builder.appendPath(category);
-        }
-
         return builder.build();
     }
 
@@ -823,13 +813,8 @@ public class AppProvider extends FDroidProvider {
                 break;
 
             case SEARCH_TEXT:
+                sortOrder = getSearchSortOrder(pathSegments.get(1));
                 selection = selection.add(querySearch(pathSegments.get(1)));
-                break;
-
-            case SEARCH_TEXT_AND_CATEGORIES:
-                selection = selection
-                        .add(querySearch(pathSegments.get(1)))
-                        .add(queryCategory(pathSegments.get(2)));
                 break;
 
             case SEARCH_INSTALLED:
@@ -873,6 +858,26 @@ public class AppProvider extends FDroidProvider {
         }
 
         return runQuery(uri, selection, projection, sortOrder, limit);
+    }
+
+    private String getSearchSortOrder(String searchTerms) {
+        final String LAST_UPDATED = Schema.AppMetadataTable.NAME + "." + Schema.AppMetadataTable.Cols.LAST_UPDATED + " desc";
+        final String NAME_COL = Schema.AppMetadataTable.NAME + "." + Schema.AppMetadataTable.Cols.NAME;
+        final String SUMMARY_COL = Schema.AppMetadataTable.NAME + "." + Schema.AppMetadataTable.Cols.SUMMARY;
+        final String[] terms = searchTerms.trim().split("\\s+");
+        if (terms.length == 0 || terms[0].equals("")) {
+            return LAST_UPDATED;
+        }
+
+        StringBuilder titleCase = new StringBuilder(String.format("%s like '%%%s%%'", NAME_COL, terms[0]));
+        StringBuilder summaryCase = new StringBuilder(String.format("%s like '%%%s%%'", SUMMARY_COL, terms[0]));
+        for (int i = 1; i < terms.length; i++) {
+            titleCase.append(String.format(" and %s like '%%%s%%'", NAME_COL, terms[i]));
+            summaryCase.append(String.format(" and %s like '%%%s%%'", SUMMARY_COL, terms[i]));
+        }
+
+        return String.format("case when %s then 1 when %s then 2 else 3 end, %s",
+                titleCase.toString(), summaryCase.toString(), LAST_UPDATED);
     }
 
     private AppQuerySelection queryNewlyAdded() {
