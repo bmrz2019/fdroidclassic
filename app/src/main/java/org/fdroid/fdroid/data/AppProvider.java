@@ -855,19 +855,8 @@ public class AppProvider extends FDroidProvider {
                 break;
 
             case RECENTLY_UPDATED:
-                String table = getTableName();
-                String isNew = table + "." + Cols.LAST_UPDATED + " <= " + table + "." + Cols.ADDED + " DESC";
-                String hasFeatureGraphic = table + "." + Cols.FEATURE_GRAPHIC + " IS NULL ASC ";
-                String lastUpdated = table + "." + Cols.LAST_UPDATED + " DESC";
-                sortOrder = lastUpdated + ", " + isNew + ", " + hasFeatureGraphic;
-
-                // There seems no reason to limit the number of apps on the front page, but it helps
-                // if it loads quickly, as it is the default view shown every time F-Droid is opened.
-                // 200 is an arbitrary number which hopefully gives the user enough to scroll through
-                // if they are bored.
-                limit = 200;
-
-                includeSwap = false;
+                sortOrder = getTableName() + "." + Cols.LAST_UPDATED + " DESC";
+                selection = selection.add(queryRecentlyUpdated());
                 break;
 
             case HIGHEST_PRIORITY:
@@ -888,6 +877,14 @@ public class AppProvider extends FDroidProvider {
 
     private AppQuerySelection queryNewlyAdded() {
         final String selection = getTableName() + "." + Cols.ADDED + " > ?";
+        final String[] args = {Utils.formatDate(Preferences.get().calcMaxHistory(), "")};
+        return new AppQuerySelection(selection, args);
+    }
+
+    private AppQuerySelection queryRecentlyUpdated() {
+        final String app = getTableName();
+        final String lastUpdated = app + "." + Cols.LAST_UPDATED;
+        final String selection = app + "." + Cols.ADDED + " != " + lastUpdated + " AND " + lastUpdated + " > ?";
         final String[] args = {Utils.formatDate(Preferences.get().calcMaxHistory(), "")};
         return new AppQuerySelection(selection, args);
     }
