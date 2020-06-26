@@ -1,3 +1,7 @@
+### 1.0-beta12 (?)
+
+*
+
 ### 1.0-beta11 (26.06.2020)
 
 * Change ranking in search results to prefer name and summary matches (thanks to @gcbrown76)
