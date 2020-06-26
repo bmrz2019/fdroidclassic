@@ -452,7 +452,6 @@ public class AppProvider extends FDroidProvider {
     private static final String PATH_INSTALLED = "installed";
     private static final String PATH_CAN_UPDATE = "canUpdate";
     private static final String PATH_SEARCH = "search";
-    private static final String PATH_SEARCH_REPO = "searchRepo";
     private static final String PATH_SEARCH_INSTALLED = "searchInstalled";
     private static final String PATH_SEARCH_CAN_UPDATE = "searchCanUpdate";
     protected static final String PATH_APPS = "apps";
@@ -475,13 +474,11 @@ public class AppProvider extends FDroidProvider {
     private static final int CATEGORY = NEWLY_ADDED + 1;
     private static final int CALC_SUGGESTED_APKS = CATEGORY + 1;
     private static final int REPO = CALC_SUGGESTED_APKS + 1;
-    private static final int SEARCH_REPO = REPO + 1;
-    private static final int SEARCH_INSTALLED = SEARCH_REPO + 1;
+    private static final int SEARCH_INSTALLED = REPO + 1;
     private static final int SEARCH_CAN_UPDATE = SEARCH_INSTALLED + 1;
     private static final int HIGHEST_PRIORITY = SEARCH_CAN_UPDATE + 1;
     private static final int CALC_PREFERRED_METADATA = HIGHEST_PRIORITY + 1;
-    private static final int TOP_FROM_CATEGORY = CALC_PREFERRED_METADATA + 1;
-    private static final int INSTALLED_WITH_KNOWN_VULNS = TOP_FROM_CATEGORY + 1;
+    private static final int INSTALLED_WITH_KNOWN_VULNS = CALC_PREFERRED_METADATA + 1;
 
     static {
         MATCHER.addURI(getAuthority(), null, CODE_LIST);
@@ -494,7 +491,6 @@ public class AppProvider extends FDroidProvider {
         MATCHER.addURI(getAuthority(), PATH_SEARCH + "/*", SEARCH_TEXT);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_INSTALLED + "/*", SEARCH_INSTALLED);
         MATCHER.addURI(getAuthority(), PATH_SEARCH_CAN_UPDATE + "/*", SEARCH_CAN_UPDATE);
-        MATCHER.addURI(getAuthority(), PATH_SEARCH_REPO + "/*/*", SEARCH_REPO);
         MATCHER.addURI(getAuthority(), PATH_REPO + "/#", REPO);
         MATCHER.addURI(getAuthority(), PATH_CAN_UPDATE, CAN_UPDATE);
         MATCHER.addURI(getAuthority(), PATH_INSTALLED, INSTALLED);
@@ -719,18 +715,6 @@ public class AppProvider extends FDroidProvider {
         return new AppQuerySelection(selection, args).add(queryPackageName(packageName));
     }
 
-    /**
-     * Same as {@link AppProvider#querySingle(String, long)} except it is used for the purpose
-     * of an UPDATE query rather than a SELECT query. This means that it must use a subquery to get
-     * the {@link Cols.Package#PACKAGE_ID} rather than the join which is already in place for that
-     * table. The reason is because UPDATE queries cannot include joins in SQLite.
-     */
-    protected AppQuerySelection querySingleForUpdate(String packageName, long repoId) {
-        final String selection = Cols.PACKAGE_ID + " = (" + getPackageIdFromPackageNameQuery() +
-                ") AND " + Cols.REPO_ID + " = ? ";
-        final String[] args = {packageName, Long.toString(repoId)};
-        return new AppQuerySelection(selection, args);
-    }
 
     private AppQuerySelection queryExcludeSwap() {
         // fdroid_repo will have null fields if the LEFT JOIN didn't resolve, e.g. due to there
@@ -798,9 +782,6 @@ public class AppProvider extends FDroidProvider {
     public Cursor query(@NonNull Uri uri, String[] projection, String customSelection, String[] selectionArgs, String sortOrder) {
         AppQuerySelection selection = new AppQuerySelection(customSelection, selectionArgs);
 
-        // Queries which are for the main list of apps should not include swap apps.
-        boolean includeSwap = true;
-
         // It is usually the case that we ask for app(s) for which we don't care what repo is
         // responsible for providing them. In that case, we need to populate the metadata with
         // that form the repo with the highest priority.
@@ -818,7 +799,6 @@ public class AppProvider extends FDroidProvider {
                 return null;
 
             case CODE_LIST:
-                includeSwap = false;
                 break;
 
             case CODE_SINGLE:
@@ -830,7 +810,6 @@ public class AppProvider extends FDroidProvider {
 
             case CAN_UPDATE:
                 selection = selection.add(queryCanUpdate());
-                includeSwap = false;
                 break;
 
             case REPO:
@@ -841,60 +820,38 @@ public class AppProvider extends FDroidProvider {
             case INSTALLED:
                 selection = selection.add(queryInstalled());
                 sortOrder = Cols.NAME;
-                includeSwap = false;
                 break;
 
             case SEARCH_TEXT:
                 selection = selection.add(querySearch(pathSegments.get(1)));
-                includeSwap = false;
                 break;
 
             case SEARCH_TEXT_AND_CATEGORIES:
                 selection = selection
                         .add(querySearch(pathSegments.get(1)))
                         .add(queryCategory(pathSegments.get(2)));
-                includeSwap = false;
-                break;
-
-            case SEARCH_REPO:
-                selection = selection
-                        .add(querySearch(pathSegments.get(2)))
-                        .add(queryRepo(Long.parseLong(pathSegments.get(1))));
-                repoIsKnown = true;
                 break;
 
             case SEARCH_INSTALLED:
                 selection = querySearch(uri.getLastPathSegment()).add(queryInstalled());
-                includeSwap = false;
                 break;
 
             case SEARCH_CAN_UPDATE:
                 selection = querySearch(uri.getLastPathSegment()).add(queryCanUpdate());
-                includeSwap = false;
                 break;
 
             case CATEGORY:
                 selection = selection.add(queryCategory(uri.getLastPathSegment()));
-                includeSwap = false;
-                break;
-
-            case TOP_FROM_CATEGORY:
-                selection = selection.add(queryCategory(pathSegments.get(2)));
-                limit = Integer.parseInt(pathSegments.get(1));
-                sortOrder = getTableName() + "." + Cols.LAST_UPDATED + " DESC";
-                includeSwap = false;
                 break;
 
             case NEWLY_ADDED:
                 sortOrder = getTableName() + "." + Cols.ADDED + " DESC";
                 selection = selection.add(queryNewlyAdded());
-                includeSwap = false;
                 break;
 
 
             case INSTALLED_WITH_KNOWN_VULNS:
                 selection = selection.add(queryInstalledWithKnownVulns());
-                includeSwap = false;
                 break;
 
             case RECENTLY_UPDATED:
@@ -915,7 +872,6 @@ public class AppProvider extends FDroidProvider {
 
             case HIGHEST_PRIORITY:
                 selection = selection.add(queryPackageName(uri.getLastPathSegment()));
-                includeSwap = false;
                 break;
 
             default:
@@ -927,7 +883,7 @@ public class AppProvider extends FDroidProvider {
             selection = selection.add(queryHighestPriority());
         }
 
-        return runQuery(uri, selection, projection, includeSwap, sortOrder, limit);
+        return runQuery(uri, selection, projection, sortOrder, limit);
     }
 
     private AppQuerySelection queryNewlyAdded() {
@@ -941,10 +897,8 @@ public class AppProvider extends FDroidProvider {
      * Helper method used by both the genuine {@link AppProvider} and the temporary version used
      * by the repo updater ({@link TempAppProvider}).
      */
-    protected Cursor runQuery(Uri uri, AppQuerySelection selection, String[] projection, boolean includeSwap, String sortOrder, int limit) {
-        if (!includeSwap) {
-            selection = selection.add(queryExcludeSwap());
-        }
+    protected Cursor runQuery(Uri uri, AppQuerySelection selection, String[] projection, String sortOrder, int limit) {
+        selection = selection.add(queryExcludeSwap());
 
         if (Cols.NAME.equals(sortOrder)) {
             sortOrder = getTableName() + "." + sortOrder + " COLLATE LOCALIZED ";
