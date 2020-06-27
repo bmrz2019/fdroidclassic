@@ -1,4 +1,4 @@
-image: registry.gitlab.com/fdroid/ci-images:client
+image: registry.gitlab.com/fdroid/ci-images_client:latest
 
 before_script:
   - rm -rf fdroidserver
