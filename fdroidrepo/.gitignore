@@ -6,3 +6,4 @@ config.py
 /build
 .logs
 /fdroid-icon.png
+/__pycache__
