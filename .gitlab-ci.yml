@@ -13,7 +13,9 @@ lint:
     # always report on lint errors to the build log
     - sed -i -e 's,textReport .*,textReport true,' app/build.gradle
     - gradlew-fdroid lint
+  artifacts:
+    - app/build/reports/
 
 build:
   script:
-    -gradlew-fdroid assembleDebug
+    - gradlew-fdroid assembleDebug
