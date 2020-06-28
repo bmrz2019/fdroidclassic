@@ -23,7 +23,7 @@ build:
 
 fdroid:build:
   script:
-    - 'sed -i -e "s|Repo: |Repo: file://$(pwd)|" fdroidrepo/metadata/eu.bubu1.fdroidclassic.yml'
     - cd fdroidrepo
     - PYTHONPATH=. fdroid gencibuild eu.bubu1.fdroidclassic
+    - cat metadata/eu.bubu1.fdroidclassic.yml
     - fdroid build -v -l eu.bubu1.fdroidclassic

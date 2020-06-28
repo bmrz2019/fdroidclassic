@@ -31,6 +31,7 @@ def main():
     allapps = metadata.read_metadata(xref=False)
     apps = common.read_app_args(options.appid, allapps, True)
     for appid, app in apps.items():
+        app.Repo = "file://" + os.path.realpath("..")
         newbuild = deepcopy(app.builds[-1])
         version_name = subprocess.check_output(["git", "describe", "--tags", "--always"]).strip().decode()[1:]
         path = "../app/build.gradle"
@@ -40,7 +41,6 @@ def main():
                 if matches:
                     version_code = matches.group(1)
 
-        print(version_code)
         newbuild['versionName'] = version_name
         newbuild['versionCode'] = version_code
         newbuild['commit'] = os.getenv('CI_COMMIT_SHA')
