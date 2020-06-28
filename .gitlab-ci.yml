@@ -4,7 +4,7 @@ before_script:
   - rm -rf fdroidserver
   - mkdir fdroidserver
   - commit=$(git ls-remote https://gitlab.com/fdroid/fdroidserver.git master | cut -f1)
-  - echo "Using fdroidserver ${commit}
+  - echo "Using fdroidserver ${commit}"
   - curl --silent https://gitlab.com/fdroid/fdroidserver/repository/${commit}/archive.tar.gz
       | tar -xz --directory=fdroidserver --strip-components=1
   - export PATH="$PWD/fdroidserver:$PATH"
