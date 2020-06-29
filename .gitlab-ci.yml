@@ -29,5 +29,4 @@ fdroid:build:
     - git branch -u origin/master
     - cd fdroidrepo
     - PYTHONPATH=. fdroid gencibuild eu.bubu1.fdroidclassic
-    - cat metadata/eu.bubu1.fdroidclassic.yml
     - fdroid build --stop -v -l eu.bubu1.fdroidclassic
