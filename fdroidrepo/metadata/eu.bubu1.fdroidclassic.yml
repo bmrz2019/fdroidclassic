@@ -117,5 +117,12 @@ Builds:
       - app/src/test
       - app/src/androidTest
 
+  - versionName: 1.0-beta12
+    versionCode: 1012
+    commit: v1.0-beta12
+    subdir: app
+    gradle:
+      - yes
+
 AutoUpdateMode: Version v%v
 UpdateCheckMode: Tags
