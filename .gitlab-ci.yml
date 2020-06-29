@@ -30,4 +30,4 @@ fdroid:build:
     - cd fdroidrepo
     - PYTHONPATH=. fdroid gencibuild eu.bubu1.fdroidclassic
     - cat metadata/eu.bubu1.fdroidclassic.yml
-    - fdroid build -v -l eu.bubu1.fdroidclassic
+    - fdroid build --stop -v -l eu.bubu1.fdroidclassic
