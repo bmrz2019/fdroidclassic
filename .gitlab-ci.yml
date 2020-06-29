@@ -25,7 +25,7 @@ build:
 fdroid:build:
   script:
     # Workaround that fdroid can get a remote HEAD when cloning this repo again
-    - git checout -b ci
+    - git checkout -b ci
     - git branch -u origin/master
     - cd fdroidrepo
     - PYTHONPATH=. fdroid gencibuild eu.bubu1.fdroidclassic
