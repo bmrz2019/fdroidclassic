@@ -24,12 +24,9 @@ build:
 
 fdroid:build:
   script:
-    - find .git
-    - mkdir git-test
-    - cd git-test
-    - git clone .. .
-    - git ls-remote
-    - GIT_TRACE_PACKET=2 git remote set-head origin --auto
+    # Workaround that fdroid can get a remote HEAD when cloning this repo again
+    - git checout -b ci
+    - git branch -u origin/master
     - cd fdroidrepo
     - PYTHONPATH=. fdroid gencibuild eu.bubu1.fdroidclassic
     - cat metadata/eu.bubu1.fdroidclassic.yml
