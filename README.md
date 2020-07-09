@@ -97,7 +97,6 @@ released under an
 
 ## Translation
 
-TODO!
-Everything can be translated.  See
-[Translation and Localization](https://f-droid.org/docs/Translation_and_Localization)
-for more info.
+Translations are here: https://weblate.bubu1.eu/projects/f-droid-classic/
+
+[![Translation status](https://weblate.bubu1.eu/widgets/f-droid-classic/-/svg-badge.svg)](https://weblate.bubu1.eu/engage/f-droid-classic/?utm_source=widget)
