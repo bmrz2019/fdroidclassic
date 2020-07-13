@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">F-Droid</string>
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">F-Droid Classic</string>
     <string name="SignatureMismatch">Den nye version er signeret med en nøgle som er forskellig fra den gamle nøgle. Den gamle version skal afinstalleres, før den nye version kan installeres. Gør venligst det, og prøv igen. (Bemærk at afinstallation sletter al data programmet har lagret internt)</string>
     <string name="installIncompatible">Det ser ud til at denne pakke er inkompatibel med din enhed. Vil du forsøge at installere den alligevel?</string>
     <string name="installDowngrade">Du forsøger at nedgradere dette program. Gøres dette vil programmet måske blive defekt og endda tabe dine data. Vil du alligevel forsøge at nedgradere programmet?</string>
@@ -11,7 +11,6 @@
     <string name="unstable_updates">Ustabile opdateringer</string>
     <string name="unstable_updates_summary">Foreslå opdateringer til ustabile versioner</string>
     <string name="other">Andet</string>
-
     <string name="update_interval">Automatisk opdateringsinterval</string>
     <string name="update_interval_zero">Ingen automatiske opdateringer til programlisten</string>
     <string name="automatic_scan_wifi">Kun på Wi-Fi</string>
@@ -22,33 +21,26 @@
     <string name="update_history_summ">Dage hvor programmer opfattes som nye eller nylige: %s</string>
     <string name="system_installer">Privilegeret Udvidelse</string>
     <string name="system_installer_on">Brug F-Droid Privilegeret Udvidelse til at installere, opdatere og fjerne pakker</string>
-
     <string name="login_title">Autentificering påkrævet</string>
     <string name="login_name">Brugernavn</string>
     <string name="login_password">Adgangskode</string>
     <string name="repo_edit_credentials">Ændr Adgangskode</string>
     <string name="repo_error_empty_username">Tomt brugernavn, akkreditiver uændret</string>
-
     <string name="app_details">Programdetaljer</string>
     <string name="no_such_app">Intet sådan program fundet.</string>
-
     <string name="about_title">Om F-Droid</string>
     <string name="about_version">Version</string>
     <string name="about_site">Hjemmeside</string>
     <string name="about_source">Kildekode</string>
     <string name="about_mail">E-mail</string>
     <string name="about_license">Licens</string>
-
     <string name="app_incompatible">Inkompatibel</string>
     <string name="app_installed">Installeret</string>
     <string name="app_not_installed">Ikke Installeret</string>
     <string name="app_inst_known_source">Installeret (fra %s)</string>
     <string name="app_inst_unknown_source">Installeret (fra ukendt kilde)</string>
-
     <string name="added_on">Tilføjet den %s</string>
-
     <string name="ok">OK</string>
-
     <string name="yes">Ja</string>
     <string name="no">Nej</string>
     <string name="repo_add_title">Tilføj nyt depot</string>
@@ -56,13 +48,11 @@
     <string name="links">Links</string>
     <string name="more">Mere</string>
     <string name="less">Mindre</string>
-
     <string name="back">Tilbage</string>
     <string name="cancel">Annuller</string>
     <string name="enable">Aktiver</string>
     <string name="add_key">Tilføj Nøgle</string>
     <string name="overwrite">Overskriv</string>
-
     <string name="tab_available_apps">Tilgængelig</string>
     <string name="tab_installed_apps">Installeret</string>
     <string name="tab_updates">Opdateringer</string>
@@ -72,7 +62,6 @@
     <string name="many_updates_available">%d opdateringer er tilgængelige.</string>
     <string name="fdroid_updates_available">F-Droid Opdateringer Tilgængelige</string>
     <string name="update_notification_more">+%1$d flere…</string>
-
     <string name="repo_add_url">Depot adresse</string>
     <string name="repo_add_fingerprint">Fingeraftryk (valgfri)</string>
     <string name="repo_exists_add_fingerprint">Dette depot er allerede sat op, dette vil tilføje ny nøgleinformation.</string>
@@ -82,14 +71,12 @@
     <string name="bad_fingerprint">Misdannet fingeraftryk</string>
     <string name="invalid_url">Dette er ikke en gyldig URL.</string>
     <string name="malformed_repo_uri">Ignorerer misdannet depot URI: %s</string>
-
     <string name="menu_update_repo">Opdater Depoter</string>
     <string name="menu_manage">Depoter</string>
     <string name="menu_settings">Indstillinger</string>
     <string name="menu_about">Om</string>
     <string name="menu_search">Søg</string>
     <string name="menu_add_repo">Nyt Depot</string>
-
     <string name="menu_launch">Kør</string>
     <string name="menu_share">Del</string>
     <string name="menu_install">Installer</string>
@@ -105,8 +92,6 @@
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
     <string name="menu_flattr">Flattr</string>
-
-
     <string name="details_installed">Version %s installeret</string>
     <string name="details_notinstalled">Ikke installeret</string>
     <string name="antiadslist">Programmet indeholder annoncering</string>
@@ -115,25 +100,19 @@
     <string name="antinonfreenetlist">Programmet fremmer ikke-frie netværkstjenester</string>
     <string name="antinonfreedeplist">Programmet afhænger af andre ikke-frie programmer</string>
     <string name="antiupstreamnonfreelist">Kildekoden opstrøms er ikke udelukkende Fri</string>
-
     <string name="display">Vis</string>
-
     <string name="expert">Eksperttilstand</string>
     <string name="expert_on">Vis ekstra info og aktiver ekstra indstillinger</string>
-
     <string name="search_hint">Søg i programmer</string>
-
     <string name="appcompatibility">Programkompatibilitet</string>
     <string name="show_incompat_versions">Inkompatible versioner</string>
     <string name="show_incompat_versions_on">Vis versioner af programmet som er inkompatible med enheden</string>
     <string name="rooted">Ignorer root</string>
     <string name="ignoreTouch">Ignorer touchskærm</string>
     <string name="ignoreTouch_on">Inkluder altid programmer som kræver touchskærm</string>
-
     <string name="rooted_on">Ekskluder ikke programmer som kræver root privilegier</string>
     <string name="next">Næste</string>
     <string name="skip">Spring over</string>
-
     <string name="proxy">Proxy</string>
     <string name="enable_proxy_title">Aktiver HTTP Proxy</string>
     <string name="enable_proxy_summary">Konfigurer HTTP Proxy for alle netværksforespørgsler</string>
@@ -141,17 +120,15 @@
     <string name="proxy_host_summary">Konfigurer din proxys værtsnavn (e.g. 127.0.0.1)</string>
     <string name="proxy_port">Proxyport</string>
     <string name="proxy_port_summary">Konfigurer din proxys portnummer (e.g. 8118)</string>
-
     <string name="status_download">Henter\n%2$s / %3$s (%4$d%%) fra\n%1$s</string>
-
     <string name="status_download_unknown_size">Henter\n%2$s fra\n%1$s</string>
     <string name="update_notification_title">Opdaterer depoter</string>
     <string name="status_processing_xml_percent">Behandler %2$s / %3$s (%4$d%%) fra %1$s</string>
     <string name="status_connecting_to_repo">Forbinder til\n%1$s</string>
     <string name="status_inserting_apps">Gemmer programdetaljer</string>
     <string name="repos_unchanged">Alle depoter er opdaterede</string>
-        <string name="all_other_repos_fine">Alle andre depoter gav ingen fejl.</string>
-        <string name="global_error_updating_repos">Fejl under opdatering: %s</string>
+    <string name="all_other_repos_fine">Alle andre depoter gav ingen fejl.</string>
+    <string name="global_error_updating_repos">Fejl under opdatering: %s</string>
     <string name="no_permissions">Ingen tilladelser bliver brugt.</string>
     <string name="permissions">Tilladelser</string>
     <string name="no_handler_app">Du har ikke noget program som kan håndtere %s.</string>
@@ -180,9 +157,7 @@
     <string name="requires_features">Kræver: %1$s</string>
     <string name="pref_language">Sprog</string>
     <string name="pref_language_default">Systemstandard</string>
-
     <string name="app_icon">Programikon</string>
-
     <string name="category_All">Alle</string>
     <string name="category_Whats_New">Hvad er Nyt</string>
     <string name="category_Recently_Updated">Nyligt Opdateret</string>
@@ -203,11 +178,9 @@
     <string name="category_Theming">Temaer</string>
     <string name="category_Time">Tid</string>
     <string name="category_Writing">Skrivning</string>
-
     <string name="empty_installed_app_list">Ingen programmer installeret.\n\nDer er programmer på din enhed, men de er ikke tilgængelige fra F-Droid. Det kan være fordi du skal opdatere dine depoter eller også tilbyder depoterne reelt ikke dine programmer.</string>
     <string name="empty_available_app_list">Ingen programmer i denne kategori.\n\nPrøv at vælge en anden kategori eller at opdatere dine depoter for at få en frisk liste over programmer.</string>
     <string name="empty_can_update_app_list">Alle programmer er opdateret.\n\nTillykke! Alle dine programmer er opdaterede (eller dine depoter er uddaterede).</string>
-
     <string name="install_error_unknown">Kunne ikke installere på grund af en ukendt fejl</string>
     <string name="uninstall_error_unknown">Afinstallation mislykkedes grundet en ukendt fejl</string>
     <string name="system_install_denied_title">F-Droid Privilegeret Udvidelse er ikke tilgængelig</string>
@@ -228,10 +201,8 @@
     <string name="system_install_warning_lollipop">Dette tager op til 10 sekunder og enheden vil <b>genstarte</b> bagefter.</string>
     <string name="system_uninstall">Vil du afinstallere F-Droid Privilegeret Udvidelse?</string>
     <string name="system_uninstall_button">Afinstaller</string>
-
     <string name="open_qr_code_scanner">Åbn QR Scanner</string>
     <string name="loading">Indlæser…</string>
-
     <string name="install_confirm">kræver adgang til</string>
     <string name="install_confirm_update">Vil du installere en opdatering til dette eksisterende program? Dine eksisterende data vil ikke gå tabt. Det opdaterede program vil få adgang til:</string>
     <string name="install_confirm_update_system">Vil du installere en opdatering til dette indbyggede program? Dine eksisterende data vil ikke gå tabt. Det opdaterede program vil få adgang til:</string>
@@ -244,11 +215,9 @@
     <string name="uninstall_confirm">Vil du afinstallere dette program?</string>
     <string name="tap_to_install">Overførsel fuldført, rør for at installere</string>
     <string name="download_error">Overførsel forfejlet</string>
-
     <string name="perms_new_perm_prefix">"Nye: "</string>
     <string name="perms_description_app">Udbudt af %1$s.</string>
     <string name="downloading">Henter…</string>
-
     <string name="interval_never">Aldrig</string>
     <string name="interval_1h">Hver time</string>
     <string name="interval_4h">Hver fjerde time</string>
@@ -256,45 +225,36 @@
     <string name="interval_1d">Dagligt</string>
     <string name="interval_1w">Ugentligt</string>
     <string name="interval_2w">Hver anden uge</string>
-
     <string name="theme_light">Lys</string>
     <string name="theme_dark">Mørk</string>
     <string name="theme_night">Nat</string>
-<string name="by_author_format">af %s</string>
+    <string name="by_author_format">af %s</string>
     <string name="menu_email">E-Mail forfatter</string>
     <string name="antinonfreeassetslist">Denne app indeholder ikke-frie aktiver</string>
-
     <string name="empty_search_installed_app_list">Ingen matches blandt installerede programmer.</string>
     <string name="empty_search_available_app_list">Ingen sådanne programmer tilgængelige.</string>
     <string name="empty_search_can_update_app_list">Ingen sådanne programmer som kan opdateres.</string>
-
     <string name="crash_dialog_title">F-Droid er gået ned</string>
     <string name="crash_dialog_text">En uventet fejl har tvunget programmet til at stoppe. Vil du sende en e-mail med detaljer som hjælper med at ordne problemet?</string>
     <string name="crash_dialog_comment_prompt">Du kan tilføje ekstra information og kommentarer her:</string>
-<string name="update_auto_download">Hent automatisk opdateringer</string>
+    <string name="update_auto_download">Hent automatisk opdateringer</string>
     <string name="update_auto_download_summary">Henter filer til opdatering i baggrunden</string>
     <string name="repo_provider">Depot: %s</string>
-
     <string name="useTor">Brug Tor</string>
     <string name="useTorSummary">Hent altid gennem Tor for forbedret privatliv</string>
     <string name="system_install_not_supported">Installation af F-Droid Priviligeret Udvidelse er i øjeblikket ikke understøttet på Android 5.1 eller senere.</string>
-
     <string name="tap_to_install_format">Berør for at installere %s</string>
     <string name="tap_to_update_format">Berør for at opdatere %s</string>
     <string name="download_pending">Venter på at kunne begynde hentning…</string>
     <string name="install_error_notify_title">Fejl ved installation af %s</string>
     <string name="uninstall_error_notify_title">Fejl ved afinstallering af %s</string>
-
-
     <string name="downloading_apk">Henter %1$s</string>
     <string name="installing">Installerer…</string>
     <string name="uninstalling">Afinstallerer…</string>
-
     <string name="keep_hour">1 Time</string>
     <string name="keep_day">1 Dag</string>
     <string name="keep_week">1 Uge</string>
     <string name="keep_month">1 Måned</string>
     <string name="keep_year">1 År</string>
     <string name="keep_forever">Forevigt</string>
-
-    </resources>
+</resources>
