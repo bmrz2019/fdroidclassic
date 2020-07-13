@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="SignatureMismatch">La nouvelle version est signée avec une clé différente de l\'ancienne. Pour installer la nouvelle version, l\'ancienne doit d\'abord être désinstallée. Essayez de nouveau après avoir désinstallé l\'ancienne application (attention : ceci effacera les données stockées par l\'application).</string>
+    <string name="SignatureMismatch">La nouvelle version est signée avec une clé différente de l\'ancienne. Pour installer la nouvelle version, l\'ancienne doit d\'abord être désinstallée. Essayez de nouveau après avoir désinstallé l\'ancienne application (attention : ceci effacera les données stockées par l\'application)</string>
     <string name="installIncompatible">Il semble que ce paquet ne soit pas compatible avec votre appareil. Voulez-vous quand même essayer de l\'installer ?</string>
     <string name="installDowngrade">Vous essayez de revenir à une ancienne version de cette application. Cela peut causer des problèmes de fonctionnement ou des pertes de données. Voulez-vous tout de même essayer de désinstaller les mises à jour ?</string>
     <string name="version">Version</string>
@@ -149,7 +149,7 @@ réactiver ce dépôt pour installer les applis qu\'il contient.</string>
     <string name="system_install_denied_title">F-Droid Privileged Extension n\'est pas disponible</string>
     <string name="system_install_denied_body">Cette option est disponible uniquement quand l\'appli F-Droid Privileged Extension est installée.</string>
     <string name="open_qr_code_scanner">Ouvrir le scanner de code QR</string>
-    <string name="app_name">F-Droid</string>
+    <string name="app_name">F-Droid Classic</string>
     <string name="unstable_updates">Mises à jour instables</string>
     <string name="unstable_updates_summary">Proposer les mises à jour de versions instables</string>
     <string name="about_source">Code source</string>
