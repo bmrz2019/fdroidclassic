@@ -29,9 +29,9 @@ dependencies {
     implementation 'commons-io:commons-io:2.6'
     implementation 'com.github.ligi.tracedroid:lib:3.0'
     implementation 'com.github.ligi.tracedroid:supportemail:3.0'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.11.0'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.0'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.11.1'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
 }
 
 def myApplicationId = "eu.bubu1.fdroidclassic"
