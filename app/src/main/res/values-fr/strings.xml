@@ -321,4 +321,5 @@ détails des opérations en cours pour aider à résoudre ce problème ?</string
     <string name="repo_official_mirrors">officiels Mirrors</string>
     <string name="repo_user_mirrors">Utilisateur Mirrors</string>
     <string name="status_inserting_x_apps">Détails de l\'application d\'épargne (%1$d/%2$d) à partir de %3$s</string>
+    <string name="download_all_updates">Actualiser tout</string>
 </resources>
