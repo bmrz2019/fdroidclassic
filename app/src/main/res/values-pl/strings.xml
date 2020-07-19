@@ -273,4 +273,11 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="antinosourcesince">Kod źródłowy nie jest już dostępny, nie ma możliwości jego aktualizacji.</string>
     <string name="warning_scaning_qr_code">Wydaje się, że twój aparat nie ma autofokusa. To może być trudne do zeskanowania kodu.</string>
     <string name="app_permission_storage">F-Droid potrzebuje pozwolenia na magazynowanie, aby zainstalować go do przechowywania. Proszę pozwolić mu na następny ekran, aby przystąpił do instalacji.</string>
+    <string name="repo_official_mirrors">Oficjalne mirrors</string>
+    <string name="repo_user_mirrors">Klient mirrors</string>
+    <string name="details_new_in_version">Nowość w wersji %s</string>
+    <string name="details_last_updated_today">Zaktualizowany dzisiaj</string>
+    <string name="signed">Podpisano: %s</string>
+    <string name="app_installed_media">Plik zainstalowany do %s</string>
+    <string name="status_inserting_x_apps">Zapisywanie szczegółów aplikacji (%1$d/%2$d) od %3$s</string>
 </resources>
