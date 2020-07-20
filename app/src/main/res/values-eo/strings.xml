@@ -277,4 +277,15 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="keep_install_history">Konservi historion de instaladoj</string>
     <string name="keep_install_history_summary">Memoras historion de instaladoj kaj malinstaladoj en F-Droid</string>
     <string name="warning_no_internet">Ne povas ĝisdatigi, ĉu vi estas konektita kun la Interreto?</string>
+    <string name="antiknownvulnlist">Esta aplicación contiene una vulnerabilidad de seguridad conocida</string>
+    <string name="antinosourcesince">El código fuente ya no está disponible, no hay actualizaciones posibles.</string>
+    <string name="details_new_in_version">New in version %s</string>
+    <string name="download_404">La petita dosiero ne estis trovita.</string>
+    <string name="signed">Subskribita: %s</string>
+    <string name="app_installed_media">Dosiero instalita al %s</string>
+    <string name="antidisabledalgorithmlist">Esta aplicación tiene una firma de seguridad débil</string>
+    <string name="status_inserting_x_apps">Ŝparante detalojn de la aplikaĵo (%1$d/%2$d) de %3$s</string>
+    <string name="warning_scaning_qr_code">Via fotilo ne ŝajnas havi aŭtomatan fokuson. Eble malfacilas skani la kodon.</string>
+    <string name="menu_appinfo">Informoj pri Aplikoj (Agordoj pri Sistemo)</string>
+    <string name="app_permission_storage">F-Droid bezonas la permeson pri stokado por instali ĉi tion en stokado. Bonvolu permesi ĝin sur la sekva ekrano por daŭrigi la instaladon.</string>
 </resources>
