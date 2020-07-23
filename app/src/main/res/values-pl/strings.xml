@@ -280,4 +280,9 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="signed">Podpisano: %s</string>
     <string name="app_installed_media">Plik zainstalowany do %s</string>
     <string name="status_inserting_x_apps">Zapisywanie szczegółów aplikacji (%1$d/%2$d) od %3$s</string>
+    <string name="repo_exists_add_mirror">To jest kopia %1$, dodać to jako lustro\?</string>
+    <string name="repo_add_mirror">Dodaj lustro</string>
+    <string name="share_repository">Repozytorium akcji</string>
+    <string name="download_all_updates">Aktualizacja wszystkich</string>
+    <string name="qr_code">QR-Code</string>
 </resources>
