@@ -288,4 +288,12 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="warning_scaning_qr_code">Via fotilo ne ŝajnas havi aŭtomatan fokuson. Eble malfacilas skani la kodon.</string>
     <string name="menu_appinfo">Informoj pri Aplikoj (Agordoj pri Sistemo)</string>
     <string name="app_permission_storage">F-Droid bezonas la permeson pri stokado por instali ĉi tion en stokado. Bonvolu permesi ĝin sur la sekva ekrano por daŭrigi la instaladon.</string>
+    <string name="repo_official_mirrors">Oficialaj speguloj</string>
+    <string name="repo_user_mirrors">Uzanto-speguloj</string>
+    <string name="repo_exists_add_mirror">Ĉi tio estas kopio de %1$s, aldoni ĝin kiel spegulon\?</string>
+    <string name="repo_add_mirror">Aldonu spegulon</string>
+    <string name="details_last_updated_today">Ĝisdatigita hodiaŭ</string>
+    <string name="share_repository">Kunhavigi Repozicion</string>
+    <string name="download_all_updates">Ĝisdatigu ĉiujn</string>
+    <string name="qr_code">QR-Code</string>
 </resources>
