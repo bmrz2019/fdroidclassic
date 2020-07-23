@@ -295,4 +295,11 @@ detalles para ayudarnos a arreglar el problema?</string>
     <string name="status_inserting_x_apps">Guardando los detalles de la aplicación (%1$d/%2$d) de %3$s</string>
     <string name="warning_scaning_qr_code">Tu cámara no parece tener un enfoque automático. Podría ser difícil escanear el código.</string>
     <string name="app_permission_storage">F-Droid necesita el permiso de almacenamiento para instalar esto en el almacenamiento. Por favor, permítalo en la siguiente pantalla para proceder a la instalación.</string>
+    <string name="repo_official_mirrors">Espejos oficiales</string>
+    <string name="repo_user_mirrors">Espejos de usuario</string>
+    <string name="repo_add_mirror">Añade el espejo</string>
+    <string name="details_last_updated_today">Actualizado hoy</string>
+    <string name="share_repository">Compartir Repositorio</string>
+    <string name="download_all_updates">Actualizar todos</string>
+    <string name="qr_code">QR-Code</string>
 </resources>
