@@ -302,4 +302,21 @@ detalles para ayudarnos a arreglar el problema?</string>
     <string name="share_repository">Compartir Repositorio</string>
     <string name="download_all_updates">Actualizar todos</string>
     <string name="qr_code">QR-Code</string>
+    <string name="repo_exists_add_mirror">Esta es una copia de %1$s, añádela como un espejo \?</string>
+    <plurals name="details_last_update_years">
+        <item quantity="one">Actualizado hace %1$d año</item>
+        <item quantity="other">Actualizado hace %1$d años</item>
+    </plurals>
+    <plurals name="details_last_update_days">
+        <item quantity="one">Actualizado hace %1$d día</item>
+        <item quantity="other">Actualizado hace %1$d días</item>
+    </plurals>
+    <plurals name="details_last_update_weeks">
+        <item quantity="one">Actualizado hace %1$d semana</item>
+        <item quantity="other">Actualizado hace %1$d semanas</item>
+    </plurals>
+    <plurals name="details_last_update_months">
+        <item quantity="one">Actualizado hace %1$d mes</item>
+        <item quantity="other">Actualizado hace %1$d meses</item>
+    </plurals>
 </resources>
