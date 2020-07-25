@@ -279,7 +279,7 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="warning_no_internet">Ne povas ĝisdatigi, ĉu vi estas konektita kun la Interreto?</string>
     <string name="antiknownvulnlist">Esta aplicación contiene una vulnerabilidad de seguridad conocida</string>
     <string name="antinosourcesince">El código fuente ya no está disponible, no hay actualizaciones posibles.</string>
-    <string name="details_new_in_version">New in version %s</string>
+    <string name="details_new_in_version">Nova en versio %s</string>
     <string name="download_404">La petita dosiero ne estis trovita.</string>
     <string name="signed">Subskribita: %s</string>
     <string name="app_installed_media">Dosiero instalita al %s</string>
@@ -296,4 +296,20 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="share_repository">Kunhavigi Repozicion</string>
     <string name="download_all_updates">Ĝisdatigu ĉiujn</string>
     <string name="qr_code">QR-Code</string>
+    <plurals name="details_last_update_days">
+        <item quantity="one">Ĝisdatigita je %1$t antaŭ tago</item>
+        <item quantity="other">Ĝisdatigita %1$d antaŭ tagoj</item>
+    </plurals>
+    <plurals name="details_last_update_weeks">
+        <item quantity="one">Ĝisdatigita antaŭ %1$d semajno</item>
+        <item quantity="other">Ĝisdatigita antaŭ %1$d semajnoj</item>
+    </plurals>
+    <plurals name="details_last_update_months">
+        <item quantity="one">Ĝisdatigita antaŭ %1$d monato</item>
+        <item quantity="other">Ĝisdatigita antaŭ %1$d monatoj</item>
+    </plurals>
+    <plurals name="details_last_update_years">
+        <item quantity="one">Ĝisdatigita antaŭ %1$d jaro</item>
+        <item quantity="other">Ĝisdatigita %1$d jaroj</item>
+    </plurals>
 </resources>
