@@ -286,4 +286,36 @@ konpontzen laguntzeko?</string>
     <string name="keep_install_history">Mantendu instalazio historiala</string>
     <string name="keep_install_history_summary">Gorde instalazio eta desinstalazioen egunkari bat F-Droiden</string>
     <string name="warning_no_internet">Ezin da eguneratu, Internetera konektatuta zaude?</string>
+    <string name="antidisabledalgorithmlist">Aplikazio honek segurtasun sinadura ahula du</string>
+    <string name="antinosourcesince">Iturburu kodea ez dago eskuragarri, ez dago eguneratzarik.</string>
+    <plurals name="details_last_update_days">
+        <item quantity="one">Eguneratu %1$d egun</item>
+        <item quantity="other">%1$d egun eguneratu zen</item>
+    </plurals>
+    <plurals name="details_last_update_weeks">
+        <item quantity="one">%1$d aste eguneratu da</item>
+        <item quantity="other">%1$d aste eguneratu zen</item>
+    </plurals>
+    <plurals name="details_last_update_months">
+        <item quantity="one">%1$d hilabete eguneratu da</item>
+        <item quantity="other">%1$d hilabete eguneratu zen</item>
+    </plurals>
+    <string name="download_404">Eskatutako fitxategia ez da aurkitu.</string>
+    <string name="share_repository">Partekatu Biltegia</string>
+    <string name="signed">Sinatuta :%s</string>
+    <string name="app_installed_media">%s fitxategian instalatua</string>
+    <string name="download_all_updates">Eguneratu guztiak</string>
+    <string name="qr_code">QR-Code</string>
+    <string name="repo_add_mirror">Gehitu ispilua</string>
+    <string name="menu_appinfo">Aplikazioaren informazioa (sistemaren ezarpenak)</string>
+    <string name="details_new_in_version">Berria %s bertsioan</string>
+    <string name="antiknownvulnlist">Aplikazio honek segurtasun ahultasun ezaguna dauka</string>
+    <string name="status_inserting_x_apps">Aplikazioaren xehetasunak gordetzea (%1$d/%2$d) %3$s tik hasita</string>
+    <string name="details_last_updated_today">Gaur eguneratua</string>
+    <string name="warning_scaning_qr_code">Ez dirudi zure kamerak automatikoki enfokatuta duenik. Zaila izan daiteke kodea eskaneatzea.</string>
+    <plurals name="details_last_update_years">
+        <item quantity="one">%1$d urte eguneratu da</item>
+        <item quantity="other">%1$d urte eguneratu zen</item>
+    </plurals>
+    <string name="app_permission_storage">F-Droid-ek biltegiratzeko baimena behar du hau biltegian instalatzeko. Mesedez, utzi hurrengo pantailan instalazioarekin jarraitzeko.</string>
 </resources>
