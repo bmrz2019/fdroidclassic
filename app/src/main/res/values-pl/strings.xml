@@ -89,9 +89,9 @@
     <string name="repo_name">Nazwa</string>
     <string name="unknown">Nieznany</string>
     <string name="repo_confirm_delete_title">Usunąć repozytorium?</string>
-    <string name="repo_confirm_delete_body">Usunięcie repozytorium oznacza, że aplikacje z niego nie będą dłużej dostępne w F-Droid.
-
-Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</string>
+    <string name="repo_confirm_delete_body">Usunięcie repozytorium oznacza, że aplikacje z niego nie będą dłużej dostępne w F-Droid. 
+\n
+\nUwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</string>
     <string name="minsdk_or_later">%s lub nowszy</string>
     <string name="up_to_maxsdk">Wsparcie do %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s aż do %2$s</string>
@@ -141,7 +141,7 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="show_incompat_versions_on">Pokazuj aplikacje niekompatybilne z tym urządzeniem</string>
     <string name="status_download">Pobieranie\n%2$s / %3$s (%4$d%%) z\n%1$s</string>
     <string name="update_notification_title">Aktualizowanie repozytoriów</string>
-    <string name="status_processing_xml_percent">"Przetwarzanie  %2$s / %3$s (%4$d%%) z %1$s"</string>
+    <string name="status_processing_xml_percent">Przetwarzanie %2$s / %3$s (%4$d%%) z %1$s</string>
     <string name="no_permissions">Brak wymaganych uprawnień.</string>
     <string name="unsigned">Brak podpisu</string>
     <string name="unsigned_description">Oznacza to, że lista aplikacji nie mogła zostać zweryfikowana. Powinieneś być ostrożny podczas pobierania aplikacji z nieznanych źródeł.</string>
@@ -187,7 +187,7 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="uninstall_update_confirm">Czy chcesz zastąpić tą aplikację pierwotną wersją?</string>
     <string name="uninstall_confirm">Czy chcesz odinstalować tą aplikację?</string>
     <string name="tap_to_install">Pobieranie zakończone, kliknij by zainstalować</string>
-    <string name="perms_new_perm_prefix">"Nowe: "</string>
+    <string name="perms_new_perm_prefix">Nowe:</string>
     <string name="perms_description_app">Dostarczone przez %1$s.</string>
     <string name="downloading">Pobieranie…</string>
     <string name="interval_never">Nigdy</string>
@@ -280,7 +280,7 @@ Uwaga: Wszystkie poprzednio zainstalowane aplikacje zostaną na urządzeniu.</st
     <string name="signed">Podpisano: %s</string>
     <string name="app_installed_media">Plik zainstalowany do %s</string>
     <string name="status_inserting_x_apps">Zapisywanie szczegółów aplikacji (%1$d/%2$d) od %3$s</string>
-    <string name="repo_exists_add_mirror">To jest kopia %1$, dodać to jako lustro\?</string>
+    <string name="repo_exists_add_mirror">To jest kopia %1$s, dodać to jako lustro\?</string>
     <string name="repo_add_mirror">Dodaj lustro</string>
     <string name="share_repository">Repozytorium akcji</string>
     <string name="download_all_updates">Aktualizacja wszystkich</string>
