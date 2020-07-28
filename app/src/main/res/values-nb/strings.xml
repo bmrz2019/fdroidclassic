@@ -121,10 +121,9 @@ Du må skru det på for å se programmene den tilbyr.</string>
     <string name="repo_confirm_delete_title">Slett pakkebrønn?</string>
     <string name="repo_confirm_delete_body">Sletting av en pakkebrønn betyr at programmer derfra ikke lenger vil være tilgjengelige i F-droid.
 \n\nMerk: Alle tidligere installerte programmer vil fremdeles være å finne på din enhet.</string>
-    <string name="repo_disabled_notification">Avskrudd \"%1$s\".
-
-Du må
-skru på denne pakkebrønnen igjen for å installere programmer fra den.</string>
+    <string name="repo_disabled_notification">Avskrudd \"%1$s\". 
+\n
+\nDu må skru på denne pakkebrønnen igjen for å installere programmer fra den.</string>
     <string name="repo_added">Lagret F-Droid-pakkebrønnen %1$s.</string>
     <string name="repo_searching_address">Ser etter F-Droid-pakkebrønn på\n%1$s</string>
     <string name="minsdk_or_later">%s eller senere</string>
@@ -192,7 +191,7 @@ skru på denne pakkebrønnen igjen for å installere programmer fra den.</string
     <string name="uninstall_confirm">Ønsker du å avinstallere dette programmet?</string>
     <string name="tap_to_install">Nedlasting fullført, trykk for å installere</string>
     <string name="download_error">Nedlasting feilet</string>
-    <string name="perms_new_perm_prefix">"Ny: "</string>
+    <string name="perms_new_perm_prefix">Ny:</string>
     <string name="perms_description_app">Tilbudt av %1$s.</string>
     <string name="downloading">Laster ned…</string>
     <string name="interval_never">Aldri</string>
