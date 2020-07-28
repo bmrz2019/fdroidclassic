@@ -98,7 +98,9 @@
     <string name="proxy_host_summary">Configurer votre nom d\'hôte de proxy (ex : 127.0.0.1)</string>
     <string name="proxy_port">Port du proxy</string>
     <string name="proxy_port_summary">Configurer votre numéro de port de proxy (ex : 8118)</string>
-    <string name="status_download">Téléchargement %2$s / %3$s (%4$d%%) depuis %1$s</string>
+    <string name="status_download">Téléchargement
+\n%2$s / %3$s (%4$d%%) depuis
+\n%1$s</string>
     <string name="status_connecting_to_repo">Connexion à
 \n%1$s</string>
     <string name="repos_unchanged">Tous les dépôts sont à jour</string>
@@ -121,15 +123,12 @@ avec les applications téléchargées depuis des index non signés.</string>
 Vous devez l\'activer pour voir la liste des applis qu\'il offre.</string>
     <string name="unknown">Inconnu</string>
     <string name="repo_confirm_delete_title">Supprimer le dépôt ?</string>
-    <string name="repo_confirm_delete_body">Supprimer un dépôt signifie
-que ses applis ne seront plus disponibles via F-Droid.
-
-Note : toutes
-les applis précédemment installées vont rester sur votre appareil.</string>
+    <string name="repo_confirm_delete_body">Supprimer un dépôt signifie que ses applis ne seront plus disponibles via F-Droid.
+\n
+\nNote : toutes les applis précédemment installées vont rester sur votre appareil.</string>
     <string name="repo_disabled_notification">%1$s a été désactivé.
-
-Vous devez
-réactiver ce dépôt pour installer les applis qu\'il contient.</string>
+\n
+\nVous devez réactiver ce dépôt pour installer les applis qu\'il contient.</string>
     <string name="minsdk_or_later">%s ou plus récent</string>
     <string name="up_to_maxsdk">Jusqu\'à %s</string>
     <string name="minsdk_up_to_maxsdk">De %1$s à %2$s</string>
@@ -190,7 +189,7 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="uninstall_confirm">Voulez-vous désinstaller cette appli ?</string>
     <string name="tap_to_install">Téléchargement terminé, appuyez pour installer</string>
     <string name="download_error">Le téléchargement a échoué</string>
-    <string name="perms_new_perm_prefix">"Nouvelle : "</string>
+    <string name="perms_new_perm_prefix">Nouvelle:</string>
     <string name="downloading">Téléchargement…</string>
     <string name="interval_never">Jamais</string>
     <string name="interval_4h">Toutes les 4 heures</string>
