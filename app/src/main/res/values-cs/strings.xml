@@ -275,4 +275,12 @@
     <string name="warning_scaning_qr_code">Zdá se, že váš fotoaparát nemá autofokus. Může být obtížné skenovat kód.</string>
     <string name="download_404">Požadovaný soubor nebyl nalezen.</string>
     <string name="app_permission_storage">F-Droid potřebuje oprávnění k instalaci do úložiště. Chcete-li pokračovat s instalací, povolte ji na další obrazovce.</string>
+    <string name="repo_official_mirrors">Oficiální zrcadla</string>
+    <string name="repo_exists_add_mirror">Toto je kopie %1$s, přidejte ji jako zrcadlo\?</string>
+    <string name="repo_add_mirror">Přidat zrcadlo</string>
+    <string name="details_new_in_version">Novinka ve verzi %s</string>
+    <string name="share_repository">Sdílet úložiště</string>
+    <string name="download_all_updates">Aktualizovat vše</string>
+    <string name="repo_user_mirrors">Uživatelská zrcadla</string>
+    <string name="status_inserting_x_apps">Ukládání podrobností o aplikaci (%1$d/%2$d) z %3$s</string>
 </resources>

@@ -318,4 +318,7 @@ konpontzen laguntzeko?</string>
         <item quantity="other">%1$d urte eguneratu zen</item>
     </plurals>
     <string name="app_permission_storage">F-Droid-ek biltegiratzeko baimena behar du hau biltegian instalatzeko. Mesedez, utzi hurrengo pantailan instalazioarekin jarraitzeko.</string>
+    <string name="repo_official_mirrors">Ispilu ofizialak</string>
+    <string name="repo_user_mirrors">Erabiltzailearen ispiluak</string>
+    <string name="repo_exists_add_mirror">%1$s-ren kopia da hau, ispilu gisa gehitu\?</string>
 </resources>
