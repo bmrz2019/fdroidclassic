@@ -118,9 +118,9 @@ Builds:
       - app/src/test
       - app/src/androidTest
 
-  - versionName: 1.0-beta12
+  - versionName: 1.0-rc1
     versionCode: 1012
-    commit: v1.0-beta12
+    commit: v1.0-rc1
     subdir: app
     gradle:
       - yes
