@@ -1,6 +1,7 @@
-### 1.0-beta12 (?)
+### 1.0-rc1 (05.09.2020)
 
-*
+* Translation updates (See https://weblate.bubu1.eu/projects/f-droid-classic/)
+* Update dependencies
 
 ### 1.0-beta11 (26.06.2020)
 
