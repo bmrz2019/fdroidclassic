@@ -1583,7 +1583,7 @@ public class AppDetails extends AppCompatActivity {
                 App app = appDetails.getApp();
                 AppDetails activity = (AppDetails) getActivity();
                 if (updateWanted && app.suggestedVersionCode > 0) {
-                    Apk apkToInstall = ApkProvider.Helper.findApkFromAnyRepo(activity, app.packageName, app.suggestedVersionCode);
+                    Apk apkToInstall = ApkProvider.Helper.findSuggestedApk(activity, app);
                     activity.install(apkToInstall);
                     return;
                 }
@@ -1599,7 +1599,7 @@ public class AppDetails extends AppCompatActivity {
                     // If not installed, install
                     btMain.setEnabled(false);
                     btMain.setText(R.string.system_install_installing);
-                    final Apk apkToInstall = ApkProvider.Helper.findApkFromAnyRepo(activity, app.packageName, app.suggestedVersionCode);
+                    final Apk apkToInstall = ApkProvider.Helper.findSuggestedApk(activity, app);
                     activity.install(apkToInstall);
                 }
             }
