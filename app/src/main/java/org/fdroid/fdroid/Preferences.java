@@ -58,7 +58,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     public static final String PREF_ENABLE_PROXY = "enableProxy";
     public static final String PREF_PROXY_HOST = "proxyHost";
     public static final String PREF_PROXY_PORT = "proxyPort";
-    public static final String PREF_SHOW_NFC_DURING_SWAP = "showNfcDuringSwap";
     public static final String PREF_POST_PRIVILEGED_INSTALL = "postPrivilegedInstall";
 
     private static final boolean DEFAULT_ROOTED = true;
@@ -74,7 +73,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     @SuppressWarnings("PMD.AvoidUsingHardCodedIP")
     public static final String DEFAULT_PROXY_HOST = "127.0.0.1";
     public static final int DEFAULT_PROXY_PORT = 8118;
-    private static final boolean DEFAULT_SHOW_NFC_DURING_SWAP = true;
     private static final boolean DEFAULT_POST_PRIVILEGED_INSTALL = false;
 
     private boolean showAppsWithAntiFeatures;
@@ -199,29 +197,12 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
         return preferences.getBoolean(PREF_INCOMP_VER, DEFAULT_INCOMP_VER);
     }
 
-    public boolean showNfcDuringSwap() {
-        return preferences.getBoolean(PREF_SHOW_NFC_DURING_SWAP, DEFAULT_SHOW_NFC_DURING_SWAP);
-    }
-
-    public void setShowNfcDuringSwap(boolean show) {
-        preferences.edit().putBoolean(PREF_SHOW_NFC_DURING_SWAP, show).apply();
-    }
-
     public boolean expertMode() {
         return preferences.getBoolean(PREF_EXPERT, DEFAULT_EXPERT);
     }
 
     public Theme getTheme() {
         return Theme.valueOf(preferences.getString(Preferences.PREF_THEME, Preferences.DEFAULT_THEME));
-    }
-
-    public boolean isLocalRepoHttpsEnabled() {
-        return false; // disabled until it works well
-    }
-
-    private String getDefaultLocalRepoName() {
-        return (Build.BRAND + " " + Build.MODEL + new Random().nextInt(9999))
-                .replaceAll(" ", "-");
     }
 
     public boolean isUpdateNotificationEnabled() {
