@@ -8,3 +8,4 @@ eu.bubu1.fdroidclassic_1007.apk eu.bubu1.fdroidclassic 2020-06-27
 eu.bubu1.fdroidclassic_1008.apk eu.bubu1.fdroidclassic 2020-06-27
 eu.bubu1.fdroidclassic_1010.apk eu.bubu1.fdroidclassic 2020-06-27
 eu.bubu1.fdroidclassic_1011.apk eu.bubu1.fdroidclassic 2020-06-27
+eu.bubu1.fdroidclassic_1012.apk eu.bubu1.fdroidclassic 2020-09-05
