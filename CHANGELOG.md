@@ -1,3 +1,10 @@
+### 1.0-rc2 (06.09.2020)
+
+* Fix installing upgrades when there are multiple apks signed by different keys (reproducible builds)
+* Fix fdroidrepos:// URIs sometimes not being recognized when adding a new repo
+* Add backup config (don't try to backup cached apks)
+* Add network security config (force always using https for some well-known urls)
+
 ### 1.0-rc1 (05.09.2020)
 
 * Translation updates (See https://weblate.bubu1.eu/projects/f-droid-classic/)
