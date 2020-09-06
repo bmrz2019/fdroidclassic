@@ -51,7 +51,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     public static final String PREF_KEEP_CACHE_TIME = "keepCacheFor";
     public static final String PREF_SHOW_ANTI_FEATURE_APPS = "showAntiFeatureApps";
     public static final String PREF_UNSTABLE_UPDATES = "unstableUpdates";
-    public static final String PREF_KEEP_INSTALL_HISTORY = "keepInstallHistory";
     public static final String PREF_EXPERT = "expert";
     public static final String PREF_PRIVILEGED_INSTALLER = "privilegedInstaller";
     public static final String PREF_LANGUAGE = "language";
@@ -68,7 +67,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     private static final boolean DEFAULT_PRIVILEGED_INSTALLER = true;
     private static final long DEFAULT_KEEP_CACHE_TIME = TimeUnit.DAYS.toMillis(1);
     private static final boolean DEFAULT_UNSTABLE_UPDATES = false;
-    private static final boolean DEFAULT_KEEP_INSTALL_HISTORY = false;
     private static final boolean DEFAULT_INCOMP_VER = false;
     private static final boolean DEFAULT_EXPERT = false;
     private static final boolean DEFAULT_ENABLE_PROXY = false;
@@ -195,10 +193,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
 
     public boolean getUnstableUpdates() {
         return preferences.getBoolean(PREF_UNSTABLE_UPDATES, DEFAULT_UNSTABLE_UPDATES);
-    }
-
-    public boolean isKeepingInstallHistory() {
-        return preferences.getBoolean(PREF_KEEP_INSTALL_HISTORY, DEFAULT_KEEP_INSTALL_HISTORY);
     }
 
     public boolean showIncompatibleVersions() {

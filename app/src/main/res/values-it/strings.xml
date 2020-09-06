@@ -290,8 +290,6 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="update_auto_install_summary">Scarica e installa automaticamente gli aggiornamenti in background</string>
     <string name="hide_anti_feature_apps">Disabilita le applicazioni che hanno non-funzioni</string>
     <string name="hide_anti_feature_apps_on">Disabilita le applicazioni che necessitano non-funzioni</string>
-    <string name="keep_install_history">Mantieni cronologia installazione</string>
-    <string name="keep_install_history_summary">Salva un log delle installazioni e disinstallazioni all\'interno di F-Droid</string>
     <string name="repo_user_mirrors">Specchietti per l\'utente</string>
     <string name="repo_add_mirror">Aggiungi specchio</string>
     <string name="menu_appinfo">App Info (Impostazioni di sistema)</string>

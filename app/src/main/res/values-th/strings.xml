@@ -286,8 +286,6 @@
     <string name="malformed_repo_uri">กำลังข้ามแหล่งโปรแกรมที่มี URI ผิดรูป: %s</string>
     <string name="update_auto_install_summary">ดาวน์โหลดและติดตั้งโปรแกรมที่อัดเดต แบบเบื้องหลัง</string>
     <string name="update_auto_install">ติดตั้งโปรแกรมที่อัพเดต โดยอัดโนมัติ</string>
-    <string name="keep_install_history">เก็บประวัติการติดตั้ง</string>
-    <string name="keep_install_history_summary">เก็บประวัติการติดตั้งและการถอนโปรแกรมต่างๆ ทั้งหมดใน F-Droid</string>
     <string name="all_other_repos_fine">แหล่งโปรแกรมอื่นๆ ไม่ได้มีข้อผิดพลาด</string>
         <string name="warning_no_internet">อัพเดตไม่สำเร็จ, ตรวจดูอีกทีว่าคุณต่ออินเตอร์เน็ตอยู่หรือไม่</string>
     <string name="system_install_post_success_message">ส่วนขยายช่วยติดตั้งของ F-Droid ติดตั้งเสร็จสิ้น, ตอนนี้ F-Droid จะสามารถติดตั้ง/อัพเกรด/ถอนการติดตั้งโปรแกรมต่างๆ ได้ด้วยตัวเองแล้ว</string>

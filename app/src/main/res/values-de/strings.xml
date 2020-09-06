@@ -272,8 +272,6 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="hide_anti_feature_apps_on">Apps ausgrauen, die nicht freie Funktionen nutzen</string>
     <string name="update_auto_install">Aktualisierungen automatisch installieren</string>
     <string name="update_auto_install_summary">Anwendungsaktualisierungen im Hintergrund herunterladen und installieren</string>
-    <string name="keep_install_history">Installationsverlauf behalten</string>
-    <string name="keep_install_history_summary">Ein Protokoll aller Installationen und Deinstallationen von F-Droid speichern</string>
     <string name="by_author_format">von %s</string>
     <string name="repo_user_mirrors">Benutzer Mirrors</string>
     <string name="repo_exists_add_mirror">Dies ist eine Kopie von %1$s, Soll es zu einem Mirror hinzugefügt werden\?</string>

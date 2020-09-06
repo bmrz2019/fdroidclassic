@@ -4,8 +4,6 @@
     <string name="version">Vhezheni</string>
     <string name="delete">Dzima</string>
     <string name="updates">Zvitsva zvakanatswa</string>
-    <string name="keep_install_history">Chengeta makare ezvivakirira</string>
-    <string name="keep_install_history_summary">Pfimbika rutarwa rwezvivakirira nezvivakirira zvakabviswa mukati meF-Droid</string>
     <string name="update_interval">Chimirwa chakanatswa chiri automatic</string>
     <string name="update_interval_zero">Hapana mitara iri automatic yezvakanatswa zvema app</string>
     <string name="automatic_scan_wifi">Pamasaisai eWi-Fi chete</string>

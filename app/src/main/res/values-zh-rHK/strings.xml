@@ -303,8 +303,6 @@
     <string name="keep_year">一年</string>
     <string name="keep_forever">永遠</string>
 
-    <string name="keep_install_history">保留安裝紀錄</string>
-    <string name="keep_install_history_summary">在 F-Droid 中儲存所有安裝及卸載的紀錄</string>
     <string name="update_auto_install">自動安裝更新</string>
     <string name="update_auto_install_summary">在背景下載及安裝應用程式更新</string>
     </resources>

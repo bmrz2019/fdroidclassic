@@ -279,8 +279,6 @@ e-post för att hjälpa till att åtgärda problemet?</string>
     <string name="uninstall_error_notify_title">Fel vid avinstallation av %s</string>
     <string name="installing">Installerar…</string>
     <string name="uninstalling">Avinstallera…</string>
-    <string name="keep_install_history">Behåll installerings historia</string>
-    <string name="keep_install_history_summary">Lagra en logg över alla installationer och avinstallationer i F-Droid</string>
     <string name="update_auto_install">Installera uppdateringar automatiskt</string>
     <string name="update_auto_install_summary">Ladda ner och installera uppdaterings program i bakgrunden</string>
     <string name="hide_anti_feature_apps">Grå ut anti-funktion appar</string>

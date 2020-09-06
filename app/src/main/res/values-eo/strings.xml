@@ -274,8 +274,6 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="hide_anti_feature_apps_on">Grizigas aplikaĵojn kun nedeziratajn eblojn (ekz. spurado)</string>
     <string name="update_auto_install">Aŭtomate instali ĝisdatigojn</string>
     <string name="update_auto_install_summary">Elŝutas kaj instalas ĝisdatigojn de aplikaĵoj fone</string>
-    <string name="keep_install_history">Konservi historion de instaladoj</string>
-    <string name="keep_install_history_summary">Memoras historion de instaladoj kaj malinstaladoj en F-Droid</string>
     <string name="warning_no_internet">Ne povas ĝisdatigi, ĉu vi estas konektita kun la Interreto?</string>
     <string name="antiknownvulnlist">Esta aplicación contiene una vulnerabilidad de seguridad conocida</string>
     <string name="antinosourcesince">El código fuente ya no está disponible, no hay actualizaciones posibles.</string>

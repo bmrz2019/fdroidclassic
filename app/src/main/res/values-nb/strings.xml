@@ -273,8 +273,6 @@ i en e-post for å fikse problemet?</string>
     <string name="installing">Installerer…</string>
     <string name="uninstalling">Avinstallerer…</string>
     <string name="system_install_not_supported">Installasjon av priviligert tillegg for F-droid er for tiden ikke støttet på Android 5.1 eller senere.</string>
-    <string name="keep_install_history">Behold installasjonshistorikk</string>
-    <string name="keep_install_history_summary">Behold loggføring for alle av- og in -stalleringer gjort i F-droid</string>
     <string name="update_auto_install">Installer oppdateringer automatisk</string>
     <string name="update_auto_install_summary">Last ned og installer programoppdateringer i bakgrunnen</string>
     <string name="hide_anti_feature_apps">Utgråing av programmer med anti-funksjoner</string>

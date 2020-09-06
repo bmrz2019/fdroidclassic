@@ -18,7 +18,6 @@ import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.PreferencesActivity;
 import org.fdroid.fdroid.R;
-import org.fdroid.fdroid.installer.InstallHistoryService;
 import org.fdroid.fdroid.installer.PrivilegedInstaller;
 
 import info.guardianproject.netcipher.NetCipher;
@@ -183,15 +182,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat
                     textPref2.setSummary(R.string.proxy_port_summary);
                 } else {
                     textPref2.setSummary(String.valueOf(port));
-                }
-                break;
-
-            case Preferences.PREF_KEEP_INSTALL_HISTORY:
-                CheckBoxPreference p = (CheckBoxPreference) findPreference(key);
-                if (p.isChecked()) {
-                    InstallHistoryService.register(getActivity());
-                } else {
-                    InstallHistoryService.unregister(getActivity());
                 }
                 break;
         }

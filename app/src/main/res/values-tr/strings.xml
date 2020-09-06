@@ -288,8 +288,6 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="keep_year">1 Sene</string>
     <string name="keep_forever">Daima</string>
 
-    <string name="keep_install_history">Kurulum geçmişi tut</string>
-    <string name="keep_install_history_summary">F-Droid içindeki tüm kurulum ve kaldırmaların günlüğünü depola</string>
     <string name="update_auto_install">Güncellemeleri kendiliğinden kur</string>
     <string name="warning_no_internet">Güncellenemiyor, internete bağlı mısınız?</string>
     </resources>

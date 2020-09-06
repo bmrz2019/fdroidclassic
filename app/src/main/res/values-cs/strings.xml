@@ -266,8 +266,6 @@
     <string name="signed">Podepsáno: %s</string>
     <string name="app_installed_media">Soubor nainstalován do %s</string>
     <string name="qr_code">QR-Code</string>
-    <string name="keep_install_history">Zachovat historii instalace</string>
-    <string name="keep_install_history_summary">Uložte si protokol všech instalací a odinstalací uvnitř F-Droidu</string>
     <string name="menu_appinfo">Informace o aplikaci (nastavení systému)</string>
     <string name="antidisabledalgorithmlist">Tato aplikace má slabý bezpečnostní podpis</string>
     <string name="antinosourcesince">Zdrojový kód již není k dispozici, nejsou možné žádné aktualizace.</string>

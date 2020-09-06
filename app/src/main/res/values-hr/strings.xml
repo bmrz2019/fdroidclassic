@@ -313,10 +313,8 @@ Ne zahtijeva posebne dozvole.</string>
 aplikacija je prisilno zaustavljena.Želite li poslati detalje
 kvara putem e-maila kako bi ga popravili?</string>
     <string name="crash_dialog_comment_prompt">Možete dodati dodatne informacije i komentare ovdje:</string>
-<string name="keep_install_history">Zadrži povijest instalacija</string>
     <string name="update_auto_install">Automatski instaliraj ažuriranja</string>
     <string name="update_auto_install_summary">Preuzmi i instaliraj ažuriranja aplikacija u pozadini</string>
-    <string name="keep_install_history_summary">Spremi zapisnik o svim instaliranim i obrisanim aplikacijama unutar F-Droida</string>
     <string name="hide_anti_feature_apps">Obilježi aplikacije s nepoželjnim svojstvima</string>
     <string name="hide_anti_feature_apps_on">Obilježi aplikacije koje zahtjevaju nepoželjna svojstva</string>
     </resources>

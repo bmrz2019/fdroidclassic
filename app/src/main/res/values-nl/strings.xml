@@ -285,8 +285,6 @@ in de toekomst te helpen voorkomen?</string>
     <string name="hide_anti_feature_apps_on">Toon apps met anti-functies in het grijs</string>
     <string name="update_auto_install">Updates automatisch installeren</string>
     <string name="update_auto_install_summary">Updates automatisch in de achtergrond downloaden en installeren</string>
-    <string name="keep_install_history">Bewaar installatiegeschiedenis</string>
-    <string name="keep_install_history_summary">Bewaar een logbestand van alle installaties en verwijderingen in F-Droid</string>
     <string name="warning_no_internet">Kan niet updaten, ben je verbonden met het internet?</string>
     <string name="antiknownvulnlist">Deze app bevat een bekend beveiligingslek</string>
     <string name="antinosourcesince">De broncode is niet meer beschikbaar, geen updates mogelijk.</string>

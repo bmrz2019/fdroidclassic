@@ -305,8 +305,6 @@ com os detalhes para ajudar a corrigir o problema?</string>
     <string name="installing">Instalando…</string>
     <string name="uninstalling">Desinstalando…</string>
 
-    <string name="keep_install_history">Manter o histórico de instalação</string>
-    <string name="keep_install_history_summary">Armazenar um registro de todas as instalações e desinstalações do F-Droid</string>
     <string name="update_auto_install">Instalar atualizações automaticamente</string>
     <string name="update_auto_install_summary">Baixar e instalar atualizações em segundo plano</string>
     <string name="hide_anti_feature_apps">Marcar de cinza aplicativos com recursos indesejáveis</string>
