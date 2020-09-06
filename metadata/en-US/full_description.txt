@@ -1,0 +1,4 @@
+This is an alternative F-Droid client which is based on the older UI of the official Client (pre 1.0).
+While I think that the new client UI looks pretty, it's sometimes quite clunky.
+Lots of information that was provided clearly in the old UI is now not available or hidden behind more taps now.
+This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.

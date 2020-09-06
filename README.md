@@ -4,7 +4,7 @@ Join the matrix room: [#fdroidclassic:bubu1.eu](https://matrix.to/#/#fdroidclass
 
 ### Download
 
-Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1011.apk
+Download the (beta) apk here: https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1012.apk
 
 This comes with it's own F-Droid repository for updates pre-configured.
 
@@ -20,7 +20,9 @@ Lots of information that was provided clearly in the old UI is now not available
 
 This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.
 
-<img src="screenshots/screenshot.png" width="400">
+<img src="metadata/en-US/images/phoneScreenshots/1.png" width="250">
+<img src="metadata/en-US/images/phoneScreenshots/2.png" width="250">
+<img src="metadata/en-US/images/phoneScreenshots/3.png" width="250">
 
 ## Status
 
@@ -36,14 +38,15 @@ This project is probably aimed more at the power user who values function over f
 * Support for the additional features provided by the new index format.
   * Screenshots
 * proper mirror support. They are currently not completely broken, but I'm not actually sure if mirrors are really used right now.
+* There are some occasional performance problems where the UI get's stuttery, this is tracking in #43 (with more background in #23).
 
 
-### Currently considered out of scope
+### Features NOT included
 
 * Swap. I almost never use it and I don't know many people that do. There's still the official client if you need that functionality.
 * App auto install via repo push
 * The tile based UI
-* The old xml based index support will be dropped
+* The old xml based index format isn't supported
 * Support for very old version of Android (< 4.0).
   * Currently minimum Android version is 4.4, supporting 4.0 would be possible with some effort, but I'm not sure that's worth it.
   * Even on Android 4.4 we can't currently support TLSv1.2, which is bad.

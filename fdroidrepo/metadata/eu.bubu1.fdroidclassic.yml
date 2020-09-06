@@ -7,13 +7,6 @@ Translation: https://weblate.bubu1.eu/projects/f-droid-classic/
 Changelog: https://gitlab.com/Bubu/fdroidclassic/-/blob/master/CHANGELOG.md
 LiberapayID: '27855'
 
-Summary: F-Droid client with the classic UI
-Description: |-
-    This is an alternative F-Droid client which is based on the older UI of the official Client (pre 1.0).
-    While I think that the new client UI looks pretty, it's sometimes quite clunky.
-    Lots of information that was provided clearly in the old UI is now not available or hidden behind more taps now, or only available in different views.
-    This project is probably aimed more at the power user who values function over form. Or people who absolutely cannot stand the tile-based new UI.
-
 RepoType: git
 Repo: https://gitlab.com/Bubu/fdroidclassic.git
 
@@ -121,6 +114,13 @@ Builds:
   - versionName: 1.0-rc1
     versionCode: 1012
     commit: v1.0-rc1
+    subdir: app
+    gradle:
+      - yes
+
+  - versionName: 1.0-rc2
+    versionCode: 1013
+    commit: v1.0-rc2
     subdir: app
     gradle:
       - yes
