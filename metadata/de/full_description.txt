@@ -1,0 +1,3 @@
+Ein alternativer F-Droid Client mit der klassischen UI des offiziellen Clients vor der 1.0 Version.
+Das neue F-Droid User Interface sieht schick aus, ist aber öfters ein bisschen umständlich
+Viele Informationen, die im alten UI angezeigt wurden, sind jetzt umständlicher oder gar nicht mehr zu finden.
