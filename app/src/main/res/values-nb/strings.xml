@@ -288,4 +288,13 @@ i en e-post for å fikse problemet?</string>
     <string name="status_inserting_x_apps">Lagrer appdetaljer (%1$d/%2$d) fra %3$s</string>
     <string name="warning_scaning_qr_code">Kameraet ditt ser ikke ut til å ha autofokus. Det kan være vanskelig å skanne koden.</string>
     <string name="app_permission_storage">F-Droid trenger lagringstillatelse for å installere dette på lagring. La det på neste skjermbilde fortsette med installasjonen.</string>
+    <string name="repo_official_mirrors">Offisielle speil</string>
+    <string name="repo_user_mirrors">Brukerspeil</string>
+    <string name="share_repository">Del repository</string>
+    <string name="app_installed_media">Filen er installert til %s</string>
+    <string name="download_all_updates">Oppdater alt</string>
+    <string name="repo_exists_add_mirror">Dette er en kopi av %1$s, legge den til som et speil\?</string>
+    <string name="repo_add_mirror">Legg til speil</string>
+    <string name="details_last_updated_today">Oppdatert i dag</string>
+    <string name="qr_code">QR-Code</string>
 </resources>

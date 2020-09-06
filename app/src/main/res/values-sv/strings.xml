@@ -283,4 +283,24 @@ e-post för att hjälpa till att åtgärda problemet?</string>
     <string name="update_auto_install_summary">Ladda ner och installera uppdaterings program i bakgrunden</string>
     <string name="hide_anti_feature_apps">Grå ut anti-funktion appar</string>
     <string name="hide_anti_feature_apps_on">Grå ut appar som kräver anti-funktioner</string>
+    <string name="repo_exists_add_mirror">Detta är en kopia av %1$s, lägg till den som en spegel\?</string>
+    <string name="repo_add_mirror">Lägg till spegel</string>
+    <string name="details_new_in_version">Ny i version %s</string>
+    <string name="antiknownvulnlist">Den här appen innehåller en känd säkerhetsproblem</string>
+    <string name="antinosourcesince">Källkoden är inte längre tillgänglig, inga uppdateringar möjliga.</string>
+    <string name="download_404">Den begärda filen hittades inte.</string>
+    <string name="share_repository">Dela förvar</string>
+    <string name="signed">Signerad: %s</string>
+    <string name="app_installed_media">Fil installerad till %s</string>
+    <string name="download_all_updates">Uppdatera alla</string>
+    <string name="qr_code">QR-kod</string>
+    <string name="repo_official_mirrors">Officiella speglar</string>
+    <string name="repo_user_mirrors">Användarspeglar</string>
+    <string name="menu_appinfo">Appinfo (systeminställningar)</string>
+    <string name="antidisabledalgorithmlist">Den här appen har en svag säkerhetssignatur</string>
+    <string name="status_inserting_x_apps">Sparar appinformation (%1$d/%2$d) från %3$s</string>
+    <string name="warning_no_internet">Kan inte uppdatera, är du ansluten till internet\?</string>
+    <string name="details_last_updated_today">Uppdaterad idag</string>
+    <string name="warning_scaning_qr_code">Din kamera verkar inte ha autofokus. Det kan vara svårt att skanna koden.</string>
+    <string name="app_permission_storage">F-Droid behöver lagringstillstånd för att installera detta på lagring. Tillåt det på nästa skärm för att fortsätta med installationen.</string>
 </resources>
