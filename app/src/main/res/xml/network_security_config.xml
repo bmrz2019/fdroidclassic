@@ -6,6 +6,9 @@
         <domain includeSubdomains="true">amazonaws.com</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">bubu1.eu</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">f-droid.org</domain>
     </domain-config>
     <domain-config cleartextTrafficPermitted="false">
