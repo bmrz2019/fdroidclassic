@@ -288,14 +288,6 @@
                 <data
                     android:scheme="HTTPS"
                     tools:ignore="AppLinkUrlError" />
-                <data android:scheme="fdroidrepo" />
-                <data
-                    android:scheme="FDROIDREPO"
-                    tools:ignore="AppLinkUrlError" />
-                <data android:scheme="fdroidrepos" />
-                <data
-                    android:scheme="FDROIDREPOS"
-                    tools:ignore="AppLinkUrlError" />
 
                 <data android:host="*" />
 
@@ -312,6 +304,8 @@
                 <data android:pathPattern="/.*/.*/fdroid/repo/*" />
                 <data android:pathPattern="/.*/.*/.*/fdroid/repo" />
                 <data android:pathPattern="/.*/.*/.*/fdroid/repo/*" />
+                <data android:pathPattern="/.*/.*/.*/.*/fdroid/repo" />
+                <data android:pathPattern="/.*/.*/.*/.*/fdroid/repo/*" />
                 <data android:path="/fdroid/archive" />
                 <data android:pathPattern="/fdroid/archive/*" />
                 <data android:pathPattern="/.*/fdroid/archive" />
@@ -320,6 +314,8 @@
                 <data android:pathPattern="/.*/.*/fdroid/archive/*" />
                 <data android:pathPattern="/.*/.*/.*/fdroid/archive" />
                 <data android:pathPattern="/.*/.*/.*/fdroid/archive/*" />
+                <data android:pathPattern="/.*/.*/.*/.*/fdroid/archive" />
+                <data android:pathPattern="/.*/.*/.*/.*/fdroid/archive/*" />
                 <!--
                 Some QR Code scanners don't respect custom schemes like fdroidrepo://,
                 so this is a workaround, since the local repo URL is all uppercase in
@@ -329,6 +325,48 @@
                 <data android:pathPattern="/.*/FDROID/REPO" />
                 <data android:pathPattern="/.*/.*/FDROID/REPO" />
                 <data android:pathPattern="/.*/.*/.*/FDROID/REPO" />
+            </intent-filter>
+
+            <!--
+            Same as the intent filter listening for repositories via https://*/fdroid/repo, except this
+            looks for fdroidrepos://* and doesn't care what the path is.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--
+                Android's scheme matcher is case-sensitive, so include
+                ALL CAPS versions to support ALL CAPS URLs in QR Codes.
+                QR Codes have a special ALL CAPS mode that uses a reduced
+                character set, making for more compact QR Codes.
+                -->
+                <data android:scheme="fdroidrepo" />
+                <data
+                    android:scheme="FDROIDREPO"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="fdroidrepos" />
+                <data
+                    android:scheme="FDROIDREPOS"
+                    tools:ignore="AppLinkUrlError" />
+            </intent-filter>
+
+
+            <!-- Handle NFC tags detected from outside our application -->
+
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--
+                URIs that come in via NFC have scheme/host normalized to all lower case
+                https://developer.android.com/reference/android/nfc/NfcAdapter.html#ACTION_NDEF_DISCOVERED
+                -->
+                <data android:scheme="fdroidrepo" />
+                <data android:scheme="fdroidrepos" />
             </intent-filter>
         </activity>
         <activity
