@@ -257,8 +257,6 @@
     <string name="keep_month">1 Måned</string>
     <string name="keep_year">1 År</string>
     <string name="keep_forever">Forevigt</string>
-    <string name="keep_install_history">Behold installationshistorikken</string>
-    <string name="keep_install_history_summary">Gem en logfil over alle installationer og afinstallationer i F-Droid</string>
     <string name="update_auto_install">Installer automatisk opdateringer</string>
     <string name="update_auto_install_summary">Download og installer opdateringsapps i baggrunden</string>
     <string name="repo_user_mirrors">Brugerspejle</string>
