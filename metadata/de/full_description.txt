@@ -17,3 +17,5 @@ Die folgenden Features fehlen und werden vermutlich auch in Zukunft nicht unters
 * Swap/Apps teilen
 * Altes Index Format (index-v0)
 * Unterstützung von Android < 4.4
+
+<b>Hinweis:</b> F-Droid Classic ist mit seinen eigenen F-Droid Repository konfiguriert, von dem Updates installiert werden können. Wenn Updates nur von f-droid.org kommen sollen, kann das Repo in den Einstellungen deaktiviert werden.
