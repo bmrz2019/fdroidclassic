@@ -1,3 +1,8 @@
+### 1.0 (10.09.2020)
+
+* Fix app title in all languages
+
+
 ### 1.0-rc2 (06.09.2020)
 
 * Fix installing upgrades when there are multiple apks signed by different keys (reproducible builds)
