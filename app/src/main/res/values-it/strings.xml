@@ -256,13 +256,8 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="allPerms">Tutte</string>
     <string name="update_notification_more">+%1$d rimanente…</string>
     <string name="empty_search_installed_app_list">Nessuna app installata corrispondente.</string>
-    <string name="crash_dialog_comment_prompt">Puoi aggiungere altre informazioni e commenti qui:</string>
     <string name="by_author_format">di %s</string>
     <string name="menu_email">Invia email all\'autore</string>
-    <string name="crash_dialog_text">Un errore inaspettato
- ha provocato il blocco dell\'applicazione. Vuoi inviare una e-mail
- con i dettagli per aiutarci a sistemare il problema?</string>
-    <string name="crash_dialog_title">F-Droid si è bloccato</string>
     <string name="antinonfreeassetslist">Questa app contiene risorse non libere</string>
     <string name="empty_search_available_app_list">Non è disponibile nessuna app corrispondente.</string>
     <string name="empty_search_can_update_app_list">Nessuna app corrispondente è disponibile per l\'aggiornamento.</string>

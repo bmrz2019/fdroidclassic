@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">F-Droid</string>
-
+<resources>
     <string name="installIncompatible">โปรแกรมนี้เข้ากันไม่ได้กับเครื่องของคุณ, ดำเนินการติดตั้งต่อหรือไม่?</string>
     <string name="installDowngrade">คุณกำลังจะติดตั้งโปรแกรมรุ่นเก่าทับรุ่นใหม่ ซึ่งอาจทำให้การทำงานของโปรแกรมผิดเพี้ยนจากการอ่านข้อมูลบันทึกภายในที่เขียนโดยโปรแกรมรุ่นใหม่กว่า, ดำเนินการต่อหรือไม่?</string>
     <string name="version">รุ่น</string>
@@ -117,7 +116,7 @@
     <string name="status_connecting_to_repo">กำลังเชื่อมต่อไปยัง\n%1$s</string>
     <string name="status_inserting_apps">กำลังบันทึกรายละเอียดโปรแกรม</string>
     <string name="repos_unchanged">ข้อมูลโปรแกรมทั้งหมดนั้นอัพเดตอยู่แล้ว</string>
-        <string name="global_error_updating_repos">การอัพเดตล้มเหลว: %s</string>
+    <string name="global_error_updating_repos">การอัพเดตล้มเหลว: %s</string>
     <string name="no_permissions">ไม่มีการขออนุญาตใดๆ เป็นพิเศษ</string>
     <string name="permissions">การขออนุญาตพิเศษ</string>
     <string name="theme">ธีม</string>
@@ -207,10 +206,7 @@
     <string name="theme_dark">มืด</string>
     <string name="theme_night">กลางคืน</string>
 
-    <string name="crash_dialog_title">F-Droid เกิดข้อผิดพลาด</string>
-    <string name="crash_dialog_text">มีข้อผิดพลาดที่ทำให้โปรแกรมหยุดทำงานกะทันหัน, คุณต้องการจะส่งอีเมลแจ้งปัญหาไปยังผู้พัฒนาเพื่อทำการแก้ไขหรือไม่?</string>
-    <string name="crash_dialog_comment_prompt">ระบุรายละเอียดและหมายเหตุเพิ่มเติมที่นี่:</string>
-<string name="SignatureMismatch">โปรแกรมรุ่นใหม่มีการประทับลายเซ็นดิจิตอลที่ไม่เหมือนกับโปรแกรมที่ติดตั้งอยู่, คุณจะต้องทำการถอนการติดตั้งรุ่นเดิมออกก่อน จึงจะทำการติดตั้งรุ่นใหม่ได้ (หมายเหตุ: การถอนการติดตั้งจะทำให้ข้อมูลภายในของโปรแกรมนั้นๆ ถูกลบ)</string>
+    <string name="SignatureMismatch">โปรแกรมรุ่นใหม่มีการประทับลายเซ็นดิจิตอลที่ไม่เหมือนกับโปรแกรมที่ติดตั้งอยู่, คุณจะต้องทำการถอนการติดตั้งรุ่นเดิมออกก่อน จึงจะทำการติดตั้งรุ่นใหม่ได้ (หมายเหตุ: การถอนการติดตั้งจะทำให้ข้อมูลภายในของโปรแกรมนั้นๆ ถูกลบ)</string>
     <string name="updates">อัพเดต</string>
     <string name="unstable_updates">อัพเดตที่ไม่เสถียร</string>
     <string name="unstable_updates_summary">แนะนำการอัพเดตไปรุ่นที่ไม่เสถียร</string>
@@ -287,7 +283,7 @@
     <string name="update_auto_install_summary">ดาวน์โหลดและติดตั้งโปรแกรมที่อัดเดต แบบเบื้องหลัง</string>
     <string name="update_auto_install">ติดตั้งโปรแกรมที่อัพเดต โดยอัดโนมัติ</string>
     <string name="all_other_repos_fine">แหล่งโปรแกรมอื่นๆ ไม่ได้มีข้อผิดพลาด</string>
-        <string name="warning_no_internet">อัพเดตไม่สำเร็จ, ตรวจดูอีกทีว่าคุณต่ออินเตอร์เน็ตอยู่หรือไม่</string>
+    <string name="warning_no_internet">อัพเดตไม่สำเร็จ, ตรวจดูอีกทีว่าคุณต่ออินเตอร์เน็ตอยู่หรือไม่</string>
     <string name="system_install_post_success_message">ส่วนขยายช่วยติดตั้งของ F-Droid ติดตั้งเสร็จสิ้น, ตอนนี้ F-Droid จะสามารถติดตั้ง/อัพเกรด/ถอนการติดตั้งโปรแกรมต่างๆ ได้ด้วยตัวเองแล้ว</string>
     <string name="system_install_post_fail_message">การติดตั้งส่วนขยายช่วยติดตั้งของ F-Droid ล้มเหลว, เนื่องจากวิธีติดตั้งนี้อาจจะไม่ได้รองรับใน Android ทุกรุ่น, คุณสามารถอ่านรายละเอียดเพิ่มเติมได้ในส่วนเว็บไซต์ติดตามปัญหาของ F-Droid</string>
     <string name="system_install_denied_permissions">ส่วนขยายช่วยติดตั้งทำงาน แต่กลับไม่ได้รับสิทธิ์ในการจัดการโปรแกรมจากระบบ, หากเป็นไปได้ ช่วยรายงานปัญหานี้ไปที่ทีมพัฒนา F-Droid ด้วย</string>
@@ -305,4 +301,4 @@
     <string name="repo_exists_and_enabled">แหล่งโปรแกรมนี้มีอยู่แล้ว และเปิดใช้งานอยู่</string>
     <string name="repo_exists_enable">แหล่งโปรแกรมนี้มีอยู่แล้ว, กดยืนยันเพื่อเปิดกลับมาใช้งานอีกครั่ง</string>
     <string name="repo_exists_add_fingerprint">แหล่งโปรแกรมนี้มีอยู่แล้ว, แต่ได้ทำการบันทึกข้อมูลกุณแจเข้ารหัสใหม่เพิ่มเข้าไป</string>
-    </resources>
+</resources>

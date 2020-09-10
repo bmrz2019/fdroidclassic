@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">F-Droid</string>
-
+<resources>
     <string name="SignatureMismatch">A nova versão está assinada com uma chave diferente da antiga. Para instalar a nova versão, tem que desinstalar a antiga. Remova a aplicação e tente novamente. (Tenha em atenção que irá apagar todos os dados guardados pela aplicação)</string>
     <string name="installIncompatible">Parece que este pacote não é compatível com o seu dispositivo. Deseja tentar a instalação?</string>
     <string name="installDowngrade">Está a tentar desatualizar esta aplicação. Se o fizer pode perder os seus dados e provocar um funcionamento errático. Tem a certeza de que o deseja fazer?</string>
@@ -136,8 +135,8 @@
     <string name="status_processing_xml_percent">A processar %2$s/%3$s (%4$d%%) de %1$s</string>
     <string name="status_connecting_to_repo">Estabelecendo\nligação a %1$s</string>
     <string name="repos_unchanged">Todos os repositórios estão atualizados</string>
-        <string name="all_other_repos_fine">Nenhum dos repositórios gerou erros.</string>
-        <string name="global_error_updating_repos">Erro ao atualizar: %s</string>
+    <string name="all_other_repos_fine">Nenhum dos repositórios gerou erros.</string>
+    <string name="global_error_updating_repos">Erro ao atualizar: %s</string>
     <string name="no_permissions">Não utiliza permissões.</string>
     <string name="no_handler_app">Não possui uma aplicação capaz de manipular %s.</string>
     <string name="theme">Tema</string>
@@ -266,7 +265,7 @@ A aplicação atualizada não requer qualquer acesso especial.</string>
     <string name="download_error">Descarga não efetuada</string>
 
     <string name="theme_night">Noite</string>
-<string name="menu_settings">Definições</string>
+    <string name="menu_settings">Definições</string>
     <string name="login_title">Requer autenticação</string>
     <string name="login_name">Nome de utilizador</string>
     <string name="login_password">Palavra-passe</string>
@@ -284,12 +283,7 @@ A aplicação atualizada não requer qualquer acesso especial.</string>
 
     <string name="antinonfreeassetslist">Esta aplicação contém recursos não livres</string>
 
-    <string name="crash_dialog_title">O F-Droid terminou abruptamente</string>
-    <string name="crash_dialog_text">Ocorreu um erro inesperado que obrigou
-ao encerramento da aplicação.
-Gostaria de nos enviar um e-mail com os detalhes do erro?</string>
-    <string name="crash_dialog_comment_prompt">Pode adicionar algumas informações e comentários aqui:</string>
-<string name="by_author_format">de %s</string>
+    <string name="by_author_format">de %s</string>
     <string name="menu_email">E-mail do autor</string>
     <string name="repo_provider">Repositório: %s</string>
 
@@ -321,4 +315,4 @@ Gostaria de nos enviar um e-mail com os detalhes do erro?</string>
 
     <string name="update_auto_install">Instalar atualizações automaticamente</string>
     <string name="update_auto_install_summary">Descarregar e instalar atualizações em segundo plano</string>
-    </resources>
+</resources>

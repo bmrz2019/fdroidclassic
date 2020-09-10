@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">F-Droid</string>
+<resources>
 
     <string name="version">Vhezheni</string>
     <string name="delete">Dzima</string>
@@ -325,9 +325,4 @@ rasika. Izvi hazvizosungira hupindwa hwuripamusoro.</string>
     <string name="theme_dark">Rima</string>
     <string name="theme_night">Usiku</string>
 
-    <string name="crash_dialog_title">F-Droid yabondera</string>
-    <string name="crash_dialog_text">Pane kanganiso isina kutarisirwa yaitika
-yamanikidza Application kuti imire. Unoda kunyora tsamba mbozha
-ine zvizerekuti ubatsire kugadzira dambudziko iri here?</string>
-    <string name="crash_dialog_comment_prompt">Unokwanisa kuwedzera mashoko mamwe ne mawonero ako panapa:</string>
 </resources>

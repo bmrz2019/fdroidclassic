@@ -148,7 +148,6 @@ Vous devez l\'activer pour voir la liste des applis qu\'il offre.</string>
     <string name="system_install_denied_title">F-Droid Privileged Extension n\'est pas disponible</string>
     <string name="system_install_denied_body">Cette option est disponible uniquement quand l\'appli F-Droid Privileged Extension est installée.</string>
     <string name="open_qr_code_scanner">Ouvrir le scanner de code QR</string>
-    <string name="app_name">F-Droid Classic</string>
     <string name="unstable_updates">Mises à jour instables</string>
     <string name="unstable_updates_summary">Proposer les mises à jour de versions instables</string>
     <string name="about_source">Code source</string>
@@ -253,11 +252,6 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="empty_search_installed_app_list">Aucune application correspondante installée.</string>
     <string name="empty_search_available_app_list">Aucune application correspondante disponible.</string>
     <string name="empty_search_can_update_app_list">Aucune mise à jour correspondante disponible.</string>
-    <string name="crash_dialog_title">F-Droid s\'est arrêté de manière inattendue</string>
-    <string name="crash_dialog_comment_prompt">Vous pouvez ajouter des informations additionnelles :</string>
-    <string name="crash_dialog_text">Une erreur inattendue s’est produite
-entraînant l\'arrêt de l\'application. Acceptez-vous d\'envoyer les
-détails des opérations en cours pour aider à résoudre ce problème ?</string>
     <string name="antinonfreeassetslist">Cette appli comprend des parties qui ne sont pas libres/open-source</string>
     <string name="by_author_format">par %s</string>
     <string name="menu_email">Écrire à l\'auteur</string>

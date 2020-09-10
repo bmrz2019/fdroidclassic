@@ -130,7 +130,6 @@
     <string name="system_install_denied_title">Bị từ chối quyền hệ thống</string>
     <string name="system_install_denied_body">Chỉ có tuỳ chọn này khi F-Droid được cài làm ứng dụng hệ thống.</string>
     <string name="open_qr_code_scanner">Mở trình quét mã QR</string>
-    <string name="app_name">F-Droid Classic</string>
     <string name="unstable_updates">Cập nhật bản không ổn định</string>
     <string name="unstable_updates_summary">Thông báo cập nhật đối với các phiên bản chưa hoàn thiện</string>
     <string name="links">Liên kết</string>

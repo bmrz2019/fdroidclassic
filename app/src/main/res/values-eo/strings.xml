@@ -98,7 +98,6 @@
     <string name="category_Security">Sekureco</string>
     <string name="category_System">Sistemo</string>
     <string name="open_qr_code_scanner">Malfermi QR-kodan skanilon</string>
-    <string name="app_name">F-Droid Classic</string>
     <string name="installIncompatible">Ŝajnas ke ĉi tiu pakaĵo ne kongruas kun via aparato. Ĉu vi malgraŭe volas provi instali ĝin?</string>
     <string name="unstable_updates">Nestabilaj ĝisdatigoj</string>
     <string name="update_interval">Intervalo de aŭtomata ĝisdatigo</string>
@@ -247,9 +246,6 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="theme_light">Hela</string>
     <string name="theme_dark">Malhela</string>
     <string name="theme_night">Nokta</string>
-    <string name="crash_dialog_title">F-Droid kolapsis</string>
-    <string name="crash_dialog_text">Senatenda eraro okazis kaj devigis al aplikaĵo halti. Ĉu vi volas retmesaĝi detalojn por helpi ripari la eraron?</string>
-    <string name="crash_dialog_comment_prompt">Vi povas aldoni ekstrajn informojn kaj komentojn ĉi tien:</string>
     <string name="useTor">Uzi Tor</string>
     <string name="useTorSummary">Devigas elŝuti per Tor-reto por plibonigi privatecon</string>
     <string name="repo_provider">Deponejo: %s</string>

@@ -159,7 +159,6 @@
     <string name="category_Money">Деньги</string>
     <string name="category_Sports_Health">Спорт и здоровье</string>
     <string name="category_Time">Время</string>
-    <string name="app_name">F-Droid Classic</string>
     <string name="tab_installed_apps">Установлено</string>
     <string name="update_notification_title">Обновление репозиториев</string>
     <string name="status_processing_xml_percent">Обработка %2$s / %3$s (%4$d%%) из %1$s</string>
@@ -234,9 +233,6 @@
     <string name="tap_to_install">Загрузка закончена, нажмите для установки</string>
     <string name="download_error">Загрузка не удалась</string>
     <string name="perms_new_perm_prefix">"Новые: "</string>
-    <string name="crash_dialog_title">Произошёл сбой F-Droid</string>
-    <string name="crash_dialog_text">Непредвиденная ошибка привела к остановке приложения. Хотите отправить письмо с подробностями, чтобы помочь исправить эту ошибку?</string>
-    <string name="crash_dialog_comment_prompt">Можете добавить дополнительную информацию и комментарии:</string>
     <string name="by_author_format">от %s</string>
     <string name="useTor">Использовать Tor</string>
     <string name="useTorSummary">Перенаправлять входящий трафик через Tor для улучшения конфиденциальности</string>

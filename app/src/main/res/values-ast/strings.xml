@@ -146,7 +146,6 @@ rehabilitar esti repositoriu pa instalar aplicaciones dende elli.</string>
     <string name="system_install_denied_title">Nun ta disponible F-Droid privilexáu</string>
     <string name="system_install_denied_body">Esta opción ta namái disponible cuando s\'instale F-Droid como una aplicación del sistema.</string>
     <string name="open_qr_code_scanner">Abrir l\'escáner de códigos QR</string>
-    <string name="app_name">F-Droid Classic</string>
     <string name="interval_12h">Cada 12 hores</string>
     <string name="interval_1d">Caldía</string>
     <string name="interval_1w">Selmanalmente</string>
@@ -246,11 +245,6 @@ L\'aplicación nun rique accesu especial dalu.</string>
     <string name="empty_search_installed_app_list">Nun hai aplicaciones instalaes que concasen.</string>
     <string name="empty_search_available_app_list">Nun aplicaciones disponibles que concasen.</string>
     <string name="empty_search_can_update_app_list">Nun hai aplicaciones p\'anovar que concasen.</string>
-    <string name="crash_dialog_title">F-Droid cascó</string>
-    <string name="crash_dialog_text">Asocedió un fallu inesperáu
-forciando\'l paru de l\'aplicación. ¿Prestaríate unviar un
-corréu colos detalles p\'ayudar a iguar esti problema?</string>
-    <string name="crash_dialog_comment_prompt">Equí pues amestar información y comentarios estra:</string>
     <string name="antinonfreeassetslist">Esta aplicación contién activos non llibres</string>
     <string name="by_author_format">por %s</string>
     <string name="useTor">Usar Tor</string>

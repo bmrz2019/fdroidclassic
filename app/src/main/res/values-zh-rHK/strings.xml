@@ -116,7 +116,6 @@
   <string name="category_System">系統</string>
   <string name="system_install_denied_title">系統權限被拒絕</string>
     <string name="open_qr_code_scanner">開啟 QR 碼掃描器</string>
-    <string name="app_name">F-Droid</string>
 
     <string name="unstable_updates">不穩定的更新</string>
     <string name="unstable_updates_summary">建議更新至不穩定的版本</string>
@@ -255,8 +254,6 @@
     <string name="system_install_denied_signature">套件的簽署並不正確！請建立一份錯誤報告！</string>
     <string name="system_install_denied_permissions">套件尚未得到系統權限！請建立一份錯誤報告！</string>
     <string name="perm_costs_money">此權限可能需要您花費</string>
-    <string name="crash_dialog_title">F-Droid 已崩潰</string>
-    <string name="crash_dialog_comment_prompt">您可以在此加入額外的資料及評論：</string>
 <string name="login_title">需要驗證</string>
     <string name="antinonfreeassetslist">此應用程式含有非自由的資源</string>
 
@@ -265,9 +262,7 @@
 您不會遺失現有的資料，
 也不需要提供任何特別權限。</string>
     <string name="uninstall_update_confirm">你確定要原始版本取代此應用程式嗎？</string>
-    <string name="crash_dialog_text">因發生了未預料到的錯誤，
-應用程式已停止運作。您願意透過電郵
-提供關於問題的更多資料嗎？</string>
+
     <string name="repo_fingerprint">鑰匙指紋 (SHA-256)</string>
     <string name="rooted_on">不要以灰字顯示需要 root 權限的應用程式</string>
     <string name="repo_delete_to_overwrite">在加入含有不同鑰匙的軟件倉庫前，您先要刪除此倉庫。</string>

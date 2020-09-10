@@ -111,7 +111,6 @@
     <string name="system_install_denied_body">Tämä asetus on käytössä vain silloin, kun F-Droid Privileged Extension on asennettu.</string>
     <string name="open_qr_code_scanner">Avaa QR-koodilukija</string>
     <string name="unstable_updates_summary">Ehdota päivityksiä epävakaisiin versioihin</string>
-    <string name="app_name">F-Droid</string>
     <string name="login_password">Salasana</string>
     <string name="login_name">Käyttäjätunnus</string>
     <string name="repo_edit_credentials">Vaihda salasana</string>
@@ -119,8 +118,6 @@
     <string name="interval_1d">Päivittäin</string>
     <string name="interval_1w">Viikoittain</string>
     <string name="interval_2w">2 viikon välein</string>
-    <string name="crash_dialog_title">F-Droid on kaatunut</string>
-    <string name="crash_dialog_comment_prompt">Voit lisätä lisätietoja ja kommentteja tähän:</string>
     <string name="interval_12h">12 tunnin välein</string>
     <string name="interval_4h">4 tunnin välein</string>
     <string name="interval_never">Ei koskaan</string>
@@ -257,7 +254,6 @@ Onnittelut! Kaikki sovelluksesi ovat ajan tasalla (tai sovelluslähteesi ovat va
     <string name="uninstall_error_notify_title">Virhe poistettaessa %s</string>
     <string name="perms_description_app">Toimittaja %1$s.</string>
     <string name="keep_forever">Ikuisesti</string>
-    <string name="crash_dialog_text">Tapahtui odottamaton virhe, sovellus pakko lopetettiin. Haluatko lähettää tapahtuman yksityiskohdat sähköpostilla ja auttaa kehittäjiä korjaamaan ongelman?</string>
     <string name="by_author_format">kehittäjältä %s</string>
     <string name="status_processing_xml_percent">Käsitellään %2$s / %3$s (%4$d%%) lähteestä %1$s</string>
     <string name="status_download">Ladataan

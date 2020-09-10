@@ -74,7 +74,6 @@
     <string name="repo_name">Izena</string>
     <string name="unknown">Ezezaguna</string>
     <string name="repo_confirm_delete_title">Biltegia ezabatu?</string>
-    <string name="app_name">F-Droid Classic</string>
     <string name="installIncompatible">Badirudi pakete hau ez dela zure gailuarekin bateragarria. Instalatzea saiatu nahi duzu hala ere?</string>
     <string name="installDowngrade">Aplikazio hau bertsio-zahartzen saiatzen ari zara. Baliteke behar bezala ez ibiltzea eta zure datuak galtzea. Bertsio-zahartzea saiatu nahi duzu hala ere?</string>
     <string name="unstable_updates">Eguneraketa ezegonkorrak</string>
@@ -259,12 +258,7 @@ Ez du baimen berezirik behar.</string>
     <string name="empty_search_can_update_app_list">Ez dago bat datorren aplikaziorik eguneratzeke.</string>
     <string name="tap_to_install_format">Sakatu %s instalatzeko</string>
     <string name="tap_to_update_format">Sakatu %s eguneratzeko</string>
-    <string name="crash_dialog_title">F-droid kraskatu da</string>
     <string name="useTorSummary">Behartu Tor bidezko deskarga pribatutasuna areagotzeko</string>
-    <string name="crash_dialog_text">Ustekabeko errorea gertatu da aplikazioa geldiaraztean. 
-Xehetasunak e-posta bidez bidali nahi dituzu arazoa 
-konpontzen laguntzeko?</string>
-    <string name="crash_dialog_comment_prompt">Informazio gehigarria eta iruzkinak sartu ditzakezu hemen:</string>
     <string name="by_author_format">egilea %s</string>
     <string name="download_pending">Deskarga hastearen zain…</string>
     <string name="install_error_notify_title">Errorea %s instalatzean</string>

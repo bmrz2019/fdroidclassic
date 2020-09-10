@@ -150,7 +150,6 @@ reativar este repositório para instalar aplicativos a partir dele.</string>
     <string name="system_install_denied_title">A extensão privilegiada do F-droid não está disponível</string>
     <string name="system_install_denied_body">Esta opção só está disponível quando a extensão privilegiada do F-Droid está instalada.</string>
     <string name="open_qr_code_scanner">Abrir o leitor de código QR</string>
-    <string name="app_name">F-Droid</string>
     <string name="app_incompatible">Incompatível</string>
     <string name="links">Links</string>
     <string name="back">Voltar</string>
@@ -251,11 +250,6 @@ serão perdidos. Ele não exige nenhum acesso especial.</string>
     <string name="empty_search_available_app_list">Nenhum aplicativo correspondente disponível.</string>
     <string name="empty_search_can_update_app_list">Nenhum aplicativo correspondente para atualização.</string>
     <string name="antinonfreeassetslist">Este aplicativo contém conteúdo não-livre</string>
-    <string name="crash_dialog_title">O F-Droid travou</string>
-    <string name="crash_dialog_text">Ocorreu um erro inesperado,
-forçando a parada do aplicativo. Gostaria de enviar um e-mail
-com os detalhes para ajudar a corrigir o problema?</string>
-    <string name="crash_dialog_comment_prompt">Você pode adicionar informações extras e comentários aqui:</string>
     <string name="by_author_format">por %s</string>
     <string name="menu_email">Enviar mensagem para o autor</string>
     <string name="useTor">Usar o Tor</string>

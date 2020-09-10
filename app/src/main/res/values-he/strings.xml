@@ -121,8 +121,8 @@
     <string name="status_processing_xml_percent">כעת מעבד %2$s / %3$s (%4$d%%) מתוך %1$s</string>
     <string name="status_connecting_to_repo">כעת מתחבר אל\n%1$s</string>
     <string name="repos_unchanged">כל המאגרים הינם מעודכנים</string>
-        <string name="all_other_repos_fine">כל שאר המאגרים לא יצרו שגיאות.</string>
-        <string name="global_error_updating_repos">שגיאה במהלך עדכון: %s</string>
+    <string name="all_other_repos_fine">כל שאר המאגרים לא יצרו שגיאות.</string>
+    <string name="global_error_updating_repos">שגיאה במהלך עדכון: %s</string>
     <string name="no_permissions">אין הרשאות בשימוש.</string>
     <string name="no_handler_app">אין לך שום אפליקציה זמינה אשר מסוגלת להתמודד עם %s.</string>
     <string name="theme">ערכת עיצוב</string>
@@ -186,7 +186,6 @@
     <string name="perms_new_perm_prefix">חדש: </string>
     <string name="perms_description_app">מסופקת על ידי %1$s.</string>
     <string name="downloading">כעת מוריד…</string>
-<string name="app_name">F-Droid</string>
 
     <string name="app_incompatible">לא תואמת</string>
     <string name="back">אחורה</string>
@@ -213,7 +212,7 @@
 
     <string name="theme_light">בהיר</string>
     <string name="theme_dark">אפל</string>
-<string name="unstable_updates">עדכונים לא יציבים</string>
+    <string name="unstable_updates">עדכונים לא יציבים</string>
     <string name="unstable_updates_summary">הצע עדכונים לגרסאות לא יציבות</string>
     <string name="about_source">קוד מקור</string>
     <string name="tab_installed_apps">מותקנות</string>
@@ -254,7 +253,7 @@
     <string name="system_install_installing_rebooting">כעת מתקין ומאתחל…</string>
     <string name="system_install_warning">פעולה זו לוקחת עד 10 שניות.</string>
     <string name="theme_night">לילה</string>
-<string name="system_install_denied_permissions">ההרשאות המיוחדות לא הוענקו להרחבה! אנא צור bug report!</string>
+    <string name="system_install_denied_permissions">ההרשאות המיוחדות לא הוענקו להרחבה! אנא צור bug report!</string>
     <string name="login_title">נדרש אימות</string>
     <string name="login_name">שם משתמש</string>
     <string name="login_password">סיסמה</string>
@@ -273,10 +272,7 @@
     <string name="empty_search_available_app_list">אין אפליקציות תואמות זמינות.</string>
     <string name="empty_search_can_update_app_list">אין אפליקציות מותקנות תואמות לצורך עדכון.</string>
 
-    <string name="crash_dialog_title">‏F-Droid קרסה</string>
-    <string name="crash_dialog_text">אירעה שגיאה לא פצויה אשר אילצה את עצירת האפליקציה. האם ברצונך לדוור בדוא״ל את הפרטים כדי לעזור לפתור את הבעיה?</string>
-    <string name="crash_dialog_comment_prompt">באפשרותך להוסיף מידע והערות נוספים כאן:</string>
-<string name="repo_provider">מאגר: %s</string>
+    <string name="repo_provider">מאגר: %s</string>
 
     <string name="useTor">שימוש ב־Tor</string>
     <string name="useTorSummary">אילוץ העברת תעבורת העבודה דרך Tor להגברת הפרטיות</string>
@@ -288,4 +284,4 @@
 
     <string name="downloading_apk">כעת מוריד %1$s</string>
 
-    </resources>
+</resources>

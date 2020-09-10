@@ -1,54 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="version">Versiune</string>
-  <string name="delete">Sterge</string>
-  <string name="cache_downloaded">Pastreaza aplicatiile descarcate</string>
-  <string name="updates">Actualizat</string>
-  <string name="other">Altele</string>
-  <string name="notify">Notificare actualizari</string>
-  <string name="app_details">Detalii aplicatie</string>
-  <string name="about_title">Despre F-Droid</string>
-  <string name="about_site">Site web</string>
-  <string name="about_mail">Email</string>
-  <string name="about_version">Versiune</string>
-  <string name="app_installed">Instalat</string>
-  <string name="app_not_installed">Nu este instalat</string>
-  <string name="ok">Aplica</string>
-  <string name="yes">Da</string>
-  <string name="no">Nu</string>
-  <string name="repo_add_title">Adauga depozit nou de aplicatii</string>
-  <string name="repo_add_add">Adauga</string>
-  <string name="cancel">Anuleaza</string>
-  <string name="enable">Activeaza</string>
-  <string name="tab_available_apps">Disponibil</string>
-  <string name="tab_updates">Actualizari</string>
-  <string name="one_update_available">O actualizare este disponibila.</string>
-  <string name="many_updates_available">%d actualizari sunt disponibile.</string>
-  <string name="menu_about">Despre</string>
-  <string name="menu_search">Cauta</string>
-  <string name="menu_launch">Porneste</string>
-  <string name="menu_install">Instaleaza</string>
-  <string name="menu_uninstall">Dezinstaleaza</string>
-  <string name="menu_ignore_all">Ignora toate actualizarile</string>
-  <string name="menu_website">Site web</string>
-  <string name="menu_donate">Donează</string>
-  <string name="details_notinstalled">Nu e instalat</string>
-  <string name="display">Afişează</string>
-  <string name="expert">Setari expert</string>
-  <string name="rooted">Ignora aplicatiile ce necesita root</string>
-  <string name="ignoreTouch_on">Include mereu aplicatii ce necesita touchscreen</string>
-  <string name="category_All">Toate</string>
-  <string name="category_Whats_New">Ce este nou</string>
-  <string name="category_Recently_Updated">Actualizat recent</string>
-  <string name="theme">Temă</string>
-  <string name="repo_num_apps">Număr de aplicaţii</string>
-  <string name="repo_last_update">Ultima actualizare</string>
-  <string name="repo_name">Nume</string>
-  <string name="unknown">Necunoscut</string>
-  <string name="requires_features">Necesită: %1$s</string>
-<string name="menu_email">E-mail autor</string>
+    <string name="version">Versiune</string>
+    <string name="delete">Sterge</string>
+    <string name="cache_downloaded">Pastreaza aplicatiile descarcate</string>
+    <string name="updates">Actualizat</string>
+    <string name="other">Altele</string>
+    <string name="notify">Notificare actualizari</string>
+    <string name="app_details">Detalii aplicatie</string>
+    <string name="about_title">Despre F-Droid</string>
+    <string name="about_site">Site web</string>
+    <string name="about_mail">Email</string>
+    <string name="about_version">Versiune</string>
+    <string name="app_installed">Instalat</string>
+    <string name="app_not_installed">Nu este instalat</string>
+    <string name="ok">Aplica</string>
+    <string name="yes">Da</string>
+    <string name="no">Nu</string>
+    <string name="repo_add_title">Adauga depozit nou de aplicatii</string>
+    <string name="repo_add_add">Adauga</string>
+    <string name="cancel">Anuleaza</string>
+    <string name="enable">Activeaza</string>
+    <string name="tab_available_apps">Disponibil</string>
+    <string name="tab_updates">Actualizari</string>
+    <string name="one_update_available">O actualizare este disponibila.</string>
+    <string name="many_updates_available">%d actualizari sunt disponibile.</string>
+    <string name="menu_about">Despre</string>
+    <string name="menu_search">Cauta</string>
+    <string name="menu_launch">Porneste</string>
+    <string name="menu_install">Instaleaza</string>
+    <string name="menu_uninstall">Dezinstaleaza</string>
+    <string name="menu_ignore_all">Ignora toate actualizarile</string>
+    <string name="menu_website">Site web</string>
+    <string name="menu_donate">Donează</string>
+    <string name="details_notinstalled">Nu e instalat</string>
+    <string name="display">Afişează</string>
+    <string name="expert">Setari expert</string>
+    <string name="rooted">Ignora aplicatiile ce necesita root</string>
+    <string name="ignoreTouch_on">Include mereu aplicatii ce necesita touchscreen</string>
+    <string name="category_All">Toate</string>
+    <string name="category_Whats_New">Ce este nou</string>
+    <string name="category_Recently_Updated">Actualizat recent</string>
+    <string name="theme">Temă</string>
+    <string name="repo_num_apps">Număr de aplicaţii</string>
+    <string name="repo_last_update">Ultima actualizare</string>
+    <string name="repo_name">Nume</string>
+    <string name="unknown">Necunoscut</string>
+    <string name="requires_features">Necesită: %1$s</string>
+    <string name="menu_email">E-mail autor</string>
     <string name="SignatureMismatch">Noua versiune este semnata cu o cheie diferita fata de versiunea veche. Pentru a putea instala noua versiune, cea veche trebuie intai dezinstalata. Va rugam sa faceti asta si sa reincercati. (Tineti minte ca procesul de dezinstalare a aplicatiei o sa stearga datele interne stocate ale acesteia)</string>
-    <string name="app_name">F-Droid</string>
 
     <string name="by_author_format">de catre %s</string>
     <string name="update_interval">Interval actualizari automate</string>
@@ -159,7 +158,7 @@
     <string name="unverified">Neverificat</string>
     <string name="no_permissions">Nu foloseste nici o permisiune.</string>
     <string name="all_other_repos_fine">Nici un alt depozit nu a mai dat vreo eroare.</string>
-        <string name="status_inserting_apps">Salvare detalii aplicatie</string>
+    <string name="status_inserting_apps">Salvare detalii aplicatie</string>
     <string name="status_processing_xml_percent">Procesare %2$s / %3$s (%4$d%%) din %1$s</string>
     <string name="status_download_unknown_size">Descarcare\n%2$s din\n%1$s</string>
     <string name="proxy_port_summary">Configureaza port proxy (ex. 8118)</string>
@@ -208,7 +207,6 @@
     <string name="open_qr_code_scanner">Deschide scaner QR</string>
     <string name="theme_night">Noapte</string>
 
-    <string name="crash_dialog_title">F-Droid s-a oprit</string>
     <string name="theme_light">Luminoasa</string>
     <string name="theme_dark">Intunecata</string>
     <string name="interval_1h">O data pe ora</string>
@@ -233,7 +231,7 @@
     <string name="interval_12h">La fiecare 12 ore</string>
     <string name="enable_proxy_summary">Configureaza proxy HTTP pentru toate conexiunile de retea</string>
     <string name="repos_unchanged">Toate depozitele sunt actualizate</string>
-        <string name="loading">Se incarca…</string>
+    <string name="loading">Se incarca…</string>
     <string name="category_Navigation">Navigatie</string>
     <string name="category_Games">Jocuri</string>
     <string name="useTor">Foloseste Tor</string>
@@ -259,8 +257,7 @@ Nu necesita vreun acces special.</string>
     <string name="install_confirm_update_system_no_perms">Sigur vrei sa instalezi o actualizare
  la o aplicatie inclusa in Android? Datele curente nu se vor pierde. 
 Nu necesita vreun acces special.</string>
-    <string name="crash_dialog_comment_prompt">Puteti adauga informatii si comentarii aici:</string>
-<string name="downloading_apk">Descarcare %1$s</string>
+    <string name="downloading_apk">Descarcare %1$s</string>
 
     <string name="download_pending">Asteptare pornire descarcare…</string>
 
@@ -271,9 +268,6 @@ Nu necesita vreun acces special.</string>
     <string name="keep_year">Un an</string>
     <string name="keep_forever">Totdeauna</string>
 
-    <string name="crash_dialog_text">O eroare neasteptata s-a produs
- fortand oprirea aplicatiei. Doriti sa trimite-ti un e-mail cu detalii, 
-pentru a putea ajuta la rezolvarea acestei probleme?</string>
     <string name="uninstalling">Dezinstalare…</string>
 
     <string name="installIncompatible">Se pare ca acest pachet nu este compatibil cu dispozitivul dumneavoastra. Doriti sa se incerce instalarea lui oricum?</string>
@@ -288,4 +282,4 @@ pentru a putea ajuta la rezolvarea acestei probleme?</string>
     <string name="hide_anti_feature_apps">Arata cu gri aplicatiile ce prezinta caracteristici periculoase</string>
     <string name="hide_anti_feature_apps_on">Arata cu gri aplicatiile ce necesita caracteristici periculoase</string>
     <string name="system_installer_on">Folositi F-Droid Extension pentru a instala, actualiza si a înlătura pachete</string>
-    </resources>
+</resources>

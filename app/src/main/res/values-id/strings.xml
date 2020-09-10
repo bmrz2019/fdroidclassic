@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">F-Droid</string>
-
+<resources>
     <string name="installIncompatible">Sepertinya versi paket ini tidak kompatibel dengan perangkat Anda. Apakah Anda tetap ingin memasang dan mencobanya?</string>
     <string name="installDowngrade">Anda mencoba untuk memasang versi yang lebih rendah dari aplikasi ini. Tetap memasangnya mungkin dapat meyebabkan aplikasi tidak bekerja dengan baik. Apakah Anda tetap ingin memasang dan mencobanya?</string>
     <string name="version">Versi</string>
@@ -134,7 +133,7 @@
     <string name="status_processing_xml_percent">Memproses %2$s / %3$s (%4$d%%) dari %1$s</string>
     <string name="status_connecting_to_repo">Menyambung ke\n%1$s</string>
     <string name="repos_unchanged">Semua repositori telah diperbarui</string>
-        <string name="global_error_updating_repos">Galat saat memperbarui: %s</string>
+    <string name="global_error_updating_repos">Galat saat memperbarui: %s</string>
     <string name="no_permissions">Tidak memerlukan izin apapun.</string>
     <string name="permissions">Perizinan</string>
     <string name="no_handler_app">Anda tidak memiliki aplikasi yang bisa menangani %s.</string>
@@ -187,7 +186,7 @@ apl yang sebelumnya dipasang dari repositori ini akan tetap ada di perangkat And
     <string name="useTorSummary">Paksa jalur unduhan lewat Tor untuk meningkatkan privasi</string>
     <string name="status_inserting_apps">Menyimpan rincian aplikasi</string>
     <string name="all_other_repos_fine">Semua repo lainnya tidak membuat galat.</string>
-        <string name="repo_fingerprint">Sidik jari kunci penandatanganan (SHA-256)</string>
+    <string name="repo_fingerprint">Sidik jari kunci penandatanganan (SHA-256)</string>
     <string name="repo_disabled_notification">Matikan %1$s.
 
 Anda akan 
@@ -290,12 +289,7 @@ hilang. Aplikasi yang diperbarui akan mendapatkan akses ke:</string>
     <string name="theme_dark">Gelap</string>
     <string name="theme_night">Malam</string>
 
-    <string name="crash_dialog_title">F-Droid telah gagal</string>
-    <string name="crash_dialog_text">Galat yang tidak diduga terjadi 
- memaksa aplikasi untuk berhenti. Apa anda ingin mengirim surel
- detail untuk membantu memperbaiki isu?</string>
-    <string name="crash_dialog_comment_prompt">Anda dapat menambahkan informasi ekstra dan komentar disini:</string>
-<string name="update_auto_download">Otomatis mengunduh pembaruan</string>
+    <string name="update_auto_download">Otomatis mengunduh pembaruan</string>
     <string name="update_auto_download_summary">Unduh berkas pembaruan di latar belakang</string>
     <string name="tap_to_install_format">Ketuk untuk memasang %s</string>
     <string name="tap_to_update_format">Ketuk untuk perbarui %s</string>
@@ -324,4 +318,4 @@ hilang. Aplikasi yang diperbarui akan mendapatkan akses ke:</string>
     <string name="update_auto_install">Otomatis memasang pembaruan</string>
     <string name="update_auto_install_summary">Unduh dan pasang pembaruan apl di latar belakang</string>
     <string name="warning_no_internet">Tidak bisa memperbarui, apakah Anda tersambung ke internet?</string>
-    </resources>
+</resources>

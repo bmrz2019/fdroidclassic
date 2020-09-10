@@ -1,48 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="SignatureMismatch">Нова версія підписана не тим ключем, що стара. Перш ніж встановити нову версію, самостійно зітріть стару. (Зауважте, що стирання програми призведе до знищення всіх даних цієї програми)</string>
-  <string name="version">Версія</string>
-  <string name="cache_downloaded">Зберігати кешовані пакунки</string>
-  <string name="updates">Оновлення</string>
-  <string name="notify">Сповіщення про оновлення</string>
-  <string name="about_title">Про F-Droid</string>
-  <string name="about_site">Сайт</string>
-  <string name="about_mail">Електронна пошта</string>
-  <string name="about_version">Версія</string>
-  <string name="app_installed">Встановлено</string>
-  <string name="app_not_installed">Не встановлено</string>
-  <string name="ok">Гаразд</string>
-  <string name="yes">Так</string>
-  <string name="no">Ні</string>
-  <string name="repo_add_title">Новий репозиторій</string>
-  <string name="repo_add_add">Додати</string>
-  <string name="cancel">Назад</string>
-  <string name="tab_available_apps">Наявне</string>
-  <string name="tab_updates">Оновлення</string>
-  <string name="repo_add_url">Адреса репозиторію</string>
-  <string name="menu_update_repo">Оновити</string>
-  <string name="menu_manage">Репозиторії</string>
-  <string name="menu_about">Про F-Droid</string>
-  <string name="menu_search">Пошук</string>
-  <string name="menu_add_repo">Додати</string>
-  <string name="menu_launch">Запуск</string>
-  <string name="menu_install">Встановити</string>
-  <string name="menu_uninstall">Стерти</string>
-  <string name="menu_website">Сайт</string>
-  <string name="menu_issues">Вади</string>
-  <string name="menu_source">Сирці</string>
-  <string name="menu_donate">Пожертва</string>
-  <string name="details_installed">Встановлена версія %s</string>
-  <string name="details_notinstalled">Не встановлено</string>
-  <string name="expert">Експертний режим</string>
-  <string name="search_hint">Пошук програм</string>
-  <string name="appcompatibility">Сумісність</string>
-  <string name="rooted">Ігнорувати Суперкористувача</string>
-  <string name="ignoreTouch">Ігнорувати тачскрін</string>
-  <string name="category_All">Всі програми</string>
-  <string name="category_Whats_New">Недавні додання</string>
-  <string name="category_Recently_Updated">Недавні оновлення</string>
-<string name="app_name">F-Droid</string>
+    <string name="SignatureMismatch">Нова версія підписана не тим ключем, що стара. Перш ніж встановити нову версію, самостійно зітріть стару. (Зауважте, що стирання програми призведе до знищення всіх даних цієї програми)</string>
+    <string name="version">Версія</string>
+    <string name="cache_downloaded">Зберігати кешовані пакунки</string>
+    <string name="updates">Оновлення</string>
+    <string name="notify">Сповіщення про оновлення</string>
+    <string name="about_title">Про F-Droid</string>
+    <string name="about_site">Сайт</string>
+    <string name="about_mail">Електронна пошта</string>
+    <string name="about_version">Версія</string>
+    <string name="app_installed">Встановлено</string>
+    <string name="app_not_installed">Не встановлено</string>
+    <string name="ok">Гаразд</string>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="repo_add_title">Новий репозиторій</string>
+    <string name="repo_add_add">Додати</string>
+    <string name="cancel">Назад</string>
+    <string name="tab_available_apps">Наявне</string>
+    <string name="tab_updates">Оновлення</string>
+    <string name="repo_add_url">Адреса репозиторію</string>
+    <string name="menu_update_repo">Оновити</string>
+    <string name="menu_manage">Репозиторії</string>
+    <string name="menu_about">Про F-Droid</string>
+    <string name="menu_search">Пошук</string>
+    <string name="menu_add_repo">Додати</string>
+    <string name="menu_launch">Запуск</string>
+    <string name="menu_install">Встановити</string>
+    <string name="menu_uninstall">Стерти</string>
+    <string name="menu_website">Сайт</string>
+    <string name="menu_issues">Вади</string>
+    <string name="menu_source">Сирці</string>
+    <string name="menu_donate">Пожертва</string>
+    <string name="details_installed">Встановлена версія %s</string>
+    <string name="details_notinstalled">Не встановлено</string>
+    <string name="expert">Експертний режим</string>
+    <string name="search_hint">Пошук програм</string>
+    <string name="appcompatibility">Сумісність</string>
+    <string name="rooted">Ігнорувати Суперкористувача</string>
+    <string name="ignoreTouch">Ігнорувати тачскрін</string>
+    <string name="category_All">Всі програми</string>
+    <string name="category_Whats_New">Недавні додання</string>
+    <string name="category_Recently_Updated">Недавні оновлення</string>
 
     <string name="installIncompatible">Схоже, ця програма не сумісна з вашим пристроєм. Спробувати встановити її все одно?</string>
     <string name="installDowngrade">Ви збираєтесь встановити більш стару версію програми. Це можете призвести до некоректної робити і навіть втрати ваших даних. Встановити більш стару версію?</string>
@@ -58,7 +57,7 @@
     <string name="system_installer">Привілейоване розширення</string>
     <string name="system_installer_on">Використовувати привілейоване розширення F-Droid для встановлення, оновлення та видалення пакетів</string>
     <string name="theme_dark">Темна</string>
-<string name="theme_light">Світла</string>
+    <string name="theme_light">Світла</string>
     <string name="interval_4h">Кожні 4 години</string>
     <string name="interval_12h">Кожні 12 годин</string>
     <string name="interval_1d">Щоденно</string>
@@ -132,7 +131,7 @@
     <string name="status_processing_xml_percent">Обробка %2$s / %3$s (%4$d%%) з %1$s</string>
     <string name="status_connecting_to_repo">Підключення до\n%1$s</string>
     <string name="repos_unchanged">Всі репозиторії в актуальному стані</string>
-        <string name="global_error_updating_repos">Помилка під час оновлення: %s</string>
+    <string name="global_error_updating_repos">Помилка під час оновлення: %s</string>
     <string name="theme">Тема</string>
     <string name="unsigned">Не підписано</string>
     <string name="unverified">Не перевірено</string>
@@ -198,7 +197,7 @@
     <string name="show_incompat_versions">Не сумісні версії</string>
     <string name="show_incompat_versions_on">Показувати версії додатків, які не сумісні з пристроєм</string>
     <string name="all_other_repos_fine">Всі інші репозиторії не містять помилок.</string>
-        <string name="no_handler_app">Ви не маєте додатку для обробки «%s».</string>
+    <string name="no_handler_app">Ви не маєте додатку для обробки «%s».</string>
     <string name="repo_num_apps">Кількість додатків</string>
     <string name="repo_fingerprint">Відбиток ключа підпису (SHA-256)</string>
     <string name="unsigned_description">Це означає, що список додатків
@@ -262,7 +261,7 @@
     <string name="menu_settings">Налаштування</string>
     <string name="permissions">Привілеї</string>
     <string name="theme_night">Нічна</string>
-<string name="category_Connectivity">Зв\'язаність</string>
+    <string name="category_Connectivity">Зв\'язаність</string>
     <string name="login_title">Необхідна авторизація</string>
     <string name="login_name">Ім\'я користувача</string>
     <string name="login_password">Пароль</string>
@@ -279,12 +278,7 @@
     <string name="empty_search_available_app_list">Не має збігів серед доступних програм.</string>
     <string name="empty_search_can_update_app_list">Не має збігів серед програм для оновлення.</string>
 
-    <string name="crash_dialog_title">F-Droid зазнав збою</string>
-    <string name="crash_dialog_text">Несподівана помилка припинила роботу програми.
- Хочете надіслати листа з подробицями,
- які допоможуть нам усунути цю ваду?</string>
-    <string name="crash_dialog_comment_prompt">Можете ввести додаткову інформацію та коментарі тут:</string>
-<string name="antinonfreeassetslist">Цей додаток містить не вільний вміст</string>
+    <string name="antinonfreeassetslist">Цей додаток містить не вільний вміст</string>
 
     <string name="by_author_format">від %s</string>
     <string name="menu_email">Написати листа автору</string>
@@ -318,4 +312,4 @@
 
     <string name="update_auto_install_summary">Завантажити та встановити оновлення в фоні</string>
     <string name="update_auto_install">Автоматично встановлені оновлення</string>
-    </resources>
+</resources>

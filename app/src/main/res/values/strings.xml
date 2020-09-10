@@ -211,7 +211,7 @@
     <string name="unknown">Unknown</string>
     <string name="repo_confirm_delete_title">Delete Repository?</string>
     <string name="repo_confirm_delete_body">Deleting a repository means
-        apps from it will no longer be available from F-Droid.\n\nNote: All
+        apps from it will no longer be available from F-Droid Classic.\n\nNote: All
         previously installed apps will remain on your device.</string>
     <string name="repo_disabled_notification">Disabled "%1$s".\n\nYou will
         need to re-enable this repository to install apps from it.</string>
@@ -265,7 +265,7 @@
     <string name="system_install_button_open">Open Extension</string>
     <string name="system_install_post_success">Successfully installed F-Droid Privileged Extension</string>
     <string name="system_install_post_fail">Installation of F-Droid Privileged Extension failed</string>
-    <string name="system_install_post_success_message">F-Droid Privileged Extension has been successfully installed. This allows F-Droid to install, upgrade and uninstall apps on its own.</string>
+    <string name="system_install_post_success_message">F-Droid Privileged Extension has been successfully installed. This allows F-Droid Classic to install, upgrade and uninstall apps on its own.</string>
     <string name="system_install_post_fail_message">The installation of F-Droid Privileged Extension has failed. The installation method is not supported by all Android distributions, please consult the F-Droid bug tracker for more information.</string>
     <string name="system_install_installing">Installing…</string>
     <string name="system_install_installing_rebooting">Installing and rebooting…</string>
@@ -333,11 +333,6 @@
     <string name="theme_dark">Dark</string>
     <string name="theme_night">Black</string>
 
-    <string name="crash_dialog_title">F-Droid has crashed</string>
-    <string name="crash_dialog_text">An unexpected error occurred
-            forcing the application to stop. Would you like to e-mail the
-            details to help fix the issue?</string>
-    <string name="crash_dialog_comment_prompt">You can add extra information and comments here:</string>
     <string name="details_last_updated_today">Updated today</string>
     <string name="warning_scaning_qr_code">Your camera doesn\'t seem to have an autofocus. It might be difficult to scan the code.</string>
     <plurals name="details_last_update_days">
@@ -360,7 +355,7 @@
     <string name="share_repository">Share Repository</string>
     <string name="by_author_format">by %s</string>
     <string name="signed">Signed: %s</string>
-    <string name="app_permission_storage">F-Droid needs the storage permission to install this to storage. Please allow it on the next screen to proceed with installation.</string>
+    <string name="app_permission_storage">F-Droid Classic needs the storage permission to install this to storage. Please allow it on the next screen to proceed with installation.</string>
     <string name="app_installed_media">File installed to %s</string>
     <string name="download_all_updates">Update all</string>
     <string name="qr_code">QR-Code</string>

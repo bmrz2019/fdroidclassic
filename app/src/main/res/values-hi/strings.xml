@@ -65,11 +65,6 @@
     <string name="theme_dark">अंधेरा</string>
     <string name="theme_night">रात्रि</string>
 
-    <string name="crash_dialog_title">F-Droid दुर्घटनाग्रस्त हुआ है</string>
-    <string name="crash_dialog_text">अप्रत्याशित भूल के कारन एप्लीकेशन बंद हो गयी है| क्या ईमेल भेज कर इस समाधान को सुलझाने मैं मदद करना चाहते हैं?</string>
-    <string name="crash_dialog_comment_prompt">आप अन्य जानकारी और टिप्पणियाँ यहाँ लिख सकते हैं:</string>
-<string name="app_name">फ-द्रोइड</string>
-
     <string name="installIncompatible">ऐसा ज्ञात होता है की पैकेज आपके यंत्र के लिए अनुकुल नहीं है| क्या आप इसे किसी न किसी प्रकार से इनस्टॉल करना चाहते हैं?</string>
     <string name="installDowngrade">"आप एप्लीकेशन की अवनति करना चाहते हैं| ऐसा करने से येह काम करना बंद कर सकता है और आप अपना डाटा खो  सकते हैं| क्या आप येह करना चाहते हैं?"</string>
     <string name="cache_downloaded">कैश पच्कगेस</string>
@@ -104,8 +99,8 @@
 \nको जोड़ रहा</string>
     <string name="status_inserting_apps">आवेदन विवरण सम्हाल रखना</string>
     <string name="repos_unchanged">सारी रेपोसितोरिएस नवीनतम हैं</string>
-        <string name="all_other_repos_fine">सभी दुसरे रेपो ने कोई गलती नहीं बनाई|</string>
-        <string name="global_error_updating_repos">अपडेट के दौरान एरर: %s</string>
+    <string name="all_other_repos_fine">सभी दुसरे रेपो ने कोई गलती नहीं बनाई|</string>
+    <string name="global_error_updating_repos">अपडेट के दौरान एरर: %s</string>
     <string name="one_update_available">१ अपडेट उपलब्ध है|</string>
     <string name="many_updates_available">%d अपडेटस उपलब्ध हैं|</string>
     <string name="fdroid_updates_available">F-Droid अपडेट उपलब्ध</string>
@@ -116,4 +111,4 @@
     <string name="repo_exists_add_fingerprint">यह रेपो पहले से ही स्थापित है, इस से नयी कीय जानकारी जुड़ जायेगी|</string>
     <string name="repo_exists_enable">यह रेपो पहले से ही स्थापित है, पुष्टि करे की आप इसे फिर से चालू करना चाहते हैं|</string>
     <string name="repo_exists_and_enabled">आने वाली रेपो पहले से ही सैट उप और सक्षम है|</string>
-    </resources>
+</resources>

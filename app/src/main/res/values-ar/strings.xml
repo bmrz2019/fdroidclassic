@@ -58,7 +58,6 @@
   <string name="category_Science_Education">العلوم و التعليم</string>
   <string name="category_Security">الأمان</string>
   <string name="category_System">النظام</string>
-  <string name="app_name">اف-درويد</string>
 
     <string name="SignatureMismatch">الإصدار الجديد يحتوي على مفتاح مختلف عن القديم. لتثبيت الإصدار الجديد، يجب أن يتم إلغاء تثبيت القديم أولا. يرجى القيام بذلك وإعادة المحاولة مرة أخرى. (من المعلوم أن إلغاء التثبيت سيتم محو البيانات الداخلية المخزنة من قِبل التطبيق)</string>
     <string name="installIncompatible">يبدو أن هذه الحزمة غير متوافقة مع جهازك. هل ترغب في محاولة لتثبيتها على أي حال؟</string>
@@ -285,7 +284,4 @@
     <string name="theme_dark">ظلام</string>
     <string name="theme_night">ليل</string>
 
-    <string name="crash_dialog_title">لقد تعطل اف-درويد</string>
-    <string name="crash_dialog_text">حدث خطأ غير متوقع اجبر التطبيق للتوقف. هل ترغب في ارسال بريد الإلكتروني التفاصيل للمساعدة في حل المشكلة؟</string>
-    <string name="crash_dialog_comment_prompt">يمكنك إضافة معلومات وتعليقات إضافية هنا:</string>
 </resources>

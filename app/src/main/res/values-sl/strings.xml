@@ -37,7 +37,6 @@
   <string name="appcompatibility">Združljivost aplikacij</string>
   <string name="show_incompat_versions">Yhteensopimattomat versiot</string>
   <string name="rooted">Skrbnik</string>
-  <string name="app_name">F-Droid</string>
 
     <string name="installIncompatible">Izgleda da aplikacija ni kompatibilna z vašo napravo. Ali jo želite vseeno poskusiti namestiti?</string>
     <string name="installDowngrade">Poskušate namestiti starejšo različico aplikacije od trenutno nameščene. To lahko povzroči napake ali pa izgubo podatkov. ali želite kljub temu nadaljevati?</string>

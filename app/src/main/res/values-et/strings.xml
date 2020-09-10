@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">F-Droid</string>
-
+<resources>
     <string name="SignatureMismatch">Uus versioon on allkirjastatud vana versiooniga võrreldes erineva võtmega. Uue versiooni paigaldamiseks on vaja esmalt eemaldada vana. Palun tee seda ja proovi uuesti. (Tähelepanu: eemaldamisel kustutatakse programmiga seotud andmed.)</string>
     <string name="installIncompatible">Tundub, et see pakett ei ühildu su seadmega. Kas sa soovid ikkagi proovida selle paigaldamist?</string>
     <string name="installDowngrade">Sa proovid võtta kasutusele programmi varasemat versiooni. Sedasi võib programm töötada valesti või isegi kustutada su andmeid. Kas sa soovid ikkagi proovida varasema versiooni kasutamist?</string>
@@ -98,8 +97,8 @@
     <string name="antitracklist">See rakendus jälgib ja raporteerib su aktiivsusest</string>
     <string name="update_notification_title">Hoidlaid värskendatakse</string>
     <string name="repos_unchanged">Kõik hoidlad on kaasajastaud</string>
-        <string name="all_other_repos_fine">Kõik ülejäänud hoidlad vigu ei põhjustanud.</string>
-        <string name="repo_details">Hoidla</string>
+    <string name="all_other_repos_fine">Kõik ülejäänud hoidlad vigu ei põhjustanud.</string>
+    <string name="repo_details">Hoidla</string>
     <string name="repo_not_yet_updated">Seda hoidlat ei ole veel kasutatud. Hoidla pakutavate rakenduste vaatamiseks kasutamiseks pead sa hoidla lubama.</string>
     <string name="repo_confirm_delete_title">Kas kustutada hoidla?</string>
     <string name="repo_confirm_delete_body">Hoidla kustutamine tähendab, et hoidla pakutavad rakendused ei ole enam F-Droidist saadaval.\n\nMärkus: paigaldatud rakendused jäävad seadmesse alles.</string>
@@ -290,8 +289,4 @@
     <string name="theme_dark">Tume</string>
     <string name="theme_night">Öö</string>
 
-    <string name="crash_dialog_title">F-Droidi tabas krahh</string>
-    <string name="crash_dialog_comment_prompt">Sa saad lisada täiendavat informatsiooni ja kommentaare siia:</string>
-    <string name="crash_dialog_text">Ootamatu viga põhjustas rakenduse krahhi.
- Kas sa soovid saata selle detailid e-mailiga, et probleem parandada?</string>
     </resources>
