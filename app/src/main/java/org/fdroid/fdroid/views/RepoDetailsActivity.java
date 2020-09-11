@@ -158,6 +158,10 @@ public class RepoDetailsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.repo_details_activity, menu);
+        MenuItem update_this = menu.findItem(R.id.update_this_repo);
+        if(!repo.inuse){
+            update_this.setVisible(false);
+        }
         return true;
     }
 
@@ -167,6 +171,13 @@ public class RepoDetailsActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
+                return true;
+            case R.id.update_this_repo:
+                UpdateService.updateRepoNow(repo.address, this);
+                return true;
+            case R.id.force_refresh_repo:
+                RepoProvider.Helper.clearEtagForRepo(this, repo);
+                UpdateService.updateRepoNow(repo.address, this);
                 return true;
             case R.id.menu_delete:
                 promptForDelete();

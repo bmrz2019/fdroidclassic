@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import org.fdroid.fdroid.AppUpdateStatusManager;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.RepoTable;
@@ -308,10 +310,26 @@ public class RepoProvider extends FDroidProvider {
          * This is useful for when we change languages, because we need to ask the user to fetch
          * the metadata again, so that we can extract the correctly-localized metadata.
          */
+
         public static void clearEtags(Context context) {
+            clearEtagForRepo(context, null);
+        }
+
+        public static void clearEtagForRepo(Context context, Repo repo) {
             ContentValues values = new ContentValues(1);
             values.put(Cols.LAST_ETAG, (String) null);
-            context.getContentResolver().update(getContentUri(), values, null, null);
+            Uri contentUri;
+            String where = null;
+            String[] args = null;
+            if (repo != null){
+                contentUri = getContentUri(repo.id);
+                args = new String[]{Long.toString(repo.getId())};
+                where = Cols._ID + " = ?";
+            }
+            else {
+                contentUri = getContentUri();
+            }
+            context.getContentResolver().update(contentUri, values, where, args);
         }
     }
 
