@@ -22,31 +22,28 @@ package org.fdroid.fdroid;
 import android.app.NotificationManager;
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.MenuItemCompat;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
+import androidx.viewpager.widget.ViewPager;
 
 import org.fdroid.fdroid.compat.TabManager;
 import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.NewRepoConfig;
+import org.fdroid.fdroid.installer.PrivilegedInstaller;
 import org.fdroid.fdroid.views.AppListFragmentPagerAdapter;
 import org.fdroid.fdroid.views.ManageReposActivity;
 import org.ligi.tracedroid.sending.TraceDroidEmailSender;
@@ -74,6 +71,7 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Nullable
     private MenuItem searchMenuItem;
+    private MenuItem updateAllMenuItem;
 
     @Nullable
     private String pendingSearchQuery;
@@ -276,6 +274,21 @@ public class FDroid extends AppCompatActivity implements SearchView.OnQueryTextL
             performSearch(pendingSearchQuery);
             pendingSearchQuery = null;
         }
+
+        updateAllMenuItem = menu.findItem(R.id.action_update_all);
+        if (PrivilegedInstaller.isExtensionInstalledCorrectly(this) == PrivilegedInstaller.IS_EXTENSION_INSTALLED_YES
+                && Preferences.get().isPrivilegedInstallerEnabled()){
+            updateAllMenuItem.setTitle(R.string.install_all_updates);
+        }
+
+        Preferences.get().registerPrivextChangeListener(() -> {
+            if (Preferences.get().isPrivilegedInstallerEnabled()){
+                updateAllMenuItem.setTitle(R.string.install_all_updates);
+            }
+            else {
+                updateAllMenuItem.setTitle(R.string.download_all_updates);
+            }
+        });
 
         return super.onCreateOptionsMenu(menu);
     }

@@ -32,7 +32,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     private static final String TAG = "Preferences";
 
     private final SharedPreferences preferences;
-
     private Preferences(Context context) {
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         preferences.registerOnSharedPreferenceChangeListener(this);
@@ -94,6 +93,8 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     private final List<ChangeListener> filterAppsRequiringAntiFeaturesListeners = new ArrayList<>();
     private final List<ChangeListener> updateHistoryListeners = new ArrayList<>();
     private final List<ChangeListener> unstableUpdatesListeners = new ArrayList<>();
+    private final List<ChangeListener> privextListeners = new ArrayList<>();
+
 
     private boolean isInitialized(String key) {
         return initialized.containsKey(key) && initialized.get(key);
@@ -306,6 +307,10 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
         return filterAppsWithAntiFeatures;
     }
 
+    public void registerPrivextChangeListener(ChangeListener listener) {
+        privextListeners.add(listener);
+    }
+
     public void registerAppsRequiringRootChangeListener(ChangeListener listener) {
         filterAppsRequiringRootListeners.add(listener);
     }
@@ -341,6 +346,11 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
                     listener.onPreferenceChange();
                 }
                 break;
+            case PREF_PRIVILEGED_INSTALLER:
+                for (ChangeListener listener : privextListeners) {
+                    listener.onPreferenceChange();
+                }
+                break;
             case PREF_HIDE_ANTI_FEATURE_APPS:
                 for (ChangeListener listener : filterAppsRequiringAntiFeaturesListeners) {
                     listener.onPreferenceChange();
@@ -372,17 +382,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     }
 
     private static Preferences instance;
-
-    /**
-     * Should only be used for unit testing, whereby separate tests are required to invoke `setup()`.
-     * The reason we don't instead ask for the singleton to be lazily loaded in the {@link Preferences#get()}
-     * method is because that would require each call to that method to require a {@link Context}.
-     * While it is likely that most places asking for preferences have access to a {@link Context},
-     * it is a minor convenience to be able to ask for preferences without.
-     */
-    public static void clearSingletonForTesting() {
-        instance = null;
-    }
 
     /**
      * Needs to be setup before anything else tries to access it.

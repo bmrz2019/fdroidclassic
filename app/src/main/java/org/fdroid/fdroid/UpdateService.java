@@ -35,12 +35,13 @@ import android.os.Looper;
 import android.os.Process;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.TaskStackBuilder;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.TaskStackBuilder;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.ApkProvider;
@@ -445,6 +446,7 @@ public class UpdateService extends IntentService {
     }
 
     private void notifyContentProviders() {
+        // Note: This is Ap*p* and Ap*k* Provider
         getContentResolver().notifyChange(AppProvider.getContentUri(), null);
         getContentResolver().notifyChange(ApkProvider.getContentUri(), null);
     }
