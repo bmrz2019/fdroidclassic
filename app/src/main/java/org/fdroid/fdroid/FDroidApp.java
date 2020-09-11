@@ -25,7 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.os.Environment;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -56,8 +55,6 @@ import info.guardianproject.netcipher.proxy.OrbotHelper;
 public class FDroidApp extends Application {
 
     private static final String TAG = "FDroidApp";
-
-    public static final String SYSTEM_DIR_NAME = Environment.getRootDirectory().getAbsolutePath();
 
     private static Locale locale;
 

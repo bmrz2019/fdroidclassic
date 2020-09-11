@@ -25,9 +25,11 @@ package org.fdroid.fdroid;
 import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
-import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -36,6 +38,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.InjectableValues;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.App;
@@ -46,10 +49,6 @@ import org.fdroid.fdroid.data.Schema;
 import org.fdroid.fdroid.net.Downloader;
 import org.fdroid.fdroid.net.DownloaderFactory;
 
-import javax.net.ssl.SSLHandshakeException;
-import javax.net.ssl.SSLKeyException;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLProtocolException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,6 +66,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLKeyException;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLProtocolException;
 
 /**
  * Receives the index data about all available apps and packages via the V1
@@ -86,7 +90,7 @@ import java.util.jar.JarFile;
 public class IndexV1Updater extends IndexUpdater {
     public static final String TAG = "IndexV1Updater";
 
-    private static final String SIGNED_FILE_NAME = "index-v1.jar";
+    public static final String SIGNED_FILE_NAME = "index-v1.jar";
     public static final String DATA_FILE_NAME = "index-v1.json";
 
     public IndexV1Updater(@NonNull Context context, @NonNull Repo repo) {
@@ -241,9 +245,6 @@ public class IndexV1Updater extends IndexUpdater {
                 case "repo":
                     repoMap = parseRepo(mapper, parser);
                     break;
-                case "requests":
-                    requests = parseRequests(mapper, parser);
-                    break;
                 case "apps":
                     apps = parseApps(mapper, parser);
                     break;
@@ -262,7 +263,7 @@ public class IndexV1Updater extends IndexUpdater {
         long timestamp = (Long) repoMap.get("timestamp") / 1000;
 
         if (repo.timestamp > timestamp) {
-            throw new IndexUpdater.UpdateException("index.jar is older that current index! "
+            throw new IndexUpdater.UpdateException("index-v1.jar is older that current index! "
                     + timestamp + " < " + repo.timestamp);
         }
 
@@ -378,13 +379,6 @@ public class IndexV1Updater extends IndexUpdater {
         return mapper.readValue(parser, typeRef);
     }
 
-    private Map<String, String[]> parseRequests(ObjectMapper mapper, JsonParser parser) throws IOException {
-        TypeReference<HashMap<String, String[]>> typeRef = new TypeReference<HashMap<String, String[]>>() {
-        };
-        parser.nextToken(); // START_OBJECT
-        return mapper.readValue(parser, typeRef);
-    }
-
     private App[] parseApps(ObjectMapper mapper, JsonParser parser) throws IOException {
         TypeReference<App[]> typeRef = new TypeReference<App[]>() {
         };
@@ -418,15 +412,8 @@ public class IndexV1Updater extends IndexUpdater {
      * This is also responsible for adding the {@link Repo} instance to the
      * database for the first time.
      * <p>
-     * This is the same as {@link IndexUpdater#verifyCerts(String, X509Certificate)},
-     * {@link IndexVUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)}, and
-     * {@link IndexUpdater#assertSigningCertFromXmlCorrect()} except there is no
-     * embedded copy of the signing certificate in the index data.
      *
      * @param rawCertFromJar the {@link X509Certificate} embedded in the downloaded jar
-     * @see IndexUpdater#verifyAndStoreTOFUCerts(String, X509Certificate)
-     * @see IndexUpdater#verifyCerts(String, X509Certificate)
-     * @see IndexUpdater#assertSigningCertFromXmlCorrect()
      */
     private void verifySigningCertificate(X509Certificate rawCertFromJar) throws SigningException {
         String certFromJar = Hasher.hex(rawCertFromJar);

@@ -51,10 +51,8 @@ import java.util.jar.JarEntry;
  * FDroid!  Avoid modifying it when possible, if you absolutely must, be very,
  * very careful with the changes that you are making!
  */
-public class IndexUpdater {
+public abstract class IndexUpdater {
     private static final String TAG = "IndexUpdater";
-
-    public static final String SIGNED_FILE_NAME = "index.jar";
 
     final String indexUrl;
 
@@ -76,9 +74,7 @@ public class IndexUpdater {
         this.indexUrl = getIndexUrl(repo);
     }
 
-    protected String getIndexUrl(@NonNull Repo repo) {
-        return repo.address + "/index.jar";
-    }
+    protected abstract String getIndexUrl(@NonNull Repo repo);
 
     boolean hasChanged() {
         return hasChanged;

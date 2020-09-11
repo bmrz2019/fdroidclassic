@@ -55,7 +55,7 @@ import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 
 import org.fdroid.fdroid.FDroidApp;
-import org.fdroid.fdroid.IndexUpdater;
+import org.fdroid.fdroid.IndexV1Updater;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.UpdateService;
 import org.fdroid.fdroid.Utils;
@@ -554,7 +554,7 @@ public class ManageReposActivity extends AppCompatActivity
                             return addressWithoutIndex;
                         }
 
-                        final Uri uri = builder.appendPath(IndexUpdater.SIGNED_FILE_NAME).build();
+                        final Uri uri = builder.appendPath(IndexV1Updater.SIGNED_FILE_NAME).build();
 
                         try {
                             if (checkForRepository(uri)) {
