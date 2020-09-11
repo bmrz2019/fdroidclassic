@@ -706,6 +706,18 @@ public class ManageReposActivity extends AppCompatActivity
                     uri.getFragment()).normalize().toString();
         }
 
+        private String stripQueryandFragment(String urlString) throws URISyntaxException {
+            Uri uri = Uri.parse(urlString);
+            return new URI(uri.getScheme(),
+                    uri.getUserInfo(),
+                    uri.getHost(),
+                    uri.getPort(),
+                    uri.getPath(),
+                    null,
+                    null)
+                    .normalize().toString();
+        }
+
         /**
          * Create a repository without a username or password.
          */
@@ -715,8 +727,19 @@ public class ManageReposActivity extends AppCompatActivity
 
         private void createNewRepo(String address, String fingerprint,
                                    final String username, final String password) {
+
+            //We'll hit this path when the user ignores the fingerprint field and types a url with the queryparam intact.
+            if (TextUtils.isEmpty(fingerprint)) {
+                String fingerprint_from_uri = Uri.parse(address).getQueryParameter("fingerprint");
+                if (!TextUtils.isEmpty(fingerprint_from_uri)) {
+                    fingerprint = fingerprint_from_uri;
+                }
+            }
             try {
                 address = normalizeUrl(address);
+                //Adding a repo URL with query parameter or fragment doesn't make sense.
+                //We can discard all of that after we extracted the fingerprint
+                address = stripQueryandFragment(address);
             } catch (URISyntaxException e) {
                 // Leave address as it was.
             }
