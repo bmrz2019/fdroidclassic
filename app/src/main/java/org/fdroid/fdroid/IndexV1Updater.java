@@ -245,6 +245,10 @@ public class IndexV1Updater extends IndexUpdater {
                 case "repo":
                     repoMap = parseRepo(mapper, parser);
                     break;
+                case "requests":
+                    // unused, but we always need to consume the whole file.
+                    parseRequests(mapper, parser);
+                    break;
                 case "apps":
                     apps = parseApps(mapper, parser);
                     break;
@@ -266,7 +270,6 @@ public class IndexV1Updater extends IndexUpdater {
             throw new IndexUpdater.UpdateException("index-v1.jar is older that current index! "
                     + timestamp + " < " + repo.timestamp);
         }
-
         X509Certificate certificate = getSigningCertFromJar(indexEntry);
         verifySigningCertificate(certificate);
 
@@ -377,6 +380,13 @@ public class IndexV1Updater extends IndexUpdater {
         parser.nextToken();
         parser.nextToken();
         return mapper.readValue(parser, typeRef);
+    }
+
+    private void parseRequests(ObjectMapper mapper, JsonParser parser) throws IOException {
+        TypeReference<HashMap<String, String[]>> typeRef = new TypeReference<HashMap<String, String[]>>() {
+        };
+        parser.nextToken(); // START_OBJECT
+        mapper.readValue(parser, typeRef);
     }
 
     private App[] parseApps(ObjectMapper mapper, JsonParser parser) throws IOException {

@@ -138,11 +138,11 @@ public abstract class IndexUpdater {
         }
         /* we could in theory support more than 1, but as of now we do not */
         if (codeSigners.length > 1) {
-            throw new SigningException("index.jar must be signed by a single code signer!");
+            throw new SigningException("index-v1.jar must be signed by a single code signer!");
         }
         List<? extends Certificate> certs = codeSigners[0].getSignerCertPath().getCertificates();
         if (certs.size() != 1) {
-            throw new SigningException("index.jar code signers must only have a single certificate!");
+            throw new SigningException("index-v1.jar code signers must only have a single certificate!");
         }
         return (X509Certificate) certs.get(0);
     }
