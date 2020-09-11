@@ -1,7 +1,11 @@
+### 1.1-beta1 (??)
+
+* Implement repo force refresh and db reset options (#33)
+*
+
 ### 1.0 (10.09.2020)
 
 * Fix app title in all languages
-
 
 ### 1.0-rc2 (06.09.2020)
 
