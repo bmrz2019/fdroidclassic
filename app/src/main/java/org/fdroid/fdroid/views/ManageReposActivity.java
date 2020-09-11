@@ -884,8 +884,6 @@ public class ManageReposActivity extends AppCompatActivity
                 UpdateService.updateNow(this);
             } else {
                 RepoProvider.Helper.purgeApps(this, repo);
-                String notification = getString(R.string.repo_disabled_notification, repo.name);
-                Toast.makeText(this, notification, Toast.LENGTH_LONG).show();
             }
         }
     }

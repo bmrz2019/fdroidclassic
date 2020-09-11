@@ -1,7 +1,7 @@
 ### 1.1-beta1 (??)
 
 * Implement repo force refresh and db reset options (#33)
-*
+* Add option to update a single repo from the repository details
 
 ### 1.0 (10.09.2020)
 
