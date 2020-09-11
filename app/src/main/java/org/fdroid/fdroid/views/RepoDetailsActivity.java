@@ -159,8 +159,10 @@ public class RepoDetailsActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.repo_details_activity, menu);
         MenuItem update_this = menu.findItem(R.id.update_this_repo);
+        MenuItem force_update = menu.findItem(R.id.force_refresh_repo);
         if(!repo.inuse){
             update_this.setVisible(false);
+            force_update.setVisible(false);
         }
         return true;
     }
