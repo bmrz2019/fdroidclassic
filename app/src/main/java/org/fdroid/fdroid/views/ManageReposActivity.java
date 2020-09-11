@@ -691,6 +691,7 @@ public class ManageReposActivity extends AppCompatActivity
                     path = path.substring(0, path.length() - 1);
                 }
             }
+
             String scheme = uri.getScheme();
             String host = uri.getHost();
             if (TextUtils.isEmpty(scheme) || TextUtils.isEmpty(host)) {

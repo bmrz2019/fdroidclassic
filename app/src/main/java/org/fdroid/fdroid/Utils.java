@@ -27,9 +27,6 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.StatFs;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextUtils;
@@ -38,21 +35,23 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.utils.StorageUtils;
-import org.fdroid.fdroid.compat.FileCompat;
+
 import org.fdroid.fdroid.data.App;
-import org.fdroid.fdroid.data.SanitizedFile;
 import org.xml.sax.XMLReader;
 
 import java.io.BufferedInputStream;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -171,45 +170,6 @@ public final class Utils {
             output.write(buffer, 0, count);
         }
         output.flush();
-    }
-
-    /**
-     * Attempt to symlink, but if that fails, it will make a copy of the file.
-     */
-    public static boolean symlinkOrCopyFileQuietly(SanitizedFile inFile, SanitizedFile outFile) {
-        return FileCompat.symlink(inFile, outFile) || copyQuietly(inFile, outFile);
-    }
-
-    /**
-     * Read the input stream until it reaches the end, ignoring any exceptions.
-     */
-    public static void consumeStream(InputStream stream) {
-        final byte[] buffer = new byte[256];
-        try {
-            int read;
-            do {
-                read = stream.read(buffer);
-            } while (read != -1);
-        } catch (IOException e) {
-            // Ignore...
-        }
-    }
-
-    public static boolean copyQuietly(File inFile, File outFile) {
-        InputStream input = null;
-        OutputStream output = null;
-        try {
-            input = new FileInputStream(inFile);
-            output = new FileOutputStream(outFile);
-            Utils.copy(input, output);
-            return true;
-        } catch (IOException e) {
-            Log.e(TAG, "I/O error when copying a file", e);
-            return false;
-        } finally {
-            closeQuietly(output);
-            closeQuietly(input);
-        }
     }
 
     public static void closeQuietly(Closeable closeable) {
