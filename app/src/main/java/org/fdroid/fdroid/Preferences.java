@@ -2,7 +2,6 @@ package org.fdroid.fdroid;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -15,7 +14,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import info.guardianproject.netcipher.NetCipher;
@@ -29,6 +27,8 @@ import info.guardianproject.netcipher.NetCipher;
  */
 public final class Preferences implements SharedPreferences.OnSharedPreferenceChangeListener {
 
+    //This is more like a button, not a preference
+    public static final String RESET_TRANSIENT = "resetTransient";
     private static final String TAG = "Preferences";
 
     private final SharedPreferences preferences;

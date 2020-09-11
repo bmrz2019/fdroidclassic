@@ -359,5 +359,8 @@
     <string name="app_installed_media">File installed to %s</string>
     <string name="download_all_updates">Update all</string>
     <string name="qr_code">QR-Code</string>
+    <string name="force_update">Force Update</string>
+    <string name="reset_transient_message">Are you sure you want to reset your client? All repository indexes will need to be downloaded again.</string>
+    <string name="reset_transient_title">Reset Database?</string>
 
 </resources>

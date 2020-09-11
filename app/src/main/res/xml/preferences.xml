@@ -91,5 +91,9 @@
             android:key="privilegedInstaller"
             android:persistent="false"
             android:dependency="expert" />
+        <Preference android:title="Clear Cache and Reload"
+            android:key="resetTransient"
+            android:summary="Removes and redownloads all app information."
+            android:dependency="expert"/>
     </PreferenceCategory>
 </PreferenceScreen>

@@ -4,20 +4,22 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import androidx.preference.PreferenceFragmentCompat;
+import android.text.TextUtils;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-
-import android.text.TextUtils;
+import androidx.preference.PreferenceFragmentCompat;
 
 import org.fdroid.fdroid.CleanCacheService;
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.PreferencesActivity;
 import org.fdroid.fdroid.R;
+import org.fdroid.fdroid.UpdateService;
+import org.fdroid.fdroid.data.DBHelper;
 import org.fdroid.fdroid.installer.PrivilegedInstaller;
 
 import info.guardianproject.netcipher.NetCipher;
@@ -27,22 +29,22 @@ public class PreferencesFragment extends PreferenceFragmentCompat
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String[] SUMMARIES_TO_UPDATE = {
-        Preferences.PREF_UPD_INTERVAL,
-        Preferences.PREF_UPD_WIFI_ONLY,
-        Preferences.PREF_UPD_NOTIFY,
-        Preferences.PREF_UPD_HISTORY,
-        Preferences.PREF_ROOTED,
-        Preferences.PREF_HIDE_ANTI_FEATURE_APPS,
-        Preferences.PREF_INCOMP_VER,
-        Preferences.PREF_THEME,
-        Preferences.PREF_IGN_TOUCH,
-        Preferences.PREF_LANGUAGE,
-        Preferences.PREF_KEEP_CACHE_TIME,
-        Preferences.PREF_EXPERT,
-        Preferences.PREF_PRIVILEGED_INSTALLER,
-        Preferences.PREF_ENABLE_PROXY,
-        Preferences.PREF_PROXY_HOST,
-        Preferences.PREF_PROXY_PORT,
+            Preferences.PREF_UPD_INTERVAL,
+            Preferences.PREF_UPD_WIFI_ONLY,
+            Preferences.PREF_UPD_NOTIFY,
+            Preferences.PREF_UPD_HISTORY,
+            Preferences.PREF_ROOTED,
+            Preferences.PREF_HIDE_ANTI_FEATURE_APPS,
+            Preferences.PREF_INCOMP_VER,
+            Preferences.PREF_THEME,
+            Preferences.PREF_IGN_TOUCH,
+            Preferences.PREF_LANGUAGE,
+            Preferences.PREF_KEEP_CACHE_TIME,
+            Preferences.PREF_EXPERT,
+            Preferences.PREF_PRIVILEGED_INSTALLER,
+            Preferences.PREF_ENABLE_PROXY,
+            Preferences.PREF_PROXY_HOST,
+            Preferences.PREF_PROXY_PORT,
     };
 
     private static final int REQUEST_INSTALL_ORBOT = 0x1234;
@@ -54,23 +56,35 @@ public class PreferencesFragment extends PreferenceFragmentCompat
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String s) {
         addPreferencesFromResource(R.xml.preferences);
-        useTorCheckPref = (CheckBoxPreference) findPreference(Preferences.PREF_USE_TOR);
-        enableProxyCheckPref = (CheckBoxPreference) findPreference(Preferences.PREF_ENABLE_PROXY);
+        useTorCheckPref = findPreference(Preferences.PREF_USE_TOR);
+        enableProxyCheckPref = findPreference(Preferences.PREF_ENABLE_PROXY);
         updateAutoDownloadPref = findPreference(Preferences.PREF_AUTO_DOWNLOAD_INSTALL_UPDATES);
+        Preference reset_transient = findPreference(Preferences.RESET_TRANSIENT);
+        reset_transient.setOnPreferenceClickListener(preference -> {
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.reset_transient_title)
+                    .setMessage(R.string.reset_transient_message)
+                    .setPositiveButton(android.R.string.yes, (dialog, whichButton) -> {
+                        DBHelper.resetTransient(getContext());
+                        UpdateService.updateNow(getContext());
+                    })
+                    .setNegativeButton(android.R.string.no, null).show();
+            return true;
+        });
     }
 
     private void checkSummary(String key, int resId) {
-        CheckBoxPreference pref = (CheckBoxPreference) findPreference(key);
+        CheckBoxPreference pref = findPreference(key);
         pref.setSummary(resId);
     }
 
     private void entrySummary(String key) {
-        ListPreference pref = (ListPreference) findPreference(key);
+        ListPreference pref = findPreference(key);
         pref.setSummary(pref.getEntry());
     }
 
     private void textSummary(String key, int resId) {
-        EditTextPreference pref = (EditTextPreference) findPreference(key);
+        EditTextPreference pref = findPreference(key);
         pref.setSummary(getString(resId, pref.getText()));
     }
 
@@ -80,7 +94,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat
 
         switch (key) {
             case Preferences.PREF_UPD_INTERVAL:
-                ListPreference listPref = (ListPreference) findPreference(
+                ListPreference listPref = findPreference(
                         Preferences.PREF_UPD_INTERVAL);
                 int interval = Integer.parseInt(listPref.getValue());
                 Preference onlyOnWifi = findPreference(
@@ -161,12 +175,12 @@ public class PreferencesFragment extends PreferenceFragmentCompat
                 break;
 
             case Preferences.PREF_ENABLE_PROXY:
-                CheckBoxPreference checkPref = (CheckBoxPreference) findPreference(key);
+                CheckBoxPreference checkPref = findPreference(key);
                 checkPref.setSummary(R.string.enable_proxy_summary);
                 break;
 
             case Preferences.PREF_PROXY_HOST:
-                EditTextPreference textPref = (EditTextPreference) findPreference(key);
+                EditTextPreference textPref = findPreference(key);
                 String text = Preferences.get().getProxyHost();
                 if (TextUtils.isEmpty(text) || text.equals(Preferences.DEFAULT_PROXY_HOST)) {
                     textPref.setSummary(R.string.proxy_host_summary);
@@ -176,7 +190,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat
                 break;
 
             case Preferences.PREF_PROXY_PORT:
-                EditTextPreference textPref2 = (EditTextPreference) findPreference(key);
+                EditTextPreference textPref2 = findPreference(key);
                 int port = Preferences.get().getProxyPort();
                 if (port == Preferences.DEFAULT_PROXY_PORT) {
                     textPref2.setSummary(R.string.proxy_port_summary);
@@ -191,7 +205,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat
      * Initializes SystemInstaller preference, which can only be enabled when F-Droid is installed as a system-app
      */
     private void initPrivilegedInstallerPreference() {
-        final CheckBoxPreference pref = (CheckBoxPreference) findPreference(Preferences.PREF_PRIVILEGED_INSTALLER);
+        final CheckBoxPreference pref = findPreference(Preferences.PREF_PRIVILEGED_INSTALLER);
         Preferences p = Preferences.get();
         boolean enabled = p.isPrivilegedInstallerEnabled();
         boolean installed = PrivilegedInstaller.isExtensionInstalledCorrectly(getActivity())
@@ -200,18 +214,15 @@ public class PreferencesFragment extends PreferenceFragmentCompat
         pref.setDefaultValue(installed);
         pref.setChecked(enabled && installed);
 
-        pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                SharedPreferences.Editor editor = pref.getSharedPreferences().edit();
-                if (pref.isChecked()) {
-                    editor.remove(Preferences.PREF_PRIVILEGED_INSTALLER);
-                } else {
-                    editor.putBoolean(Preferences.PREF_PRIVILEGED_INSTALLER, false);
-                }
-                editor.apply();
-                return true;
+        pref.setOnPreferenceClickListener(preference -> {
+            SharedPreferences.Editor editor = pref.getSharedPreferences().edit();
+            if (pref.isChecked()) {
+                editor.remove(Preferences.PREF_PRIVILEGED_INSTALLER);
+            } else {
+                editor.putBoolean(Preferences.PREF_PRIVILEGED_INSTALLER, false);
             }
+            editor.apply();
+            return true;
         });
     }
 

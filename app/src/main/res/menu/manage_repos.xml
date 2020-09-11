@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
-
     <item
         android:id="@+id/action_update_repo"
         android:icon="@drawable/ic_refresh_white"
@@ -12,5 +11,9 @@
         android:icon="@drawable/ic_add_white"
         android:title="@string/menu_add_repo"
         app:showAsAction="ifRoom|withText"/>
-
+    <item
+        android:id="@+id/clear_etags"
+        android:icon="@drawable/ic_refresh_white"
+        android:title="@string/force_update"
+        app:showAsAction="never" />
 </menu>

@@ -147,6 +147,10 @@ public class ManageReposActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.clear_etags:
+                RepoProvider.Helper.clearEtags(this);
+                UpdateService.updateNow(this);
+                return true;
             case R.id.action_update_repo:
                 UpdateService.updateNow(this);
                 return true;
