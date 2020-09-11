@@ -127,5 +127,12 @@ Builds:
     gradle:
       - yes
 
+  - versionName: 1.0
+    versionCode: 1014
+    commit: v1.0
+    subdir: app
+    gradle:
+      - yes
+
 AutoUpdateMode: Version v%v
 UpdateCheckMode: Tags
