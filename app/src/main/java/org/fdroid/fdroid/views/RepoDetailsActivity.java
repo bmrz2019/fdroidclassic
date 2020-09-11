@@ -264,6 +264,9 @@ public class RepoDetailsActivity extends AppCompatActivity {
     }
 
     private void updateRepoView() {
+        if (repo == null) {
+            return;
+        }
 
         if (repo.hasBeenUpdated()) {
             updateViewForExistingRepo(repoView);
