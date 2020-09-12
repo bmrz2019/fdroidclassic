@@ -28,6 +28,7 @@ import org.fdroid.fdroid.compat.CursorAdapterCompat;
 import org.fdroid.fdroid.data.AppProvider;
 import org.fdroid.fdroid.data.Category;
 import org.fdroid.fdroid.data.CategoryProvider;
+import org.fdroid.fdroid.data.RepoCategory;
 import org.fdroid.fdroid.views.AppListAdapter;
 import org.fdroid.fdroid.views.AvailableAppListAdapter;
 
@@ -160,6 +161,9 @@ public class AvailableAppsFragment extends AppListFragment implements
         }
         if (currentCategory.equals(CategoryProvider.Helper.getCategoryWhatsNew(getActivity()))) {
             return AppProvider.getNewlyAddedUri();
+        }
+        if (currentCategory instanceof RepoCategory) {
+            return AppProvider.getRepoCategoryUri((RepoCategory) currentCategory);
         }
         return AppProvider.getCategoryUri(currentCategory);
     }

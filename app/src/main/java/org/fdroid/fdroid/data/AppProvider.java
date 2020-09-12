@@ -521,6 +521,10 @@ public class AppProvider extends FDroidProvider {
                 .build();
     }
 
+    public static Uri getRepoCategoryUri(RepoCategory repoCategory){
+        return getRepoUri(repoCategory.repo);
+    }
+
     public static Uri getInstalledWithKnownVulnsUri() {
         return getContentUri().buildUpon()
                 .appendPath(PATH_INSTALLED_WITH_KNOWN_VULNS)
