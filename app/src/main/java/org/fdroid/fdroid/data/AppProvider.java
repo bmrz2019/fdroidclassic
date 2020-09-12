@@ -517,7 +517,7 @@ public class AppProvider extends FDroidProvider {
     public static Uri getCategoryUri(Category category) {
         return getContentUri().buildUpon()
                 .appendPath(PATH_CATEGORY)
-                .appendPath(category.name)
+                .appendPath(category.getName())
                 .build();
     }
 

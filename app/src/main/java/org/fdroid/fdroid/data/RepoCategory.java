@@ -12,6 +12,6 @@ public class RepoCategory extends Category {
 
     @Override
     public String getTranslation() {
-        return this.name;
+        return name;
     }
 }

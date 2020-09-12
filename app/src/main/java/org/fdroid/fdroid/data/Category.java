@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class Category implements Comparable<Category> {
-    public String name;
-    Context context;
+    String name;
+    private Context context;
     private int id;
 
     public Category(String name, int id, Context context) {
@@ -45,10 +45,14 @@ public class Category implements Comparable<Category> {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int i) {
         id = i;
+    }
+
+    public String getName(){
+        return name;
     }
 }
