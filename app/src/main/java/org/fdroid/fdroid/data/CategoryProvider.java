@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
+
 import androidx.annotation.NonNull;
+
 import org.fdroid.fdroid.data.Schema.AppMetadataTable;
 import org.fdroid.fdroid.data.Schema.CatJoinTable;
 import org.fdroid.fdroid.data.Schema.CategoryTable;
@@ -31,7 +33,7 @@ public class CategoryProvider extends FDroidProvider {
          * During repo updates, each app needs to know the ID of each category it belongs to.
          * This results in lots of database lookups, usually at least one for each app, sometimes more.
          * To improve performance, this caches the association between categories and their database IDs.
-         *
+         * <p>
          * It can stay around for the entire F-Droid process, even across multiple repo updates, as we
          * don't actually remove data from the categories table.
          */
@@ -76,37 +78,44 @@ public class CategoryProvider extends FDroidProvider {
                 cursor.close();
             }
         }
-        public static String getCategoryAll(Context context) {
-            return context.getString(R.string.category_All);
+
+        public static Category getCategoryAll(Context context) {
+            return new Category(context.getString(R.string.category_All), 2, context);
         }
 
-        public static String getCategoryWhatsNew(Context context) {
-            return context.getString(R.string.category_Whats_New);
+        public static Category getCategoryWhatsNew(Context context) {
+            return new Category(context.getString(R.string.category_Whats_New), 0, context);
         }
 
-        public static String getCategoryRecentlyUpdated(Context context) {
-            return context.getString(R.string.category_Recently_Updated);
+        public static Category getCategoryRecentlyUpdated(Context context) {
+            return new Category(context.getString(R.string.category_Recently_Updated), 1, context);
         }
 
 
-        public static List<String> categories(Context context) {
+        public static List<Category> categories(Context context) {
             final ContentResolver resolver = context.getContentResolver();
             final Uri uri = CategoryProvider.getAllCategories();
             final String[] projection = {Cols.NAME};
             final Cursor cursor = resolver.query(uri, projection, null, null, null);
-            List<String> categories = new ArrayList<>(30);
+            List<Category> categories = new ArrayList<>(30);
             if (cursor != null) {
                 if (cursor.getCount() > 0) {
                     cursor.moveToFirst();
                     while (!cursor.isAfterLast()) {
                         final String name = cursor.getString(0);
-                        categories.add(name);
+                        // id's need to be generated after sorting :/
+                        categories.add(new Category(name, 0, context));
                         cursor.moveToNext();
                     }
                 }
                 cursor.close();
             }
             Collections.sort(categories);
+            int i = 3;
+            for (Category category : categories) {
+                category.setId(i);
+                i++;
+            }
 
             // Populate the category list with the real categories, and the
             // locally generated meta-categories for "What's New", "Recently
@@ -114,6 +123,10 @@ public class CategoryProvider extends FDroidProvider {
             categories.add(0, getCategoryAll(context));
             categories.add(0, getCategoryRecentlyUpdated(context));
             categories.add(0, getCategoryWhatsNew(context));
+            for (Repo repo : RepoProvider.Helper.all(context)) {
+                if (repo.inuse)
+                    categories.add(new RepoCategory(repo, categories.size(), context));
+            }
 
             return categories;
         }

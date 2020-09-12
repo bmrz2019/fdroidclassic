@@ -52,7 +52,7 @@ import java.util.List;
  * @see <a href="https://gitlab.com/fdroid/fdroiddata">fdroiddata</a>
  * @see <a href="https://gitlab.com/fdroid/fdroidserver">fdroidserver</a>
  */
-public class Repo extends ValueObject {
+public class Repo extends ValueObject{
 
     public static final int VERSION_DENSITY_SPECIFIC_ICONS = 11;
 

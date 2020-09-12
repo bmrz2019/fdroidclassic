@@ -1,9 +1,9 @@
 package org.fdroid.fdroid.views.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
@@ -11,8 +11,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import androidx.annotation.Nullable;
-import androidx.loader.app.LoaderManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,16 +18,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import androidx.annotation.Nullable;
+import androidx.loader.app.LoaderManager;
+
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.compat.CursorAdapterCompat;
 import org.fdroid.fdroid.data.AppProvider;
+import org.fdroid.fdroid.data.Category;
 import org.fdroid.fdroid.data.CategoryProvider;
 import org.fdroid.fdroid.views.AppListAdapter;
 import org.fdroid.fdroid.views.AvailableAppListAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AvailableAppsFragment extends AppListFragment implements
@@ -38,17 +39,18 @@ public class AvailableAppsFragment extends AppListFragment implements
     private static final String TAG = "AvailableAppsFragment";
 
     private static final String PREFERENCES_FILE = "CategorySpinnerPosition";
-    private static final String CATEGORY_KEY = "Selection";
-    private static String defaultCategory;
+    private static final String CATEGORY_ID_KEY = "SelectionID";
 
-    private List<String> categories;
+    private static int defaultCategoryID;
+
+    private List<Category> categories;
 
     @Nullable
     private View categoryWrapper;
 
     @Nullable
     private Spinner categorySpinner;
-    private String currentCategory;
+    private Category currentCategory;
     private AppListAdapter adapter;
 
     @Override
@@ -68,14 +70,15 @@ public class AvailableAppsFragment extends AppListFragment implements
 
     private class CategoryObserver extends ContentObserver {
 
-        private final ArrayAdapter<String> adapter;
+        private final ArrayAdapter<Category> adapter;
 
-        CategoryObserver(ArrayAdapter<String> adapter) {
+        CategoryObserver(ArrayAdapter<Category> adapter) {
             // Using Looper.getMainLooper() ensures that the onChange method is run on the main thread.
             super(new Handler(Looper.getMainLooper()));
             this.adapter = adapter;
         }
 
+        @SuppressLint("StaticFieldLeak")
         @Override
         public void onChange(boolean selfChange) {
             final Activity activity = getActivity();
@@ -86,17 +89,17 @@ public class AvailableAppsFragment extends AppListFragment implements
             // Because onChange is always invoked on the main thread (see constructor), we want to
             // run the database query on a background thread. Afterwards, the UI is updated
             // on a foreground thread.
-            new AsyncTask<Void, Void, List<String>>() {
+            new AsyncTask<Void, Void, List<Category>>() {
                 @Override
-                protected List<String> doInBackground(Void... params) {
+                protected List<Category> doInBackground(Void... params) {
                     return CategoryProvider.Helper.categories(activity);
                 }
 
                 @Override
-                protected void onPostExecute(List<String> loadedCategories) {
+                protected void onPostExecute(List<Category> loadedCategories) {
                     adapter.clear();
                     categories = loadedCategories;
-                    adapter.addAll(translateCategories(activity, loadedCategories));
+                    adapter.addAll(loadedCategories);
                 }
             }.execute();
         }
@@ -107,21 +110,6 @@ public class AvailableAppsFragment extends AppListFragment implements
         }
     }
 
-    /**
-     * Attempt to translate category names with fallback to default name if no translation available
-     */
-    private static List<String> translateCategories(Context context, List<String> categories) {
-        List<String> translatedCategories = new ArrayList<>(categories.size());
-        Resources res = context.getResources();
-        String pkgName = context.getPackageName();
-        for (String category : categories) {
-            String resId = category.replace(" & ", "_").replace(" ", "_").replace("'", "");
-            int id = res.getIdentifier("category_" + resId, "string", pkgName);
-            translatedCategories.add(id == 0 ? category : context.getString(id));
-        }
-        return translatedCategories;
-    }
-
     private void setupCategorySpinner(Spinner spinner) {
 
         categorySpinner = spinner;
@@ -129,8 +117,8 @@ public class AvailableAppsFragment extends AppListFragment implements
 
         categories = CategoryProvider.Helper.categories(getActivity());
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                getActivity(), android.R.layout.simple_spinner_item, translateCategories(getActivity(), categories));
+        ArrayAdapter<Category> adapter = new ArrayAdapter<Category>(
+                getActivity(), android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(adapter);
 
@@ -157,7 +145,7 @@ public class AvailableAppsFragment extends AppListFragment implements
 
         categoryWrapper = view.findViewById(R.id.category_wrapper);
         setupCategorySpinner(view.findViewById(R.id.category_spinner));
-        defaultCategory = CategoryProvider.Helper.getCategoryWhatsNew(getActivity());
+        defaultCategoryID = CategoryProvider.Helper.getCategoryWhatsNew(getActivity()).getId();
 
         return view;
     }
@@ -191,7 +179,7 @@ public class AvailableAppsFragment extends AppListFragment implements
         return R.string.empty_search_available_app_list;
     }
 
-    private void setCurrentCategory(String category) {
+    private void setCurrentCategory(Category category) {
         currentCategory = category;
         Utils.debugLog(TAG, "Category '" + currentCategory + "' selected.");
         LoaderManager.getInstance(this).restartLoader(0, null, this);
@@ -201,12 +189,12 @@ public class AvailableAppsFragment extends AppListFragment implements
     public void onResume() {
         /* restore the saved Category Spinner position */
         Activity activity = getActivity();
-        SharedPreferences p = activity.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
-        currentCategory = p.getString(CATEGORY_KEY, defaultCategory);
+        SharedPreferences preferences = activity.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
+        currentCategory = categories.get(preferences.getInt(CATEGORY_ID_KEY, defaultCategoryID));
 
         if (categorySpinner != null) {
             for (int i = 0; i < categorySpinner.getCount(); i++) {
-                if (currentCategory.equals(categorySpinner.getItemAtPosition(i).toString())) {
+                if (currentCategory.equals(categorySpinner.getItemAtPosition(i))) {
                     categorySpinner.setSelection(i);
                     break;
                 }
@@ -221,11 +209,11 @@ public class AvailableAppsFragment extends AppListFragment implements
     public void onPause() {
         super.onPause();
         /* store the Category Spinner position for when we come back */
-        SharedPreferences p = getActivity().getSharedPreferences(PREFERENCES_FILE,
+        SharedPreferences preferences = getActivity().getSharedPreferences(PREFERENCES_FILE,
                 Context.MODE_PRIVATE);
-        SharedPreferences.Editor e = p.edit();
-        e.putString(CATEGORY_KEY, currentCategory);
-        e.apply();
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(CATEGORY_ID_KEY, currentCategory.getId());
+        editor.apply();
     }
 
     @Override

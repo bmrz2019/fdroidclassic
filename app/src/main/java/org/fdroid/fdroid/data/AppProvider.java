@@ -514,10 +514,10 @@ public class AppProvider extends FDroidProvider {
         return Uri.withAppendedPath(getContentUri(), PATH_CALC_SUGGESTED_APKS);
     }
 
-    public static Uri getCategoryUri(String category) {
+    public static Uri getCategoryUri(Category category) {
         return getContentUri().buildUpon()
                 .appendPath(PATH_CATEGORY)
-                .appendPath(category)
+                .appendPath(category.name)
                 .build();
     }
 
