@@ -2,6 +2,8 @@
 
 * Implement repo force refresh and db reset options (#33)
 * Add option to update a single repo from the repository details
+* View apps from a single repo by selecting the repository from the category spinner
+* Bug fixes and translation improvements
 
 ### 1.0 (10.09.2020)
 
