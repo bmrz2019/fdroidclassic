@@ -237,7 +237,7 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="repo_error_empty_username">Leerer Benutzername, Anmeldeinformationen nicht geändert</string>
     <string name="about_license">Lizenz</string>
     <string name="tab_installed_apps_count">Installiert (%d)</string>
-    <string name="tab_updates_count">Aktualisierung (%d)</string>
+    <string name="tab_updates_count">Updates (%d)</string>
     <string name="status_inserting_apps">Anwendungsdetails werden gespeichert</string>
     <string name="empty_search_can_update_app_list">Keine passenden Anwendungen zum Aktualisieren.</string>
     <string name="empty_search_available_app_list">Keine passenden Anwendungen verfügbar.</string>
