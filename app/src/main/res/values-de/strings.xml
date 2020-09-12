@@ -39,10 +39,10 @@
     <string name="add_key">Schlüssel hinzufügen</string>
     <string name="overwrite">Überschreiben</string>
     <string name="tab_available_apps">Verfügbar</string>
-    <string name="tab_updates">Aktualisierungen</string>
-    <string name="one_update_available">Eine Aktualisierung ist verfügbar.</string>
-    <string name="many_updates_available">%d Aktualisierungen sind verfügbar.</string>
-    <string name="fdroid_updates_available">F-Droid: Aktualisierungen verfügbar</string>
+    <string name="tab_updates">Updates</string>
+    <string name="one_update_available">Ein Update ist verfügbar.</string>
+    <string name="many_updates_available">%d Updates sind verfügbar.</string>
+    <string name="fdroid_updates_available">F-Droid: Updates verfügbar</string>
     <string name="repo_add_url">Adresse der Paketquelle</string>
     <string name="repo_add_fingerprint">Fingerabdruck (optional)</string>
     <string name="repo_exists_add_fingerprint">Diese Paketquelle ist bereits eingerichtet, dieses wird neue Schlüsselinformationen hinzuzufügen.</string>
