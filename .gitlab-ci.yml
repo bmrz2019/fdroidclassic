@@ -9,19 +9,16 @@ before_script:
       | tar -xz --directory=fdroidserver --strip-components=1
   - export PATH="$PWD/fdroidserver:$PATH"
     
-lint+test:
+lint+test+build:
   script:
     # always report on lint errors to the build log
     - sed -i -e 's,textReport .*,textReport true,' app/build.gradle
     - gradlew-fdroid lint
     - gradlew-fdroid test
+    - gradlew-fdroid assembleDebug
   artifacts:
     paths:
     - app/build/reports/
-
-build:
-  script:
-    - gradlew-fdroid assembleDebug
 
 fdroid:build:
   script:
