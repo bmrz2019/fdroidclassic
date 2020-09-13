@@ -52,7 +52,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DBHelper";
 
-    public static final int REPO_XML_ARG_COUNT = 8;
+    public static final int REPO_XML_ITEM_COUNT = 8;
 
     private static DBHelper instance;
     private static final String DATABASE_NAME = "fdroid";
@@ -243,12 +243,12 @@ public class DBHelper extends SQLiteOpenHelper {
         ensureIndexes(db);
 
         String[] defaultRepos = context.getResources().getStringArray(R.array.default_repos);
-        if (defaultRepos.length % REPO_XML_ARG_COUNT != 0) {
+        if (defaultRepos.length % REPO_XML_ITEM_COUNT != 0) {
             throw new IllegalArgumentException(
                     "default_repo.xml array does not have the right number of elements");
         }
-        for (int i = 0; i < defaultRepos.length / REPO_XML_ARG_COUNT; i++) {
-            int offset = i * REPO_XML_ARG_COUNT;
+        for (int i = 0; i < defaultRepos.length / REPO_XML_ITEM_COUNT; i++) {
+            int offset = i * REPO_XML_ITEM_COUNT;
             insertRepo(
                     db,
                     defaultRepos[offset],     // name

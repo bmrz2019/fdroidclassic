@@ -15,10 +15,12 @@ import android.os.Environment;
 import android.os.LocaleList;
 import android.os.Parcel;
 import android.os.Parcelable;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -470,8 +472,9 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
      * on other country-specific locales, rather than English.
      */
     @JsonProperty("localized")
-    private void setLocalized(Map<String, Map<String, Object>> localized) { // NOPMD
+    void setLocalized(Map<String, Map<String, Object>> localized) { // NOPMD
         Locale defaultLocale = Locale.getDefault();
+        System.out.println("default Locale " + defaultLocale.toString());
         String languageTag = defaultLocale.getLanguage();
         String countryTag = defaultLocale.getCountry();
         String localeTag;
@@ -499,14 +502,9 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
             }
         }
         if (Build.VERSION.SDK_INT >= 24) {
-            LocaleList localeList = Resources.getSystem().getConfiguration().getLocales();
+            LocaleList localeList = getLocales();
             String[] sortedLocaleList = localeList.toLanguageTags().split(",");
-            Arrays.sort(sortedLocaleList, new java.util.Comparator<String>() {
-                @Override
-                public int compare(String s1, String s2) {
-                    return s1.length() - s2.length();
-                }
-            });
+            Arrays.sort(sortedLocaleList, (s1, s2) -> s1.length() - s2.length());
             for (String toUse : sortedLocaleList) {
                 localesToUse.add(toUse);
                 for (String l : availableLocales) {
@@ -532,7 +530,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 break;
             }
         }
-
+        System.out.println("localesToUse " + localesToUse);
+        System.out.println("availableLocales " + availableLocales);
         whatsNew = getLocalizedEntry(localized, localesToUse, "whatsNew");
         String value = getLocalizedEntry(localized, localesToUse, "video");
         if (!TextUtils.isEmpty(value)) {
@@ -566,8 +565,13 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         tvScreenshots = getLocalizedListEntry(localized, localesToUse, "tvScreenshots");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    LocaleList getLocales() {
+        return Resources.getSystem().getConfiguration().getLocales();
+    }
+
     /**
-     * Returns the right localized version of this entry, based on an immitation of
+     * Returns the right localized version of this entry, based on an imitation of
      * the logic that Android/Java uses.  On Android >= 24, this can get the
      * "Language Priority List", but it doesn't always seem to be properly sorted.
      * So this method has to kind of fake it by using {@link Locale#getDefault()}
