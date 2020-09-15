@@ -141,6 +141,13 @@ Builds:
     gradle:
       - yes
 
+  - versionName: 1.1-beta2
+    versionCode: 1100
+    commit: v1.1-beta2
+    subdir: app
+    gradle:
+      - yes
+
 AutoUpdateMode: None
 UpdateCheckMode: None
 CurrentVersion: 1.0
