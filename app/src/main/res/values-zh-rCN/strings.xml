@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="SignatureMismatch">新版本签名与旧版本不同，请先卸载旧版本应用再安装新版本。（注意：卸载旧版本会清除该应用存储的所有内部数据）</string>
     <string name="installIncompatible">该应用程序好像与您的设备不兼容。您仍然要尝试安装吗？</string>
@@ -108,8 +108,9 @@
     <string name="repo_not_yet_updated">该软件源尚未使用。 你需要启用它才能查看该软件源提供的应用程序。</string>
     <string name="unknown">未知</string>
     <string name="repo_confirm_delete_title">删除应用程序仓库？</string>
-    <string name="repo_confirm_delete_body">删除软件源意味着来自该软件源的软件将不会出现在F-Droid上。
-\n\n注意： 之前安装的所有应用会保留在您的设备上。</string>
+    <string name="repo_confirm_delete_body">删除软件源意味着来自该软件源的软件将不会出现在F-Droid Classic上。 
+\n
+\n注意： 之前安装的所有应用会保留在您的设备上。</string>
     <string name="repo_disabled_notification">已禁用 %1$s.\n\n您需要重新启用该软件源以安装其应用。</string>
     <string name="minsdk_or_later">%s 或更新</string>
     <string name="up_to_maxsdk">最大 %s</string>
@@ -127,32 +128,26 @@
     <string name="category_Science_Education">科学和教育</string>
     <string name="category_Security">安全</string>
     <string name="category_System">系统</string>
-
     <string name="unstable_updates">不稳定更新</string>
     <string name="unstable_updates_summary">启用不稳定版本的更新</string>
     <string name="system_installer_on">使用F-Droid特权扩展来安装，更新以及卸载应用</string>
-
     <string name="login_title">需要验证</string>
     <string name="login_name">用户名</string>
     <string name="login_password">密码</string>
     <string name="repo_edit_credentials">更改密码</string>
     <string name="repo_error_empty_username">空用户名，认证信息未改变</string>
-
     <string name="about_source">源码</string>
     <string name="app_incompatible">不兼容</string>
     <string name="app_inst_known_source">已安装（来自%s）</string>
     <string name="app_inst_unknown_source">已安装（来源未知）</string>
-
     <string name="links">链接</string>
     <string name="more">更多</string>
     <string name="less">更少</string>
-
     <string name="back">返回</string>
     <string name="tab_installed_apps">已安装</string>
     <string name="tab_installed_apps_count">已安装（%d）</string>
     <string name="tab_updates_count">可更新（%d）</string>
     <string name="update_notification_more">+%1$d 更多…</string>
-
     <string name="bad_fingerprint">指纹错误</string>
     <string name="invalid_url">无效的URL。</string>
     <string name="menu_settings">设置</string>
@@ -160,11 +155,8 @@
     <string name="menu_bitcoin">比特币</string>
     <string name="menu_litecoin">莱特币</string>
     <string name="menu_flattr">Flattr</string>
-
-
     <string name="next">下一个</string>
     <string name="skip">跳过</string>
-
     <string name="status_download_unknown_size">下载中\n%2$s 来自\n%1$s</string>
     <string name="update_notification_title">正在更新厍</string>
     <string name="status_processing_xml_percent">处理中 %2$s / %3$s (%4$d%%) 来自 %1$s</string>
@@ -178,8 +170,6 @@
     <string name="repo_searching_address">查找软件库从\n%1$s</string>
     <string name="pref_language">语言</string>
     <string name="pref_language_default">系统默认</string>
-
-
     <string name="category_Connectivity">连接</string>
     <string name="category_Graphics">图像</string>
     <string name="category_Money">理财</string>
@@ -187,11 +177,9 @@
     <string name="category_Theming">主题</string>
     <string name="category_Time">时间</string>
     <string name="category_Writing">书写</string>
-
     <string name="empty_installed_app_list">应用程序未安装。\n\n在您的设备上有这些应用程序，但无法从F-Droid获取它们。这可能是因为需要更新你的软件库，或者在库里真的没有这些应用程序。</string>
     <string name="empty_available_app_list">该目录中未找到任何应用程序。\n\n试试其它目录或者更新软件库获取最新的应用列表。</string>
     <string name="empty_can_update_app_list">所有软件已更新。\n\n好棒！你的应用都是最新的（或者你该更新软件库了）。</string>
-
     <string name="install_error_unknown">由于未知原因导致安装失败</string>
     <string name="uninstall_error_unknown">由于未知原因导致缷载失败</string>
     <string name="system_install_denied_title">F-Droid特权扩展不可用</string>
@@ -202,7 +190,7 @@
     <string name="system_install_button_open">打开扩展</string>
     <string name="system_install_post_success">安装F-Droid特权扩展成功</string>
     <string name="system_install_post_fail">安装F-Droid特权扩展失败</string>
-    <string name="system_install_post_success_message">F-Droid特权扩展已成功安装。将允许F-Droid安装，升级和卸载自己的应用程序。</string>
+    <string name="system_install_post_success_message">F-Droid特权扩展已成功安装。这将允许F-DroidClassic 安装，升级和卸载自己的应用程序。</string>
     <string name="system_install_post_fail_message">F-Droid特权扩展的安装失败。不是所有版本的Android都支持该安装方式，请咨询F-Droid的bug跟踪系统以获取更多信息。</string>
     <string name="system_install_installing">安装中…</string>
     <string name="system_install_installing_rebooting">安装并重启中…</string>
@@ -212,10 +200,8 @@
     <string name="system_install_warning_lollipop">这最多需要10秒，设备之后将 <b>重新启动</b>。</string>
     <string name="system_uninstall">确定要缷载F-Droid特权扩展？</string>
     <string name="system_uninstall_button">缷载</string>
-
     <string name="open_qr_code_scanner">扫描二维码</string>
     <string name="loading">加载中…</string>
-
     <string name="install_confirm">确定要安装这个应用吗？它将有以下权限</string>
     <string name="install_confirm_update">确定要为这个应用安装更新吗？你的已有数据会保留。更新后的应用程序将有下权限：</string>
     <string name="install_confirm_update_system">确定要为这个内置应用安装更新吗？你的已有数据会保留。更新后的应用程序将有下权限：</string>
@@ -228,11 +214,9 @@
     <string name="uninstall_confirm">确定要卸载此应用程序吗？</string>
     <string name="tap_to_install">下载已完成，点击安装</string>
     <string name="download_error">下载失败</string>
-
     <string name="perms_new_perm_prefix">"新的： "</string>
     <string name="perms_description_app">由 %1$s 提供。</string>
     <string name="downloading">下载中…</string>
-
     <string name="interval_never">从不</string>
     <string name="interval_1h">每小时</string>
     <string name="interval_4h">每4小时</string>
@@ -240,22 +224,17 @@
     <string name="interval_1d">每天</string>
     <string name="interval_1w">每周</string>
     <string name="interval_2w">每两周</string>
-
     <string name="theme_light">明亮</string>
     <string name="theme_dark">夜间</string>
     <string name="theme_night">黑暗</string>
     <string name="about_license">许可证类型</string>
-
     <string name="status_inserting_apps">正在保存应用信息</string>
     <string name="empty_search_installed_app_list">没找到符合的已安装应用。</string>
     <string name="empty_search_available_app_list">已安装应用列表为空。</string>
     <string name="empty_search_can_update_app_list">未能从可更新应用中找到符合的结果。</string>
-
     <string name="menu_email">发邮件给作者</string>
     <string name="antinonfreeassetslist">该此应用包括非自由资产</string>
-
     <string name="repo_provider">代码库: %s</string>
-
     <string name="useTor">使用 Tor</string>
     <string name="useTorSummary">强制下载流量使用 Tor 以增强隐私保障</string>
     <string name="update_auto_download">自动下载更新</string>
@@ -263,26 +242,58 @@
     <string name="tap_to_install_format">点按以安装 %s</string>
     <string name="tap_to_update_format">点按以更新 %s</string>
     <string name="download_pending">正在等待开始下载…</string>
-
     <string name="downloading_apk">正在下载 %1$s</string>
-
     <string name="system_install_not_supported">F-Droid 特权扩展目前不支持安装在 Android 5.1 或更高版本上。</string>
-
     <string name="keep_hour">1小时</string>
     <string name="keep_day">1天</string>
     <string name="keep_week">1周</string>
     <string name="keep_month">1个月</string>
     <string name="keep_year">1年</string>
     <string name="keep_forever">永远</string>
-
     <string name="install_error_notify_title">安装 %s 出错</string>
     <string name="uninstall_error_notify_title">卸载 %s 时出错</string>
-
-
     <string name="installing">安装中…</string>
     <string name="uninstalling">卸载中…</string>
-
     <string name="update_auto_install">自动安装更新</string>
     <string name="update_auto_install_summary">在后台下载和安装应用更新</string>
     <string name="warning_no_internet">无法更新。您是否已连接到互联网？</string>
+    <string name="menu_update_this_repo">更新此仓库</string>
+    <string name="details_new_in_version">%s 版本的变化</string>
+    <string name="antiknownvulnlist">此应用程序包含一个已知的安全漏洞</string>
+    <string name="status_inserting_x_apps">正在从%3$s保存应用详情(%1$d/%2$d)</string>
+    <string name="details_last_updated_today">今日更新</string>
+    <string name="warning_scaning_qr_code">您的相机似乎没有自动对焦，可能难以扫描二维码。</string>
+    <string name="app_permission_storage">F-Droid Classic需要存储权限才能将其这个应用安装到存储。 请在下一个屏幕上允许它以继续安装。</string>
+    <string name="install_all_updates">安装更新</string>
+    <string name="force_update">强制更新</string>
+    <string name="reset_transient_message">你确定要重置客户端吗？重置后需要再次下载所有的仓库目录。</string>
+    <string name="menu_appinfo">应用信息(系统设置)</string>
+    <string name="qr_code">二维码</string>
+    <string name="app_name">F-Droid Classic</string>
+    <string name="repo_official_mirrors">官方镜像</string>
+    <string name="repo_user_mirrors">用户镜像</string>
+    <string name="repo_exists_add_mirror">这是%1$s的一个拷贝，将其添加为一个镜像？</string>
+    <string name="repo_add_mirror">添加镜像</string>
+    <string name="antidisabledalgorithmlist">此应用有一个弱安全签名</string>
+    <string name="antinosourcesince">源代码不再可用，没有更新可能性。</string>
+    <string name="hide_anti_feature_apps">将包含不自由特性的应用变灰</string>
+    <string name="hide_anti_feature_apps_on">将有赖于不自由特性的应用变灰</string>
+    <plurals name="details_last_update_days">
+        <item quantity="other">%1$d 天前更新</item>
+    </plurals>
+    <plurals name="details_last_update_weeks">
+        <item quantity="other">%1$d 周前更新</item>
+    </plurals>
+    <plurals name="details_last_update_months">
+        <item quantity="other">%1$d 个月前更新</item>
+    </plurals>
+    <plurals name="details_last_update_years">
+        <item quantity="other">%1$d 年前更新</item>
+    </plurals>
+    <string name="download_404">找不到请求的文件。</string>
+    <string name="share_repository">分享仓库</string>
+    <string name="by_author_format">由 %s</string>
+    <string name="app_installed_media">文件已安装到 %s</string>
+    <string name="download_all_updates">下载更新</string>
+    <string name="reset_transient_title">重置数据库？</string>
 </resources>
