@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="SignatureMismatch">A nova versão está assinada com uma chave diferente da antiga. Para instalar a nova versão, tem que desinstalar a antiga. Remova a aplicação e tente novamente. (Tenha em atenção que irá apagar todos os dados guardados pela aplicação)</string>
     <string name="installIncompatible">Parece que este pacote não é compatível com o seu dispositivo. Deseja tentar a instalação?</string>
@@ -10,7 +10,6 @@
     <string name="unstable_updates">Atualizações instáveis</string>
     <string name="unstable_updates_summary">Sugerir atualizações para versões instáveis</string>
     <string name="other">Outro</string>
-
     <string name="update_interval">Intervalo de atualização automática</string>
     <string name="update_interval_zero">Não atualizar automaticamente a lista de aplicações</string>
     <string name="automatic_scan_wifi">Apenas por Wi-Fi</string>
@@ -21,37 +20,30 @@
     <string name="update_history_summ">Dias para considerar aplicações como novas ou recentes: %s</string>
     <string name="system_installer">Extensão privilegiada</string>
     <string name="system_installer_on">Utilizar a extensão privilegiada do F-Droid para instalar, atualizar e remover pacotes</string>
-
     <string name="app_details">Detalhes da aplicação</string>
     <string name="no_such_app">Aplicação não encontrada.</string>
-
     <string name="about_title">Sobre o F-Droid</string>
     <string name="about_version">Versão</string>
     <string name="about_site">Sítio web</string>
     <string name="about_source">Código fonte</string>
-    <string name="about_mail">E-mail</string>
+    <string name="about_mail">Correio eletrónico</string>
     <string name="app_incompatible">Incompatível</string>
     <string name="app_installed">Instaladas</string>
     <string name="app_not_installed">Não instaladas</string>
     <string name="app_inst_known_source">Instalada (de %s)</string>
     <string name="app_inst_unknown_source">Instalada (de fonte desconhecida)</string>
-
     <string name="added_on">Adicionada em %s</string>
-
     <string name="ok">OK</string>
-
     <string name="yes">Sim</string>
     <string name="no">Não</string>
     <string name="repo_add_title">Adicionar novo repositório</string>
     <string name="repo_add_add">Adicionar</string>
     <string name="links">Ligações</string>
-
     <string name="back">Recuar</string>
     <string name="cancel">Cancelar</string>
     <string name="enable">Ativar</string>
     <string name="add_key">Adicionar chave</string>
     <string name="overwrite">Substituir</string>
-
     <string name="tab_available_apps">Disponíveis</string>
     <string name="tab_installed_apps">Instaladas</string>
     <string name="tab_updates">Atualizações</string>
@@ -59,7 +51,6 @@
     <string name="many_updates_available">%d atualizações disponíveis.</string>
     <string name="fdroid_updates_available">Atualizações F-Droid disponíveis</string>
     <string name="update_notification_more">+%1$d…</string>
-
     <string name="repo_add_url">Endereço do repositório</string>
     <string name="repo_add_fingerprint">Identificação digital (opcional)</string>
     <string name="repo_exists_add_fingerprint">Este repositório já está configurado, isto adicionará nova informação sobre a chave.</string>
@@ -69,20 +60,18 @@
     <string name="bad_fingerprint">Identificação inválida</string>
     <string name="invalid_url">Este URL não é válido.</string>
     <string name="malformed_repo_uri">A ignorar URI de repositório inválido: %s</string>
-
     <string name="menu_update_repo">Atualizar repositórios</string>
     <string name="menu_manage">Repositórios</string>
     <string name="menu_about">Sobre</string>
     <string name="menu_search">Pesquisar</string>
     <string name="menu_add_repo">Novo repositório</string>
-
     <string name="menu_launch">Executar</string>
     <string name="menu_share">Partilhar</string>
     <string name="menu_install">Instalar</string>
     <string name="menu_uninstall">Desinstalar</string>
     <string name="menu_ignore_all">Ignorar todas as atualizações</string>
     <string name="menu_ignore_this">Ignorar esta atualização</string>
-    <string name="menu_website">Sitio web</string>
+    <string name="menu_website">Sítio web</string>
     <string name="menu_issues">Problemas</string>
     <string name="menu_changelog">Registo de alterações</string>
     <string name="menu_source">Código-fonte</string>
@@ -91,8 +80,6 @@
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
     <string name="menu_flattr">Flattr</string>
-
-
     <string name="details_installed">Versão %s instalada</string>
     <string name="details_notinstalled">Não instaladas</string>
     <string name="antiadslist">Esta aplicação contém publicidade</string>
@@ -101,14 +88,10 @@
     <string name="antinonfreenetlist">Esta aplicação promove serviços de rede não livres</string>
     <string name="antinonfreedeplist">Esta aplicação depende de aplicações não livres</string>
     <string name="antiupstreamnonfreelist">O código-fonte não é integralmente Livre</string>
-
     <string name="display">Exibição</string>
-
     <string name="expert">Modo perito</string>
     <string name="expert_on">Mostrar informações extra e ativar mais definições</string>
-
     <string name="search_hint">Pesquisar aplicações</string>
-
     <string name="appcompatibility">Compatibilidade de aplicações</string>
     <string name="show_incompat_versions">Versões incompatíveis</string>
     <string name="show_incompat_versions_on">Mostrar versões incompatíveis com o seu dispositivo</string>
@@ -116,10 +99,8 @@
     <string name="rooted_on">Não sombrear aplicações que necessitem de acesso \'root\'</string>
     <string name="ignoreTouch">Ignorar ecrã de toque</string>
     <string name="ignoreTouch_on">Incluir aplicações que necessitem de toque no ecrã</string>
-
     <string name="next">Seguinte</string>
     <string name="skip">Ignorar</string>
-
     <string name="proxy">Proxy</string>
     <string name="enable_proxy_title">Ativar proxy HTTP</string>
     <string name="enable_proxy_summary">Configurar proxy HTTP para todos os pedidos de rede</string>
@@ -127,9 +108,7 @@
     <string name="proxy_host_summary">Configurar nome do servidor proxy (exemplo: 127.0.0.1)</string>
     <string name="proxy_port">Porta do proxy</string>
     <string name="proxy_port_summary">Configure a porta do seu proxy (exemplo: 8118)</string>
-
     <string name="status_download">A descarregar\n%2$s/%3$s (%4$d%%) de\n%1$s</string>
-
     <string name="status_download_unknown_size">A descarregar\n%2$s de\n%1$s</string>
     <string name="update_notification_title">A atualizar repositórios</string>
     <string name="status_processing_xml_percent">A processar %2$s/%3$s (%4$d%%) de %1$s</string>
@@ -173,9 +152,7 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="requires_features">Requer: %1$s</string>
     <string name="pref_language">Idioma</string>
     <string name="pref_language_default">Definições do sistema</string>
-
     <string name="app_icon">Ícone da aplicação</string>
-
     <string name="category_All">Todas</string>
     <string name="category_Whats_New">Novidades</string>
     <string name="category_Recently_Updated">Atualizadas recentemente</string>
@@ -196,11 +173,9 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="category_Theming">Temas</string>
     <string name="category_Time">Tempo</string>
     <string name="category_Writing">Escrita</string>
-
     <string name="empty_installed_app_list">Não existem aplicações instaladas.\n\nExistem aplicações no seu dispositivo que não estão disponíveis no F-Droid. Pode ser necessário atualizar os seus repositórios ou os repositórios não possuem quaisquer aplicações.</string>
     <string name="empty_available_app_list">Não existem aplicações nesta categoria.\n\nSelecione uma categoria diferente ou atualize os repositórios para obter a lista de aplicações.</string>
     <string name="empty_can_update_app_list">Todas as aplicações estão atualizadas.\n\nParabéns! Todas as aplicações estão atualizadas (ou os repositórios não o estão).</string>
-
     <string name="install_error_unknown">Falha de instalação devido a um erro desconhecido</string>
     <string name="uninstall_error_unknown">Falha ao desinstalar devido a um erro desconhecido</string>
     <string name="system_install_denied_title">A extensão privilegiada do F-Droid não está disponível</string>
@@ -221,7 +196,6 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="system_install_warning_lollipop">Demora cerca de 10 segundos, após os quais o dispositivo será <b>reiniciado</b>.</string>
     <string name="system_uninstall">Deseja desinstalar a extensão privilegiada F-Droid?</string>
     <string name="system_uninstall_button">Desinstalar</string>
-
     <string name="open_qr_code_scanner">Abrir leitor QR</string>
     <string name="loading">A carregar…</string>
     <string name="newPerms">Novas</string>
@@ -230,7 +204,6 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="perms_new_perm_prefix">"Novas: "</string>
     <string name="perms_description_app">Disponibilizada por %1$s.</string>
     <string name="downloading">A descarregar…</string>
-
     <string name="interval_never">Nunca</string>
     <string name="interval_1h">A cada 1 hora</string>
     <string name="interval_4h">A cada 4 horas</string>
@@ -238,14 +211,11 @@ Tem que ativar o repositório para poder instalar aplicações.</string>
     <string name="interval_1d">Diariamente</string>
     <string name="interval_1w">Semanalmente</string>
     <string name="interval_2w">A cada 2 semanas</string>
-
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Escuro</string>
-
     <string name="install_confirm">requer acesso a</string>
     <string name="more">Mais</string>
     <string name="less">Menos</string>
-
     <string name="permissions">Permissões</string>
     <string name="install_confirm_update">Deseja instalar uma atualização para esta aplicação?
 Os seus dados não serão perdidos.
@@ -263,7 +233,6 @@ A aplicação atualizada não requer qualquer acesso especial.</string>
     <string name="uninstall_confirm">Deseja desinstalar esta aplicação?</string>
     <string name="tap_to_install">Descarga terminada. Toque para instalar.</string>
     <string name="download_error">Descarga não efetuada</string>
-
     <string name="theme_night">Noite</string>
     <string name="menu_settings">Definições</string>
     <string name="login_title">Requer autenticação</string>
@@ -271,22 +240,17 @@ A aplicação atualizada não requer qualquer acesso especial.</string>
     <string name="login_password">Palavra-passe</string>
     <string name="repo_edit_credentials">Mudar palavra-passe</string>
     <string name="repo_error_empty_username">Nome de utilizador vazio, credenciais não alteradas</string>
-
     <string name="about_license">Licença</string>
-
     <string name="tab_installed_apps_count">Instaladas (%d)</string>
     <string name="tab_updates_count">Atualizações (%d)</string>
     <string name="status_inserting_apps">A guardar detalhes das aplicações</string>
     <string name="empty_search_installed_app_list">Nenhuma aplicação instalada coincidente.</string>
     <string name="empty_search_available_app_list">Nenhuma aplicação disponível coincidente.</string>
     <string name="empty_search_can_update_app_list">Nenhuma aplicação coincidente para atualização.</string>
-
     <string name="antinonfreeassetslist">Esta aplicação contém recursos não livres</string>
-
     <string name="by_author_format">de %s</string>
-    <string name="menu_email">E-mail do autor</string>
+    <string name="menu_email">Enviar uma messagem para o autor</string>
     <string name="repo_provider">Repositório: %s</string>
-
     <string name="useTor">Utilizar Tor</string>
     <string name="useTorSummary">Descarregar aplicações através da rede Tor para manter a privacidade</string>
     <string name="update_auto_download">Descarregar atualizações automaticamente</string>
@@ -294,25 +258,18 @@ A aplicação atualizada não requer qualquer acesso especial.</string>
     <string name="tap_to_install_format">Toque para instalar %s</string>
     <string name="tap_to_update_format">Toque para atualizar %s</string>
     <string name="download_pending">À espera da descarga…</string>
-
     <string name="downloading_apk">A descarregar %1$s</string>
-
     <string name="system_install_not_supported">Atualmente, ainda não é possível instalar a F-Droid Privileged Extension em sistemas Android &gt; 5.1.</string>
-
     <string name="install_error_notify_title">Erro ao instalar %s</string>
     <string name="uninstall_error_notify_title">Erro ao desinstalar %s</string>
-
-
     <string name="installing">A instalar…</string>
     <string name="uninstalling">A desinstalar…</string>
-
     <string name="keep_hour">1 hora</string>
     <string name="keep_day">1 dia</string>
     <string name="keep_week">1 semana</string>
     <string name="keep_month">1 mês</string>
     <string name="keep_year">1 ano</string>
     <string name="keep_forever">Eternamente</string>
-
     <string name="update_auto_install">Instalar atualizações automaticamente</string>
     <string name="update_auto_install_summary">Descarregar e instalar atualizações em segundo plano</string>
 </resources>

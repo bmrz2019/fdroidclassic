@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="SignatureMismatch">Η καινούργια έκδοση είναι υπογεγραμμένη με διαφορετικό κλειδί από την παλιά. Για να γίνει η εγκατάσταση της καινούργιας έκδοσης, πρέπει να γίνει πρώτα η απεγκατάσταση της παλιάς έκδοσης. Παρακαλώ όπως το κάνετε αυτό και προσπαθήστε ξανά. (Σημειώστε ότι η απεγκατάσταση θα διαγράψει οποιαδήποτε εσωτερικά δεδομένα που αποθηκεύονται από την εφαρμογή)</string>
     <string name="installIncompatible">Φαίνεται ότι αυτό το πακέτο δεν είναι συμβατό με τη συσκευή σας. Θα θέλατε να δοκιμάσετε να το εγκαταστήσετε ούτως ή άλλως;</string>
@@ -110,25 +110,20 @@
     <string name="minsdk_up_to_maxsdk">%1$s μέχρι %2$s</string>
     <string name="not_on_same_wifi">Η συσκευή σας δεν είναι στο ίδιο ασύρματο δίκτυο με το τοπικό αποθετήριο που μόλις προσθέσατε! Δοκιμάστε να συνδεθείτε σε αυτό το δίκτυο: %s</string>
     <string name="requires_features">Απαιτεί: %1$s</string>
-
     <string name="unstable_updates">Ασταθείς ενημερώσεις</string>
     <string name="unstable_updates_summary">Πρόταση ενημερώσεων σε ασταθείς εκδόσεις</string>
     <string name="system_installer">Επέκταση με δικαιώματα συστήματος</string>
     <string name="system_installer_on">Χρησιμοποιήστε την επέκταση του F-Droid με δικαιώματα συστήματος για να εγκαταστήσετε, ενημερώσετε και καταργήσετε πακέτα</string>
-
     <string name="about_source">Πηγαίος κώδικας:</string>
     <string name="app_incompatible">Μη συμβατό</string>
     <string name="app_inst_known_source">Εγκαταστημένο (από %s)</string>
     <string name="app_inst_unknown_source">Εγκαταστημένο (από άγνωστη πηγή)</string>
-
     <string name="links">Συνδέσεις</string>
     <string name="more">Περισσότερα</string>
     <string name="less">Λιγότερα</string>
-
     <string name="back">Πίσω</string>
     <string name="tab_installed_apps">Εγκατεστημένο</string>
     <string name="update_notification_more">+%1$d περισσότερα…</string>
-
     <string name="bad_fingerprint">Λανθασμένο δακτυλικό αποτύπωμα</string>
     <string name="invalid_url">Αυτή δεν είναι έγκυρη διεύθυνση URL.</string>
     <string name="menu_settings">Ρυθμίσεις</string>
@@ -136,11 +131,8 @@
     <string name="menu_bitcoin">Bitcoin</string>
     <string name="menu_litecoin">Litecoin</string>
     <string name="menu_flattr">Flattr</string>
-
-
     <string name="next">Επόμενο</string>
     <string name="skip">Παράβλεψη</string>
-
     <string name="proxy">Διακομιστής μεσολάβησης</string>
     <string name="enable_proxy_title">Ενεργοποίηση διακομιστή μεσολάβησης HTTP</string>
     <string name="enable_proxy_summary">Ρύθμιση διακομιστή μεσολάβησης HTTP για όλες τις αιτήσεις δικτύου</string>
@@ -148,7 +140,6 @@
     <string name="proxy_host_summary">Ρυθμίστε το όνομα του διακομιστή σας μεσολάβησης (π.χ. 127.0.0.1)</string>
     <string name="proxy_port">Θύρα διακομιστή μεσολάβησης</string>
     <string name="proxy_port_summary">Αριθμός θύρας του διακομιστή σας μεσολάβησης (π.χ. 8118)</string>
-
     <string name="status_download_unknown_size">Κατέβασμα\n%2$s από\n%1$s</string>
     <string name="update_notification_title">Ενημέρωση αποθετηρίων</string>
     <string name="status_processing_xml_percent">Επεξεργασία %2$s / %3$s (%4$d%%) από %1$s</string>
@@ -164,9 +155,7 @@
     <string name="repo_searching_address">Αναζήτηση για αποθετήριο του F-Droid στο\n%1$s</string>
     <string name="pref_language">Γλώσσα</string>
     <string name="pref_language_default">Προεπιλογή συστήματος</string>
-
     <string name="app_icon">Εικονίδιο εφαρμογής</string>
-
     <string name="category_Connectivity">Συνδεσιμότητα</string>
     <string name="category_Development">Ανάπτυξη</string>
     <string name="category_Games">Παιχνίδια</string>
@@ -184,11 +173,9 @@
     <string name="category_Theming">Προσωποποίηση</string>
     <string name="category_Time">Χρόνος</string>
     <string name="category_Writing">Γραφή</string>
-
     <string name="empty_installed_app_list">Δεν έχουν εγκατασταθεί εφαρμογές.\n\nΥπάρχουν εφαρμογές στην συσκευή σας, αλλά δεν είναι διαθέσιμες από το F-Droid. Αυτό θα μπορούσε να είναι γιατί θα πρέπει να ενημερώσετε τα αποθετήριά σας, ή τα αποθετήρια δεν περιέχουν τις εφαρμογές σας.</string>
     <string name="empty_available_app_list">Δεν υπάρχουν εφαρμογές σε αυτή την κατηγορία.\n\nΠροσπαθήστε να επιλέξετε μια διαφορετική κατηγορία ή να ενημερώσετε τα αποθετήριά σας για να πάρετε μια νέα λίστα των εφαρμογών.</string>
     <string name="empty_can_update_app_list">Όλες οι εφαρμογές είναι ενημερωμένες.\n\nΣυγχαρητήρια! Όλες οι εφαρμογές σας είναι ενημερωμένες (ή τα αποθετήριά σας είναι παρωχημένα).</string>
-
     <string name="install_error_unknown">Απέτυχε η εγκατάσταση λόγω άγνωστου προβλήματος</string>
     <string name="uninstall_error_unknown">Αποτυχία απεγκατάστασης λόγω άγνωστου σφάλματος</string>
     <string name="system_install_denied_title">Η επέκταση του F-Droid με δικαιώματα συστήματος δεν είναι διαθέσιμη</string>
@@ -209,10 +196,8 @@
     <string name="system_install_warning_lollipop">Αυτό διαρκεί έως 10 δευτερόλεπτα και η συσκευή θα <b>επανεκκινηθεί</b> κατόπιν.</string>
     <string name="system_uninstall">Θέλετε να απεγκαταστήσετε την επέκταση του F-Droid με δικαιώματα συστήματος;</string>
     <string name="system_uninstall_button">Απεγκατάσταση</string>
-
     <string name="open_qr_code_scanner">Ανοίξτε τον σαρωτή QR</string>
     <string name="loading">Φόρτωση…</string>
-
     <string name="install_confirm">Θέλετε να εγκαταστήσετε αυτήν την εφαρμογή; Θα έχει πρόσβαση σε:</string>
     <string name="install_confirm_update">Θέλετε να ενημερώσετε αυτήν την εφαρμογή; Τα υπάρχοντα δεδομένα δεν θα χαθούν. Η ενημερωμένη εφαρμογή θα έχει πρόσβαση σε:</string>
     <string name="install_confirm_update_system">Θέλετε να ενημερώσετε αυτήν την ενσωματωμένη εφαρμογή; Τα υπάρχοντα δεδομένα δεν θα χαθούν. Η ενημερωμένη εφαρμογή θα έχει πρόσβαση σε:</string>
@@ -225,11 +210,9 @@
     <string name="uninstall_confirm">Θέλετε να απεγκαταστήσετε αυτή την εφαρμογή;</string>
     <string name="tap_to_install">Η λήψη ολοκληρώθηκε, πατήστε για να εγκαταστήσετε</string>
     <string name="download_error">Ανεπιτυχής λήψη</string>
-
     <string name="perms_new_perm_prefix">"Νέα: "</string>
     <string name="perms_description_app">Παρέχεται από %1$s.</string>
     <string name="downloading">Λήψη…</string>
-
     <string name="interval_never">Ποτέ</string>
     <string name="interval_1h">Ωριαία</string>
     <string name="interval_4h">Κάθε 4 ώρες</string>
@@ -237,17 +220,16 @@
     <string name="interval_1d">Ημερήσια</string>
     <string name="interval_1w">Εβδομαδιαία</string>
     <string name="interval_2w">Κάθε 2 εβδομάδες</string>
-
     <string name="theme_light">Φωτεινό</string>
     <string name="theme_dark">Σκοτεινό</string>
     <string name="theme_night">Νυχτερινό</string>
     <string name="status_inserting_apps">Αποθήκευση λεπτομερειών εφαρμογής</string>
     <string name="about_license">Άδεια</string>
-
     <string name="login_name">Όνομα χρήστη</string>
     <string name="login_password">Συνθηματικό</string>
     <string name="repo_edit_credentials">Τροποποίηση Συνθηματικού</string>
     <string name="login_title">Απαιτείται πιστοποίηση</string>
     <string name="useTor">Χρήση Tor</string>
     <string name="empty_search_installed_app_list">Καμία εγκαταστημένη εφαρμογή δεν ταιριάζει.</string>
+    <string name="menu_email">Στείλτε ένα μήνυμα στον συγγραφέα</string>
 </resources>

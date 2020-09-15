@@ -22,7 +22,7 @@
     <string name="no_such_app">Nessuna app corrispondente trovata.</string>
     <string name="about_title">Informazioni su F-Droid</string>
     <string name="about_site">Sito web</string>
-    <string name="about_mail">Email</string>
+    <string name="about_mail">E-mail</string>
     <string name="about_version">Versione</string>
     <string name="app_installed">Installato</string>
     <string name="app_not_installed">Non installato</string>
@@ -96,8 +96,8 @@
     <string name="proxy_port">Porta proxy</string>
     <string name="proxy_port_summary">Configura la porta del tuo proxy (es. 8118)</string>
     <string name="status_download">Scaricamento
-%2$s/%3$s (%4$d%%) da
-%1$s</string>
+\n%2$s/%3$s (%4$d%%) da
+\n%1$s</string>
     <string name="status_connecting_to_repo">Connessione a\n%1$s</string>
     <string name="repos_unchanged">Tutti i repository sono aggiornati</string>
     <string name="all_other_repos_fine">Tutti gli altri repository non hanno generato errori.</string>
@@ -119,15 +119,12 @@ alle applicazioni scaricate da indici non firmati.</string>
 Puoi attivarlo per vedere le applicazioni che fornisce.</string>
     <string name="unknown">Sconosciuto</string>
     <string name="repo_confirm_delete_title">Eliminare il repository?</string>
-    <string name="repo_confirm_delete_body">Eliminare un repository implica
-che le app contenute non saranno più disponibili su F-Droid.
-
-Nota: Tutte
-le applicazioni installate precedentemente rimarranno sul dispositivo.</string>
+    <string name="repo_confirm_delete_body">Eliminare un repository implica che le app contenute non saranno più disponibili su F-Droid Classic.
+\n
+\nNota: Tutte le applicazioni installate precedentemente rimarranno sul dispositivo.</string>
     <string name="repo_disabled_notification">%1$s è disabilitato.
-
-È necessario
-abilitare nuovamente questo repository per installare le app contenute.</string>
+\n
+\nÈ necessario abilitare nuovamente questo repository per installare le app contenute.</string>
     <string name="minsdk_or_later">%s o successivi</string>
     <string name="up_to_maxsdk">Fino a %s</string>
     <string name="minsdk_up_to_maxsdk">da %1$s fino a %2$s</string>
@@ -168,7 +165,7 @@ abilitare nuovamente questo repository per installare le app contenute.</string>
     <string name="downloading">Scaricamento…</string>
     <string name="tap_to_install">Scaricamento completato, tocca per installare</string>
     <string name="download_error">Scaricamento fallito</string>
-    <string name="perms_new_perm_prefix">"Nuovo: "</string>
+    <string name="perms_new_perm_prefix">Nuovo:</string>
     <string name="perms_description_app">Fornito da %1$s.</string>
     <string name="uninstall_confirm">Vuoi rimuovere questa app?</string>
     <string name="install_confirm">deve accedere a</string>
@@ -210,7 +207,7 @@ non saranno rimossi. L\'app dopo l\'aggiornamento avrà accesso a:</string>
     <string name="repo_url">Indirizzo</string>
     <string name="repo_added">Salvato il repository F-Droid %1$s.</string>
     <string name="repo_searching_address">Ricerca del repository F-Droid su
-%1$s</string>
+\n%1$s</string>
     <string name="pref_language">Lingua</string>
     <string name="pref_language_default">Predefinita di sistema</string>
     <string name="category_Connectivity">Connettività</string>
@@ -221,14 +218,14 @@ non saranno rimossi. L\'app dopo l\'aggiornamento avrà accesso a:</string>
     <string name="category_Time">Tempo</string>
     <string name="category_Writing">Scrittura</string>
     <string name="empty_installed_app_list">Nessun\'app installata.
-
-Ci sono delle app sul tuo dispositivo ma non sono disponibili su F-Droid. Ciò potrebbe essere dovuto al fatto che devi aggiornare i repository o che le app non sono disponibili all\'interno dei repository.</string>
+\n
+\nCi sono delle app sul tuo dispositivo ma non sono disponibili su F-Droid. Ciò potrebbe essere dovuto al fatto che devi aggiornare i repository o che le app non sono disponibili all\'interno dei repository.</string>
     <string name="empty_available_app_list">Nessuna app in questa categoria.
-
-Prova a selezionarne un\'altra o aggiorna i tuoi repository per ottenere una lista di app aggiornata.</string>
+\n
+\nProva a selezionarne un\'altra o aggiorna i tuoi repository per ottenere una lista di app aggiornata.</string>
     <string name="empty_can_update_app_list">Tutte le app sono aggiornate.
-
-Congratulazioni! Tutte le tue app sono aggiornate (o i tuoi repository non sono aggiornati).</string>
+\n
+\nCongratulazioni! Tutte le tue app sono aggiornate (o i tuoi repository non sono aggiornati).</string>
     <string name="install_error_unknown">Installazione fallita a causa di un errore sconosciuto</string>
     <string name="uninstall_error_unknown">Disinstallazione fallita a causa di un errore sconosciuto</string>
     <string name="system_install_denied_signature">La firma dell\'estensione è sbagliata! Per favore segnala questo problema!</string>
@@ -237,7 +234,7 @@ Congratulazioni! Tutte le tue app sono aggiornate (o i tuoi repository non sono 
     <string name="system_install_button_open">Apri l\'estensione</string>
     <string name="system_install_post_success">Estensione privilegiata di F-Droid installata con successo</string>
     <string name="system_install_post_fail">Installazione dell\'estensione privilegiata di F-Droid fallita</string>
-    <string name="system_install_post_success_message">L\'estensione privilegiata di F-Droid è stata installata con successo. Questo permette a F-Droid di installare e disinstallare applicazioni indipendentemente.</string>
+    <string name="system_install_post_success_message">L\'estensione privilegiata di F-Droid Classic è stata installata con successo. Questo permette a F-Droid di installare e disinstallare applicazioni indipendentemente.</string>
     <string name="system_install_post_fail_message">L\'installazione dell\'estensione privilegiata di F-Droid è fallita. Il metodo di installazione non è supportato da tutte le distribuzioni di Android, per favore consulta le segnalazioni di bug per maggiori informazioni.</string>
     <string name="system_install_installing">Installazione…</string>
     <string name="system_install_installing_rebooting">Installazione e riavvio…</string>
@@ -257,7 +254,7 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="update_notification_more">+%1$d rimanente…</string>
     <string name="empty_search_installed_app_list">Nessuna app installata corrispondente.</string>
     <string name="by_author_format">di %s</string>
-    <string name="menu_email">Invia email all\'autore</string>
+    <string name="menu_email">Invia un\'e-mail all\'autore</string>
     <string name="antinonfreeassetslist">Questa app contiene risorse non libere</string>
     <string name="empty_search_available_app_list">Non è disponibile nessuna app corrispondente.</string>
     <string name="empty_search_can_update_app_list">Nessuna app corrispondente è disponibile per l\'aggiornamento.</string>
@@ -309,7 +306,7 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="share_repository">Repository di azioni</string>
     <string name="signed">Siglato: %s</string>
     <string name="app_installed_media">File installato a %s</string>
-    <string name="download_all_updates">Aggiorna tutti</string>
+    <string name="download_all_updates">Scarica aggiornamenti</string>
     <string name="qr_code">QR-Code</string>
     <string name="repo_official_mirrors">Specchi ufficiali</string>
     <string name="repo_exists_add_mirror">Questa è una copia di %1$s, aggiungerla come specchio\?</string>
@@ -320,5 +317,10 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="details_last_updated_today">Aggiornato oggi</string>
     <string name="warning_scaning_qr_code">La vostra fotocamera non sembra avere una messa a fuoco automatica. Potrebbe essere difficile scansionare il codice.</string>
     <string name="download_404">Il file richiesto non è stato trovato.</string>
-    <string name="app_permission_storage">F-Droid ha bisogno dell\'autorizzazione di archiviazione per installarlo in memoria. Si prega di consentirlo nella schermata successiva per procedere con l\'installazione.</string>
+    <string name="app_permission_storage">F-Droid Classic ha bisogno dell\'autorizzazione di archiviazione per installarlo in memoria. Si prega di consentirlo nella schermata successiva per procedere con l\'installazione.</string>
+    <string name="menu_update_this_repo">Aggiorna questo repo</string>
+    <string name="install_all_updates">Installa aggionamenti</string>
+    <string name="force_update">Forza l\'aggionamento</string>
+    <string name="reset_transient_message">Sei sicuro/a di voler ripristinare il tuo cliente\? Tutti gli indici del repository dovranno essere scaricati di nuovo.</string>
+    <string name="reset_transient_title">Ripristinare la base di dati\?</string>
 </resources>
