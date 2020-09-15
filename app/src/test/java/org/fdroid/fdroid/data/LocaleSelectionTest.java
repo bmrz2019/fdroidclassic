@@ -2,7 +2,6 @@ package org.fdroid.fdroid.data;
 
 
 import android.os.Build;
-import android.os.LocaleList;
 
 import org.fdroid.fdroid.TestUtils;
 import org.junit.Test;
@@ -13,9 +12,7 @@ import java.util.Map;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 
 
 public class LocaleSelectionTest {
@@ -89,13 +86,11 @@ public class LocaleSelectionTest {
         assertThat(Build.VERSION.SDK_INT).isAtLeast(24);
 
         App app = spy(new App());
-        LocaleList localeList = mock(LocaleList.class);
 
-        // we mock both the getLocales call and the conversion to a language tag string.
-        doReturn(localeList).when(app).getLocales();
         // Set both default locale as well as the locale list, becasue the algorithm uses both...
         Locale.setDefault(new Locale("en", "US"));
-        when(localeList.toLanguageTags()).thenReturn("en-US,de-DE");
+        doReturn("en-US,de-DE").when(app).getLocales();
+
 
         //no metadata present
         Map<String, Map<String, Object>> localized = new HashMap<>();
@@ -120,7 +115,7 @@ public class LocaleSelectionTest {
         assertThat(app.summary).matches("summary-en_US");
 
         Locale.setDefault(new Locale("en", "SE"));
-        when(localeList.toLanguageTags()).thenReturn("en-SE,de-DE");
+        doReturn("en-SE,de-DE").when(app).getLocales();
         app.setLocalized(localized);
         // Fall back to another en locale before de
         assertThat(app.summary).matches("summary-en_US");
@@ -133,7 +128,7 @@ public class LocaleSelectionTest {
         localized.put("en-US", en_US);
 
         Locale.setDefault(new Locale("de", "AT"));
-        when(localeList.toLanguageTags()).thenReturn("de-AT,de-DE");
+        doReturn("de-AT,de-DE").when(app).getLocales();
         app.setLocalized(localized);
         // full match against a non-default locale
         assertThat(app.summary).matches("summary-de_AT");
@@ -146,7 +141,7 @@ public class LocaleSelectionTest {
         localized.put("en-US", en_US);
 
         Locale.setDefault(new Locale("de", "CH"));
-        when(localeList.toLanguageTags()).thenReturn("de-CH,en-US");
+        doReturn("de-CH,en-US").when(app).getLocales();
         app.setLocalized(localized);
         // TODO: We should fall back to `de` and not another de-XX locale
         assertThat(app.summary).matches("summary-de_..");
@@ -157,14 +152,14 @@ public class LocaleSelectionTest {
         localized.put("en-US", en_US);
 
         Locale.setDefault(new Locale("en", "AU"));
-        when(localeList.toLanguageTags()).thenReturn("en-AU");
+        doReturn("en-AU").when(app).getLocales();
         app.setLocalized(localized);
         // TODO: Hard mode: en_AU is closer to en_GB than en_US...
         assertThat(app.summary).matches("summary-en_..");
 
         app.summary = "reset";
         Locale.setDefault(new Locale("zh", "TW", "#Hant"));
-        when(localeList.toLanguageTags()).thenReturn("zh-Hant-TW,zh-Hans-CN");
+        doReturn("zh-Hant-TW,zh-Hans-CN").when(app).getLocales();
         localized.clear();
         localized.put("en", en_GB);
         localized.put("en-US", en_US);

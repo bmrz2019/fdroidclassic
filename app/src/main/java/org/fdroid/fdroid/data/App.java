@@ -501,8 +501,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
             }
         }
         if (Build.VERSION.SDK_INT >= 24) {
-            LocaleList localeList = getLocales();
-            String[] sortedLocaleList = localeList.toLanguageTags().split(",");
+            String[] sortedLocaleList = getLocales().split(",");
             Arrays.sort(sortedLocaleList, (s1, s2) -> s1.length() - s2.length());
             for (String toUse : sortedLocaleList) {
                 localesToUse.add(toUse);
@@ -563,8 +562,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    LocaleList getLocales() {
-        return Resources.getSystem().getConfiguration().getLocales();
+    String getLocales() {
+        return Resources.getSystem().getConfiguration().getLocales().toLanguageTags();
     }
 
     /**

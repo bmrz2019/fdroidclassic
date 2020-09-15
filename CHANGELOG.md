@@ -1,4 +1,8 @@
-### 1.1-beta1 (??)
+### 1.1-beta2 (15.9.2020)
+
+* Fix Index update being completely broken on Android < 7 introduced in 1.1-beta1
+
+### 1.1-beta1 (14.9.2020)
 
 * Implement repo force refresh and db reset options (#33)
 * Add option to update a single repo from the repository details
