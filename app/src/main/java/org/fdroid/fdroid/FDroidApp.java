@@ -226,7 +226,14 @@ public class FDroidApp extends Application {
 
         DiskCache diskCache;
         long available = Utils.getImageCacheDirAvailableMemory(this);
-        int percentageFree = Utils.getPercent(available, Utils.getImageCacheDirTotalMemory(this));
+        long memFree = Utils.getImageCacheDirTotalMemory(this);
+        int percentageFree;
+        if (memFree == 0){
+            percentageFree = 0;
+        }
+        else {
+            percentageFree = Utils.getPercent(available, memFree);
+        }
         if (percentageFree > 5) {
             diskCache = new UnlimitedDiskCache(Utils.getImageCacheDir(this));
         } else {
