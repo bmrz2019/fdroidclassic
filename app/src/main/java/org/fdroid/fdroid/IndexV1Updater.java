@@ -181,7 +181,7 @@ public class IndexV1Updater extends IndexUpdater {
         return true;
     }
 
-    private void processDownloadedIndex(File outputFile, String cacheTag)
+    public void processDownloadedIndex(File outputFile, String cacheTag)
             throws IOException, IndexUpdater.UpdateException {
         JarFile jarFile = new JarFile(outputFile, true);
         JarEntry indexEntry = (JarEntry) jarFile.getEntry(DATA_FILE_NAME);
