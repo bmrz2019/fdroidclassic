@@ -210,7 +210,7 @@ public class InstalledAppProviderService extends JobIntentService {
         }
         //notify on sub-uri immediately
         getContentResolver().notifyChange(AppProvider.getHighestPriorityMetadataUri(packageName), null);
-        //notify top level content resolvers ony every 3 seconds
+        //notify top level content resolvers only every 3 seconds
         notifyChange();
     }
 

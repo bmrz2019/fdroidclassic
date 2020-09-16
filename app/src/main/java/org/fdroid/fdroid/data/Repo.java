@@ -120,7 +120,7 @@ public class Repo extends ValueObject{
     public String[] mirrors;
 
     /**
-     * Mirrors added by the user, either by UI input or by attaching removeable storage
+     * Mirrors added by the user, either by UI input or by attaching removable storage
      */
     public String[] userMirrors;
 
@@ -219,7 +219,7 @@ public class Repo extends ValueObject{
     }
 
     /**
-     * This happens when a repo is configed with a fingerprint, but the client
+     * This happens when a repo is configured with a fingerprint, but the client
      * has not connected to it yet to download its signing certificate
      */
     public boolean isSignedButUnverified() {

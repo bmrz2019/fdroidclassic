@@ -547,7 +547,7 @@ public class Apk extends ValueObject implements Comparable<Apk>, Parcelable {
             }
             if (targetSdkVersion >= 29) {
                 // Do nothing. The targetSdk for the below split-permissions is set to 29,
-                // so we don't make any changes for apps targetting 29 or above
+                // so we don't make any changes for apps targeting 29 or above
             } else {
                 // TODO: Change the strings below to Manifest.permission once we target SDK 29.
                 if (set.contains(Manifest.permission.ACCESS_FINE_LOCATION)) {

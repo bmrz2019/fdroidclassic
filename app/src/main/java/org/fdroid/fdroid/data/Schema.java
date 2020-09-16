@@ -14,7 +14,7 @@ public interface Schema {
      * device. It differs from entries in:
      *  * {@link ApkTable} because they are specific builds of a particular package. Many different
      *    builds of the same package can exist.
-     *  * {@link AppMetadataTable} because this is metdata about a package which is specified by a
+     *  * {@link AppMetadataTable} because this is metadata about a package which is specified by a
      *    given repo. Different repos can provide the same package with different descriptions,
      *    categories, etc.
      */
