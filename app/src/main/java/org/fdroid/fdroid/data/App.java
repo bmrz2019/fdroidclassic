@@ -176,7 +176,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     /**
      * Unlike other public fields, this is only accessible via a getter, to
-     * emphasise that setting it wont do anything. In order to change this,
+     * emphasise that setting it won't do anything. In order to change this,
      * you need to change suggestedVersionCode to an apk which is in the
      * apk table.
      */
@@ -650,7 +650,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 return null;
             }
             if (iconFromApk.endsWith(".xml")){
-                // We cannot use xml ressources as icons. F-Droid server should not include them
+                // We cannot use xml resources as icons. F-Droid server should not include them
                 // https://gitlab.com/fdroid/fdroidserver/issues/344
                 return null;
             }
@@ -1289,7 +1289,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
      * Choose the signature which we should encourage the user to install.
      * Usually, we want the {@link #preferredSigner} rather than any random signature.
      * However, if the app is installed, then we override this and instead want to only encourage
-     * the user to try and install versions with that signature (because thats all the OS will let
+     * the user to try and install versions with that signature (because that's all the OS will let
      * them do).
      * <p>
      * Will return null for any {@link App} which represents media (instead of an apk) and thus

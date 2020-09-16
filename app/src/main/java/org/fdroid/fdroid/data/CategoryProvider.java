@@ -272,7 +272,7 @@ public class CategoryProvider extends FDroidProvider {
     /**
      * Deleting of categories is not required.
      * It doesn't matter if we have a category in the database when no apps are in that category.
-     * They wont take up much space, and it is the presence of rows in the
+     * They won't take up much space, and it is the presence of rows in the
      * {@link CatJoinTable} which decides whether a category is displayed in F-Droid or not.
      */
     @Override

@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Helper class used by sublasses of ContentProvider to make the constraints
+ * Helper class used by subclasses of ContentProvider to make the constraints
  * required for a given content URI (e.g. all apps that belong to a repo)
  * easily appendable to the constraints which are passed into, e.g. the query()
  * method in the content provider.

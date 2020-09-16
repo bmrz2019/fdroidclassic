@@ -145,7 +145,7 @@ public class PackageProvider extends FDroidProvider {
     /**
      * Deleting of packages is not required.
      * It doesn't matter if we have a package name in the database after the package is no longer
-     * present in the repo any more. They wont take up much space, and it is the presence of rows
+     * present in the repo any more. They won't take up much space, and it is the presence of rows
      * in the {@link Schema.AppMetadataTable} which decides whether something is available in the
      * F-Droid client or not.
      */
