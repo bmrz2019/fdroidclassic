@@ -121,8 +121,8 @@ avec les applications téléchargées depuis des index non signés.</string>
 Vous devez l\'activer pour voir la liste des applis qu\'il offre.</string>
     <string name="unknown">Inconnu</string>
     <string name="repo_confirm_delete_title">Supprimer le dépôt ?</string>
-    <string name="repo_confirm_delete_body">Supprimer un dépôt signifie que ses applis ne seront plus disponibles via F-Droid.
-\n
+    <string name="repo_confirm_delete_body">Supprimer un dépôt signifie que ses applis ne seront plus disponibles via F-Droid Classic. 
+\n 
 \nNote : toutes les applis précédemment installées vont rester sur votre appareil.</string>
     <string name="minsdk_or_later">%s ou plus récent</string>
     <string name="up_to_maxsdk">Jusqu\'à %s</string>
@@ -152,7 +152,7 @@ Vous devez l\'activer pour voir la liste des applis qu\'il offre.</string>
     <string name="tab_installed_apps">Installées</string>
     <string name="bad_fingerprint">Mauvaise empreinte</string>
     <string name="invalid_url">Ceci n\'est pas une URL valide.</string>
-    <string name="menu_changelog">Liste des changements</string>
+    <string name="menu_changelog">Journal des changements</string>
     <string name="update_notification_title">Mise à jour des dépôts</string>
     <string name="pref_language">Langue</string>
     <string name="pref_language_default">Langue du système</string>
@@ -183,7 +183,7 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="uninstall_confirm">Voulez-vous désinstaller cette appli ?</string>
     <string name="tap_to_install">Téléchargement terminé, appuyez pour installer</string>
     <string name="download_error">Le téléchargement a échoué</string>
-    <string name="perms_new_perm_prefix">Nouvelle:</string>
+    <string name="perms_new_perm_prefix">Nouvelle :</string>
     <string name="downloading">Téléchargement…</string>
     <string name="interval_never">Jamais</string>
     <string name="interval_4h">Toutes les 4 heures</string>
@@ -221,7 +221,7 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="system_install_button_open">Lancer l\'appli Privileged Extension</string>
     <string name="system_install_post_success">F-Droid Privileged Extension a été installée avec succès</string>
     <string name="system_install_post_fail">Échec de l\'installation de F-Droid Privileged Extension</string>
-    <string name="system_install_post_success_message">F-Droid Privileged Extension a été installée avec succès. Elle permet à F-Droid d\'installer, mettre à jour et désinstaller des applis de son propre chef.</string>
+    <string name="system_install_post_success_message">F-Droid Privileged Extension a été installée avec succès. Elle permet à F-Droid Classic d\'installer, mettre à jour et désinstaller des applis de son propre chef.</string>
     <string name="system_install_post_fail_message">Échec de l\'installation de F-Droid Privileged Extension. La méthode d\'installation utilisée n\'est pas supportée par toutes les variantes d\'Android. Veuillez consulter la base de donnée de bogues pour plus d\'informations.</string>
     <string name="system_install_installing_rebooting">Installation et redémarrage…</string>
     <string name="system_install_question">Voulez-vous installer F-Droid Privileged Extension ?</string>
@@ -301,10 +301,16 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="menu_appinfo">App Info (Paramètres du système)</string>
     <string name="antiknownvulnlist">Cette application contient une faille de sécurité connue</string>
     <string name="details_last_updated_today">Mis à jour aujourd\'hui</string>
-    <string name="app_permission_storage">F-Droid a besoin de l\'autorisation de stockage pour l\'installer sur le stockage. Veuillez l\'autoriser sur l\'écran suivant pour procéder à l\'installation.</string>
+    <string name="app_permission_storage">F-Droid Classic a besoin de l\'autorisation de stockage pour l\'installer sur le stockage. Veuillez l\'autoriser sur l\'écran suivant pour procéder à l\'installation.</string>
     <string name="repo_official_mirrors">officiels Mirrors</string>
     <string name="repo_user_mirrors">Utilisateur Mirrors</string>
     <string name="status_inserting_x_apps">Détails de l\'application d\'épargne (%1$d/%2$d) à partir de %3$s</string>
-    <string name="download_all_updates">Actualiser tout</string>
+    <string name="download_all_updates">Télécharger les MàJ</string>
     <string name="share_repository">Référentiel de partage</string>
+    <string name="menu_update_this_repo">Mettre à jour ce dépôt</string>
+    <string name="install_all_updates">Installer les MàJ</string>
+    <string name="force_update">Forcer la MàJ</string>
+    <string name="reset_transient_message">Êtes-vous sûr·e de vouloir réinitialiser votre client \? Tous les index de dépôt devront être à nouveau téléchargés.</string>
+    <string name="reset_transient_title">Réinitialiser la base de données \?</string>
+    <string name="app_name">F-Droid Classic</string>
 </resources>

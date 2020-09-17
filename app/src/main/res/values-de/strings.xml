@@ -37,7 +37,7 @@
     <string name="add_key">Schlüssel hinzufügen</string>
     <string name="overwrite">Überschreiben</string>
     <string name="tab_available_apps">Verfügbar</string>
-    <string name="tab_updates">Updates</string>
+    <string name="tab_updates">Aktualisierungen</string>
     <string name="one_update_available">Ein Update ist verfügbar.</string>
     <string name="many_updates_available">%d Updates sind verfügbar.</string>
     <string name="fdroid_updates_available">F-Droid: Updates verfügbar</string>
@@ -59,7 +59,7 @@
     <string name="menu_uninstall">Entfernen</string>
     <string name="menu_ignore_all">Alle Aktua. ignorieren</string>
     <string name="menu_ignore_this">Diese Aktua. ignorieren</string>
-    <string name="menu_website">Internetseite</string>
+    <string name="menu_website">Website</string>
     <string name="menu_issues">Probleme</string>
     <string name="menu_source">Quelltext</string>
     <string name="menu_upgrade">Aktualisieren</string>
@@ -118,14 +118,12 @@ Anwendungen aus nicht signierten Quellen vorsichtig sein.</string>
 Um darin bereitgestellte Anwendungen anzuzeigen, muss sie aktiviert werden.</string>
     <string name="unknown">Unbekannt</string>
     <string name="repo_confirm_delete_title">Paketquelle löschen?</string>
-    <string name="repo_confirm_delete_body">Das Löschen einer Paketquelle bedeutet,
-Anwendungen daraus werden nicht mehr in F-Droid verfügbar sein.
-
-Hinweis: Alle
-zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
+    <string name="repo_confirm_delete_body">Das Löschen einer Paketquelle bedeutet, Anwendungen daraus werden nicht mehr in F-Droid Classic verfügbar sein.
+\n
+\nHinweis: Alle zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
     <string name="repo_added">F-Droid-Paketquelle %1$s gespeichert.</string>
     <string name="repo_searching_address">Nach F-Droid-Paketquelle wird unter
-%1$s gesucht</string>
+\n%1$s gesucht</string>
     <string name="minsdk_or_later">%s oder später</string>
     <string name="up_to_maxsdk">Bis zu %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s bis zu %2$s</string>
@@ -170,7 +168,7 @@ zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
     <string name="category_Writing">Schreiben</string>
     <string name="system_uninstall_button">Deinstallieren</string>
     <string name="newPerms">Neu</string>
-    <string name="perms_new_perm_prefix">"Neu: "</string>
+    <string name="perms_new_perm_prefix">Neu:</string>
     <string name="interval_1h">Stündlich</string>
     <string name="interval_4h">Alle 4 Stunden</string>
     <string name="interval_12h">Alle 12 Stunden</string>
@@ -205,7 +203,7 @@ zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
     <string name="system_install_uninstalling">Wird deinstalliert …</string>
     <string name="system_install_warning">Das wird bis zu 10 Sekunden dauern.</string>
     <string name="system_install_warning_lollipop">Das wird bis zu 10 Sekunden dauern und das Gerät wird anschließend <b>neu gestartet</b>.</string>
-    <string name="system_install_post_success_message">Privilegierte F-Droid-Erweiterung wurde erfolgreich installiert. Das erlaubt F-Droid, selbständig Anwendungen zu installieren, aktualisieren und zu entfernen.</string>
+    <string name="system_install_post_success_message">Privilegierte F-Droid-Erweiterung wurde erfolgreich installiert. Das erlaubt F-Droid Classic, selbständig Anwendungen zu installieren, aktualisieren und zu entfernen.</string>
     <string name="system_install_post_fail_message">Die Installation der privilegierten F-Droid-Erweiterung ist fehlgeschlagen. Diese Installationsmethode wird nicht durch alle Android-Distributionen unterstützt, bitte in der F-Droid-Fehlerdatenbank für weitere Informationen nachsehen.</string>
     <string name="system_install_question">Möchten Sie die privilegierte F-Droid-Erweiterung installieren?</string>
     <string name="system_uninstall">Möchten Sie die privilegierte F-Droid-Erweiterung deinstallieren?</string>
@@ -231,7 +229,7 @@ zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
     <string name="repo_error_empty_username">Leerer Benutzername, Anmeldeinformationen nicht geändert</string>
     <string name="about_license">Lizenz</string>
     <string name="tab_installed_apps_count">Installiert (%d)</string>
-    <string name="tab_updates_count">Updates (%d)</string>
+    <string name="tab_updates_count">Aktualisierungen (%d)</string>
     <string name="status_inserting_apps">Anwendungsdetails werden gespeichert</string>
     <string name="empty_search_can_update_app_list">Keine passenden Anwendungen zum Aktualisieren.</string>
     <string name="empty_search_available_app_list">Keine passenden Anwendungen verfügbar.</string>
@@ -270,7 +268,7 @@ zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
     <string name="status_inserting_x_apps">Speichern von App-Details (%1$d/%2$d) von %3$s</string>
     <string name="details_last_updated_today">Heute aktualisiert</string>
     <string name="signed">Signiert: %s</string>
-    <string name="download_404">Die angeforderte Datei wurde nicht gefunden.</string>
+    <string name="download_404">Die erforderliche Datei konnte nicht gefunden werden.</string>
     <plurals name="details_last_update_days">
         <item quantity="one">Aktualisiert %1$d Tag zuvor</item>
         <item quantity="other">Aktualisiert vor %1$d Tagen</item>
@@ -288,12 +286,18 @@ zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
         <item quantity="other">Aktualisiert vor %1$d Jahren</item>
     </plurals>
     <string name="app_installed_media">Datei installiert nach %s</string>
-    <string name="share_repository">Teile Repository</string>
+    <string name="share_repository">Paketquelle teilen</string>
     <string name="qr_code">QR-Code</string>
-    <string name="download_all_updates">Alles aktualisieren</string>
-    <string name="app_permission_storage">F-Droid benötigt die Speicherberechtigung, um dies zu installieren. Bitte erlaube das auf dem nächsten Bildschirm, um mit der Installation fortzufahren.</string>
-    <string name="warning_no_internet">Kann nicht aktualisiert werden, bist Du mit dem Internet verbunden\?</string>
+    <string name="download_all_updates">Aktualisierungen herunterladen</string>
+    <string name="app_permission_storage">F-Droid Classic benötigt die Speicherberechtigung, um dies zu installieren. Bitte erlaube das auf dem nächsten Bildschirm, um mit der Installation fortzufahren.</string>
+    <string name="warning_no_internet">Aktualisierung nicht möglich; sind Sie mit dem Internet verbunden\?</string>
     <string name="antinosourcesince">Der Quellcode ist nicht mehr verfügbar, keine Aktualisierungen möglich.</string>
     <string name="menu_appinfo">App-Info (System Einstellungen)</string>
     <string name="repo_official_mirrors">Offizielle Mirrors</string>
+    <string name="menu_update_this_repo">Diese Paketquellen aktualisieren</string>
+    <string name="reset_transient_message">Sind Sie sicher, dass Sie Ihren Client zurücksetzen wollen\? Alle Paketquellenindizes müssen erneut heruntergeladen werden.</string>
+    <string name="app_name">F-Droid Classic</string>
+    <string name="install_all_updates">Aktualisierungen installieren</string>
+    <string name="force_update">Aktualisierung zwingen</string>
+    <string name="reset_transient_title">Datenbank zurücksetzen\?</string>
 </resources>

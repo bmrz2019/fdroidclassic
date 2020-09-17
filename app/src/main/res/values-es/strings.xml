@@ -245,7 +245,7 @@ No requiere ningún acceso especial.</string>
     <string name="empty_search_available_app_list">No hay coincidencias con las aplicaciones disponibles.</string>
     <string name="empty_search_can_update_app_list">No hay ninguna coincidencia con ninguna aplicación a actualizar.</string>
     <string name="by_author_format">por %s</string>
-    <string name="menu_email">Correo electrónico del autor</string>
+    <string name="menu_email">Correo electrónico al autor</string>
     <string name="useTor">Usar Tor</string>
     <string name="useTorSummary">Forzar el tráfico de bajada a través de Tor para mejorar la privacidad</string>
     <string name="repo_provider">Repositorio: %s</string>

@@ -20,7 +20,7 @@
     <string name="system_installer_on">Usar extensão privilegiada do F-Droid para instalar, atualizar e remover pacotes</string>
     <string name="app_details">Detalhes do aplicativo</string>
     <string name="no_such_app">O aplicativo não foi encontrado.</string>
-    <string name="about_mail">E-Mail</string>
+    <string name="about_mail">Correio eletrônico</string>
     <string name="about_version">Versão</string>
     <string name="app_installed">Instalado</string>
     <string name="app_not_installed">Não Instalado</string>
