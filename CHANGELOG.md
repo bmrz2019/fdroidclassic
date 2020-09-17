@@ -1,6 +1,8 @@
-### 1.1-beta3 (?)
+### 1.1-beta3 (17.9.2020)
 
 * Display Screenshots!
+* Add missing Liberapay and Open Collective donation options
+* Show translations links for apps that have them specified
 * Disable the F-Droid Classic repo by default for new installs
 
 ### 1.1-beta2 (15.9.2020)
