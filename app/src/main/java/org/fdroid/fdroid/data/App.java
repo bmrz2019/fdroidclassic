@@ -1346,4 +1346,9 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
         return null;
     }
+
+    public boolean hasDonationOptions() {
+        return liberapay != null || openCollective != null || donate != null || bitcoin != null
+                || litecoin != null || flattrID != null;
+    }
 }

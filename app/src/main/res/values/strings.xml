@@ -362,5 +362,6 @@
     <string name="link_translate">Translations</string>
     <string name="liberapay">Liberapay</string>
     <string name="opencollective">Open Collective</string>
+    <string name="links_and_donations"><![CDATA[Links & Donations]]></string>
 
 </resources>

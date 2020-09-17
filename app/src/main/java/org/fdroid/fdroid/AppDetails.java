@@ -1190,6 +1190,10 @@ public class AppDetails extends AppCompatActivity {
             final TextView linksHeader = view.findViewById(R.id.information);
             linksHeader.setOnClickListener(expanderLinks);
 
+            if(app.hasDonationOptions()){
+                linksHeader.setText(R.string.links_and_donations);
+            }
+
             // Website button
             View tv = view.findViewById(R.id.website);
             if (!TextUtils.isEmpty(app.webSite)) {
