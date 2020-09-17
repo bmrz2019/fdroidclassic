@@ -4,9 +4,7 @@
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:paddingLeft="?attr/listPreferredItemPaddingLeft"
     android:paddingStart="?attr/listPreferredItemPaddingLeft"
-    android:paddingRight="?attr/listPreferredItemPaddingRight"
     android:paddingEnd="?attr/listPreferredItemPaddingRight"
     android:descendantFocusability="blocksDescendants">
     <!--

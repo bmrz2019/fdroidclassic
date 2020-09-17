@@ -148,6 +148,13 @@ Builds:
     gradle:
       - yes
 
+  - versionName: 1.1-beta3
+    versionCode: 1103
+    commit: v1.1-beta3
+    subdir: app
+    gradle:
+      - yes
+
 AutoUpdateMode: None
 UpdateCheckMode: None
 CurrentVersion: 1.0

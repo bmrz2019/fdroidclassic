@@ -29,6 +29,5 @@ This is the structure for the list of all permissions.
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingEnd="4dp"
-        android:paddingRight="4dp"
         tools:ignore="RtlSymmetry" />
 </org.fdroid.fdroid.privileged.views.CaffeinatedScrollView>
