@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Copyright (C) 2015 Nico Alt, nicoalt@posteo.org
 
     This program is free software; you can redistribute it and/or
@@ -21,35 +20,35 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="8dp"
-    android:paddingLeft="@dimen/layout_horizontal_margin"
     android:paddingStart="@dimen/layout_horizontal_margin"
-    android:paddingRight="@dimen/layout_horizontal_margin"
+    android:paddingLeft="@dimen/layout_horizontal_margin"
+    android:paddingTop="4dp"
     android:paddingEnd="@dimen/layout_horizontal_margin"
-    android:paddingTop="4dp">
+    android:paddingRight="@dimen/layout_horizontal_margin"
+    android:paddingBottom="8dp">
 
     <TextView
-        android:textIsSelectable="true"
         android:id="@+id/summary"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textIsSelectable="true"
         android:textStyle="bold"
         tools:text="Application manager" />
 
     <TextView
-        android:textIsSelectable="true"
         android:id="@+id/package_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textIsSelectable="true"
         android:textSize="12sp"
         android:textStyle="italic"
         tools:text="org.fdroid.fdroid" />
 
     <TextView
-        android:textIsSelectable="true"
         android:id="@+id/signature"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textIsSelectable="true"
         android:textSize="12sp" />
 
     <TextView
@@ -66,31 +65,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:orientation="vertical"
-        android:focusable="true">
+        android:focusable="true"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/whats_new"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:background="?attr/detailPanel"
             android:paddingStart="8dp"
-            android:paddingEnd="8dp"
             android:paddingTop="4dp"
+            android:paddingEnd="8dp"
             android:paddingBottom="8dp"
             android:textSize="13sp"
-            android:background="?attr/detailPanel"
             tools:text="NEW IN VERSION 1.0.2233\n\nA lot has happened since he last build:\n\n\t• Improved UI\n\t• Bug fixes" />
 
         <TextView
             android:id="@+id/description"
-            android:autoLink="web|email"
-            android:textIsSelectable="true"
-            android:scrollbars="none"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4sp"
+            android:autoLink="web|email"
+            android:scrollbars="none"
             android:singleLine="false"
+            android:textIsSelectable="true"
             android:textSize="13sp"
             tools:text="Connects to F-Droid compatible repositories. The default repo is hosted at f-droid.org, which contains only bona fide FOSS.
 \n\n
@@ -129,22 +128,22 @@ Changelog" />
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:orientation="vertical"
-        android:focusable="true">
+        android:focusable="true"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/information"
             style="@style/AppDetailsSubheaderText"
-            android:text="@string/links"
+            android:drawableStart="@drawable/ic_website"
             android:drawableEnd="@drawable/ic_expand_more_grey600"
-            android:drawableStart="@drawable/ic_website" />
+            android:text="@string/links" />
 
         <LinearLayout
             android:id="@+id/ll_information_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginStart="@dimen/layout_horizontal_margin"
+            android:orientation="vertical"
             android:visibility="gone">
 
             <TextView
@@ -208,27 +207,27 @@ Changelog" />
         android:id="@+id/ll_permissions"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:orientation="vertical"
         android:layout_marginBottom="8dp"
-        android:focusable="true">
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/permissions"
             style="@style/AppDetailsSubheaderText"
-            android:text="@string/permissions"
             android:drawableStart="@drawable/ic_lock_24dp_grey600"
-            android:drawableEnd="@drawable/ic_expand_more_grey600" />
+            android:drawableEnd="@drawable/ic_expand_more_grey600"
+            android:text="@string/permissions" />
 
         <LinearLayout
             android:id="@+id/permission_list"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:fontFamily="sans-serif-light"
+            android:orientation="vertical"
+            android:paddingEnd="4dp"
             android:textSize="14sp"
             android:visibility="gone"
-            android:paddingEnd="4dp"
             tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
