@@ -84,6 +84,12 @@ This used to be the case, but no longer is. Now the [Privileged
 Extension](https://gitlab.com/fdroid/privileged-extension) is the one that should be placed in
 the system. It can be bundled with a ROM or installed via a zip.
 
+## Translation
+
+Translations are here: https://weblate.bubu1.eu/projects/f-droid-classic/
+
+[![Translation status](https://weblate.bubu1.eu/widgets/f-droid-classic/-/svg-badge.svg)](https://weblate.bubu1.eu/engage/f-droid-classic/?utm_source=widget)
+
 ## License
 
 This program is Free Software: You can use, study share and improve it at your
@@ -102,10 +108,3 @@ Other icons are from the
 [Material Design Icon set](https://github.com/google/material-design-icons)
 released under an
 [Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
-
-
-## Translation
-
-Translations are here: https://weblate.bubu1.eu/projects/f-droid-classic/
-
-[![Translation status](https://weblate.bubu1.eu/widgets/f-droid-classic/-/svg-badge.svg)](https://weblate.bubu1.eu/engage/f-droid-classic/?utm_source=widget)
