@@ -32,12 +32,12 @@ installation screens
         android:id="@+id/app_icon"
         android:layout_width="48dip"
         android:layout_height="48dip"
-        android:layout_marginLeft="8dip"
         android:layout_marginStart="8dip"
         android:background="@android:color/transparent"
         android:gravity="start"
         android:scaleType="centerCrop"
-        tools:src="@mipmap/ic_launcher" />
+        tools:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/app_icon" />
 
     <TextView
         android:id="@+id/app_name"
