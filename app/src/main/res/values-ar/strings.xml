@@ -4,8 +4,7 @@
   <string name="delete">حذف</string>
   <string name="updates">التحديثات</string>
     <string name="app_details">تفاصيل التطبيق</string>
-  <string name="about_site">الموقع الإلكتروني</string>
-  <string name="about_mail">البريد الإلكتروني</string>
+    <string name="about_mail">البريد الإلكتروني</string>
   <string name="about_version">الإصدار</string>
   <string name="app_installed">مثبت</string>
   <string name="app_not_installed">غير مثبت</string>
@@ -89,8 +88,7 @@
 
     <string name="no_such_app">لم يتم العثور على مثل هذا التطبيق.</string>
 
-    <string name="about_title">معلومات عن اف-درويد</string>
-    <string name="about_source">الشفره المصدريه</string>
+  <string name="about_source">الشفره المصدريه</string>
     <string name="about_license">الترخيص</string>
 
     <string name="app_incompatible">غير متوافقة</string>
@@ -185,8 +183,7 @@
     <string name="unsigned_description">هذا يعني أن قائمة من الطلبات التي لا يمكن التحقق منها. يجب أن تكون حذرا مع التطبيقات التي تم تنزيلها من مؤشرات غير موقعة.</string>
     <string name="repo_not_yet_updated">لم يتم استخدام هذا المستودع حتى الان. تحتاج إلى تمكينها من عرض التطبيقات التي يقدمها.</string>
     <string name="repo_confirm_delete_body">حذف المستودع يعني أنه من التطبيقات لم يعد متاحا من اف-درويد.\n\nملاحظة: ستبقى جميع التطبيقات المثبتة مسبقا على جهازك.</string>
-    <string name="repo_disabled_notification">تعطيل %1$s.\n\nسوف تحتاج إلى إعادة تمكين هذه مستودع لتثبيته من التطبيقات.</string>
-    <string name="repo_added">مستودع المحفوظات التابع لاف-درويد %1$s.</string>
+  <string name="repo_added">مستودع المحفوظات التابع لاف-درويد %1$s.</string>
     <string name="repo_searching_address">أبحث عن مستودع اف-درويد في\n%1$s</string>
     <string name="minsdk_or_later">%s أو فيما بعد</string>
     <string name="up_to_maxsdk">حتى %s</string>
@@ -234,7 +231,6 @@
     <string name="system_install_warning_lollipop">ذلك سيستغرق فترة تصل إلى 10 ثانية، وسوف يتم <b>إعادة تشغيل</b> بعد ذلك.</string>
     <string name="system_uninstall">هل تريد إلغاء تثبيت اف-درويد مميز التمديد؟</string>
     <string name="system_uninstall_button">الغاء التثبيت</string>
-    <string name="system_install_not_supported">اف-درويد مميز التمديد غير مدعوم حاليا تثبيته على الأندرويد الإصدار 5.1 و بعد.</string>
 
   <string name="open_qr_code_scanner">فتح لاقط رمز الاستجابة السريع</string>
   <string name="loading">يتم التحميل…</string>

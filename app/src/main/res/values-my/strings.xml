@@ -32,9 +32,7 @@
     <string name="app_details">App အေသးစိတ္အခ်က္အလက္မ်ား</string>
     <string name="no_such_app">ထိုကဲ့သို႔ app မေတြ႕ပါ.</string>
 
-    <string name="about_title">F-Droid အေၾကာင္း</string>
     <string name="about_version">ဗားရွင္း</string>
-    <string name="about_site">ဝဘ္ဆုိဒ္</string>
     <string name="about_source">ဆို႔စ္ ကုဒ္</string>
     <string name="about_mail">အီးေမးလ္</string>
     <string name="about_license">လိုင္စင္</string>

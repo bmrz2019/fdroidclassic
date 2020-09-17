@@ -12,8 +12,6 @@
     <string name="update_history">Histórico de actualizacións</string>
     <string name="app_details">Detalles da ap</string>
     <string name="no_such_app">Non se atopou ese aplicativo.</string>
-    <string name="about_title">Sobre F-Droid</string>
-    <string name="about_site">Sitio web:</string>
     <string name="about_mail">Enderezo electrónico:</string>
     <string name="about_version">Versión:</string>
     <string name="app_installed">Instalada</string>
@@ -207,7 +205,6 @@
     <string name="unknown">Descoñecido</string>
     <string name="repo_confirm_delete_title">Eliminar o repositorio?</string>
     <string name="repo_confirm_delete_body">Eliminar un repositorio implica que os seus aplicativos deixen de estar dispoñibles en F-Droid.\n\nNota: Todos os aplicativos instalados anteriormente se conservarán no teu dispositivo.</string>
-    <string name="repo_disabled_notification">Desactivado %1$s.\n\nTerás que volver a activar o repositorio para instalar os seus aplicativos.</string>
     <string name="repo_added">Gardado o repositorio %1$s de F-Droid.</string>
     <string name="repo_searching_address">Buscando o repositorio F-Droid en\n%1$s</string>
     <string name="minsdk_or_later">%s ou maior</string>

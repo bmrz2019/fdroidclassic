@@ -18,8 +18,6 @@
     <string name="system_installer_on">Použít privilegovaná rozšíření F-Droid k instalování, aktualizaci a odebírání balíčků</string>
     <string name="app_details">Detaily aplikace</string>
     <string name="no_such_app">Žádná taková aplikace nebyla nalezena.</string>
-    <string name="about_title">O aplikaci F-Droid</string>
-    <string name="about_site">Webová stránka</string>
     <string name="about_mail">Email</string>
     <string name="about_version">Verze</string>
     <string name="app_installed">Nainstalováno</string>
@@ -96,7 +94,6 @@
     <string name="repo_not_yet_updated">Tento repozitář ještě nebyl použit. Pro zobrazení nabízených aplikací je nutné ho nejprve aktualizovat.</string>
     <string name="repo_confirm_delete_title">Odebrat repositář?</string>
     <string name="repo_confirm_delete_body">Po odebrání repozitáře nebudou nabízené aplikace nadále dostupné v F-Droidu.\n\nPozn.: Všechny dříve nainstalované aplikace budou na tomto zařízení ponechány beze změn.</string>
-    <string name="repo_disabled_notification">%1$s zakázáno.\n\nPro instalaci aplikací z tohoto repozitáře ho bude neprve třeba znovu povolit.</string>
     <string name="minsdk_or_later">%s nebo novější</string>
     <string name="requires_features">Vyžaduje: %1$s</string>
     <string name="app_icon">Ikona aplikace</string>
@@ -234,7 +231,6 @@
     <string name="repo_provider">Repozitář: %s</string>
     <string name="useTor">Použít Tor</string>
     <string name="useTorSummary">Vynutit stahování přes Tor pro zvýšení bezpečnosti</string>
-    <string name="system_install_not_supported">Instalace rozšíření oprávnění F-Droidu není momentálně podporována na Androidu 5.1 nebo pozdějším.</string>
     <string name="tap_to_install_format">Dotykem instalovat %s</string>
     <string name="tap_to_update_format">Dotykem aktualizovat %s</string>
     <string name="install_confirm_update">Chcete instalovat aktualizaci existující aplikace? Aktuální data budou ztracena. Aktualizovaná aplikace bude mít přístup k:</string>
@@ -266,7 +262,6 @@
     <string name="antidisabledalgorithmlist">Tato aplikace má slabý bezpečnostní podpis</string>
     <string name="antinosourcesince">Zdrojový kód již není k dispozici, nejsou možné žádné aktualizace.</string>
     <string name="details_last_updated_today">Aktualizováno dnes</string>
-    <string name="warning_scaning_qr_code">Zdá se, že váš fotoaparát nemá autofokus. Může být obtížné skenovat kód.</string>
     <string name="download_404">Požadovaný soubor nebyl nalezen.</string>
     <string name="app_permission_storage">F-Droid potřebuje oprávnění k instalaci do úložiště. Chcete-li pokračovat s instalací, povolte ji na další obrazovce.</string>
     <string name="repo_official_mirrors">Oficiální zrcadla</string>

@@ -22,9 +22,7 @@
     <string name="app_details">செயலி விபரங்கள்</string>
     <string name="no_such_app">அப்படி எந்த செயலியும் இல்லை</string>
 
-    <string name="about_title">F-Droid பற்றி</string>
     <string name="about_version">பதிப்பு</string>
-    <string name="about_site">வலைதளம்</string>
     <string name="about_source">மூல ஆதார நிரல்</string>
     <string name="about_mail">மின்னஞ்சல்</string>
     <string name="about_license">உரிமம்</string>

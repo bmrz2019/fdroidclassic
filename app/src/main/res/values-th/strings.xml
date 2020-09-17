@@ -17,9 +17,7 @@
     <string name="app_details">รายละเอียดของโปรแกรม</string>
     <string name="no_such_app">ไม่พบโปรแกรมตามที่ระบุ</string>
 
-    <string name="about_title">เกี่ยวกับ F-Droid</string>
     <string name="about_version">รุ่น</string>
-    <string name="about_site">เว็บไซต์</string>
     <string name="about_source">ซอร์สโค้ด</string>
     <string name="about_mail">อีเมล</string>
     <string name="about_license">สัญญาอนุญาต</string>
@@ -256,7 +254,6 @@
     <string name="system_install_question">ต้องการติดตั้งส่วนขยายช่วยติดตั้งของ F-Droid?</string>
     <string name="system_install_warning">จะใช้เวลาสูงสุด 10 วินาที</string>
     <string name="system_uninstall">ต้องการถอนส่วนขยายช่วยติดตั้งของ F-Droid?</string>
-    <string name="system_install_not_supported">ไม่รองรับการติดตั้งส่วนขยายช่วยติดตั้งของ F-Droid บน Android รุ่น 5.1 หรือสูงกว่า</string>
 
     <string name="open_qr_code_scanner">เปิดตัวอ่าน QR Code</string>
     <string name="update_notification_more">มีอีก +%1$d…</string>
@@ -294,9 +291,6 @@
 
 โปรแกรมที่คุณติดตั้งอยู่ในเครื่อง ไม่มีโปรแกรมไหนเลยที่มาจาก F-Droid, อาจจะเป็นเพราะว่าคุณไม่ได้อัพเดตข้อมูลแหล่งโปรแกรม หรือโปรแกรมที่คุณใช้อยู่ไม่ได้มีอยู่ในรายการของแหล่งโปรแกรมที่คุณตั้งไว้</string>
     <string name="not_on_same_wifi">ตอนนี้เครื่องของคุณยังไม่ได้อยู่ในเครือข่าย WiFi เดียวกับแหล่งโปรแกรมท้องถิ่นที่คุณตั้งไว้, ให้คุณลองเข้าเครือข่าย: %s</string>
-    <string name="repo_disabled_notification">ปิดการใช้งานแหล่งโปรแกรม %1$s แล้ว
-
-ถ้าคุณต้องการจะลงโปรแกรมจากแหล่งนี้อีกครั้ง คุณจะต้องกลับมาเปิดใช้แหล่งโปรแกรมนี้ใหม่</string>
     <string name="repo_delete_to_overwrite">ถ้าคุณต้องการใช้กุญแจเข้ารหัสชุดใหม่กับแหล่งโปรแกรมที่จะสร้าง, คุณจะต้องลบแหล่งโปรแกรมนี้ก่อน</string>
     <string name="repo_exists_and_enabled">แหล่งโปรแกรมนี้มีอยู่แล้ว และเปิดใช้งานอยู่</string>
     <string name="repo_exists_enable">แหล่งโปรแกรมนี้มีอยู่แล้ว, กดยืนยันเพื่อเปิดกลับมาใช้งานอีกครั่ง</string>

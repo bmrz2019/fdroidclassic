@@ -18,8 +18,6 @@
     <string name="update_history_summ">Ημέρες που θα θεωρούνται οι εφαρμογές νέες ή πρόσφατες: %s</string>
     <string name="app_details">Λεπτομέρειες Εφαρμογής</string>
     <string name="no_such_app">Δεν βρέθηκε τέτοια εφαρμογή.</string>
-    <string name="about_title">Σχετικά με το F-Droid</string>
-    <string name="about_site">Ιστοσελίδα</string>
     <string name="about_mail">Ηλ. ταχυδρομείο:</string>
     <string name="about_version">Έκδοση</string>
     <string name="app_installed">Εγκατεστημένο</string>
@@ -104,7 +102,6 @@
     <string name="repo_not_yet_updated">Αυτό το αποθετήριο δεν έχει χρησιμοποιηθεί ακόμη. Θα πρέπει να το ενεργοποιήσετε για να δείτε τις εφαρμογές που παρέχει.</string>
     <string name="unknown">Άγνωστο</string>
     <string name="repo_confirm_delete_title">Διαγραφή αποθετηρίου;</string>
-    <string name="repo_disabled_notification">Απενεργοποιημένο %1$s.\n\nΘα χρειαστεί να το ενεργοποιήσετε ξανά για να εγκαταστήσετε εφαρμογές από αυτό.</string>
     <string name="minsdk_or_later">%s ή αργότερα</string>
     <string name="up_to_maxsdk">Μέχρι %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s μέχρι %2$s</string>

@@ -20,8 +20,6 @@
     <string name="system_installer_on">Bruk priviligert tillegg til å installere, oppdatere, og fjerne programmer</string>
     <string name="app_details">Programdetaljer</string>
     <string name="no_such_app">Program ikke funnet.</string>
-    <string name="about_title">Om F-Droid</string>
-    <string name="about_site">Nettside</string>
     <string name="about_mail">E-post</string>
     <string name="about_version">Versjon</string>
     <string name="app_installed">Installert</string>
@@ -121,9 +119,6 @@ Du må skru det på for å se programmene den tilbyr.</string>
     <string name="repo_confirm_delete_title">Slett pakkebrønn?</string>
     <string name="repo_confirm_delete_body">Sletting av en pakkebrønn betyr at programmer derfra ikke lenger vil være tilgjengelige i F-droid.
 \n\nMerk: Alle tidligere installerte programmer vil fremdeles være å finne på din enhet.</string>
-    <string name="repo_disabled_notification">Avskrudd \"%1$s\". 
-\n
-\nDu må skru på denne pakkebrønnen igjen for å installere programmer fra den.</string>
     <string name="repo_added">Lagret F-Droid-pakkebrønnen %1$s.</string>
     <string name="repo_searching_address">Ser etter F-Droid-pakkebrønn på\n%1$s</string>
     <string name="minsdk_or_later">%s eller senere</string>
@@ -266,7 +261,6 @@ gå tapt. Det krever ingen spesiell tilgang.</string>
     <string name="uninstall_error_notify_title">Feil ved avinstallering av %s</string>
     <string name="installing">Installerer…</string>
     <string name="uninstalling">Avinstallerer…</string>
-    <string name="system_install_not_supported">Installasjon av priviligert tillegg for F-droid er for tiden ikke støttet på Android 5.1 eller senere.</string>
     <string name="update_auto_install">Installer oppdateringer automatisk</string>
     <string name="update_auto_install_summary">Last ned og installer programoppdateringer i bakgrunnen</string>
     <string name="hide_anti_feature_apps">Utgråing av programmer med anti-funksjoner</string>
@@ -280,7 +274,6 @@ gå tapt. Det krever ingen spesiell tilgang.</string>
     <string name="details_new_in_version">Ny i versjon %s</string>
     <string name="antidisabledalgorithmlist">Denne appen har en svak sikkerhetssignatur</string>
     <string name="status_inserting_x_apps">Lagrer appdetaljer (%1$d/%2$d) fra %3$s</string>
-    <string name="warning_scaning_qr_code">Kameraet ditt ser ikke ut til å ha autofokus. Det kan være vanskelig å skanne koden.</string>
     <string name="app_permission_storage">F-Droid trenger lagringstillatelse for å installere dette på lagring. La det på neste skjermbilde fortsette med installasjonen.</string>
     <string name="repo_official_mirrors">Offisielle speil</string>
     <string name="repo_user_mirrors">Brukerspeil</string>

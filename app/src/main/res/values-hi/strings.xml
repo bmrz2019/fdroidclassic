@@ -25,9 +25,7 @@
     <string name="app_details">एप्लिकेशन विस्तार</string>
     <string name="no_such_app">कोई ऐसा एप्लिकेशन नहीं मिला |</string>
 
-    <string name="about_title">F-Droid के बारे मैं</string>
     <string name="about_version">संस्करण</string>
-    <string name="about_site">वेबसाइट</string>
     <string name="about_source">सोर्स कोड</string>
     <string name="about_mail">ईमेल</string>
     <string name="about_license">लाइसेंस</string>

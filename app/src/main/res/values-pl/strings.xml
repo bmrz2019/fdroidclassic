@@ -13,8 +13,6 @@
     <string name="system_installer_on">Używaj dodatku uprzywilejowanego FDroida by instalować, aktualizować i usuwać paczki</string>
     <string name="app_details">Szczegóły aplikacji</string>
     <string name="no_such_app">Nie znaleziono takiej aplikacji.</string>
-    <string name="about_title">O F-Droid</string>
-    <string name="about_site">Strona internetowa</string>
     <string name="about_version">Wersja</string>
     <string name="app_not_installed">Nie zainstalowano</string>
     <string name="added_on">Dodano %s</string>
@@ -146,7 +144,6 @@
     <string name="unsigned">Brak podpisu</string>
     <string name="unsigned_description">Oznacza to, że lista aplikacji nie mogła zostać zweryfikowana. Powinieneś być ostrożny podczas pobierania aplikacji z nieznanych źródeł.</string>
     <string name="repo_not_yet_updated">To repozytorium nie zostało jeszcze użyte. Musisz uaktywnić to repozytorium by zobaczyć jakie aplikacje dostarcza.</string>
-    <string name="repo_disabled_notification">Wyłączono %1$s.\n\nAby ponownie móc instalować z niego aplikacje musisz je włączyć ponownie.</string>
     <string name="repo_added">Dodano repozytorium %1$s.</string>
     <string name="repo_searching_address">Szukam repozytorium F-Droida pod adresem:\n%1$s</string>
     <string name="pref_language">Język aplikacji</string>
@@ -245,7 +242,6 @@
     <string name="tap_to_update_format">Dotknij aby uaktualnić %s</string>
     <string name="download_pending">Oczekiwanie na pobieranie…</string>
     <string name="downloading_apk">Pobieranie %1$s</string>
-    <string name="system_install_not_supported">Instalacja Uprzywilejowanego Dodatku F-Droid nie jest obecnie wspierana na Androidzie 5.1 i nowszych.</string>
     <string name="keep_hour">1 godzinę</string>
     <string name="keep_day">1 dzień</string>
     <string name="keep_week">1 tydzień</string>
@@ -266,7 +262,6 @@
     <string name="menu_appinfo">App Info (Ustawienia systemu)</string>
     <string name="antidisabledalgorithmlist">Ta aplikacja ma słaby podpis bezpieczeństwa</string>
     <string name="antinosourcesince">Kod źródłowy nie jest już dostępny, nie ma możliwości jego aktualizacji.</string>
-    <string name="warning_scaning_qr_code">Wydaje się, że twój aparat nie ma autofokusa. To może być trudne do zeskanowania kodu.</string>
     <string name="app_permission_storage">F-Droid potrzebuje pozwolenia na magazynowanie, aby zainstalować go do przechowywania. Proszę pozwolić mu na następny ekran, aby przystąpił do instalacji.</string>
     <string name="repo_official_mirrors">Oficjalne mirrors</string>
     <string name="repo_user_mirrors">Klient mirrors</string>

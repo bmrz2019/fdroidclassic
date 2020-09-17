@@ -20,8 +20,6 @@
     <string name="system_installer_on">Использовать привилегированное расширение F-Droid для установки, обновления и удаления пакетов</string>
     <string name="app_details">Описание приложения</string>
     <string name="no_such_app">Приложение не найдено.</string>
-    <string name="about_title">О F-Droid</string>
-    <string name="about_site">Сайт</string>
     <string name="about_mail">Электронная почта</string>
     <string name="about_version">Версия</string>
     <string name="app_installed">Установлено</string>
@@ -121,7 +119,6 @@
     <string name="repo_confirm_delete_body">Удаление репозитория означает, что приложения из него больше не будут доступны в F-Droid.
 
 Примечание: Все ранее установленные приложения останутся на вашем устройстве.</string>
-    <string name="repo_disabled_notification">%1$s отключён.\n\nДля установки приложений из этого репозитория вам необходимо повторно включить его.</string>
     <string name="minsdk_or_later">%s или позднее</string>
     <string name="up_to_maxsdk">До %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s до %2$s</string>
@@ -244,7 +241,6 @@
     <string name="perms_description_app">Предоставлено %1$s.</string>
     <string name="update_auto_download">Автоматически скачивать обновления</string>
     <string name="update_auto_download_summary">Скачивать файлы обновлений в фоне</string>
-    <string name="system_install_not_supported">"Установка Привилегированного расширения F-Droid в настоящее время не поддерживается на  Android 5.1 или более поздних версиях."</string>
     <string name="download_pending">Ожидание начала загрузки…</string>
     <string name="downloading_apk">Загрузжается %1$s</string>
     <string name="keep_hour">1 час</string>

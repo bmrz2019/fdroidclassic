@@ -20,8 +20,6 @@
     <string name="system_installer_on">Utiliser F-Droid Privileged Extension pour installer, mettre à jour et supprimer des paquets</string>
     <string name="app_details">Détails de l\'appli</string>
     <string name="no_such_app">Aucune appli trouvée.</string>
-    <string name="about_title">À propos de F-Droid</string>
-    <string name="about_site">Site web</string>
     <string name="about_mail">Courriel</string>
     <string name="about_version">Version</string>
     <string name="app_installed">Installée</string>
@@ -126,9 +124,6 @@ Vous devez l\'activer pour voir la liste des applis qu\'il offre.</string>
     <string name="repo_confirm_delete_body">Supprimer un dépôt signifie que ses applis ne seront plus disponibles via F-Droid.
 \n
 \nNote : toutes les applis précédemment installées vont rester sur votre appareil.</string>
-    <string name="repo_disabled_notification">%1$s a été désactivé.
-\n
-\nVous devez réactiver ce dépôt pour installer les applis qu\'il contient.</string>
     <string name="minsdk_or_later">%s ou plus récent</string>
     <string name="up_to_maxsdk">Jusqu\'à %s</string>
     <string name="minsdk_up_to_maxsdk">De %1$s à %2$s</string>
@@ -264,7 +259,6 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="tap_to_update_format">Appuyez pour mettre à jour %s</string>
     <string name="download_pending">Téléchargement en attente…</string>
     <string name="downloading_apk">Téléchargement de %1$s</string>
-    <string name="system_install_not_supported">L\'installation de F-Droid Privileged Extension n\'est pas supportée pour l\'instant sur Android 5.1 et plus.</string>
     <string name="keep_hour">1 heure</string>
     <string name="keep_day">1 jour</string>
     <string name="keep_week">1 semaine</string>
@@ -307,7 +301,6 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="menu_appinfo">App Info (Paramètres du système)</string>
     <string name="antiknownvulnlist">Cette application contient une faille de sécurité connue</string>
     <string name="details_last_updated_today">Mis à jour aujourd\'hui</string>
-    <string name="warning_scaning_qr_code">Votre appareil photo ne semble pas avoir d\'autofocus. Il pourrait être difficile de scanner le code.</string>
     <string name="app_permission_storage">F-Droid a besoin de l\'autorisation de stockage pour l\'installer sur le stockage. Veuillez l\'autoriser sur l\'écran suivant pour procéder à l\'installation.</string>
     <string name="repo_official_mirrors">officiels Mirrors</string>
     <string name="repo_user_mirrors">Utilisateur Mirrors</string>

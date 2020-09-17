@@ -19,8 +19,6 @@
     <string name="system_installer">特权扩展</string>
     <string name="app_details">应用程序详情</string>
     <string name="no_such_app">未找到此类应用程序。</string>
-    <string name="about_title">关于 F-Droid</string>
-    <string name="about_site">网址</string>
     <string name="about_mail">邮箱</string>
     <string name="about_version">版本</string>
     <string name="app_installed">已安装</string>
@@ -110,7 +108,6 @@
     <string name="repo_confirm_delete_title">删除应用程序仓库？</string>
     <string name="repo_confirm_delete_body">删除软件源意味着来自该软件源的软件将不会出现在F-Droid上。
 \n\n注意： 之前安装的所有应用会保留在您的设备上。</string>
-    <string name="repo_disabled_notification">已禁用 %1$s.\n\n您需要重新启用该软件源以安装其应用。</string>
     <string name="minsdk_or_later">%s 或更新</string>
     <string name="up_to_maxsdk">最大 %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s 到 %2$s</string>
@@ -265,8 +262,6 @@
     <string name="download_pending">正在等待开始下载…</string>
 
     <string name="downloading_apk">正在下载 %1$s</string>
-
-    <string name="system_install_not_supported">F-Droid 特权扩展目前不支持安装在 Android 5.1 或更高版本上。</string>
 
     <string name="keep_hour">1小时</string>
     <string name="keep_day">1天</string>

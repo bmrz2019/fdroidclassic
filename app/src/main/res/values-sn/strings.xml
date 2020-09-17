@@ -28,9 +28,7 @@
     <string name="app_details">Zvizere zve App</string>
     <string name="no_such_app">Hapana app yakadaro yawanikwa.</string>
 
-    <string name="about_title">Nezve F-Droid</string>
     <string name="about_version">Vhezheni</string>
-    <string name="about_site">Nezve Website</string>
     <string name="about_source">Nyuko yemurau</string>
     <string name="about_mail">nezve tsamba mbozha</string>
     <string name="about_license">Rezenisi</string>
@@ -196,10 +194,6 @@ maApps kubva mairi haachakwanisa kwanikwa kubva kuF-Droid
 
 Ziviso: Ese
 maApp akambo vakirirwa acharamba ari pamuchina wako.</string>
-    <string name="repo_disabled_notification">Yarambidzwa %1$s
-
-Uchada
-kubvumidza pfimbi iyi zvakare kuti uvakirire kubva kwairi.</string>
     <string name="repo_added">Pfimbi yeF-Droid yachengetedzwa %1$s.</string>
     <string name="repo_searching_address">Pfimbi yeF-Droid irikutsvagirwa pa
 %1$s</string>
@@ -267,7 +261,6 @@ Makorokoto! MaApps ako ose akanatswa (kana kuti pfimbi dzako hadzina kunatswa).<
     <string name="system_install_warning_lollipop">Izvi zvinotora kusvika 10 masekondi nekuzotangidza kubatidza<b> muchina</b> mushure mazvo.</string>
     <string name="system_uninstall">Urikuda kubvisa kuvakirira tambanudzo dzechihesvuro paF-Droid here?</string>
     <string name="system_uninstall_button">Bvisa kuvakirira</string>
-    <string name="system_install_not_supported">Kuvakirira uku kwetambanudzo dzchihesvuro hakutsigirwe parizvino paAndroid 5.1 zvichikwira.</string>
 
     <string name="open_qr_code_scanner">Vhura Scanner yeQR</string>
     <string name="loading">Kuzadza…</string>

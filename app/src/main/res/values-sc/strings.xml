@@ -20,8 +20,6 @@
     <string name="system_installer_on">Imprea sos permissos de sistema pro installare, agiornare, e remòvere pachetos</string>
     <string name="app_details">Minujas aplicatzione</string>
     <string name="no_such_app">Peruna aplicatzione currispondente.</string>
-    <string name="about_title">Informatziones</string>
-    <string name="about_site">Giassu/situ web</string>
     <string name="about_mail">Posta eletrònica</string>
     <string name="about_version">Versione</string>
     <string name="app_installed">Installada</string>
@@ -125,10 +123,6 @@
 
 Nota: Totu
  sas aplicatziones giai installadas ant a abarrare in su dispositivu tuo.</string>
-    <string name="repo_disabled_notification">\"%1$s\" est disabilitadu.
-
-Depes
- torrare a abilitare custu depòsitu pro installare sas aplicatziones chi bi sunt in intro.</string>
     <string name="repo_added">Sarbadu depòsitu F-Droid %1$s.</string>
     <string name="repo_searching_address">Chirchende unu depòsitu F-Droid in\n%1$s</string>
     <string name="minsdk_or_later">%s o imbeniente</string>
@@ -282,8 +276,6 @@ Depes
     <string name="download_pending">Isetende pro incumintzare s\'iscarrigamentu…</string>
 
     <string name="downloading_apk">Iscarrighende %1$s</string>
-
-    <string name="system_install_not_supported">S\'installatzione de s\'estensione F-Droid cun permissos de sistema no est, pro como, suportada pro Android 5.1 o prus nou.</string>
 
     <string name="keep_hour">1 Ora</string>
     <string name="keep_day">1 Die</string>

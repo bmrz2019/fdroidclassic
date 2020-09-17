@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="DetailsButtonStyleBase">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
@@ -11,9 +12,10 @@
         <item name="android:paddingRight">18dp</item>
         <item name="android:textAllCaps">true</item>
     </style>
-
-    <style name="DetailsButtonStyle" parent="DetailsButtonStyleBase"/>
-
+    <style name="DetailsButtonStyle" parent="DetailsButtonStyleBase">
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
     <style name="DetailsPrimaryButtonStyle" parent="DetailsButtonStyle">
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">@drawable/button_primary_background_selector</item>

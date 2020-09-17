@@ -23,9 +23,7 @@
     <string name="app_details">Detail Apl</string>
     <string name="no_such_app">Aplikasi tersebut tidak ditemukan.</string>
 
-    <string name="about_title">Tentang F-Droid</string>
     <string name="about_version">Versi</string>
-    <string name="about_site">Situs web</string>
     <string name="about_source">Sumber kode</string>
     <string name="about_mail">Surel</string>
     <string name="app_incompatible">Tidak kompatibel</string>
@@ -187,10 +185,6 @@ apl yang sebelumnya dipasang dari repositori ini akan tetap ada di perangkat And
     <string name="status_inserting_apps">Menyimpan rincian aplikasi</string>
     <string name="all_other_repos_fine">Semua repo lainnya tidak membuat galat.</string>
     <string name="repo_fingerprint">Sidik jari kunci penandatanganan (SHA-256)</string>
-    <string name="repo_disabled_notification">Matikan %1$s.
-
-Anda akan 
-butuh untuk mengaktifkan ulang repo ini untuk memasang apl darinya.</string>
     <string name="repo_added">Repository F-Droid tersimpan %1$s.</string>
     <string name="repo_searching_address">Mencari repositori F-Droid di\n%1$s</string>
     <string name="minsdk_or_later">%s atau nanti</string>
@@ -296,8 +290,6 @@ hilang. Aplikasi yang diperbarui akan mendapatkan akses ke:</string>
     <string name="download_pending">Menunggu untuk mulai unduhan…</string>
 
     <string name="downloading_apk">Mengunduh %1$s</string>
-
-    <string name="system_install_not_supported">Pemasangan F-Droid Privileged Extension saat ini tidak tersedia di Android 5.1 atau lebih baru.</string>
 
     <string name="keep_hour">1 Jam</string>
     <string name="keep_day">1 Hari</string>

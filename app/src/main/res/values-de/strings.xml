@@ -20,8 +20,6 @@
     <string name="system_installer_on">Privilegierte F-Droid-Erweiterung verwenden, um Pakete zu installieren, zu aktualisieren und zu entfernen</string>
     <string name="app_details">Anwendungsdetails</string>
     <string name="no_such_app">Keine solche Anwendung gefunden.</string>
-    <string name="about_title">Über F-Droid</string>
-    <string name="about_site">Internetseite</string>
     <string name="about_mail">E-Mail</string>
     <string name="about_version">Version</string>
     <string name="app_installed">Installiert</string>
@@ -125,10 +123,6 @@ Anwendungen daraus werden nicht mehr in F-Droid verfügbar sein.
 
 Hinweis: Alle
 zuvor installierten Anwendungen bleiben auf Ihrem Gerät.</string>
-    <string name="repo_disabled_notification">»%1$s« deaktiviert.
-
-Sie müssen diese Paketquelle wieder aktivieren,
-um Anwendungen daraus installieren zu können.</string>
     <string name="repo_added">F-Droid-Paketquelle %1$s gespeichert.</string>
     <string name="repo_searching_address">Nach F-Droid-Paketquelle wird unter
 %1$s gesucht</string>
@@ -258,7 +252,6 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="keep_week">1 Woche</string>
     <string name="keep_month">1 Monat</string>
     <string name="keep_year">1 Jahr</string>
-    <string name="system_install_not_supported">Die Installation der privilegierten F-Droid-Erweiterung wird auf Android 5.1 oder höher derzeit nicht unterstützt.</string>
     <string name="keep_forever">Immer</string>
     <string name="install_error_notify_title">Fehler beim Installieren von %s</string>
     <string name="uninstall_error_notify_title">Fehler beim Deinstallieren von %s</string>
@@ -299,7 +292,6 @@ um Anwendungen daraus installieren zu können.</string>
     <string name="qr_code">QR-Code</string>
     <string name="download_all_updates">Alles aktualisieren</string>
     <string name="app_permission_storage">F-Droid benötigt die Speicherberechtigung, um dies zu installieren. Bitte erlaube das auf dem nächsten Bildschirm, um mit der Installation fortzufahren.</string>
-    <string name="warning_scaning_qr_code">Deine Kamera scheint keinen Autofokus zu haben. Es könnte schwierig sein, den Code zu scannen.</string>
     <string name="warning_no_internet">Kann nicht aktualisiert werden, bist Du mit dem Internet verbunden\?</string>
     <string name="antinosourcesince">Der Quellcode ist nicht mehr verfügbar, keine Aktualisierungen möglich.</string>
     <string name="menu_appinfo">App-Info (System Einstellungen)</string>

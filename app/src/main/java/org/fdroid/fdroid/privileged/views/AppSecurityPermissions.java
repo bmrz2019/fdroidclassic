@@ -31,9 +31,6 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.appcompat.app.AlertDialog;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -44,6 +41,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.R;
 
@@ -167,8 +169,8 @@ public class AppSecurityPermissions {
             group = grp;
             this.perm = perm;
 
-            ImageView permGrpIcon = (ImageView) findViewById(R.id.perm_icon);
-            TextView permNameView = (TextView) findViewById(R.id.perm_name);
+            ImageView permGrpIcon = findViewById(R.id.perm_icon);
+            TextView permNameView = findViewById(R.id.perm_name);
 
             PackageManager pm = getContext().getPackageManager();
             Drawable icon = null;

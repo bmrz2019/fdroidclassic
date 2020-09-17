@@ -20,8 +20,6 @@
     <string name="system_installer_on">Usa l\'estensione privilegiata di F-Droid per installare, aggiornare e rimuovere i pacchetti</string>
     <string name="app_details">Dettagli app</string>
     <string name="no_such_app">Nessuna app corrispondente trovata.</string>
-    <string name="about_title">Informazioni su F-Droid</string>
-    <string name="about_site">Sito web</string>
     <string name="about_mail">Email</string>
     <string name="about_version">Versione</string>
     <string name="app_installed">Installato</string>
@@ -124,10 +122,6 @@ che le app contenute non saranno più disponibili su F-Droid.
 
 Nota: Tutte
 le applicazioni installate precedentemente rimarranno sul dispositivo.</string>
-    <string name="repo_disabled_notification">%1$s è disabilitato.
-
-È necessario
-abilitare nuovamente questo repository per installare le app contenute.</string>
     <string name="minsdk_or_later">%s o successivi</string>
     <string name="up_to_maxsdk">Fino a %s</string>
     <string name="minsdk_up_to_maxsdk">da %1$s fino a %2$s</string>
@@ -268,7 +262,6 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="tap_to_install_format">Tocca per installare %s</string>
     <string name="tap_to_update_format">Tocca per aggiornare %s</string>
     <string name="repo_provider">Repository: %s</string>
-    <string name="system_install_not_supported">L\'installazione di Estensione Privilegiata di F-Droid non è attualmente supportata su Android 5.1 o superiori.</string>
     <string name="download_pending">In attesa di avviare lo scaricamento…</string>
     <string name="downloading_apk">Scaricamento di %1$s</string>
     <string name="keep_hour">1 ora</string>
@@ -318,7 +311,6 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="status_inserting_x_apps">Salvataggio dei dettagli dell\'app (%1$d/%2$d) da %3$s</string>
     <string name="warning_no_internet">Non riesci ad aggiornarti, sei connesso ad internet\?</string>
     <string name="details_last_updated_today">Aggiornato oggi</string>
-    <string name="warning_scaning_qr_code">La vostra fotocamera non sembra avere una messa a fuoco automatica. Potrebbe essere difficile scansionare il codice.</string>
     <string name="download_404">Il file richiesto non è stato trovato.</string>
     <string name="app_permission_storage">F-Droid ha bisogno dell\'autorizzazione di archiviazione per installarlo in memoria. Si prega di consentirlo nella schermata successiva per procedere con l\'installazione.</string>
 </resources>

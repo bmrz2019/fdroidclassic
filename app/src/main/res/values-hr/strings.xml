@@ -34,9 +34,7 @@
     <string name="app_details">Detalji aplikacije</string>
     <string name="no_such_app">Nije pronađena takva aplikacija.</string>
 
-    <string name="about_title">O F-Droidu</string>
     <string name="about_version">Verzija</string>
-    <string name="about_site">Web stranica</string>
     <string name="about_source">Izvorni kod</string>
     <string name="about_mail">Email</string>
     <string name="about_license">Licenca</string>
@@ -185,10 +183,6 @@ aplikacije iz njega više neće biti dostupne kroz F-Droid.
 
 Napomena: Sve
 instalirane aplikacije će ostati na Vašem uređaju.</string>
-    <string name="repo_disabled_notification">Onemogućeno %1$s.
-
-Morat će te
-ponovno omogućiti repozitorij kako bi instalirali aplikacije iz njega.</string>
     <string name="repo_added">Spremljen F-Droid repozitorij %1$s.</string>
     <string name="repo_searching_address">Tražim F-Drroid repozitorij na\n%1$s</string>
     <string name="minsdk_or_later">%s ili kasnije</string>
@@ -249,7 +243,6 @@ ponovno omogućiti repozitorij kako bi instalirali aplikacije iz njega.</string>
     <string name="system_install_warning_lollipop">Ovo može potrajati desetak sekundi, nakon čega će se Vaš uređaj <b>ponovno pokrenuti</b>.</string>
     <string name="system_uninstall">Želite li ukloniti F-Droid privilegirano proširenje?</string>
     <string name="system_uninstall_button">Ukloni</string>
-    <string name="system_install_not_supported">Instalacija F-Droid privilegiranog proširenja trenutno nije podržana na Android 5.1 ili kasnijem.</string>
 
     <string name="open_qr_code_scanner">Otvori QR skener</string>
     <string name="loading">Učitavanje…</string>

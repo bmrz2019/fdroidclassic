@@ -20,8 +20,6 @@
     <string name="system_installer_on">Käytä F-Droid Privileged Extensionia asentamiseen, päivittämiseen ja pakettien poistamiseen</string>
     <string name="app_details">Sovelluksen tiedot</string>
     <string name="no_such_app">Sovellusta ei löytynyt.</string>
-    <string name="about_title">Tietoa F-Droidista</string>
-    <string name="about_site">Verkkosivu</string>
     <string name="about_mail">Sähköposti</string>
     <string name="about_version">Versio</string>
     <string name="app_installed">Asennettu</string>
@@ -94,7 +92,6 @@
     <string name="repo_not_yet_updated">Tätä sovelluslähdettä ei ole vielä käytetty.
  Sinun tulee ottaa se ensin käyttöön näkeäksesi sovellukset joita se tarjoaa.</string>
     <string name="repo_confirm_delete_body">Sovelluslähteen poistaminen tarkoittaa, että sieltä olevat sovellukset eivät ole enää saatavissa F-Droidin kautta. Huomautus: Kaikki aikaisemmin asentamasi sovellukset säilyvät laitteellasi.</string>
-    <string name="repo_disabled_notification">%1$s poistettu käytöstä. Sinun pitää ottaa tämä sovelluslähde uudelleen käyttöön asentaaksesi sieltä sovelluksia.</string>
     <string name="requires_features">Edellyttää: %1$s</string>
     <string name="app_icon">Sovelluskuvake</string>
     <string name="category_Development">Kehittäminen</string>
@@ -269,7 +266,6 @@ Onnittelut! Kaikki sovelluksesi ovat ajan tasalla (tai sovelluslähteesi ovat va
     <string name="system_install_post_fail_message">F-Droid Privileged Extensionin asennus epäonnistui. Kaikki Android-versiot eivät tue tätä asennustapaa. Konsultoi F-Droidin virhehakua saadaksesi lisätietoa.</string>
     <string name="system_install_question">Haluatko asentaa F-Droid Privileged Extensionin?</string>
     <string name="system_uninstall">Haluatko poistaa F-Droid Privileged Extensionin asennuksen?</string>
-    <string name="system_install_not_supported">F-Droid Privileged Extensionin asennusta ei tueta Android 5.1+ -versioissa.</string>
     <string name="repo_user_mirrors">Käyttäjän peilit</string>
     <string name="repo_add_mirror">Lisää peili</string>
     <string name="menu_appinfo">Sovellustiedot (järjestelmäasetukset)</string>
@@ -288,6 +284,5 @@ Onnittelut! Kaikki sovelluksesi ovat ajan tasalla (tai sovelluslähteesi ovat va
     <string name="antiknownvulnlist">Tämä sovellus sisältää tunnetun tietoturvaheikkouden</string>
     <string name="warning_no_internet">Et voi päivittää, oletko yhteydessä Internetiin\?</string>
     <string name="details_last_updated_today">Päivitetty tänään</string>
-    <string name="warning_scaning_qr_code">Kameralla ei näytä olevan automaattitarkennusta. Koodin skannaaminen voi olla vaikeaa.</string>
     <string name="qr_code">QR-Code</string>
 </resources>

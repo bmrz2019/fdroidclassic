@@ -20,8 +20,6 @@
     <string name="system_installer_on">Usar extensão privilegiada do F-Droid para instalar, atualizar e remover pacotes</string>
     <string name="app_details">Detalhes do aplicativo</string>
     <string name="no_such_app">O aplicativo não foi encontrado.</string>
-    <string name="about_title">Sobre o F-Droid</string>
-    <string name="about_site">Página web</string>
     <string name="about_mail">E-Mail</string>
     <string name="about_version">Versão</string>
     <string name="app_installed">Instalado</string>
@@ -124,10 +122,6 @@ os aplicativos do mesmo não estarão mais disponíveis pelo F-Droid.
 
 Nota: Todos
 os aplicativos previamente instalados permanecerão no seu dispositivo.</string>
-    <string name="repo_disabled_notification">%1$s desativado.
-
-Você precisará
-reativar este repositório para instalar aplicativos a partir dele.</string>
     <string name="repo_added">Repositório F-Droid %1$s salvo.</string>
     <string name="repo_searching_address">Procurando por repositório F-Droid em
 %1$s</string>
@@ -261,7 +255,6 @@ serão perdidos. Ele não exige nenhum acesso especial.</string>
     <string name="tap_to_update_format">Toque para atualizar %s</string>
     <string name="download_pending">Esperando para iniciar o download…</string>
     <string name="downloading_apk">Baixando %1$s</string>
-    <string name="system_install_not_supported">A instalação da extensão privilegiada do F-Droid atualmente não é suportada no Android 5.1 ou posterior.</string>
     <string name="keep_hour">1 hora</string>
     <string name="keep_day">1 dia</string>
     <string name="keep_week">1 semana</string>
@@ -291,7 +284,6 @@ serão perdidos. Ele não exige nenhum acesso especial.</string>
     <string name="antidisabledalgorithmlist">Este aplicativo tem uma assinatura de segurança fraca</string>
     <string name="status_inserting_x_apps">Salvando detalhes do aplicativo (%1$d/%2$d) a partir de %3$s</string>
     <string name="details_last_updated_today">Atualizado hoje</string>
-    <string name="warning_scaning_qr_code">Sua câmera não parece ter um foco automático. Pode ser difícil digitalizar o código.</string>
     <string name="repo_official_mirrors">Espelhos oficiais</string>
     <string name="repo_user_mirrors">Espelhos do usuário</string>
     <string name="app_permission_storage">A F-Droid precisa da permissão de armazenamento para instalar isto no armazenamento. Por favor, permita-o na tela seguinte para prosseguir com a instalação.</string>

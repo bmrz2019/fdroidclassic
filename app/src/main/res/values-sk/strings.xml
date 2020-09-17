@@ -20,9 +20,7 @@
   <string name="system_installer_on">Používať Oprávnené Rozšírenie F-Droidu na inštaláciu, aktualizácie a odstránenie balíkov</string>
     <string name="app_details">Detaily aplikácie</string>
   <string name="no_such_app">Aplikácia sa nenašla.</string>
-  <string name="about_title">O F-Droide</string>
-  <string name="about_site">Webstránka</string>
-  <string name="about_mail">Email</string>
+    <string name="about_mail">Email</string>
   <string name="about_version">Verzia</string>
   <string name="app_installed">Nainštalované</string>
   <string name="app_not_installed">Nie je nainštalované</string>
@@ -124,11 +122,7 @@ Pre zobrazenie aplikácií je nutné aktualizovať jeho obsah.</string>
 
 Poznámka: Všetky
 predtým nainštalované aplikácie zostávajú v zariadení.</string>
-  <string name="repo_disabled_notification">Vypnuté \"%1$s\".
-
-Budete musieť
-znovu povoliť tento repozitár pre inštaláciu aplikácií z neho.</string>
-  <string name="repo_added">Uložený F-Droid repozitár %1$s.</string>
+    <string name="repo_added">Uložený F-Droid repozitár %1$s.</string>
   <string name="repo_searching_address">Hľadá sa repozitár F-Droidu na %1$s</string>
   <string name="minsdk_or_later">%s alebo neskôr</string>
   <string name="up_to_maxsdk">Do %s</string>
@@ -282,8 +276,6 @@ prepísané. Aplikácia nevyžaduje špeciálny prístup.</string>
     <string name="download_pending">Čakanie na spustenie preberania…</string>
 
     <string name="downloading_apk">Preberanie %1$s</string>
-
-    <string name="system_install_not_supported">Inštalácia F-Droidu ako systémovej aplikácie v súčasnosti nie je podporovaná na Androide 5.1 a novšom.</string>
 
     <string name="keep_hour">1 Hodina</string>
     <string name="keep_day">1 Deň</string>

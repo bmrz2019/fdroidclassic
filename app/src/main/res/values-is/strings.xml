@@ -26,9 +26,7 @@
     <string name="app_details">Nánar um forrit</string>
     <string name="no_such_app">Engin slík forrit fundust.</string>
 
-    <string name="about_title">Um F-Droid</string>
     <string name="about_version">Útgáfa</string>
-    <string name="about_site">Vefsvæði</string>
     <string name="about_source">Upprunakóði</string>
     <string name="about_mail">Tölvupóstur</string>
     <string name="about_license">Notkunarleyfi</string>
@@ -265,7 +263,6 @@
     <string name="system_install_post_fail_message">Innsetning á F-Droid forgangsviðbót mistókst. Uppsetningaraðferðin er ekki studd á öllum Android dreifingum, skoðaðu villumeldingavef F-Droid til að finna nánari upplýsingar.</string>
     <string name="system_install_question">Ert þú viss um að þú viljir setja upp F-Droid forgagsviðbótina?</string>
     <string name="system_uninstall">Ert þú viss um að þú viljir fjarlægja F-Droid forgagsviðbótina?</string>
-    <string name="system_install_not_supported">Innsetning á F-Droid forgangsviðbótinni er ekki ennþá studd á Android 5.1 eða nýrri.</string>
 
     <string name="SignatureMismatch">Nýja útgáfan er undirrituð með öðrum lykli en gamla útgáfan. Til að setja inn nýju útgáfuna verður að fjarlægja fyrst þá eldri. Gerðu þetta og prófaðu aftur. (Athugaðu að fjarlæging forritsins mun hreinsa út öll gögn sem forritið geymir)</string>
     <string name="installIncompatible">Það lítur út eins og að þessi pakki sé ekki samhæfður tækinu þínu. Viltu samt prófa að setja hann upp?</string>
@@ -294,9 +291,6 @@ forrit sem sótt eru í óundirritaða yfirlitslista.</string>
 
 Athugaðu: Öll forrit sem þegar hafa verið sett inn, 
 munu haldast á tækinu þínu.</string>
-    <string name="repo_disabled_notification">Gerði %1$s óvirkt.
-
-Þú verður að virkja hugbúnaðarsafnið aftur til að geta sett upp forrit úr því.</string>
     <string name="not_on_same_wifi">Tækið þitt er ekki á sama Wi-Fi netinu og staðværa hugbúnaðarsafnið sem þú varst að bæta við! Reyndu að tengjast þessu neti: %s</string>
     <string name="empty_installed_app_list">Engin forrit uppsett.
 

@@ -20,8 +20,6 @@
     <string name="system_installer_on">Instal·la, actualitza i suprimeix paquets fent servir l\'extensió privilegiada de l\'F-Droid</string>
     <string name="app_details">Detalls de l\'aplicació</string>
     <string name="no_such_app">No s\'ha trobat l\'aplicació.</string>
-    <string name="about_title">Quant a l\'F-Droid</string>
-    <string name="about_site">Pàgina web</string>
     <string name="about_mail">Correu</string>
     <string name="about_version">Versió</string>
     <string name="app_installed">Instal·lat</string>
@@ -125,10 +123,6 @@ que les seves aplicacions ja no seran accessibles des de l\'F-Droid.
 
 Nota: No 
 perdreu les aplicacions ja instal·lades.</string>
-    <string name="repo_disabled_notification">\"%1$s\" Inhabilitat.
-
-Heu de 
-tornar a habilitar el dipòsit per instal·lar aplicacions d\'aquest.</string>
     <string name="repo_added">S\'ha desat el dipòsit d\'F-Droid %1$s.</string>
     <string name="repo_searching_address">S\'està cercant un dipòsit d\'F-Droid a\n%1$s</string>
     <string name="minsdk_or_later">%s o més recent</string>
@@ -281,8 +275,6 @@ es perdran. L\'aplicació no requereix cap accés especial.</string>
     <string name="download_pending">Esperant que comenci la descàrrega…</string>
 
     <string name="downloading_apk">Descarregant %1$s</string>
-
-    <string name="system_install_not_supported">No es pot instal·lar F-Droid Privileged Extension actualment actualment en versions d\'Android 5.1 o posteriors.</string>
 
     <string name="keep_forever">Per sempre</string>
 

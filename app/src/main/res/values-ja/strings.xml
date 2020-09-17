@@ -20,9 +20,7 @@
   <string name="system_installer_on">F-Droid 特権拡張を使用してﾊﾟｯｹｰｼﾞのｲﾝｽﾄｰﾙ､更新､および削除をします｡</string>
     <string name="app_details">ｱﾌﾟﾘ詳細</string>
   <string name="no_such_app">該当するｱﾌﾟﾘが見つかりません.</string>
-  <string name="about_title">F-Droidについて</string>
-  <string name="about_site">Webｻｲﾄ</string>
-  <string name="about_mail">電子ﾒｰﾙ</string>
+    <string name="about_mail">電子ﾒｰﾙ</string>
   <string name="about_version">ﾊﾞｰｼﾞｮﾝ</string>
   <string name="app_installed">入手済</string>
   <string name="app_not_installed">未ｲﾝｽﾄｰﾙ</string>
@@ -124,9 +122,7 @@
 ｱﾌﾟﾘｹｰｼｮﾝはF-Droidからｲﾝｽﾄｰﾙできなくなります｡
 
 注:これまでにｲﾝｽﾄｰﾙしたｱﾌﾟﾘｹｰｼｮﾝは端末に残ります｡</string>
-  <string name="repo_disabled_notification">%1$s を無効にしました｡
-\n\nこのﾘﾎﾟｼﾞﾄﾘからｱﾌﾟﾘｹｰｼｮﾝをｲﾝｽﾄｰﾙするには再度有効にする必要があります｡</string>
-  <string name="repo_added">F-Droid ﾘﾎﾟｼﾞﾄﾘ %1$s を保存しました。</string>
+    <string name="repo_added">F-Droid ﾘﾎﾟｼﾞﾄﾘ %1$s を保存しました。</string>
   <string name="repo_searching_address">%1$s で F-Droid ﾘﾎﾟｼﾞﾄﾘを検索中</string>
   <string name="minsdk_or_later">%s 以上</string>
   <string name="up_to_maxsdk">最大 %s</string>
@@ -272,8 +268,6 @@
     <string name="download_pending">ﾀﾞｳﾝﾛｰﾄﾞの開始を待っています…</string>
 
     <string name="downloading_apk">%1$s のﾀﾞｳﾝﾛｰﾄﾞ中</string>
-
-    <string name="system_install_not_supported">F-Droidの特権拡張のｲﾝｽﾄｰﾙは、現在Android 5.1以降でｻﾎﾟｰﾄされていません。</string>
 
     <string name="keep_hour">1時間</string>
     <string name="keep_day">1日</string>

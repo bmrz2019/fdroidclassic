@@ -38,9 +38,7 @@
     <string name="app_details">App Details</string>
     <string name="no_such_app">No such app found.</string>
 
-    <string name="about_title">About F-Droid Classic</string>
     <string name="about_version">Version</string>
-    <string name="about_site">Website</string>
     <string name="about_source">Source code</string>
     <string name="about_mail">Email</string>
     <string name="about_license">License</string>
@@ -214,8 +212,6 @@
     <string name="repo_confirm_delete_body">Deleting a repository means
         apps from it will no longer be available from F-Droid Classic.\n\nNote: All
         previously installed apps will remain on your device.</string>
-    <string name="repo_disabled_notification">Disabled "%1$s".\n\nYou will
-        need to re-enable this repository to install apps from it.</string>
     <string name="repo_added">Saved F-Droid repository %1$s.</string>
     <string name="repo_searching_address">Looking for F-Droid repository at\n%1$s</string>
     <string name="minsdk_or_later">%s or later</string>
@@ -276,7 +272,6 @@
     <string name="system_install_warning_lollipop">This takes up to 10 seconds and the device will be &lt;b>rebooted&lt;/b> afterwards.</string>
     <string name="system_uninstall">Do you want to uninstall F-Droid Privileged Extension?</string>
     <string name="system_uninstall_button">Uninstall</string>
-    <string name="system_install_not_supported">Installation of F-Droid Privileged Extension is currently not supported on Android 5.1 or later.</string>
 
     <string name="open_qr_code_scanner">Open QR Scanner</string>
 
@@ -335,7 +330,6 @@
     <string name="theme_night">Black</string>
 
     <string name="details_last_updated_today">Updated today</string>
-    <string name="warning_scaning_qr_code">Your camera doesn\'t seem to have an autofocus. It might be difficult to scan the code.</string>
     <plurals name="details_last_update_days">
         <item quantity="one">Updated %1$d day ago</item>
         <item quantity="other">Updated %1$d days ago</item>

@@ -5,8 +5,6 @@
     <string name="cache_downloaded">Зберігати кешовані пакунки</string>
     <string name="updates">Оновлення</string>
     <string name="notify">Сповіщення про оновлення</string>
-    <string name="about_title">Про F-Droid</string>
-    <string name="about_site">Сайт</string>
     <string name="about_mail">Електронна пошта</string>
     <string name="about_version">Версія</string>
     <string name="app_installed">Встановлено</string>
@@ -210,10 +208,6 @@
 
 Примітка: Всі раніше встановленні
  додатки залишаться на пристрої."</string>
-    <string name="repo_disabled_notification">%1$s відключено.
-
-Необхідно ввімкнути його,
- аби встановлювати додатки з нього.</string>
     <string name="minsdk_or_later">%s чи старше</string>
     <string name="up_to_maxsdk">До %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s до %2$s</string>
@@ -300,8 +294,6 @@
     <string name="keep_month">1 місяць</string>
     <string name="keep_year">1 рік</string>
     <string name="keep_forever">Завжди</string>
-
-    <string name="system_install_not_supported">На поточний момент встановлення привілейованого розширення F-Droid не підтримується системами Android 5.1 чи старше.</string>
 
     <string name="install_error_notify_title">Помилка встановлення %s</string>
     <string name="uninstall_error_notify_title">Помилка видалення %s</string>

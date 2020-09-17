@@ -20,8 +20,6 @@
     <string name="system_installer_on">Dùng phần mở rộng được cấp quyền của F-Droid để cài đặt, cập nhật và gỡ bỏ ứng dụng</string>
     <string name="app_details">Thông tin ứng dụng</string>
     <string name="no_such_app">Không tìm thấy ứng dụng.</string>
-    <string name="about_title">Giới thiệu về F-Droid</string>
-    <string name="about_site">Trang web</string>
     <string name="about_mail">Email</string>
     <string name="about_version">Phiên bản</string>
     <string name="app_installed">Đã cài đặt</string>
@@ -107,8 +105,6 @@
     <string name="repo_confirm_delete_title">Xoá kho?</string>
     <string name="repo_confirm_delete_body">Nếu xoá kho, ứng dụng trong kho sẽ không xuất hiện trong F-Droid.
 \n\nChú ý: Ứng dụng đã cài trước đó sẽ vẫn còn trên thiết bị của bạn.</string>
-    <string name="repo_disabled_notification">Đã tắt %1$s.
-\n\nBạn sẽ cần phải kích hoạt lại để cài ứng dụng từ kho này.</string>
     <string name="repo_added">Đã lưu kho F-Droid %1$s.</string>
     <string name="repo_searching_address">Đang tìm kho F-Droid tại địa chỉ %1$s</string>
     <string name="minsdk_or_later">%s hoặc mới hơn</string>

@@ -34,9 +34,7 @@
     <string name="app_details">Rakenduse andmed</string>
     <string name="no_such_app">Sellist rakendust ei leitud.</string>
 
-    <string name="about_title">Programmist F-Droid</string>
     <string name="about_version">Versioon</string>
-    <string name="about_site">Veebileht</string>
     <string name="about_source">Lähtekood</string>
     <string name="about_mail">Meil</string>
     <string name="about_license">Litsents</string>
@@ -102,7 +100,6 @@
     <string name="repo_not_yet_updated">Seda hoidlat ei ole veel kasutatud. Hoidla pakutavate rakenduste vaatamiseks kasutamiseks pead sa hoidla lubama.</string>
     <string name="repo_confirm_delete_title">Kas kustutada hoidla?</string>
     <string name="repo_confirm_delete_body">Hoidla kustutamine tähendab, et hoidla pakutavad rakendused ei ole enam F-Droidist saadaval.\n\nMärkus: paigaldatud rakendused jäävad seadmesse alles.</string>
-    <string name="repo_disabled_notification">%1$s on keelatud.\n\nSellest hoidlast rakenduste paigaldamiseks pead sa hoidla lubama.</string>
     <string name="repo_added">Salvestatu F-Droidi hoidla %1$s.</string>
     <string name="repo_searching_address">Otsitakse F-Droidi hoidlat aadressil\n%1$s</string>
     <string name="not_on_same_wifi">Sinu seade ei asu äsja lisatud kohaliku hoidlaga samas Wi-Fi võrgus! Proovi liituda selle võrguga: %s</string>
@@ -244,7 +241,6 @@
     <string name="system_install_warning_lollipop">Selleks kulub kuni 10 sekundit ja seadmele tehakse hiljem <b>taaskäivitus</b>.</string>
     <string name="system_uninstall">Kas soovid eemaldada F-Droidi priviligeeritud laienduse?</string>
     <string name="system_uninstall_button">Eemalda</string>
-    <string name="system_install_not_supported">Android 5.1 ja uuematega ei ole hetkel F-Droidi privilegeeritud laienduse paigaldamine toetatud.</string>
 
     <string name="open_qr_code_scanner">Ava QR skanner</string>
     <string name="loading">Laadimine…</string>

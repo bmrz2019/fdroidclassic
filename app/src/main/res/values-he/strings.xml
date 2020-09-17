@@ -21,8 +21,6 @@
     <string name="app_details">פרטי אפליקציה</string>
     <string name="no_such_app">לא נמצאה אפליקציה.</string>
 
-    <string name="about_title">אודות F-Droid</string>
-    <string name="about_site">אתר רשת</string>
     <string name="about_mail">דוא״ל</string>
     <string name="about_version">גרסה</string>
     <string name="app_installed">מותקנת</string>
@@ -225,7 +223,6 @@
     <string name="unsigned_description">משמעות הדבר היא שלא היתה אפשרות לאמת את הרשימה של האפליקציות. עליך להיזהר מן אפליקציות אשר מורדות מתוך אינדקסים לא חתומים.</string>
     <string name="repo_not_yet_updated">מאגר זה לא נמצא בשימוש עדיין. עליך לאפשרו כדי לצפות לצפות באפליקציות אשר מאגר זה מציע.</string>
     <string name="repo_confirm_delete_body">מחיקת מאגר זה משמעה כי אפליקציות מתוכו לא יהיו זמינים עוד מתוך F-Droid.\n\nהערה: כל אפליקציות אשר הותקנו בעבר יישארו על המכשיר שלך.</string>
-    <string name="repo_disabled_notification">נוטרל %1$s.\n\nעליך לאפשר שוב את מאגר זה כדי להתקין אפליקציות מתוכו.</string>
     <string name="not_on_same_wifi">המכשיר שלך אינו מצוי על גבי אותה רשת Wi-Fi כמו המאגר המקומי אשר הוספת עתה! נסה להצטרף לרשת זו: %s</string>
     <string name="install_confirm_update">האם ברצונך להתקין עדכון לאפליקציה קיימת זו? המידע הקיים שלך לא יאבד. האפליקציה המעודכנת תקבל גישה אל:</string>
     <string name="install_confirm_update_system">האם ברצונך להתקין עדכון לאפליקציה מובנית (קרי, built-in)? המידע הקיים שלך לא יאבד. האפליקציה המעודכנת תקבל גישה אל:</string>

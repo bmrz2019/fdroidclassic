@@ -27,9 +27,7 @@
     <string name="app_details">應用軟體詳細資料</string>
     <string name="no_such_app">找不到該應用軟體。</string>
 
-    <string name="about_title">關於 F-Droid</string>
     <string name="about_version">版本</string>
-    <string name="about_site">網站</string>
     <string name="about_source">原始碼</string>
     <string name="about_mail">電子郵件地址</string>
     <string name="about_license">授權條款</string>
@@ -166,7 +164,6 @@
     <string name="repo_not_yet_updated">此儲存庫尚未被使用。您需要啟用它才能檢視其中的應用程式。</string>
     <string name="repo_confirm_delete_title">刪除儲存庫？</string>
     <string name="repo_confirm_delete_body">儲存庫被刪除後，儲存庫中的應用程式將不會在 F-Droid 出現。\n\n注意：所有之前所安裝的應用程式會保留在您的裝置上。</string>
-    <string name="repo_disabled_notification">已停用 %1$s。\n\n您需重新啟用此儲存庫才能安裝其中的應用程式。</string>
     <string name="repo_added">已儲存 F-Droid 儲存庫 %1$s。</string>
     <string name="category_Money">理財</string>
     <string name="category_Phone_SMS">通話與簡訊</string>
@@ -252,7 +249,6 @@
     <string name="system_install_post_fail">安裝的 F-Droid 特權擴充失敗</string>
     <string name="system_install_question">您想要安裝 F-Droid 特權擴充嗎？</string>
     <string name="system_uninstall">您想要解除安裝 F-Droid 特權擴充嗎？</string>
-    <string name="system_install_not_supported">目前 FDroid 還不支援在 Android5.1 或更高的版本安裝特權擴充。</string>
 
     <string name="system_install_warning">這需要 10 秒以上的時間。</string>
     <string name="system_install_warning_lollipop">這需要 10 秒以上的時間而且該裝置將在之後<b>重新開機</b>。</string>

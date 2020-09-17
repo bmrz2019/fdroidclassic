@@ -20,8 +20,6 @@
     <string name="system_installer_on">Користи повлашћено проширење за уградњу, надоградњу и уклањање пакета</string>
     <string name="app_details">Појединости апликације</string>
     <string name="no_such_app">Нема таквог програма.</string>
-    <string name="about_title">О Ф-дроиду</string>
-    <string name="about_site">Мрежна страница</string>
     <string name="about_mail">Е-пошта</string>
     <string name="about_version">Издање</string>
     <string name="app_installed">Уграђена</string>
@@ -124,10 +122,6 @@
 
 Напомена: Све
 претходно инсталиране апликације ће остати на уређају.</string>
-    <string name="repo_disabled_notification">Онемогућена „%1$s“.
-
-Мораћете
-поново да омогућите ову ризницу да бисте инсталирали апликације са ње.</string>
     <string name="repo_added">Сачувана је ризница Ф-дроида %1$s.</string>
     <string name="repo_searching_address">Тражим ризницу Ф-дроида на\n%1$s</string>
     <string name="minsdk_or_later">%s или новији</string>
@@ -280,8 +274,6 @@
     <string name="download_pending">Чекам на почетак преузимања…</string>
 
     <string name="downloading_apk">Преузимам %1$s</string>
-
-    <string name="system_install_not_supported">Инсталирање Повлашћеног проширење за Ф-дроид тренутно није подржано на Андроиду 5.1 и новијем.</string>
 
     <string name="keep_hour">1 сат</string>
     <string name="keep_day">1 дан</string>

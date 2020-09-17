@@ -10,8 +10,6 @@
     <string name="update_history">Ĝisdatiga historio</string>
     <string name="app_details">Aplikaĵaj detaloj</string>
     <string name="no_such_app">Neniu aplikaĵo trovita.</string>
-    <string name="about_title">Pri F-Droid</string>
-    <string name="about_site">Retejo</string>
     <string name="about_mail">Retpoŝto</string>
     <string name="about_version">Versio</string>
     <string name="app_installed">Instalita</string>
@@ -177,9 +175,6 @@
     <string name="repo_confirm_delete_body">Forigado de deponejo kaŭzos ke aplikaĵojn ĝi liveras ne plu estos disponeblaj en F-Droid.
 
 Rigardu: ĉiuj antaŭe konservitaj aplikaĵoj restos en via aparato.</string>
-    <string name="repo_disabled_notification">%1$s malaktiva.
-
-Vi devos reaktivigi ĉi tiun deponejon por instali aplikaĵojn el ĝi.</string>
     <string name="not_on_same_wifi">Via aparato ne estas en la sama sendrata reto, kie loka deponejo vi jam aldonis! Provu kuniĝi la reton: %s</string>
     <string name="pref_language">Lingvo</string>
     <string name="pref_language_default">Sistema apriora</string>
@@ -255,7 +250,6 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="tap_to_update_format">Tuŝu por ĝisdatigi %s</string>
     <string name="download_pending">Atendado je instalado…</string>
     <string name="downloading_apk">Elŝutado de %1$s</string>
-    <string name="system_install_not_supported">Instalado de Privilegia F-Droid-aldonaĵo ne estas nuntempe subtenata en Android 5.1 aŭ posta.</string>
     <string name="keep_hour">1 horo</string>
     <string name="keep_day">1 tago</string>
     <string name="keep_week">1 semajno</string>
@@ -279,7 +273,6 @@ Provu elekti alian kategorion aŭ ĝisdatigi viajn deponejojn por atingi freŝan
     <string name="app_installed_media">Dosiero instalita al %s</string>
     <string name="antidisabledalgorithmlist">Esta aplicación tiene una firma de seguridad débil</string>
     <string name="status_inserting_x_apps">Ŝparante detalojn de la aplikaĵo (%1$d/%2$d) de %3$s</string>
-    <string name="warning_scaning_qr_code">Via fotilo ne ŝajnas havi aŭtomatan fokuson. Eble malfacilas skani la kodon.</string>
     <string name="menu_appinfo">Informoj pri Aplikoj (Agordoj pri Sistemo)</string>
     <string name="app_permission_storage">F-Droid bezonas la permeson pri stokado por instali ĉi tion en stokado. Bonvolu permesi ĝin sur la sekva ekrano por daŭrigi la instaladon.</string>
     <string name="repo_official_mirrors">Oficialaj speguloj</string>

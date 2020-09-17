@@ -16,9 +16,7 @@
   <string name="system_installer_on">使用系統權限套件安裝、更新及移除軟件包</string>
     <string name="app_details">應用程式詳細資料</string>
   <string name="no_such_app">找不到這樣的應用程式。</string>
-  <string name="about_title">關於 F-Droid</string>
-  <string name="about_site">網站</string>
-  <string name="about_mail">電郵</string>
+    <string name="about_mail">電郵</string>
   <string name="about_version">版本</string>
   <string name="app_installed">已安裝</string>
   <string name="app_not_installed">沒有安裝</string>
@@ -93,11 +91,7 @@
   <string name="repo_name">名稱</string>
   <string name="unknown">未知</string>
   <string name="repo_confirm_delete_title">刪除軟件倉庫？</string>
-  <string name="repo_disabled_notification">已停用 %1$s。
-
-您需要
-重新啟用此軟件倉庫才能安裝其中的應用程式。</string>
-  <string name="repo_added">已儲存 F-Droid 軟件倉庫 %1$s。</string>
+    <string name="repo_added">已儲存 F-Droid 軟件倉庫 %1$s。</string>
   <string name="repo_searching_address">在 %1$s\n搜索 F-Droid 軟件倉庫</string>
   <string name="minsdk_or_later">%s 或以後</string>
   <string name="up_to_maxsdk">直至 %s</string>
@@ -277,8 +271,6 @@
     <string name="update_auto_download">自動下載更新</string>
     <string name="update_auto_download_summary">在背後下載更新檔案</string>
     <string name="repo_provider">軟件倉庫：%s</string>
-
-    <string name="system_install_not_supported">F-Droid 系統權限套件不支援 Android 5.1 或更新的版本。</string>
 
     <string name="tap_to_install_format">觸碰以安裝 %s</string>
     <string name="tap_to_update_format">觸碰以更新 %s</string>

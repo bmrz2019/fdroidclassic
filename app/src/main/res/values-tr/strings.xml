@@ -20,8 +20,6 @@
     <string name="system_installer_on">Paket kurmak, güncellemek ve kaldırmak için F-Droid Ayrıcalıklı Uzantıyı kullan</string>
     <string name="app_details">Uygulama Detayları</string>
     <string name="no_such_app">Böyle bir uygulama bulunamadı.</string>
-    <string name="about_title">F-Droid Hakkında</string>
-    <string name="about_site">Ağ sitesi</string>
     <string name="about_mail">E-posta</string>
     <string name="about_version">Sürüm</string>
     <string name="app_installed">Kurulu</string>
@@ -124,7 +122,6 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="unknown">Bilinmiyor</string>
     <string name="repo_confirm_delete_title">Depo silinsin mi?</string>
     <string name="repo_confirm_delete_body">Bir depoyu silmek, ondan indirilen uygulamaların bundan böyle F-Droid vasıtasıyla elde edilemeyeceği anlamına gelir.\n\nNot: Tüm önceden kurulan uygulamalar aygıtınızda kalacaktır.</string>
-    <string name="repo_disabled_notification">\"%1$s\" devre dışı bırakıldı.\n\nOndan uygulama indirmek için bu depoyu tekrar etkinleştirmeniz gerekecektir.</string>
     <string name="repo_added">F-Droid deposu %1$s kaydedildi.</string>
     <string name="repo_searching_address">%1$s konumunda F-Droid deposu aranıyor</string>
     <string name="minsdk_or_later">%s ya da sonrası</string>
@@ -266,8 +263,6 @@ Sunduğu uygulamaları görmek için onu güncellemeniz gerekir.</string>
     <string name="download_pending">İndirmenin başlaması bekleniyor…</string>
 
     <string name="downloading_apk">İndiriliyor %1$s</string>
-
-    <string name="system_install_not_supported">F-Droid Ayrıcalıklı Uzantısının kurulumu güncel olarak Android 5.1 ve sonraki sürümlerde desteklenmemektedir.</string>
 
     <string name="install_error_notify_title">%s kurulumu sırasında hata</string>
     <string name="uninstall_error_notify_title">%s kaldırılması sırasında hata</string>
