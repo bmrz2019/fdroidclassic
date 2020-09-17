@@ -146,6 +146,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     public String issueTracker;
 
+    public String translation;
+
     public String sourceCode;
 
     public String video;
@@ -160,7 +162,9 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     public String flattrID;
 
-    public String liberapayID;
+    public String liberapay;
+
+    public String openCollective;
 
     public String upstreamVersionName;
 
@@ -276,6 +280,9 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 case Cols.SOURCE_CODE:
                     sourceCode = cursor.getString(i);
                     break;
+                case Cols.TRANSLATION:
+                    translation = cursor.getString(i);
+                    break;
                 case Cols.VIDEO:
                     video = cursor.getString(i);
                     break;
@@ -294,8 +301,11 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 case Cols.FLATTR_ID:
                     flattrID = cursor.getString(i);
                     break;
-                case Cols.LIBERAPAY_ID:
-                    liberapayID = cursor.getString(i);
+                case Cols.LIBERAPAY:
+                    liberapay = cursor.getString(i);
+                    break;
+                case Cols.OPEN_COLLECTIVE:
+                    openCollective = cursor.getString(i);
                     break;
                 case Cols.SuggestedApk.VERSION_NAME:
                     suggestedVersionName = cursor.getString(i);
@@ -423,6 +433,26 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                     + packageName + "'");
         }
     }
+
+    /**
+     * {@link #liberapay} was originally included using a numeric ID, now it is a
+     * username. This should not override {@link #liberapay} if that is already set.
+     */
+    @JsonProperty("liberapayID")
+    void setLiberapayID(String liberapayId) {  // NOPMD
+        if (TextUtils.isEmpty(liberapayId) || !TextUtils.isEmpty(liberapay)) {
+            return;
+        }
+        try {
+            int id = Integer.parseInt(liberapayId);
+            if (id > 0) {
+                liberapay = "~" + liberapayId;
+            }
+        } catch (NumberFormatException e) {
+            // ignored
+        }
+    }
+
 
     /**
      * Parses the {@code localized} block in the incoming index metadata,
@@ -959,6 +989,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         values.put(Cols.AUTHOR_EMAIL, authorEmail);
         values.put(Cols.WEBSITE, webSite);
         values.put(Cols.ISSUE_TRACKER, issueTracker);
+        values.put(Cols.TRANSLATION, translation);
         values.put(Cols.SOURCE_CODE, sourceCode);
         values.put(Cols.VIDEO, video);
         values.put(Cols.CHANGELOG, changelog);
@@ -966,7 +997,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         values.put(Cols.BITCOIN, bitcoin);
         values.put(Cols.LITECOIN, litecoin);
         values.put(Cols.FLATTR_ID, flattrID);
-        values.put(Cols.LIBERAPAY_ID, liberapayID);
+        values.put(Cols.LIBERAPAY, liberapay);
+        values.put(Cols.OPEN_COLLECTIVE, openCollective);
         values.put(Cols.ADDED, Utils.formatDate(added, ""));
         values.put(Cols.LAST_UPDATED, Utils.formatDate(lastUpdated, ""));
         values.put(Cols.PREFERRED_SIGNER, preferredSigner);
@@ -1086,9 +1118,14 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     @Nullable
     public String getLiberapayUri() {
-        return TextUtils.isEmpty(liberapayID) ? null : "https://liberapay.com/~" + liberapayID;
+        return TextUtils.isEmpty(liberapay) ? null : "https://liberapay.com/" + liberapay;
     }
 
+    @Nullable
+    public String getOpenCollectiveUri() {
+        return TextUtils.isEmpty(openCollective) ? null : "https://opencollective.com/"
+                + openCollective + "/donate/";
+    }
 
     /**
      * @see App#suggestedVersionName for why this uses a getter while other member variables are
@@ -1187,13 +1224,15 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         dest.writeString(this.webSite);
         dest.writeString(this.issueTracker);
         dest.writeString(this.sourceCode);
+        dest.writeString(this.translation);
         dest.writeString(this.video);
         dest.writeString(this.changelog);
         dest.writeString(this.donate);
         dest.writeString(this.bitcoin);
         dest.writeString(this.litecoin);
         dest.writeString(this.flattrID);
-        dest.writeString(this.liberapayID);
+        dest.writeString(this.liberapay);
+        dest.writeString(this.openCollective);
         dest.writeString(this.preferredSigner);
         dest.writeString(this.upstreamVersionName);
         dest.writeInt(this.upstreamVersionCode);
@@ -1236,13 +1275,15 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         this.webSite = in.readString();
         this.issueTracker = in.readString();
         this.sourceCode = in.readString();
+        this.translation = in.readString();
         this.video = in.readString();
         this.changelog = in.readString();
         this.donate = in.readString();
         this.bitcoin = in.readString();
         this.litecoin = in.readString();
         this.flattrID = in.readString();
-        this.liberapayID = in.readString();
+        this.liberapay = in.readString();
+        this.openCollective = in.readString();
         this.preferredSigner = in.readString();
         this.upstreamVersionName = in.readString();
         this.upstreamVersionCode = in.readInt();

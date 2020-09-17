@@ -101,7 +101,8 @@ Android is open in the sense that you are free to install apks from anywhere you
     * Filter apps that aren't compatible with the device\n
     * Find apps via categories and searchable descriptions\n
     * Access associated urls for donations, source code etc.\n
-    * Stay safe by checking repo index signatures and apk hashes\n" />
+    * Stay safe by checking repo index signatures and apk hashes\n"
+            tools:visibility="gone"/>
 
         <TextView
             android:id="@+id/view_more_description"
@@ -152,7 +153,8 @@ Android is open in the sense that you are free to install apks from anywhere you
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/layout_horizontal_margin"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <TextView
                 android:id="@+id/source"
@@ -171,6 +173,12 @@ Android is open in the sense that you are free to install apks from anywhere you
                 style="@style/AppDetailsLink"
                 android:text="@string/menu_changelog"
                 app:drawableStartCompat="@drawable/ic_changelog" />
+
+            <TextView
+                android:id="@+id/translate"
+                style="@style/AppDetailsLink"
+                android:text="@string/link_translate"
+                app:drawableStartCompat="@drawable/ic_baseline_translate_24" />
 
             <TextView
                 android:id="@+id/website"

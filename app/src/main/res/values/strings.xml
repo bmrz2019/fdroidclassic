@@ -359,5 +359,6 @@
     <string name="reset_transient_message">Are you sure you want to reset your client? All repository indexes will need to be downloaded again.</string>
     <string name="reset_transient_title">Reset Database?</string>
     <string name="screenshot">Screenshot</string>
+    <string name="link_translate">Translations</string>
 
 </resources>

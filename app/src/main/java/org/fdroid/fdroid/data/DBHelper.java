@@ -129,6 +129,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + AppMetadataTable.Cols.WEBSITE + " text, "
             + AppMetadataTable.Cols.ISSUE_TRACKER + " text, "
             + AppMetadataTable.Cols.SOURCE_CODE + " text, "
+            + AppMetadataTable.Cols.TRANSLATION + " text, "
             + AppMetadataTable.Cols.VIDEO + " string, "
             + AppMetadataTable.Cols.CHANGELOG + " text, "
             + AppMetadataTable.Cols.PREFERRED_SIGNER + " text,"
@@ -140,7 +141,8 @@ public class DBHelper extends SQLiteOpenHelper {
             + AppMetadataTable.Cols.BITCOIN + " string,"
             + AppMetadataTable.Cols.LITECOIN + " string,"
             + AppMetadataTable.Cols.FLATTR_ID + " string,"
-            + AppMetadataTable.Cols.LIBERAPAY_ID + " string,"
+            + AppMetadataTable.Cols.LIBERAPAY + " string,"
+            + AppMetadataTable.Cols.OPEN_COLLECTIVE + " string,"
             + AppMetadataTable.Cols.REQUIREMENTS + " string,"
             + AppMetadataTable.Cols.ADDED + " string,"
             + AppMetadataTable.Cols.LAST_UPDATED + " string,"
@@ -210,7 +212,7 @@ public class DBHelper extends SQLiteOpenHelper {
             + "primary key(" + ApkAntiFeatureJoinTable.Cols.APK_ID + ", " + ApkAntiFeatureJoinTable.Cols.ANTI_FEATURE_ID + ") "
             + " );";
 
-    protected static final int DB_VERSION = 84;
+    protected static final int DB_VERSION = 85;
 
     private final Context context;
 
@@ -270,10 +272,35 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
         Utils.debugLog(TAG, "Upgrading database from v" + oldVersion + " v" + newVersion);
+        addOpenCollective(db, oldVersion);
+        addTranslation(db, oldVersion);
     }
 
+    private void addOpenCollective(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 85) {
+            return;
+        }
+
+        if (!columnExists(db, AppMetadataTable.NAME, AppMetadataTable.Cols.OPEN_COLLECTIVE)) {
+            Utils.debugLog(TAG, "Adding " + AppMetadataTable.Cols.OPEN_COLLECTIVE + " field to "
+                    + AppMetadataTable.NAME + " table in db.");
+            db.execSQL("alter table " + AppMetadataTable.NAME + " add column "
+                    + AppMetadataTable.Cols.OPEN_COLLECTIVE + " string;");
+        }
+    }
+
+    private void addTranslation(SQLiteDatabase db, int oldVersion) {
+        if (oldVersion >= 85) {
+            return;
+        }
+        if (!columnExists(db, AppMetadataTable.NAME, AppMetadataTable.Cols.TRANSLATION)) {
+            Utils.debugLog(TAG, "Adding " + AppMetadataTable.Cols.TRANSLATION + " field to "
+                    + AppMetadataTable.NAME + " table in db.");
+            db.execSQL("alter table " + AppMetadataTable.NAME + " add column "
+                    + AppMetadataTable.Cols.TRANSLATION + " string;");
+        }
+    }
 
     /**
      * By clearing the etags stored in the repo table, it means that next time the user updates

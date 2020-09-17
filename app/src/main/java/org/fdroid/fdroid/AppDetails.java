@@ -1078,6 +1078,9 @@ public class AppDetails extends AppCompatActivity {
                     case R.id.changelog:
                         url = app.changelog;
                         break;
+                    case R.id.translate:
+                        url = app.translation;
+                        break;
                     case R.id.donate:
                         url = app.donate;
                         break;
@@ -1216,6 +1219,14 @@ public class AppDetails extends AppCompatActivity {
             // Changelog button
             tv = view.findViewById(R.id.changelog);
             if (!TextUtils.isEmpty(app.changelog)) {
+                tv.setOnClickListener(mOnClickListener);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+
+            // Translate button
+            tv = view.findViewById(R.id.translate);
+            if (!TextUtils.isEmpty(app.translation)) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);
