@@ -8,8 +8,8 @@ Join the matrix room: [#fdroidclassic:bubu1.eu](https://matrix.to/#/#fdroidclass
 
 Direct APK download [here](https://bubu1.eu/fdroidclassic/fdroid/repo/eu.bubu1.fdroidclassic_1014.apk).
 
-F-Droid Classic comes with it's own F-Droid repository for updates pre-configured.
-
+### Beta versions
+In F-Droid Classic you can just enable the F-Droid Classic Repo.
 Or add the repo to any other F-Droid client: https://bubu1.eu/fdroidclassic/fdroid/repo?fingerprint=5187CFD99F084FFAB2AD60D9D10B39203B89A46DD4862397FE1B1A4F3D46627A
 
 <img src="screenshots/repo-qr.png" width="400">
