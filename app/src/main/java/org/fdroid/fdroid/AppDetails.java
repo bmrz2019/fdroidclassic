@@ -24,6 +24,8 @@ package org.fdroid.fdroid;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -725,12 +727,14 @@ public class AppDetails extends AppCompatActivity {
         }
     }
 
-    private void tryOpenUri(String s) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
+    private void tryOpenUri(String uri, String rawdata) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
         if (intent.resolveActivity(packageManager) == null) {
-            Toast.makeText(this,
-                    getString(R.string.no_handler_app, intent.getDataString()),
-                    Toast.LENGTH_LONG).show();
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("F-Droid Link", rawdata);
+            clipboard.setPrimaryClip(clip);
+
+            Toast.makeText(this, R.string.copied_to_clipboard, Toast.LENGTH_LONG).show();
             return;
         }
         startActivity(intent);
@@ -1060,6 +1064,7 @@ public class AppDetails extends AppCompatActivity {
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             public void onClick(View v) {
                 String url = null;
+                String rawdata = null;
                 App app = appDetails.getApp();
                 switch (v.getId()) {
                     case R.id.website:
@@ -1068,6 +1073,7 @@ public class AppDetails extends AppCompatActivity {
                     case R.id.email:
                         final String subject = Uri.encode(getString(R.string.app_details_subject, app.name));
                         url = "mailto:" + app.authorEmail + "?subject=" + subject;
+                        rawdata = app.authorEmail;
                         break;
                     case R.id.source:
                         url = app.sourceCode;
@@ -1092,16 +1098,18 @@ public class AppDetails extends AppCompatActivity {
                         break;
                     case R.id.bitcoin:
                         url = app.getBitcoinUri();
+                        rawdata = app.bitcoin;
                         break;
                     case R.id.litecoin:
                         url = app.getLitecoinUri();
+                        rawdata = app.litecoin;
                         break;
                     case R.id.flattr:
                         url = app.getFlattrUri();
                         break;
                 }
                 if (url != null) {
-                    ((AppDetails) getActivity()).tryOpenUri(url);
+                    ((AppDetails) getActivity()).tryOpenUri(url, rawdata);
                 }
             }
         };

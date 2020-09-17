@@ -363,5 +363,6 @@
     <string name="liberapay">Liberapay</string>
     <string name="opencollective">Open Collective</string>
     <string name="links_and_donations"><![CDATA[Links & Donations]]></string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
 
 </resources>
