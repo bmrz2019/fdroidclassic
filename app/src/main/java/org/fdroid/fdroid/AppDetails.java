@@ -1081,17 +1081,23 @@ public class AppDetails extends AppCompatActivity {
                     case R.id.translate:
                         url = app.translation;
                         break;
+                    case R.id.liberapay:
+                        url = app.getLiberapayUri();
+                        break;
+                    case R.id.opencollective:
+                        url = app.getOpenCollectiveUri();
+                        break;
                     case R.id.donate:
                         url = app.donate;
                         break;
                     case R.id.bitcoin:
-                        url = "bitcoin:" + app.bitcoin;
+                        url = app.getBitcoinUri();
                         break;
                     case R.id.litecoin:
-                        url = "litecoin:" + app.litecoin;
+                        url = app.getLitecoinUri();
                         break;
                     case R.id.flattr:
-                        url = "https://flattr.com/thing/" + app.flattrID;
+                        url = app.getFlattrUri();
                         break;
                 }
                 if (url != null) {
@@ -1227,6 +1233,22 @@ public class AppDetails extends AppCompatActivity {
             // Translate button
             tv = view.findViewById(R.id.translate);
             if (!TextUtils.isEmpty(app.translation)) {
+                tv.setOnClickListener(mOnClickListener);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+
+            // Liberapay button
+            tv = view.findViewById(R.id.liberapay);
+            if (!TextUtils.isEmpty(app.getLiberapayUri())) {
+                tv.setOnClickListener(mOnClickListener);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+
+            // Open Collective button
+            tv = view.findViewById(R.id.opencollective);
+            if (!TextUtils.isEmpty(app.getOpenCollectiveUri())) {
                 tv.setOnClickListener(mOnClickListener);
             } else {
                 tv.setVisibility(View.GONE);

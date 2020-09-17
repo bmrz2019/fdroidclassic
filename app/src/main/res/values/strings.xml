@@ -360,5 +360,7 @@
     <string name="reset_transient_title">Reset Database?</string>
     <string name="screenshot">Screenshot</string>
     <string name="link_translate">Translations</string>
+    <string name="liberapay">Liberapay</string>
+    <string name="opencollective">Open Collective</string>
 
 </resources>

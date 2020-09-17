@@ -122,7 +122,8 @@ Android is open in the sense that you are free to install apks from anywhere you
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="5"
-        tools:listitem="@layout/screenshot_item" />
+        tools:listitem="@layout/screenshot_item"
+        tools:visibility="gone"/>
 
     <View
         android:layout_width="match_parent"
@@ -191,6 +192,18 @@ Android is open in the sense that you are free to install apks from anywhere you
                 style="@style/AppDetailsLink"
                 android:text="@string/menu_email"
                 app:drawableStartCompat="@drawable/ic_email" />
+
+            <TextView
+                android:id="@+id/liberapay"
+                style="@style/AppDetailsLink"
+                android:text="@string/liberapay"
+                app:drawableStartCompat="@drawable/ic_donate_liberapay" />
+
+            <TextView
+                android:id="@+id/opencollective"
+                style="@style/AppDetailsLink"
+                android:text="@string/opencollective"
+                app:drawableStartCompat="@drawable/ic_donate_opencollective" />
 
             <TextView
                 android:id="@+id/donate"
