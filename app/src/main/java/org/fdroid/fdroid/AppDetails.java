@@ -1120,7 +1120,7 @@ public class AppDetails extends AppCompatActivity {
             description = view.findViewById(R.id.description);
             TextView whatsNewView = view.findViewById(R.id.whats_new);
             screenshots = view.findViewById(R.id.screnshot_list);
-            screenshotAdapter = new ScreenShotAdapter(getContext(), List.of(app.getAllScreenshots(getContext())));
+            screenshotAdapter = new ScreenShotAdapter(getContext(), app.getAllScreenshots(getContext()));
             screenshotAdapter.setClickListener(this);
             screenshots.setAdapter(screenshotAdapter);
             viewMoreButton = view.findViewById(R.id.view_more_description);

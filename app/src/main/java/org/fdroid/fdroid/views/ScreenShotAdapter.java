@@ -15,15 +15,13 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
 
-import java.util.List;
-
 public class ScreenShotAdapter extends RecyclerView.Adapter<ScreenShotAdapter.ViewHolder> {
     private final DisplayImageOptions displayImageOptions;
     private LayoutInflater inflater;
-    private List<String> screenshotUrls;
+    private String[] screenshotUrls;
     private ScreenshotClickListener clickListener;
 
-    public ScreenShotAdapter(Context context, List<String> screenshotUrls) {
+    public ScreenShotAdapter(Context context, String[] screenshotUrls) {
         this.inflater = LayoutInflater.from(context);
         this.screenshotUrls = screenshotUrls;
         displayImageOptions = Utils.getDefaultDisplayImageOptionsBuilder()
@@ -42,7 +40,7 @@ public class ScreenShotAdapter extends RecyclerView.Adapter<ScreenShotAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String url = screenshotUrls.get(position);
+        String url = screenshotUrls[position];
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(url, holder.screenshot, displayImageOptions);
     }
@@ -50,12 +48,7 @@ public class ScreenShotAdapter extends RecyclerView.Adapter<ScreenShotAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return screenshotUrls.size();
-    }
-
-    // convenience method for getting data at click position
-    public String getItem(int id) {
-        return screenshotUrls.get(id);
+        return screenshotUrls.length;
     }
 
 

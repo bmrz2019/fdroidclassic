@@ -31,12 +31,12 @@ This project is probably aimed more at the power user who values function over f
 * index-v1 support.
 * Privileged Extension support (in progress, need to release the extensions somewhere)
 * Inline changelogs
+* Screenshots
 * Localized metadata
 
 ### Todo
 
 * Support for the additional features provided by the new index format.
-  * Screenshots
   * All donations options
   * Translation links
 * proper mirror support. They are currently not completely broken, but I'm not actually sure if mirrors are really used right now.

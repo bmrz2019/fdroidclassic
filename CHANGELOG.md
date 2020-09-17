@@ -1,3 +1,8 @@
+### 1.1-beta3 (?)
+
+* Display Screenshots!
+* Disable the F-Droid Classic repo by default for new installs
+
 ### 1.1-beta2 (15.9.2020)
 
 * Fix Index update being completely broken on Android < 7 introduced in 1.1-beta1
