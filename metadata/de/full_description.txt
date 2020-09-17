@@ -6,10 +6,10 @@ F-Droid Classic bringt neue Funktionen des offiziellen Clients zurück zum klass
 * Unterstützung für Index-v1 Format
 * Darstellung der "Was Gibt's Neues"-Daten
 * Lokalisierte Metadaten
+* Screenshots
 
 Zukünftige Features:
 
-* Screenshots
 * Bessere Mirror Unterstützung
 
 Die folgenden Features fehlen und werden vermutlich auch in Zukunft nicht unterstützt:

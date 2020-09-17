@@ -6,10 +6,10 @@ F-Droid Classic brings features of the modern 1.x version of F-Droid to the clas
 * Index-v1 support
 * Inline changelog entries
 * Localized metadata
+* Screenshots
 
 Upcoming features:
 
-* Screenshots
 * Better mirror support
 
 It doesn't support the following features and probably never will
