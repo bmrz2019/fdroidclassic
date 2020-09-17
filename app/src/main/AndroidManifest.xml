@@ -25,14 +25,6 @@
     package="org.fdroid.fdroid"
     android:installLocation="auto">
 
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true" />
-
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
@@ -492,6 +484,8 @@
         <activity
             android:name=".installer.FileInstallerActivity"
             android:theme="@style/AppThemeTransparent" />
+        <activity android:name=".views.ScreenShotsActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

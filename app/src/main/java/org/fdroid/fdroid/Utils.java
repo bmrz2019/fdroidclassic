@@ -364,9 +364,7 @@ public final class Utils {
             defaultDisplayImageOptionsBuilder = new DisplayImageOptions.Builder()
                     .cacheInMemory(true)
                     .cacheOnDisk(true)
-                    .considerExifParams(false)
-                    .bitmapConfig(Bitmap.Config.RGB_565)
-                    .imageScaleType(ImageScaleType.EXACTLY);
+                    .considerExifParams(false);
         }
         return defaultDisplayImageOptionsBuilder;
     }

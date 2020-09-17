@@ -16,6 +16,7 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -100,9 +101,7 @@ Android is open in the sense that you are free to install apks from anywhere you
     * Filter apps that aren't compatible with the device\n
     * Find apps via categories and searchable descriptions\n
     * Access associated urls for donations, source code etc.\n
-    * Stay safe by checking repo index signatures and apk hashes\n
-\n
-Changelog" />
+    * Stay safe by checking repo index signatures and apk hashes\n" />
 
         <TextView
             android:id="@+id/view_more_description"
@@ -114,6 +113,15 @@ Changelog" />
             android:text="@string/more" />
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/screnshot_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/screenshot_item" />
 
     <View
         android:layout_width="match_parent"
@@ -134,9 +142,9 @@ Changelog" />
         <TextView
             android:id="@+id/information"
             style="@style/AppDetailsSubheaderText"
-            android:drawableStart="@drawable/ic_website"
-            android:drawableEnd="@drawable/ic_expand_more_grey600"
-            android:text="@string/links" />
+            android:text="@string/links"
+            app:drawableEndCompat="@drawable/ic_expand_more_grey600"
+            app:drawableStartCompat="@drawable/ic_website" />
 
         <LinearLayout
             android:id="@+id/ll_information_content"
@@ -149,56 +157,56 @@ Changelog" />
             <TextView
                 android:id="@+id/source"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_source_code"
-                android:text="@string/menu_source" />
+                android:text="@string/menu_source"
+                app:drawableStartCompat="@drawable/ic_source_code" />
 
             <TextView
                 android:id="@+id/issues"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_issues"
-                android:text="@string/menu_issues" />
+                android:text="@string/menu_issues"
+                app:drawableStartCompat="@drawable/ic_issues" />
 
             <TextView
                 android:id="@+id/changelog"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_changelog"
-                android:text="@string/menu_changelog" />
+                android:text="@string/menu_changelog"
+                app:drawableStartCompat="@drawable/ic_changelog" />
 
             <TextView
                 android:id="@+id/website"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_website"
-                android:text="@string/menu_website" />
+                android:text="@string/menu_website"
+                app:drawableStartCompat="@drawable/ic_website" />
 
             <TextView
                 android:id="@+id/email"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_email"
-                android:text="@string/menu_email" />
+                android:text="@string/menu_email"
+                app:drawableStartCompat="@drawable/ic_email" />
 
             <TextView
                 android:id="@+id/donate"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_donate"
-                android:text="@string/menu_donate" />
+                android:text="@string/menu_donate"
+                app:drawableStartCompat="@drawable/ic_donate" />
 
             <TextView
                 android:id="@+id/bitcoin"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_bitcoin"
-                android:text="@string/menu_bitcoin" />
+                android:text="@string/menu_bitcoin"
+                app:drawableStartCompat="@drawable/ic_bitcoin" />
 
             <TextView
                 android:id="@+id/litecoin"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_litecoin"
-                android:text="@string/menu_litecoin" />
+                android:text="@string/menu_litecoin"
+                app:drawableStartCompat="@drawable/ic_litecoin" />
 
             <TextView
                 android:id="@+id/flattr"
                 style="@style/AppDetailsLink"
-                android:drawableStart="@drawable/ic_flattr"
-                android:text="@string/menu_flattr" />
+                android:text="@string/menu_flattr"
+                app:drawableStartCompat="@drawable/ic_flattr" />
 
         </LinearLayout>
     </LinearLayout>
@@ -215,9 +223,9 @@ Changelog" />
         <TextView
             android:id="@+id/permissions"
             style="@style/AppDetailsSubheaderText"
-            android:drawableStart="@drawable/ic_lock_24dp_grey600"
-            android:drawableEnd="@drawable/ic_expand_more_grey600"
-            android:text="@string/permissions" />
+            android:text="@string/permissions"
+            app:drawableEndCompat="@drawable/ic_expand_more_grey600"
+            app:drawableStartCompat="@drawable/ic_lock_24dp_grey600" />
 
         <LinearLayout
             android:id="@+id/permission_list"

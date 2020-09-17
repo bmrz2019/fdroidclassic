@@ -62,6 +62,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -84,6 +85,8 @@ import org.fdroid.fdroid.net.Downloader;
 import org.fdroid.fdroid.net.DownloaderService;
 import org.fdroid.fdroid.privileged.views.AppDiff;
 import org.fdroid.fdroid.privileged.views.AppSecurityPermissions;
+import org.fdroid.fdroid.views.ScreenShotAdapter;
+import org.fdroid.fdroid.views.ScreenShotsActivity;
 
 import java.util.List;
 import java.util.Locale;
@@ -962,7 +965,7 @@ public class AppDetails extends AppCompatActivity {
         return adapter;
     }
 
-    public static class AppDetailsSummaryFragment extends Fragment {
+    public static class AppDetailsSummaryFragment extends Fragment implements ScreenShotAdapter.ScreenshotClickListener {
 
         final Preferences prefs;
         private AppDetails appDetails;
@@ -974,6 +977,7 @@ public class AppDetails extends AppCompatActivity {
         private TextView permissionHeader;
         private CharSequence descriptionText;
         private CharSequence shortDescriptionText;
+        private RecyclerView screenshots;
         private final View.OnClickListener expanderPermissions = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -988,7 +992,7 @@ public class AppDetails extends AppCompatActivity {
             }
         };
         private ViewGroup layoutLinks;
-        private TextView whatsNewView;
+        private ScreenShotAdapter screenshotAdapter;
 
         public AppDetailsSummaryFragment() {
             prefs = Preferences.get();
@@ -1114,7 +1118,11 @@ public class AppDetails extends AppCompatActivity {
             App app = appDetails.getApp();
             // Expandable description
             description = view.findViewById(R.id.description);
-            whatsNewView = view.findViewById(R.id.whats_new);
+            TextView whatsNewView = view.findViewById(R.id.whats_new);
+            screenshots = view.findViewById(R.id.screnshot_list);
+            screenshotAdapter = new ScreenShotAdapter(getContext(), List.of(app.getAllScreenshots(getContext())));
+            screenshotAdapter.setClickListener(this);
+            screenshots.setAdapter(screenshotAdapter);
             viewMoreButton = view.findViewById(R.id.view_more_description);
             permissionHeader = view.findViewById(R.id.permissions);
             permissionListView = view.findViewById(R.id.permission_list);
@@ -1135,7 +1143,6 @@ public class AppDetails extends AppCompatActivity {
                     int endLine = layout.getLineForVertical(height);
                     int end = layout.getLineEnd(endLine - 1);
                     shortDescriptionText = trimNewlines(description.getText().subSequence(start, end));
-                    Log.d(TAG, "setupView: " + shortDescriptionText);
                     description.setText(shortDescriptionText);
                     viewMoreButton.setVisibility(View.VISIBLE);
                 }
@@ -1335,6 +1342,11 @@ public class AppDetails extends AppCompatActivity {
             } else {
                 signatureView.setVisibility(View.GONE);
             }
+        }
+
+        @Override
+        public void onItemClick(View view, int position) {
+            this.startActivity(ScreenShotsActivity.getStartIntent(getContext(), appDetails.getApp().packageName, position));
         }
     }
 
