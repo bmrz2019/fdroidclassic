@@ -1,6 +1,7 @@
 package org.fdroid.fdroid.net;
 
 import android.net.Uri;
+
 import androidx.annotation.NonNull;
 
 import org.fdroid.fdroid.ProgressListener;
@@ -188,7 +189,9 @@ public abstract class Downloader {
                 output.write(buffer, 0, count);
             }
         } finally {
-            downloaderProgressListener = null;
+            synchronized (downloaderProgressListener) {
+                downloaderProgressListener = null;
+            }
             timer.cancel();
             timer.purge();
             output.flush();
@@ -202,8 +205,10 @@ public abstract class Downloader {
     private final TimerTask progressTask = new TimerTask() {
         @Override
         public void run() {
-            if (downloaderProgressListener != null) {
-                downloaderProgressListener.onProgress(urlString, bytesRead, totalBytes);
+            synchronized (downloaderProgressListener) {
+                if (downloaderProgressListener != null) {
+                    downloaderProgressListener.onProgress(urlString, bytesRead, totalBytes);
+                }
             }
         }
     };
