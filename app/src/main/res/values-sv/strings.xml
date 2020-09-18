@@ -289,4 +289,12 @@ Den kräver inte någon särskild tillgång.</string>
     <string name="warning_no_internet">Kan inte uppdatera, är du ansluten till internet\?</string>
     <string name="details_last_updated_today">Uppdaterad idag</string>
     <string name="app_permission_storage">F-Droid behöver lagringstillstånd för att installera detta på lagring. Tillåt det på nästa skärm för att fortsätta med installationen.</string>
+    <string name="link_translate">Översättningar</string>
+    <string name="copied_to_clipboard">Kopieras till Urklipp</string>
+    <string name="install_all_updates">Installera uppdateringar</string>
+    <string name="reset_transient_message">Är du säker på att du vill återställa din klient\? Alla arkivindex måste laddas ner igen.</string>
+    <string name="links_and_donations">Länkar och donationer</string>
+    <string name="force_update">Tvinga en uppdatering</string>
+    <string name="reset_transient_title">Återställa databas\?</string>
+    <string name="menu_update_this_repo">Uppdatera denna repo</string>
 </resources>

@@ -316,4 +316,8 @@ non saranno rimossi. Non richiede alcun permesso speciale.</string>
     <string name="force_update">Forza l\'aggionamento</string>
     <string name="reset_transient_message">Sei sicuro/a di voler ripristinare il tuo cliente\? Tutti gli indici del repository dovranno essere scaricati di nuovo.</string>
     <string name="reset_transient_title">Ripristinare la base di dati\?</string>
+    <string name="link_translate">Traduzioni</string>
+    <string name="copied_to_clipboard">Copiato negli appunti</string>
+    <string name="screenshot">Immagine</string>
+    <string name="links_and_donations">Link e donazioni</string>
 </resources>

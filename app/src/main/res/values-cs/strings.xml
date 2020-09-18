@@ -272,4 +272,12 @@
     <string name="download_all_updates">Aktualizovat vše</string>
     <string name="repo_user_mirrors">Uživatelská zrcadla</string>
     <string name="status_inserting_x_apps">Ukládání podrobností o aplikaci (%1$d/%2$d) z %3$s</string>
+    <string name="link_translate">Překlady</string>
+    <string name="links_and_donations">Odkazy a dary</string>
+    <string name="copied_to_clipboard">Zkopírováno do schránky</string>
+    <string name="menu_update_this_repo">Aktualizujte tuto Repo</string>
+    <string name="install_all_updates">Nainstalujte aktualizace</string>
+    <string name="force_update">Vynutit aktualizaci</string>
+    <string name="reset_transient_message">Opravdu chcete resetovat klienta\? Bude nutné znovu stáhnout všechny indexy úložiště.</string>
+    <string name="reset_transient_title">Obnovit databázi\?</string>
 </resources>

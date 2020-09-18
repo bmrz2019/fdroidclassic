@@ -304,4 +304,13 @@ No requiere ningún acceso especial.</string>
         <item quantity="one">Actualizado hace %1$d mes</item>
         <item quantity="other">Actualizado hace %1$d meses</item>
     </plurals>
+    <string name="link_translate">Traducciones</string>
+    <string name="links_and_donations">Enlaces y donaciones</string>
+    <string name="copied_to_clipboard">Copiado al portapapeles</string>
+    <string name="screenshot">Captura de pantalla</string>
+    <string name="menu_update_this_repo">Actualizar este Repo</string>
+    <string name="install_all_updates">Instalar actualizaciones</string>
+    <string name="force_update">Actualización de la fuerza</string>
+    <string name="reset_transient_message">¿Está seguro de que quiere reiniciar a su cliente\? Todos los índices del repositorio deberán ser descargados de nuevo.</string>
+    <string name="reset_transient_title">¿Reiniciar la base de datos\?</string>
 </resources>

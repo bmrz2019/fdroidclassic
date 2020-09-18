@@ -309,4 +309,8 @@
     <string name="force_update">Pakota päivitys</string>
     <string name="reset_transient_title">Palautetaanko tietokanta\?</string>
     <string name="reset_transient_message">Haluatko varmasti nollata asiakkaasi\? Kaikki arkistohakemistot on ladattava uudelleen.</string>
+    <string name="link_translate">Käännökset</string>
+    <string name="links_and_donations">Linkit ja lahjoitukset</string>
+    <string name="copied_to_clipboard">Kopioitu leikepöydälle</string>
+    <string name="screenshot">Näyttökuva</string>
 </resources>

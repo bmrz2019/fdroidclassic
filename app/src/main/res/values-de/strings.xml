@@ -300,4 +300,9 @@ Um darin bereitgestellte Anwendungen anzuzeigen, muss sie aktiviert werden.</str
     <string name="install_all_updates">Aktualisierungen installieren</string>
     <string name="force_update">Aktualisierung zwingen</string>
     <string name="reset_transient_title">Datenbank zurücksetzen\?</string>
+    <string name="link_translate">Übersetzungen</string>
+    <string name="liberapay"></string>
+    <string name="links_and_donations">Links &amp; Spenden</string>
+    <string name="copied_to_clipboard">In die Zwischenablage kopiert</string>
+    <string name="screenshot">Bildschirmfoto</string>
 </resources>

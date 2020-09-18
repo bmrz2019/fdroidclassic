@@ -275,4 +275,13 @@
     <string name="share_repository">Repozytorium akcji</string>
     <string name="download_all_updates">Aktualizacja wszystkich</string>
     <string name="qr_code">QR-Code</string>
+    <string name="link_translate">Tłumaczenia</string>
+    <string name="force_update">Aktualizacja siły</string>
+    <string name="reset_transient_title">Reset bazy danych\?</string>
+    <string name="links_and_donations">Linki i darowizny</string>
+    <string name="copied_to_clipboard">Kopia do schowka</string>
+    <string name="screenshot">Zrzut ekranu</string>
+    <string name="install_all_updates">Instalacja aktualizacji</string>
+    <string name="reset_transient_message">Na pewno chcesz zresetować swojego klienta\? Wszystkie indeksy repozytorium będą musiały być ponownie pobrane.</string>
+    <string name="menu_update_this_repo">Aktualizuj to Repo</string>
 </resources>

@@ -308,4 +308,13 @@ worden gedownload</string>
         <item quantity="one">Geüpdatet %1$d jaar geleden</item>
         <item quantity="other">Geüpdatet %1$d jaren geleden</item>
     </plurals>
+    <string name="link_translate">Vertalingen</string>
+    <string name="force_update">Krachtupdate</string>
+    <string name="reset_transient_title">Reset Databank\?</string>
+    <string name="links_and_donations">Links &amp; Donaties</string>
+    <string name="install_all_updates">Updates installeren</string>
+    <string name="reset_transient_message">Weet u zeker dat u uw klant wilt resetten\? Alle archiefindexen moeten opnieuw worden gedownload.</string>
+    <string name="screenshot">Screenshot</string>
+    <string name="copied_to_clipboard">Gekopieerd naar klembord</string>
+    <string name="menu_update_this_repo">Update deze Repo</string>
 </resources>

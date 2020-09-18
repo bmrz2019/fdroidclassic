@@ -272,4 +272,12 @@
     <string name="warning_no_internet">Kan ikke opdatere, har du forbindelse til internettet\?</string>
     <string name="details_last_updated_today">Opdateret i dag</string>
     <string name="app_permission_storage">F-Droid har brug for lagringstilladelse for at installere dette til lager. Tillad det på det næste skærmbillede for at fortsætte med installationen.</string>
+    <string name="link_translate">Oversættelser</string>
+    <string name="links_and_donations">Links og donationer</string>
+    <string name="menu_update_this_repo">Opdater denne repo</string>
+    <string name="copied_to_clipboard">Kopieret til udklipsholderen</string>
+    <string name="install_all_updates">Installer opdateringer</string>
+    <string name="force_update">Gennemtving opdatering</string>
+    <string name="reset_transient_message">Er du sikker på, at du vil nulstille din klient\? Alle arkivindekser skal downloades igen.</string>
+    <string name="reset_transient_title">Nulstille database\?</string>
 </resources>
