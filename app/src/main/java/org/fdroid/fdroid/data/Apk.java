@@ -9,13 +9,16 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Parcel;
 import android.os.Parcelable;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.ApkTable.Cols;
 
@@ -23,7 +26,6 @@ import java.io.File;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
-
 import java.util.regex.Pattern;
 /**
  * Represents a single package of an application. This represents one particular
@@ -579,7 +581,12 @@ public class Apk extends ValueObject implements Comparable<Apk>, Parcelable {
         String fileExtension = MimeTypeMap.getFileExtensionFromUrl(this.getCanonicalUrl());
         if (TextUtils.isEmpty(fileExtension)) return path;
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
-        String[] mimeType = mimeTypeMap.getMimeTypeFromExtension(fileExtension).split("/");
+        String[] mimeType;
+        try {
+            mimeType = mimeTypeMap.getMimeTypeFromExtension(fileExtension).split("/");
+        } catch (NullPointerException e){
+            mimeType = new String[]{};
+        }
         String topLevelType;
         if (mimeType.length == 0) {
             topLevelType = "";
