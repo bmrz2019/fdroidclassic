@@ -8,14 +8,15 @@ before_script:
   - curl --silent https://git.bubu1.eu/Bubu/fdroidserver/repository/${commit}/archive.tar.gz
       | tar -xz --directory=fdroidserver --strip-components=1
   - export PATH="$PWD/fdroidserver:$PATH"
+  - ln -s fdroidserver/fdroidserver/gradlew-fdroid fdroidserver/gradle
     
 lint+test+build:
   script:
     # always report on lint errors to the build log
     - sed -i -e 's,textReport .*,textReport true,' app/build.gradle
-    - gradlew-fdroid lint
-    - gradlew-fdroid testReleaseUnitTest
-    - gradlew-fdroid assembleDebug
+    - gradlew lint
+    - gradlew testReleaseUnitTest
+    - gradlew assembleDebug
   artifacts:
     paths:
     - app/build/reports/
