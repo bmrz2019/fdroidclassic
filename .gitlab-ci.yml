@@ -8,7 +8,7 @@ before_script:
   - curl --silent https://git.bubu1.eu/Bubu/fdroidserver/repository/${commit}/archive.tar.gz
       | tar -xz --directory=fdroidserver --strip-components=1
   - export PATH="$PWD/fdroidserver:$PATH"
-  - ln -s fdroidserver/fdroidserver/gradlew-fdroid fdroidserver/gradle
+  - ln -s fdroidserver/gradlew-fdroid fdroidserver/gradle
   - export ANDROID_SDK_ROOT=$ANDROID_HOME
     
 lint+test+build:
