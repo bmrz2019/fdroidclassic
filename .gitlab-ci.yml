@@ -14,9 +14,9 @@ lint+test+build:
   script:
     # always report on lint errors to the build log
     - sed -i -e 's,textReport .*,textReport true,' app/build.gradle
-    - gradlew lint
-    - gradlew testReleaseUnitTest
-    - gradlew assembleDebug
+    - gradle lint
+    - gradle testReleaseUnitTest
+    - gradle assembleDebug
   artifacts:
     paths:
     - app/build/reports/
