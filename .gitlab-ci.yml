@@ -10,7 +10,8 @@ before_script:
   - export PATH="$PWD/fdroidserver:$PATH"
   - ln -s fdroidserver/gradlew-fdroid fdroidserver/gradle
   - export ANDROID_SDK_ROOT=$ANDROID_HOME
-    
+  - sudo apt-get install python3-gnupg
+
 lint+test+build:
   script:
     # always report on lint errors to the build log
