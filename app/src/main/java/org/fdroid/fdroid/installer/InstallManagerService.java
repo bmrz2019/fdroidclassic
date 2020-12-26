@@ -14,14 +14,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.IBinder;
+import android.text.TextUtils;
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import android.text.TextUtils;
-import android.util.Log;
-import android.widget.Toast;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
@@ -134,10 +135,12 @@ public class InstallManagerService extends Service {
             public void onReceive(Context context, Intent intent) {
                 String packageName = intent.getData().getSchemeSpecificPart();
                 for (AppUpdateStatusManager.AppUpdateStatus entry : appUpdateStatusManager.getAll()) {
-                    if (TextUtils.equals(packageName, entry.app.packageName)) {
-                        String urlString = entry.getCanonicalUrl();
-                        cancelNotification(urlString);
-                        break;
+                    if(entry.app != null) {
+                        if (TextUtils.equals(packageName, entry.app.packageName)) {
+                            String urlString = entry.getCanonicalUrl();
+                            cancelNotification(urlString);
+                            break;
+                        }
                     }
                 }
             }
