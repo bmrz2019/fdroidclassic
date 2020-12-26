@@ -1640,7 +1640,11 @@ public class AppDetails extends AppCompatActivity {
                 App app = appDetails.getApp();
                 AppDetails activity = (AppDetails) getActivity();
                 if (updateWanted && app.suggestedVersionCode > 0) {
-                    Apk apkToInstall = ApkProvider.Helper.findSuggestedApk(activity, app);
+                    final Apk apkToInstall = ApkProvider.Helper.findSuggestedApk(activity, app);
+                    if (apkToInstall == null) {
+                        Log.w(TAG, "onClick: apkToInstall == null, this shouldn't happen");
+                        return;
+                    }
                     activity.install(apkToInstall);
                     return;
                 }
@@ -1657,6 +1661,10 @@ public class AppDetails extends AppCompatActivity {
                     btMain.setEnabled(false);
                     btMain.setText(R.string.system_install_installing);
                     final Apk apkToInstall = ApkProvider.Helper.findSuggestedApk(activity, app);
+                    if (apkToInstall == null) {
+                        Log.w(TAG, "onClick: apkToInstall == null, this shouldn't happen");
+                        return;
+                    }
                     activity.install(apkToInstall);
                 }
             }
