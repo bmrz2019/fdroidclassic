@@ -477,7 +477,10 @@ public final class AppUpdateStatusManager {
     }
 
     private PendingIntent getAppErrorIntent(AppUpdateStatus entry) {
-        String title = String.format(context.getString(R.string.install_error_notify_title), entry.app.name);
+        String name = "";
+        if(entry.app != null)
+            name = entry.app.name;
+        String title = String.format(context.getString(R.string.install_error_notify_title), name);
 
         Intent errorDialogIntent = new Intent(context, ErrorDialogActivity.class)
                 .putExtra(ErrorDialogActivity.EXTRA_TITLE, title)
