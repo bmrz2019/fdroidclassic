@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
@@ -521,7 +522,7 @@ public class AppProvider extends FDroidProvider {
                 .build();
     }
 
-    public static Uri getRepoCategoryUri(RepoCategory repoCategory){
+    public static Uri getRepoCategoryUri(RepoCategory repoCategory) {
         return getRepoUri(repoCategory.repo);
     }
 
@@ -872,11 +873,15 @@ public class AppProvider extends FDroidProvider {
             return LAST_UPDATED;
         }
 
-        StringBuilder titleCase = new StringBuilder(String.format("%s like '%%%s%%'", NAME_COL, terms[0]));
-        StringBuilder summaryCase = new StringBuilder(String.format("%s like '%%%s%%'", SUMMARY_COL, terms[0]));
+        for (int i = 0; i < terms.length; i++) {
+            terms[i] = DatabaseUtils.sqlEscapeString('%' + terms[i] + '%');
+        }
+
+        StringBuilder titleCase = new StringBuilder(NAME_COL + " like " + terms[0]);
+        StringBuilder summaryCase = new StringBuilder(NAME_COL + " like " + terms[0]);
         for (int i = 1; i < terms.length; i++) {
-            titleCase.append(String.format(" and %s like '%%%s%%'", NAME_COL, terms[i]));
-            summaryCase.append(String.format(" and %s like '%%%s%%'", SUMMARY_COL, terms[i]));
+            titleCase.append(" and " + NAME_COL + " like ").append(terms[i]);
+            summaryCase.append(" and " + NAME_COL + " like ").append(terms[i]);
         }
 
         return String.format("case when %s then 1 when %s then 2 else 3 end, %s",
