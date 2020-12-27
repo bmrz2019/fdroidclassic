@@ -1,5 +1,7 @@
 package org.fdroid.fdroid.data;
 
+import androidx.annotation.NonNull;
+
 import java.io.File;
 
 /**
@@ -23,7 +25,7 @@ public class SanitizedFile extends File {
      * If it is a relative path to be appended to "parent", such as "/blah/sneh.txt", then
      * the forward slashes will be removed and it will be assumed you meant "blahsneh.txt".
      */
-    public SanitizedFile(File parent, String name) {
+    public SanitizedFile(File parent, @NonNull String name) {
         super(parent, sanitizeFileName(name));
     }
 

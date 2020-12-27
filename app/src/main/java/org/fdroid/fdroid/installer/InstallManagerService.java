@@ -135,7 +135,7 @@ public class InstallManagerService extends Service {
             public void onReceive(Context context, Intent intent) {
                 String packageName = intent.getData().getSchemeSpecificPart();
                 for (AppUpdateStatusManager.AppUpdateStatus entry : appUpdateStatusManager.getAll()) {
-                    if(entry.app != null) {
+                    if (entry.app != null) {
                         if (TextUtils.equals(packageName, entry.app.packageName)) {
                             String urlString = entry.getCanonicalUrl();
                             cancelNotification(urlString);
@@ -248,6 +248,10 @@ public class InstallManagerService extends Service {
         getObb(urlString, apk.getPatchObbUrl(), apk.getPatchObbFile(), apk.obbPatchFileSha256, builder);
 
         File apkFilePath = ApkCache.getApkDownloadPath(this, intent.getData());
+        if (apkFilePath == null) {
+            Utils.debugLog(TAG, "getApkDownloadPath returned null from:  " + intent);
+            return START_NOT_STICKY;
+        }
         long apkFileSize = apkFilePath.length();
         if (!apkFilePath.exists() || apkFileSize < apk.size) {
             Utils.debugLog(TAG, "download " + urlString + " " + apkFilePath);
@@ -299,7 +303,7 @@ public class InstallManagerService extends Service {
 
                     long bytesRead = intent.getLongExtra(Downloader.EXTRA_BYTES_READ, 0);
                     long totalBytes = intent.getLongExtra(Downloader.EXTRA_TOTAL_BYTES, 0);
-                    builder.setProgress((int)totalBytes, (int)bytesRead, false);
+                    builder.setProgress((int) totalBytes, (int) bytesRead, false);
                     notificationManager.notify(urlString.hashCode(), builder.build());
                     appUpdateStatusManager.updateApkProgress(urlString, totalBytes, bytesRead);
                 } else if (Downloader.ACTION_COMPLETE.equals(action)) {
@@ -374,7 +378,7 @@ public class InstallManagerService extends Service {
                     case Downloader.ACTION_PROGRESS:
                         long bytesRead = intent.getLongExtra(Downloader.EXTRA_BYTES_READ, 0);
                         long totalBytes = intent.getLongExtra(Downloader.EXTRA_TOTAL_BYTES, 0);
-                        builder.setProgress((int)totalBytes, (int)bytesRead, false);
+                        builder.setProgress((int) totalBytes, (int) bytesRead, false);
                         notificationManager.notify(urlString.hashCode(), builder.build());
                         appUpdateStatusManager.updateApkProgress(urlString, totalBytes, bytesRead);
                         break;
@@ -403,7 +407,7 @@ public class InstallManagerService extends Service {
                             DownloaderService.queue(context, FDroidApp.getMirror(mirrorUrlString, repoId), repoId, urlString);
                             DownloaderService.setTimeout(FDroidApp.getTimeout());
                         } catch (IOException e) {
-                            Toast.makeText(context,"Ran out of mirrors", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Ran out of mirrors", Toast.LENGTH_SHORT).show();
                             appUpdateStatusManager.setDownloadError(urlString, intent.getStringExtra(Downloader.EXTRA_ERROR_MESSAGE));
                             localBroadcastManager.unregisterReceiver(this);
                             cancelNotification(urlString);
@@ -468,7 +472,7 @@ public class InstallManagerService extends Service {
                             cancelNotification(downloadUrl);
                         } else {
                             AppUpdateStatusManager.AppUpdateStatus aus = appUpdateStatusManager.get(apk.getCanonicalUrl());
-                            if(aus != null) {
+                            if (aus != null) {
                                 notifyError(downloadUrl, aus.app, errorMessage);
                             }
                         }
@@ -566,11 +570,11 @@ public class InstallManagerService extends Service {
     }
 
     private String getAppName(Apk apk) {
-        AppUpdateStatusManager.AppUpdateStatus appUpdateStatus =  appUpdateStatusManager.get(apk.getCanonicalUrl());
-        if (appUpdateStatus == null){
+        AppUpdateStatusManager.AppUpdateStatus appUpdateStatus = appUpdateStatusManager.get(apk.getCanonicalUrl());
+        if (appUpdateStatus == null) {
             return null;
         }
-            return appUpdateStatus.app.name;
+        return appUpdateStatus.app.name;
     }
 
 

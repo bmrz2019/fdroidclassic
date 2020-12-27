@@ -23,7 +23,11 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
+
+import androidx.annotation.Nullable;
+
 import com.nostra13.universalimageloader.utils.StorageUtils;
+
 import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.Hasher;
 import org.fdroid.fdroid.data.Apk;
@@ -115,12 +119,17 @@ public class ApkCache {
     /**
      * Get the full path for where an APK URL will be downloaded into.
      */
+    @Nullable
     public static SanitizedFile getApkDownloadPath(Context context, Uri uri) {
         File dir = new File(getApkCacheDir(context), uri.getHost() + "-" + uri.getPort());
         if (!dir.exists()) {
             dir.mkdirs();
         }
-        return new SanitizedFile(dir, uri.getLastPathSegment());
+        if (uri.getLastPathSegment() == null) {
+            return null;
+        } else {
+            return new SanitizedFile(dir, uri.getLastPathSegment());
+        }
     }
 
     /**
