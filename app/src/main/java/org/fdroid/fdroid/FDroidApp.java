@@ -146,11 +146,11 @@ public class FDroidApp extends Application {
         return getMirror(urlString, RepoProvider.Helper.findById(getInstance(), repoId));
     }
 
-    public static String getMirror(String urlString, Repo repo2) throws IOException {
-        if (repo2.hasMirrors()) {
-            String lastWorkingMirror = lastWorkingMirrorArray.get(repo2.getId());
+    public static String getMirror(String urlString, Repo repo) throws IOException {
+        if (repo.hasMirrors()) {
+            String lastWorkingMirror = lastWorkingMirrorArray.get(repo.getId());
             if (lastWorkingMirror == null) {
-                lastWorkingMirror = repo2.address;
+                lastWorkingMirror = repo.address;
             }
             if (numTries <= 0) {
                 if (timeout == 10000) {
@@ -165,13 +165,17 @@ public class FDroidApp extends Application {
                 }
             }
             if (numTries == Integer.MAX_VALUE) {
-                numTries = repo2.getMirrorCount();
+                numTries = repo.getMirrorCount();
             }
-            String mirror = repo2.getMirror(lastWorkingMirror);
+            String mirror = repo.getMirror(lastWorkingMirror);
+            if(mirror == null)
+            {
+                throw new IOException("No mirrors available");
+            }
             String newUrl = urlString.replace(lastWorkingMirror, mirror);
             Utils.debugLog(TAG, "Trying mirror " + mirror + " after " + lastWorkingMirror + " failed," +
                     " timeout=" + timeout / 1000 + "s");
-            lastWorkingMirrorArray.put(repo2.getId(), mirror);
+            lastWorkingMirrorArray.put(repo.getId(), mirror);
             numTries--;
             return newUrl;
         } else {

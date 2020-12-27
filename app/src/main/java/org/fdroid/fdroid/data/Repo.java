@@ -26,6 +26,9 @@ package org.fdroid.fdroid.data;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.text.TextUtils;
+
+import androidx.annotation.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.Utils;
@@ -372,6 +375,7 @@ public class Repo extends ValueObject{
         return count;
     }
 
+    @Nullable
     public String getMirror(String lastWorkingMirror) {
         if (TextUtils.isEmpty(lastWorkingMirror)) {
             lastWorkingMirror = address;
