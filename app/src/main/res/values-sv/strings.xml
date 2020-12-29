@@ -95,9 +95,9 @@
     <string name="proxy_host_summary">Konfigurera din proxys värdnamn (t.ex. 127.0.0.1)</string>
     <string name="proxy_port">Proxyport</string>
     <string name="proxy_port_summary">Konfigurera din proxys portnummer (t.ex. 8118)</string>
-    <string name="status_download">Hämtar
-%2$s / %3$s (%4$d%%) från
-%1$s</string>
+    <string name="status_download">Laddar ner
+\n%2$s / %3$s (%4$d %%) från
+\n%1$s</string>
     <string name="status_connecting_to_repo">Ansluter till\n%1$s</string>
     <string name="repos_unchanged">Alla fil-förråd är uppdaterade</string>
     <string name="all_other_repos_fine">Övriga förråd orsakade inga fel.</string>
@@ -119,12 +119,11 @@ med appar som hämtats från osignerade index.</string>
 Du måste aktivera det för att se apparna det förser dig med.</string>
     <string name="unknown">Okänd</string>
     <string name="repo_confirm_delete_title">Ta bort förråd?</string>
-    <string name="repo_confirm_delete_body">Att ta bort ett fil-förråd betyder
- att dess appar inte längre kommer att vara tillgängliga från F-Droid.
-
-Notera: Alla
- tidigare installerade appar kommer finnas kvar på din enhet.</string>
-    <string name="repo_searching_address">Söker F-Droid-förråd på %1$s</string>
+    <string name="repo_confirm_delete_body">Att radera ett arkiv innebär att appar från det inte längre kommer att vara tillgängliga från F-Droid Classic.
+\n
+\nObs! Alla tidigare installerade appar kommer att finnas kvar på din enhet.</string>
+    <string name="repo_searching_address">Letar efter F-Droid-arkiv på
+\n%1$s</string>
     <string name="minsdk_or_later">%s eller senare</string>
     <string name="up_to_maxsdk">Upp till %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s upp till %2$s</string>
@@ -134,7 +133,7 @@ Notera: Alla
     <string name="category_Development">Utveckling</string>
     <string name="category_Games">Spel</string>
     <string name="category_Internet">Internet</string>
-    <string name="category_Multimedia">Multimedia</string>
+    <string name="category_Multimedia">multimedia</string>
     <string name="category_Navigation">Navigation</string>
     <string name="category_Phone_SMS">Telefon &amp; SMS</string>
     <string name="category_Reading">Läsning</string>
@@ -206,7 +205,7 @@ Notera: Alla
     <string name="system_install_button_open">Öppna tillbyggnad</string>
     <string name="system_install_post_success">Installerat F-Droid privilegierade tillbyggnad</string>
     <string name="system_install_post_fail">Installationen av F-Droid privilegierad tillbyggnad misslyckades</string>
-    <string name="system_install_post_success_message">F-Droid privilegierad tillbyggnad har installerats. Detta tillåter F-Droid att installera, uppgradera och avinstallera appar på egen hand.</string>
+    <string name="system_install_post_success_message">F-Droid Privileged Extension har installerats. Detta gör att F-Droid Classic kan installera, uppgradera och avinstallera appar på egen hand.</string>
     <string name="system_install_post_fail_message">Installationen av F-Droid privilegierade tillbyggnad har misslyckats. Installationsmetoden stöds inte av alla Android distributioner, kontakta F-Droid bugg spårare för mer information.</string>
     <string name="system_install_installing">Installerar…</string>
     <string name="system_install_installing_rebooting">Installerar och starta om…</string>
@@ -237,7 +236,7 @@ Den kräver inte någon särskild tillgång.</string>
     <string name="uninstall_confirm">Vill du avinstallera den här appen?</string>
     <string name="tap_to_install">Hämtning klar, tryck för att installera</string>
     <string name="download_error">Hämtning misslyckades</string>
-    <string name="perms_new_perm_prefix">"Ny: "</string>
+    <string name="perms_new_perm_prefix">Ny:</string>
     <string name="perms_description_app">Tillhandahålls av %1$s.</string>
     <string name="downloading">Hämtar…</string>
     <string name="interval_never">Aldrig</string>
@@ -279,7 +278,7 @@ Den kräver inte någon särskild tillgång.</string>
     <string name="share_repository">Dela förvar</string>
     <string name="signed">Signerad: %s</string>
     <string name="app_installed_media">Fil installerad till %s</string>
-    <string name="download_all_updates">Uppdatera alla</string>
+    <string name="download_all_updates">Ladda ner uppdateringar</string>
     <string name="qr_code">QR-kod</string>
     <string name="repo_official_mirrors">Officiella speglar</string>
     <string name="repo_user_mirrors">Användarspeglar</string>
@@ -288,7 +287,7 @@ Den kräver inte någon särskild tillgång.</string>
     <string name="status_inserting_x_apps">Sparar appinformation (%1$d/%2$d) från %3$s</string>
     <string name="warning_no_internet">Kan inte uppdatera, är du ansluten till internet\?</string>
     <string name="details_last_updated_today">Uppdaterad idag</string>
-    <string name="app_permission_storage">F-Droid behöver lagringstillstånd för att installera detta på lagring. Tillåt det på nästa skärm för att fortsätta med installationen.</string>
+    <string name="app_permission_storage">F-Droid Classic behöver lagringstillstånd för att installera detta på lagring. Tillåt det på nästa skärm för att fortsätta med installationen.</string>
     <string name="link_translate">Översättningar</string>
     <string name="copied_to_clipboard">Kopieras till Urklipp</string>
     <string name="install_all_updates">Installera uppdateringar</string>
@@ -297,4 +296,24 @@ Den kräver inte någon särskild tillgång.</string>
     <string name="force_update">Tvinga en uppdatering</string>
     <string name="reset_transient_title">Återställa databas\?</string>
     <string name="menu_update_this_repo">Uppdatera denna repo</string>
+    <string name="screenshot">Skärmdump</string>
+    <string name="liberapay">Liberapay</string>
+    <plurals name="details_last_update_months">
+        <item quantity="one">Uppdaterad %1$d månad sedan</item>
+        <item quantity="other">Uppdaterad %1$d månader sedan</item>
+    </plurals>
+    <string name="opencollective">Öppet Kollektiv</string>
+    <string name="app_name">F-Droid Classic</string>
+    <plurals name="details_last_update_days">
+        <item quantity="one">Uppdaterad %1$d dag sedan</item>
+        <item quantity="other">Uppdaterad %1$d dagar sedan</item>
+    </plurals>
+    <plurals name="details_last_update_weeks">
+        <item quantity="one">Uppdaterad %1$d vecka sedan</item>
+        <item quantity="other">Uppdaterad %1$d veckor sedan</item>
+    </plurals>
+    <plurals name="details_last_update_years">
+        <item quantity="one">Uppdaterad %1$d ett år sedan</item>
+        <item quantity="other">Uppdaterad %1$d flera år sedan</item>
+    </plurals>
 </resources>
