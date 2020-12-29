@@ -1,3 +1,9 @@
+### 1.1-beta4 (29.12.2020)
+
+* Fix a bunch of crashes that have been reported since the last beta
+* Some donation option tweaks
+* Translation and dependency updates
+
 ### 1.1-beta3 (17.9.2020)
 
 * Display Screenshots!

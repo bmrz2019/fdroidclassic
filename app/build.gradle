@@ -91,7 +91,7 @@ android {
         minSdkVersion 19
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 25
-        versionCode 1103
+        versionCode 1104
         applicationId myApplicationId
         resValue "string", "applicationId", myApplicationId
         versionName getVersionName()
