@@ -162,6 +162,13 @@ Builds:
     gradle:
       - yes
 
+  - versionName: 1.1-rc1
+    versionCode: 1105
+    commit: v1.1-rc1
+    subdir: app
+    gradle:
+      - yes
+
 AutoUpdateMode: None
 UpdateCheckMode: None
 CurrentVersion: 1.0
