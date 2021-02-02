@@ -49,6 +49,7 @@ public abstract class Downloader {
     /**
      * For sending download progress, should only be called in {@link #progressTask}
      */
+    private final Object syncObject = new Object();
     private volatile ProgressListener downloaderProgressListener;
 
     protected abstract InputStream getDownloadersInputStream() throws IOException;
@@ -189,7 +190,7 @@ public abstract class Downloader {
                 output.write(buffer, 0, count);
             }
         } finally {
-            synchronized (downloaderProgressListener) {
+            synchronized (syncObject) {
                 downloaderProgressListener = null;
             }
             timer.cancel();
@@ -205,7 +206,7 @@ public abstract class Downloader {
     private final TimerTask progressTask = new TimerTask() {
         @Override
         public void run() {
-            synchronized (downloaderProgressListener) {
+            synchronized (syncObject) {
                 if (downloaderProgressListener != null) {
                     downloaderProgressListener.onProgress(urlString, bytesRead, totalBytes);
                 }
