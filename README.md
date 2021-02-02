@@ -36,13 +36,11 @@ This project is probably aimed more at the power user who values function over f
 * Privileged Extension support (in progress, need to release the extensions somewhere)
 * Inline changelogs
 * Screenshots
+* Translation and Donations options
 * Localized metadata
 
 ### Todo
 
-* Support for the additional features provided by the new index format.
-  * All donations options
-  * Translation links
 * proper mirror support. They are currently not completely broken, but I'm not actually sure if mirrors are really used right now.
 * There are some occasional performance problems where the UI gets stuttery, this is tracking in #43 (with more background in #23).
 
