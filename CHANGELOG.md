@@ -1,3 +1,11 @@
+### 1.1-rc1 (02.02.2020)
+
+* Add option to only load screenshots on demand
+* Fix screenshot placeholder image not being visible when using light theme
+* Fix annoying downloader crash, again (#52)
+* Remove ACCESS_WIFI_STATE permission
+* Dependency and translation updates
+
 ### 1.1-beta4 (29.12.2020)
 
 * Fix a bunch of crashes that have been reported since the last beta
