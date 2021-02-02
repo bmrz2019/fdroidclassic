@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -25,9 +26,10 @@ public class ScreenShotAdapter extends RecyclerView.Adapter<ScreenShotAdapter.Vi
         this.inflater = LayoutInflater.from(context);
         this.screenshotUrls = screenshotUrls;
         displayImageOptions = Utils.getDefaultDisplayImageOptionsBuilder()
-                .showImageOnFail(R.drawable.screenshot_placeholder)
-                .showImageOnLoading(R.drawable.screenshot_placeholder)
-                .showImageForEmptyUri(R.drawable.screenshot_placeholder)
+                .showImageForEmptyUri(0).showImageOnFail(0).showImageOnLoading(0)
+                .showImageOnFail(ResourcesCompat.getDrawable(context.getResources(),R.drawable.screenshot_placeholder,context.getTheme()))
+                .showImageOnLoading(ResourcesCompat.getDrawable(context.getResources(),R.drawable.screenshot_placeholder,context.getTheme()))
+                .showImageForEmptyUri(ResourcesCompat.getDrawable(context.getResources(),R.drawable.screenshot_placeholder,context.getTheme()))
                 .build();
     }
 
