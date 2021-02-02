@@ -29,8 +29,6 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.net.Uri;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -829,29 +827,8 @@ public class ManageReposActivity extends AppCompatActivity
             isImportingRepo = true;
             showAddRepo(newRepoConfig.getRepoUriString(), newRepoConfig.getFingerprint(),
                     newRepoConfig.getUsername(), newRepoConfig.getPassword());
-            checkIfNewRepoOnSameWifi(newRepoConfig);
         } else if (newRepoConfig.getErrorMessage() != null) {
             Toast.makeText(this, newRepoConfig.getErrorMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void checkIfNewRepoOnSameWifi(NewRepoConfig newRepo) {
-        // if this is a local repo, check we're on the same wifi
-        if (!TextUtils.isEmpty(newRepo.getBssid())) {
-            WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-            String bssid = wifiInfo.getBSSID();
-            if (TextUtils.isEmpty(bssid)) { /* not all devices have wifi */
-                return;
-            }
-            bssid = bssid.toLowerCase(Locale.ENGLISH);
-            String newRepoBssid = Uri.decode(newRepo.getBssid()).toLowerCase(Locale.ENGLISH);
-            if (!bssid.equals(newRepoBssid)) {
-                String msg = getString(R.string.not_on_same_wifi, newRepo.getSsid());
-                Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
-            }
-            // TODO we should help the user to the right thing here,
-            // instead of just showing a message!
         }
     }
 
