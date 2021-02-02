@@ -39,7 +39,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.InjectableValues;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.App;
 import org.fdroid.fdroid.data.Repo;
@@ -162,7 +161,7 @@ public class IndexV1Updater extends IndexUpdater {
                     Utils.debugLog(TAG, "Trying next mirror");
                 } catch (IOException e2) {
                     if (downloader != null) {
-                        FileUtils.deleteQuietly(downloader.outputFile);
+                        downloader.outputFile.delete();
                     }
                     throw new IndexUpdater.UpdateException("Error getting index file", e2);
                 } catch (InterruptedException e2) {
@@ -171,7 +170,7 @@ public class IndexV1Updater extends IndexUpdater {
             }
         } catch (IOException e) {
             if (downloader != null) {
-                FileUtils.deleteQuietly(downloader.outputFile);
+                downloader.outputFile.delete();
             }
             throw new IndexUpdater.UpdateException("Error getting index file", e);
         } catch (InterruptedException e) {

@@ -25,8 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Apk;
 
@@ -89,14 +87,14 @@ public class InstallerService extends IntentService {
                     if (obbDir == null) {
                         return;
                     }
-                    FileFilter filter = new WildcardFileFilter("*.obb");
+                    FileFilter filter = pathname -> pathname.getName().endsWith(".obb");
                     File[] obbFiles = obbDir.listFiles(filter);
                     if (obbFiles == null) {
                         return;
                     }
                     for (File f : obbFiles) {
                         Utils.debugLog(TAG, "Uninstalling OBB " + f);
-                        FileUtils.deleteQuietly(f);
+                        f.delete();
                     }
                 }
             }.start();

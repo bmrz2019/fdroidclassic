@@ -6,16 +6,17 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import android.view.ContextThemeWrapper;
-import android.widget.Toast;
+import com.google.common.io.Files;
 
-import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
@@ -153,7 +154,9 @@ public class FileInstallerActivity extends FragmentActivity {
         File path = apk.getMediaInstallPath(activity.getApplicationContext());
         path.mkdirs();
         try {
-            FileUtils.copyFileToDirectory(new File(localApkUri.getPath()), path);
+            final File src =  new File(localApkUri.getPath());
+            final File destFile = new File(path, src.getName());
+            Files.copy(src, path);
         } catch (IOException e) {
             Utils.debugLog(TAG, "Failed to copy: " + e.getMessage());
             installer.sendBroadcastInstall(canonicalUri, Installer.ACTION_INSTALL_INTERRUPTED);

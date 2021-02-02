@@ -26,9 +26,9 @@ import android.net.Uri;
 
 import androidx.annotation.Nullable;
 
+import com.google.common.io.Files;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
-import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.Hasher;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.App;
@@ -83,22 +83,15 @@ public class ApkCache {
             throws IOException {
         SanitizedFile sanitizedApkFile = new SanitizedFile(context.getFilesDir(), destinationName);
 
-        // Don't think this is necessary, but the docs for FileUtils#copyFile() are not clear
-        // on whether it overwrites destination files (pretty confident it does, as per the docs
-        // in FileUtils#copyFileToDirectory() - which delegates to copyFile()).
-        if (sanitizedApkFile.exists()) {
-            sanitizedApkFile.delete();
-        }
-
-        FileUtils.copyFile(apkFile, sanitizedApkFile);
+        Files.copy(apkFile, sanitizedApkFile);
 
         // verify copied file's hash with expected hash from Apk class
         if (verifyHash && !Hasher.isFileMatchingHash(sanitizedApkFile, hash, hashType)) {
-            FileUtils.deleteQuietly(apkFile);
+            apkFile.delete();
             throw new IOException(apkFile + " failed to verify!");
         }
 
-        // 20 minutes the start of the install process, delete the file
+        // 20 minutes after the start of the install process, delete the file
         final File apkToDelete = sanitizedApkFile;
         new Thread() {
             @Override
@@ -108,7 +101,7 @@ public class ApkCache {
                     Thread.sleep(1200000);
                 } catch (InterruptedException ignored) {
                 } finally {
-                    FileUtils.deleteQuietly(apkToDelete);
+                    apkToDelete.delete();
                 }
             }
         }.start();

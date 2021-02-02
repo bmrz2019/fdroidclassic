@@ -24,8 +24,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.WildcardFileFilter;
+import com.google.common.io.Files;
+
 import org.fdroid.fdroid.AppDetails;
 import org.fdroid.fdroid.AppUpdateStatusManager;
 import org.fdroid.fdroid.FDroidApp;
@@ -316,14 +316,15 @@ public class InstallManagerService extends Service {
                     try {
                         if (Hasher.isFileMatchingHash(localFile, hash, "sha256")) {
                             Utils.debugLog(TAG, "Installing OBB " + localFile + " to " + obbDestFile);
-                            FileUtils.forceMkdirParent(obbDestFile);
-                            FileUtils.copyFile(localFile, obbDestFile);
-                            FileFilter filter = new WildcardFileFilter(
-                                    obbDestFile.getName().substring(0, 4) + "*.obb");
+                            Files.createParentDirs(obbDestFile);
+                            Files.copy(localFile, obbDestFile);
+                            FileFilter filter = pathname ->
+                                    pathname.getName().startsWith(obbDestFile.getName().substring(0, 4))
+                                            && pathname.getName().endsWith(".obb");
                             for (File f : obbDestFile.getParentFile().listFiles(filter)) {
                                 if (!f.equals(obbDestFile)) {
                                     Utils.debugLog(TAG, "Deleting obsolete OBB " + f);
-                                    FileUtils.deleteQuietly(f);
+                                    f.delete();
                                 }
                             }
                         } else {
@@ -332,7 +333,7 @@ public class InstallManagerService extends Service {
                     } catch (IOException e) {
                         e.printStackTrace();
                     } finally {
-                        FileUtils.deleteQuietly(localFile);
+                        localFile.delete();
                     }
                 } else if (Downloader.ACTION_INTERRUPTED.equals(action)) {
                     localBroadcastManager.unregisterReceiver(this);

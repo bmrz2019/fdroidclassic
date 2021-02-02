@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
 
-import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.installer.ApkCache;
 
 import java.io.File;
@@ -163,7 +162,7 @@ public class CleanCacheService extends IntentService {
             }
             f.delete();
         } else if (Build.VERSION.SDK_INT < 21) {
-            if (FileUtils.isFileOlder(f, olderThan)) {
+            if (f.lastModified() < olderThan) {
                 f.delete();
             }
         } else {

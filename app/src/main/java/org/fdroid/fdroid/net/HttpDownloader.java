@@ -27,7 +27,6 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
 
-import org.apache.commons.io.FileUtils;
 import org.fdroid.fdroid.BuildConfig;
 import org.fdroid.fdroid.FDroidApp;
 import org.fdroid.fdroid.Utils;
@@ -135,7 +134,7 @@ public class HttpDownloader extends Downloader {
         boolean resumable = false;
         long fileLength = outputFile.length();
         if (fileLength > contentLength) {
-            FileUtils.deleteQuietly(outputFile);
+            outputFile.delete();
         } else if (fileLength == contentLength && outputFile.isFile()) {
             return; // already have it!
         } else if (fileLength > 0) {

@@ -25,10 +25,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
+    implementation("com.google.guava:guava:30.1-android")
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'com.google.zxing:core:3.4.1'
     implementation 'info.guardianproject.netcipher:netcipher:2.1.0'
-    implementation 'commons-io:commons-io:2.8.0'
 
     implementation 'com.github.ligi.tracedroid:lib:d0048245ab'
     implementation 'com.github.ligi.tracedroid:supportemail:d0048245ab'
@@ -37,6 +37,8 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
 
+    // Don't update or remove this, it makes CI test execution fail
+    // https://git.bubu1.eu/Bubu/fdroidclassic/-/jobs/666
     testImplementation 'junit:junit:4.13.1'
     testImplementation "org.mockito:mockito-core:3.6.0"
     testImplementation "com.google.truth:truth:1.1.2"

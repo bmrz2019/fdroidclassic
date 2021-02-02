@@ -26,7 +26,6 @@ import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.data.Schema.AppMetadataTable.Cols;
@@ -803,7 +802,8 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
     public static void initInstalledObbFiles(Apk apk) {
         File obbdir = getObbDir(apk.packageName);
-        FileFilter filter = new RegexFileFilter("(main|patch)\\.[0-9-][0-9]*\\." + apk.packageName + "\\.obb");
+        Pattern r = Pattern.compile("(main|patch)\\.[0-9-][0-9]*\\." + apk.packageName + "\\.obb");
+        FileFilter filter = pathname -> r.matcher(pathname.getName()).matches();
         File[] files = obbdir.listFiles(filter);
         if (files == null) {
             return;
