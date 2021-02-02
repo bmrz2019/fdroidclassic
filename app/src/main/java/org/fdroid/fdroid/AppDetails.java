@@ -785,45 +785,38 @@ public class AppDetails extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()) {
-
-            case android.R.id.home:
-                if (getIntent().hasExtra(EXTRA_HINT_SEARCHING)) {
-                    finish();
-                } else {
-                    navigateUp();
-                }
-                return true;
-
-            case R.id.action_launch:
-                launchApk(app.packageName);
-                return true;
-
-            case R.id.action_share:
-                shareApp(app);
-                return true;
-
-            case R.id.action_uninstall:
-                uninstallApk();
-                return true;
-
-            case R.id.action_appsettings:
-                openAppInfo();
-                return true;
-
-            case R.id.action_ignore_all_updates:
-                app.getPrefs(this).ignoreAllUpdates ^= true;
-                item.setChecked(app.getPrefs(this).ignoreAllUpdates);
-                return true;
-
-            case R.id.action_ignore_this_updates:
-                if (app.getPrefs(this).ignoreThisUpdate >= app.suggestedVersionCode) {
-                    app.getPrefs(this).ignoreThisUpdate = 0;
-                } else {
-                    app.getPrefs(this).ignoreThisUpdate = app.suggestedVersionCode;
-                }
-                item.setChecked(app.getPrefs(this).ignoreThisUpdate > 0);
-                return true;
+        int itemId = item.getItemId();
+        if (itemId == android.R.id.home) {
+            if (getIntent().hasExtra(EXTRA_HINT_SEARCHING)) {
+                finish();
+            } else {
+                navigateUp();
+            }
+            return true;
+        } else if (itemId == R.id.action_launch) {
+            launchApk(app.packageName);
+            return true;
+        } else if (itemId == R.id.action_share) {
+            shareApp(app);
+            return true;
+        } else if (itemId == R.id.action_uninstall) {
+            uninstallApk();
+            return true;
+        } else if (itemId == R.id.action_appsettings) {
+            openAppInfo();
+            return true;
+        } else if (itemId == R.id.action_ignore_all_updates) {
+            app.getPrefs(this).ignoreAllUpdates ^= true;
+            item.setChecked(app.getPrefs(this).ignoreAllUpdates);
+            return true;
+        } else if (itemId == R.id.action_ignore_this_updates) {
+            if (app.getPrefs(this).ignoreThisUpdate >= app.suggestedVersionCode) {
+                app.getPrefs(this).ignoreThisUpdate = 0;
+            } else {
+                app.getPrefs(this).ignoreThisUpdate = app.suggestedVersionCode;
+            }
+            item.setChecked(app.getPrefs(this).ignoreThisUpdate > 0);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -981,7 +974,6 @@ public class AppDetails extends AppCompatActivity {
         private TextView permissionHeader;
         private CharSequence descriptionText;
         private CharSequence shortDescriptionText;
-        private RecyclerView screenshots;
         private final View.OnClickListener expanderPermissions = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -996,7 +988,6 @@ public class AppDetails extends AppCompatActivity {
             }
         };
         private ViewGroup layoutLinks;
-        private ScreenShotAdapter screenshotAdapter;
 
         public AppDetailsSummaryFragment() {
             prefs = Preferences.get();
@@ -1066,47 +1057,35 @@ public class AppDetails extends AppCompatActivity {
                 String url = null;
                 String rawdata = null;
                 App app = appDetails.getApp();
-                switch (v.getId()) {
-                    case R.id.website:
-                        url = app.webSite;
-                        break;
-                    case R.id.email:
-                        final String subject = Uri.encode(getString(R.string.app_details_subject, app.name));
-                        url = "mailto:" + app.authorEmail + "?subject=" + subject;
-                        rawdata = app.authorEmail;
-                        break;
-                    case R.id.source:
-                        url = app.sourceCode;
-                        break;
-                    case R.id.issues:
-                        url = app.issueTracker;
-                        break;
-                    case R.id.changelog:
-                        url = app.changelog;
-                        break;
-                    case R.id.translate:
-                        url = app.translation;
-                        break;
-                    case R.id.liberapay:
-                        url = app.getLiberapayUri();
-                        break;
-                    case R.id.opencollective:
-                        url = app.getOpenCollectiveUri();
-                        break;
-                    case R.id.donate:
-                        url = app.donate;
-                        break;
-                    case R.id.bitcoin:
-                        url = app.getBitcoinUri();
-                        rawdata = app.bitcoin;
-                        break;
-                    case R.id.litecoin:
-                        url = app.getLitecoinUri();
-                        rawdata = app.litecoin;
-                        break;
-                    case R.id.flattr:
-                        url = app.getFlattrUri();
-                        break;
+                int id = v.getId();
+                if (id == R.id.website) {
+                    url = app.webSite;
+                } else if (id == R.id.email) {
+                    final String subject = Uri.encode(getString(R.string.app_details_subject, app.name));
+                    url = "mailto:" + app.authorEmail + "?subject=" + subject;
+                    rawdata = app.authorEmail;
+                } else if (id == R.id.source) {
+                    url = app.sourceCode;
+                } else if (id == R.id.issues) {
+                    url = app.issueTracker;
+                } else if (id == R.id.changelog) {
+                    url = app.changelog;
+                } else if (id == R.id.translate) {
+                    url = app.translation;
+                } else if (id == R.id.liberapay) {
+                    url = app.getLiberapayUri();
+                } else if (id == R.id.opencollective) {
+                    url = app.getOpenCollectiveUri();
+                } else if (id == R.id.donate) {
+                    url = app.donate;
+                } else if (id == R.id.bitcoin) {
+                    url = app.getBitcoinUri();
+                    rawdata = app.bitcoin;
+                } else if (id == R.id.litecoin) {
+                    url = app.getLitecoinUri();
+                    rawdata = app.litecoin;
+                } else if (id == R.id.flattr) {
+                    url = app.getFlattrUri();
                 }
                 if (url != null) {
                     ((AppDetails) getActivity()).tryOpenUri(url, rawdata);
@@ -1136,8 +1115,8 @@ public class AppDetails extends AppCompatActivity {
             // Expandable description
             description = view.findViewById(R.id.description);
             TextView whatsNewView = view.findViewById(R.id.whats_new);
-            screenshots = view.findViewById(R.id.screnshot_list);
-            screenshotAdapter = new ScreenShotAdapter(getContext(), app.getAllScreenshots(getContext()));
+            RecyclerView screenshots = view.findViewById(R.id.screnshot_list);
+            ScreenShotAdapter screenshotAdapter = new ScreenShotAdapter(getContext(), app.getAllScreenshots(getContext()));
             screenshotAdapter.setClickListener(this);
             screenshots.setAdapter(screenshotAdapter);
             viewMoreButton = view.findViewById(R.id.view_more_description);
