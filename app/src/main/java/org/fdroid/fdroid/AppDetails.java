@@ -1116,6 +1116,15 @@ public class AppDetails extends AppCompatActivity {
             description = view.findViewById(R.id.description);
             TextView whatsNewView = view.findViewById(R.id.whats_new);
             RecyclerView screenshots = view.findViewById(R.id.screnshot_list);
+            TextView show_screenshots_button = view.findViewById(R.id.show_screenshots);
+            if(Preferences.get().onlyShowScreenshotsOnDemand()){
+                show_screenshots_button.setVisibility(View.VISIBLE);
+                screenshots.setVisibility(View.GONE);
+                show_screenshots_button.setOnClickListener(v -> {
+                    show_screenshots_button.setVisibility(View.GONE);
+                    screenshots.setVisibility(View.VISIBLE);
+                });
+            }
             ScreenShotAdapter screenshotAdapter = new ScreenShotAdapter(getContext(), app.getAllScreenshots(getContext()));
             screenshotAdapter.setClickListener(this);
             screenshots.setAdapter(screenshotAdapter);

@@ -57,7 +57,7 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     public static final String PREF_ENABLE_PROXY = "enableProxy";
     public static final String PREF_PROXY_HOST = "proxyHost";
     public static final String PREF_PROXY_PORT = "proxyPort";
-    public static final String PREF_POST_PRIVILEGED_INSTALL = "postPrivilegedInstall";
+    public static final String PREF_ON_DEMAND_SCREENSHOTS = "screenshotsOnDemand";
 
     private static final boolean DEFAULT_ROOTED = true;
     private static final boolean DEFAULT_HIDE_ANTI_FEATURE_APPS = false;
@@ -72,7 +72,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
     @SuppressWarnings("PMD.AvoidUsingHardCodedIP")
     public static final String DEFAULT_PROXY_HOST = "127.0.0.1";
     public static final int DEFAULT_PROXY_PORT = 8118;
-    private static final boolean DEFAULT_POST_PRIVILEGED_INSTALL = false;
 
     private boolean showAppsWithAntiFeatures;
     private static final boolean IGNORED_B = false;
@@ -118,14 +117,6 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
      */
     public boolean isPrivilegedInstallerEnabled() {
         return preferences.getBoolean(PREF_PRIVILEGED_INSTALLER, DEFAULT_PRIVILEGED_INSTALLER);
-    }
-
-    public boolean isPostPrivilegedInstall() {
-        return preferences.getBoolean(PREF_POST_PRIVILEGED_INSTALL, DEFAULT_POST_PRIVILEGED_INSTALL);
-    }
-
-    public void setPostPrivilegedInstall(boolean postInstall) {
-        preferences.edit().putBoolean(PREF_POST_PRIVILEGED_INSTALL, postInstall).apply();
     }
 
     /**
@@ -216,6 +207,10 @@ public final class Preferences implements SharedPreferences.OnSharedPreferenceCh
 
     public boolean isUpdateOnlyOnUnmeteredNetworks() {
         return preferences.getBoolean(PREF_UPD_WIFI_ONLY, false);
+    }
+
+    public boolean onlyShowScreenshotsOnDemand() {
+        return preferences.getBoolean(PREF_ON_DEMAND_SCREENSHOTS, false);
     }
 
     /**

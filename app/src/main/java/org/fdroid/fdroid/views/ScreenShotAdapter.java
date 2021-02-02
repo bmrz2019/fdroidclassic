@@ -18,8 +18,8 @@ import org.fdroid.fdroid.Utils;
 
 public class ScreenShotAdapter extends RecyclerView.Adapter<ScreenShotAdapter.ViewHolder> {
     private final DisplayImageOptions displayImageOptions;
-    private LayoutInflater inflater;
-    private String[] screenshotUrls;
+    private final LayoutInflater inflater;
+    private final String[] screenshotUrls;
     private ScreenshotClickListener clickListener;
 
     public ScreenShotAdapter(Context context, String[] screenshotUrls) {

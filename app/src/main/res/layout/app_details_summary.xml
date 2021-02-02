@@ -115,6 +115,17 @@ Android is open in the sense that you are free to install apks from anywhere you
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/show_screenshots"
+        style="@style/DetailsMoreButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:text="@string/show_screenshots"
+        tools:visibility="visible"
+        android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/screnshot_list"
         android:layout_width="match_parent"
