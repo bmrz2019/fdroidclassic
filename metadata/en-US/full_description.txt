@@ -7,6 +7,7 @@ F-Droid Classic brings features of the modern 1.x version of F-Droid to the clas
 * Inline changelog entries
 * Localized metadata
 * Screenshots
+* Donation links
 
 Upcoming features:
 
