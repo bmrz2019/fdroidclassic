@@ -138,7 +138,7 @@
     <string name="app_inst_known_source">已安装（来自%s）</string>
     <string name="app_inst_unknown_source">已安装（来源未知）</string>
     <string name="links">链接</string>
-    <string name="more">更多</string>
+    <string name="more">阅读更多</string>
     <string name="less">更少</string>
     <string name="back">返回</string>
     <string name="tab_installed_apps">已安装</string>
@@ -297,4 +297,8 @@
     <string name="links_and_donations">链接 &amp; 捐款</string>
     <string name="link_translate">翻译</string>
     <string name="opencollective">Open Collective</string>
+    <string name="screenshots_pref_summary">开始获取截图之前额外点击一次</string>
+    <string name="signed">已签名：%s</string>
+    <string name="show_screenshots">显示截屏</string>
+    <string name="screenshots_on_demand">按需加载软件截图</string>
 </resources>
