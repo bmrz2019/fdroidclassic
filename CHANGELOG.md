@@ -1,3 +1,7 @@
+### 1.1 (08.02.2020)
+
+* Translation updates
+
 ### 1.1-rc1 (02.02.2020)
 
 * Add option to only load screenshots on demand
