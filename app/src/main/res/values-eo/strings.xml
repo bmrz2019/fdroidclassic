@@ -119,7 +119,7 @@
     <string name="about_license">Permesilo</string>
     <string name="app_incompatible">Nekongrua</string>
     <string name="links">Ligiloj</string>
-    <string name="more">Pli</string>
+    <string name="more">Pliaj informoj</string>
     <string name="less">Malpli</string>
     <string name="back">Reen</string>
     <string name="enable">Aktivigi</string>
@@ -312,4 +312,7 @@
     <string name="opencollective">Open Collective</string>
     <string name="links_and_donations">Ligiloj kaj donacoj</string>
     <string name="copied_to_clipboard">Kopiita al tondujo</string>
+    <string name="show_screenshots">Montri ekrankopiojn</string>
+    <string name="screenshots_pref_summary">Postuli plian frapeton por komenci elŝuti ekrankopiojn</string>
+    <string name="screenshots_on_demand">Vidigi ekrankopiojn laŭpete</string>
 </resources>
