@@ -174,7 +174,7 @@ Um darin bereitgestellte Anwendungen anzuzeigen, muss sie aktiviert werden.</str
     <string name="interval_12h">Alle 12 Stunden</string>
     <string name="interval_1d">Täglich</string>
     <string name="interval_1w">Wöchentlich</string>
-    <string name="more">Mehr</string>
+    <string name="more">Lies mehr</string>
     <string name="less">Weniger</string>
     <string name="empty_installed_app_list">Keine Anwendungen installiert.\n\nEs sind Anwendungen auf deinem Gerät installiert, aber keine davon ist in F-Droid erhältlich. Das könnte daran liegen, dass Sie Ihre Paketquellen aktualisieren müssen oder diese tatsächlich keine Ihrer Anwendungen beinhalten.</string>
     <string name="empty_available_app_list">Keine Anwendungen in dieser Kategorie.\n\nBitte eine andere Kategorie versuchen oder die Paketquellen aktualisieren.</string>
@@ -301,8 +301,12 @@ Um darin bereitgestellte Anwendungen anzuzeigen, muss sie aktiviert werden.</str
     <string name="force_update">Aktualisierung zwingen</string>
     <string name="reset_transient_title">Datenbank zurücksetzen\?</string>
     <string name="link_translate">Übersetzungen</string>
-    <string name="liberapay"></string>
+    <string name="liberapay">Liberapay</string>
     <string name="links_and_donations">Links &amp; Spenden</string>
     <string name="copied_to_clipboard">In die Zwischenablage kopiert</string>
     <string name="screenshot">Bildschirmfoto</string>
+    <string name="show_screenshots">Bildschirmfotos anzeigen</string>
+    <string name="screenshots_on_demand">Bildschirmfotos direkt herunterladen</string>
+    <string name="opencollective">Open Collective</string>
+    <string name="screenshots_pref_summary">Benötigt einen Extra-Klick bevor dem herunterladen von Bildschirmfotos</string>
 </resources>
