@@ -150,7 +150,7 @@ public class HttpDownloader extends Downloader {
         HttpURLConnection connection;
         connection = NetCipher.getHttpURLConnection(sourceUrl);
 
-        connection.setRequestProperty("User-Agent", "F-Droid " + BuildConfig.VERSION_NAME);
+        connection.setRequestProperty("User-Agent", "F-Droid Classic " + BuildConfig.VERSION_NAME);
         connection.setConnectTimeout(getTimeout());
 
         if (username != null && password != null) {
