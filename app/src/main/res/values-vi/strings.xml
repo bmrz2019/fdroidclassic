@@ -103,8 +103,9 @@
     <string name="repo_name">Tên</string>
     <string name="repo_not_yet_updated">Kho ứng dụng này chưa được sử dụng. Sau khi kích hoạt, bạn mới có thể xem được các ứng dụng trong kho.</string>
     <string name="repo_confirm_delete_title">Xoá kho?</string>
-    <string name="repo_confirm_delete_body">Nếu xoá kho, ứng dụng trong kho sẽ không xuất hiện trong F-Droid.
-\n\nChú ý: Ứng dụng đã cài trước đó sẽ vẫn còn trên thiết bị của bạn.</string>
+    <string name="repo_confirm_delete_body">Việc xoá kho có nghĩa là các ứng dụng trong kho sẽ không có trong F-Droid Cổ điển nữa.
+\n
+\nLưu ý: Tất cả ứng dụng đã cài đặt trước đó sẽ vẫn còn trên thiết bị của bạn.</string>
     <string name="repo_added">Đã lưu kho F-Droid %1$s.</string>
     <string name="repo_searching_address">Đang tìm kho F-Droid tại địa chỉ %1$s</string>
     <string name="minsdk_or_later">%s hoặc mới hơn</string>
@@ -163,7 +164,7 @@
     <string name="uninstall_error_unknown">Không thể xoá ứng dụng do có lỗi xảy ra</string>
     <string name="system_install_post_success">Cài đặt phần mở rộng F-Droid được cấp quyền thành công</string>
     <string name="system_install_post_fail">Cài đặt phần mở rộng F-Droid được cấp quyền thất bại</string>
-    <string name="system_install_post_success_message">Phần mở rộng F-Droid được cấp quyền đã được cài đặt thành công. Nó cho phép F-Droid tự cài đặt, nâng cấp và gỡ bỏ ứng dụng.</string>
+    <string name="system_install_post_success_message">Phần mở rộng F-Droid được cấp quyền đã được cài đặt thành công. Điều này cho phép F-Droid Cổ điển tự cài đặt, nâng cấp và gỡ bỏ ứng dụng.</string>
     <string name="system_install_post_fail_message">Cài đặt phần mở rộng F-Droid được cấp quyền đã thất bại. Cách cài đặt này không được tất cả các bản Android hỗ trợ, hãy truy cập trình theo dõi lỗi của F-Droid để biết thêm thông tin.</string>
     <string name="system_install_installing">Đang cài đặt…</string>
     <string name="system_install_uninstalling">Đang gỡ bỏ…</string>
@@ -199,7 +200,7 @@
     <string name="all_other_repos_fine">Tất cả các kho khác không có lỗi.</string>
     <string name="repo_exists_add_fingerprint">Kho này đã được cài đặt, việc này sẽ thêm thông tin mới về mã khoá.</string>
     <string name="repo_exists_enable">Kho này đã được cài đặt, hãy xác nhận bạn muốn kích hoạt lại nó.</string>
-    <string name="more">Thêm</string>
+    <string name="more">Đọc thêm</string>
     <string name="less">Ít hơn</string>
     <string name="status_download_unknown_size">Đang tải\n%2$s từ\n%1$s</string>
     <string name="permissions">Quyền</string>
@@ -228,4 +229,77 @@
     <string name="menu_email">E-mail tác giả</string>
     <string name="useTor">Sử dụng Tor</string>
     <string name="useTorSummary">Tải xuống thông qua Tor để tăng tính riêng tư</string>
+    <string name="screenshot">Ảnh chụp màn hình</string>
+    <string name="show_screenshots">Hiện ảnh chụp màn hình</string>
+    <string name="screenshots_on_demand">Tải ảnh chụp màn hình theo yêu cầu</string>
+    <string name="screenshots_pref_summary">Yêu cầu thêm một lần nhấn trước khi bắt đầu lấy ảnh chụp màn hình</string>
+    <string name="details_new_in_version">Những gì mới trong phiên bản %s</string>
+    <string name="repo_add_mirror">Thêm bản sao</string>
+    <string name="install_all_updates">Cài đặt các bản cập nhật</string>
+    <string name="copied_to_clipboard">Đã sao chép vào bộ nhớ tạm</string>
+    <plurals name="details_last_update_days">
+        <item quantity="other">Đã cập nhật %1$d ngày trước</item>
+    </plurals>
+    <string name="keep_week">1 tuần</string>
+    <string name="update_auto_download">Tự động tải xuống các bản cập nhật</string>
+    <string name="update_auto_download_summary">Tải xuống các tệp cập nhật trong nền</string>
+    <string name="update_auto_install">Tự động cài đặt các bản cập nhật</string>
+    <string name="update_auto_install_summary">Tải xuống và cài đặt các ứng dụng cập nhật trong nền</string>
+    <string name="repo_exists_and_enabled">Kho sắp đến đã được thiết lập và bật sẵn.</string>
+    <string name="repo_provider">Kho: %s</string>
+    <string name="repo_official_mirrors">Các bản sao chính thức</string>
+    <string name="menu_update_this_repo">Cập nhật kho này</string>
+    <string name="antinonfreeassetslist">Ứng dụng này chứa các phần không tự do</string>
+    <string name="hide_anti_feature_apps_on">Gạch xám đi các ứng dụng yêu cầu các tính năng không mong muốn</string>
+    <string name="warning_no_internet">Không thể cập nhật, bạn có kết nối internet không\?</string>
+    <string name="empty_search_installed_app_list">Không có ứng dụng đã cài đặt nào trùng khớp.</string>
+    <string name="empty_search_available_app_list">Không có ứng dụng trùng khớp nào có sẵn.</string>
+    <string name="tap_to_install_format">Nhấn để cài đặt %s</string>
+    <string name="tap_to_update_format">Nhấn để cập nhật %s</string>
+    <string name="repo_user_mirrors">Các bản sao người dùng</string>
+    <string name="download_pending">Đang đợi để bắt đầu tải xuống…</string>
+    <string name="uninstall_error_notify_title">Lỗi khi gỡ cài đặt %s</string>
+    <string name="downloading_apk">Đang tải xuống %1$s</string>
+    <string name="installing">Đang cài đặt…</string>
+    <string name="uninstalling">Đang gỡ cài đặt…</string>
+    <string name="keep_hour">1 tiếng</string>
+    <string name="keep_day">1 ngày</string>
+    <string name="keep_month">1 tháng</string>
+    <string name="keep_year">1 năm</string>
+    <string name="keep_forever">Mãi mãi</string>
+    <plurals name="details_last_update_months">
+        <item quantity="other">Đã cập nhật %1$d tháng trước</item>
+    </plurals>
+    <plurals name="details_last_update_years">
+        <item quantity="other">Đã cập nhật %1$d năm trước</item>
+    </plurals>
+    <string name="install_error_notify_title">Lỗi khi cài đặt %s</string>
+    <string name="download_404">Không tìm thấy tệp được yêu cầu.</string>
+    <string name="share_repository">Chia sẻ kho</string>
+    <string name="app_installed_media">Tệp đã cài đặt vào %s</string>
+    <string name="reset_transient_message">Bạn có chắc bạn muốn đặt lại ứng dụng khách của bạn không\? Tất cả mục lục của kho sẽ cần được tải xuống lại.</string>
+    <string name="link_translate">Dịch</string>
+    <string name="hide_anti_feature_apps">Gạch xám đi các ứng dụng có tính năng không mong muốn</string>
+    <string name="qr_code">Mã QR</string>
+    <string name="force_update">Buộc cập nhật</string>
+    <string name="liberapay">Liberapay</string>
+    <string name="links_and_donations">Liên kết &amp; Quyên góp</string>
+    <string name="empty_search_can_update_app_list">Không có ứng dụng trùng khớp nào để cập nhật.</string>
+    <plurals name="details_last_update_weeks">
+        <item quantity="other">Đã cập nhật %1$d tuần trước</item>
+    </plurals>
+    <string name="download_all_updates">Tải xuống các bản cập nhật</string>
+    <string name="menu_appinfo">Thông tin ứng dụng (cài đặt hệ thống)</string>
+    <string name="antidisabledalgorithmlist">Ứng dụng này có chữ ký bảo mật yếu</string>
+    <string name="opencollective">Open Collective</string>
+    <string name="repo_fingerprint">Mã xác thực của mã khoá ký (SHA-256)</string>
+    <string name="antiknownvulnlist">Ứng dụng này chứa lỗ hổng bảo mật đã biết</string>
+    <string name="reset_transient_title">Đặt lại cơ sở dữ liệu\?</string>
+    <string name="details_last_updated_today">Đã cập nhật hôm nay</string>
+    <string name="repo_exists_add_mirror">Đây là bản sao của %1$s, có thêm không\?</string>
+    <string name="app_permission_storage">F-Droid Cổ điển cần quyền truy cập bộ nhớ để cài đặt cái này vào bộ nhớ. Hãy cho phép nó trong màn hình tiếp theo để tiếp tục cài đặt.</string>
+    <string name="app_name">F-Droid Cổ điển</string>
+    <string name="signed">Đã ký: %s</string>
+    <string name="antinosourcesince">Mã nguồn không còn nữa, không thể có cập nhật.</string>
+    <string name="status_inserting_x_apps">Đang lưu chi tiết ứng dụng (%1$d/%2$d) từ %3$s</string>
 </resources>
