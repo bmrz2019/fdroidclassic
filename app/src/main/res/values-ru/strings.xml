@@ -68,8 +68,8 @@
     <string name="details_notinstalled">Не установлено</string>
     <string name="antiadslist">Это приложение содержит рекламу</string>
     <string name="antitracklist">Это приложение будет отслеживать ваши действия и сообщать о вашей деятельности</string>
-    <string name="antinonfreeadlist">Это приложение предлагает использовать несвободные дополнения</string>
-    <string name="antinonfreenetlist">Это приложение предлагает использовать несвободные сетевые услуги</string>
+    <string name="antinonfreeadlist">Это приложение продвигает несвободные дополнения</string>
+    <string name="antinonfreenetlist">Это приложение продвигает несвободные сетевые сервисы</string>
     <string name="antinonfreedeplist">Это приложение зависит от других несвободных приложений</string>
     <string name="antiupstreamnonfreelist">Оригинальный исходный код не является полностью свободным</string>
     <string name="display">Вид</string>
@@ -96,8 +96,8 @@
     <string name="proxy_port">Порт прокси</string>
     <string name="proxy_port_summary">Настройка номера порта вашего прокси (напр. 8118)</string>
     <string name="status_download">Загрузка
-%2$s / %3$s (%4$d%%) из
-%1$s</string>
+\n%2$s / %3$s (%4$d%%) из
+\n%1$s</string>
     <string name="status_connecting_to_repo">Соединение с\n%1$s</string>
     <string name="repos_unchanged">Все репозитории обновлены</string>
     <string name="all_other_repos_fine">Остальные репозитории не привели к ошибкам.</string>
@@ -116,9 +116,9 @@
     <string name="repo_not_yet_updated">Этот репозиторий ещё не использовался. Включите его, чтобы просмотреть содержащиеся в нём приложения.</string>
     <string name="unknown">Неизвестно</string>
     <string name="repo_confirm_delete_title">Удалить репозиторий?</string>
-    <string name="repo_confirm_delete_body">Удаление репозитория означает, что приложения из него больше не будут доступны в F-Droid.
-
-Примечание: Все ранее установленные приложения останутся на вашем устройстве.</string>
+    <string name="repo_confirm_delete_body">Удаление репозитория означает, что приложения из него больше не будут доступны в F-Droid Classic.
+\n
+\nПримечание: Все ранее установленные приложения останутся на вашем устройстве.</string>
     <string name="minsdk_or_later">%s или позднее</string>
     <string name="up_to_maxsdk">До %s</string>
     <string name="minsdk_up_to_maxsdk">%1$s до %2$s</string>
@@ -171,7 +171,7 @@
     <string name="permissions">Разрешения</string>
     <string name="menu_settings">Настройки</string>
     <string name="app_incompatible">Несовместимо</string>
-    <string name="more">Детали</string>
+    <string name="more">Подробнее</string>
     <string name="less">Меньше</string>
     <string name="back">Назад</string>
     <string name="update_notification_more">Детали +%1$d …</string>
@@ -229,12 +229,12 @@
     <string name="uninstall_confirm">Хотите удалить это приложение?</string>
     <string name="tap_to_install">Загрузка закончена, нажмите для установки</string>
     <string name="download_error">Загрузка не удалась</string>
-    <string name="perms_new_perm_prefix">"Новые: "</string>
+    <string name="perms_new_perm_prefix">Новые:</string>
     <string name="by_author_format">от %s</string>
     <string name="useTor">Использовать Tor</string>
     <string name="useTorSummary">Перенаправлять входящий трафик через Tor для улучшения конфиденциальности</string>
     <string name="repo_provider">Репозиторий: %s</string>
-    <string name="system_install_post_success_message">Привилегированное дополнение F-Droid успешно установлено. Оно позволяет F-Droid самостоятельно устанавливать, обновить и удалять приложения.</string>
+    <string name="system_install_post_success_message">Привилегированное дополнение F-Droid успешно установлено. Оно позволяет F-Droid Classic самостоятельно устанавливать, обновить и удалять приложения.</string>
     <string name="system_install_post_fail_message">Установка привилегированного приложения F-Droid не удалась. Используемый метод установки поддерживается не всеми дистрибутивами Android, за дополнительной информацией обратитесь к системе отслеживания ошибок F-Droid.</string>
     <string name="system_install_question">Желаете установить привилегированное дополнение F-Droid?</string>
     <string name="system_uninstall">Желаете удалить привилегированное дополнение F-Droid?</string>
@@ -257,4 +257,64 @@
     <string name="uninstalling">Удаление…</string>
     <string name="update_auto_install">Устанавливать обновления автоматически</string>
     <string name="update_auto_install_summary">Загружать и устанавливать обновления в фоне</string>
+    <string name="screenshot">Скриншот</string>
+    <string name="show_screenshots">Показать скриншоты</string>
+    <string name="screenshots_on_demand">Загружать скриншоты по запросу</string>
+    <string name="screenshots_pref_summary">Требуется дополнительный клик перед началом получения скриншотов</string>
+    <string name="details_new_in_version">Новое в версии %s</string>
+    <string name="repo_add_mirror">Добавить зеркало</string>
+    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
+    <plurals name="details_last_update_years">
+        <item quantity="one">Обновлено %1$d год назад</item>
+        <item quantity="few">Обновлено %1$d года назад</item>
+        <item quantity="many">Обновлено %1$d лет назад</item>
+        <item quantity="other">Обновлено %1$d лет назад</item>
+    </plurals>
+    <string name="menu_update_this_repo">Обновить этот репозиторий</string>
+    <string name="menu_appinfo">Информация о приложении (системные настройки)</string>
+    <string name="download_404">Запрошенный файл не найден.</string>
+    <string name="repo_official_mirrors">Официальные зеркала</string>
+    <string name="hide_anti_feature_apps">Затемнить программы с нежелательными функциями (анти-функции)</string>
+    <string name="force_update">Принудительное обновление</string>
+    <string name="liberapay">Liberapay</string>
+    <string name="link_translate">Перевод</string>
+    <string name="opencollective">Open Collective</string>
+    <string name="reset_transient_title">Сбросить базу данных\?</string>
+    <string name="app_name">F-Droid Classic</string>
+    <string name="repo_user_mirrors">Пользовательские зеркала</string>
+    <string name="repo_exists_add_mirror">Это копия %1$s, добавить как зеркало\?</string>
+    <string name="antidisabledalgorithmlist">Это приложение имеет слабую подпись безопасности</string>
+    <string name="antiknownvulnlist">Это приложение содержит известную уязвимость системы безопасности</string>
+    <string name="antinosourcesince">Исходный код больше не доступен, обновления невозможны.</string>
+    <string name="hide_anti_feature_apps_on">Выделять серым приложения содержащие анти-функции</string>
+    <string name="status_inserting_x_apps">Сохранение сведений о приложении (%1$d/%2$d) из %3$s</string>
+    <string name="warning_no_internet">Не удается обновить, вы подключены к Интернету\?</string>
+    <string name="details_last_updated_today">Обновлено сегодня</string>
+    <plurals name="details_last_update_days">
+        <item quantity="one">Обновлено %1$d день назад</item>
+        <item quantity="few">Обновлено %1$d дня назад</item>
+        <item quantity="many">Обновлено %1$d дней назад</item>
+        <item quantity="other">Обновлено %1$d дней назад</item>
+    </plurals>
+    <plurals name="details_last_update_weeks">
+        <item quantity="one">Обновлено %1$d неделю назад</item>
+        <item quantity="few">Обновлено %1$d недели назад</item>
+        <item quantity="many">Обновлено %1$d недель назад</item>
+        <item quantity="other">Обновлено %1$d недель назад</item>
+    </plurals>
+    <plurals name="details_last_update_months">
+        <item quantity="one">Обновлено %1$d месяц назад</item>
+        <item quantity="few">Обновлено %1$d месяца назад</item>
+        <item quantity="many">Обновлено %1$d месяцев назад</item>
+        <item quantity="other">Обновлено %1$d месяцев назад</item>
+    </plurals>
+    <string name="share_repository">Поделиться репозиторием</string>
+    <string name="signed">Подпись: %s</string>
+    <string name="app_permission_storage">F-Droid Classic требуется разрешение на хранение, чтобы установить это в хранилище. Пожалуйста, позвольте ему на следующем экране, чтобы продолжить установку.</string>
+    <string name="app_installed_media">Файл установлен в %s</string>
+    <string name="download_all_updates">Скачать обновления</string>
+    <string name="install_all_updates">Установить обновления</string>
+    <string name="qr_code">QR-код</string>
+    <string name="reset_transient_message">Вы уверены, что хотите сбросить настройки клиента\? Все индексы репозитория необходимо будет загрузить заново.</string>
+    <string name="links_and_donations">Ссылки и пожертвования</string>
 </resources>
