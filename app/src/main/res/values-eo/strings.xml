@@ -99,7 +99,7 @@
     <string name="open_qr_code_scanner">Malfermi QR-kodan skanilon</string>
     <string name="installIncompatible">Ŝajnas ke tiu ĉi pakaĵo ne kongruas kun via aparato. Ĉu vi volas provi instali ĝin malgraŭ tio\?</string>
     <string name="unstable_updates">Nestabilaj ĝisdatigoj</string>
-    <string name="update_interval">Intervalo de aŭtomata ĝisdatigo</string>
+    <string name="update_interval">Ofteco de aŭtomataj ĝisdatigoj</string>
     <string name="installDowngrade">Vi klopodas malpromocii tiun ĉi aplikaĵon. Fari tion eble malfunkciigos ĝin kaj eĉ perdigos viajn datumojn. Ĉu vi volas klopodi malpromocii ĝin ĉiaokaze\?</string>
     <string name="SignatureMismatch">La nova versio estas subskribita per malsama ŝlosilo. Por instali la novan version, la malnova devas esti malinstalita unue. Malinstalu la malnovan version kaj reprovu. (Estu konscia, ke malinstalo forigos ĉiujn internajn datumojn konservitajn de la aplikaĵo.)</string>
     <string name="by_author_format">de %s</string>
