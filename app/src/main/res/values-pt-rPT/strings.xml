@@ -133,11 +133,9 @@ aplicações de índices não assinados.</string>
 Tem que o ativar para ver as aplicações disponibilizadas.</string>
     <string name="unknown">Desconhecido</string>
     <string name="repo_confirm_delete_title">Apagar repositório?</string>
-    <string name="repo_confirm_delete_body">Ao apagar um repositório, as aplicações por ele
-disponibilizadas não estarão disponíveis no F-Droid.
-
-Nota:
-todas as aplicações instaladas não serão afetadas.</string>
+    <string name="repo_confirm_delete_body">Ao apagar um repositório, as aplicações aí disponibilizadas não estarão disponíveis no F-Droid Clássico.
+\n
+\nNota: todas as aplicações instaladas não serão afetadas.</string>
     <string name="repo_added">Repositório %1$s guardado.</string>
     <string name="repo_searching_address">A procurar um repositório F-Droid em\n%1$s</string>
     <string name="minsdk_or_later">%s ou posterior</string>
@@ -181,7 +179,7 @@ todas as aplicações instaladas não serão afetadas.</string>
     <string name="system_install_button_open">Abrir extensão</string>
     <string name="system_install_post_success">Extensão privilegiada F-Droid instalada com sucesso</string>
     <string name="system_install_post_fail">Extensão privilegiada F-Droid não instalada</string>
-    <string name="system_install_post_success_message">A extensão privilegiada F-Droid foi instalada com sucesso. Esta extensão permite que o F-Droid instale, atualize e desinstale aplicações por si só.</string>
+    <string name="system_install_post_success_message">A extensão privilegiada F-Droid foi instalada com sucesso. Esta extensão permite que o F-Droid Clássico instale, atualize e desinstale aplicações por si só.</string>
     <string name="system_install_post_fail_message">A extensão privilegiada F-Droid não foi instalada. O método de instalação não é suportado por todas as distribuições Android. Por favor consulte o \'bug tracker\' do F-Droid para mais informações.</string>
     <string name="system_install_installing">A instalar…</string>
     <string name="system_install_installing_rebooting">A instalar e reiniciar…</string>
@@ -196,7 +194,7 @@ todas as aplicações instaladas não serão afetadas.</string>
     <string name="newPerms">Novas</string>
     <string name="allPerms">Todas</string>
     <string name="perm_costs_money">Pode implicar gastos</string>
-    <string name="perms_new_perm_prefix">"Novas: "</string>
+    <string name="perms_new_perm_prefix">Novas:</string>
     <string name="perms_description_app">Disponibilizada por %1$s.</string>
     <string name="downloading">A descarregar…</string>
     <string name="interval_never">Nunca</string>
@@ -209,7 +207,7 @@ todas as aplicações instaladas não serão afetadas.</string>
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Escuro</string>
     <string name="install_confirm">requer acesso a</string>
-    <string name="more">Mais</string>
+    <string name="more">Saber mais</string>
     <string name="less">Menos</string>
     <string name="permissions">Permissões</string>
     <string name="install_confirm_update">Deseja instalar uma atualização para esta aplicação?
@@ -266,4 +264,56 @@ A aplicação atualizada não requer qualquer acesso especial.</string>
     <string name="keep_forever">Eternamente</string>
     <string name="update_auto_install">Instalar atualizações automaticamente</string>
     <string name="update_auto_install_summary">Descarregar e instalar atualizações em segundo plano</string>
+    <plurals name="details_last_update_weeks">
+        <item quantity="one">Atualizada há %1$d semana</item>
+        <item quantity="other">Atualizada há %1$d semanas</item>
+    </plurals>
+    <plurals name="details_last_update_months">
+        <item quantity="one">Atualizada há %1$d mês</item>
+        <item quantity="other">Atualizada há %1$d meses</item>
+    </plurals>
+    <string name="show_screenshots">Mostrar imagens</string>
+    <string name="screenshots_on_demand">Carregar imagens a pedido</string>
+    <string name="screenshots_pref_summary">Requer mais um toque antes de obter as imagens</string>
+    <string name="repo_add_mirror">Adicionar mirror</string>
+    <string name="menu_update_this_repo">Atualizar este repositório</string>
+    <string name="details_new_in_version">Novidades da versão %s</string>
+    <string name="copied_to_clipboard">Copiado para a área de transferência</string>
+    <plurals name="details_last_update_days">
+        <item quantity="one">Atualizada há %1$d dia</item>
+        <item quantity="other">Atualizada há %1$d dias</item>
+    </plurals>
+    <string name="download_404">Ficheiro não encontrado.</string>
+    <string name="share_repository">Partilhar repositório</string>
+    <string name="app_installed_media">Ficheiro instalado em %s</string>
+    <string name="install_all_updates">Instalar atualizações</string>
+    <string name="qr_code">Código QR</string>
+    <string name="force_update">Impor atualização</string>
+    <string name="warning_no_internet">Não foi possível atualizar. Está ligado à Internet\?</string>
+    <string name="screenshot">Imagem</string>
+    <string name="repo_official_mirrors">Mirrors oficiais</string>
+    <string name="hide_anti_feature_apps_on">Marcar a cinzento as aplicações que requerem anti-funcionalidades</string>
+    <string name="hide_anti_feature_apps">Marcar a cinzento as aplicações com anti-funcionalidades</string>
+    <string name="liberapay">Liberapay</string>
+    <string name="links_and_donations">Ligações e donativos</string>
+    <string name="link_translate">Traduções</string>
+    <string name="download_all_updates">Descarregar atualizações</string>
+    <string name="antidisabledalgorithmlist">Esta aplicação tem uma assinatura fraca</string>
+    <string name="app_permission_storage">F-Droid Clássico necessita de aceder ao armazenamento para instalar aplicações. Deve conceder as permissões necessárias no próximo ecrã.</string>
+    <string name="signed">Assinado: %s</string>
+    <string name="app_name">F-Droid Clássico</string>
+    <string name="repo_user_mirrors">Utilizar mirrors</string>
+    <string name="repo_exists_add_mirror">Esta é uma cópia de %1$s, adicionar como mirror\?</string>
+    <string name="menu_appinfo">Informação (definições do sistema)</string>
+    <string name="antiknownvulnlist">Esta aplicação contém um vulnerabilidade conhecida</string>
+    <string name="antinosourcesince">O código fonte já não está disponível e não existem atualizações.</string>
+    <string name="status_inserting_x_apps">A guardar detalhes (%1$d/%2$d) de %3$s</string>
+    <string name="details_last_updated_today">Atualizada hoje</string>
+    <plurals name="details_last_update_years">
+        <item quantity="one">Atualizada há %1$d ano</item>
+        <item quantity="other">Atualizada há %1$d anos</item>
+    </plurals>
+    <string name="reset_transient_message">Tem a certeza de que deseja repor o cliente\? Os índices dos repositórios terão que ser descarregados novamente.</string>
+    <string name="reset_transient_title">Repor base de dados\?</string>
+    <string name="opencollective">Open Collective</string>
 </resources>
