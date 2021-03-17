@@ -148,7 +148,7 @@ Du måste aktivera det för att se apparna det förser dig med.</string>
     <string name="app_incompatible">Ej kompatibel</string>
     <string name="links">Länkar</string>
     <string name="about_source">Källkod</string>
-    <string name="more">Mer</string>
+    <string name="more">Läs Mer</string>
     <string name="less">Mindre</string>
     <string name="back">Bakåt</string>
     <string name="tab_installed_apps">Installerade</string>
@@ -316,4 +316,7 @@ Den kräver inte någon särskild tillgång.</string>
         <item quantity="one">Uppdaterad %1$d ett år sedan</item>
         <item quantity="other">Uppdaterad %1$d flera år sedan</item>
     </plurals>
+    <string name="show_screenshots">Visa Skärmdumpar</string>
+    <string name="screenshots_pref_summary">Kräver ett extra klick innan du börjar hämta skärmdumpar</string>
+    <string name="screenshots_on_demand">Ladda skärmdumpar på begäran</string>
 </resources>

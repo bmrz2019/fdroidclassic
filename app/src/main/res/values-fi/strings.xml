@@ -137,7 +137,7 @@
     <string name="allPerms">Kaikki</string>
     <string name="newPerms">Uusi</string>
     <string name="links">Linkit</string>
-    <string name="more">Lisää</string>
+    <string name="more">Lue Lisää</string>
     <string name="less">Vähemmän</string>
     <string name="tab_installed_apps">Asennettu</string>
     <string name="tab_installed_apps_count">Asennettu (%d)</string>
@@ -313,4 +313,9 @@
     <string name="links_and_donations">Linkit ja lahjoitukset</string>
     <string name="copied_to_clipboard">Kopioitu leikepöydälle</string>
     <string name="screenshot">Näyttökuva</string>
+    <string name="screenshots_on_demand">Lataa kuvakaappauksia pyynnöstä</string>
+    <string name="liberapay">Liberapay</string>
+    <string name="show_screenshots">Näytä Kuvakaappauksia</string>
+    <string name="screenshots_pref_summary">Vaatii ylimääräisen napsautuksen ennen kuin aloitat kuvakaappausten hakemisen</string>
+    <string name="opencollective">Open Collective</string>
 </resources>

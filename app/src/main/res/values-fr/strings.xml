@@ -230,7 +230,7 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="system_uninstall">Voulez-vous désinstaller F-Droid Privileged Extension ?</string>
     <string name="system_uninstall_button">Désinstaller</string>
     <string name="category_Time">Temps</string>
-    <string name="more">Plus</string>
+    <string name="more">En savoir plus</string>
     <string name="less">Moins</string>
     <string name="permissions">Autorisations</string>
     <string name="theme_night">Nuit</string>
@@ -317,5 +317,9 @@ perdues. Elle ne requiert aucune autorisation particulière.</string>
     <string name="links_and_donations">Liens et dons</string>
     <string name="copied_to_clipboard">Copie dans le presse-papiers</string>
     <string name="screenshot">Capture d\'écran</string>
-    <string name="liberapay"></string>
+    <string name="liberapay">Liberapay</string>
+    <string name="show_screenshots">Afficher Les Captures D\'Écran</string>
+    <string name="screenshots_pref_summary">Nécessite un clic supplémentaire avant de commencer à récupérer des captures d\'écran</string>
+    <string name="screenshots_on_demand">Charger des captures d\'écran à la demande</string>
+    <string name="opencollective">Open Collective</string>
 </resources>
