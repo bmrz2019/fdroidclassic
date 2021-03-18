@@ -825,7 +825,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         }
     }
 
-    @SuppressWarnings("EmptyForIteratorPad")
     private void initInstalledApk(Context context, Apk apk, PackageInfo packageInfo, SanitizedFile apkFile)
             throws IOException, CertificateEncodingException {
         apk.compatible = true;
