@@ -34,9 +34,6 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 import java.util.jar.JarEntry;
 
-// TODO move to org.fdroid.fdroid.updater
-// TODO reduce visibility of methods once in .updater package (.e.g tests need it public now)
-
 /**
  * Updates the local database with a repository's app/apk metadata and verifying
  * the JAR signature on the file received from the repository. As an overview:
