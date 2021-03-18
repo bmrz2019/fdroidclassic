@@ -1591,6 +1591,9 @@ public class AppDetails extends AppCompatActivity {
                 // If App is installed
                 installed = true;
                 statusView.setText(getString(R.string.details_installed, app.installedVersionName));
+                btMain.setOnClickListener(mOnClickListener);
+                btMain.setEnabled(true);
+                btMain.setVisibility(View.VISIBLE);
                 if (app.canAndWantToUpdate(appDetails)) {
                     updateWanted = true;
                     btMain.setText(R.string.menu_upgrade);
@@ -1604,9 +1607,6 @@ public class AppDetails extends AppCompatActivity {
                         btMain.setVisibility(View.GONE);
                     }
                 }
-                btMain.setOnClickListener(mOnClickListener);
-                btMain.setEnabled(true);
-                btMain.setVisibility(View.VISIBLE);
             }
             TextView author = view.findViewById(R.id.author);
             if (!TextUtils.isEmpty(app.authorName)) {
