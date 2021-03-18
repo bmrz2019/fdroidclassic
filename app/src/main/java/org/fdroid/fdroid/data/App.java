@@ -864,7 +864,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
                 abis.add(matcher.group(1));
             }
         }
-        apk.nativecode = abis.toArray(new String[abis.size()]);
+        apk.nativecode = abis.toArray(new String[0]);
 
         final JarEntry aSignedEntry = (JarEntry) apkJar.getEntry("AndroidManifest.xml");
 
@@ -875,9 +875,6 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
 
         byte[] rawCertBytes;
 
-        // Due to a bug in android 5.0 lollipop, the inclusion of BouncyCastle causes
-        // breakage when verifying the signature of most .jars. For more
-        // details, check out https://gitlab.com/fdroid/fdroidclient/issues/111.
         final InputStream tmpIn = apkJar.getInputStream(aSignedEntry);
         byte[] buff = new byte[2048];
         //noinspection StatementWithEmptyBody

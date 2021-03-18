@@ -22,7 +22,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -32,7 +31,6 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.TypedValue;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -415,6 +413,7 @@ public final class Utils {
      * probably warranted. See https://www.gitlab.com/fdroid/fdroidclient/issues/855
      * for more detail.
      */
+    //TODO: replace with guava hashing
     @Nullable
     public static String getBinaryHash(File apk, String algo) {
         FileInputStream fis = null;
@@ -668,12 +667,6 @@ public final class Utils {
         return data;
     }
 
-    public static int dpToPx(int dp, Context ctx) {
-        Resources r = ctx.getResources();
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
-    }
-
-
     public static DisplayImageOptions.Builder getImageLoadingOptions() {
         return new DisplayImageOptions.Builder()
                 .cacheInMemory(true)
@@ -683,16 +676,6 @@ public final class Utils {
                 .showImageForEmptyUri(R.drawable.ic_repo_app_default)
                 .displayer(new FadeInBitmapDisplayer(200, true, true, false))
                 .bitmapConfig(Bitmap.Config.RGB_565);
-    }
-
-    /**
-     * Converts a {@code long} bytes value, like from {@link File#length()}, to
-     * an {@code int} value that is kilobytes, suitable for things like
-     * {@link android.widget.ProgressBar#setMax(int)} or
-     * {@link androidx.core.app.NotificationCompat.Builder#setProgress(int, int, boolean)}
-     */
-    public static int bytesToKb(long bytes) {
-        return (int) (bytes / 1024);
     }
 
     /**
@@ -719,12 +702,5 @@ public final class Utils {
             long duration = System.currentTimeMillis() - startTime;
             Utils.debugLog(logTag, "[" + duration + "ms] " + message);
         }
-    }
-    /**
-     * @return the directory where cached icons are stored
-     */
-    public static File getIconsCacheDir(Context context) {
-        File cacheDir = StorageUtils.getCacheDirectory(context.getApplicationContext(), true);
-        return new File(cacheDir, "icons");
     }
 }
