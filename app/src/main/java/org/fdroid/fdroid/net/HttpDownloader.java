@@ -56,7 +56,7 @@ public class HttpDownloader extends Downloader {
 
     private final String username;
     private final String password;
-    private URL sourceUrl;
+    private final URL sourceUrl;
     private HttpURLConnection connection;
     private boolean newFileAvailableOnServer;
 
