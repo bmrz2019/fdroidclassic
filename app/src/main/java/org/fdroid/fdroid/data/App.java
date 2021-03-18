@@ -25,6 +25,7 @@ import androidx.annotation.RequiresApi;
 import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.hash.Hashing;
 
 import org.fdroid.fdroid.Preferences;
 import org.fdroid.fdroid.Utils;
@@ -878,28 +879,25 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
         // Due to a bug in android 5.0 lollipop, the inclusion of BouncyCastle causes
         // breakage when verifying the signature of most .jars. For more
         // details, check out https://gitlab.com/fdroid/fdroidclient/issues/111.
-        try {
-            final InputStream tmpIn = apkJar.getInputStream(aSignedEntry);
-            byte[] buff = new byte[2048];
-            //noinspection StatementWithEmptyBody
-            while (tmpIn.read(buff, 0, buff.length) != -1) {
-                /*
-                 * NOP - apparently have to READ from the JarEntry before you can
-                 * call getCerficates() and have it return != null. Yay Java.
-                 */
-            }
-            tmpIn.close();
-
-            if (aSignedEntry.getCertificates() == null
-                    || aSignedEntry.getCertificates().length == 0) {
-                apkJar.close();
-                throw new CertificateEncodingException("No Certificates found!");
-            }
-
-            final Certificate signer = aSignedEntry.getCertificates()[0];
-            rawCertBytes = signer.getEncoded();
-        } finally {
+        final InputStream tmpIn = apkJar.getInputStream(aSignedEntry);
+        byte[] buff = new byte[2048];
+        //noinspection StatementWithEmptyBody
+        while (tmpIn.read(buff, 0, buff.length) != -1) {
+            /*
+             * NOP - apparently have to READ from the JarEntry before you can
+             * call getCerficates() and have it return != null. Yay Java.
+             */
         }
+        tmpIn.close();
+
+        if (aSignedEntry.getCertificates() == null
+                || aSignedEntry.getCertificates().length == 0) {
+            apkJar.close();
+            throw new CertificateEncodingException("No Certificates found!");
+        }
+
+        final Certificate signer = aSignedEntry.getCertificates()[0];
+        rawCertBytes = signer.getEncoded();
         apkJar.close();
 
         /*
@@ -919,7 +917,7 @@ public class App extends ValueObject implements Comparable<App>, Parcelable {
             d = v & 0xF;
             fdroidSig[j * 2 + 1] = (byte) (d >= 10 ? ('a' + d - 10) : ('0' + d));
         }
-        apk.sig = Utils.hashBytes(fdroidSig, "md5");
+        apk.sig = Hashing.md5().hashBytes(fdroidSig).toString().toUpperCase(Locale.ENGLISH);
     }
 
     /**

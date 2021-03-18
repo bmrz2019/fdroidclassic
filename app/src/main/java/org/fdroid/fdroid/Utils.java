@@ -401,21 +401,6 @@ public final class Utils {
         }
     }
 
-    // this is all new stuff being added
-    public static String hashBytes(byte[] input, String algo) {
-        try {
-            MessageDigest md = MessageDigest.getInstance(algo);
-            byte[] hashBytes = md.digest(input);
-            String hash = toHexString(hashBytes);
-
-            md.reset();
-            return hash;
-        } catch (NoSuchAlgorithmException e) {
-            Log.e(TAG, "Device does not support " + algo + " MessageDisgest algorithm");
-            return null;
-        }
-    }
-
     /**
      * Get the checksum hash of the file {@code apk} using the algorithm in {@code algo}.
      * {@code apk} must exist on the filesystem and {@code algo} must be supported
@@ -445,7 +430,7 @@ public final class Utils {
             }
 
             byte[] mdbytes = md.digest();
-            return toHexString(mdbytes).toLowerCase(Locale.ENGLISH);
+            return HashingUtils.hex(mdbytes);
         } catch (IOException e) {
             String message = e.getMessage();
             if (message.contains("read failed: EIO (I/O error)")) {
@@ -460,25 +445,6 @@ public final class Utils {
         }
         return null;
     }
-
-    /**
-     * Computes the base 16 representation of the byte array argument.
-     *
-     * @param bytes an array of bytes.
-     * @return the bytes represented as a string of hexadecimal digits.
-     * @see <a href="https://stackoverflow.com/a/9855338">source</a>
-     */
-    public static String toHexString(byte[] bytes) {
-        char[] hexChars = new char[bytes.length * 2];
-        for (int j = 0; j < bytes.length; j++) {
-            int v = bytes[j] & 0xFF;
-            hexChars[j * 2] = HEX_LOOKUP_ARRAY[v >>> 4];
-            hexChars[j * 2 + 1] = HEX_LOOKUP_ARRAY[v & 0x0F];
-        }
-        return new String(hexChars);
-    }
-
-    private static final char[] HEX_LOOKUP_ARRAY = "0123456789ABCDEF".toCharArray();
 
     public static int parseInt(String str, int fallback) {
         if (str == null || str.length() == 0) {
