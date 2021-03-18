@@ -29,7 +29,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
-public class Hasher {
+public class HashingUtils {
     /**
      * Checks the file against the provided hash, returning whether it is a match.
      */

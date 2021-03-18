@@ -428,9 +428,9 @@ public class IndexV1Updater extends IndexUpdater {
     private void verifySigningCertificate(X509Certificate rawCertFromJar) throws SigningException {
         String certFromJar;
         try {
-            certFromJar = Hasher.hex(rawCertFromJar.getEncoded());
+            certFromJar = HashingUtils.hex(rawCertFromJar.getEncoded());
         } catch (CertificateEncodingException e) {
-            certFromJar = Hasher.hex(new byte[0]);
+            certFromJar = HashingUtils.hex(new byte[0]);
         }
 
         if (TextUtils.isEmpty(certFromJar)) {

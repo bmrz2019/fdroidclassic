@@ -29,7 +29,7 @@ import androidx.annotation.Nullable;
 import com.google.common.io.Files;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
-import org.fdroid.fdroid.Hasher;
+import org.fdroid.fdroid.HashingUtils;
 import org.fdroid.fdroid.data.Apk;
 import org.fdroid.fdroid.data.App;
 import org.fdroid.fdroid.data.AppProvider;
@@ -86,7 +86,7 @@ public class ApkCache {
         Files.copy(apkFile, sanitizedApkFile);
 
         // verify copied file's hash with expected hash from Apk class
-        if (verifyHash && !Hasher.isFileMatchingHash(sanitizedApkFile, hash, hashType)) {
+        if (verifyHash && !HashingUtils.isFileMatchingHash(sanitizedApkFile, hash, hashType)) {
             apkFile.delete();
             throw new IOException(apkFile + " failed to verify!");
         }
@@ -132,7 +132,7 @@ public class ApkCache {
      */
     public static boolean apkIsCached(File apkFile, Apk apkToCheck) {
         return apkFile.length() == apkToCheck.size &&
-                Hasher.isFileMatchingHash(apkFile, apkToCheck.hash, apkToCheck.hashType);
+                HashingUtils.isFileMatchingHash(apkFile, apkToCheck.hash, apkToCheck.hashType);
     }
 
     /**

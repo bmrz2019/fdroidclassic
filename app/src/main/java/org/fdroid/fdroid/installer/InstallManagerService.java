@@ -29,7 +29,7 @@ import com.google.common.io.Files;
 import org.fdroid.fdroid.AppDetails;
 import org.fdroid.fdroid.AppUpdateStatusManager;
 import org.fdroid.fdroid.FDroidApp;
-import org.fdroid.fdroid.Hasher;
+import org.fdroid.fdroid.HashingUtils;
 import org.fdroid.fdroid.R;
 import org.fdroid.fdroid.Utils;
 import org.fdroid.fdroid.compat.PackageManagerCompat;
@@ -314,7 +314,7 @@ public class InstallManagerService extends Service {
                             + " to " + localApkUri);
 
                     try {
-                        if (Hasher.isFileMatchingHash(localFile, hash, "sha256")) {
+                        if (HashingUtils.isFileMatchingHash(localFile, hash, "sha256")) {
                             Utils.debugLog(TAG, "Installing OBB " + localFile + " to " + obbDestFile);
                             Files.createParentDirs(obbDestFile);
                             Files.copy(localFile, obbDestFile);

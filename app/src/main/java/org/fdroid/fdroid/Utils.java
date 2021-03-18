@@ -264,7 +264,7 @@ public final class Utils {
             Log.e(TAG, "Signing key certificate was blank or contained a non-hex-digit!");
             return null;
         }
-        return calcFingerprint(Hasher.unhex(keyHexString));
+        return calcFingerprint(HashingUtils.unhex(keyHexString));
     }
 
     public static String calcFingerprint(Certificate cert) {
