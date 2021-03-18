@@ -336,6 +336,7 @@ public class Apk extends ValueObject implements Comparable<Apk>, Parcelable {
         return new File(App.getObbDir(packageName), obbPatchFile);
     }
 
+    @NonNull
     @Override
     public String toString() {
         return toContentValues().toString();
