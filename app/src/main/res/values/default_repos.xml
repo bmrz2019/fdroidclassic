@@ -30,8 +30,7 @@
         <item>https://f-droid.org/repo</item>
         <!-- description -->
         <item>The official F-Droid repository. Applications in this repository are mostly built
-            directory from the source code. Some are official binaries built by the original
-            application developers - these will be replaced by source-built versions over time.
+            directory from the source code.
         </item>
         <!-- version -->
         <item>13</item>
