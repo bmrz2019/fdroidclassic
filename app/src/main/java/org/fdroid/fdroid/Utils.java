@@ -39,6 +39,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.google.common.hash.Hashing;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -313,14 +314,7 @@ public final class Utils {
             return "";
         }
         Signature sig = info.signatures[0];
-        String sigHash = "";
-        try {
-            Hasher hash = new Hasher("MD5", sig.toCharsString().getBytes());
-            sigHash = hash.getHash();
-        } catch (NoSuchAlgorithmException e) {
-            // ignore
-        }
-        return sigHash;
+        return Hashing.md5().hashBytes(sig.toCharsString().getBytes()).toString();
     }
 
     /**

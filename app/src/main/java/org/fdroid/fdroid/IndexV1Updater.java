@@ -57,6 +57,7 @@ import java.net.NoRouteToHostException;
 import java.net.ProtocolException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -425,7 +426,12 @@ public class IndexV1Updater extends IndexUpdater {
      * @param rawCertFromJar the {@link X509Certificate} embedded in the downloaded jar
      */
     private void verifySigningCertificate(X509Certificate rawCertFromJar) throws SigningException {
-        String certFromJar = Hasher.hex(rawCertFromJar);
+        String certFromJar;
+        try {
+            certFromJar = Hasher.hex(rawCertFromJar.getEncoded());
+        } catch (CertificateEncodingException e) {
+            certFromJar = Hasher.hex(new byte[0]);
+        }
 
         if (TextUtils.isEmpty(certFromJar)) {
             throw new SigningException(repo, SIGNED_FILE_NAME + " must have an included signing certificate!");
@@ -441,7 +447,7 @@ public class IndexV1Updater extends IndexUpdater {
             Utils.debugLog(TAG, "Saving new signing certificate to database for " + repo.address);
             ContentValues values = new ContentValues(2);
             values.put(Schema.RepoTable.Cols.LAST_UPDATED, Utils.formatTime(new Date(), ""));
-            values.put(Schema.RepoTable.Cols.SIGNING_CERT, Hasher.hex(rawCertFromJar));
+            values.put(Schema.RepoTable.Cols.SIGNING_CERT, certFromJar);
             RepoProvider.Helper.update(context, repo, values);
             repo.signingCertificate = certFromJar;
         }
