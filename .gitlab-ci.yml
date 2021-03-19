@@ -1,29 +1,31 @@
 image: registry.gitlab.com/fdroid/ci-images-client:latest
 
-before_script:
-  - rm -rf fdroidserver
-  - mkdir fdroidserver
-  - commit=$(git ls-remote https://git.bubu1.eu/Bubu/fdroidserver.git master | cut -f1)
-  - echo "Using fdroidserver ${commit}"
-  - curl --silent https://git.bubu1.eu/Bubu/fdroidserver/repository/${commit}/archive.tar.gz
-      | tar -xz --directory=fdroidserver --strip-components=1
-  - export PATH="$PWD/fdroidserver:$PATH"
-  - ln -s fdroidserver/gradlew-fdroid fdroidserver/gradle
-  - export ANDROID_SDK_ROOT=$ANDROID_HOME
-  - apt-get update && apt-get install python3-gnupg
-
 lint+test+build:
+  image: jangrewe/gitlab-ci-android
   script:
+    - export GRADLE_USER_HOME=$(pwd)/.gradle
     # always report on lint errors to the build log
     - sed -i -e 's,textReport .*,textReport true,' app/build.gradle
-    - gradle lint
-    - gradle testReleaseUnitTest
-    - gradle assembleDebug
+    - ./gradlew lint
+    - ./gradlew testReleaseUnitTest
+    - ./gradlew assembleDebug
   artifacts:
     paths:
     - app/build/reports/
 
 fdroid:build:
+  before_script:
+    - rm -rf fdroidserver
+    - mkdir fdroidserver
+    - commit=$(git ls-remote https://git.bubu1.eu/Bubu/fdroidserver.git master | cut -f1)
+    - echo "Using fdroidserver ${commit}"
+    - curl --silent https://git.bubu1.eu/Bubu/fdroidserver/repository/${commit}/archive.tar.gz
+        | tar -xz --directory=fdroidserver --strip-components=1
+    - export PATH="$PWD/fdroidserver:$PATH"
+    - ln -s fdroidserver/gradlew-fdroid fdroidserver/gradle
+    - export ANDROID_SDK_ROOT=$ANDROID_HOME
+    - apt-get update && apt-get install python3-gnupg
+
   script:
     - cd fdroidrepo
     - PYTHONPATH=. fdroid gencibuild eu.bubu1.fdroidclassic
