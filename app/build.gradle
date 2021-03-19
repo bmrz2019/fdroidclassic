@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.12.1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
 
-    // Don't update or remove this, it makes CI test execution fail
+    // Don't update or remove this, it makes RoboRlectric tests fail with SIGSEGV (what?)
     // https://git.bubu1.eu/Bubu/fdroidclassic/-/jobs/666
     testImplementation 'junit:junit:4.13.1'
     testImplementation "org.mockito:mockito-core:3.6.0"
