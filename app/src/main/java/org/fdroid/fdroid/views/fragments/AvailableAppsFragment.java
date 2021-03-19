@@ -194,7 +194,11 @@ public class AvailableAppsFragment extends AppListFragment implements
         /* restore the saved Category Spinner position */
         Activity activity = getActivity();
         SharedPreferences preferences = activity.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
-        currentCategory = categories.get(preferences.getInt(CATEGORY_ID_KEY, defaultCategoryID));
+        try {
+            currentCategory = categories.get(preferences.getInt(CATEGORY_ID_KEY, defaultCategoryID));
+        } catch (IndexOutOfBoundsException e) {
+            currentCategory = CategoryProvider.Helper.getCategoryWhatsNew(getActivity());
+        }
 
         if (categorySpinner != null) {
             for (int i = 0; i < categorySpinner.getCount(); i++) {
