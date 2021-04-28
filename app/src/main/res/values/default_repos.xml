@@ -27,7 +27,7 @@
         <!-- name -->
         <item>F-Droid</item>
         <!-- address -->
-        <item>https://f-droid.org/repo</item>
+        <item>https://ftp.fau.de/fdroid/repo</item>
         <!-- description -->
         <item>The official F-Droid repository. Applications in this repository are mostly built
             directory from the source code.
@@ -46,12 +46,11 @@
         </item>
 
         <!-- name -->
-        <item>Guardian Project Archive</item>
+        <item>New pipe</item>
         <!-- address -->
-        <item>https://guardianproject.info/fdroid/archive</item>
+        <item>https://archive.newpipe.net/fdroid/repo</item>
         <!-- description -->
-        <item>The official repository of The Guardian Project apps for use with F-Droid client. This
-            contains older versions of applications from the main repository.
+        <item>The official repository of new pipe
         </item>
         <!-- version -->
         <item>13</item>
