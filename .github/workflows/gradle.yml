@@ -19,4 +19,4 @@ jobs:
                 uses: actions/upload-artifact@v2
                 with:
                     name: FdroidClassic-debug.apk
-                    path: build/*
+                    path: ./build/outputs/apk/debug/app-debug.apk
